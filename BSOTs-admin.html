@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSOTs - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="BSOTs.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body class="bsots-page">
+
+    <!-- Prototype Banner -->
+    <div class="bsots-prototype-banner">
+        PROTOTYPE ADMIN - Not production security. Access key stored in localStorage only.
+    </div>
+
+    <!-- Header -->
+    <header class="bsots-header">
+        <div class="bsots-header-left">
+            <h1>BSOTs Admin</h1>
+            <a href="BSOTs.html" class="bsots-link">Back to Board</a>
+        </div>
+        <div class="bsots-header-center"></div>
+        <div class="bsots-header-right">
+            <button class="bsots-btn bsots-btn-sm" id="logoutBtn" style="display:none;">Lock Admin</button>
+        </div>
+    </header>
+
+    <!-- Auth Gate -->
+    <div id="authGate" class="bsots-auth-gate">
+        <div class="bsots-auth-card">
+            <h2>Admin Access</h2>
+            <p>This is a prototype admin gate. Enter the admin key to continue.<br>
+               <strong>NOT production security.</strong></p>
+            <input type="password" id="adminKeyInput" placeholder="Enter admin key..." autocomplete="off">
+            <button class="bsots-btn bsots-btn-primary" id="adminLoginBtn" style="width:100%;">Unlock</button>
+            <p style="margin-top:12px;font-size:11px;color:var(--text-muted);">
+                Default key for prototype: <code>bsots-admin-2024</code>
+            </p>
+        </div>
+    </div>
+
+    <!-- Admin Content (hidden until authenticated) -->
+    <div id="adminContent" class="bsots-admin-container" style="display:none;">
+
+        <!-- Sites Section -->
+        <div class="bsots-admin-section">
+            <div class="bsots-admin-section-header">
+                <h2>Sites (4 Hospitals)</h2>
+                <button class="bsots-btn bsots-btn-sm bsots-btn-primary" id="seedSitesBtn">Seed Default Sites</button>
+            </div>
+            <table class="bsots-admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Short Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="sitesTableBody">
+                    <tr><td colspan="4" class="bsots-loading"><div class="bsots-spinner"></div> Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Teams Section -->
+        <div class="bsots-admin-section">
+            <div class="bsots-admin-section-header">
+                <h2>Teams</h2>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <select id="teamSiteFilter" style="padding:4px 8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                        <option value="">All sites</option>
+                    </select>
+                    <button class="bsots-btn bsots-btn-sm bsots-btn-primary" id="addTeamBtn">+ Add Team</button>
+                </div>
+            </div>
+            <table class="bsots-admin-table">
+                <thead>
+                    <tr>
+                        <th>Site</th>
+                        <th>Team Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="teamsTableBody">
+                    <tr><td colspan="3" class="bsots-loading"><div class="bsots-spinner"></div> Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Members Section -->
+        <div class="bsots-admin-section">
+            <div class="bsots-admin-section-header">
+                <h2>Members</h2>
+                <div style="display:flex;gap:8px;align-items:center;">
+                    <select id="memberSiteFilter" style="padding:4px 8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                        <option value="">All sites</option>
+                    </select>
+                    <button class="bsots-btn bsots-btn-sm bsots-btn-primary" id="addMemberBtn">+ Add Member</button>
+                </div>
+            </div>
+            <table class="bsots-admin-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Site</th>
+                        <th>Role</th>
+                        <th>Permissions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="membersTableBody">
+                    <tr><td colspan="5" class="bsots-loading"><div class="bsots-spinner"></div> Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Seed Test Data -->
+        <div class="bsots-admin-section">
+            <div class="bsots-admin-section-header">
+                <h2>Test Data</h2>
+            </div>
+            <div class="bsots-seed-section">
+                <p>Seed test patients across multiple urgency categories for demonstration.</p>
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+                    <select id="seedSiteSelect" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-input);color:var(--text-primary);font-size:13px;"></select>
+                    <button class="bsots-btn bsots-btn-primary" id="seedPatientsBtn">Seed 8 Test Patients</button>
+                </div>
+                <p id="seedResult" style="margin-top:12px;font-size:12px;color:var(--color-success);display:none;"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add Team Modal -->
+    <div class="bsots-modal-overlay" id="addTeamModal" style="display:none;">
+        <div class="bsots-modal">
+            <div class="bsots-modal-header">
+                <h2>Add Team</h2>
+                <button class="bsots-modal-close" data-close="addTeamModal">&times;</button>
+            </div>
+            <div class="bsots-modal-body">
+                <div class="bsots-form-group">
+                    <label for="teamSite">Site</label>
+                    <select id="teamSite"></select>
+                </div>
+                <div class="bsots-form-group">
+                    <label for="teamName">Team Name</label>
+                    <input type="text" id="teamName" placeholder="e.g. Day Team A" required>
+                </div>
+            </div>
+            <div class="bsots-modal-footer">
+                <button class="bsots-btn" data-close="addTeamModal">Cancel</button>
+                <button class="bsots-btn bsots-btn-primary" id="submitTeamBtn">Add Team</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Member Modal -->
+    <div class="bsots-modal-overlay" id="addMemberModal" style="display:none;">
+        <div class="bsots-modal">
+            <div class="bsots-modal-header">
+                <h2>Add Member</h2>
+                <button class="bsots-modal-close" data-close="addMemberModal">&times;</button>
+            </div>
+            <div class="bsots-modal-body">
+                <div class="bsots-form-row">
+                    <div class="bsots-form-group">
+                        <label for="memberName">Display Name</label>
+                        <input type="text" id="memberName" placeholder="e.g. Dr. Smith" required>
+                    </div>
+                    <div class="bsots-form-group">
+                        <label for="memberRole">Role</label>
+                        <select id="memberRole"></select>
+                    </div>
+                </div>
+                <div class="bsots-form-group">
+                    <label for="memberSite">Site</label>
+                    <select id="memberSite"></select>
+                </div>
+                <div class="bsots-form-group">
+                    <label for="memberTeam">Team (optional)</label>
+                    <select id="memberTeam">
+                        <option value="">No team</option>
+                    </select>
+                </div>
+                <div class="bsots-form-group">
+                    <label>Permissions</label>
+                    <div id="memberPermissions" style="display:flex;flex-direction:column;gap:6px;"></div>
+                </div>
+            </div>
+            <div class="bsots-modal-footer">
+                <button class="bsots-btn" data-close="addMemberModal">Cancel</button>
+                <button class="bsots-btn bsots-btn-primary" id="submitMemberBtn">Add Member</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="firebase-init.js"></script>
+
+    <!-- Admin Logic -->
+    <script type="module">
+        import {
+            DEFAULT_SITES, MEMBER_ROLES, PERMISSION_FLAGS
+        } from './js/bsots/constants.js';
+
+        import {
+            getSites, saveSite, deleteSite,
+            getTeams, addTeam, deleteTeam,
+            getMembers, addMember, deleteMember,
+            seedSites, seedTestEpisodes
+        } from './js/bsots/firestore.js';
+
+        // ─── Admin Key ──────────────────────────────────────────────────────
+        const ADMIN_KEY = 'bsots-admin-2024';
+        const STORAGE_KEY = 'bsots_admin_key';
+
+        function checkAuth() {
+            return localStorage.getItem(STORAGE_KEY) === ADMIN_KEY;
+        }
+
+        function showAdmin() {
+            document.getElementById('authGate').style.display = 'none';
+            document.getElementById('adminContent').style.display = 'block';
+            document.getElementById('logoutBtn').style.display = 'inline-flex';
+            loadAllData();
+        }
+
+        document.getElementById('adminLoginBtn').addEventListener('click', () => {
+            const key = document.getElementById('adminKeyInput').value.trim();
+            if (key === ADMIN_KEY) {
+                localStorage.setItem(STORAGE_KEY, key);
+                showAdmin();
+            } else {
+                showToast('Invalid admin key', 'error');
+            }
+        });
+
+        document.getElementById('adminKeyInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') document.getElementById('adminLoginBtn').click();
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem(STORAGE_KEY);
+            location.reload();
+        });
+
+        // Check on load
+        if (checkAuth()) showAdmin();
+
+        // ─── Data State ─────────────────────────────────────────────────────
+        let sites = [];
+        let teams = [];
+        let members = [];
+
+        async function loadAllData() {
+            try {
+                await Promise.all([loadSites(), loadTeams(), loadMembers()]);
+                populateFilters();
+                populateFormSelects();
+            } catch (err) {
+                console.error('[BSOTs Admin] Load error:', err);
+                showToast('Failed to load data', 'error');
+            }
+        }
+
+        // ─── Sites ──────────────────────────────────────────────────────────
+        async function loadSites() {
+            sites = await getSites();
+            renderSitesTable();
+        }
+
+        function renderSitesTable() {
+            const $body = document.getElementById('sitesTableBody');
+            if (sites.length === 0) {
+                $body.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:20px;">No sites. Click "Seed Default Sites" to add the 4 hospitals.</td></tr>';
+                return;
+            }
+            $body.innerHTML = sites.map(s =>
+                `<tr>
+                    <td><code>${esc(s.id)}</code></td>
+                    <td>${esc(s.name)}</td>
+                    <td>${esc(s.shortName)}</td>
+                    <td><button class="bsots-btn bsots-btn-sm bsots-btn-danger" data-delete-site="${s.id}">Delete</button></td>
+                </tr>`
+            ).join('');
+
+            $body.querySelectorAll('[data-delete-site]').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    if (confirm(`Delete site "${btn.dataset.deleteSite}"?`)) {
+                        try {
+                            await deleteSite(btn.dataset.deleteSite);
+                            showToast('Site deleted', 'success');
+                            await loadSites();
+                        } catch (err) {
+                            showToast('Failed to delete site', 'error');
+                        }
+                    }
+                });
+            });
+        }
+
+        document.getElementById('seedSitesBtn').addEventListener('click', async () => {
+            try {
+                await seedSites(DEFAULT_SITES);
+                showToast('4 default sites seeded', 'success');
+                await loadSites();
+                populateFilters();
+                populateFormSelects();
+            } catch (err) {
+                showToast('Failed to seed sites', 'error');
+            }
+        });
+
+        // ─── Teams ──────────────────────────────────────────────────────────
+        async function loadTeams(siteFilter) {
+            teams = await getTeams(siteFilter || '');
+            renderTeamsTable();
+        }
+
+        function renderTeamsTable() {
+            const $body = document.getElementById('teamsTableBody');
+            if (teams.length === 0) {
+                $body.innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--text-muted);padding:20px;">No teams yet.</td></tr>';
+                return;
+            }
+            $body.innerHTML = teams.map(t =>
+                `<tr>
+                    <td>${esc(getSiteName(t.siteId))}</td>
+                    <td>${esc(t.name)}</td>
+                    <td><button class="bsots-btn bsots-btn-sm bsots-btn-danger" data-delete-team="${t.id}">Delete</button></td>
+                </tr>`
+            ).join('');
+
+            $body.querySelectorAll('[data-delete-team]').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    if (confirm('Delete this team?')) {
+                        try {
+                            await deleteTeam(btn.dataset.deleteTeam);
+                            showToast('Team deleted', 'success');
+                            await loadTeams();
+                        } catch (err) {
+                            showToast('Failed to delete team', 'error');
+                        }
+                    }
+                });
+            });
+        }
+
+        document.getElementById('teamSiteFilter').addEventListener('change', (e) => {
+            loadTeams(e.target.value);
+        });
+
+        // Add Team
+        document.getElementById('addTeamBtn').addEventListener('click', () => {
+            document.getElementById('addTeamModal').style.display = 'flex';
+        });
+
+        document.getElementById('submitTeamBtn').addEventListener('click', async () => {
+            const siteId = document.getElementById('teamSite').value;
+            const name = document.getElementById('teamName').value.trim();
+            if (!siteId || !name) {
+                showToast('Please fill in all fields', 'error');
+                return;
+            }
+            try {
+                await addTeam({ siteId, name });
+                showToast('Team added', 'success');
+                document.getElementById('addTeamModal').style.display = 'none';
+                document.getElementById('teamName').value = '';
+                await loadTeams();
+            } catch (err) {
+                showToast('Failed to add team', 'error');
+            }
+        });
+
+        // ─── Members ────────────────────────────────────────────────────────
+        async function loadMembers(siteFilter) {
+            members = await getMembers(siteFilter || '');
+            renderMembersTable();
+        }
+
+        function renderMembersTable() {
+            const $body = document.getElementById('membersTableBody');
+            if (members.length === 0) {
+                $body.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--text-muted);padding:20px;">No members yet.</td></tr>';
+                return;
+            }
+            $body.innerHTML = members.map(m => {
+                const perms = m.permissions || {};
+                const permLabels = Object.entries(PERMISSION_FLAGS)
+                    .filter(([key]) => perms[key])
+                    .map(([, label]) => label);
+
+                return `<tr>
+                    <td><strong>${esc(m.displayName)}</strong></td>
+                    <td>${esc(getSiteName(m.siteId))}</td>
+                    <td><span style="text-transform:capitalize;">${esc(m.role)}</span></td>
+                    <td style="font-size:11px;">${permLabels.length > 0 ? permLabels.join(', ') : '<span style="color:var(--text-muted);">None</span>'}</td>
+                    <td><button class="bsots-btn bsots-btn-sm bsots-btn-danger" data-delete-member="${m.id}">Delete</button></td>
+                </tr>`;
+            }).join('');
+
+            $body.querySelectorAll('[data-delete-member]').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    if (confirm('Delete this member?')) {
+                        try {
+                            await deleteMember(btn.dataset.deleteMember);
+                            showToast('Member deleted', 'success');
+                            await loadMembers();
+                        } catch (err) {
+                            showToast('Failed to delete member', 'error');
+                        }
+                    }
+                });
+            });
+        }
+
+        document.getElementById('memberSiteFilter').addEventListener('change', (e) => {
+            loadMembers(e.target.value);
+        });
+
+        // Add Member
+        document.getElementById('addMemberBtn').addEventListener('click', () => {
+            document.getElementById('addMemberModal').style.display = 'flex';
+        });
+
+        document.getElementById('submitMemberBtn').addEventListener('click', async () => {
+            const displayName = document.getElementById('memberName').value.trim();
+            const role = document.getElementById('memberRole').value;
+            const siteId = document.getElementById('memberSite').value;
+            const teamId = document.getElementById('memberTeam').value || null;
+
+            if (!displayName || !role || !siteId) {
+                showToast('Please fill in all required fields', 'error');
+                return;
+            }
+
+            const permissions = {};
+            document.querySelectorAll('#memberPermissions input[type="checkbox"]').forEach(cb => {
+                permissions[cb.dataset.perm] = cb.checked;
+            });
+
+            try {
+                await addMember({ siteId, teamId, displayName, role, permissions });
+                showToast('Member added', 'success');
+                document.getElementById('addMemberModal').style.display = 'none';
+                document.getElementById('memberName').value = '';
+                await loadMembers();
+            } catch (err) {
+                showToast('Failed to add member', 'error');
+            }
+        });
+
+        // ─── Seed Test Patients ─────────────────────────────────────────────
+        document.getElementById('seedPatientsBtn').addEventListener('click', async () => {
+            const siteId = document.getElementById('seedSiteSelect').value;
+            if (!siteId) {
+                showToast('Select a site first', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('seedPatientsBtn');
+            btn.disabled = true;
+            btn.textContent = 'Seeding...';
+
+            try {
+                const results = await seedTestEpisodes(siteId);
+                const $result = document.getElementById('seedResult');
+                $result.style.display = 'block';
+                $result.textContent = `Seeded ${results.length} test patients at ${getSiteName(siteId)}. View them on the triage board.`;
+                showToast(`${results.length} test patients seeded`, 'success');
+            } catch (err) {
+                console.error('[BSOTs Admin] Seed error:', err);
+                showToast('Failed to seed patients: ' + err.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Seed 8 Test Patients';
+            }
+        });
+
+        // ─── Populate Selects & Filters ─────────────────────────────────────
+        function populateFilters() {
+            const allSites = sites.length > 0 ? sites : DEFAULT_SITES;
+
+            ['teamSiteFilter', 'memberSiteFilter'].forEach(id => {
+                const select = document.getElementById(id);
+                // Keep first option, replace rest
+                while (select.options.length > 1) select.remove(1);
+                allSites.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s.id;
+                    opt.textContent = s.shortName || s.name;
+                    select.appendChild(opt);
+                });
+            });
+        }
+
+        function populateFormSelects() {
+            const allSites = sites.length > 0 ? sites : DEFAULT_SITES;
+
+            // Site selects in modals
+            ['teamSite', 'memberSite', 'seedSiteSelect'].forEach(id => {
+                const select = document.getElementById(id);
+                select.innerHTML = '';
+                allSites.forEach(s => {
+                    const opt = document.createElement('option');
+                    opt.value = s.id;
+                    opt.textContent = s.shortName + ' - ' + s.name;
+                    select.appendChild(opt);
+                });
+            });
+
+            // Roles
+            const roleSelect = document.getElementById('memberRole');
+            roleSelect.innerHTML = '';
+            MEMBER_ROLES.forEach(r => {
+                const opt = document.createElement('option');
+                opt.value = r;
+                opt.textContent = r.charAt(0).toUpperCase() + r.slice(1);
+                roleSelect.appendChild(opt);
+            });
+
+            // Permission checkboxes
+            const permContainer = document.getElementById('memberPermissions');
+            permContainer.innerHTML = '';
+            Object.entries(PERMISSION_FLAGS).forEach(([key, label]) => {
+                const wrapper = document.createElement('label');
+                wrapper.style.cssText = 'display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;';
+                wrapper.innerHTML = `<input type="checkbox" data-perm="${key}" style="accent-color:var(--accent-color);"> ${label}`;
+                permContainer.appendChild(wrapper);
+            });
+
+            // Auto-select permissions based on role
+            document.getElementById('memberRole').addEventListener('change', (e) => {
+                const role = e.target.value;
+                const defaults = {
+                    admin:    { canEditUrgency: true, canCompleteReview: true, canEditTasks: true, canManageTeams: true },
+                    senior:   { canEditUrgency: true, canCompleteReview: true, canEditTasks: true, canManageTeams: false },
+                    clinician:{ canEditUrgency: false, canCompleteReview: true, canEditTasks: true, canManageTeams: false }
+                };
+                const perms = defaults[role] || {};
+                document.querySelectorAll('#memberPermissions input[type="checkbox"]').forEach(cb => {
+                    cb.checked = !!perms[cb.dataset.perm];
+                });
+            });
+        }
+
+        // ─── Modal Close Handlers ───────────────────────────────────────────
+        document.querySelectorAll('[data-close]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modalId = btn.dataset.close;
+                document.getElementById(modalId).style.display = 'none';
+            });
+        });
+
+        document.querySelectorAll('.bsots-modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) overlay.style.display = 'none';
+            });
+        });
+
+        // ─── Helpers ────────────────────────────────────────────────────────
+        function getSiteName(siteId) {
+            const allSites = sites.length > 0 ? sites : DEFAULT_SITES;
+            const site = allSites.find(s => s.id === siteId);
+            return site ? site.shortName : siteId || '--';
+        }
+
+        function esc(str) {
+            if (!str) return '';
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `bsots-toast bsots-toast-${type}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
