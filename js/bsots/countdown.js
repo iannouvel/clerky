@@ -1,6 +1,6 @@
 /**
  * BSOTs Countdown Timer Utilities
- * Handles countdown formatting, overdue detection, and warning states
+ * Handles countdown formatting, overdue detection, warning states, and time-in-unit
  */
 
 import { COUNTDOWN_WARNING_SECONDS } from './constants.js';
@@ -17,7 +17,10 @@ export function getRemainingMs(nextDueAt) {
 
 /**
  * Format remaining milliseconds as human-readable countdown.
- * Returns { text, isOverdue, isWarning, remainingSeconds }
+ * Returns { text, isOverdue, isWarning, remainingSeconds, overdueMinutes }
+ *
+ * When overdue:  "+5m", "+1h 23m"
+ * When counting: "04:32", "1:02:15"
  */
 export function formatCountdown(nextDueAt) {
     const remainingMs = getRemainingMs(nextDueAt);
@@ -27,8 +30,17 @@ export function formatCountdown(nextDueAt) {
 
     if (isOverdue) {
         const overdueMs = Math.abs(remainingMs);
-        const text = '-' + formatDuration(overdueMs);
-        return { text, isOverdue: true, isWarning: false, remainingSeconds };
+        const overdueMinutes = Math.floor(overdueMs / 60000);
+        const overdueHours = Math.floor(overdueMinutes / 60);
+        const mins = overdueMinutes % 60;
+
+        let text;
+        if (overdueHours > 0) {
+            text = `+${overdueHours}h ${mins}m`;
+        } else {
+            text = `+${overdueMinutes}m`;
+        }
+        return { text, isOverdue: true, isWarning: false, remainingSeconds, overdueMinutes };
     }
 
     const text = formatDuration(remainingMs);
@@ -50,6 +62,19 @@ export function formatDuration(ms) {
         return `${hours}:${pad(minutes)}:${pad(seconds)}`;
     }
     return `${pad(minutes)}:${pad(seconds)}`;
+}
+
+/**
+ * Format time-in-unit: elapsed time since arrival as HH:MM.
+ */
+export function formatTimeInUnit(arrivalAt) {
+    if (!arrivalAt) return '--:--';
+    const arrivalMs = arrivalAt.toMillis ? arrivalAt.toMillis() : new Date(arrivalAt).getTime();
+    const elapsed = Date.now() - arrivalMs;
+    if (elapsed < 0) return '00:00';
+    const hours = Math.floor(elapsed / 3600000);
+    const minutes = Math.floor((elapsed % 3600000) / 60000);
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 }
 
 /**
