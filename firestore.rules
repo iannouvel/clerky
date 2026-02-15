@@ -95,25 +95,25 @@ service cloud.firestore {
       allow read, write: if isAuthenticated() && isOwner(userId);
     }
     
-    // BSOTs collections - any authenticated user can read/write (prototype)
+    // BSOTs collections - public read/write for prototype (no auth required)
     match /bsots_sites/{siteId} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if true;
     }
 
     match /bsots_teams/{teamId} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if true;
     }
 
     match /bsots_members/{memberId} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if true;
     }
 
     match /bsots_episodes/{episodeId} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if true;
     }
 
     match /bsots_events/{eventId} {
-      allow read, write: if isAuthenticated();
+      allow read, write: if true;
     }
 
     // Default deny all other access
