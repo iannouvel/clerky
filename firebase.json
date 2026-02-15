@@ -20,6 +20,14 @@
     ],
     "rewrites": [
       {
+        "source": "/BSOTs.html",
+        "destination": "/BSOTs.html"
+      },
+      {
+        "source": "/BSOTs-admin.html",
+        "destination": "/BSOTs-admin.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
