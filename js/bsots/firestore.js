@@ -187,6 +187,27 @@ export async function changeUrgency(episodeId, episode, newUrgency, changedBy) {
 }
 
 /**
+ * Add a new task to an episode.
+ */
+export async function addTaskToEpisode(episodeId, episode, label, createdBy) {
+    const newTask = {
+        id: generateTaskId(),
+        label,
+        status: 'pending',
+        updatedAt: Timestamp.now(),
+        updatedBy: createdBy || ''
+    };
+    const tasks = [...(episode.tasks || []), newTask];
+    await updateEpisode(episodeId, { tasks });
+    await logEvent({
+        episodeId,
+        siteId: episode.siteId,
+        eventType: EVENT_TYPES.TASK_UPDATED,
+        data: { taskId: newTask.id, action: 'added', label }
+    });
+}
+
+/**
  * Toggle a task's status within an episode.
  */
 export async function toggleTask(episodeId, episode, taskId, updatedBy) {

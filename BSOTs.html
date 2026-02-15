@@ -10,12 +10,10 @@
 </head>
 <body class="bsots-page">
 
-    <!-- Prototype Banner -->
     <div class="bsots-prototype-banner">
         PROTOTYPE - Birmingham Symptom-specific Obstetric Triage System (BSOTs) - Not for clinical use
     </div>
 
-    <!-- Header -->
     <header class="bsots-header">
         <div class="bsots-header-left">
             <h1>BSOTs Triage Board</h1>
@@ -29,7 +27,6 @@
         </div>
     </header>
 
-    <!-- Filters -->
     <div class="bsots-filters">
         <select id="filterUrgency">
             <option value="">All urgencies</option>
@@ -45,7 +42,6 @@
         <button class="bsots-btn bsots-btn-primary" id="addPatientBtn">+ Add Patient</button>
     </div>
 
-    <!-- Board -->
     <div class="bsots-board-container">
         <div id="loadingState" class="bsots-loading">
             <div class="bsots-spinner"></div>
@@ -54,19 +50,17 @@
         <table class="bsots-board" id="boardTable" style="display:none;">
             <thead>
                 <tr>
-                    <th>Initials</th>
+                    <th>Status</th>
+                    <th>Patient</th>
                     <th>Hosp #</th>
-                    <th>Site</th>
-                    <th>Arrival</th>
+                    <th>Arrival / Due</th>
+                    <th>In Unit</th>
                     <th>Reason</th>
                     <th>Urgency</th>
-                    <th>Due</th>
                     <th>Countdown</th>
                     <th>Tasks</th>
                     <th>Notes</th>
-                    <th>Clinician</th>
-                    <th>MEOWS</th>
-                    <th>Actions</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="boardBody"></tbody>
@@ -99,23 +93,17 @@
                         </div>
                         <div class="bsots-form-group">
                             <label for="patientHospNum">Hospital Number *</label>
-                            <input type="text" id="patientHospNum" required
-                                   placeholder="e.g. H123456" autocomplete="off">
+                            <input type="text" id="patientHospNum" required placeholder="e.g. H123456" autocomplete="off">
                         </div>
                     </div>
-
                     <div class="bsots-form-group">
                         <label for="patientSite">Site</label>
                         <select id="patientSite"></select>
                     </div>
-
                     <div class="bsots-form-group">
                         <label for="patientReason">Presenting Reason *</label>
-                        <select id="patientReason" required>
-                            <option value="">Select reason...</option>
-                        </select>
+                        <select id="patientReason" required><option value="">Select reason...</option></select>
                     </div>
-
                     <div class="bsots-form-group">
                         <label>Urgency Category *</label>
                         <div class="bsots-urgency-options" id="urgencyOptions">
@@ -138,12 +126,10 @@
                         </div>
                         <input type="hidden" id="patientUrgency" required>
                     </div>
-
                     <div class="bsots-form-group">
                         <label>Tasks (select applicable)</label>
                         <div class="bsots-form-tasks" id="taskChips"></div>
                     </div>
-
                     <div class="bsots-form-group">
                         <label for="patientNote">Initial Note (optional)</label>
                         <textarea id="patientNote" rows="2" placeholder="Brief note..."></textarea>
@@ -177,12 +163,8 @@
         </div>
     </div>
 
-    <!-- Urgency Change Dropdown (appended dynamically) -->
-
-    <!-- Firebase SDK -->
     <script type="module" src="firebase-init.js"></script>
 
-    <!-- Board Logic -->
     <script type="module">
         import {
             URGENCY_CATEGORIES, PRESENTING_REASONS, DEFAULT_SITES, DEFAULT_TASKS
@@ -190,42 +172,87 @@
 
         import {
             subscribeToEpisodes, addEpisode, updateEpisode,
-            changeUrgency, toggleTask, addNote,
+            changeUrgency, toggleTask, addNote, addTaskToEpisode,
             startTriage, completeTriage, completeReview, setOutcome,
-            checkAndUpdateBreaches, seedSites, seedTestEpisodes,
-            toDate
+            checkAndUpdateBreaches, toDate
         } from './js/bsots/firestore.js';
 
         import {
-            formatCountdown, formatTime, formatDateTime, getCountdownClass
+            formatCountdown, formatTime, formatDateTime, formatTimeInUnit,
+            getCountdownClass, getRemainingMs
         } from './js/bsots/countdown.js';
 
         // ─── State ──────────────────────────────────────────────────────────
         let currentSiteId = localStorage.getItem('bsots_site') || DEFAULT_SITES[0].id;
         let episodes = [];
+        let previousEpisodeIds = new Set();
+        let newEpisodeIds = new Map(); // id -> timestamp when first seen
         let unsubscribe = null;
-        let countdownInterval = null;
-        let breachCheckInterval = null;
+        let tickInterval = null;
+        let breachInterval = null;
         let filterUrgency = '';
         let filterReason = '';
+        let activeStatFilter = ''; // urgency filter from clicking stats
 
-        // ─── DOM References ─────────────────────────────────────────────────
-        const $siteTabs = document.getElementById('siteTabs');
-        const $statsBar = document.getElementById('statsBar');
-        const $boardTable = document.getElementById('boardTable');
-        const $boardBody = document.getElementById('boardBody');
-        const $loadingState = document.getElementById('loadingState');
-        const $emptyState = document.getElementById('emptyState');
-        const $errorState = document.getElementById('errorState');
-        const $errorMessage = document.getElementById('errorMessage');
-        const $filterUrgency = document.getElementById('filterUrgency');
-        const $filterReason = document.getElementById('filterReason');
-        const $addPatientBtn = document.getElementById('addPatientBtn');
-        const $addPatientModal = document.getElementById('addPatientModal');
-        const $addPatientForm = document.getElementById('addPatientForm');
-        const $notesModal = document.getElementById('notesModal');
+        // ─── DOM ────────────────────────────────────────────────────────────
+        const $ = id => document.getElementById(id);
+        const $siteTabs = $('siteTabs');
+        const $statsBar = $('statsBar');
+        const $boardTable = $('boardTable');
+        const $boardBody = $('boardBody');
+        const $loadingState = $('loadingState');
+        const $emptyState = $('emptyState');
+        const $errorState = $('errorState');
+        const $errorMessage = $('errorMessage');
+        const $filterUrgency = $('filterUrgency');
+        const $filterReason = $('filterReason');
+        const $addPatientModal = $('addPatientModal');
+        const $notesModal = $('notesModal');
 
-        // ─── Initialise ─────────────────────────────────────────────────────
+        // ─── Helpers ────────────────────────────────────────────────────────
+        function esc(str) {
+            if (!str) return '';
+            const d = document.createElement('div');
+            d.textContent = str;
+            return d.innerHTML;
+        }
+
+        function showToast(msg, type = 'success') {
+            const t = document.createElement('div');
+            t.className = `bsots-toast bsots-toast-${type}`;
+            t.textContent = msg;
+            document.body.appendChild(t);
+            setTimeout(() => t.remove(), 3000);
+        }
+
+        const URGENCY_ORDER = { RED: 3, ORANGE: 2, YELLOW: 1, GREEN: 0 };
+
+        function getStatusTag(ep) {
+            if (!ep.triageStartedAt) return { label: 'Awaiting Triage', cls: 'awaiting-triage' };
+            if (!ep.triageCompletedAt) return { label: 'In Triage', cls: 'in-triage' };
+            if (ep.investigationsRequestedAt && !ep.medicalReviewedAt) return { label: 'Awaiting Investigation', cls: 'awaiting-investigation' };
+            if (!ep.medicalReviewedAt) return { label: 'Awaiting Review', cls: 'awaiting-review' };
+            return { label: 'Awaiting Decision', cls: 'awaiting-decision' };
+        }
+
+        function getEscalationInfo(ep) {
+            const history = ep.urgencyHistory || [];
+            if (history.length === 0) return null;
+            const last = history[history.length - 1];
+            if ((URGENCY_ORDER[last.to] || 0) > (URGENCY_ORDER[last.from] || 0)) {
+                const time = last.changedAt ? formatTime(last.changedAt) : '';
+                return { from: last.from, time };
+            }
+            return null;
+        }
+
+        function isNewEpisode(epId) {
+            const firstSeen = newEpisodeIds.get(epId);
+            if (!firstSeen) return false;
+            return (Date.now() - firstSeen) < 30000;
+        }
+
+        // ─── Init ───────────────────────────────────────────────────────────
         function init() {
             renderSiteTabs();
             populateReasonFilter();
@@ -233,17 +260,15 @@
             setupFormListeners();
             setupFilterListeners();
             subscribeSite(currentSiteId);
-            startCountdownTicker();
+            startTick();
             startBreachChecker();
         }
 
         // ─── Site Tabs ──────────────────────────────────────────────────────
         function renderSiteTabs() {
             $siteTabs.innerHTML = DEFAULT_SITES.map(s =>
-                `<button class="bsots-site-tab ${s.id === currentSiteId ? 'active' : ''}"
-                         data-site="${s.id}">${s.shortName}</button>`
+                `<button class="bsots-site-tab ${s.id === currentSiteId ? 'active' : ''}" data-site="${s.id}">${s.shortName}</button>`
             ).join('');
-
             $siteTabs.querySelectorAll('.bsots-site-tab').forEach(btn => {
                 btn.addEventListener('click', () => {
                     currentSiteId = btn.dataset.site;
@@ -254,12 +279,19 @@
             });
         }
 
-        // ─── Subscribe to Episodes ──────────────────────────────────────────
+        // ─── Subscribe ──────────────────────────────────────────────────────
         function subscribeSite(siteId) {
             if (unsubscribe) unsubscribe();
             showLoading();
-
             unsubscribe = subscribeToEpisodes(siteId, 'pending', (data) => {
+                // Detect new arrivals
+                const currentIds = new Set(data.map(e => e.id));
+                data.forEach(ep => {
+                    if (!previousEpisodeIds.has(ep.id) && previousEpisodeIds.size > 0) {
+                        newEpisodeIds.set(ep.id, Date.now());
+                    }
+                });
+                previousEpisodeIds = currentIds;
                 episodes = data;
                 renderBoard();
                 renderStats();
@@ -272,15 +304,10 @@
         // ─── Render Board ───────────────────────────────────────────────────
         function renderBoard() {
             let filtered = episodes;
+            const effectiveUrgencyFilter = activeStatFilter || filterUrgency;
+            if (effectiveUrgencyFilter) filtered = filtered.filter(e => e.urgencyCategory === effectiveUrgencyFilter);
+            if (filterReason) filtered = filtered.filter(e => e.presentingReason === filterReason);
 
-            if (filterUrgency) {
-                filtered = filtered.filter(e => e.urgencyCategory === filterUrgency);
-            }
-            if (filterReason) {
-                filtered = filtered.filter(e => e.presentingReason === filterReason);
-            }
-
-            // Sort: nextDueAt ascending (most urgent first)
             filtered.sort((a, b) => {
                 const aMs = a.nextDueAt?.toMillis ? a.nextDueAt.toMillis() : 0;
                 const bMs = b.nextDueAt?.toMillis ? b.nextDueAt.toMillis() : 0;
@@ -296,165 +323,228 @@
             $boardTable.style.display = 'table';
             $emptyState.style.display = 'none';
 
-            $boardBody.innerHTML = filtered.map(ep => renderRow(ep)).join('');
+            const mostUrgentId = filtered[0]?.id;
+            $boardBody.innerHTML = filtered.map((ep, i) => renderRow(ep, i === 0, mostUrgentId)).join('');
             attachRowListeners();
         }
 
-        function renderRow(ep) {
+        function renderRow(ep, isMostUrgent) {
             const urgency = ep.urgencyCategory || 'GREEN';
             const countdown = formatCountdown(ep.nextDueAt);
             const isOverdue = countdown.isOverdue;
-            const rowClass = `bsots-row-${urgency}${isOverdue ? ' bsots-row-overdue' : ''}`;
-            const countdownClass = getCountdownClass(ep.nextDueAt);
+            const cdClass = getCountdownClass(ep.nextDueAt);
+            const status = getStatusTag(ep);
+            const escalation = getEscalationInfo(ep);
+            const isNew = isNewEpisode(ep.id);
 
+            let rowClasses = `bsots-row-${urgency}`;
+            if (isOverdue) rowClasses += ' bsots-row-overdue';
+            if (isMostUrgent) rowClasses += ' bsots-row-next-review';
+            if (isNew) rowClasses += ' bsots-row-new';
+
+            // Breach dots
             const breachDots = [];
-            if (ep.breachFlags?.triageDelay) breachDots.push('<span class="bsots-breach-indicator" title="Triage delay breach"></span>');
-            if (ep.breachFlags?.overdue) breachDots.push('<span class="bsots-breach-indicator" title="Overdue breach"></span>');
+            if (ep.breachFlags?.triageDelay) breachDots.push('<span class="bsots-breach-dot" title="Triage delay breach"></span>');
+            if (ep.breachFlags?.overdue) breachDots.push('<span class="bsots-breach-dot" title="Overdue breach"></span>');
 
-            const tasks = (ep.tasks || []).map(t =>
-                `<label class="bsots-task ${t.status === 'completed' ? 'bsots-task-completed' : ''}"
-                        data-episode="${ep.id}" data-task="${t.id}">
-                    <input type="checkbox" ${t.status === 'completed' ? 'checked' : ''}>
-                    ${escapeHtml(t.label)}
+            // Tasks
+            const tasks = ep.tasks || [];
+            const allDone = tasks.length > 0 && tasks.every(t => t.status === 'completed');
+            const taskHtml = tasks.map(t =>
+                `<label class="bsots-task ${t.status === 'completed' ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-task="${t.id}">
+                    <input type="checkbox" ${t.status === 'completed' ? 'checked' : ''}> ${esc(t.label)}
                 </label>`
-            ).join('');
+            ).join('') +
+            `<span class="bsots-task-add" data-ep="${ep.id}">+ add</span>` +
+            (allDone ? '<span class="bsots-tasks-done" title="All tasks complete">&#10003;</span>' : '');
 
-            const latestNote = (ep.notes || []).length > 0
-                ? ep.notes[ep.notes.length - 1]
-                : null;
+            // Notes
+            const notes = ep.notes || [];
+            const latestNote = notes.length > 0 ? notes[notes.length - 1] : null;
+            const isRecent = latestNote?.createdAt && (Date.now() - (latestNote.createdAt.toMillis ? latestNote.createdAt.toMillis() : 0)) < 300000;
+            const noteHtml = latestNote
+                ? `<span class="bsots-note-preview ${isRecent ? 'bsots-note-recent' : ''}" data-ep="${ep.id}" title="${esc(latestNote.text)}">${esc(latestNote.text)}</span><span class="bsots-note-count">(${notes.length})</span>`
+                : `<span class="bsots-note-add" data-ep="${ep.id}">+ note</span>`;
 
-            const notePreview = latestNote
-                ? `<span class="bsots-note-preview" data-episode="${ep.id}" title="Click to view all notes">${escapeHtml(latestNote.text)}</span>
-                   <span class="bsots-note-count">(${ep.notes.length})</span>`
-                : `<span class="bsots-note-preview" data-episode="${ep.id}" style="color:var(--text-muted);">Add note</span>`;
+            // Escalation arrow
+            const escHtml = escalation ? `<span class="bsots-escalation" title="Escalated from ${escalation.from} at ${escalation.time}">&uarr;</span>` : '';
 
-            return `<tr class="${rowClass}" data-episode-id="${ep.id}">
-                <td><strong>${escapeHtml(ep.initials || '--')}</strong> ${breachDots.join('')}</td>
-                <td>${escapeHtml(ep.hospitalNumber || '--')}</td>
-                <td>${escapeHtml(getSiteShortName(ep.siteId))}</td>
-                <td>${formatTime(ep.arrivalAt)}</td>
-                <td>${escapeHtml(ep.presentingReason || '--')}</td>
-                <td><span class="bsots-urgency-badge bsots-urgency-${urgency}">${urgency}</span></td>
-                <td>${formatTime(ep.nextDueAt)}</td>
+            return `<tr class="${rowClasses}" data-episode-id="${ep.id}">
+                <td><span class="bsots-status-tag bsots-status-${status.cls}">${status.label}</span></td>
                 <td>
-                    <span class="bsots-countdown ${countdownClass}" data-next-due="${ep.nextDueAt?.toMillis ? ep.nextDueAt.toMillis() : ''}" data-ep-id="${ep.id}">
-                        ${countdown.text}
-                    </span>
-                    ${isOverdue ? '<span class="bsots-overdue-label">OVERDUE</span>' : ''}
+                    <strong>${esc(ep.initials || '--')}</strong>${breachDots.join('')}${isMostUrgent ? '<span class="bsots-next-badge">Next</span>' : ''}${isNew ? '<span class="bsots-new-badge">NEW</span>' : ''}
                 </td>
-                <td><div class="bsots-tasks">${tasks || '<span style="color:var(--text-muted);font-size:12px;">--</span>'}</div></td>
-                <td>${notePreview}</td>
-                <td style="font-size:12px;color:var(--text-muted);">${escapeHtml(ep.assignedClinician || '--')}</td>
-                <td style="font-size:12px;color:var(--text-muted);">${ep.meows || '--'}</td>
+                <td>${esc(ep.hospitalNumber || '--')}</td>
                 <td>
-                    <div class="bsots-actions">
-                        <button class="bsots-btn bsots-btn-sm" data-action="change-urgency" data-episode="${ep.id}" title="Change urgency">Urgency</button>
-                        <button class="bsots-btn bsots-btn-sm" data-action="review" data-episode="${ep.id}" title="Record review">Review</button>
-                        <button class="bsots-btn bsots-btn-sm" data-action="outcome" data-episode="${ep.id}" title="Set outcome">Outcome</button>
+                    <div class="bsots-time-stacked">
+                        <div><span class="bsots-time-label">Arr</span> <span class="bsots-time-value">${formatTime(ep.arrivalAt)}</span></div>
+                        <div><span class="bsots-time-label">Due</span> <span class="bsots-time-value">${formatTime(ep.nextDueAt)}</span></div>
                     </div>
                 </td>
+                <td><span class="bsots-tiu" data-arrival="${ep.arrivalAt?.toMillis ? ep.arrivalAt.toMillis() : ''}">${formatTimeInUnit(ep.arrivalAt)}</span></td>
+                <td>${esc(ep.presentingReason || '--')}</td>
+                <td>
+                    <span class="bsots-urgency-badge bsots-urgency-${urgency}" data-ep="${ep.id}" title="Click to change urgency">${urgency}</span>
+                    ${escHtml}
+                </td>
+                <td>
+                    <span class="bsots-countdown ${cdClass}" data-next-due="${ep.nextDueAt?.toMillis ? ep.nextDueAt.toMillis() : ''}" data-ep="${ep.id}" title="Click to record review">
+                        ${countdown.text}
+                    </span>
+                    ${isOverdue ? '<span class="bsots-overdue-badge">OVERDUE</span>' : ''}
+                </td>
+                <td><div class="bsots-tasks">${taskHtml}</div></td>
+                <td class="bsots-note-cell">${noteHtml}</td>
+                <td><button class="bsots-menu-trigger" data-ep="${ep.id}" title="Actions">&bull;&bull;&bull;</button></td>
             </tr>`;
         }
 
-        // ─── Row Event Listeners ────────────────────────────────────────────
+        // ─── Row Listeners ──────────────────────────────────────────────────
         function attachRowListeners() {
             // Task toggles
             $boardBody.querySelectorAll('.bsots-task input[type="checkbox"]').forEach(cb => {
                 cb.addEventListener('change', async (e) => {
                     const label = e.target.closest('.bsots-task');
-                    const episodeId = label.dataset.episode;
-                    const taskId = label.dataset.task;
-                    const episode = episodes.find(ep => ep.id === episodeId);
-                    if (episode) {
-                        try {
-                            await toggleTask(episodeId, episode, taskId, '');
-                        } catch (err) {
-                            showToast('Failed to update task', 'error');
-                        }
+                    const ep = episodes.find(x => x.id === label.dataset.ep);
+                    if (ep) {
+                        try { await toggleTask(label.dataset.ep, ep, label.dataset.task, ''); }
+                        catch { showToast('Failed to update task', 'error'); }
                     }
                 });
             });
 
-            // Note preview clicks -> open notes modal
-            $boardBody.querySelectorAll('.bsots-note-preview').forEach(el => {
-                el.addEventListener('click', () => openNotesModal(el.dataset.episode));
+            // Inline task add
+            $boardBody.querySelectorAll('.bsots-task-add').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    if (el.querySelector('input')) return;
+                    const input = document.createElement('input');
+                    input.className = 'bsots-task-add-input';
+                    input.placeholder = 'Task name';
+                    input.addEventListener('keydown', async (ev) => {
+                        if (ev.key === 'Enter' && input.value.trim()) {
+                            const ep = episodes.find(x => x.id === el.dataset.ep);
+                            if (ep) {
+                                try { await addTaskToEpisode(el.dataset.ep, ep, input.value.trim(), ''); showToast('Task added', 'success'); }
+                                catch { showToast('Failed to add task', 'error'); }
+                            }
+                        }
+                        if (ev.key === 'Escape') input.remove();
+                    });
+                    input.addEventListener('blur', () => setTimeout(() => input.remove(), 200));
+                    el.textContent = '';
+                    el.appendChild(input);
+                    input.focus();
+                });
             });
 
-            // Action buttons
-            $boardBody.querySelectorAll('[data-action="change-urgency"]').forEach(btn => {
-                btn.addEventListener('click', (e) => showUrgencyDropdown(e, btn.dataset.episode));
+            // Note clicks -> open modal
+            $boardBody.querySelectorAll('.bsots-note-preview, .bsots-note-add').forEach(el => {
+                el.addEventListener('click', () => openNotesModal(el.dataset.ep));
             });
 
-            $boardBody.querySelectorAll('[data-action="review"]').forEach(btn => {
-                btn.addEventListener('click', () => handleReview(btn.dataset.episode));
+            // Urgency badge click -> dropdown
+            $boardBody.querySelectorAll('.bsots-urgency-badge').forEach(badge => {
+                badge.addEventListener('click', (e) => showUrgencyDropdown(e, badge.dataset.ep));
             });
 
-            $boardBody.querySelectorAll('[data-action="outcome"]').forEach(btn => {
-                btn.addEventListener('click', (e) => showOutcomeDropdown(e, btn.dataset.episode));
+            // Countdown click -> review action
+            $boardBody.querySelectorAll('.bsots-countdown').forEach(el => {
+                el.addEventListener('click', () => handleReview(el.dataset.ep));
+            });
+
+            // ••• menu
+            $boardBody.querySelectorAll('.bsots-menu-trigger').forEach(btn => {
+                btn.addEventListener('click', (e) => showContextMenu(e, btn.dataset.ep));
             });
         }
 
-        // ─── Countdown Ticker ───────────────────────────────────────────────
-        function startCountdownTicker() {
-            if (countdownInterval) clearInterval(countdownInterval);
-            countdownInterval = setInterval(() => {
+        // ─── Tick (countdown + time-in-unit) ────────────────────────────────
+        function startTick() {
+            if (tickInterval) clearInterval(tickInterval);
+            tickInterval = setInterval(() => {
+                // Countdowns
                 document.querySelectorAll('.bsots-countdown[data-next-due]').forEach(el => {
                     const dueMs = parseInt(el.dataset.nextDue);
                     if (!dueMs) return;
-
-                    // Create a mock timestamp-like object for formatCountdown
-                    const mockTs = { toMillis: () => dueMs };
-                    const cd = formatCountdown(mockTs);
-                    const cdClass = getCountdownClass(mockTs);
-
+                    const mock = { toMillis: () => dueMs };
+                    const cd = formatCountdown(mock);
                     el.textContent = cd.text;
-                    el.className = `bsots-countdown ${cdClass}`;
-
-                    // Update overdue label
+                    el.className = `bsots-countdown ${getCountdownClass(mock)}`;
                     const row = el.closest('tr');
                     if (row) {
-                        const existingLabel = row.querySelector('.bsots-overdue-label');
-                        if (cd.isOverdue && !existingLabel) {
-                            el.insertAdjacentHTML('afterend', '<span class="bsots-overdue-label">OVERDUE</span>');
+                        const badge = row.querySelector('.bsots-overdue-badge');
+                        if (cd.isOverdue && !badge) {
+                            el.insertAdjacentHTML('afterend', '<span class="bsots-overdue-badge">OVERDUE</span>');
                             row.classList.add('bsots-row-overdue');
                         }
                     }
                 });
+                // Time in unit
+                document.querySelectorAll('.bsots-tiu[data-arrival]').forEach(el => {
+                    const arrMs = parseInt(el.dataset.arrival);
+                    if (!arrMs) return;
+                    const mock = { toMillis: () => arrMs };
+                    el.textContent = formatTimeInUnit(mock);
+                });
+                // Clean up expired NEW badges
+                for (const [id, ts] of newEpisodeIds) {
+                    if (Date.now() - ts > 30000) newEpisodeIds.delete(id);
+                }
             }, 1000);
         }
 
         // ─── Breach Checker ─────────────────────────────────────────────────
         function startBreachChecker() {
-            if (breachCheckInterval) clearInterval(breachCheckInterval);
-            breachCheckInterval = setInterval(() => {
+            if (breachInterval) clearInterval(breachInterval);
+            breachInterval = setInterval(() => {
                 episodes.forEach(ep => {
-                    if (ep.status === 'pending') {
-                        checkAndUpdateBreaches(ep.id, ep).catch(() => {});
-                    }
+                    if (ep.status === 'pending') checkAndUpdateBreaches(ep.id, ep).catch(() => {});
                 });
-            }, 30000); // Check every 30 seconds
+            }, 30000);
         }
 
-        // ─── Stats Bar ─────────────────────────────────────────────────────
+        // ─── Stats (clickable) ──────────────────────────────────────────────
         function renderStats() {
             const counts = { RED: 0, ORANGE: 0, YELLOW: 0, GREEN: 0 };
+            let overdueCount = 0;
             episodes.forEach(ep => {
-                if (counts.hasOwnProperty(ep.urgencyCategory)) {
-                    counts[ep.urgencyCategory]++;
-                }
+                if (counts.hasOwnProperty(ep.urgencyCategory)) counts[ep.urgencyCategory]++;
+                if (getRemainingMs(ep.nextDueAt) <= 0) overdueCount++;
             });
 
-            $statsBar.innerHTML = Object.entries(counts).map(([cat, count]) =>
-                `<span class="bsots-stat bsots-stat-${cat.toLowerCase()}">${cat}: ${count}</span>`
-            ).join('');
+            let html = Object.entries(counts).map(([cat, count]) => {
+                const isActive = activeStatFilter === cat;
+                return `<span class="bsots-stat bsots-stat-${cat.toLowerCase()} ${isActive ? 'active' : ''}" data-filter="${cat}">${cat}: ${count}</span>`;
+            }).join('');
+
+            if (overdueCount > 0) {
+                const isActive = activeStatFilter === 'OVERDUE';
+                html += `<span class="bsots-stat bsots-stat-overdue ${isActive ? 'active' : ''}" data-filter="OVERDUE">OVERDUE: ${overdueCount}</span>`;
+            }
+
+            $statsBar.innerHTML = html;
+
+            $statsBar.querySelectorAll('.bsots-stat').forEach(stat => {
+                stat.addEventListener('click', () => {
+                    const f = stat.dataset.filter;
+                    if (activeStatFilter === f) {
+                        activeStatFilter = '';
+                    } else {
+                        activeStatFilter = f;
+                    }
+                    $filterUrgency.value = '';
+                    filterUrgency = '';
+                    renderBoard();
+                    renderStats();
+                });
+            });
         }
 
-        // ─── Filter Listeners ───────────────────────────────────────────────
+        // ─── Filters ────────────────────────────────────────────────────────
         function populateReasonFilter() {
             PRESENTING_REASONS.forEach(r => {
                 const opt = document.createElement('option');
-                opt.value = r;
-                opt.textContent = r;
+                opt.value = r; opt.textContent = r;
                 $filterReason.appendChild(opt);
             });
         }
@@ -462,7 +552,9 @@
         function setupFilterListeners() {
             $filterUrgency.addEventListener('change', () => {
                 filterUrgency = $filterUrgency.value;
+                activeStatFilter = '';
                 renderBoard();
+                renderStats();
             });
             $filterReason.addEventListener('change', () => {
                 filterReason = $filterReason.value;
@@ -472,341 +564,232 @@
 
         // ─── Add Patient ────────────────────────────────────────────────────
         function populateFormSelects() {
-            // Sites
-            const $patientSite = document.getElementById('patientSite');
+            const $site = $('patientSite');
             DEFAULT_SITES.forEach(s => {
                 const opt = document.createElement('option');
                 opt.value = s.id;
                 opt.textContent = s.shortName + ' - ' + s.name;
                 if (s.id === currentSiteId) opt.selected = true;
-                $patientSite.appendChild(opt);
+                $site.appendChild(opt);
             });
-
-            // Reasons
-            const $patientReason = document.getElementById('patientReason');
+            const $reason = $('patientReason');
             PRESENTING_REASONS.forEach(r => {
                 const opt = document.createElement('option');
-                opt.value = r;
-                opt.textContent = r;
-                $patientReason.appendChild(opt);
+                opt.value = r; opt.textContent = r;
+                $reason.appendChild(opt);
             });
-
-            // Task chips
-            const $taskChips = document.getElementById('taskChips');
-            DEFAULT_TASKS.forEach((t, i) => {
+            const $chips = $('taskChips');
+            DEFAULT_TASKS.forEach(t => {
                 const chip = document.createElement('div');
                 chip.className = 'bsots-form-task-chip selected';
                 chip.dataset.label = t.label;
                 chip.textContent = t.label;
                 chip.addEventListener('click', () => chip.classList.toggle('selected'));
-                $taskChips.appendChild(chip);
+                $chips.appendChild(chip);
             });
         }
 
         function setupFormListeners() {
-            // Urgency selector buttons
             document.querySelectorAll('.bsots-urgency-option').forEach(opt => {
                 opt.addEventListener('click', () => {
                     document.querySelectorAll('.bsots-urgency-option').forEach(o => o.classList.remove('selected'));
                     opt.classList.add('selected');
-                    document.getElementById('patientUrgency').value = opt.dataset.urgency;
+                    $('patientUrgency').value = opt.dataset.urgency;
                 });
             });
-
-            // Open modal
-            $addPatientBtn.addEventListener('click', () => {
+            $('addPatientBtn').addEventListener('click', () => {
                 $addPatientModal.style.display = 'flex';
-                // Default site to current
-                document.getElementById('patientSite').value = currentSiteId;
-                document.getElementById('patientInitials').focus();
+                $('patientSite').value = currentSiteId;
+                $('patientInitials').focus();
             });
-
-            // Close modal
-            document.getElementById('closeAddModal').addEventListener('click', closeAddModal);
-            document.getElementById('cancelAddBtn').addEventListener('click', closeAddModal);
-            $addPatientModal.addEventListener('click', (e) => {
-                if (e.target === $addPatientModal) closeAddModal();
-            });
-
-            // Submit
-            document.getElementById('submitAddBtn').addEventListener('click', handleAddPatient);
+            $('closeAddModal').addEventListener('click', closeAddModal);
+            $('cancelAddBtn').addEventListener('click', closeAddModal);
+            $addPatientModal.addEventListener('click', e => { if (e.target === $addPatientModal) closeAddModal(); });
+            $('submitAddBtn').addEventListener('click', handleAddPatient);
         }
 
         function closeAddModal() {
             $addPatientModal.style.display = 'none';
-            $addPatientForm.reset();
+            $('addPatientForm').reset();
             document.querySelectorAll('.bsots-urgency-option').forEach(o => o.classList.remove('selected'));
-            document.getElementById('patientUrgency').value = '';
+            $('patientUrgency').value = '';
         }
 
         async function handleAddPatient() {
-            const initials = document.getElementById('patientInitials').value.trim();
-            const hospitalNumber = document.getElementById('patientHospNum').value.trim();
-            const siteId = document.getElementById('patientSite').value;
-            const presentingReason = document.getElementById('patientReason').value;
-            const urgencyCategory = document.getElementById('patientUrgency').value;
-            const initialNote = document.getElementById('patientNote').value.trim();
-
+            const initials = $('patientInitials').value.trim();
+            const hospitalNumber = $('patientHospNum').value.trim();
+            const siteId = $('patientSite').value;
+            const presentingReason = $('patientReason').value;
+            const urgencyCategory = $('patientUrgency').value;
+            const initialNote = $('patientNote').value.trim();
             if (!initials || !hospitalNumber || !presentingReason || !urgencyCategory) {
-                showToast('Please fill in all required fields', 'error');
-                return;
+                showToast('Please fill in all required fields', 'error'); return;
             }
-
             const selectedTasks = [];
-            document.querySelectorAll('.bsots-form-task-chip.selected').forEach(chip => {
-                selectedTasks.push({ label: chip.dataset.label });
-            });
-
+            document.querySelectorAll('.bsots-form-task-chip.selected').forEach(c => selectedTasks.push({ label: c.dataset.label }));
             try {
-                await addEpisode({
-                    siteId,
-                    initials,
-                    hospitalNumber,
-                    presentingReason,
-                    urgencyCategory,
-                    tasks: selectedTasks,
-                    initialNote: initialNote || null
-                });
+                await addEpisode({ siteId, initials, hospitalNumber, presentingReason, urgencyCategory, tasks: selectedTasks, initialNote: initialNote || null });
                 closeAddModal();
                 showToast('Patient added to triage board', 'success');
             } catch (err) {
-                console.error('[BSOTs] Add patient error:', err);
                 showToast('Failed to add patient: ' + err.message, 'error');
             }
         }
 
-        // ─── Change Urgency ─────────────────────────────────────────────────
+        // ─── Urgency Dropdown ───────────────────────────────────────────────
         function showUrgencyDropdown(event, episodeId) {
-            // Remove any existing dropdown
-            removeDropdowns();
-
-            const episode = episodes.find(ep => ep.id === episodeId);
+            removeMenus();
+            const episode = episodes.find(e => e.id === episodeId);
             if (!episode) return;
-
-            const dropdown = document.createElement('div');
-            dropdown.className = 'bsots-urgency-dropdown';
-            dropdown.id = 'urgencyDropdown';
-
+            const dd = document.createElement('div');
+            dd.className = 'bsots-urgency-dropdown';
             Object.entries(URGENCY_CATEGORIES).forEach(([key, cfg]) => {
-                if (key === episode.urgencyCategory) return; // Skip current
+                if (key === episode.urgencyCategory) return;
                 const item = document.createElement('div');
                 item.className = 'bsots-urgency-dropdown-item';
                 item.innerHTML = `<span class="bsots-urgency-dot" style="background:${cfg.color}"></span> ${key} (${cfg.description})`;
                 item.addEventListener('click', async () => {
-                    try {
-                        await changeUrgency(episodeId, episode, key, '');
-                        showToast(`Urgency changed to ${key}`, 'success');
-                    } catch (err) {
-                        showToast('Failed to change urgency', 'error');
-                    }
-                    removeDropdowns();
+                    try { await changeUrgency(episodeId, episode, key, ''); showToast(`Urgency changed to ${key}`, 'success'); }
+                    catch { showToast('Failed to change urgency', 'error'); }
+                    removeMenus();
                 });
-                dropdown.appendChild(item);
+                dd.appendChild(item);
             });
-
-            // Position near button
-            const rect = event.target.getBoundingClientRect();
-            dropdown.style.position = 'fixed';
-            dropdown.style.top = (rect.bottom + 4) + 'px';
-            dropdown.style.left = rect.left + 'px';
-            document.body.appendChild(dropdown);
-
-            // Close on outside click
-            setTimeout(() => {
-                document.addEventListener('click', handleDropdownClose, { once: true });
-            }, 0);
+            positionMenu(dd, event.target);
+            document.body.appendChild(dd);
+            setTimeout(() => document.addEventListener('click', onOutsideClick, { once: true }), 0);
         }
 
-        function showOutcomeDropdown(event, episodeId) {
-            removeDropdowns();
+        // ─── Context Menu (•••) ─────────────────────────────────────────────
+        function showContextMenu(event, episodeId) {
+            removeMenus();
+            const ep = episodes.find(e => e.id === episodeId);
+            if (!ep) return;
+            const menu = document.createElement('div');
+            menu.className = 'bsots-context-menu';
 
-            const episode = episodes.find(ep => ep.id === episodeId);
-            if (!episode) return;
+            // Review actions
+            const reviewItems = [];
+            if (!ep.triageStartedAt) reviewItems.push({ label: 'Start Triage', action: () => startTriage(episodeId, ep) });
+            if (ep.triageStartedAt && !ep.triageCompletedAt) reviewItems.push({ label: 'Complete Triage', action: () => completeTriage(episodeId, ep) });
+            if (!ep.medicalReviewedAt) reviewItems.push({ label: 'Medical Review Done', action: () => completeReview(episodeId, ep) });
 
-            const dropdown = document.createElement('div');
-            dropdown.className = 'bsots-urgency-dropdown';
-            dropdown.id = 'outcomeDropdown';
+            if (reviewItems.length) {
+                menu.innerHTML += '<div class="bsots-context-menu-sub">Review</div>';
+                reviewItems.forEach(ri => {
+                    const item = document.createElement('div');
+                    item.className = 'bsots-context-menu-item';
+                    item.textContent = ri.label;
+                    item.addEventListener('click', async () => {
+                        try { await ri.action(); showToast(ri.label + ' recorded', 'success'); }
+                        catch { showToast('Failed', 'error'); }
+                        removeMenus();
+                    });
+                    menu.appendChild(item);
+                });
+            }
 
+            // Outcome
+            menu.innerHTML += '<div class="bsots-context-menu-divider"></div><div class="bsots-context-menu-sub">Outcome</div>';
             [
                 { value: 'admitted', label: 'Admit', color: '#fd7e14' },
                 { value: 'discharged', label: 'Discharge Home', color: '#28a745' },
                 { value: 'transferred', label: 'Transfer', color: '#17a2b8' }
-            ].forEach(opt => {
+            ].forEach(o => {
                 const item = document.createElement('div');
-                item.className = 'bsots-urgency-dropdown-item';
-                item.innerHTML = `<span class="bsots-urgency-dot" style="background:${opt.color}"></span> ${opt.label}`;
+                item.className = 'bsots-context-menu-item';
+                item.innerHTML = `<span class="bsots-urgency-dot" style="background:${o.color}"></span> ${o.label}`;
                 item.addEventListener('click', async () => {
-                    if (confirm(`Set outcome to "${opt.label}" for ${episode.initials}? This will remove them from the board.`)) {
-                        try {
-                            await setOutcome(episodeId, episode, opt.value);
-                            showToast(`${episode.initials} - ${opt.label}`, 'success');
-                        } catch (err) {
-                            showToast('Failed to set outcome', 'error');
-                        }
+                    if (confirm(`Set outcome to "${o.label}" for ${ep.initials}?`)) {
+                        try { await setOutcome(episodeId, ep, o.value); showToast(`${ep.initials} - ${o.label}`, 'success'); }
+                        catch { showToast('Failed to set outcome', 'error'); }
                     }
-                    removeDropdowns();
+                    removeMenus();
                 });
-                dropdown.appendChild(item);
+                menu.appendChild(item);
             });
 
-            const rect = event.target.getBoundingClientRect();
-            dropdown.style.position = 'fixed';
-            dropdown.style.top = (rect.bottom + 4) + 'px';
-            dropdown.style.left = rect.left + 'px';
-            document.body.appendChild(dropdown);
-
-            setTimeout(() => {
-                document.addEventListener('click', handleDropdownClose, { once: true });
-            }, 0);
+            positionMenu(menu, event.target);
+            document.body.appendChild(menu);
+            setTimeout(() => document.addEventListener('click', onOutsideClick, { once: true }), 0);
         }
 
-        function handleDropdownClose(e) {
-            const dd = document.querySelector('.bsots-urgency-dropdown');
-            if (dd && !dd.contains(e.target)) {
-                removeDropdowns();
-            }
-        }
-
-        function removeDropdowns() {
-            document.querySelectorAll('.bsots-urgency-dropdown').forEach(el => el.remove());
-        }
-
-        // ─── Review ─────────────────────────────────────────────────────────
+        // ─── Review (countdown click) ───────────────────────────────────────
         async function handleReview(episodeId) {
-            const episode = episodes.find(ep => ep.id === episodeId);
-            if (!episode) return;
-
-            const actions = [];
-            if (!episode.triageStartedAt) actions.push('Start Triage');
-            if (episode.triageStartedAt && !episode.triageCompletedAt) actions.push('Complete Triage');
-            if (!episode.medicalReviewedAt) actions.push('Medical Review Done');
-
-            if (actions.length === 0) {
-                showToast('All reviews already completed for this patient', 'success');
-                return;
-            }
-
-            const action = actions.length === 1
-                ? actions[0]
-                : prompt(`Select action:\n${actions.map((a, i) => `${i + 1}. ${a}`).join('\n')}\n\nEnter number:`);
-
-            if (!action) return;
-
-            const selected = typeof action === 'string' && /^\d+$/.test(action.trim())
-                ? actions[parseInt(action.trim()) - 1]
-                : action;
-
-            try {
-                if (selected === 'Start Triage') {
-                    await startTriage(episodeId, episode);
-                    showToast('Triage started', 'success');
-                } else if (selected === 'Complete Triage') {
-                    await completeTriage(episodeId, episode);
-                    showToast('Triage completed', 'success');
-                } else if (selected === 'Medical Review Done') {
-                    await completeReview(episodeId, episode);
-                    showToast('Medical review recorded', 'success');
-                }
-            } catch (err) {
-                showToast('Failed to record review', 'error');
-            }
+            const ep = episodes.find(e => e.id === episodeId);
+            if (!ep) return;
+            let action, label;
+            if (!ep.triageStartedAt) { action = () => startTriage(episodeId, ep); label = 'Triage started'; }
+            else if (!ep.triageCompletedAt) { action = () => completeTriage(episodeId, ep); label = 'Triage completed'; }
+            else if (!ep.medicalReviewedAt) { action = () => completeReview(episodeId, ep); label = 'Medical review recorded'; }
+            else { showToast('All reviews completed', 'success'); return; }
+            try { await action(); showToast(label, 'success'); }
+            catch { showToast('Failed to record review', 'error'); }
         }
 
         // ─── Notes Modal ────────────────────────────────────────────────────
-        let currentNotesEpisodeId = null;
+        let currentNotesEpId = null;
 
-        function openNotesModal(episodeId) {
-            currentNotesEpisodeId = episodeId;
-            const episode = episodes.find(ep => ep.id === episodeId);
-            if (!episode) return;
-
-            document.getElementById('notesPatientLabel').textContent =
-                `${episode.initials} (${episode.hospitalNumber})`;
-
-            const $list = document.getElementById('notesList');
-            const notes = episode.notes || [];
+        function openNotesModal(epId) {
+            currentNotesEpId = epId;
+            const ep = episodes.find(e => e.id === epId);
+            if (!ep) return;
+            $('notesPatientLabel').textContent = `${ep.initials} (${ep.hospitalNumber})`;
+            const notes = ep.notes || [];
+            const $list = $('notesList');
             if (notes.length === 0) {
                 $list.innerHTML = '<p style="color:var(--text-muted);font-size:13px;">No notes yet.</p>';
             } else {
-                $list.innerHTML = notes.map(n =>
-                    `<div class="bsots-note-item">
-                        <p>${escapeHtml(n.text)}</p>
-                        <div class="bsots-note-meta">${formatDateTime(n.createdAt)}${n.createdBy ? ' - ' + escapeHtml(n.createdBy) : ''}</div>
-                    </div>`
-                ).join('');
+                const fiveMinAgo = Date.now() - 300000;
+                $list.innerHTML = notes.map(n => {
+                    const ts = n.createdAt?.toMillis ? n.createdAt.toMillis() : 0;
+                    const recent = ts > fiveMinAgo;
+                    const by = n.createdBy ? n.createdBy.split(' ').map(w => w[0]).join('').toUpperCase() : '';
+                    return `<div class="bsots-note-item ${recent ? 'bsots-note-item-recent' : ''}">
+                        <p>${esc(n.text)}</p>
+                        <div class="bsots-note-meta">${formatDateTime(n.createdAt)}${by ? ' - ' + by : ''}</div>
+                    </div>`;
+                }).join('');
             }
-
-            document.getElementById('newNoteText').value = '';
+            $('newNoteText').value = '';
             $notesModal.style.display = 'flex';
         }
 
-        function closeNotesModal() {
-            $notesModal.style.display = 'none';
-            currentNotesEpisodeId = null;
-        }
+        function closeNotesModal() { $notesModal.style.display = 'none'; currentNotesEpId = null; }
 
-        document.getElementById('closeNotesModal').addEventListener('click', closeNotesModal);
-        document.getElementById('cancelNotesBtn').addEventListener('click', closeNotesModal);
-        $notesModal.addEventListener('click', (e) => {
-            if (e.target === $notesModal) closeNotesModal();
+        $('closeNotesModal').addEventListener('click', closeNotesModal);
+        $('cancelNotesBtn').addEventListener('click', closeNotesModal);
+        $notesModal.addEventListener('click', e => { if (e.target === $notesModal) closeNotesModal(); });
+
+        $('submitNoteBtn').addEventListener('click', async () => {
+            const text = $('newNoteText').value.trim();
+            if (!text || !currentNotesEpId) return;
+            const ep = episodes.find(e => e.id === currentNotesEpId);
+            if (!ep) return;
+            try { await addNote(currentNotesEpId, ep, text, ''); showToast('Note added', 'success'); openNotesModal(currentNotesEpId); }
+            catch { showToast('Failed to add note', 'error'); }
         });
 
-        document.getElementById('submitNoteBtn').addEventListener('click', async () => {
-            const text = document.getElementById('newNoteText').value.trim();
-            if (!text || !currentNotesEpisodeId) return;
-
-            const episode = episodes.find(ep => ep.id === currentNotesEpisodeId);
-            if (!episode) return;
-
-            try {
-                await addNote(currentNotesEpisodeId, episode, text, '');
-                showToast('Note added', 'success');
-                openNotesModal(currentNotesEpisodeId); // Refresh
-            } catch (err) {
-                showToast('Failed to add note', 'error');
-            }
-        });
-
-        // ─── UI Helpers ─────────────────────────────────────────────────────
-        function showLoading() {
-            $loadingState.style.display = 'flex';
-            $boardTable.style.display = 'none';
-            $emptyState.style.display = 'none';
-            $errorState.style.display = 'none';
+        // ─── Menu Helpers ───────────────────────────────────────────────────
+        function positionMenu(menu, target) {
+            const rect = target.getBoundingClientRect();
+            menu.style.top = (rect.bottom + 4) + 'px';
+            menu.style.left = Math.min(rect.left, window.innerWidth - 200) + 'px';
         }
 
-        function hideLoading() {
-            $loadingState.style.display = 'none';
-            $errorState.style.display = 'none';
+        function removeMenus() {
+            document.querySelectorAll('.bsots-urgency-dropdown, .bsots-context-menu').forEach(el => el.remove());
         }
 
-        function showError(msg) {
-            $loadingState.style.display = 'none';
-            $boardTable.style.display = 'none';
-            $emptyState.style.display = 'none';
-            $errorState.style.display = 'block';
-            $errorMessage.textContent = msg;
+        function onOutsideClick(e) {
+            const m = document.querySelector('.bsots-urgency-dropdown, .bsots-context-menu');
+            if (m && !m.contains(e.target)) removeMenus();
         }
 
-        function getSiteShortName(siteId) {
-            const site = DEFAULT_SITES.find(s => s.id === siteId);
-            return site ? site.shortName : siteId || '--';
-        }
-
-        function escapeHtml(str) {
-            if (!str) return '';
-            const div = document.createElement('div');
-            div.textContent = str;
-            return div.innerHTML;
-        }
-
-        function showToast(message, type = 'success') {
-            const toast = document.createElement('div');
-            toast.className = `bsots-toast bsots-toast-${type}`;
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
+        // ─── UI State ───────────────────────────────────────────────────────
+        function showLoading() { $loadingState.style.display = 'flex'; $boardTable.style.display = 'none'; $emptyState.style.display = 'none'; $errorState.style.display = 'none'; }
+        function hideLoading() { $loadingState.style.display = 'none'; $errorState.style.display = 'none'; }
+        function showError(msg) { $loadingState.style.display = 'none'; $boardTable.style.display = 'none'; $emptyState.style.display = 'none'; $errorState.style.display = 'block'; $errorMessage.textContent = msg; }
 
         // ─── Start ──────────────────────────────────────────────────────────
         init();
