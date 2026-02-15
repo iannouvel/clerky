@@ -23,12 +23,12 @@ export const PRESENTING_REASONS = [
     'Postnatal'
 ];
 
-// 4 Birmingham maternity sites
+// 4 UHSussex maternity sites
 export const DEFAULT_SITES = [
-    { id: 'bwh',  name: "Birmingham Women's Hospital", shortName: 'BWH' },
-    { id: 'hh',   name: 'Heartlands Hospital',         shortName: 'HH' },
-    { id: 'ghh',  name: 'Good Hope Hospital',           shortName: 'GHH' },
-    { id: 'sh',   name: 'Solihull Hospital',             shortName: 'SH' }
+    { id: 'prh',        name: 'Princess Royal Hospital',      shortName: 'PRH' },
+    { id: 'rsch',       name: 'Royal Sussex County Hospital',  shortName: 'RSCH' },
+    { id: 'worthing',   name: 'Worthing Hospital',             shortName: 'Worthing' },
+    { id: 'chichester', name: 'St Richards Hospital',          shortName: 'Chichester' }
 ];
 
 // Default task templates for new episodes
