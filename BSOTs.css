@@ -203,9 +203,7 @@
 .bsots-board { width: 100%; border-collapse: separate; border-spacing: 0 3px; }
 
 .bsots-board thead {
-    position: sticky;
-    top: calc(var(--bsots-header-height) + 42px);
-    z-index: 50;
+    background: var(--bg-primary);
 }
 
 .bsots-board thead th {
