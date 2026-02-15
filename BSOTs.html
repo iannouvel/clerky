@@ -78,7 +78,7 @@
 
     <!-- Add Patient Modal -->
     <div class="bsots-modal-overlay" id="addPatientModal" style="display:none;">
-        <div class="bsots-modal">
+        <div class="bsots-modal bsots-modal-wide">
             <div class="bsots-modal-header">
                 <h2>Add Patient to Triage</h2>
                 <button class="bsots-modal-close" id="closeAddModal">&times;</button>
@@ -95,41 +95,38 @@
                             <label for="patientHospNum">Hospital Number *</label>
                             <input type="text" id="patientHospNum" required placeholder="e.g. H123456" autocomplete="off">
                         </div>
-                    </div>
-                    <div class="bsots-form-group">
-                        <label for="patientSite">Site</label>
-                        <select id="patientSite"></select>
+                        <div class="bsots-form-group">
+                            <label for="patientSite">Site</label>
+                            <select id="patientSite"></select>
+                        </div>
                     </div>
                     <div class="bsots-form-group">
                         <label for="patientReason">Presenting Reason *</label>
                         <select id="patientReason" required><option value="">Select reason...</option></select>
                     </div>
-                    <div class="bsots-form-group">
-                        <label>Urgency Category *</label>
-                        <div class="bsots-urgency-options" id="urgencyOptions">
-                            <div class="bsots-urgency-option" data-urgency="RED">
-                                <span class="bsots-urgency-label">RED</span>
-                                <span class="bsots-urgency-desc">Immediate</span>
-                            </div>
-                            <div class="bsots-urgency-option" data-urgency="ORANGE">
-                                <span class="bsots-urgency-label">ORANGE</span>
-                                <span class="bsots-urgency-desc">15 min</span>
-                            </div>
-                            <div class="bsots-urgency-option" data-urgency="YELLOW">
-                                <span class="bsots-urgency-label">YELLOW</span>
-                                <span class="bsots-urgency-desc">60 min</span>
-                            </div>
-                            <div class="bsots-urgency-option" data-urgency="GREEN">
-                                <span class="bsots-urgency-label">GREEN</span>
-                                <span class="bsots-urgency-desc">240 min</span>
-                            </div>
+
+                    <!-- Algorithm Panel: appears after reason is selected -->
+                    <div id="algorithmPanel" class="bsots-algo-panel" style="display:none;">
+                        <div class="bsots-algo-header">
+                            <span class="bsots-algo-title">Select the matching criteria to assign urgency</span>
+                            <span class="bsots-algo-hint">Click any criterion below — urgency &amp; tasks will auto-populate</span>
                         </div>
+                        <div id="algorithmGrid" class="bsots-algo-grid"></div>
+                    </div>
+
+                    <!-- Selected urgency display -->
+                    <div id="selectedUrgencyBar" class="bsots-selected-urgency" style="display:none;">
+                        <span id="selectedUrgencyLabel"></span>
+                        <button type="button" class="bsots-btn bsots-btn-sm" id="clearUrgencyBtn">Change</button>
                         <input type="hidden" id="patientUrgency" required>
                     </div>
-                    <div class="bsots-form-group">
-                        <label>Tasks (select applicable)</label>
+
+                    <!-- Immediate actions as tasks -->
+                    <div id="actionsSection" class="bsots-form-group" style="display:none;">
+                        <label>Immediate Actions / Tasks</label>
                         <div class="bsots-form-tasks" id="taskChips"></div>
                     </div>
+
                     <div class="bsots-form-group">
                         <label for="patientNote">Initial Note (optional)</label>
                         <textarea id="patientNote" rows="2" placeholder="Brief note..."></textarea>
@@ -167,7 +164,8 @@
 
     <script type="module">
         import {
-            URGENCY_CATEGORIES, PRESENTING_REASONS, DEFAULT_SITES, DEFAULT_TASKS
+            URGENCY_CATEGORIES, PRESENTING_REASONS, DEFAULT_SITES, DEFAULT_TASKS,
+            BSOTS_ALGORITHMS
         } from './js/bsots/constants.js';
 
         import {
@@ -578,25 +576,129 @@
                 opt.value = r; opt.textContent = r;
                 $reason.appendChild(opt);
             });
+        }
+
+        // ─── Algorithm Panel ─────────────────────────────────────────────────
+        function renderAlgorithmPanel(reason) {
+            const algo = BSOTS_ALGORITHMS[reason];
+            const $panel = $('algorithmPanel');
+            const $grid = $('algorithmGrid');
+            if (!algo) { $panel.style.display = 'none'; return; }
+
+            const categories = ['RED', 'ORANGE', 'YELLOW', 'GREEN'];
+            $grid.innerHTML = categories.map(cat => {
+                const data = algo[cat];
+                if (!data) return '';
+                const cfg = URGENCY_CATEGORIES[cat];
+                return `
+                    <div class="bsots-algo-category" data-urgency="${cat}">
+                        <div class="bsots-algo-cat-header" style="background:${cfg.color}; color:${cat === 'YELLOW' ? '#333' : '#fff'};">
+                            <strong>${cat}</strong> — ${cfg.description}
+                        </div>
+                        <div class="bsots-algo-criteria">
+                            ${data.criteria.map((c, i) => `
+                                <div class="bsots-algo-criterion" data-urgency="${cat}" data-idx="${i}">
+                                    <span class="bsots-algo-bullet" style="background:${cfg.color};"></span>
+                                    ${esc(c)}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="bsots-algo-actions-preview">
+                            <div class="bsots-algo-actions-label">Immediate actions:</div>
+                            ${data.actions.map(a => `<div class="bsots-algo-action-item">${esc(a)}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Attach click handlers to criteria
+            $grid.querySelectorAll('.bsots-algo-criterion').forEach(el => {
+                el.addEventListener('click', () => {
+                    const urgency = el.dataset.urgency;
+                    selectUrgencyFromAlgorithm(reason, urgency);
+                });
+            });
+
+            // Also allow clicking the category header to select
+            $grid.querySelectorAll('.bsots-algo-cat-header').forEach(el => {
+                const cat = el.closest('.bsots-algo-category');
+                el.style.cursor = 'pointer';
+                el.addEventListener('click', () => {
+                    selectUrgencyFromAlgorithm(reason, cat.dataset.urgency);
+                });
+            });
+
+            $panel.style.display = 'block';
+        }
+
+        function selectUrgencyFromAlgorithm(reason, urgency) {
+            const algo = BSOTS_ALGORITHMS[reason];
+            const cfg = URGENCY_CATEGORIES[urgency];
+            if (!algo || !cfg) return;
+
+            // Set urgency
+            $('patientUrgency').value = urgency;
+
+            // Show selected urgency bar
+            const $bar = $('selectedUrgencyBar');
+            const $label = $('selectedUrgencyLabel');
+            $label.innerHTML = `<span class="bsots-urgency-badge bsots-urgency-${urgency}" style="font-size:13px;">${urgency}</span> — ${cfg.description}`;
+            $bar.style.display = 'flex';
+
+            // Collapse algorithm panel
+            $('algorithmPanel').style.display = 'none';
+
+            // Populate tasks from algorithm actions
             const $chips = $('taskChips');
-            DEFAULT_TASKS.forEach(t => {
+            $chips.innerHTML = '';
+            const actions = algo[urgency].actions;
+            actions.forEach(a => {
                 const chip = document.createElement('div');
                 chip.className = 'bsots-form-task-chip selected';
-                chip.dataset.label = t.label;
-                chip.textContent = t.label;
+                chip.dataset.label = a;
+                chip.textContent = a;
                 chip.addEventListener('click', () => chip.classList.toggle('selected'));
                 $chips.appendChild(chip);
             });
+            // Also add standard tasks (Observations, CTG, Bloods, Urinalysis) if not already covered
+            DEFAULT_TASKS.forEach(t => {
+                if (!actions.some(a => a.toLowerCase().includes(t.label.toLowerCase()))) {
+                    const chip = document.createElement('div');
+                    chip.className = 'bsots-form-task-chip';
+                    chip.dataset.label = t.label;
+                    chip.textContent = t.label;
+                    chip.addEventListener('click', () => chip.classList.toggle('selected'));
+                    $chips.appendChild(chip);
+                }
+            });
+            $('actionsSection').style.display = 'block';
+        }
+
+        function clearUrgencySelection() {
+            $('patientUrgency').value = '';
+            $('selectedUrgencyBar').style.display = 'none';
+            $('actionsSection').style.display = 'none';
+            $('taskChips').innerHTML = '';
+            const reason = $('patientReason').value;
+            if (reason) renderAlgorithmPanel(reason);
         }
 
         function setupFormListeners() {
-            document.querySelectorAll('.bsots-urgency-option').forEach(opt => {
-                opt.addEventListener('click', () => {
-                    document.querySelectorAll('.bsots-urgency-option').forEach(o => o.classList.remove('selected'));
-                    opt.classList.add('selected');
-                    $('patientUrgency').value = opt.dataset.urgency;
-                });
+            // Reason change → show algorithm
+            $('patientReason').addEventListener('change', (e) => {
+                clearUrgencySelection();
+                if (e.target.value) {
+                    renderAlgorithmPanel(e.target.value);
+                } else {
+                    $('algorithmPanel').style.display = 'none';
+                }
             });
+
+            $('clearUrgencyBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                clearUrgencySelection();
+            });
+
             $('addPatientBtn').addEventListener('click', () => {
                 $addPatientModal.style.display = 'flex';
                 $('patientSite').value = currentSiteId;
@@ -611,8 +713,11 @@
         function closeAddModal() {
             $addPatientModal.style.display = 'none';
             $('addPatientForm').reset();
-            document.querySelectorAll('.bsots-urgency-option').forEach(o => o.classList.remove('selected'));
             $('patientUrgency').value = '';
+            $('algorithmPanel').style.display = 'none';
+            $('selectedUrgencyBar').style.display = 'none';
+            $('actionsSection').style.display = 'none';
+            $('taskChips').innerHTML = '';
         }
 
         async function handleAddPatient() {
