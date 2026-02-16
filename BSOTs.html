@@ -1056,6 +1056,19 @@
             const menu = document.createElement('div');
             menu.className = 'bsots-context-menu';
 
+            // View Details
+            const detailsItem = document.createElement('div');
+            detailsItem.className = 'bsots-context-menu-item';
+            detailsItem.textContent = 'View Details';
+            detailsItem.style.fontWeight = '600';
+            detailsItem.addEventListener('click', () => {
+                openPatientDetailsModal(episodeId);
+                removeMenus();
+            });
+            menu.appendChild(detailsItem);
+
+            menu.innerHTML += '<div class="bsots-context-menu-divider"></div>';
+
             // Outcome
             menu.innerHTML += '<div class="bsots-context-menu-sub">Outcome</div>';
             [
