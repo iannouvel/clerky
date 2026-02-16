@@ -1233,7 +1233,7 @@
             // Populate reason dropdown
             const reasonSelect = document.getElementById('detailsReason');
             reasonSelect.innerHTML = '<option value="">Select reason...</option>';
-            Object.keys(PRESENTING_REASONS).forEach(reason => {
+            PRESENTING_REASONS.forEach(reason => {
                 const opt = document.createElement('option');
                 opt.value = reason;
                 opt.textContent = reason;
