@@ -361,10 +361,10 @@
 
             // Note
             const note = ep.note || '';
-            // Replace newlines with spaces for preview, truncate to 50 chars
-            const notePreview = note.length > 0 ? note.replace(/\n/g, ' ').substring(0, 50) + (note.length > 50 ? '...' : '') : '';
+            // Truncate to 50 chars, preserve newlines as <br> for display
+            const notePreview = note.length > 0 ? note.substring(0, 50) + (note.length > 50 ? '...' : '') : '';
             const noteHtml = note
-                ? `<span class="bsots-note-preview" data-ep="${ep.id}" title="${esc(note)}">${esc(notePreview)}</span>`
+                ? `<span class="bsots-note-preview" data-ep="${ep.id}" title="${esc(note)}">${esc(notePreview).replace(/\n/g, '<br>')}</span>`
                 : `<span class="bsots-note-add" data-ep="${ep.id}">+ note</span>`;
 
             // Escalation arrow
