@@ -91,16 +91,6 @@ export async function addEpisode(data) {
         updatedBy: data.createdBy || ''
     }));
 
-    // Build initial notes
-    const notes = [];
-    if (data.initialNote) {
-        notes.push({
-            text: data.initialNote,
-            createdAt: Timestamp.now(),
-            createdBy: data.createdBy || ''
-        });
-    }
-
     const episode = {
         siteId: data.siteId,
         initials: data.initials.toUpperCase(),
@@ -118,7 +108,7 @@ export async function addEpisode(data) {
         status: 'pending',
         outcome: null,
         tasks,
-        notes,
+        note: data.initialNote || '',
         meows: null,
         assignedClinician: null,
         breachFlags: { triageDelay: false, overdue: false },
