@@ -80,7 +80,10 @@ export function subscribeToEpisodes(siteId, status, callback, onError) {
  */
 export async function addEpisode(data) {
     const arrivalAt = data.arrivalAt ? toTimestamp(data.arrivalAt) : Timestamp.now();
-    const nextDueAt = computeNextDueAt(arrivalAt, data.urgencyCategory);
+    // Initially, nextDueAt is for triage to start (15 mins from arrival)
+    // This will be recalculated when triage is completed
+    const arrivalMs = arrivalAt.toMillis ? arrivalAt.toMillis() : arrivalAt.getTime();
+    const nextDueAt = Timestamp.fromMillis(arrivalMs + 15 * 60 * 1000);
 
     // Build task array from provided tasks
     const tasks = (data.tasks || []).map(t => ({
