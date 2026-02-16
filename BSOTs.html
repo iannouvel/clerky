@@ -76,11 +76,11 @@
         </div>
     </div>
 
-    <!-- Add Patient Modal -->
+    <!-- Add/Edit Patient Modal -->
     <div class="bsots-modal-overlay" id="addPatientModal" style="display:none;">
         <div class="bsots-modal bsots-modal-wide">
             <div class="bsots-modal-header">
-                <h2>Add Patient to Triage</h2>
+                <h2 id="patientModalTitle">Add Patient to Triage</h2>
                 <button class="bsots-modal-close" id="closeAddModal">&times;</button>
             </div>
             <div class="bsots-modal-body">
@@ -135,7 +135,7 @@
             </div>
             <div class="bsots-modal-footer">
                 <button class="bsots-btn" id="cancelAddBtn">Cancel</button>
-                <button class="bsots-btn bsots-btn-primary" id="submitAddBtn">Add Patient</button>
+                <button class="bsots-btn bsots-btn-primary" id="submitAddBtn"><span id="submitBtnText">Add Patient</span></button>
             </div>
         </div>
     </div>
@@ -182,77 +182,6 @@
             <div class="bsots-modal-footer">
                 <button class="bsots-btn" id="cancelTimeEntryBtn">Cancel</button>
                 <button class="bsots-btn bsots-btn-primary" id="saveTimeEntryBtn">Save</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Patient Details Modal -->
-    <div class="bsots-modal-overlay" id="patientDetailsModal" style="display:none;">
-        <div class="bsots-modal" style="max-width:700px;">
-            <div class="bsots-modal-header">
-                <h2>Patient Details - <span id="detailsPatientLabel"></span></h2>
-                <button class="bsots-modal-close" id="closeDetailsModal">&times;</button>
-            </div>
-            <div class="bsots-modal-body" style="max-height:70vh;overflow-y:auto;">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                    <div class="bsots-form-group">
-                        <label>Initials</label>
-                        <input type="text" id="detailsInitials" style="font-weight:600;" readonly>
-                    </div>
-                    <div class="bsots-form-group">
-                        <label>Hospital Number</label>
-                        <input type="text" id="detailsHospNum" readonly>
-                    </div>
-                </div>
-
-                <div class="bsots-form-group">
-                    <label>Presenting Reason</label>
-                    <select id="detailsReason"></select>
-                </div>
-
-                <div class="bsots-form-group">
-                    <label>Urgency Category</label>
-                    <div style="display:flex;gap:8px;flex-wrap:wrap;" id="detailsUrgencyButtons"></div>
-                </div>
-
-                <hr style="border:none;border-top:1px solid var(--border-color);margin:20px 0;">
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                    <div class="bsots-form-group">
-                        <label>Arrival Time</label>
-                        <input type="text" id="detailsArrival" readonly>
-                    </div>
-                    <div class="bsots-form-group">
-                        <label>Time in Unit</label>
-                        <input type="text" id="detailsTimeInUnit" readonly>
-                    </div>
-                </div>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                    <div class="bsots-form-group">
-                        <label>Triage Started</label>
-                        <input type="text" id="detailsTriageStarted" readonly>
-                    </div>
-                    <div class="bsots-form-group">
-                        <label>Triage Completed</label>
-                        <input type="text" id="detailsTriageCompleted" readonly>
-                    </div>
-                </div>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-                    <div class="bsots-form-group">
-                        <label>Medical Review</label>
-                        <input type="text" id="detailsMedicalReview" readonly>
-                    </div>
-                    <div class="bsots-form-group">
-                        <label>Due / Countdown</label>
-                        <input type="text" id="detailsDue" readonly>
-                    </div>
-                </div>
-            </div>
-            <div class="bsots-modal-footer">
-                <button class="bsots-btn" id="closeDetailsBtn">Close</button>
-                <button class="bsots-btn bsots-btn-primary" id="saveDetailsBtn">Save Changes</button>
             </div>
         </div>
     </div>
@@ -983,6 +912,11 @@
             });
 
             $('addPatientBtn').addEventListener('click', () => {
+                // Ensure add mode (not edit)
+                isEditMode = false;
+                editingEpisodeId = null;
+                document.getElementById('patientModalTitle').textContent = 'Add Patient to Triage';
+                document.getElementById('submitBtnText').textContent = 'Add Patient';
                 $addPatientModal.style.display = 'flex';
                 $('patientSite').value = currentSiteId;
                 $('patientInitials').focus();
@@ -1001,6 +935,11 @@
             $('selectedUrgencyBar').style.display = 'none';
             $('actionsSection').style.display = 'none';
             $('taskChips').innerHTML = '';
+            // Reset edit mode
+            isEditMode = false;
+            editingEpisodeId = null;
+            document.getElementById('patientModalTitle').textContent = 'Add Patient to Triage';
+            document.getElementById('submitBtnText').textContent = 'Add Patient';
         }
 
         async function handleAddPatient() {
@@ -1009,18 +948,80 @@
             const siteId = $('patientSite').value;
             const presentingReason = $('patientReason').value || 'Awaiting triage';
             const urgencyCategory = $('patientUrgency').value || 'GREEN';
-            const initialNote = $('patientNote').value.trim();
+            const note = $('patientNote').value.trim();
+
             if (!initials || !hospitalNumber) {
-                showToast('Please enter patient initials and hospital number', 'error'); return;
+                showToast('Please enter patient initials and hospital number', 'error');
+                return;
             }
+
             const selectedTasks = [];
-            document.querySelectorAll('.bsots-form-task-chip.selected').forEach(c => selectedTasks.push({ label: c.dataset.label }));
+            document.querySelectorAll('.bsots-form-task-chip.selected').forEach(c =>
+                selectedTasks.push({ label: c.dataset.label })
+            );
+
             try {
-                await addEpisode({ siteId, initials, hospitalNumber, presentingReason, urgencyCategory, tasks: selectedTasks, initialNote: initialNote || null });
-                closeAddModal();
-                showToast('Patient added to triage board', 'success');
+                if (isEditMode && editingEpisodeId) {
+                    // Update existing episode
+                    const ep = episodes.find(e => e.id === editingEpisodeId);
+                    const updates = {};
+                    let changed = false;
+
+                    if (presentingReason !== ep.presentingReason) {
+                        updates.presentingReason = presentingReason;
+                        changed = true;
+                    }
+
+                    if (urgencyCategory !== ep.urgencyCategory) {
+                        updates.urgencyCategory = urgencyCategory;
+                        // If urgency changed and triage completed, recalculate nextDueAt
+                        if (ep.triageCompletedAt) {
+                            updates.nextDueAt = computeNextDueAt(ep.triageCompletedAt, urgencyCategory);
+                        }
+                        // Log urgency change
+                        updates.urgencyHistory = [...(ep.urgencyHistory || []), {
+                            from: ep.urgencyCategory,
+                            to: urgencyCategory,
+                            changedAt: Timestamp.now(),
+                            changedBy: 'manual'
+                        }];
+                        changed = true;
+                    }
+
+                    if (note !== (ep.note || '')) {
+                        updates.note = note;
+                        changed = true;
+                    }
+
+                    // Update tasks
+                    const newTasks = selectedTasks.map(t => ({
+                        id: 'task_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5),
+                        label: t.label,
+                        status: 'pending',
+                        updatedAt: Timestamp.now(),
+                        updatedBy: ''
+                    }));
+                    if (JSON.stringify(newTasks) !== JSON.stringify(ep.tasks)) {
+                        updates.tasks = newTasks;
+                        changed = true;
+                    }
+
+                    if (changed) {
+                        await updateEpisode(editingEpisodeId, updates);
+                        showToast('Patient updated', 'success');
+                    }
+                    closeAddModal();
+                } else {
+                    // Create new episode
+                    await addEpisode({
+                        siteId, initials, hospitalNumber, presentingReason, urgencyCategory,
+                        tasks: selectedTasks, initialNote: note || null
+                    });
+                    closeAddModal();
+                    showToast('Patient added to triage board', 'success');
+                }
             } catch (err) {
-                showToast('Failed to add patient: ' + err.message, 'error');
+                showToast('Failed to save: ' + err.message, 'error');
             }
         }
 
@@ -1216,123 +1217,57 @@
             $timeEntryInput.value = time.toTimeString().substring(0, 5);
         }
 
-        // ─── Patient Details Modal ──────────────────────────────────────────
-        const $detailsModal = document.getElementById('patientDetailsModal');
-        let currentDetailsEpId = null;
+        // ─── Edit Patient (reuses Add Patient modal) ────────────────────────
+        let isEditMode = false;
+        let editingEpisodeId = null;
 
         function openPatientDetailsModal(epId) {
-            currentDetailsEpId = epId;
             const ep = episodes.find(e => e.id === epId);
             if (!ep) return;
 
-            // Basic info
-            document.getElementById('detailsPatientLabel').textContent = `${ep.initials} (${ep.hospitalNumber})`;
-            document.getElementById('detailsInitials').value = ep.initials || '';
-            document.getElementById('detailsHospNum').value = ep.hospitalNumber || '';
+            // Switch to edit mode
+            isEditMode = true;
+            editingEpisodeId = epId;
+            document.getElementById('patientModalTitle').textContent = `Edit Patient - ${ep.initials} (${ep.hospitalNumber})`;
+            document.getElementById('submitBtnText').textContent = 'Save Changes';
 
-            // Populate reason dropdown
-            const reasonSelect = document.getElementById('detailsReason');
-            reasonSelect.innerHTML = '<option value="">Select reason...</option>';
-            PRESENTING_REASONS.forEach(reason => {
-                const opt = document.createElement('option');
-                opt.value = reason;
-                opt.textContent = reason;
-                if (reason === ep.presentingReason) opt.selected = true;
-                reasonSelect.appendChild(opt);
-            });
+            // Populate fields
+            $('patientInitials').value = ep.initials || '';
+            $('patientHospNum').value = ep.hospitalNumber || '';
+            $('patientSite').value = ep.siteId || currentSiteId;
+            $('patientReason').value = ep.presentingReason || '';
+            $('patientUrgency').value = ep.urgencyCategory || '';
+            $('patientNote').value = ep.note || '';
 
-            // Urgency buttons
-            const urgencyDiv = document.getElementById('detailsUrgencyButtons');
-            urgencyDiv.innerHTML = '';
-            Object.entries(URGENCY_CATEGORIES).forEach(([key, cfg]) => {
-                const btn = document.createElement('button');
-                btn.type = 'button';
-                btn.className = 'bsots-btn';
-                btn.style.cssText = `background:${cfg.color};color:white;font-weight:600;`;
-                if (key === ep.urgencyCategory) {
-                    btn.style.outline = '3px solid var(--accent-color)';
-                    btn.style.outlineOffset = '2px';
+            // If there's a presenting reason, show the algorithm panel
+            if (ep.presentingReason) {
+                renderAlgorithmPanel(ep.presentingReason);
+                // Show selected urgency
+                const urgencyCfg = URGENCY_CATEGORIES[ep.urgencyCategory];
+                if (urgencyCfg) {
+                    $('selectedUrgencyLabel').innerHTML = `<span class="bsots-urgency-badge bsots-urgency-${ep.urgencyCategory}">${ep.urgencyCategory}</span> — ${urgencyCfg.description}`;
+                    $('selectedUrgencyBar').style.display = 'flex';
                 }
-                btn.textContent = key;
-                btn.dataset.urgency = key;
-                btn.addEventListener('click', () => {
-                    urgencyDiv.querySelectorAll('button').forEach(b => {
-                        b.style.outline = 'none';
-                        b.style.outlineOffset = '0';
-                    });
-                    btn.style.outline = '3px solid var(--accent-color)';
-                    btn.style.outlineOffset = '2px';
+            }
+
+            // Populate task chips from existing tasks
+            const taskChipsDiv = $('taskChips');
+            taskChipsDiv.innerHTML = '';
+            if (ep.tasks && ep.tasks.length > 0) {
+                ep.tasks.forEach(t => {
+                    const chip = document.createElement('span');
+                    chip.className = 'bsots-form-task-chip selected';
+                    chip.dataset.label = t.label;
+                    chip.textContent = t.label;
+                    chip.addEventListener('click', () => chip.classList.toggle('selected'));
+                    taskChipsDiv.appendChild(chip);
                 });
-                urgencyDiv.appendChild(btn);
-            });
+                $('actionsSection').style.display = 'block';
+            }
 
-            // Times
-            document.getElementById('detailsArrival').value = ep.arrivalAt ? formatDateTime(ep.arrivalAt) : 'Not recorded';
-            document.getElementById('detailsTimeInUnit').value = formatTimeInUnit(ep.arrivalAt);
-            document.getElementById('detailsTriageStarted').value = ep.triageStartedAt ? formatDateTime(ep.triageStartedAt) : 'Not started';
-            document.getElementById('detailsTriageCompleted').value = ep.triageCompletedAt ? formatDateTime(ep.triageCompletedAt) : 'Not completed';
-            document.getElementById('detailsMedicalReview').value = ep.medicalReviewedAt ? formatDateTime(ep.medicalReviewedAt) : 'Not done';
-            const countdown = formatCountdown(ep.nextDueAt);
-            document.getElementById('detailsDue').value = `${formatDateTime(ep.nextDueAt)} (${countdown.text})`;
-
-            $detailsModal.style.display = 'flex';
+            $addPatientModal.style.display = 'flex';
+            $('patientInitials').focus();
         }
-
-        function closePatientDetailsModal() {
-            $detailsModal.style.display = 'none';
-            currentDetailsEpId = null;
-        }
-
-        document.getElementById('closeDetailsModal').addEventListener('click', closePatientDetailsModal);
-        document.getElementById('closeDetailsBtn').addEventListener('click', closePatientDetailsModal);
-        $detailsModal.addEventListener('click', e => { if (e.target === $detailsModal) closePatientDetailsModal(); });
-
-        document.getElementById('saveDetailsBtn').addEventListener('click', async () => {
-            if (!currentDetailsEpId) return;
-            const ep = episodes.find(e => e.id === currentDetailsEpId);
-            if (!ep) return;
-
-            const newReason = document.getElementById('detailsReason').value;
-            const selectedUrgencyBtn = document.querySelector('#detailsUrgencyButtons button[style*="outline: 3px"]');
-            const newUrgency = selectedUrgencyBtn ? selectedUrgencyBtn.dataset.urgency : ep.urgencyCategory;
-
-            const updates = {};
-            let changed = false;
-
-            if (newReason !== ep.presentingReason) {
-                updates.presentingReason = newReason;
-                changed = true;
-            }
-
-            if (newUrgency !== ep.urgencyCategory) {
-                // If urgency changed and triage completed, recalculate nextDueAt
-                if (ep.triageCompletedAt) {
-                    updates.nextDueAt = computeNextDueAt(ep.triageCompletedAt, newUrgency);
-                }
-                updates.urgencyCategory = newUrgency;
-                // Log urgency change
-                const historyEntry = {
-                    from: ep.urgencyCategory,
-                    to: newUrgency,
-                    changedAt: Timestamp.now(),
-                    changedBy: 'manual'
-                };
-                updates.urgencyHistory = [...(ep.urgencyHistory || []), historyEntry];
-                changed = true;
-            }
-
-            if (changed) {
-                try {
-                    await updateEpisode(currentDetailsEpId, updates);
-                    showToast('Patient details updated', 'success');
-                    closePatientDetailsModal();
-                } catch {
-                    showToast('Failed to update details', 'error');
-                }
-            } else {
-                closePatientDetailsModal();
-            }
-        });
 
         // ─── Disclaimer Modal ───────────────────────────────────────────────
         const $disclaimerModal = document.getElementById('disclaimerModal');
