@@ -391,12 +391,28 @@
     align-items: center;
     gap: 4px;
     font-size: 11px;
-    cursor: pointer;
     padding: 1px 0;
 }
 
-.bsots-task input[type="checkbox"] { margin: 0; cursor: pointer; accent-color: var(--accent-color); width: 13px; height: 13px; }
-.bsots-task-completed { text-decoration: line-through; color: var(--text-muted); }
+.bsots-task-checkbox { margin: 0; cursor: pointer; accent-color: var(--accent-color); width: 13px; height: 13px; flex-shrink: 0; }
+
+.bsots-task-label {
+    cursor: text;
+    padding: 1px 3px;
+    border-radius: 3px;
+    transition: background 0.15s;
+}
+
+.bsots-task-label:hover {
+    background: var(--btn-hover-overlay);
+}
+
+.bsots-task-label[contenteditable="true"] {
+    outline: 1px solid var(--accent-color);
+    background: var(--bg-input);
+}
+
+.bsots-task-completed .bsots-task-label { text-decoration: line-through; color: var(--text-muted); }
 
 .bsots-task-add { font-size: 10px; color: var(--text-muted); cursor: pointer; padding: 1px 0; display: flex; align-items: center; gap: 2px; }
 .bsots-task-add:hover { color: var(--accent-color); }
