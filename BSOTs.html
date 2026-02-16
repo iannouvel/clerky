@@ -186,6 +186,77 @@
         </div>
     </div>
 
+    <!-- Patient Details Modal -->
+    <div class="bsots-modal-overlay" id="patientDetailsModal" style="display:none;">
+        <div class="bsots-modal" style="max-width:700px;">
+            <div class="bsots-modal-header">
+                <h2>Patient Details - <span id="detailsPatientLabel"></span></h2>
+                <button class="bsots-modal-close" id="closeDetailsModal">&times;</button>
+            </div>
+            <div class="bsots-modal-body" style="max-height:70vh;overflow-y:auto;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="bsots-form-group">
+                        <label>Initials</label>
+                        <input type="text" id="detailsInitials" style="font-weight:600;" readonly>
+                    </div>
+                    <div class="bsots-form-group">
+                        <label>Hospital Number</label>
+                        <input type="text" id="detailsHospNum" readonly>
+                    </div>
+                </div>
+
+                <div class="bsots-form-group">
+                    <label>Presenting Reason</label>
+                    <select id="detailsReason"></select>
+                </div>
+
+                <div class="bsots-form-group">
+                    <label>Urgency Category</label>
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;" id="detailsUrgencyButtons"></div>
+                </div>
+
+                <hr style="border:none;border-top:1px solid var(--border-color);margin:20px 0;">
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="bsots-form-group">
+                        <label>Arrival Time</label>
+                        <input type="text" id="detailsArrival" readonly>
+                    </div>
+                    <div class="bsots-form-group">
+                        <label>Time in Unit</label>
+                        <input type="text" id="detailsTimeInUnit" readonly>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="bsots-form-group">
+                        <label>Triage Started</label>
+                        <input type="text" id="detailsTriageStarted" readonly>
+                    </div>
+                    <div class="bsots-form-group">
+                        <label>Triage Completed</label>
+                        <input type="text" id="detailsTriageCompleted" readonly>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="bsots-form-group">
+                        <label>Medical Review</label>
+                        <input type="text" id="detailsMedicalReview" readonly>
+                    </div>
+                    <div class="bsots-form-group">
+                        <label>Due / Countdown</label>
+                        <input type="text" id="detailsDue" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="bsots-modal-footer">
+                <button class="bsots-btn" id="closeDetailsBtn">Close</button>
+                <button class="bsots-btn bsots-btn-primary" id="saveDetailsBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Disclaimer Splash Modal -->
     <div class="bsots-modal-overlay" id="disclaimerModal" style="display:flex;">
         <div class="bsots-modal" style="max-width:600px;">
@@ -652,6 +723,14 @@
             // ••• menu
             $boardBody.querySelectorAll('.bsots-menu-trigger').forEach(btn => {
                 btn.addEventListener('click', (e) => showContextMenu(e, btn.dataset.ep));
+            });
+
+            // Double-click row -> patient details modal
+            $boardBody.querySelectorAll('tr[data-episode-id]').forEach(row => {
+                row.addEventListener('dblclick', () => {
+                    const epId = row.dataset.episodeId;
+                    if (epId) openPatientDetailsModal(epId);
+                });
             });
         }
 
@@ -1123,6 +1202,124 @@
             time.setMinutes(time.getMinutes() + minutesDelta);
             $timeEntryInput.value = time.toTimeString().substring(0, 5);
         }
+
+        // ─── Patient Details Modal ──────────────────────────────────────────
+        const $detailsModal = document.getElementById('patientDetailsModal');
+        let currentDetailsEpId = null;
+
+        function openPatientDetailsModal(epId) {
+            currentDetailsEpId = epId;
+            const ep = episodes.find(e => e.id === epId);
+            if (!ep) return;
+
+            // Basic info
+            document.getElementById('detailsPatientLabel').textContent = `${ep.initials} (${ep.hospitalNumber})`;
+            document.getElementById('detailsInitials').value = ep.initials || '';
+            document.getElementById('detailsHospNum').value = ep.hospitalNumber || '';
+
+            // Populate reason dropdown
+            const reasonSelect = document.getElementById('detailsReason');
+            reasonSelect.innerHTML = '<option value="">Select reason...</option>';
+            Object.keys(PRESENTING_REASONS).forEach(reason => {
+                const opt = document.createElement('option');
+                opt.value = reason;
+                opt.textContent = reason;
+                if (reason === ep.presentingReason) opt.selected = true;
+                reasonSelect.appendChild(opt);
+            });
+
+            // Urgency buttons
+            const urgencyDiv = document.getElementById('detailsUrgencyButtons');
+            urgencyDiv.innerHTML = '';
+            Object.entries(URGENCY_CATEGORIES).forEach(([key, cfg]) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'bsots-btn';
+                btn.style.cssText = `background:${cfg.color};color:white;font-weight:600;`;
+                if (key === ep.urgencyCategory) {
+                    btn.style.outline = '3px solid var(--accent-color)';
+                    btn.style.outlineOffset = '2px';
+                }
+                btn.textContent = key;
+                btn.dataset.urgency = key;
+                btn.addEventListener('click', () => {
+                    urgencyDiv.querySelectorAll('button').forEach(b => {
+                        b.style.outline = 'none';
+                        b.style.outlineOffset = '0';
+                    });
+                    btn.style.outline = '3px solid var(--accent-color)';
+                    btn.style.outlineOffset = '2px';
+                });
+                urgencyDiv.appendChild(btn);
+            });
+
+            // Times
+            document.getElementById('detailsArrival').value = ep.arrivalAt ? formatDateTime(ep.arrivalAt) : 'Not recorded';
+            document.getElementById('detailsTimeInUnit').value = formatTimeInUnit(ep.arrivalAt);
+            document.getElementById('detailsTriageStarted').value = ep.triageStartedAt ? formatDateTime(ep.triageStartedAt) : 'Not started';
+            document.getElementById('detailsTriageCompleted').value = ep.triageCompletedAt ? formatDateTime(ep.triageCompletedAt) : 'Not completed';
+            document.getElementById('detailsMedicalReview').value = ep.medicalReviewedAt ? formatDateTime(ep.medicalReviewedAt) : 'Not done';
+            const countdown = formatCountdown(ep.nextDueAt);
+            document.getElementById('detailsDue').value = `${formatDateTime(ep.nextDueAt)} (${countdown.text})`;
+
+            $detailsModal.style.display = 'flex';
+        }
+
+        function closePatientDetailsModal() {
+            $detailsModal.style.display = 'none';
+            currentDetailsEpId = null;
+        }
+
+        document.getElementById('closeDetailsModal').addEventListener('click', closePatientDetailsModal);
+        document.getElementById('closeDetailsBtn').addEventListener('click', closePatientDetailsModal);
+        $detailsModal.addEventListener('click', e => { if (e.target === $detailsModal) closePatientDetailsModal(); });
+
+        document.getElementById('saveDetailsBtn').addEventListener('click', async () => {
+            if (!currentDetailsEpId) return;
+            const ep = episodes.find(e => e.id === currentDetailsEpId);
+            if (!ep) return;
+
+            const newReason = document.getElementById('detailsReason').value;
+            const selectedUrgencyBtn = document.querySelector('#detailsUrgencyButtons button[style*="outline: 3px"]');
+            const newUrgency = selectedUrgencyBtn ? selectedUrgencyBtn.dataset.urgency : ep.urgencyCategory;
+
+            const updates = {};
+            let changed = false;
+
+            if (newReason !== ep.presentingReason) {
+                updates.presentingReason = newReason;
+                changed = true;
+            }
+
+            if (newUrgency !== ep.urgencyCategory) {
+                // If urgency changed and triage completed, recalculate nextDueAt
+                if (ep.triageCompletedAt) {
+                    updates.nextDueAt = computeNextDueAt(ep.triageCompletedAt, newUrgency);
+                }
+                updates.urgencyCategory = newUrgency;
+                // Log urgency change
+                const historyEntry = {
+                    from: ep.urgencyCategory,
+                    to: newUrgency,
+                    changedAt: Timestamp.now(),
+                    changedBy: 'manual'
+                };
+                updates.urgencyHistory = [...(ep.urgencyHistory || []), historyEntry];
+                changed = true;
+            }
+
+            if (changed) {
+                try {
+                    await updateEpisode(currentDetailsEpId, updates);
+                    showToast('Patient details updated', 'success');
+                    closePatientDetailsModal();
+                } catch {
+                    showToast('Failed to update details', 'error');
+                }
+            } else {
+                closePatientDetailsModal();
+            }
+        });
 
         // ─── Disclaimer Modal ───────────────────────────────────────────────
         const $disclaimerModal = document.getElementById('disclaimerModal');
