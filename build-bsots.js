@@ -43,6 +43,14 @@ ROOT_FILES.forEach(file => {
   }
 });
 
+// Copy BSOTs.html as index.html (Azure requires index.html as entry point)
+const bsotsHtml = path.join(__dirname, 'BSOTs.html');
+const indexHtml = path.join(DIST_DIR, 'index.html');
+if (fs.existsSync(bsotsHtml)) {
+  fs.copyFileSync(bsotsHtml, indexHtml);
+  console.log('  ✓ index.html (copy of BSOTs.html)');
+}
+
 // Copy directories recursively
 console.log('\nCopying directories...');
 DIRS_TO_COPY.forEach(dir => {
