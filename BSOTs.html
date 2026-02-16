@@ -351,9 +351,10 @@
             const tasks = ep.tasks || [];
             const allDone = tasks.length > 0 && tasks.every(t => t.status === 'completed');
             const taskHtml = tasks.map(t =>
-                `<label class="bsots-task ${t.status === 'completed' ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-task="${t.id}">
-                    <input type="checkbox" ${t.status === 'completed' ? 'checked' : ''}> ${esc(t.label)}
-                </label>`
+                `<div class="bsots-task ${t.status === 'completed' ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-task="${t.id}">
+                    <input type="checkbox" ${t.status === 'completed' ? 'checked' : ''} class="bsots-task-checkbox">
+                    <span class="bsots-task-label" contenteditable="false">${esc(t.label)}</span>
+                </div>`
             ).join('') +
             `<span class="bsots-task-add" data-ep="${ep.id}">+ add</span>` +
             (allDone ? '<span class="bsots-tasks-done" title="All tasks complete">&#10003;</span>' : '');
@@ -401,15 +402,73 @@
 
         // ─── Row Listeners ──────────────────────────────────────────────────
         function attachRowListeners() {
-            // Task toggles
-            $boardBody.querySelectorAll('.bsots-task input[type="checkbox"]').forEach(cb => {
+            // Task checkbox toggles
+            $boardBody.querySelectorAll('.bsots-task-checkbox').forEach(cb => {
                 cb.addEventListener('change', async (e) => {
-                    const label = e.target.closest('.bsots-task');
-                    const ep = episodes.find(x => x.id === label.dataset.ep);
+                    e.stopPropagation();
+                    const taskDiv = e.target.closest('.bsots-task');
+                    const ep = episodes.find(x => x.id === taskDiv.dataset.ep);
                     if (ep) {
-                        try { await toggleTask(label.dataset.ep, ep, label.dataset.task, ''); }
+                        try { await toggleTask(taskDiv.dataset.ep, ep, taskDiv.dataset.task, ''); }
                         catch { showToast('Failed to update task', 'error'); }
                     }
+                });
+            });
+
+            // Task label editing
+            $boardBody.querySelectorAll('.bsots-task-label').forEach(label => {
+                label.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (label.getAttribute('contenteditable') === 'true') return; // Already editing
+                    const originalText = label.textContent.trim();
+                    label.setAttribute('contenteditable', 'true');
+                    label.focus();
+
+                    // Select all text
+                    const range = document.createRange();
+                    range.selectNodeContents(label);
+                    const sel = window.getSelection();
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+
+                    const saveEdit = async () => {
+                        const newText = label.textContent.trim();
+                        label.setAttribute('contenteditable', 'false');
+                        if (newText && newText !== originalText) {
+                            const taskDiv = label.closest('.bsots-task');
+                            const ep = episodes.find(x => x.id === taskDiv.dataset.ep);
+                            if (ep) {
+                                const task = ep.tasks.find(t => t.id === taskDiv.dataset.task);
+                                if (task) {
+                                    try {
+                                        const updatedTasks = ep.tasks.map(t =>
+                                            t.id === taskDiv.dataset.task ? { ...t, label: newText } : t
+                                        );
+                                        await updateEpisode(taskDiv.dataset.ep, { tasks: updatedTasks });
+                                        showToast('Task updated', 'success');
+                                    } catch {
+                                        label.textContent = originalText;
+                                        showToast('Failed to update task', 'error');
+                                    }
+                                }
+                            }
+                        } else {
+                            label.textContent = originalText;
+                        }
+                    };
+
+                    label.addEventListener('blur', saveEdit, { once: true });
+                    label.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            label.blur();
+                        }
+                        if (e.key === 'Escape') {
+                            label.textContent = originalText;
+                            label.setAttribute('contenteditable', 'false');
+                            label.blur();
+                        }
+                    }, { once: true });
                 });
             });
 
