@@ -14,6 +14,7 @@ firebase-debug.*.log*
 firebase-init.js
 modules/firebase-core.js
 dist/
+dist-bsots/
 
 # Environment variables
 .env
