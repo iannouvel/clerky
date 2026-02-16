@@ -876,7 +876,12 @@
             if (!text || !currentNotesEpId) return;
             const ep = episodes.find(e => e.id === currentNotesEpId);
             if (!ep) return;
-            try { await addNote(currentNotesEpId, ep, text, ''); showToast('Note added', 'success'); openNotesModal(currentNotesEpId); }
+            try {
+                await addNote(currentNotesEpId, ep, text, '');
+                showToast('Note added', 'success');
+                // Wait briefly for Firestore onSnapshot to update local episodes array
+                setTimeout(() => openNotesModal(currentNotesEpId), 300);
+            }
             catch { showToast('Failed to add note', 'error'); }
         });
 
