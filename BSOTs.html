@@ -615,7 +615,8 @@
             $grid.querySelectorAll('.bsots-algo-criterion').forEach(el => {
                 el.addEventListener('click', () => {
                     const urgency = el.dataset.urgency;
-                    selectUrgencyFromAlgorithm(reason, urgency);
+                    const criterionText = el.textContent.trim();
+                    selectUrgencyFromAlgorithm(reason, urgency, criterionText);
                 });
             });
 
@@ -624,14 +625,14 @@
                 const cat = el.closest('.bsots-algo-category');
                 el.style.cursor = 'pointer';
                 el.addEventListener('click', () => {
-                    selectUrgencyFromAlgorithm(reason, cat.dataset.urgency);
+                    selectUrgencyFromAlgorithm(reason, cat.dataset.urgency, null);
                 });
             });
 
             $panel.style.display = 'block';
         }
 
-        function selectUrgencyFromAlgorithm(reason, urgency) {
+        function selectUrgencyFromAlgorithm(reason, urgency, criterionText) {
             const algo = BSOTS_ALGORITHMS[reason];
             const cfg = URGENCY_CATEGORIES[urgency];
             if (!algo || !cfg) return;
@@ -639,10 +640,14 @@
             // Set urgency
             $('patientUrgency').value = urgency;
 
-            // Show selected urgency bar
+            // Show selected urgency bar with criterion
             const $bar = $('selectedUrgencyBar');
             const $label = $('selectedUrgencyLabel');
-            $label.innerHTML = `<span class="bsots-urgency-badge bsots-urgency-${urgency}" style="font-size:13px;">${urgency}</span> — ${cfg.description}`;
+            let labelHtml = `<span class="bsots-urgency-badge bsots-urgency-${urgency}" style="font-size:13px;">${urgency}</span> — ${cfg.description}`;
+            if (criterionText) {
+                labelHtml += `<div style="font-size:11px;color:var(--text-muted);margin-top:4px;">Selected: ${esc(criterionText)}</div>`;
+            }
+            $label.innerHTML = labelHtml;
             $bar.style.display = 'flex';
 
             // Collapse algorithm panel
