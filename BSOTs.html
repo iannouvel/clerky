@@ -160,6 +160,32 @@
         </div>
     </div>
 
+    <!-- Time Entry Modal -->
+    <div class="bsots-modal-overlay" id="timeEntryModal" style="display:none;">
+        <div class="bsots-modal" style="max-width:400px;">
+            <div class="bsots-modal-header">
+                <h2 id="timeEntryTitle">Enter Time</h2>
+                <button class="bsots-modal-close" id="closeTimeEntryModal">&times;</button>
+            </div>
+            <div class="bsots-modal-body">
+                <div class="bsots-form-group">
+                    <label id="timeEntryLabel">Time:</label>
+                    <input type="time" id="timeEntryInput" step="60" style="font-size:16px;padding:8px;">
+                    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
+                        <button class="bsots-btn" id="timeNowBtn">Now</button>
+                        <button class="bsots-btn" id="timeMinus1Btn">-1 min</button>
+                        <button class="bsots-btn" id="timeMinus5Btn">-5 mins</button>
+                        <button class="bsots-btn" id="timeMinus10Btn">-10 mins</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bsots-modal-footer">
+                <button class="bsots-btn" id="cancelTimeEntryBtn">Cancel</button>
+                <button class="bsots-btn bsots-btn-primary" id="saveTimeEntryBtn">Save</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Disclaimer Splash Modal -->
     <div class="bsots-modal-overlay" id="disclaimerModal" style="display:flex;">
         <div class="bsots-modal" style="max-width:600px;">
@@ -377,7 +403,26 @@
             // Tasks
             const tasks = ep.tasks || [];
             const allDone = tasks.length > 0 && tasks.every(t => t.status === 'completed');
-            const taskHtml = tasks.map(t =>
+
+            // Special triage tasks at top
+            const triageStarted = !!ep.triageStartedAt;
+            const triageCompleted = !!ep.triageCompletedAt;
+            const medicalReviewed = !!ep.medicalReviewedAt;
+
+            let specialTasksHtml = '';
+            specialTasksHtml += `<div class="bsots-task bsots-task-special ${triageStarted ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="start-triage">
+                <input type="checkbox" ${triageStarted ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                <span class="bsots-task-label" style="font-weight:600;">${triageStarted ? 'Triage started' : 'Start triage'}</span>
+            </div>`;
+
+            if (triageStarted) {
+                specialTasksHtml += `<div class="bsots-task bsots-task-special ${medicalReviewed ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="medical-review">
+                    <input type="checkbox" ${medicalReviewed ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                    <span class="bsots-task-label" style="font-weight:600;">${medicalReviewed ? 'Medical review done' : 'Medical review done'}</span>
+                </div>`;
+            }
+
+            const taskHtml = specialTasksHtml + tasks.map(t =>
                 `<div class="bsots-task ${t.status === 'completed' ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-task="${t.id}">
                     <input type="checkbox" ${t.status === 'completed' ? 'checked' : ''} class="bsots-task-checkbox">
                     <span class="bsots-task-label" contenteditable="false">${esc(t.label)}</span>
@@ -446,6 +491,8 @@
             $boardBody.querySelectorAll('.bsots-task-label').forEach(label => {
                 label.addEventListener('click', (e) => {
                     e.stopPropagation();
+                    // Skip special tasks (they're handled separately)
+                    if (label.closest('.bsots-task-special')) return;
                     if (label.getAttribute('contenteditable') === 'true') return; // Already editing
                     const originalText = label.textContent.trim();
                     label.setAttribute('contenteditable', 'true');
@@ -497,6 +544,45 @@
                         }
                     }, { once: true });
                 });
+            });
+
+            // Special task clicks (triage and medical review)
+            $boardBody.querySelectorAll('.bsots-task-special').forEach(taskDiv => {
+                const action = taskDiv.dataset.action;
+                const isCompleted = taskDiv.classList.contains('bsots-task-completed');
+
+                if (!isCompleted) {
+                    taskDiv.style.cursor = 'pointer';
+                    taskDiv.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const epId = taskDiv.dataset.ep;
+                        const ep = episodes.find(x => x.id === epId);
+                        if (ep) {
+                            if (action === 'start-triage') {
+                                openTimeEntryModal('Start Triage', 'When did triage start?', async (time) => {
+                                    try {
+                                        await updateEpisode(epId, { triageStartedAt: time });
+                                        showToast('Triage started recorded', 'success');
+                                    } catch {
+                                        showToast('Failed to record triage start', 'error');
+                                    }
+                                });
+                            } else if (action === 'medical-review') {
+                                openTimeEntryModal('Medical Review Done', 'When was medical review completed?', async (time) => {
+                                    try {
+                                        await updateEpisode(epId, {
+                                            medicalReviewedAt: time,
+                                            reviewRequestedAt: ep.reviewRequestedAt || time
+                                        });
+                                        showToast('Medical review recorded', 'success');
+                                    } catch {
+                                        showToast('Failed to record medical review', 'error');
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
             });
 
             // Inline task add
@@ -866,29 +952,8 @@
             const menu = document.createElement('div');
             menu.className = 'bsots-context-menu';
 
-            // Review actions
-            const reviewItems = [];
-            if (!ep.triageStartedAt) reviewItems.push({ label: 'Start Triage', action: () => startTriage(episodeId, ep) });
-            if (ep.triageStartedAt && !ep.triageCompletedAt) reviewItems.push({ label: 'Complete Triage', action: () => completeTriage(episodeId, ep) });
-            if (!ep.medicalReviewedAt) reviewItems.push({ label: 'Medical Review Done', action: () => completeReview(episodeId, ep) });
-
-            if (reviewItems.length) {
-                menu.innerHTML += '<div class="bsots-context-menu-sub">Review</div>';
-                reviewItems.forEach(ri => {
-                    const item = document.createElement('div');
-                    item.className = 'bsots-context-menu-item';
-                    item.textContent = ri.label;
-                    item.addEventListener('click', async () => {
-                        try { await ri.action(); showToast(ri.label + ' recorded', 'success'); }
-                        catch { showToast('Failed', 'error'); }
-                        removeMenus();
-                    });
-                    menu.appendChild(item);
-                });
-            }
-
             // Outcome
-            menu.innerHTML += '<div class="bsots-context-menu-divider"></div><div class="bsots-context-menu-sub">Outcome</div>';
+            menu.innerHTML += '<div class="bsots-context-menu-sub">Outcome</div>';
             [
                 { value: 'admitted', label: 'Admit', color: '#fd7e14' },
                 { value: 'discharged', label: 'Discharge Home', color: '#28a745' },
@@ -968,6 +1033,71 @@
             }
             catch { showToast('Failed to clear note', 'error'); }
         });
+
+        // ─── Time Entry Modal ───────────────────────────────────────────────
+        const $timeEntryModal = document.getElementById('timeEntryModal');
+        const $timeEntryInput = document.getElementById('timeEntryInput');
+        let timeEntryCallback = null;
+
+        function openTimeEntryModal(title, label, callback) {
+            document.getElementById('timeEntryTitle').textContent = title;
+            document.getElementById('timeEntryLabel').textContent = label;
+            timeEntryCallback = callback;
+
+            // Set default to now
+            const now = new Date();
+            $timeEntryInput.value = now.toTimeString().substring(0, 5);
+            $timeEntryModal.style.display = 'flex';
+            $timeEntryInput.focus();
+        }
+
+        function closeTimeEntryModal() {
+            $timeEntryModal.style.display = 'none';
+            timeEntryCallback = null;
+        }
+
+        document.getElementById('closeTimeEntryModal').addEventListener('click', closeTimeEntryModal);
+        document.getElementById('cancelTimeEntryBtn').addEventListener('click', closeTimeEntryModal);
+
+        document.getElementById('saveTimeEntryBtn').addEventListener('click', async () => {
+            if (!timeEntryCallback || !$timeEntryInput.value) return;
+
+            // Parse time input and convert to Timestamp
+            const [hours, minutes] = $timeEntryInput.value.split(':').map(Number);
+            const selectedTime = new Date();
+            selectedTime.setHours(hours, minutes, 0, 0);
+
+            const timestamp = toTimestamp(selectedTime);
+            await timeEntryCallback(timestamp);
+            closeTimeEntryModal();
+        });
+
+        // Time adjustment buttons
+        document.getElementById('timeNowBtn').addEventListener('click', () => {
+            const now = new Date();
+            $timeEntryInput.value = now.toTimeString().substring(0, 5);
+        });
+
+        document.getElementById('timeMinus1Btn').addEventListener('click', () => {
+            adjustTime(-1);
+        });
+
+        document.getElementById('timeMinus5Btn').addEventListener('click', () => {
+            adjustTime(-5);
+        });
+
+        document.getElementById('timeMinus10Btn').addEventListener('click', () => {
+            adjustTime(-10);
+        });
+
+        function adjustTime(minutesDelta) {
+            if (!$timeEntryInput.value) return;
+            const [hours, minutes] = $timeEntryInput.value.split(':').map(Number);
+            const time = new Date();
+            time.setHours(hours, minutes, 0, 0);
+            time.setMinutes(time.getMinutes() + minutesDelta);
+            $timeEntryInput.value = time.toTimeString().substring(0, 5);
+        }
 
         // ─── Disclaimer Modal ───────────────────────────────────────────────
         const $disclaimerModal = document.getElementById('disclaimerModal');
