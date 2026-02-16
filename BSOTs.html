@@ -175,6 +175,8 @@
             checkAndUpdateBreaches, toDate
         } from './js/bsots/firestore.js';
 
+        import { Timestamp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
         import {
             formatCountdown, formatTime, formatDateTime, formatTimeInUnit,
             getCountdownClass, getRemainingMs
@@ -851,21 +853,80 @@
                 $list.innerHTML = '<p style="color:var(--text-muted);font-size:13px;">No notes yet.</p>';
             } else {
                 const fiveMinAgo = Date.now() - 300000;
-                $list.innerHTML = notes.map(n => {
+                $list.innerHTML = notes.map((n, idx) => {
                     const ts = n.createdAt?.toMillis ? n.createdAt.toMillis() : 0;
                     const recent = ts > fiveMinAgo;
                     const by = n.createdBy ? n.createdBy.split(' ').map(w => w[0]).join('').toUpperCase() : '';
-                    return `<div class="bsots-note-item ${recent ? 'bsots-note-item-recent' : ''}">
-                        <p>${esc(n.text)}</p>
-                        <div class="bsots-note-meta">${formatDateTime(n.createdAt)}${by ? ' - ' + by : ''}</div>
+                    return `<div class="bsots-note-item ${recent ? 'bsots-note-item-recent' : ''}" data-note-idx="${idx}">
+                        <p class="bsots-note-text">${esc(n.text)}</p>
+                        <div class="bsots-note-meta">
+                            ${formatDateTime(n.createdAt)}${by ? ' - ' + by : ''}
+                            <button class="bsots-note-edit-btn" data-note-idx="${idx}" style="margin-left:8px;font-size:10px;padding:2px 6px;cursor:pointer;">Edit</button>
+                        </div>
                     </div>`;
                 }).join('');
+
+                // Attach edit handlers
+                $list.querySelectorAll('.bsots-note-edit-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const idx = parseInt(btn.dataset.noteIdx);
+                        editNote(epId, idx);
+                    });
+                });
             }
             $('newNoteText').value = '';
             $notesModal.style.display = 'flex';
         }
 
         function closeNotesModal() { $notesModal.style.display = 'none'; currentNotesEpId = null; }
+
+        function editNote(epId, noteIdx) {
+            const ep = episodes.find(e => e.id === epId);
+            if (!ep) return;
+            const note = ep.notes[noteIdx];
+            if (!note) return;
+
+            const noteItem = document.querySelector(`.bsots-note-item[data-note-idx="${noteIdx}"]`);
+            if (!noteItem) return;
+
+            const textEl = noteItem.querySelector('.bsots-note-text');
+            const originalText = note.text;
+
+            // Replace with editable textarea
+            textEl.innerHTML = `<textarea class="bsots-note-edit-input" style="width:100%;min-height:60px;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:13px;resize:vertical;">${esc(originalText)}</textarea>
+                <div style="margin-top:6px;display:flex;gap:6px;">
+                    <button class="bsots-btn bsots-btn-sm bsots-note-save-btn">Save</button>
+                    <button class="bsots-btn bsots-btn-sm bsots-note-cancel-btn">Cancel</button>
+                </div>`;
+
+            const textarea = textEl.querySelector('.bsots-note-edit-input');
+            const saveBtn = textEl.querySelector('.bsots-note-save-btn');
+            const cancelBtn = textEl.querySelector('.bsots-note-cancel-btn');
+
+            textarea.focus();
+
+            saveBtn.addEventListener('click', async () => {
+                const newText = textarea.value.trim();
+                if (!newText || newText === originalText) {
+                    textEl.innerHTML = esc(originalText);
+                    return;
+                }
+                try {
+                    const updatedNotes = [...ep.notes];
+                    updatedNotes[noteIdx] = { ...note, text: newText, editedAt: Timestamp.now() };
+                    await updateEpisode(epId, { notes: updatedNotes });
+                    showToast('Note updated', 'success');
+                    setTimeout(() => openNotesModal(epId), 300);
+                } catch (err) {
+                    showToast('Failed to update note', 'error');
+                    textEl.innerHTML = esc(originalText);
+                }
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                textEl.innerHTML = esc(originalText);
+            });
+        }
 
         $('closeNotesModal').addEventListener('click', closeNotesModal);
         $('cancelNotesBtn').addEventListener('click', closeNotesModal);
