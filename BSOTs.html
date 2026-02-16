@@ -412,14 +412,14 @@
             let specialTasksHtml = '';
             // Task 1: Start triage (within 15 mins of arrival)
             specialTasksHtml += `<div class="bsots-task bsots-task-special ${triageStarted ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="start-triage">
-                <input type="checkbox" ${triageStarted ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                <input type="checkbox" ${triageStarted ? 'checked disabled' : ''} class="bsots-task-checkbox bsots-task-special-cb">
                 <span class="bsots-task-label" style="font-weight:600;">${triageStarted ? 'Triage started' : 'Start triage'}</span>
             </div>`;
 
             // Task 2: Complete triage (determines urgency and reason)
             if (triageStarted) {
                 specialTasksHtml += `<div class="bsots-task bsots-task-special ${triageCompleted ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="complete-triage">
-                    <input type="checkbox" ${triageCompleted ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                    <input type="checkbox" ${triageCompleted ? 'checked disabled' : ''} class="bsots-task-checkbox bsots-task-special-cb">
                     <span class="bsots-task-label" style="font-weight:600;">${triageCompleted ? 'Triage completed' : 'Complete triage'}</span>
                 </div>`;
             }
@@ -427,7 +427,7 @@
             // Task 3: Medical review (starts within timeframe after triage completion)
             if (triageCompleted) {
                 specialTasksHtml += `<div class="bsots-task bsots-task-special ${medicalReviewed ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="medical-review">
-                    <input type="checkbox" ${medicalReviewed ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                    <input type="checkbox" ${medicalReviewed ? 'checked disabled' : ''} class="bsots-task-checkbox bsots-task-special-cb">
                     <span class="bsots-task-label" style="font-weight:600;">${medicalReviewed ? 'Medical review done' : 'Medical review done'}</span>
                 </div>`;
             }
@@ -556,17 +556,17 @@
                 });
             });
 
-            // Special task clicks (triage and medical review)
-            $boardBody.querySelectorAll('.bsots-task-special').forEach(taskDiv => {
-                const action = taskDiv.dataset.action;
-                const isCompleted = taskDiv.classList.contains('bsots-task-completed');
-
-                if (!isCompleted) {
-                    taskDiv.style.cursor = 'pointer';
-                    taskDiv.addEventListener('click', (e) => {
+            // Special task checkbox clicks (triage and medical review)
+            $boardBody.querySelectorAll('.bsots-task-special-cb').forEach(cb => {
+                if (!cb.disabled) {
+                    cb.addEventListener('click', async (e) => {
+                        e.preventDefault();
                         e.stopPropagation();
+                        const taskDiv = e.target.closest('.bsots-task-special');
+                        const action = taskDiv.dataset.action;
                         const epId = taskDiv.dataset.ep;
                         const ep = episodes.find(x => x.id === epId);
+
                         if (ep) {
                             if (action === 'start-triage') {
                                 openTimeEntryModal('Start Triage', 'When did triage start?', async (time) => {
