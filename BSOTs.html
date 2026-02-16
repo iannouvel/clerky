@@ -160,6 +160,33 @@
         </div>
     </div>
 
+    <!-- Disclaimer Splash Modal -->
+    <div class="bsots-modal-overlay" id="disclaimerModal" style="display:flex;">
+        <div class="bsots-modal" style="max-width:600px;">
+            <div class="bsots-modal-header">
+                <h2>⚠️ Prototype - Not For Clinical Use</h2>
+            </div>
+            <div class="bsots-modal-body">
+                <p style="font-size:15px;line-height:1.6;margin-bottom:16px;">
+                    <strong>This is a prototype demonstration system.</strong>
+                </p>
+                <p style="font-size:14px;line-height:1.6;margin-bottom:12px;">
+                    This BSOTs (Birmingham Symptom-specific Obstetric Triage System) triage board is
+                    <strong>NOT approved for clinical use</strong> and should not be used for patient care decisions.
+                </p>
+                <p style="font-size:14px;line-height:1.6;margin-bottom:12px;">
+                    It is intended for demonstration, testing, and development purposes only.
+                </p>
+                <p style="font-size:13px;color:var(--text-muted);margin-bottom:0;">
+                    By continuing, you acknowledge that this is a prototype system not suitable for clinical decision-making.
+                </p>
+            </div>
+            <div class="bsots-modal-footer">
+                <button class="bsots-btn bsots-btn-primary" id="acceptDisclaimerBtn" style="min-width:150px;">I Understand - Continue</button>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="firebase-init.js"></script>
 
     <script type="module">
@@ -342,10 +369,10 @@
             if (isMostUrgent) rowClasses += ' bsots-row-next-review';
             if (isNew) rowClasses += ' bsots-row-new';
 
-            // Breach dots
-            const breachDots = [];
-            if (ep.breachFlags?.triageDelay) breachDots.push('<span class="bsots-breach-dot" title="Triage delay breach"></span>');
-            if (ep.breachFlags?.overdue) breachDots.push('<span class="bsots-breach-dot" title="Overdue breach"></span>');
+            // Breach dots - removed as per user request
+            // const breachDots = [];
+            // if (ep.breachFlags?.triageDelay) breachDots.push('<span class="bsots-breach-dot" title="Triage delay breach"></span>');
+            // if (ep.breachFlags?.overdue) breachDots.push('<span class="bsots-breach-dot" title="Overdue breach"></span>');
 
             // Tasks
             const tasks = ep.tasks || [];
@@ -373,7 +400,7 @@
             return `<tr class="${rowClasses}" data-episode-id="${ep.id}">
                 <td><span class="bsots-status-tag bsots-status-${status.cls}">${status.label}</span></td>
                 <td>
-                    <strong>${esc(ep.initials || '--')}</strong>${breachDots.join('')}${isMostUrgent ? '<span class="bsots-next-badge">Next</span>' : ''}${isNew ? '<span class="bsots-new-badge">NEW</span>' : ''}
+                    <strong>${esc(ep.initials || '--')}</strong>${isMostUrgent ? '<span class="bsots-next-badge">Next</span>' : ''}${isNew ? '<span class="bsots-new-badge">NEW</span>' : ''}
                 </td>
                 <td>${esc(ep.hospitalNumber || '--')}</td>
                 <td>
@@ -940,6 +967,13 @@
                 showToast('Note cleared', 'success');
             }
             catch { showToast('Failed to clear note', 'error'); }
+        });
+
+        // ─── Disclaimer Modal ───────────────────────────────────────────────
+        const $disclaimerModal = document.getElementById('disclaimerModal');
+
+        document.getElementById('acceptDisclaimerBtn').addEventListener('click', () => {
+            $disclaimerModal.style.display = 'none';
         });
 
         // ─── Menu Helpers ───────────────────────────────────────────────────
