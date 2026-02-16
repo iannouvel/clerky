@@ -148,14 +148,14 @@
                 <button class="bsots-modal-close" id="closeNotesModal">&times;</button>
             </div>
             <div class="bsots-modal-body">
-                <div class="bsots-notes-list" id="notesList"></div>
                 <div class="bsots-form-group" style="margin-bottom:0;">
-                    <textarea id="newNoteText" rows="2" placeholder="Add a note..."></textarea>
+                    <textarea id="noteText" rows="8" placeholder="Type notes here..." style="font-family:monospace;"></textarea>
                 </div>
             </div>
             <div class="bsots-modal-footer">
                 <button class="bsots-btn" id="cancelNotesBtn">Close</button>
-                <button class="bsots-btn bsots-btn-primary" id="submitNoteBtn">Add Note</button>
+                <button class="bsots-btn bsots-btn-primary" id="saveNoteBtn">Save</button>
+                <button class="bsots-btn bsots-btn-danger" id="clearNoteBtn">Clear</button>
             </div>
         </div>
     </div>
@@ -358,12 +358,11 @@
             `<span class="bsots-task-add" data-ep="${ep.id}">+ add</span>` +
             (allDone ? '<span class="bsots-tasks-done" title="All tasks complete">&#10003;</span>' : '');
 
-            // Notes
-            const notes = ep.notes || [];
-            const latestNote = notes.length > 0 ? notes[notes.length - 1] : null;
-            const isRecent = latestNote?.createdAt && (Date.now() - (latestNote.createdAt.toMillis ? latestNote.createdAt.toMillis() : 0)) < 300000;
-            const noteHtml = latestNote
-                ? `<span class="bsots-note-preview ${isRecent ? 'bsots-note-recent' : ''}" data-ep="${ep.id}" title="${esc(latestNote.text)}">${esc(latestNote.text)}</span><span class="bsots-note-count">(${notes.length})</span>`
+            // Note
+            const note = ep.note || '';
+            const notePreview = note.length > 0 ? note.substring(0, 50) + (note.length > 50 ? '...' : '') : '';
+            const noteHtml = note
+                ? `<span class="bsots-note-preview" data-ep="${ep.id}" title="${esc(note)}">${esc(notePreview)}</span>`
                 : `<span class="bsots-note-add" data-ep="${ep.id}">+ note</span>`;
 
             // Escalation arrow
@@ -847,74 +846,40 @@
             const ep = episodes.find(e => e.id === epId);
             if (!ep) return;
             $('notesPatientLabel').textContent = `${ep.initials} (${ep.hospitalNumber})`;
-            const notes = ep.notes || [];
-            const $list = $('notesList');
-            if (notes.length === 0) {
-                $list.innerHTML = '<p style="color:var(--text-muted);font-size:13px;">No notes yet.</p>';
-            } else {
-                const fiveMinAgo = Date.now() - 300000;
-                $list.innerHTML = notes.map((n, idx) => {
-                    const ts = n.createdAt?.toMillis ? n.createdAt.toMillis() : 0;
-                    const recent = ts > fiveMinAgo;
-                    const by = n.createdBy ? n.createdBy.split(' ').map(w => w[0]).join('').toUpperCase() : '';
-                    return `<div class="bsots-note-item ${recent ? 'bsots-note-item-recent' : ''}" data-note-idx="${idx}">
-                        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
-                            <div style="flex:1;">
-                                <p class="bsots-note-text">${esc(n.text)}</p>
-                                <div class="bsots-note-meta">${formatDateTime(n.createdAt)}${by ? ' - ' + by : ''}</div>
-                            </div>
-                            <button class="bsots-note-clear-btn" data-note-idx="${idx}" style="font-size:10px;padding:2px 6px;cursor:pointer;background:var(--color-error);color:white;border:none;border-radius:4px;white-space:nowrap;" title="Clear this note">Clear</button>
-                        </div>
-                    </div>`;
-                }).join('');
-
-                // Attach clear handlers
-                $list.querySelectorAll('.bsots-note-clear-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const idx = parseInt(btn.dataset.noteIdx);
-                        clearNote(epId, idx);
-                    });
-                });
-            }
-            $('newNoteText').value = '';
+            $('noteText').value = ep.note || '';
             $notesModal.style.display = 'flex';
+            $('noteText').focus();
         }
 
-        function closeNotesModal() { $notesModal.style.display = 'none'; currentNotesEpId = null; }
-
-        async function clearNote(epId, noteIdx) {
-            const ep = episodes.find(e => e.id === epId);
-            if (!ep) return;
-
-            if (!confirm('Clear this note?')) return;
-
-            try {
-                const updatedNotes = [...ep.notes];
-                updatedNotes.splice(noteIdx, 1); // Remove the note at index
-                await updateEpisode(epId, { notes: updatedNotes });
-                showToast('Note cleared', 'success');
-                setTimeout(() => openNotesModal(epId), 300);
-            } catch (err) {
-                showToast('Failed to clear note', 'error');
-            }
+        function closeNotesModal() {
+            $notesModal.style.display = 'none';
+            currentNotesEpId = null;
         }
 
         $('closeNotesModal').addEventListener('click', closeNotesModal);
         $('cancelNotesBtn').addEventListener('click', closeNotesModal);
         $notesModal.addEventListener('click', e => { if (e.target === $notesModal) closeNotesModal(); });
 
-        $('submitNoteBtn').addEventListener('click', async () => {
-            const text = $('newNoteText').value.trim();
-            if (!text || !currentNotesEpId) return;
-            const ep = episodes.find(e => e.id === currentNotesEpId);
-            if (!ep) return;
+        $('saveNoteBtn').addEventListener('click', async () => {
+            if (!currentNotesEpId) return;
+            const text = $('noteText').value.trim();
             try {
-                await addNote(currentNotesEpId, ep, text, '');
-                showToast('Note added', 'success');
-                // Wait briefly for Firestore onSnapshot to update local episodes array
-                setTimeout(() => openNotesModal(currentNotesEpId), 300);
+                await updateEpisode(currentNotesEpId, { note: text });
+                showToast('Note saved', 'success');
+                closeNotesModal();
             }
-            catch { showToast('Failed to add note', 'error'); }
+            catch { showToast('Failed to save note', 'error'); }
+        });
+
+        $('clearNoteBtn').addEventListener('click', async () => {
+            if (!currentNotesEpId) return;
+            if (!confirm('Clear all notes for this patient?')) return;
+            try {
+                await updateEpisode(currentNotesEpId, { note: '' });
+                $('noteText').value = '';
+                showToast('Note cleared', 'success');
+            }
+            catch { showToast('Failed to clear note', 'error'); }
         });
 
         // ─── Menu Helpers ───────────────────────────────────────────────────
