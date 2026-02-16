@@ -101,8 +101,8 @@
                         </div>
                     </div>
                     <div class="bsots-form-group">
-                        <label for="patientReason">Presenting Reason *</label>
-                        <select id="patientReason" required><option value="">Select reason...</option></select>
+                        <label for="patientReason">Presenting Reason (if known)</label>
+                        <select id="patientReason"><option value="">Select reason...</option></select>
                     </div>
 
                     <!-- Algorithm Panel: appears after reason is selected -->
@@ -118,7 +118,7 @@
                     <div id="selectedUrgencyBar" class="bsots-selected-urgency" style="display:none;">
                         <span id="selectedUrgencyLabel"></span>
                         <button type="button" class="bsots-btn bsots-btn-sm" id="clearUrgencyBtn">Change</button>
-                        <input type="hidden" id="patientUrgency" required>
+                        <input type="hidden" id="patientUrgency">
                     </div>
 
                     <!-- Immediate actions as tasks -->
@@ -410,12 +410,22 @@
             const medicalReviewed = !!ep.medicalReviewedAt;
 
             let specialTasksHtml = '';
+            // Task 1: Start triage (within 15 mins of arrival)
             specialTasksHtml += `<div class="bsots-task bsots-task-special ${triageStarted ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="start-triage">
                 <input type="checkbox" ${triageStarted ? 'checked' : ''} class="bsots-task-checkbox" disabled>
                 <span class="bsots-task-label" style="font-weight:600;">${triageStarted ? 'Triage started' : 'Start triage'}</span>
             </div>`;
 
+            // Task 2: Complete triage (determines urgency and reason)
             if (triageStarted) {
+                specialTasksHtml += `<div class="bsots-task bsots-task-special ${triageCompleted ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="complete-triage">
+                    <input type="checkbox" ${triageCompleted ? 'checked' : ''} class="bsots-task-checkbox" disabled>
+                    <span class="bsots-task-label" style="font-weight:600;">${triageCompleted ? 'Triage completed' : 'Complete triage'}</span>
+                </div>`;
+            }
+
+            // Task 3: Medical review (starts within timeframe after triage completion)
+            if (triageCompleted) {
                 specialTasksHtml += `<div class="bsots-task bsots-task-special ${medicalReviewed ? 'bsots-task-completed' : ''}" data-ep="${ep.id}" data-action="medical-review">
                     <input type="checkbox" ${medicalReviewed ? 'checked' : ''} class="bsots-task-checkbox" disabled>
                     <span class="bsots-task-label" style="font-weight:600;">${medicalReviewed ? 'Medical review done' : 'Medical review done'}</span>
@@ -565,6 +575,21 @@
                                         showToast('Triage started recorded', 'success');
                                     } catch {
                                         showToast('Failed to record triage start', 'error');
+                                    }
+                                });
+                            } else if (action === 'complete-triage') {
+                                openTimeEntryModal('Complete Triage', 'When was triage completed?', async (time) => {
+                                    try {
+                                        // Calculate nextDueAt from triage completion time + urgency
+                                        const urgency = ep.urgencyCategory || 'GREEN';
+                                        const nextDueAt = computeNextDueAt(time, urgency);
+                                        await updateEpisode(epId, {
+                                            triageCompletedAt: time,
+                                            nextDueAt
+                                        });
+                                        showToast('Triage completed recorded', 'success');
+                                    } catch {
+                                        showToast('Failed to record triage completion', 'error');
                                     }
                                 });
                             } else if (action === 'medical-review') {
@@ -903,11 +928,11 @@
             const initials = $('patientInitials').value.trim();
             const hospitalNumber = $('patientHospNum').value.trim();
             const siteId = $('patientSite').value;
-            const presentingReason = $('patientReason').value;
-            const urgencyCategory = $('patientUrgency').value;
+            const presentingReason = $('patientReason').value || 'Awaiting triage';
+            const urgencyCategory = $('patientUrgency').value || 'GREEN';
             const initialNote = $('patientNote').value.trim();
-            if (!initials || !hospitalNumber || !presentingReason || !urgencyCategory) {
-                showToast('Please fill in all required fields', 'error'); return;
+            if (!initials || !hospitalNumber) {
+                showToast('Please enter patient initials and hospital number', 'error'); return;
             }
             const selectedTasks = [];
             document.querySelectorAll('.bsots-form-task-chip.selected').forEach(c => selectedTasks.push({ label: c.dataset.label }));
