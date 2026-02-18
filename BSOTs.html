@@ -457,13 +457,13 @@
                 <td>
                     <div style="display:flex;flex-direction:column;gap:4px;">
                         <span class="bsots-status-tag bsots-status-${status.cls}">${status.label}</span>
-                        <span style="font-size:12px;color:var(--text-secondary);">${esc(ep.presentingReason || 'Awaiting triage')}</span>
+                        <span style="font-size:12px;color:#555;font-weight:500;">${esc(ep.presentingReason || 'Awaiting triage')}</span>
                     </div>
                 </td>
                 <td>
                     <div style="display:flex;flex-direction:column;gap:2px;">
                         <div><strong>${esc(ep.initials || '--')}</strong>${isNew ? ' <span class="bsots-new-badge">NEW</span>' : ''}</div>
-                        <div style="font-size:11px;color:var(--text-muted);">${esc(ep.hospitalNumber || '--')}${ep.gestation ? ' • ' + esc(ep.gestation) : ''}</div>
+                        <div style="font-size:11px;color:#666;font-weight:500;">${esc(ep.hospitalNumber || '--')}${ep.gestation ? ' • ' + esc(ep.gestation) : ''}</div>
                     </div>
                 </td>
                 <td>
