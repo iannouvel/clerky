@@ -98,6 +98,7 @@ export async function addEpisode(data) {
         siteId: data.siteId,
         initials: data.initials.toUpperCase(),
         hospitalNumber: data.hospitalNumber,
+        gestation: data.gestation || '',
         presentingReason: data.presentingReason,
         urgencyCategory: data.urgencyCategory,
         arrivalAt,
