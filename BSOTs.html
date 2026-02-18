@@ -50,12 +50,9 @@
         <table class="bsots-board" id="boardTable" style="display:none;">
             <thead>
                 <tr>
-                    <th>Status</th>
+                    <th>Status / Reason</th>
                     <th>Patient</th>
-                    <th>Hosp #</th>
                     <th>Arrival / Due</th>
-                    <th>In Unit</th>
-                    <th>Reason</th>
                     <th>Urgency</th>
                     <th>Countdown</th>
                     <th>Tasks</th>
@@ -94,6 +91,10 @@
                         <div class="bsots-form-group">
                             <label for="patientHospNum">Hospital Number *</label>
                             <input type="text" id="patientHospNum" required placeholder="e.g. H123456" autocomplete="off">
+                        </div>
+                        <div class="bsots-form-group">
+                            <label for="patientGestation">Gestation</label>
+                            <input type="text" id="patientGestation" placeholder="e.g. 38+4" autocomplete="off" maxlength="10">
                         </div>
                         <div class="bsots-form-group">
                             <label for="patientSite">Site</label>
@@ -453,19 +454,24 @@
             const escHtml = escalation ? `<span class="bsots-escalation" title="Escalated from ${escalation.from} at ${escalation.time}">&uarr;</span>` : '';
 
             return `<tr class="${rowClasses}" data-episode-id="${ep.id}">
-                <td><span class="bsots-status-tag bsots-status-${status.cls}">${status.label}</span></td>
                 <td>
-                    <strong>${esc(ep.initials || '--')}</strong>${isNew ? '<span class="bsots-new-badge">NEW</span>' : ''}
+                    <div style="display:flex;flex-direction:column;gap:4px;">
+                        <span class="bsots-status-tag bsots-status-${status.cls}">${status.label}</span>
+                        <span style="font-size:12px;color:var(--text-secondary);">${esc(ep.presentingReason || 'Awaiting triage')}</span>
+                    </div>
                 </td>
-                <td>${esc(ep.hospitalNumber || '--')}</td>
+                <td>
+                    <div style="display:flex;flex-direction:column;gap:2px;">
+                        <div><strong>${esc(ep.initials || '--')}</strong>${isNew ? ' <span class="bsots-new-badge">NEW</span>' : ''}</div>
+                        <div style="font-size:11px;color:var(--text-muted);">${esc(ep.hospitalNumber || '--')}${ep.gestation ? ' • ' + esc(ep.gestation) : ''}</div>
+                    </div>
+                </td>
                 <td>
                     <div class="bsots-time-stacked">
                         <div><span class="bsots-time-label">Arr</span> <span class="bsots-time-value">${formatTime(ep.arrivalAt)}</span></div>
                         <div><span class="bsots-time-label">Due</span> <span class="bsots-time-value">${formatTime(ep.nextDueAt)}</span></div>
                     </div>
                 </td>
-                <td><span class="bsots-tiu" data-arrival="${ep.arrivalAt?.toMillis ? ep.arrivalAt.toMillis() : ''}">${formatTimeInUnit(ep.arrivalAt)}</span></td>
-                <td>${esc(ep.presentingReason || '--')}</td>
                 <td>
                     <span class="bsots-urgency-badge bsots-urgency-${urgency}" data-ep="${ep.id}" title="Click to change urgency">${urgency}</span>
                     ${escHtml}
@@ -945,6 +951,7 @@
         async function handleAddPatient() {
             const initials = $('patientInitials').value.trim();
             const hospitalNumber = $('patientHospNum').value.trim();
+            const gestation = $('patientGestation').value.trim();
             const siteId = $('patientSite').value;
             const presentingReason = $('patientReason').value || 'Awaiting triage';
             const urgencyCategory = $('patientUrgency').value || 'GREEN';
@@ -993,6 +1000,11 @@
                         changed = true;
                     }
 
+                    if (gestation !== (ep.gestation || '')) {
+                        updates.gestation = gestation;
+                        changed = true;
+                    }
+
                     // Update tasks
                     const newTasks = selectedTasks.map(t => ({
                         id: 'task_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5),
@@ -1014,7 +1026,7 @@
                 } else {
                     // Create new episode
                     await addEpisode({
-                        siteId, initials, hospitalNumber, presentingReason, urgencyCategory,
+                        siteId, initials, hospitalNumber, gestation, presentingReason, urgencyCategory,
                         tasks: selectedTasks, initialNote: note || null
                     });
                     closeAddModal();
@@ -1234,6 +1246,7 @@
             // Populate fields
             $('patientInitials').value = ep.initials || '';
             $('patientHospNum').value = ep.hospitalNumber || '';
+            $('patientGestation').value = ep.gestation || '';
             $('patientSite').value = ep.siteId || currentSiteId;
             $('patientReason').value = ep.presentingReason || '';
             $('patientUrgency').value = ep.urgencyCategory || '';
