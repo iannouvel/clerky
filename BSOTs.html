@@ -1080,10 +1080,18 @@
             });
             menu.appendChild(detailsItem);
 
-            menu.innerHTML += '<div class="bsots-context-menu-divider"></div>';
+            // Divider
+            const divider = document.createElement('div');
+            divider.className = 'bsots-context-menu-divider';
+            menu.appendChild(divider);
 
-            // Outcome
-            menu.innerHTML += '<div class="bsots-context-menu-sub">Outcome</div>';
+            // Outcome header
+            const outcomeHeader = document.createElement('div');
+            outcomeHeader.className = 'bsots-context-menu-sub';
+            outcomeHeader.textContent = 'Outcome';
+            menu.appendChild(outcomeHeader);
+
+            // Outcome items
             [
                 { value: 'admitted', label: 'Admit', color: '#fd7e14' },
                 { value: 'discharged', label: 'Discharge Home', color: '#28a745' },
