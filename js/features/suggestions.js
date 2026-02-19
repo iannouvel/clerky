@@ -196,10 +196,10 @@ export async function determineInsertionPoint(suggestion, clinicalNote) {
 
         if (!response.ok) throw new Error(`Status ${response.status}`);
         const result = await response.json();
-        return result.insertionPoint;
+        return result.updatedNote || null;
     } catch (error) {
-        console.warn('[DEBUG] Insertion point determination failed, falling back:', error);
-        return { section: 'end', insertionMethod: 'append' };
+        console.warn('[DEBUG] Insertion failed, will fall back to append:', error);
+        return null;
     }
 }
 
@@ -255,11 +255,6 @@ export async function showCurrentSuggestion() {
     if (suggestion.originalText) {
         highlightTextInEditor(suggestion.originalText);
         scrollTextIntoView(suggestion.originalText);
-    }
-    if ((suggestion.category === 'addition' || !suggestion.originalText) && !suggestion.cachedInsertionPoint) {
-        determineInsertionPoint(suggestion, getUserInputContent()).then(pt => {
-            suggestion.cachedInsertionPoint = pt;
-        }).catch(err => console.warn('Pre-fetch failed', err));
     }
 
     const guidelineLink = createGuidelineViewerLink(

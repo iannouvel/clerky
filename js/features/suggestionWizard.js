@@ -283,19 +283,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 category: 'addition'
             };
 
-            let insertionPoint = null;
-            try {
-                insertionPoint = await determineInsertionPoint(suggestionForInsertion, currentContent);
-                console.log('[WIZARD] Determined insertion point:', insertionPoint);
-            } catch (insertError) {
-                console.warn('[WIZARD] Failed to determine insertion point, falling back to append:', insertError);
-                insertionPoint = { section: 'end', insertionMethod: 'append' };
-            }
-
             let newContent;
-            if (insertionPoint && insertionPoint.section !== 'end') {
-                newContent = insertTextAtPoint(currentContent, textToInsert, insertionPoint);
-            } else {
+            try {
+                const updatedNote = await determineInsertionPoint(suggestionForInsertion, currentContent);
+                if (updatedNote) {
+                    newContent = updatedNote;
+                    console.log('[WIZARD] AI inserted suggestion directly into note');
+                } else {
+                    throw new Error('No updated note returned');
+                }
+            } catch (insertError) {
+                console.warn('[WIZARD] AI insertion failed, falling back to append:', insertError);
                 const spacing = currentContent.endsWith('\n') ? '' : '\n';
                 newContent = currentContent + spacing + textToInsert;
             }

@@ -16756,103 +16756,29 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
             clinicalNoteLength: clinicalNote.length
         });
 
-        // Create AI prompt to analyse note structure and determine insertion point
-        const systemPrompt = `You are a medical AI assistant that analyses clinical note structure to identify where new information should be added.
+        const systemPrompt = `You are a medical scribe. Insert the new item into the most appropriate place in the clinical note, maintaining the note's existing formatting and style. Return only the complete updated note — no explanation, no commentary, nothing else.`;
 
-Your task is to:
-1. Analyse the structure of the clinical note and identify its sections (e.g., Situation, Issues, Background, Assessment, Discussion, Plan)
-2. Identify any nested subsections within those sections (e.g., "**Counselling:**" under "Plan", "**Management Plan:**" under "Plan")
-3. Determine which section or subsection the new text belongs to based on its content
-
-Common clinical note structures to recognise:
-- SOAP (Subjective, Objective, Assessment, Plan)
-- SBAR (Situation, Background, Assessment, Recommendation)
-- Custom sections like: Situation, Issues, Background, Assessment, Discussion, Plan
-- Nested subsections often use markdown bold formatting: "* **Management Plan:**", "* **Counselling:**"
-
-Guidelines for categorising content:
-- Patient demographics, presentation details → Situation/Subjective section
-- Medical history, context → Background section
-- Clinical findings, risk assessments, observations → Assessment section
-- Treatment discussions, considerations → Discussion section
-- Management steps, follow-up plans, counselling → Plan section (or subsections within Plan like Management Plan, Counselling, etc.)
-
-Return ONLY a valid JSON object with this structure:
-{
-  "section": "name of the main section where text should be inserted",
-  "subsection": "name of nested subsection if applicable, otherwise null",
-  "reasoning": "brief explanation of why this location is appropriate"
-}
-
-Field descriptions:
-- section: Main section name (e.g., "Plan", "Assessment")
-- subsection: Nested subsection name if the text belongs in one (e.g., "Counselling", "Management Plan"), otherwise null
-- reasoning: Brief explanation of placement decision
-
-CRITICAL FORMATTING REQUIREMENTS:
-- Return ONLY the JSON object - no markdown code blocks, no explanatory text
-- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
-- Start your response directly with { and end with }
-- Ensure all JSON is properly formatted and valid`;
-
-        const userPrompt = `Clinical Note:
-${clinicalNote}
-
-New Text to Insert:
-${suggestion.suggestedText}
-
-Context: ${suggestion.context || 'No additional context'}
-
-Please analyse the clinical note structure and determine the optimal insertion point for this new text.`;
+        const userPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nNEW ITEM TO INSERT:\n${suggestion.suggestedText}`;
 
         debugLog('[DEBUG] determineInsertionPoint: Sending to AI');
         timer.step('Build prompts');
 
-        // Send to AI
-        const messages = [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userPrompt }
-        ];
-
-        const aiResponse = await routeToAI({ messages }, userId);
+        const aiResponse = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId);
         timer.step('AI API call');
 
-        debugLog('[DEBUG] determineInsertionPoint: AI response received', {
-            success: !!aiResponse,
-            hasContent: !!aiResponse?.content,
-            contentLength: aiResponse?.content?.length
-        });
-
         if (!aiResponse || !aiResponse.content) {
-            console.error('[DEBUG] determineInsertionPoint: Invalid AI response:', aiResponse);
+            console.error('[DEBUG] determineInsertionPoint: Invalid AI response');
             return res.status(500).json({ success: false, error: 'Invalid AI response' });
         }
 
-        // Parse AI response
-        let insertionPoint;
-        try {
-            insertionPoint = JSON.parse(aiResponse.content);
-            debugLog('[DEBUG] determineInsertionPoint: Parsed insertion point:', insertionPoint);
-        } catch (parseError) {
-            console.error('[DEBUG] determineInsertionPoint: Failed to parse AI response:', parseError);
-            console.error('[DEBUG] determineInsertionPoint: Raw AI response:', aiResponse.content);
-            return res.status(500).json({ success: false, error: 'Failed to parse AI response' });
-        }
-        timer.step('Parse response');
-
-        // Validate response structure
-        if (!insertionPoint.section) {
-            console.error('[DEBUG] determineInsertionPoint: Invalid insertion point structure:', insertionPoint);
-            return res.status(500).json({ success: false, error: 'Invalid insertion point structure - missing section' });
-        }
-
-        // Ensure optional fields have default values
-        insertionPoint.subsection = insertionPoint.subsection || null;
-        insertionPoint.insertionMethod = insertionPoint.insertionMethod || 'append';
-
         res.json({
             success: true,
-            insertionPoint
+            updatedNote: aiResponse.content.trim()
         });
 
     } catch (error) {
