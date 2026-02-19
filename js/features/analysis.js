@@ -5,7 +5,6 @@ import { getUserInputContent, setUserInputContent, appendToOutputField } from '.
 import { showPIIReviewInterface, ensureAnonymisedForOutbound } from './pii.js';
 import { updateUser } from '../ui/status.js';
 import { initializeSuggestionWizard } from './suggestionWizard.js';
-import { determineInsertionPoint, insertTextAtPoint } from './suggestions.js';
 
 // ---- Analysis Functions ----
 
@@ -714,8 +713,8 @@ export async function runParallelAnalysis(guidelines) {
         initializeSuggestionWizard(finalOutputContainer, sortedSuggestions, {
             getUserInputContent: getUserInputContent,
             setUserInputContent: setUserInputContent,
-            determineInsertionPoint: determineInsertionPoint,
-            insertTextAtPoint: insertTextAtPoint
+            determineInsertionPoint: window.determineInsertionPoint,
+            insertTextAtPoint: window.insertTextAtPoint
         });
     }
 
