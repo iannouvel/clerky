@@ -16751,6 +16751,7 @@ Please analyse the clinical note structure and determine the optimal insertion p
 
         // Ensure optional fields have default values
         insertionPoint.subsection = insertionPoint.subsection || null;
+        insertionPoint.insertionMethod = insertionPoint.insertionMethod || 'append';
 
         res.json({
             success: true,
