@@ -3246,6 +3246,14 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
             }
         }
 
+        // Validate guidelines using summaries from Firestore to exclude non-applicable ones
+        try {
+            categories = await validateGuidelinesWithAI(transcript, categories, userId);
+            timer.step('AI validation');
+        } catch (validationError) {
+            console.warn('[RAG] Validation failed, using unvalidated results:', validationError.message);
+        }
+
         console.log(`[RAG] Search complete: ${categories.mostRelevant.length} most relevant, ${categories.potentiallyRelevant.length} potentially relevant`);
 
         return {
@@ -3424,6 +3432,95 @@ NOT_RELEVANT: 6, 8`;
 
     // Return original categories if reranking fails
     return categories;
+}
+
+// Validate RAG-returned guidelines using Firestore summaries and AI to exclude non-applicable ones
+async function validateGuidelinesWithAI(transcript, categories, userId) {
+    const candidates = [
+        ...categories.mostRelevant,
+        ...categories.potentiallyRelevant
+    ];
+
+    if (candidates.length === 0) return categories;
+
+    // Fetch summaries from Firestore in parallel
+    const summaryMap = {};
+    await Promise.all(candidates.map(async (g) => {
+        try {
+            const doc = await db.collection('guidelines').doc(g.id).get();
+            if (doc.exists) {
+                const data = doc.data();
+                summaryMap[g.id] = data.summary || data.condensed || null;
+            }
+        } catch (err) {
+            console.warn(`[RAG] Could not fetch summary for ${g.id}:`, err.message);
+        }
+    }));
+
+    const candidateList = candidates.map((g, i) => {
+        const summary = summaryMap[g.id];
+        const summaryText = summary ? summary.substring(0, 400) : 'No summary available';
+        return `${i + 1}. ${g.title}\nSummary: ${summaryText}`;
+    }).join('\n\n');
+
+    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and a list of candidate guidelines with summaries, identify which guidelines are NOT applicable to this specific scenario.
+
+CLINICAL SCENARIO:
+${transcript.substring(0, 2000)}
+
+CANDIDATE GUIDELINES:
+${candidateList}
+
+A guideline is NOT applicable if it clearly covers a different procedure, body area, or clinical context to the scenario (e.g. a perineal repair guideline is not applicable to a caesarean wound scenario; a neonatal resuscitation guideline is not applicable to a maternal haemorrhage scenario).
+
+Respond ONLY in this exact format:
+NOT_APPLICABLE: [comma-separated numbers, or "none" if all are applicable]`;
+
+    try {
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
+        if (!aiResponse?.content) return categories;
+
+        const responseText = aiResponse.content;
+        const notMatch = responseText.match(/NOT_APPLICABLE:\s*([^\n]+)/i);
+        if (!notMatch) return categories;
+
+        const notApplicableStr = notMatch[1].trim();
+        if (notApplicableStr.toLowerCase() === 'none') return categories;
+
+        const notNums = new Set(
+            notApplicableStr.split(',')
+                .map(n => parseInt(n.trim()))
+                .filter(n => !isNaN(n) && n >= 1 && n <= candidates.length)
+        );
+
+        if (notNums.size === 0) return categories;
+
+        const mostRelevantIds = new Set(categories.mostRelevant.map(g => g.id));
+        const validatedCategories = {
+            mostRelevant: [],
+            potentiallyRelevant: [],
+            lessRelevant: [...categories.lessRelevant],
+            notRelevant: [...categories.notRelevant]
+        };
+
+        candidates.forEach((g, i) => {
+            if (notNums.has(i + 1)) {
+                console.log(`[RAG] Validation excluded non-applicable guideline: ${g.title}`);
+                validatedCategories.notRelevant.push(g);
+            } else if (mostRelevantIds.has(g.id)) {
+                validatedCategories.mostRelevant.push(g);
+            } else {
+                validatedCategories.potentiallyRelevant.push(g);
+            }
+        });
+
+        console.log(`[RAG] Validation complete: excluded ${notNums.size} non-applicable guideline(s)`);
+        return validatedCategories;
+
+    } catch (error) {
+        console.warn('[RAG] Validation failed, using unfiltered results:', error.message);
+        return categories;
+    }
 }
 
 // Main findRelevantGuidelines endpoint with concurrent chunking
