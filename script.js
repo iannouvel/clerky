@@ -3367,17 +3367,12 @@ async function determineInsertionPoint(suggestion, clinicalNote) {
         }
 
         const result = await response.json();
-        console.log('[DEBUG] determineInsertionPoint: Received result:', result);
+        console.log('[DEBUG] determineInsertionPoint: Received updatedNote length:', result.updatedNote?.length);
 
-        return result.insertionPoint;
+        return result.updatedNote || null;
     } catch (error) {
         console.error('[DEBUG] determineInsertionPoint: Error:', error);
-        // Fallback to appending at end
-        return {
-            section: 'end',
-            insertionMethod: 'append',
-            reasoning: 'Fallback due to error'
-        };
+        return null; // null signals fallback to manual append
     }
 }
 
