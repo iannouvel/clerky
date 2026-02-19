@@ -3716,25 +3716,14 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             // Get the section content (from section start to end)
             const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
 
-            // Find where this section ends
-            const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
+            // Find where this section ends by looking for the next section header.
+            // A section header is any line starting with a capitalised word(s) followed by a colon,
+            // e.g. "Follow-up:", "Examination:", "History of Presenting Complaint:" etc.
+            // This avoids the need for a hardcoded list of section names.
             let nextSectionIndex = -1;
-
-            for (const nextSection of commonSections) {
-                if (nextSection === section) continue;
-
-                const nextPatterns = [
-                    new RegExp(`\n${nextSection}:`, 'i'),
-                    new RegExp(`\n${nextSection}\\s*$`, 'm'),
-                    new RegExp(`\n${nextSection}\\s*-`, 'i')
-                ];
-
-                for (const pattern of nextPatterns) {
-                    const match = afterSection.match(pattern);
-                    if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
-                        nextSectionIndex = match.index;
-                    }
-                }
+            const nextSectionMatch = afterSection.match(/\n[A-Z][a-zA-Z0-9 \-\/&]{2,}:/);
+            if (nextSectionMatch) {
+                nextSectionIndex = nextSectionMatch.index;
             }
 
             // Extract section content
@@ -3878,25 +3867,10 @@ function insertTextAtPoint(currentContent, newText, insertionPoint) {
             // Look for the next section header after this one
             const afterSection = currentContent.slice(sectionStartIndex + matchedPattern.length);
 
-            // Common section names to look for
-            const commonSections = ['Situation', 'Issues', 'Background', 'Assessment', 'Discussion', 'Plan', 'Recommendation'];
             let nextSectionIndex = -1;
-
-            for (const nextSection of commonSections) {
-                if (nextSection === section) continue; // Skip current section
-
-                const nextPatterns = [
-                    new RegExp(`\n${nextSection}:`, 'i'),
-                    new RegExp(`\n${nextSection}\\s*$`, 'm'),
-                    new RegExp(`\n${nextSection}\\s*-`, 'i')
-                ];
-
-                for (const pattern of nextPatterns) {
-                    const match = afterSection.match(pattern);
-                    if (match && (nextSectionIndex === -1 || match.index < nextSectionIndex)) {
-                        nextSectionIndex = match.index;
-                    }
-                }
+            const nextSectionMatch2 = afterSection.match(/\n[A-Z][a-zA-Z0-9 \-\/&]{2,}:/);
+            if (nextSectionMatch2) {
+                nextSectionIndex = nextSectionMatch2.index;
             }
 
             // Calculate insertion position
