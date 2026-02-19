@@ -60,39 +60,17 @@ function createPromptForChunk(transcript, guidelinesChunk) {
         return guidelineInfo;
     }).join('\n\n---\n\n');
 
-    return `You are a medical expert analyzing a clinical case to identify the most relevant medical guidelines. Your task is to categorize each guideline by its clinical relevance to the specific patient scenario.
+    return `You are a medical expert reading a clinical case and deciding how relevant each listed guideline is to that specific patient.
 
-CLINICAL CASE:
+Clinical case:
 ${transcript}
 
-AVAILABLE GUIDELINES:
+Available guidelines:
 ${guidelinesText}
 
-ANALYSIS INSTRUCTIONS:
-1. Carefully read the clinical case and identify the key clinical issues, patient demographics, and medical context
-2. For each guideline, consider:
-   - Direct relevance to the patient's primary presenting conditions
-   - Applicability to the patient's specific demographics (age, pregnancy status, etc.)
-   - Relevance to secondary issues or comorbidities mentioned
-   - Potential value for differential diagnosis or management planning
-   - Appropriateness for the clinical setting and care level described
+For each guideline, consider whether it directly addresses the patient's primary condition and context, whether it applies to their demographics and clinical situation, and whether it might inform management or differential diagnosis. Assign a relevance score between 0.0 and 1.0, where scores above 0.8 mean the guideline directly applies, scores between 0.5 and 0.8 suggest it may be useful for secondary issues, scores between 0.2 and 0.5 indicate limited background relevance, and scores below 0.2 mean the guideline is not applicable to this case.
 
-RELEVANCE SCORING (0.0-1.0):
-- 0.9-1.0: Directly addresses primary clinical issues and patient context
-- 0.7-0.89: Highly relevant to primary or important secondary issues  
-- 0.5-0.69: Moderately relevant to secondary issues or differential diagnosis
-- 0.2-0.49: Limited relevance, may provide background information
-- 0.0-0.19: Minimal or no relevance to this specific case
-
-RESPONSE FORMAT (JSON only):
-{
-  "mostRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
-  "potentiallyRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
-  "lessRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}],
-  "notRelevant": [{"id": "guideline_id", "title": "guideline_title", "relevance": "0.XX"}]
-}
-
-Provide ONLY the JSON response with no additional text or explanation.`;
+Respond with a JSON object grouping the guidelines into four arrays — mostRelevant, potentiallyRelevant, lessRelevant, and notRelevant — where each entry contains the guideline id, title, and relevance score. Return only the JSON with no surrounding text.`;
 }
 
 /**
@@ -527,7 +505,7 @@ async function checkComplianceAndSuggest(clinicalNote, importantPoints, userId) 
     const pointsList = importantPoints.map(p => `[${p.originalIndex}] ${p.point}`).join('\n');
     const prompts = global.prompts || require('../../prompts.json');
     const promptConfig = prompts['checkPracticePointCompliance'];
-    const systemPrompt = promptConfig?.system_prompt || 'You are a clinical advisor. Return ONLY valid JSON - no markdown, no explanations.';
+    const systemPrompt = promptConfig?.system_prompt || 'You are a clinical advisor. Respond with valid JSON only, with no surrounding text or markdown.';
     const userPrompt = (promptConfig?.prompt || `CLINICAL NOTE:\n{{clinicalNote}}\n\nPRACTICE POINTS:\n{{pointsList}}\n\nFor each practice point, ask yourself: "Is this clinical note essentially compliant..."\n\nReturn JSON...`)
         .replace('{{clinicalNote}}', clinicalNote)
         .replace('{{pointsList}}', pointsList);
@@ -557,8 +535,8 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
     if (!allPoints || allPoints.length === 0) return { relevant: [], irrelevant: {} };
     const pointsList = allPoints.map((p, i) => `[${i + 1}] ${p}`).join('\n');
     const result = await routeToAI({
-        messages: [{ role: 'system', content: 'You are a clinical advisor. Return ONLY valid JSON.' },
-        { role: 'user', content: `Clinical Note:\n${clinicalNote}\n\nPoints:\n${pointsList}\n\nFilter relevant...` }]
+        messages: [{ role: 'system', content: 'You are a clinical advisor. Respond with valid JSON only, with no surrounding text or markdown.' },
+        { role: 'user', content: `Clinical note:\n${clinicalNote}\n\nPractice points:\n${pointsList}\n\nFor each practice point, decide whether it is relevant to this patient's clinical situation. Return a JSON object with two fields: "relevant" (an array of point numbers that apply to this patient) and "irrelevant" (an object mapping point numbers to a brief reason why they don't apply).` }]
     }, userId);
     try {
         return JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
@@ -586,7 +564,7 @@ async function filterRelevantPracticePoints(clinicalNote, allPoints, userId) {
 async function filterImportantPracticePoints(clinicalNote, relevantPoints, userId) {
     if (relevantPoints.length === 0) return { important: [], unimportant: {} };
     const pointsList = relevantPoints.map(p => `[${p.originalIndex}] ${p.point}`).join('\n');
-    const messages = [{ role: 'system', content: 'You are a clinical advisor. Return ONLY valid JSON.' }, { role: 'user', content: `Clinical Note:\n${clinicalNote}\n\nPoints:\n${pointsList}\n\nDetermine if each practice point is likely to have significant impact...` }];
+    const messages = [{ role: 'system', content: 'You are a clinical advisor. Respond with valid JSON only, with no surrounding text or markdown.' }, { role: 'user', content: `Clinical note:\n${clinicalNote}\n\nPractice points:\n${pointsList}\n\nFor each practice point, consider whether acting on it would have a meaningful impact on this patient's care. Return a JSON object with two fields: "important" (an array of point numbers that would have significant clinical impact) and "unimportant" (an object mapping point numbers to a brief reason why they are low priority for this patient).` }];
     const result = await routeToAI({ messages }, userId);
     try {
         return JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
@@ -630,7 +608,7 @@ const loadGuidelineHints = loadGuidelineLearning;
  */
 function formatLearningForPrompt(learning) {
     if (!learning || !learning.learningText) return '';
-    return `\n\nIMPORTANT - ACCUMULATED LEARNING FROM PREVIOUS ATTEMPTS:\nThe following insights have been learned from previous AI attempts to analyse this guideline. Apply these lessons:\n\n${learning.learningText}\n`;
+    return `\n\nNotes from previous analyses of this guideline — please apply these lessons when interpreting it:\n\n${learning.learningText}\n`;
 }
 
 /**
@@ -663,8 +641,8 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
         if (learning) hintsText = formatLearningForPrompt(learning);
     }
 
-    const step1SystemPrompt = `You are a clinical advisor. Your job is to identify GAPS in care based on the provided clinical note and guideline. Identify any guideline recommendations NOT covered by the clinical note. Return ONLY valid JSON with this structure: { "suggestions": [{ "suggestion": "Concise, actionable advice", "priority": "high|medium|low", "reasoning": "Brief explanation" }] }`;
-    const step1UserPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nGUIDELINE TITLE: ${guidelineTitle}\n\nGUIDELINE CONTENT:\n${guidelineContent}\n\n${hintsText ? `\nPREVIOUS FEEDBACK:\n${hintsText}\n` : ''}\n\nTASK: Identify any guideline recommendations NOT covered...`;
+    const step1SystemPrompt = `You are a clinical advisor reviewing a clinical note against a guideline. Your role is to identify care gaps — things the guideline recommends that are not addressed in the note. For each gap, write a concise actionable suggestion, indicate whether it is high, medium, or low priority, and briefly explain your reasoning. Respond with valid JSON only, using the structure: { "suggestions": [{ "suggestion": "...", "priority": "high, medium, or low", "reasoning": "..." }] }`;
+    const step1UserPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline title: ${guidelineTitle}\n\nGuideline content:\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Please identify any recommendations from the guideline that are not addressed in this clinical note.`;
     const messagesStep1 = [{ role: 'system', content: step1SystemPrompt }, { role: 'user', content: step1UserPrompt }];
     const resultStep1 = await routeToAI({ messages: messagesStep1 }, userId, targetModel);
 
@@ -678,8 +656,8 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 
     if (initialSuggestions.length === 0) return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
 
-    const step2SystemPrompt = `You are a clinical advisor perfecting a list of suggestions. Your specific task is to extract patient context, identify compliant points, and add "why" and "verbatimQuote" fields to each suggestion. Ensure the output is valid JSON with structure: { "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "...", "why": "...", "verbatimQuote": "..." }], "alreadyCompliant": [] }`;
-    const step2UserPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nGUIDELINE CONTENT:\n${guidelineContent}\n\nDRAFT SUGGESTIONS:\n${JSON.stringify(initialSuggestions, null, 2)}\n\nTASK: 1. Extract patient context. 2. Identify already compliant. 3. Add why/verbatimQuote. 4. Return JSON.`;
+    const step2SystemPrompt = `You are a clinical advisor reviewing a set of draft suggestions about a patient. For each suggestion, add a "why" field explaining why it matters for this specific patient, and a "verbatimQuote" field with the exact phrase from the guideline that supports it. Also extract the patient context from the note and identify any guideline recommendations that are already addressed in the note. Respond with valid JSON only, using the structure: { "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "...", "why": "...", "verbatimQuote": "..." }], "alreadyCompliant": [] }`;
+    const step2UserPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline content:\n${guidelineContent}\n\nDraft suggestions:\n${JSON.stringify(initialSuggestions, null, 2)}\n\nPlease enrich these suggestions with reasoning and guideline quotes, extract the patient context, and identify anything in the clinical note that is already compliant with the guideline.`;
     const messagesStep2 = [{ role: 'system', content: step2SystemPrompt }, { role: 'user', content: step2UserPrompt }];
     const resultStep2 = await routeToAI({ messages: messagesStep2 }, userId, targetModel);
 
@@ -717,8 +695,8 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
  */
 async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitle, suggestions, alreadyCompliant, userId) {
     const promptConfig = (global.prompts || require('../../prompts.json'))['evaluateSuggestions'];
-    const systemPrompt = promptConfig?.system_prompt || `You are a clinical guideline expert evaluating AI-generated suggestions... Return ONLY valid JSON.`;
-    const userPrompt = (promptConfig?.prompt || `CLINICAL NOTE:\n{{clinicalNote}}\n\nGUIDELINE TITLE: {{guidelineTitle}}\n\nFULL GUIDELINE CONTENT:\n{{guidelineContent}}\n\nAI-GENERATED SUGGESTIONS:\n{{suggestions}}\n\nAI-IDENTIFIED AS ALREADY COMPLIANT:\n{{alreadyCompliant}}\n\nEvaluate the AI's output...`)
+    const systemPrompt = promptConfig?.system_prompt || `You are a clinical guideline expert evaluating whether a set of AI-generated suggestions correctly reflects what a guideline recommends for a specific patient. Respond with valid JSON only, with no surrounding text or markdown.`;
+    const userPrompt = (promptConfig?.prompt || `Clinical note:\n{{clinicalNote}}\n\nGuideline title: {{guidelineTitle}}\n\nGuideline content:\n{{guidelineContent}}\n\nSuggestions generated by the AI:\n{{suggestions}}\n\nPoints the AI identified as already compliant:\n{{alreadyCompliant}}\n\nPlease evaluate whether the suggestions are accurate and complete relative to the guideline, and whether any compliant items were incorrectly classified.`)
         .replace('{{clinicalNote}}', clinicalNote).replace('{{guidelineTitle}}', guidelineTitle).replace('{{guidelineContent}}', guidelineContent)
         .replace('{{suggestions}}', JSON.stringify(suggestions)).replace('{{alreadyCompliant}}', JSON.stringify(alreadyCompliant));
 
@@ -757,9 +735,9 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
  */
 async function generatePromptImprovements(currentPrompt, evaluationResults, avgRecall, avgPrecision, avgLatency, userId, additionalMetrics = {}) {
     const promptConfig = (global.prompts || require('../../prompts.json'))['generatePromptImprovements'];
-    const systemPrompt = promptConfig?.system_prompt || `You are an expert at prompt engineering... Return ONLY valid JSON.`;
+    const systemPrompt = promptConfig?.system_prompt || `You are an expert at improving AI prompts for clinical use. Analyse the evaluation results and suggest concrete changes to the prompt that would improve performance. Respond with valid JSON only, with no surrounding text or markdown.`;
     const evaluationSummary = evaluationResults.map((evaluationItem, idx) => ({ scenario: idx + 1, recall: evaluationItem.recallScore, precision: evaluationItem.precisionScore, assessment: evaluationItem.overallAssessment }));
-    const userPrompt = (promptConfig?.prompt || `CURRENT PROMPT BEING EVALUATED:\n{{currentPrompt}}\n\nEVALUATION RESULTS:\n{{evaluationResults}}\n\nMETRICS:\nRecall: {{avgRecall}}\nPrecision: {{avgPrecision}}\n\nAnalyze...`)
+    const userPrompt = (promptConfig?.prompt || `The prompt being evaluated:\n{{currentPrompt}}\n\nEvaluation results across test cases:\n{{evaluationResults}}\n\nOverall recall score: {{avgRecall}}\nOverall precision score: {{avgPrecision}}\n\nBased on these results, please suggest specific changes to the prompt that would improve its recall and precision.`)
         .replace('{{currentPrompt}}', JSON.stringify(currentPrompt)).replace('{{evaluationResults}}', JSON.stringify(evaluationSummary))
         .replace('{{avgRecall}}', avgRecall).replace('{{avgPrecision}}', avgPrecision);
 
@@ -788,8 +766,8 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgR
  */
 async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, userId) {
     if ((evaluation.missedRecommendations?.length || 0) === 0 && (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) === 0) return null;
-    const systemPrompt = `You are an expert at analysing AI performance... Write 1-3 short paragraphs...`;
-    const userPrompt = `GUIDELINE: ${guidelineTitle}\n\nEVALUATION RESULTS:\n${JSON.stringify(evaluation, null, 2)}\n\nSUGGESTIONS:\n${JSON.stringify(suggestions, null, 2)}\n\nWrite a concise prose summary of key lessons learned.`;
+    const systemPrompt = `You are an expert at analysing AI performance on clinical tasks. Write a concise summary, in plain prose, of what went wrong and what the AI should do differently next time. Aim for two or three short paragraphs.`;
+    const userPrompt = `Guideline: ${guidelineTitle}\n\nEvaluation results:\n${JSON.stringify(evaluation, null, 2)}\n\nSuggestions that were evaluated:\n${JSON.stringify(suggestions, null, 2)}\n\nPlease write a concise prose summary of the key lessons learned from this evaluation, focusing on what the AI got wrong and how it could improve.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
     if (!result || !result.content) return null;
     return { learningText: result.content.trim() };
@@ -809,8 +787,8 @@ async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, us
  * @returns {Promise<string>} Synthesized learning text
  */
 async function foldLearningWithLLM(existingLearning, newLearning, guidelineTitle, userId) {
-    const systemPrompt = `You are an expert at synthesising clinical guideline knowledge... Preserve existing, incorporate new. Concise.`;
-    const userPrompt = `GUIDELINE: ${guidelineTitle}\n\nEXISTING:\n${existingLearning}\n\nNEW:\n${newLearning}\n\nSynthesise...`;
+    const systemPrompt = `You are an expert at synthesising clinical knowledge. Your role is to merge two sets of notes about the same guideline into a single coherent summary, preserving the most important lessons from both while keeping the result concise.`;
+    const userPrompt = `Guideline: ${guidelineTitle}\n\nExisting notes:\n${existingLearning}\n\nNew notes to incorporate:\n${newLearning}\n\nPlease merge these into a single set of notes that captures the most important lessons from both.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
     return result?.content?.trim() || newLearning;
 }
@@ -868,8 +846,8 @@ async function refineSuggestions(previousSuggestions, previousEvaluation, clinic
         const learning = await loadGuidelineLearning(guidelineId);
         if (learning) hintsText = formatLearningForPrompt(learning);
     }
-    const systemPrompt = `You are a clinical advisor reviewing and improving another AI's suggestions... Return ONLY valid JSON.`;
-    const userPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nGUIDELINE:\n${guidelineContent}\n\nPREVIOUS SUGGESTIONS:\n${JSON.stringify(previousSuggestions)}\n\nEVALUATION:\n${JSON.stringify(previousEvaluation)}\n${hintsText}\n\nProvide IMPROVED suggestions.`;
+    const systemPrompt = `You are a clinical advisor reviewing and improving a set of AI-generated clinical suggestions. Your goal is to correct any inaccuracies, fill in any gaps relative to the guideline, and return an improved set of suggestions. Respond with valid JSON only, with no surrounding text or markdown.`;
+    const userPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline:\n${guidelineContent}\n\nPrevious suggestions:\n${JSON.stringify(previousSuggestions)}\n\nEvaluation of those suggestions:\n${JSON.stringify(previousEvaluation)}\n${hintsText}\n\nPlease provide an improved set of suggestions that addresses the shortcomings identified in the evaluation.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, targetProvider);
     if (!result || !result.content) return { patientContext: {}, suggestions: previousSuggestions, alreadyCompliant: [], refinementNotes: 'No response' };
     try {
@@ -1158,41 +1136,15 @@ async function senseCheckGuidelines(categories, clinicalNote, userId) {
         return { validCategories: categories, filteredOut: [] };
     }
 
-    const systemPrompt = `You are a clinical reasoning validator. Your job is to identify guidelines that are COMPLETELY IRRELEVANT to the patient's condition.
+    const systemPrompt = `You are reviewing a list of clinical guidelines to decide which ones are worth checking against a patient's clinical note. The only ones worth removing are those that clearly cannot apply — for example, a guideline specifically about sickle cell disease when the patient has no history of sickle cell, or a guideline about twin pregnancy when the patient is not carrying twins. General guidelines, preventive screening guidelines, and anything that could plausibly apply should be kept. When in doubt, keep the guideline. Respond with valid JSON only, using the structure: { "validGuidelines": [list of IDs to keep], "filteredOut": [{ "id": "...", "title": "...", "reason": "one sentence explanation" }] }`;
 
-CRITICAL: Only filter out guidelines when there is a CLEAR MISMATCH between:
-1. A specific disease/condition mentioned in the guideline title
-2. The patient NOT having that disease/condition
-
-Common patterns to detect:
-- Guidelines about specific diseases (e.g., "Sickle Cell Disease", "Thalassemia", "HIV") when patient doesn't have that disease
-- Guidelines about specific procedures (e.g., "IVF", "Caesarean Section") when patient hasn't had that procedure
-- Guidelines about specific contexts (e.g., "Multiple Pregnancy") when patient isn't in that context
-
-DO NOT filter out:
-- General guidelines that could apply broadly (e.g., "Antenatal Care", "Labour Management")
-- Guidelines about screening/testing (these are often preventive)
-- Guidelines that mention complications or risks the patient COULD develop
-
-Return ONLY valid JSON with this structure:
-{
-  "validGuidelines": [<array of guideline IDs that ARE relevant or COULD BE relevant>],
-  "filteredOut": [
-    {
-      "id": "<guideline ID>",
-      "title": "<guideline title>",
-      "reason": "<brief explanation why it's completely irrelevant>"
-    }
-  ]
-}`;
-
-    const userPrompt = `CLINICAL NOTE:
+    const userPrompt = `Clinical note:
 ${clinicalNote}
 
-GUIDELINES TO VALIDATE:
+Guidelines to review:
 ${guidelinesToCheck.map((g, idx) => `[ID: ${idx}] ${g.title || g.name || ''}`).join('\n')}
 
-TASK: Identify which guidelines are COMPLETELY IRRELEVANT to this patient. Only filter out guidelines when there's a clear mismatch (e.g., sickle cell guideline for patient without sickle cell). Be conservative - when in doubt, keep the guideline.`;
+Please identify any guidelines that clearly cannot apply to this patient, and keep everything else.`;
 
     try {
         const result = await routeToAI({
