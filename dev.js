@@ -613,12 +613,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             if (!tableBody) return;
 
-            tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Loading logs...</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="7" class="logs-empty">Loading logs...</td></tr>';
 
             try {
                 const user = auth.currentUser;
                 if (!user) {
-                    tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">Please log in to view logs</td></tr>';
+                    tableBody.innerHTML = '<tr><td colspan="7" class="logs-empty">Please log in to view logs</td></tr>';
                     return;
                 }
 
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
             } catch (error) {
                 console.error('Error fetching recent logs:', error);
-                tableBody.innerHTML = `<tr><td colspan="6" class="logs-empty">Error: ${error.message}</td></tr>`;
+                tableBody.innerHTML = `<tr><td colspan="7" class="logs-empty">Error: ${error.message}</td></tr>`;
             }
         }
 
@@ -711,7 +711,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (!tableBody) return;
 
             if (recentLogs.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="6" class="logs-empty">No logs found for the selected filters</td></tr>';
+                tableBody.innerHTML = '<tr><td colspan="7" class="logs-empty">No logs found for the selected filters</td></tr>';
                 return;
             }
 
@@ -722,6 +722,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 return `
                     <tr data-log-id="${log.id}" class="${log.id === selectedLogId ? 'selected' : ''}">
+                        <td style="text-align:center"><input type="checkbox" class="log-select-cb" data-log-id="${log.id}"></td>
                         <td>${time}</td>
                         <td title="${log.endpoint || ''}">${(log.endpoint || 'N/A').substring(0, 25)}${(log.endpoint?.length || 0) > 25 ? '...' : ''}</td>
                         <td>${log.provider || 'N/A'}</td>
@@ -732,9 +733,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                 `;
             }).join('');
 
-            // Add click handlers to rows
+            // Add click handlers to rows (clicking row selects for detail view; checkbox click is independent)
             tableBody.querySelectorAll('tr[data-log-id]').forEach(row => {
-                row.addEventListener('click', () => {
+                row.addEventListener('click', (e) => {
+                    if (e.target.type === 'checkbox') return; // don't trigger detail view on checkbox click
                     const logId = row.getAttribute('data-log-id');
                     selectLogEntry(logId);
 
@@ -743,6 +745,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                     row.classList.add('selected');
                 });
             });
+
+            // Sync select-all checkbox state
+            const selectAllCb = document.getElementById('logsSelectAll');
+            if (selectAllCb) selectAllCb.checked = false;
         }
 
         // Show details for a selected log entry
@@ -867,6 +873,22 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (copyAllBtn) {
                 copyAllBtn.addEventListener('click', copyAllLogs);
             }
+
+            // Copy Selected button
+            const copySelectedBtn = document.getElementById('copySelectedLogsBtn');
+            if (copySelectedBtn) {
+                copySelectedBtn.addEventListener('click', copySelectedLogs);
+            }
+
+            // Select All checkbox
+            const selectAllCb = document.getElementById('logsSelectAll');
+            if (selectAllCb) {
+                selectAllCb.addEventListener('change', () => {
+                    document.querySelectorAll('.log-select-cb').forEach(cb => {
+                        cb.checked = selectAllCb.checked;
+                    });
+                });
+            }
         }
 
         // Copy all logs to clipboard as formatted text
@@ -926,6 +948,70 @@ ${responseText}
                     setTimeout(() => {
                         copyBtn.textContent = originalText;
                     }, 2000);
+                }
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard. Please try again.');
+            }
+        }
+
+        // Copy selected logs to clipboard
+        async function copySelectedLogs() {
+            const checkedIds = new Set(
+                [...document.querySelectorAll('.log-select-cb:checked')].map(cb => cb.getAttribute('data-log-id'))
+            );
+
+            if (checkedIds.size === 0) {
+                alert('No logs selected. Use the checkboxes to select logs first.');
+                return;
+            }
+
+            const selectedLogs = recentLogs.filter(log => checkedIds.has(log.id));
+
+            const formattedLogs = selectedLogs.map((log, idx) => {
+                const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
+                const divider = '='.repeat(80);
+
+                let promptText = log.fullPrompt || 'No prompt content';
+                try {
+                    const parsed = JSON.parse(promptText);
+                    if (Array.isArray(parsed)) {
+                        promptText = parsed.map(msg => {
+                            const role = (msg.role || 'unknown').toUpperCase();
+                            return `[${role}]\n${msg.content || ''}`;
+                        }).join('\n\n');
+                    }
+                } catch (e) { /* keep as-is */ }
+
+                const responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
+
+                return `${divider}
+LOG ${idx + 1} of ${selectedLogs.length}
+${divider}
+Time: ${time}
+Endpoint: ${log.endpoint || 'Unknown'}
+Provider: ${log.provider || 'N/A'}
+Model: ${log.model || 'N/A'}
+Tokens: ${log.promptTokens || 0} in / ${log.completionTokens || 0} out (${log.totalTokens || 0} total)
+Latency: ${log.latencyMs ? log.latencyMs + 'ms' : 'N/A'}
+Cost: $${(log.estimatedCostUsd || 0).toFixed(6)}
+Status: ${log.success ? 'Success' : 'Error'}
+
+--- PROMPT ---
+${promptText}
+
+--- RESPONSE ---
+${responseText}
+`;
+            }).join('\n\n');
+
+            try {
+                await navigator.clipboard.writeText(formattedLogs);
+                const copyBtn = document.getElementById('copySelectedLogsBtn');
+                if (copyBtn) {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = `✅ Copied ${checkedIds.size}!`;
+                    setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
                 }
             } catch (err) {
                 console.error('Failed to copy:', err);
