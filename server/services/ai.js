@@ -1048,35 +1048,40 @@ async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, 
     const currentGA = extractGestationalAge(clinicalNote, patientContext);
     const bloodType = extractBloodType(clinicalNote);
 
-    const systemPrompt = `You are a clinical reasoning validator. Use COMMON SENSE to identify suggestions that are genuinely impossible or nonsensical.
+    // Detect postpartum status to avoid mislabelling postpartum weeks as gestational age
+    const weeksPostpartum = patientContext?.weeksPostpartum ?? null;
+    const isPostpartum = weeksPostpartum !== null || /postpartum|post.?natal|after.?birth|post.?delivery/i.test(clinicalNote);
+    const patientStateDescription = isPostpartum
+        ? `Patient is ${weeksPostpartum !== null ? `${weeksPostpartum} weeks postpartum` : 'postpartum'}`
+        : `Patient gestational age: ${currentGA !== null ? `${currentGA} weeks` : 'unknown'}`;
 
-WHAT TO FILTER OUT (these are truly impossible):
-1. PAST-ONLY interventions: First trimester screening when patient is in third trimester (can't go back in time)
-2. BLOOD TYPE MISMATCHES: RhD-specific interventions when patient has confirmed opposite blood type
-3. COMPLETED ACTIONS: Suggesting something that the clinical note explicitly documents as ALREADY DONE
+    const systemPrompt = `You are a logic checker. Your only job is to decide whether each clinical suggestion is logically applicable to the patient described.
 
-WHAT TO KEEP (these are still sensible):
-1. FUTURE timepoints: Patient at 28 weeks, suggestion mentions "at 36 weeks" → KEEP (still future)
-2. ONGOING care: "Screen at each appointment", "monitor throughout pregnancy" → KEEP (still applicable)
-3. GENERAL recommendations: Even if ideally done earlier, if still beneficial now → KEEP
-4. DELAYED interventions: "Best done at X weeks" doesn't mean impossible later, just not optimal → KEEP
-5. COUNSELING/DISCUSSION: Can discuss timing of birth, risks, management options at any point → KEEP
-6. UNKNOWN blood types: If Rh status is "unknown", don't filter RhD suggestions → KEEP
+FILTER OUT only if the suggestion is logically impossible for this specific patient — meaning it cannot apply regardless of clinical judgment. Examples:
+- A suggestion about pregnancy management when the patient has already delivered and is postpartum
+- A blood-type-specific intervention that contradicts the patient's confirmed blood type
+- An action explicitly stated as already completed in the clinical note (exact same action, not just a related one)
 
-USE COMMON SENSE: Ask yourself "Could a reasonable clinician still do/discuss this?" If YES → KEEP.
+KEEP everything else, including:
+- Suggestions identifying gaps in past care (e.g. "screening should have been done at booking") — these are valid observations even if the moment has passed
+- Suggestions for services or referrals not yet mentioned in the plan
+- Suggestions that are suboptimal, partially covered, or low priority — that is a clinical judgment, not your job
+- Anything where you are uncertain — default to KEEP
 
-Return ONLY valid JSON with this structure:
+Do NOT filter based on: clinical appropriateness, whether something similar is already in the plan, eligibility criteria, or your own clinical opinion.
+
+Return ONLY valid JSON:
 {
-  "validSuggestions": [<array of suggestion IDs that make sense>],
+  "validSuggestions": [<array of suggestion IDs to keep>],
   "filteredOut": [
     {
       "id": <suggestion ID>,
-      "reason": "<brief explanation why it's genuinely impossible>"
+      "reason": "<one sentence: the specific logical impossibility>"
     }
   ]
 }`;
 
-    const contextInfo = `Current gestational age: ${currentGA || 'unknown'} weeks
+    const contextInfo = `${patientStateDescription}
 Patient Rhesus status: ${bloodType.rhesus || 'unknown'}`;
 
     const userPrompt = `${contextInfo}
@@ -1090,7 +1095,7 @@ ${clinicalNote}
 SUGGESTIONS TO VALIDATE:
 ${ruleBasedResult.validSuggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}`).join('\n')}
 
-TASK: Identify which suggestions are impossible/nonsensical given the current patient state. Pay special attention to temporal issues and blood type compatibility.`;
+TASK: For each suggestion, decide only whether it is logically applicable to this patient. When in doubt, keep it.`;
 
     try {
         const result = await routeToAI({
