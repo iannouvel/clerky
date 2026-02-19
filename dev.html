@@ -194,8 +194,8 @@
 
         .cost-navigation button {
             padding: 6px 12px;
-            background: var(--primary-color);
-            color: white;
+            background: #007bff;
+            color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -203,7 +203,7 @@
         }
 
         .cost-navigation button:hover {
-            background: var(--primary-hover);
+            background: #0056b3;
         }
 
         #costStatusMessage {
@@ -257,8 +257,8 @@
 
         .logs-filters button {
             padding: 6px 14px;
-            background: var(--primary-color);
-            color: white;
+            background: #007bff;
+            color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
@@ -267,7 +267,7 @@
         }
 
         .logs-filters button:hover {
-            background: var(--primary-hover);
+            background: #0056b3;
         }
 
         .logs-table-container {
@@ -1347,6 +1347,7 @@
                 <div class="logs-filters">
                     <button id="refreshLogsBtn">🔄 Refresh</button>
                     <button id="copyAllLogsBtn">📋 Copy All</button>
+                    <button id="copySelectedLogsBtn">📋 Copy Selected</button>
                     <select id="logsTimeRange">
                         <option value="15m">Last 15 min</option>
                         <option value="1h" selected>Last 1 hour</option>
@@ -1373,6 +1374,7 @@
                     <table class="logs-table">
                         <thead>
                             <tr>
+                                <th style="width:30px;text-align:center"><input type="checkbox" id="logsSelectAll" title="Select all"></th>
                                 <th style="width:100px">Time</th>
                                 <th style="width:160px">Endpoint</th>
                                 <th style="width:100px">Provider</th>
@@ -1383,7 +1385,7 @@
                         </thead>
                         <tbody id="logsTableBody">
                             <tr>
-                                <td colspan="6" class="logs-empty">Click Refresh to load logs</td>
+                                <td colspan="7" class="logs-empty">Click Refresh to load logs</td>
                             </tr>
                         </tbody>
                     </table>
