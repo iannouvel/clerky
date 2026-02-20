@@ -137,8 +137,8 @@ export const streamingEngine = {
             forceStream: options?.forceStream
         });
 
-        // Show the wrapper immediately
-        wrapper.style.display = ''; // Restore default display (block)
+        // Show the wrapper immediately (override CSS display:none on .new-content-entry)
+        wrapper.style.display = 'block';
         wrapper.style.opacity = '1';
         console.log('[STREAMING] Wrapper opacity set to 1 (visible)');
 
@@ -545,6 +545,7 @@ export function appendToSummary1(content, clearExisting = false, isTransient = f
         } else if (isTransient) {
             // Transient messages: show instantly, no streaming, auto-remove after delay
             console.log('[SUMMARY1 DEBUG] ✓ TRANSIENT PATH - showing instantly, will auto-remove after 5s');
+            newContentWrapper.style.display = 'block'; // Override CSS display:none on .new-content-entry
             newContentWrapper.style.opacity = '1';
 
             // Auto-remove transient messages after 5 seconds
