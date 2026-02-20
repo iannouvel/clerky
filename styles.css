@@ -4017,6 +4017,32 @@ body {
     flex-wrap: wrap;
 }
 
+.guidelines-followup-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+.guidelines-followup-input {
+    flex: 1;
+    min-width: 200px;
+    max-width: 480px;
+    padding: 7px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+}
+
+.guidelines-followup-input:focus {
+    border-color: var(--accent-color, #2d6a4f);
+    box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.15);
+}
+
 .suggestion-actions-group .nav-btn {
     padding: 8px 16px;
     border-radius: 4px;

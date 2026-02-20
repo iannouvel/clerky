@@ -808,6 +808,10 @@ function handleGlobalReset() {
         }
     }
 
+    // Hide guidelines follow-up group
+    const guidelinesFollowUpGroup = document.getElementById('guidelinesFollowUpGroup');
+    if (guidelinesFollowUpGroup) guidelinesFollowUpGroup.style.display = 'none';
+
     // Clear server status message in the fixed button row (forceClear since this is an explicit user reset)
     updateUser('', false, true);
 
@@ -10483,15 +10487,20 @@ window.processQuestionAgainstGuidelines = processQuestionAgainstGuidelines;
 window.cancelGuidelineSelection = cancelGuidelineSelection;
 
 // New function to handle the "Ask Guidelines" flow from the main analysis button
-async function askGuidelinesQuestion() {
+async function askGuidelinesQuestion(questionOverride) {
     console.log('[DEBUG] askGuidelinesQuestion called');
     const editor = window.editors?.userInput;
-    if (!editor) {
-        alert('Editor not available.');
-        return;
-    }
 
-    const question = editor.getText().trim();
+    let question;
+    if (questionOverride) {
+        question = questionOverride.trim();
+    } else {
+        if (!editor) {
+            alert('Editor not available.');
+            return;
+        }
+        question = editor.getText().trim();
+    }
     if (!question) {
         alert('Please enter a question regarding the clinical case.');
         return;
@@ -10664,14 +10673,17 @@ async function askGuidelinesQuestion() {
                     <p class="text-muted"><small>Based on ${guidelinesUsedCount} guideline${guidelinesUsedCount !== 1 ? 's' : ''}</small></p>
                 </div>
             `;
+        }
 
-            // Auto-hide the success message after a few seconds
-            setTimeout(() => {
-                if (outputPane.innerHTML.includes('Answer Received')) {
-                    const summarySection = document.getElementById('summarySection');
-                    if (summarySection) summarySection.classList.add('hidden');
-                }
-            }, 3000);
+        // Show follow-up input in the fixed button row
+        const followUpGroup = document.getElementById('guidelinesFollowUpGroup');
+        const followUpInput = document.getElementById('guidelinesFollowUpInput');
+        if (followUpGroup) {
+            followUpGroup.style.display = 'flex';
+            if (followUpInput) {
+                followUpInput.value = '';
+                followUpInput.focus();
+            }
         }
 
     } catch (error) {
@@ -10693,6 +10705,41 @@ async function askGuidelinesQuestion() {
 
 // Make it globally available
 window.askGuidelinesQuestion = askGuidelinesQuestion;
+
+// Wire up guidelines follow-up group buttons
+document.addEventListener('DOMContentLoaded', function setupGuidelinesFollowUp() {
+    const followUpGroup = document.getElementById('guidelinesFollowUpGroup');
+    const followUpBtn = document.getElementById('guidelinesFollowUpBtn');
+    const followUpInput = document.getElementById('guidelinesFollowUpInput');
+    const followUpDoneBtn = document.getElementById('guidelinesFollowUpDoneBtn');
+
+    function hideFollowUpGroup() {
+        if (followUpGroup) followUpGroup.style.display = 'none';
+        if (followUpInput) followUpInput.value = '';
+    }
+
+    async function submitFollowUp() {
+        if (!followUpInput) return;
+        const q = followUpInput.value.trim();
+        if (!q) return;
+        hideFollowUpGroup();
+        await askGuidelinesQuestion(q);
+    }
+
+    if (followUpBtn) {
+        followUpBtn.addEventListener('click', submitFollowUp);
+    }
+
+    if (followUpInput) {
+        followUpInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submitFollowUp();
+        });
+    }
+
+    if (followUpDoneBtn) {
+        followUpDoneBtn.addEventListener('click', hideFollowUpGroup);
+    }
+});
 
 // Process question against selected guidelines
 async function processQuestionAgainstGuidelines() {
