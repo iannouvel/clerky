@@ -3352,11 +3352,11 @@ async function rerankWithAI(transcript, categories, userId) {
         return categories;
     }
 
-    const candidateList = allCandidates.map((g, i) =>
-        `${i + 1}. [${g.id}] ${g.title} (${g.organisation || 'Unknown'})\n   Preview: ${(g.snippet || '').substring(0, 200)}...`
+    const candidateList = allCandidates.map((g) =>
+        `[${g.id}] ${g.title} (${g.organisation || 'Unknown'})\n   Preview: ${(g.snippet || '').substring(0, 200)}...`
     ).join('\n\n');
 
-    const prompt = `You are a clinical guideline relevance assessor. Given a clinical transcript and a list of candidate guidelines, categorise each guideline by relevance.
+    const prompt = `You are a clinical guideline relevance assessor. Given a clinical transcript and candidate guidelines, categorise each by relevance.
 
 CLINICAL TRANSCRIPT:
 ${transcript.substring(0, 2000)}
@@ -3364,24 +3364,43 @@ ${transcript.substring(0, 2000)}
 CANDIDATE GUIDELINES:
 ${candidateList}
 
-Categorise each guideline number into one of these categories:
+Categorise each guideline into exactly one of these categories:
 - MOST_RELEVANT: Directly applicable to the clinical scenario
 - POTENTIALLY_RELEVANT: May be useful but not directly applicable
 - LESS_RELEVANT: Tangentially related
-- NOT_RELEVANT: Not applicable
+- NOT_RELEVANT: Not applicable at all
 
-Response format (just the numbers, comma-separated):
-MOST_RELEVANT: 1, 3, 5
-POTENTIALLY_RELEVANT: 2, 7
-LESS_RELEVANT: 4
-NOT_RELEVANT: 6, 8`;
+Every guideline must appear in exactly one category. Use the guideline ID shown in brackets to identify each. Include a brief reason for each categorisation.
+
+Respond with valid JSON only, no other text:
+{
+  "MOST_RELEVANT": [{"id": "...", "reason": "..."}],
+  "POTENTIALLY_RELEVANT": [{"id": "...", "reason": "..."}],
+  "LESS_RELEVANT": [{"id": "...", "reason": "..."}],
+  "NOT_RELEVANT": [{"id": "...", "reason": "..."}]
+}`;
 
     try {
         const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
 
         if (aiResponse && aiResponse.content) {
-            // Parse the response
             const responseText = aiResponse.content;
+
+            // Extract JSON from response (handle markdown code blocks)
+            let parsed;
+            try {
+                const jsonMatch = responseText.match(/```(?:json)?\s*([\s\S]*?)```/);
+                parsed = JSON.parse(jsonMatch ? jsonMatch[1].trim() : responseText.trim());
+            } catch (parseErr) {
+                console.warn('[RAG] Reranking JSON parse failed:', parseErr.message);
+                return categories;
+            }
+
+            // Build ID lookup
+            const idMap = {};
+            allCandidates.forEach(g => { idMap[g.id] = g; });
+
+            const placed = new Set();
             const rerankCategories = {
                 mostRelevant: [],
                 potentiallyRelevant: [],
@@ -3389,34 +3408,30 @@ NOT_RELEVANT: 6, 8`;
                 notRelevant: []
             };
 
-            // Extract numbers from each category
-            const mostMatch = responseText.match(/MOST_RELEVANT:\s*([\d,\s]+)/i);
-            const potMatch = responseText.match(/POTENTIALLY_RELEVANT:\s*([\d,\s]+)/i);
-            const lessMatch = responseText.match(/LESS_RELEVANT:\s*([\d,\s]+)/i);
-            const notMatch = responseText.match(/NOT_RELEVANT:\s*([\d,\s]+)/i);
-
-            const parseNumbers = (match) => {
-                if (!match) return [];
-                return match[1].split(',').map(n => parseInt(n.trim())).filter(n => !isNaN(n) && n > 0);
+            const placeItems = (items, target, label) => {
+                (items || []).forEach(item => {
+                    const g = idMap[item.id];
+                    if (g && !placed.has(g.id)) {
+                        target.push(g);
+                        placed.add(g.id);
+                        console.log(`[RAG] ${label} — ${g.title}: ${item.reason || 'no reason given'}`);
+                    }
+                });
             };
 
-            const mostNums = parseNumbers(mostMatch);
-            const potNums = parseNumbers(potMatch);
-            const lessNums = parseNumbers(lessMatch);
-            const notNums = parseNumbers(notMatch);
+            placeItems(parsed.MOST_RELEVANT, rerankCategories.mostRelevant, 'MOST_RELEVANT');
+            placeItems(parsed.POTENTIALLY_RELEVANT, rerankCategories.potentiallyRelevant, 'POTENTIALLY_RELEVANT');
+            placeItems(parsed.LESS_RELEVANT, rerankCategories.lessRelevant, 'LESS_RELEVANT');
+            placeItems(parsed.NOT_RELEVANT, rerankCategories.notRelevant, 'NOT_RELEVANT');
 
-            // Map numbers back to guidelines
-            mostNums.forEach(n => {
-                if (allCandidates[n - 1]) rerankCategories.mostRelevant.push(allCandidates[n - 1]);
-            });
-            potNums.forEach(n => {
-                if (allCandidates[n - 1]) rerankCategories.potentiallyRelevant.push(allCandidates[n - 1]);
-            });
-            lessNums.forEach(n => {
-                if (allCandidates[n - 1]) rerankCategories.lessRelevant.push(allCandidates[n - 1]);
-            });
-            notNums.forEach(n => {
-                if (allCandidates[n - 1]) rerankCategories.notRelevant.push(allCandidates[n - 1]);
+            // Any guideline not placed by AI falls back to its original category
+            allCandidates.forEach(g => {
+                if (!placed.has(g.id)) {
+                    console.warn(`[RAG] Guideline not categorised by reranker, keeping original: ${g.title}`);
+                    if (categories.mostRelevant.find(x => x.id === g.id)) rerankCategories.mostRelevant.push(g);
+                    else if (categories.potentiallyRelevant.find(x => x.id === g.id)) rerankCategories.potentiallyRelevant.push(g);
+                    else rerankCategories.lessRelevant.push(g);
+                }
             });
 
             console.log('[RAG] Reranking complete:', {
@@ -3457,13 +3472,13 @@ async function validateGuidelinesWithAI(transcript, categories, userId) {
         }
     }));
 
-    const candidateList = candidates.map((g, i) => {
+    const candidateList = candidates.map((g) => {
         const summary = summaryMap[g.id];
         const summaryText = summary ? summary.substring(0, 400) : 'No summary available';
-        return `${i + 1}. ${g.title}\nSummary: ${summaryText}`;
+        return `[${g.id}] ${g.title}\nSummary: ${summaryText}`;
     }).join('\n\n');
 
-    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and a list of candidate guidelines with summaries, identify which guidelines are NOT applicable to this specific scenario.
+    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and candidate guidelines with summaries, identify which guidelines are NOT applicable.
 
 CLINICAL SCENARIO:
 ${transcript.substring(0, 2000)}
@@ -3471,29 +3486,45 @@ ${transcript.substring(0, 2000)}
 CANDIDATE GUIDELINES:
 ${candidateList}
 
-A guideline is NOT applicable if it clearly covers a different procedure, body area, or clinical context to the scenario (e.g. a perineal repair guideline is not applicable to a caesarean wound scenario; a neonatal resuscitation guideline is not applicable to a maternal haemorrhage scenario).
+Your task is to identify guidelines that are clearly from a COMPLETELY DIFFERENT clinical domain and therefore cannot provide any useful guidance for this scenario.
 
-Respond ONLY in this exact format:
-NOT_APPLICABLE: [comma-separated numbers, or "none" if all are applicable]`;
+Only mark a guideline as NOT_APPLICABLE if it is obviously irrelevant — for example, a neonatal resuscitation guideline when the scenario is about maternal haemorrhage, or a gynaecology guideline when the scenario is about a newborn.
+
+Do NOT exclude a guideline just because it is not the primary focus of the scenario. If the guideline covers any condition, complication, or aspect of care that is present or mentioned in the scenario, it is applicable. When in doubt, keep the guideline — it is better to include a borderline guideline than to miss one that is relevant.
+
+Use the guideline ID shown in brackets to identify each. Include a brief reason for any guideline you exclude. Respond with valid JSON only, no other text:
+{
+  "NOT_APPLICABLE": [
+    {"id": "...", "reason": "brief explanation of why this guideline does not apply"}
+  ]
+}
+If all guidelines are applicable, return: {"NOT_APPLICABLE": []}`;
 
     try {
         const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
         if (!aiResponse?.content) return categories;
 
         const responseText = aiResponse.content;
-        const notMatch = responseText.match(/NOT_APPLICABLE:\s*([^\n]+)/i);
-        if (!notMatch) return categories;
 
-        const notApplicableStr = notMatch[1].trim();
-        if (notApplicableStr.toLowerCase() === 'none') return categories;
+        // Extract JSON from response (handle markdown code blocks)
+        let parsed;
+        try {
+            const jsonMatch = responseText.match(/```(?:json)?\s*([\s\S]*?)```/);
+            parsed = JSON.parse(jsonMatch ? jsonMatch[1].trim() : responseText.trim());
+        } catch (parseErr) {
+            console.warn('[RAG] Validation JSON parse failed:', parseErr.message);
+            return categories;
+        }
 
-        const notNums = new Set(
-            notApplicableStr.split(',')
-                .map(n => parseInt(n.trim()))
-                .filter(n => !isNaN(n) && n >= 1 && n <= candidates.length)
-        );
+        const notApplicableItems = parsed.NOT_APPLICABLE || [];
+        if (notApplicableItems.length === 0) return categories;
 
-        if (notNums.size === 0) return categories;
+        const notApplicableIds = new Set(notApplicableItems.map(item => item.id).filter(Boolean));
+
+        // Log reasons
+        notApplicableItems.forEach(item => {
+            if (item.id) console.log(`[RAG] Excluded "${item.id}": ${item.reason || 'no reason given'}`);
+        });
 
         const mostRelevantIds = new Set(categories.mostRelevant.map(g => g.id));
         const validatedCategories = {
@@ -3503,8 +3534,8 @@ NOT_APPLICABLE: [comma-separated numbers, or "none" if all are applicable]`;
             notRelevant: [...categories.notRelevant]
         };
 
-        candidates.forEach((g, i) => {
-            if (notNums.has(i + 1)) {
+        candidates.forEach((g) => {
+            if (notApplicableIds.has(g.id)) {
                 console.log(`[RAG] Validation excluded non-applicable guideline: ${g.title}`);
                 validatedCategories.notRelevant.push(g);
             } else if (mostRelevantIds.has(g.id)) {
@@ -3514,7 +3545,7 @@ NOT_APPLICABLE: [comma-separated numbers, or "none" if all are applicable]`;
             }
         });
 
-        console.log(`[RAG] Validation complete: excluded ${notNums.size} non-applicable guideline(s)`);
+        console.log(`[RAG] Validation complete: excluded ${notApplicableIds.size} non-applicable guideline(s)`);
         return validatedCategories;
 
     } catch (error) {
