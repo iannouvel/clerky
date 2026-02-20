@@ -19383,6 +19383,19 @@ Return an empty array [] if the note appears sufficiently complete.`;
                 const jsonMatch = aiResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
                 suggestions = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
                 if (!Array.isArray(suggestions)) suggestions = [];
+                // Validate sourceGuidelineName against the passed guidelines
+                const guidelineTitles = Array.isArray(guidelines) ? guidelines.map(g => g.title) : [];
+                suggestions.forEach(s => {
+                    if (s.sourceGuidelineName) {
+                        const match = guidelineTitles.find(t =>
+                            t.toLowerCase() === s.sourceGuidelineName.toLowerCase()
+                        ) || guidelineTitles.find(t =>
+                            t.toLowerCase().includes(s.sourceGuidelineName.toLowerCase()) ||
+                            s.sourceGuidelineName.toLowerCase().includes(t.toLowerCase())
+                        );
+                        s.sourceGuidelineName = match || null;
+                    }
+                });
             } catch (e) {
                 console.warn('[COMPLETENESS] JSON parse failed:', e.message);
             }
