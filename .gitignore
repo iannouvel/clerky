@@ -82,3 +82,8 @@ node_modules/
 # Claude Code temp files
 tmpclaude-*
 .claude/settings.local.json
+
+# Playwright test results
+test-results/
+playwright-report/
+playwright/.cache/

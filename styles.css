@@ -1505,7 +1505,10 @@ body {
     flex-shrink: 0;
     width: 250px;
     min-width: 0;
-    align-self: flex-start;
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 #mainSection>.workflows-container,

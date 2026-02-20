@@ -16,7 +16,10 @@
       "server.js",
       "requirements.txt",
       "package*.json",
-      "*.sh"
+      "*.sh",
+      "docs/**",
+      "tests/**",
+      "playwright.config.js"
     ],
     "rewrites": [
       {
