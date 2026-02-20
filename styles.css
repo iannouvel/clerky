@@ -2146,6 +2146,7 @@ div.third-column,
 .new-content-entry {
     margin: 0;
     position: relative;
+    display: none;
 }
 
 .new-content-entry:not(:first-child) {
