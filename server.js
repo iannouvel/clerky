@@ -3492,10 +3492,12 @@ Only mark a guideline as NOT_APPLICABLE if it is obviously irrelevant — for ex
 
 Do NOT exclude a guideline just because it is not the primary focus of the scenario. If the guideline covers any condition, complication, or aspect of care that is present or mentioned in the scenario, it is applicable. When in doubt, keep the guideline — it is better to include a borderline guideline than to miss one that is relevant.
 
+CRITICAL SELF-CHECK: Before adding any guideline to NOT_APPLICABLE, re-read your reason. If your reason contains words such as "relevant", "applicable", "applies", "directly applies", "covers", or "pertains to this scenario" — you have made an error. That guideline IS applicable and must NOT appear in NOT_APPLICABLE. Only include a guideline if your reason clearly explains why it is from a completely unrelated clinical domain.
+
 Use the guideline ID shown in brackets to identify each. Include a brief reason for any guideline you exclude. Respond with valid JSON only, no other text:
 {
   "NOT_APPLICABLE": [
-    {"id": "...", "reason": "brief explanation of why this guideline does not apply"}
+    {"id": "...", "reason": "brief explanation of why this guideline is from a completely different clinical domain"}
   ]
 }
 If all guidelines are applicable, return: {"NOT_APPLICABLE": []}`;
@@ -3516,7 +3518,27 @@ If all guidelines are applicable, return: {"NOT_APPLICABLE": []}`;
             return categories;
         }
 
-        const notApplicableItems = parsed.NOT_APPLICABLE || [];
+        const rawNotApplicable = parsed.NOT_APPLICABLE || [];
+        if (rawNotApplicable.length === 0) return categories;
+
+        // Post-processing guard: reject any item whose reason contradicts exclusion.
+        // If the model's own explanation says the guideline "is relevant" or "applies",
+        // trust the reason over the classification and keep the guideline.
+        const contradictionPhrases = [
+            'relevant', 'applicable', 'directly applies', 'applies to', 'applies to this',
+            'is applicable', 'is relevant', 'pertains to', 'covers this', 'related to this scenario'
+        ];
+        const notApplicableItems = rawNotApplicable.filter(item => {
+            if (!item.reason) return true;
+            const reasonLower = item.reason.toLowerCase();
+            const isContradictory = contradictionPhrases.some(phrase => reasonLower.includes(phrase));
+            if (isContradictory) {
+                console.log(`[RAG] Restored "${item.id}" — model reason contradicts exclusion: "${item.reason}"`);
+                return false;
+            }
+            return true;
+        });
+
         if (notApplicableItems.length === 0) return categories;
 
         const notApplicableIds = new Set(notApplicableItems.map(item => item.id).filter(Boolean));
