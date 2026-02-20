@@ -6822,7 +6822,6 @@ async function showPreferencesModal() {
             preferencesBothBtn.removeEventListener('click', handleBothClick);
             preferencesSaveBtn.removeEventListener('click', handleSaveClick);
             closeBtn.removeEventListener('click', handleCloseClick);
-            if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
 
             updateUser('Preferences saved successfully.', false);
         } catch (error) {
@@ -6875,7 +6874,6 @@ async function showPreferencesModal() {
         preferencesBothBtn.removeEventListener('click', handleBothClick);
         preferencesSaveBtn.removeEventListener('click', newHandleSaveClick);
         closeBtn.removeEventListener('click', handleCloseClick);
-        if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
     };
 
     // Add event listeners
