@@ -7010,7 +7010,7 @@ async function showPreferencesModal() {
             closeBtn.removeEventListener('click', handleCloseClick);
             if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
 
-            alert('Preferences saved successfully!');
+            updateUser('Preferences saved successfully.', false);
         } catch (error) {
             console.error('[ERROR] Failed to save preferences:', error);
             // Restore button state on error
@@ -7059,7 +7059,7 @@ async function showPreferencesModal() {
         preferencesNationalBtn.removeEventListener('click', handleNationalClick);
         preferencesLocalBtn.removeEventListener('click', handleLocalClick);
         preferencesBothBtn.removeEventListener('click', handleBothClick);
-        preferencesSaveBtn.removeEventListener('click', handleSaveClick);
+        preferencesSaveBtn.removeEventListener('click', newHandleSaveClick);
         closeBtn.removeEventListener('click', handleCloseClick);
         if (useRAGSearchInput) useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
     };
@@ -7071,7 +7071,6 @@ async function showPreferencesModal() {
     preferencesNationalBtn.addEventListener('click', handleNationalClick);
     preferencesLocalBtn.addEventListener('click', handleLocalClick);
     preferencesBothBtn.addEventListener('click', handleBothClick);
-    preferencesSaveBtn.addEventListener('click', handleSaveClick);
     closeBtn.addEventListener('click', handleCloseClick);
 }
 
