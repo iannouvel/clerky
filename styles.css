@@ -1503,7 +1503,7 @@ body {
 /* Preferences panel layout - mainSection is already set to flex row above */
 #mainSection>.user-preferences-panel {
     flex-shrink: 0;
-    width: fit-content;
+    width: 250px;
     min-width: 0;
     align-self: flex-start;
 }
@@ -3335,6 +3335,7 @@ body {
     overflow-x: hidden;
     padding-bottom: 8px;
     /* Breathing room above fixed button row */
+    border: none;
 }
 
 .chatbot-input-section {
@@ -3344,6 +3345,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    padding-left: 10px;
     /* Grow to fill remaining space after summary */
     min-height: max(150px, 25vh);
     /* Ensure at least 25vh or 150px */
