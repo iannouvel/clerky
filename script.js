@@ -5560,50 +5560,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] Attaching analyse button listener');
             analyseBtn.dataset.listenerAttached = 'true';
 
-            async function runCompletenessCheck() {
-                try {
-                    const transcript = getUserInputContent();
-                    if (!transcript?.trim()) return [];
-                    const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
-                    const user = auth.currentUser;
-                    if (!user) return [];
-                    const idToken = await user.getIdToken();
-                    const resp = await fetch(`${window.SERVER_URL}/assessNoteCompleteness`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                        body: JSON.stringify({ transcript: anonymisedText || transcript })
-                    });
-                    const data = await resp.json();
-                    return Array.isArray(data.suggestions) ? data.suggestions : [];
-                } catch (e) {
-                    console.warn('[COMPLETENESS] Check failed, skipping Phase 1:', e.message);
-                    return []; // Never block Phase 2
-                }
-            }
-
-            function showCompletenessWizard(suggestions, onComplete) {
-                const summary1 = document.getElementById('summary1');
-                const summarySection = document.getElementById('summarySection');
-                if (summarySection) summarySection.classList.remove('hidden');
-
-                const container = document.createElement('div');
-                container.id = `completeness-wizard-${Date.now()}`;
-                container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;';
-                if (summary1) summary1.appendChild(container);
-
-                initializeSuggestionWizard(container, suggestions, {
-                    getUserInputContent,
-                    setUserInputContent,
-                    determineInsertionPoint: window.determineInsertionPoint,
-                    insertTextAtPoint: window.insertTextAtPoint,
-                    phaseLabel: 'Missing Information',
-                    onComplete: () => {
-                        container.remove();
-                        onComplete();
-                    }
-                });
-            }
-
             analyseBtn.addEventListener('click', async () => {
                 // Check if we're in stop mode
                 if (window.isAnalysisRunning && window.analysisAbortController) {
@@ -5677,12 +5633,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         // Set mode for guideline-suggestions (dynamic advice) workflow
                         window.selectedMode = 'guideline-suggestions';
-                        const phase1Suggestions = await runCompletenessCheck();
-                        if (phase1Suggestions.length > 0) {
-                            showCompletenessWizard(phase1Suggestions, () => processWorkflow());
-                        } else {
-                            await processWorkflow();
-                        }
+                        await processWorkflow();
                     }
                 } catch (error) {
                     // Check if error is due to abort
@@ -7826,6 +7777,66 @@ window.selectedGuidelineScope = null;
 // generateFakeClinicalInteraction cleanup block removed
 
 // Comprehensive workflow processing function
+async function runPhase1CompletenessCheck() {
+    try {
+        updateUser('Checking note completeness against guidelines...', true);
+        const transcript = getUserInputContent();
+        if (!transcript?.trim()) return;
+
+        const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
+        const user = auth.currentUser;
+        if (!user) return;
+        const idToken = await user.getIdToken();
+
+        const guidelineContext = (window.relevantGuidelines || []).map(g => ({
+            id: g.id,
+            title: g.title || g.displayName || g.id
+        }));
+
+        const resp = await fetch(`${window.SERVER_URL}/assessNoteCompleteness`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+            body: JSON.stringify({ transcript: anonymisedText || transcript, guidelines: guidelineContext })
+        });
+        const data = await resp.json();
+        const suggestions = Array.isArray(data.suggestions) ? data.suggestions : [];
+
+        if (suggestions.length === 0) {
+            updateUser('Note completeness check passed.', false);
+            return;
+        }
+
+        updateUser('Phase 1: Missing information identified — please review before proceeding.', false);
+
+        // Show wizard and await user completing/skipping all suggestions
+        return new Promise((resolve) => {
+            const summary1 = document.getElementById('summary1');
+            const summarySection = document.getElementById('summarySection');
+            if (summarySection) summarySection.classList.remove('hidden');
+
+            const container = document.createElement('div');
+            container.id = `completeness-wizard-${Date.now()}`;
+            container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;';
+            if (summary1) summary1.appendChild(container);
+
+            initializeSuggestionWizard(container, suggestions, {
+                getUserInputContent,
+                setUserInputContent,
+                determineInsertionPoint: window.determineInsertionPoint,
+                insertTextAtPoint: window.insertTextAtPoint,
+                phaseLabel: 'Missing Information',
+                onComplete: () => {
+                    container.remove();
+                    resolve();
+                }
+            });
+        });
+    } catch (e) {
+        console.warn('[COMPLETENESS] Phase 1 failed, skipping:', e.message);
+        // Never block Phase 2
+    }
+}
+
 async function processWorkflow() {
     console.log('[DEBUG] processWorkflow started');
 
@@ -7983,6 +7994,9 @@ async function processWorkflow() {
         if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
         }
+
+        // Phase 1: Check note completeness with guideline context
+        await runPhase1CompletenessCheck();
 
         // CHECK PARALLEL ANALYSIS PREFERENCE
         if (loadParallelAnalysisPreference()) {
