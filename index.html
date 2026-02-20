@@ -585,6 +585,14 @@
                         <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                     </div>
 
+                    <!-- Guidelines Follow-up Group (shown after ask-guidelines response) -->
+                    <div id="guidelinesFollowUpGroup" class="guidelines-followup-group" style="display: none;">
+                        <input type="text" id="guidelinesFollowUpInput" class="guidelines-followup-input"
+                            placeholder="Ask a follow-up question..." />
+                        <button id="guidelinesFollowUpBtn" class="nav-btn primary">Ask</button>
+                        <button id="guidelinesFollowUpDoneBtn" class="nav-btn secondary">Done</button>
+                    </div>
+
                     <!-- Global Reset button (aligned to right) -->
                     <button id="resetBtn" class="summary-analyse-btn summary-reset-btn"
                         title="Reset transcript and summary">
@@ -1245,8 +1253,6 @@
                     // Prevent list-related formatting
                     if (event.inputType === 'insertOrderedList' ||
                         event.inputType === 'insertUnorderedList' ||
-                        event.inputType === 'deleteContentBackward' ||
-                        event.inputType === 'deleteContentForward' ||
                         event.inputType.includes('format')) {
                         console.log('[TIPTAP] ⛔ BLOCKING:', event.inputType);
                         event.preventDefault();
