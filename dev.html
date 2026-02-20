@@ -220,9 +220,18 @@
         /* AI Logs styles */
         .logs-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             height: calc(100vh - 180px);
             gap: 12px;
+        }
+
+        .logs-left-panel {
+            flex: 0 0 34%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 0;
+            overflow: hidden;
         }
 
         .logs-filters {
@@ -272,8 +281,7 @@
 
         .logs-table-container {
             flex: 1;
-            min-height: 200px;
-            max-height: 40%;
+            min-height: 0;
             overflow: auto;
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -321,8 +329,8 @@
         }
 
         .logs-detail-container {
-            flex: 1;
-            min-height: 200px;
+            flex: 0 0 66%;
+            min-width: 0;
             display: flex;
             flex-direction: column;
             border: 1px solid var(--border-color);
@@ -1343,6 +1351,8 @@
         </div>
         <div class="tab-content" id="logsContent" style="display:none;padding:12px">
             <div class="logs-container">
+                <!-- Left Panel: Filters + Table -->
+                <div class="logs-left-panel">
                 <!-- Filters Row -->
                 <div class="logs-filters">
                     <button id="refreshLogsBtn">🔄 Refresh</button>
@@ -1390,6 +1400,7 @@
                         </tbody>
                     </table>
                 </div>
+                </div><!-- end logs-left-panel -->
 
                 <!-- Detail Panel -->
                 <div class="logs-detail-container">
