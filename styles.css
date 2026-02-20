@@ -374,7 +374,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 0;
-    align-items: flex-start;
+    align-items: stretch;
     background-color: var(--bg-primary);
     box-sizing: border-box;
     height: 100%;
