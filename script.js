@@ -6387,78 +6387,6 @@ function getSelectedChunkDistributionProviders() {
     return inputs.filter(i => i.checked).map(i => i.dataset.provider).filter(Boolean);
 }
 
-// ---- Fast RAG (vector search) preferences ----
-async function fetchUserRAGPreferences() {
-    const user = auth.currentUser;
-    if (!user) {
-        return { useRAGSearch: false, ragReranking: true, ragTopK: 20, vectorDBAvailable: false, vectorDBRecords: 0 };
-    }
-
-    const token = await user.getIdToken();
-
-    // Timeout so the preferences modal never "hangs"
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-    try {
-        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getUserRAGPreference`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            signal: controller.signal
-        });
-        clearTimeout(timeoutId);
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const data = await response.json().catch(() => ({}));
-
-        return {
-            useRAGSearch: !!data.useRAGSearch,
-            ragReranking: data.ragReranking ?? true,
-            ragTopK: data.ragTopK ?? 20,
-            vectorDBAvailable: !!data.vectorDBAvailable,
-            vectorDBRecords: data.vectorDBRecords || 0
-        };
-    } catch (err) {
-        clearTimeout(timeoutId);
-        console.warn('[RAG PREF] Failed to fetch RAG preferences:', err);
-        return { useRAGSearch: false, ragReranking: true, ragTopK: 20, vectorDBAvailable: false, vectorDBRecords: 0, error: err.message };
-    }
-}
-
-async function saveUserRAGPreferences(preferences) {
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            console.warn('[RAG PREF] Cannot save preferences, user not authenticated');
-            return false;
-        }
-
-        const token = await user.getIdToken();
-        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateUserRAGPreference`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(preferences)
-        });
-
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok && response.status !== 202) {
-            console.error('[RAG PREF] Failed to save preferences:', data);
-            return false;
-        }
-
-        console.log('[RAG PREF] Saved:', preferences);
-        return true;
-    } catch (err) {
-        console.error('[RAG PREF] Error saving preferences:', err);
-        return false;
-    }
-}
 
 // Fetch user's model preference order from backend
 async function fetchUserModelPreferences() {
@@ -6732,58 +6660,6 @@ async function showPreferencesModal() {
         renderChunkDistributionProvidersList(AVAILABLE_MODELS.map(m => m.name));
     }
 
-    // Load and display Fast RAG preferences
-    const useRAGSearchInput = document.getElementById('useRAGSearch');
-    const ragRerankingInput = document.getElementById('ragReranking');
-    const ragStatusEl = document.getElementById('ragStatus');
-    const ragInfoTextEl = document.getElementById('ragInfoText');
-    const ragSubOptionsEl = document.getElementById('ragSubOptions');
-
-    const setRagUiState = ({ vectorDBAvailable, vectorDBRecords, useRAGSearch, ragReranking, error }) => {
-        if (!useRAGSearchInput || !ragStatusEl || !ragInfoTextEl) return;
-
-        if (!vectorDBAvailable) {
-            useRAGSearchInput.checked = false;
-            useRAGSearchInput.disabled = true;
-            ragStatusEl.textContent = 'Unavailable';
-            ragInfoTextEl.textContent = error
-                ? `Vector database status: unavailable (${error})`
-                : 'Vector database status: unavailable (server not configured)';
-            if (ragSubOptionsEl) ragSubOptionsEl.classList.add('hidden');
-            return;
-        }
-
-        useRAGSearchInput.disabled = false;
-        useRAGSearchInput.checked = !!useRAGSearch;
-        if (ragRerankingInput) ragRerankingInput.checked = ragReranking ?? true;
-
-        ragStatusEl.textContent = useRAGSearchInput.checked ? 'Enabled' : 'Disabled';
-        ragInfoTextEl.textContent = `Vector database status: ready (${vectorDBRecords || 0} records)`;
-
-        if (ragSubOptionsEl) {
-            ragSubOptionsEl.classList.toggle('hidden', !useRAGSearchInput.checked);
-        }
-    };
-
-    const handleRagToggleChange = () => {
-        if (!useRAGSearchInput || !ragStatusEl || !ragSubOptionsEl) return;
-        ragStatusEl.textContent = useRAGSearchInput.checked ? 'Enabled' : 'Disabled';
-        ragSubOptionsEl.classList.toggle('hidden', !useRAGSearchInput.checked);
-    };
-
-    if (useRAGSearchInput && ragStatusEl && ragInfoTextEl) {
-        ragStatusEl.textContent = 'Loading...';
-        ragInfoTextEl.textContent = 'Vector database status: checking...';
-        try {
-            const ragPrefs = await fetchUserRAGPreferences();
-            setRagUiState(ragPrefs);
-        } catch (e) {
-            setRagUiState({ vectorDBAvailable: false, vectorDBRecords: 0, useRAGSearch: false, ragReranking: true, error: e.message });
-        }
-        useRAGSearchInput.removeEventListener('change', handleRagToggleChange);
-        useRAGSearchInput.addEventListener('change', handleRagToggleChange);
-    }
-
     // Set up event handlers
     const handleChangeTrustClick = async () => {
         console.log('[DEBUG] Change Trust clicked in preferences');
@@ -6925,19 +6801,6 @@ async function showPreferencesModal() {
                 }
             } else {
                 console.warn('[CHUNK PREF] No providers selected for chunk distribution; keeping previous setting');
-            }
-
-            // Save Fast RAG preferences (if present on this page)
-            if (useRAGSearchInput && ragRerankingInput && !useRAGSearchInput.disabled) {
-                const ragPrefsToSave = {
-                    useRAGSearch: !!useRAGSearchInput.checked,
-                    ragReranking: !!ragRerankingInput.checked,
-                    ragTopK: 20
-                };
-                const savedRag = await saveUserRAGPreferences(ragPrefsToSave);
-                if (!savedRag) {
-                    console.warn('[RAG PREF] Failed to save Fast RAG preferences');
-                }
             }
 
             // Refresh sidebar displays to show the new preferences

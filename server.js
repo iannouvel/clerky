@@ -26,9 +26,7 @@ const {
     getUserHospitalTrust,
     updateUserHospitalTrust,
     getUserGuidelineScope,
-    updateUserGuidelineScope,
-    getUserRAGPreference,
-    updateUserRAGPreference
+    updateUserGuidelineScope
 } = require('./server/services/preferences');
 
 const {
@@ -3587,19 +3585,15 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
         const userId = req.user.uid;
         timer.step('Parse request');
 
-        // Check if user has RAG search enabled
-        const ragPrefs = await getUserRAGPreference(userId);
-        timer.step('Check RAG preference');
-
-        // If RAG is enabled and vector DB is available, use RAG search
+        // Always use RAG search if vector DB is available, fall back to traditional
         const vectorAvailable = vectorDB.isVectorDBAvailable();
-        if (ragPrefs.useRAGSearch && vectorAvailable) {
-            console.log(`[RAG] User ${userId} has RAG enabled, using vector search`);
+        if (vectorAvailable) {
+            console.log(`[RAG] Vector DB available, using RAG search`);
             try {
                 const ragResult = await findRelevantGuidelinesRAG(transcript, userId, {
                     scope,
                     hospitalTrust,
-                    ragPrefs
+                    ragPrefs: { ragReranking: true, ragTopK: 50 }
                 });
                 return res.json(ragResult);
             } catch (ragError) {
@@ -3607,15 +3601,10 @@ app.post('/findRelevantGuidelines', authenticateUser, async (req, res) => {
                 // Fall through to traditional search
             }
         } else {
-            console.log('[RAG] Not using RAG for this request:', {
-                useRAGSearch: !!ragPrefs.useRAGSearch,
-                vectorAvailable,
-                hasPineconeApiKey: !!process.env.PINECONE_API_KEY,
-                pineconeIndexName: process.env.PINECONE_INDEX_NAME || 'clerky-guidelines'
-            });
+            console.log('[RAG] Vector DB unavailable, using traditional AI search');
         }
 
-        // Traditional AI-based search (existing logic)
+        // Traditional AI-based search (fallback)
         console.log(`[TRADITIONAL] Using AI chunk processing for user ${userId}`);
 
         // Handle optimized guidelines payload
@@ -14019,67 +14008,17 @@ app.get('/getUserGuidelineScope', authenticateUser, async (req, res) => {
 });
 
 // ============================================================================
-// RAG SEARCH PREFERENCE ENDPOINTS
+// RAG SEARCH PREFERENCE ENDPOINTS (removed - RAG is now always on)
 // ============================================================================
 
-// Endpoint to get user's RAG search preference
-app.get('/getUserRAGPreference', authenticateUser, async (req, res) => {
-    try {
-        const userId = req.user.uid;
-        const ragPreference = await getUserRAGPreference(userId);
+// Placeholder removed: getUserRAGPreference and updateUserRAGPreference endpoints
+// RAG search is now always used when the vector DB is available.
 
-        // Also include vector DB status
-        const vectorDBStats = await vectorDB.getIndexStats();
+// Keeping this comment block so the section marker doesn't disappear.
+// The next section starts below:
 
-        res.json({
-            success: true,
-            ...ragPreference,
-            vectorDBAvailable: vectorDBStats.available,
-            vectorDBRecords: vectorDBStats.totalRecords || 0
-        });
-    } catch (error) {
-        console.error('[ERROR] Failed to get user RAG preference:', error);
-        res.status(500).json({
-            success: false,
-            error: error.message
-        });
-    }
-});
-
-// Endpoint to update user's RAG search preference
-app.post('/updateUserRAGPreference', authenticateUser, async (req, res) => {
-    try {
-        const userId = req.user.uid;
-        const { useRAGSearch, ragReranking, ragTopK } = req.body;
-
-        const preferences = {
-            useRAGSearch: useRAGSearch ?? false,
-            ragReranking: ragReranking ?? true,
-            ragTopK: ragTopK ?? 20
-        };
-
-        const success = await updateUserRAGPreference(userId, preferences);
-
-        if (success) {
-            res.json({
-                success: true,
-                message: 'RAG preference updated successfully',
-                ...preferences
-            });
-        } else {
-            res.status(500).json({
-                success: false,
-                error: 'Failed to update RAG preference'
-            });
-        }
-    } catch (error) {
-        console.error('[ERROR] Failed to update user RAG preference:', error);
-        res.status(500).json({
-            success: false,
-            error: error.message
-        });
-    }
-});
+// Endpoint to get RAG ingestion status — kept as it's used by the Dev panel
+// (app.get('/getRAGStatus') is defined below)
 
 // ============================================================================
 // RAG INGESTION ENDPOINTS (Admin Only)

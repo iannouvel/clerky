@@ -1063,40 +1063,6 @@
                     </div>
                 </div>
 
-                <!-- RAG Search Preferences Section -->
-                <div class="preferences-section">
-                    <h3>Fast RAG Search (Beta)</h3>
-                    <p class="preferences-section-desc">Use vector similarity search for faster guideline matching. When
-                        enabled, guidelines are found in ~100ms instead of ~5 seconds.</p>
-                    <div class="rag-preferences-container">
-                        <div class="rag-toggle-group">
-                            <label class="rag-toggle-switch">
-                                <input type="checkbox" id="useRAGSearch" />
-                                <span class="rag-slider"></span>
-                            </label>
-                            <div class="rag-toggle-label">
-                                <strong>Enable Fast RAG Search</strong>
-                                <span class="rag-status" id="ragStatus">Loading...</span>
-                            </div>
-                        </div>
-
-                        <div id="ragSubOptions" class="rag-sub-options hidden">
-                            <div class="rag-option">
-                                <label class="rag-toggle-switch small">
-                                    <input type="checkbox" id="ragReranking" checked />
-                                    <span class="rag-slider"></span>
-                                </label>
-                                <span class="rag-option-label">AI Reranking (improves accuracy with single AI
-                                    call)</span>
-                            </div>
-                        </div>
-
-                        <div class="rag-info" id="ragInfo">
-                            <span class="rag-info-icon">ℹ️</span>
-                            <span id="ragInfoText">Vector database status: checking...</span>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="preferences-modal-footer">
                 <button id="preferencesSaveBtn" class="preferences-save-btn">Save Preferences</button>

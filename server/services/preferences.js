@@ -22,7 +22,6 @@ const userHospitalTrustCache = new Map();
 const userGuidelineScopeCache = new Map();
 const userModelPreferencesCache = new Map();
 const userChunkDistributionProvidersCache = new Map();
-const userRAGPreferenceCache = new Map();
 
 // ============================================================================
 // AI PROVIDER & MODEL PREFERENCES
@@ -507,74 +506,7 @@ async function updateUserGuidelineScope(userId, scopeSelection) {
 }
 
 // ============================================================================
-// RAG PREFERENCES
-// ============================================================================
-
-async function getUserRAGPreference(userId) {
-    if (userRAGPreferenceCache.has(userId)) {
-        const cachedData = userRAGPreferenceCache.get(userId);
-        if (Date.now() - cachedData.timestamp < USER_PREFERENCE_CACHE_TTL) {
-            return cachedData.preferences;
-        } else {
-            userRAGPreferenceCache.delete(userId);
-        }
-    }
-
-    const defaultPreferences = {
-        useRAGSearch: false,
-        ragReranking: true,
-        ragTopK: 20
-    };
-
-    try {
-        if (db) {
-            try {
-                const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
-                if (userPrefsDoc.exists) {
-                    const data = userPrefsDoc.data();
-                    const preferences = {
-                        useRAGSearch: data.useRAGSearch ?? defaultPreferences.useRAGSearch,
-                        ragReranking: data.ragReranking ?? defaultPreferences.ragReranking,
-                        ragTopK: data.ragTopK ?? defaultPreferences.ragTopK
-                    };
-                    userRAGPreferenceCache.set(userId, { preferences, timestamp: Date.now() });
-                    return preferences;
-                }
-            } catch (firestoreError) {
-                console.error('Firestore error in getUserRAGPreference:', firestoreError);
-            }
-        }
-
-        userRAGPreferenceCache.set(userId, { preferences: defaultPreferences, timestamp: Date.now() });
-        return defaultPreferences;
-    } catch (error) {
-        console.error('Critical error in getUserRAGPreference:', error);
-        return defaultPreferences;
-    }
-}
-
-async function updateUserRAGPreference(userId, preferences) {
-    userRAGPreferenceCache.set(userId, { preferences, timestamp: Date.now() });
-
-    try {
-        if (db) {
-            const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
-            const existingData = userPrefsDoc.exists ? userPrefsDoc.data() : {};
-            await db.collection('userPreferences').doc(userId).set({
-                ...existingData,
-                useRAGSearch: preferences.useRAGSearch,
-                ragReranking: preferences.ragReranking,
-                ragTopK: preferences.ragTopK,
-                updatedAt: admin.firestore.FieldValue.serverTimestamp()
-            }, { merge: true });
-            return true;
-        }
-        return false;
-    } catch (error) {
-        console.error('Error in updateUserRAGPreference:', error);
-        return false;
-    }
-}
+// RAG search is now always on when the vector DB is available — no user preference needed.
 
 module.exports = {
     getUserAIPreference,
@@ -588,7 +520,5 @@ module.exports = {
     getUserHospitalTrust,
     updateUserHospitalTrust,
     getUserGuidelineScope,
-    updateUserGuidelineScope,
-    getUserRAGPreference,
-    updateUserRAGPreference
+    updateUserGuidelineScope
 };
