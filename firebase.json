@@ -12,7 +12,6 @@
       "**/node_modules/**",
       "**/.git/**",
       "**/scripts/**",
-      "dev.*",
       "server.js",
       "requirements.txt",
       "package*.json",
