@@ -5556,6 +5556,50 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] Attaching analyse button listener');
             analyseBtn.dataset.listenerAttached = 'true';
 
+            async function runCompletenessCheck() {
+                try {
+                    const transcript = getUserInputContent();
+                    if (!transcript?.trim()) return [];
+                    const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
+                    const user = auth.currentUser;
+                    if (!user) return [];
+                    const idToken = await user.getIdToken();
+                    const resp = await fetch(`${window.SERVER_URL}/assessNoteCompleteness`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                        body: JSON.stringify({ transcript: anonymisedText || transcript })
+                    });
+                    const data = await resp.json();
+                    return Array.isArray(data.suggestions) ? data.suggestions : [];
+                } catch (e) {
+                    console.warn('[COMPLETENESS] Check failed, skipping Phase 1:', e.message);
+                    return []; // Never block Phase 2
+                }
+            }
+
+            function showCompletenessWizard(suggestions, onComplete) {
+                const summary1 = document.getElementById('summary1');
+                const summarySection = document.getElementById('summarySection');
+                if (summarySection) summarySection.classList.remove('hidden');
+
+                const container = document.createElement('div');
+                container.id = `completeness-wizard-${Date.now()}`;
+                container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;';
+                if (summary1) summary1.appendChild(container);
+
+                initializeSuggestionWizard(container, suggestions, {
+                    getUserInputContent,
+                    setUserInputContent,
+                    determineInsertionPoint: window.determineInsertionPoint,
+                    insertTextAtPoint: window.insertTextAtPoint,
+                    phaseLabel: 'Missing Information',
+                    onComplete: () => {
+                        container.remove();
+                        onComplete();
+                    }
+                });
+            }
+
             analyseBtn.addEventListener('click', async () => {
                 // Check if we're in stop mode
                 if (window.isAnalysisRunning && window.analysisAbortController) {
@@ -5629,7 +5673,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         // Set mode for guideline-suggestions (dynamic advice) workflow
                         window.selectedMode = 'guideline-suggestions';
-                        await processWorkflow();
+                        const phase1Suggestions = await runCompletenessCheck();
+                        if (phase1Suggestions.length > 0) {
+                            showCompletenessWizard(phase1Suggestions, () => processWorkflow());
+                        } else {
+                            await processWorkflow();
+                        }
                     }
                 } catch (error) {
                     // Check if error is due to abort
