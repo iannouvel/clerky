@@ -19320,4 +19320,51 @@ RESPONSE (Text only):
     }
 });
 
+app.post('/assessNoteCompleteness', authenticateUser, async (req, res) => {
+    const { transcript } = req.body;
+    const userId = req.user.uid;
+
+    const prompt = `You are an experienced senior clinician reviewing a clinical note for completeness before making management recommendations.
+
+CLINICAL NOTE:
+${transcript.substring(0, 3000)}
+
+Identify any crucial factual information that is ABSENT from this note but should have been established and documented during the current clinical encounter — information whose absence would prevent safe and complete clinical decision-making.
+
+Focus on:
+- Clinical measurements or findings referenced generically but not quantified where precision matters
+- Diagnostic details partially described but incomplete (e.g. chorionicity stated but amnionicity not recorded in a twin pregnancy)
+- Key history elements critical for safe management in this specific clinical context
+
+Do NOT suggest future actions, investigations to order, or management plans. Only identify information that should already have been established.
+
+Return a JSON array only, no other text:
+[
+  {
+    "suggestion": "One sentence describing what factual detail should be documented",
+    "why": "Why this specific information is crucial for assessment and management in this scenario",
+    "priority": "high|medium|low"
+  }
+]
+Return an empty array [] if the note appears sufficiently complete.`;
+
+    try {
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
+        let suggestions = [];
+        if (aiResponse?.content) {
+            try {
+                const jsonMatch = aiResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
+                suggestions = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
+                if (!Array.isArray(suggestions)) suggestions = [];
+            } catch (e) {
+                console.warn('[COMPLETENESS] JSON parse failed:', e.message);
+            }
+        }
+        res.json({ success: true, suggestions });
+    } catch (error) {
+        console.error('[COMPLETENESS] Error:', error.message);
+        res.json({ success: true, suggestions: [] }); // Graceful fallback — never block Phase 2
+    }
+});
+
 app.use('/', promptsRouter);

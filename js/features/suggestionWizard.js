@@ -11,7 +11,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         getUserInputContent,
         setUserInputContent,
         determineInsertionPoint,
-        insertTextAtPoint
+        insertTextAtPoint,
+        onComplete,
+        phaseLabel
     } = callbacks;
 
     if (!container) {
@@ -39,14 +41,24 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Check for completion
         if (state.currentIndex >= state.total) {
-            container.innerHTML = `
-                <div class="suggestions-complete" style="text-align: center; padding: 30px;">
-                    <span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉</span>
-                    <h3 style="color: var(--text-primary);">Review Complete</h3>
-                    <p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.</p>
-                    <button class="btn btn-primary" onclick="window.closeSuggestionWizard('${container.id}')" style="margin-top: 20px;">Close Review</button>
-                </div>
-            `;
+            if (onComplete) {
+                container.innerHTML = `
+                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
+                        <h3 style="color: var(--text-primary);">Missing Information Review Complete</h3>
+                        <p style="color: var(--text-secondary);">Loading management recommendations...</p>
+                    </div>
+                `;
+                setTimeout(() => onComplete(), 800);
+            } else {
+                container.innerHTML = `
+                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
+                        <span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉</span>
+                        <h3 style="color: var(--text-primary);">Review Complete</h3>
+                        <p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.</p>
+                        <button class="btn btn-primary" onclick="window.closeSuggestionWizard('${container.id}')" style="margin-top: 20px;">Close Review</button>
+                    </div>
+                `;
+            }
             return;
         }
 
@@ -97,7 +109,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (medCount > 0) summaryParts.push(`${medCount} medium`);
         if (lowCount > 0) summaryParts.push(`${lowCount} low`);
 
-        const summaryString = `Clinical Suggestions: ${summaryParts.join(', ')} priority`;
+        const summaryString = `${phaseLabel || 'Clinical Suggestions'}: ${summaryParts.join(', ')} priority`;
 
         // Build Upcoming List HTML (Text Only)
         let upcomingHtml = '';
