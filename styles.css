@@ -3832,6 +3832,11 @@ body {
 }
 
 
+.wizard-accept-spinner {
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
 /* Server status message in fixed button row */
 .server-status-message {
     font-size: 13px;
