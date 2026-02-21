@@ -2092,8 +2092,7 @@ div.third-column,
     overflow-y: auto !important;
     /* Scroll when content exceeds space */
     overflow-x: hidden !important;
-    padding-bottom: 8px !important;
-    /* Small padding at bottom for readability */
+    padding: 0 !important;
     position: relative !important;
     z-index: 1 !important;
     /* Below the fixed button row */
@@ -3315,7 +3314,7 @@ body {
     overflow-y: auto;
     /* Scroll summary content inside this area */
     overflow-x: hidden;
-    padding-bottom: 0;
+    padding: 0;
     border: none;
 }
 
