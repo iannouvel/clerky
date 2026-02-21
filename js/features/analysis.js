@@ -499,7 +499,7 @@ export async function runParallelAnalysis(guidelines) {
     const resultsContainerHtml = `
         <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
             <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary);">
-                <strong><i class="fas fa-layer-group"></i> Parallel Analysis Underway</strong>
+                <strong><i class="fas fa-layer-group"></i> Analysis Underway</strong>
                 <span id="${containerId}-status-text" style="display: block; margin-top: 5px; font-size: 0.9em; color: var(--text-secondary);"></span>
                 <div class="progress-bar-container" style="margin-top: 10px; background: var(--bg-input); height: 8px; border-radius: 4px; overflow: hidden;">
                     <div id="${containerId}-progress" style="width: 0%; height: 100%; background: #4caf50; transition: width 0.3s ease;"></div>
