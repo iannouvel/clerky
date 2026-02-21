@@ -3293,7 +3293,7 @@ body {
     /* Allow full width */
     margin: 0 5px;
     /* Small consistent margin */
-    gap: 16px;
+    gap: 0;
     padding-top: 8px;
     padding-bottom: 0;
     flex: 1 1 auto;
