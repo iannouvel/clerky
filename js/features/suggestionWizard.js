@@ -224,8 +224,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                 <button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
                                         Reject ❌
                                 </button>
-                                <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}')">
-                                        Accept & Next ✅
+                                <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}', this)">
+                                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>Accept &amp; Next ✅
                                 </button>
                             </div>
 
@@ -262,7 +262,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     };
 
-    window.acceptWizardSuggestion = async function (id) {
+    window.acceptWizardSuggestion = async function (id, btn) {
         const card = document.getElementById(id);
         const textEl = card.querySelector('.text-content');
 
@@ -285,6 +285,18 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (!window.editors || !window.editors.userInput) {
             alert('Editor not found.');
             return;
+        }
+
+        // Show spinner on button and status message in fixedButtonRow
+        if (btn) {
+            btn.disabled = true;
+            const spinner = btn.querySelector('.wizard-accept-spinner');
+            if (spinner) spinner.style.display = 'inline';
+        }
+        const statusMsg = document.getElementById('serverStatusMessage');
+        if (statusMsg) {
+            statusMsg.textContent = 'Applying change...';
+            statusMsg.style.display = 'block';
         }
 
         try {
@@ -317,6 +329,15 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         } catch (error) {
             console.error('[WIZARD] Error accepting suggestion:', error);
             alert('Error inserting suggestion: ' + error.message);
+        } finally {
+            if (btn) {
+                btn.disabled = false;
+                const spinner = btn.querySelector('.wizard-accept-spinner');
+                if (spinner) spinner.style.display = 'none';
+            }
+            if (statusMsg) {
+                statusMsg.style.display = 'none';
+            }
         }
     };
 
