@@ -3315,8 +3315,7 @@ body {
     overflow-y: auto;
     /* Scroll summary content inside this area */
     overflow-x: hidden;
-    padding-bottom: 8px;
-    /* Breathing room above fixed button row */
+    padding-bottom: 0;
     border: none;
 }
 
