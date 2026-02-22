@@ -3314,7 +3314,7 @@ body {
     overflow-y: auto;
     /* Scroll summary content inside this area */
     overflow-x: hidden;
-    padding: 0;
+    padding: 0 0 0 15px;
     border: none;
 }
 
