@@ -3314,7 +3314,7 @@ body {
     overflow-y: auto;
     /* Scroll summary content inside this area */
     overflow-x: hidden;
-    padding: 0 0 0 15px;
+    padding: 2px 5px;
     border: none;
 }
 
@@ -3577,26 +3577,26 @@ body {
 
 /* Restore padding for parallel analysis status box */
 #summary1 .parallel-status {
-    padding: 15px !important;
-    margin-bottom: 20px !important;
+    padding: 2px 5px !important;
+    margin-bottom: 5px !important;
 }
 
 /* Restore padding/spacing for suggestion wizard */
 #summary1 .suggestion-wizard-container {
-    padding: 15px !important;
+    padding: 2px 5px !important;
 }
 #summary1 .wizard-summary-header {
-    margin-bottom: 15px !important;
+    margin-bottom: 5px !important;
 }
 #summary1 .wizard-header {
-    padding: 10px 15px !important;
+    padding: 2px 5px !important;
     border-bottom: 1px solid var(--border-color) !important;
 }
 #summary1 .wizard-body {
-    padding: 20px !important;
+    padding: 2px 5px !important;
 }
 #summary1 .wizard-actions {
-    padding: 15px !important;
+    padding: 2px 5px !important;
     border-top: 1px solid var(--border-color) !important;
 }
 #summary1 .suggestion-wizard-card {
