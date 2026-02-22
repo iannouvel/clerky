@@ -40,6 +40,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         return;
     }
 
+    // Ensure guideline selection interface is hidden when wizard takes over
+    document.querySelector('.guideline-selection-interface')?.remove();
+
     if (!suggestions || suggestions.length === 0) {
         container.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found.</div>';
         return;
