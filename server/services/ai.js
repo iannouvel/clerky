@@ -1061,6 +1061,259 @@ Please identify any guidelines that clearly cannot apply to this patient, and ke
     }
 }
 
+/**
+ * Stage 1: First-pass reasoning review of a clinical note.
+ *
+ * Uses a strong reasoning model to identify obvious deficiencies in TWO categories:
+ *   1. Assessment / discussion / documentation omissions
+ *   2. Management plan omissions
+ *
+ * This pass is guideline-agnostic — it relies on broad clinical reasoning only.
+ *
+ * @async
+ * @param {string} clinicalNote - The clinical note text
+ * @param {string} userId - User ID for AI routing
+ * @param {string|null} [targetModel=null] - Optional model override (e.g. for Opus/GPT-5.2)
+ * @returns {Promise<Object>} First-pass findings
+ * @returns {Array} returns.assessment_gaps - Assessment/documentation deficiencies
+ * @returns {Array} returns.management_gaps - Management plan deficiencies
+ */
+async function firstPassReasoning(clinicalNote, userId, targetModel = null) {
+    console.log('[FIRST-PASS] Starting guideline-agnostic reasoning review');
+
+    const systemPrompt = `You are an experienced clinician reviewing a clinical note for obvious deficiencies.
+
+Do NOT cite guidelines or policies. Reason from clinical sense only.
+
+Review for deficiencies in TWO areas:
+
+AREA 1 — ASSESSMENT AND DOCUMENTATION
+Missing contextual details, incomplete assessment framing, unclear interpretation of findings, missing escalation discussion, undocumented clinical reasoning.
+
+AREA 2 — MANAGEMENT PLAN
+Missing next steps, unclear escalation, missing investigations or monitoring, missing safety-netting, unclear timelines, missing communication or follow-up.
+
+For each deficiency: state what is missing, why it matters clinically, and rate severity (high / medium / low).
+
+Be honest about uncertainty. If something might be implied or context-dependent, say so rather than asserting it is definitely missing.
+
+Respond with valid JSON only, no surrounding text or markdown.`;
+
+    const userPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+Identify obvious deficiencies. Return JSON:
+{
+  "assessment_gaps": [
+    {
+      "id": "A1",
+      "description": "Short summary of what is missing",
+      "why_it_matters": "Why a clinician would want this",
+      "severity": "high|medium|low",
+      "confidence": 0.0-1.0
+    }
+  ],
+  "management_gaps": [
+    {
+      "id": "M1",
+      "description": "Short summary of what is missing",
+      "why_it_matters": "Why a clinician would want this",
+      "severity": "high|medium|low",
+      "confidence": 0.0-1.0
+    }
+  ]
+}`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ],
+            temperature: 0.3
+        }, userId, targetModel);
+
+        if (!result || !result.content) {
+            console.warn('[FIRST-PASS] No response from AI');
+            return { assessment_gaps: [], management_gaps: [] };
+        }
+
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const findings = {
+            assessment_gaps: Array.isArray(parsed.assessment_gaps) ? parsed.assessment_gaps : [],
+            management_gaps: Array.isArray(parsed.management_gaps) ? parsed.management_gaps : []
+        };
+
+        console.log(`[FIRST-PASS] Found ${findings.assessment_gaps.length} assessment gaps, ${findings.management_gaps.length} management gaps`);
+        return findings;
+
+    } catch (error) {
+        console.error('[FIRST-PASS] Error during reasoning pass:', error.message);
+        return { assessment_gaps: [], management_gaps: [] };
+    }
+}
+
+/**
+ * Truncates a guideline quote to a maximum character length, preserving sentence boundaries.
+ *
+ * @param {string} quote - The verbatim quote text
+ * @param {number} [maxChars=150] - Maximum character length
+ * @returns {string|null} Truncated quote or null
+ */
+function truncateQuote(quote, maxChars = 150) {
+    if (!quote) return null;
+    if (quote.length <= maxChars) return quote;
+    const truncated = quote.substring(0, maxChars);
+    const lastPeriod = truncated.lastIndexOf('.');
+    if (lastPeriod > maxChars * 0.6) {
+        return truncated.substring(0, lastPeriod + 1);
+    }
+    return truncated + '…';
+}
+
+/**
+ * Merges Stage 1 (first-pass reasoning) findings with Stage 2 (guideline-based) suggestions.
+ *
+ * For each Stage 1 finding, attempts to match it with a Stage 2 suggestion using
+ * keyword overlap. Matched items get guideline evidence attached. Unmatched Stage 1
+ * findings are included as "reasoning_only". Unmatched Stage 2 suggestions are
+ * included as "guideline_only".
+ *
+ * @param {Object} stage1Findings - Output from firstPassReasoning()
+ * @param {Array} stage2Suggestions - Array of guideline suggestion objects from getPracticePointSuggestions
+ * @returns {Object} Merged output with deficiencies array and summary
+ */
+function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
+    const merged = [];
+    const consumedStage2 = new Set();
+
+    // Normalize text for comparison
+    const normalize = (text) => (text || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+
+    // Simple keyword-overlap matching
+    function findBestMatch(findingText, suggestions) {
+        const findingWords = new Set(normalize(findingText).split(' ').filter(w => w.length > 3));
+        let bestIdx = -1;
+        let bestScore = 0;
+
+        suggestions.forEach((s, idx) => {
+            if (consumedStage2.has(idx)) return;
+            const suggText = normalize(s.suggestion || s.name || s.description || '');
+            const suggWords = suggText.split(' ').filter(w => w.length > 3);
+            if (suggWords.length === 0) return;
+
+            const overlap = suggWords.filter(w => findingWords.has(w)).length;
+            const score = overlap / Math.max(findingWords.size, suggWords.length);
+            if (score > bestScore && score > 0.2) {
+                bestScore = score;
+                bestIdx = idx;
+            }
+        });
+
+        return bestIdx >= 0 ? bestIdx : -1;
+    }
+
+    // Priority value for sorting
+    const priorityVal = { high: 3, critical: 3, medium: 2, important: 2, low: 1, info: 0 };
+    const sourceVal = { both: 3, reasoning_only: 2, guideline_only: 1 };
+
+    let defId = 0;
+
+    // 1. Process each Stage 1 finding
+    const allFindings = [
+        ...(stage1Findings.assessment_gaps || []).map(f => ({ ...f, element: 'assessment' })),
+        ...(stage1Findings.management_gaps || []).map(f => ({ ...f, element: 'management' }))
+    ];
+
+    for (const finding of allFindings) {
+        defId++;
+        const matchIdx = findBestMatch(finding.description, stage2Suggestions);
+
+        if (matchIdx >= 0) {
+            const match = stage2Suggestions[matchIdx];
+            consumedStage2.add(matchIdx);
+            merged.push({
+                id: `DEF-${String(defId).padStart(3, '0')}`,
+                element: finding.element,
+                description: finding.description,
+                why_it_matters: finding.why_it_matters,
+                severity: finding.severity || 'medium',
+                confidence: finding.confidence || null,
+                source: 'both',
+                guideline_status: 'confirmed',
+                guideline_id: match.sourceGuidelineId || null,
+                guideline_name: match.sourceGuidelineName || null,
+                guideline_excerpt: truncateQuote(match.verbatimQuote),
+                suggestion_text: match.suggestion || match.name || null
+            });
+        } else {
+            merged.push({
+                id: `DEF-${String(defId).padStart(3, '0')}`,
+                element: finding.element,
+                description: finding.description,
+                why_it_matters: finding.why_it_matters,
+                severity: finding.severity || 'medium',
+                confidence: finding.confidence || null,
+                source: 'reasoning_only',
+                guideline_status: 'no_guideline_match',
+                guideline_id: null,
+                guideline_name: null,
+                guideline_excerpt: null,
+                suggestion_text: null
+            });
+        }
+    }
+
+    // 2. Add unmatched Stage 2 suggestions
+    stage2Suggestions.forEach((suggestion, idx) => {
+        if (consumedStage2.has(idx)) return;
+        defId++;
+
+        // Classify element from suggestion content
+        const text = normalize(suggestion.suggestion || suggestion.name || '');
+        const isManagement = /\b(plan|manage|monitor|escalat|refer|follow|review|prescri|investig|action|treat)\b/.test(text);
+
+        merged.push({
+            id: `DEF-${String(defId).padStart(3, '0')}`,
+            element: isManagement ? 'management' : 'assessment',
+            description: suggestion.suggestion || suggestion.name || '',
+            why_it_matters: suggestion.why || suggestion.context || suggestion.reasoning || '',
+            severity: suggestion.priority || suggestion.significance || 'medium',
+            confidence: null,
+            source: 'guideline_only',
+            guideline_status: 'confirmed',
+            guideline_id: suggestion.sourceGuidelineId || null,
+            guideline_name: suggestion.sourceGuidelineName || null,
+            guideline_excerpt: truncateQuote(suggestion.verbatimQuote),
+            suggestion_text: suggestion.suggestion || suggestion.name || null
+        });
+    });
+
+    // 3. Sort: severity desc, then source weight desc
+    merged.sort((a, b) => {
+        const sevDiff = (priorityVal[b.severity] || 0) - (priorityVal[a.severity] || 0);
+        if (sevDiff !== 0) return sevDiff;
+        return (sourceVal[b.source] || 0) - (sourceVal[a.source] || 0);
+    });
+
+    // 4. Build summary
+    const summary = {
+        total: merged.length,
+        by_element: { assessment: 0, management: 0 },
+        by_severity: { high: 0, medium: 0, low: 0 },
+        by_source: { both: 0, reasoning_only: 0, guideline_only: 0 }
+    };
+    merged.forEach(d => {
+        summary.by_element[d.element] = (summary.by_element[d.element] || 0) + 1;
+        summary.by_severity[d.severity] = (summary.by_severity[d.severity] || 0) + 1;
+        summary.by_source[d.source] = (summary.by_source[d.source] || 0) + 1;
+    });
+
+    console.log(`[MERGE] Merged output: ${summary.total} deficiencies (${summary.by_source.both} confirmed by guideline, ${summary.by_source.reasoning_only} reasoning-only, ${summary.by_source.guideline_only} guideline-only)`);
+
+    return { deficiencies: merged, summary };
+}
+
 module.exports = {
     createPromptForChunk,
     mergeChunkResults,
@@ -1079,5 +1332,8 @@ module.exports = {
     refineSuggestions,
     senseCheckSuggestions,
     senseCheckGuidelines,
+    firstPassReasoning,
+    mergeFirstPassWithSuggestions,
+    truncateQuote,
     SEQUENTIAL_LLM_CHAIN
 };

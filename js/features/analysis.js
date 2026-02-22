@@ -477,6 +477,19 @@ export async function runParallelAnalysis(guidelines) {
         window.hideSelectionButtons();
     }
 
+    // ===== Stage 1: Launch first-pass reasoning in parallel with guideline analysis =====
+    const clinicalNoteForFirstPass = getUserInputContent();
+    let firstPassPromise = null;
+    if (clinicalNoteForFirstPass) {
+        console.log('[FIRST-PASS] Launching Stage 1 reasoning in parallel with guideline analysis');
+        firstPassPromise = postAuthenticated('/api/firstPassReasoning', {
+            transcript: clinicalNoteForFirstPass
+        }).catch(err => {
+            console.warn('[FIRST-PASS] Stage 1 failed (non-blocking):', err.message);
+            return null;
+        });
+    }
+
     // Create a container for the aggregated results
     const containerId = 'parallel-analysis-results-' + Date.now();
     const resultsContainerHtml = `
@@ -606,8 +619,62 @@ export async function runParallelAnalysis(guidelines) {
 
     console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses. Found ${allSuggestions.length} total suggestions.`);
 
+    // ===== Merge Stage 1 (first-pass reasoning) with Stage 2 (guideline suggestions) =====
+    let mergedDeficiencies = null;
+    if (firstPassPromise) {
+        try {
+            const firstPassResult = await firstPassPromise;
+            if (firstPassResult && firstPassResult.success && firstPassResult.findings) {
+                const stage1Findings = firstPassResult.findings;
+                const totalStage1 = (stage1Findings.assessment_gaps || []).length + (stage1Findings.management_gaps || []).length;
+                console.log(`[FIRST-PASS] Stage 1 returned ${totalStage1} findings. Merging with ${allSuggestions.length} guideline suggestions.`);
+
+                if (totalStage1 > 0) {
+                    const mergeResult = await postAuthenticated('/api/mergeFirstPassWithSuggestions', {
+                        stage1Findings,
+                        stage2Suggestions: allSuggestions
+                    });
+
+                    if (mergeResult && mergeResult.success) {
+                        mergedDeficiencies = mergeResult;
+                        console.log(`[MERGE] Merged output: ${mergeResult.summary.total} deficiencies`, mergeResult.summary);
+
+                        // Convert merged deficiencies into suggestion-wizard-compatible format
+                        allSuggestions = (mergeResult.deficiencies || []).map((def, idx) => {
+                            // Source badge label
+                            const sourceBadge = def.source === 'both' ? 'Confirmed by guideline'
+                                : def.source === 'reasoning_only' ? 'Clinical reasoning'
+                                : 'Guideline identified';
+
+                            return {
+                                id: idx + 1,
+                                suggestion: def.description,
+                                why: def.why_it_matters || '',
+                                priority: def.severity || 'medium',
+                                type: def.severity || 'medium',
+                                verbatimQuote: def.guideline_excerpt || '',
+                                sourceGuidelineName: def.guideline_name || sourceBadge,
+                                sourceGuidelineId: def.guideline_id || '',
+                                // Preserve merge metadata for UI
+                                _source: def.source,
+                                _element: def.element,
+                                _confidence: def.confidence,
+                                _guideline_status: def.guideline_status,
+                                _suggestion_text: def.suggestion_text
+                            };
+                        });
+
+                        console.log(`[MERGE] Converted ${allSuggestions.length} merged deficiencies to suggestion format`);
+                    }
+                }
+            }
+        } catch (mergeError) {
+            console.warn('[MERGE] Merge failed (non-blocking, using guideline suggestions only):', mergeError.message);
+        }
+    }
+
     // Update status to show completion
-    updateUser(`Analysis complete - ${allSuggestions.length} practice points identified from ${successfulResults.length} guidelines.`, false);
+    updateUser(`Analysis complete - ${allSuggestions.length} ${mergedDeficiencies ? 'findings' : 'practice points'} identified from ${successfulResults.length} guidelines.`, false);
 
     // Hide the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');

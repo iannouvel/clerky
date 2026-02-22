@@ -45,7 +45,9 @@ const {
     filterRelevantPracticePoints,
     formatMessagesForProvider,
     senseCheckSuggestions,
-    senseCheckGuidelines
+    senseCheckGuidelines,
+    firstPassReasoning,
+    mergeFirstPassWithSuggestions
 } = require('./server/services/ai');
 
 const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guideline');
@@ -16544,6 +16546,54 @@ function formatPracticePointsForPrompt(points) {
         return `${idx}. ${elem.name}\n   ${elem.description}${quoteSection}`;
     }).join('\n\n');
 }
+
+// ===== Stage 1: First-Pass Reasoning (guideline-agnostic) =====
+app.post('/api/firstPassReasoning', authenticateUser, async (req, res) => {
+    try {
+        const { transcript } = req.body;
+        const userId = req.user.uid;
+
+        if (!transcript) {
+            return res.status(400).json({ success: false, error: 'Clinical note (transcript) is required' });
+        }
+
+        console.log(`[FIRST-PASS] Endpoint called, note length: ${transcript.length}`);
+        const findings = await firstPassReasoning(transcript, userId);
+
+        res.json({
+            success: true,
+            findings
+        });
+    } catch (error) {
+        console.error('[FIRST-PASS] Endpoint error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// ===== Merge: Combine Stage 1 findings with Stage 2 guideline suggestions =====
+app.post('/api/mergeFirstPassWithSuggestions', authenticateUser, async (req, res) => {
+    try {
+        const { stage1Findings, stage2Suggestions } = req.body;
+
+        if (!stage1Findings) {
+            return res.status(400).json({ success: false, error: 'stage1Findings is required' });
+        }
+        if (!stage2Suggestions) {
+            return res.status(400).json({ success: false, error: 'stage2Suggestions is required' });
+        }
+
+        console.log(`[MERGE] Endpoint called: ${(stage1Findings.assessment_gaps || []).length + (stage1Findings.management_gaps || []).length} first-pass findings, ${stage2Suggestions.length} guideline suggestions`);
+        const merged = mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions);
+
+        res.json({
+            success: true,
+            ...merged
+        });
+    } catch (error) {
+        console.error('[MERGE] Endpoint error:', error.message);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 
 // Step 1: Filter practice points by relevance to patient context
 // AI Analysis functions moved to server/services/ai.js
