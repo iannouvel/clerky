@@ -2655,10 +2655,10 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         createGuidelineSelectionInterface(filteredCategories, window.relevantGuidelines);
 
         // Build rich guideline feedback for status bar and console
-        const mostRelevantNames     = (filteredCategories.mostRelevant        || []).map(g => g.title || g.id);
-        const potentiallyNames      = (filteredCategories.potentiallyRelevant || []).map(g => g.title || g.id);
-        const lessRelevantNames     = (filteredCategories.lessRelevant        || []).map(g => g.title || g.id);
-        const notRelevantNames      = (filteredCategories.notRelevant         || []).map(g => g.title || g.id);
+        const mostRelevantNames     = (filteredCategories.mostRelevant        || []).map(g => g.displayName || g.humanFriendlyName || g.title || g.id);
+        const potentiallyNames      = (filteredCategories.potentiallyRelevant || []).map(g => g.displayName || g.humanFriendlyName || g.title || g.id);
+        const lessRelevantNames     = (filteredCategories.lessRelevant        || []).map(g => g.displayName || g.humanFriendlyName || g.title || g.id);
+        const notRelevantNames      = (filteredCategories.notRelevant         || []).map(g => g.displayName || g.humanFriendlyName || g.title || g.id);
         const allToProcessNames     = [...mostRelevantNames, ...potentiallyNames, ...lessRelevantNames];
         const totalToProcess        = allToProcessNames.length;
 
