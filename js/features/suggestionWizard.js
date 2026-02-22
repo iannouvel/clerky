@@ -115,6 +115,20 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         const labelColor = 'var(--text-primary)';
 
+        // Source badge for merged first-pass + guideline findings
+        const mergeSource = suggestion._source || null;
+        let sourceBadgeHtml = '';
+        if (mergeSource) {
+            const badgeColors = {
+                'both': { bg: '#e8f5e9', border: '#4caf50', text: '#2e7d32', label: 'Confirmed by guideline' },
+                'reasoning_only': { bg: '#fff3e0', border: '#ff9800', text: '#e65100', label: 'Clinical reasoning' },
+                'guideline_only': { bg: '#e3f2fd', border: '#2196f3', text: '#1565c0', label: 'Guideline identified' }
+            };
+            const badge = badgeColors[mergeSource] || badgeColors['guideline_only'];
+            const elementLabel = suggestion._element === 'management' ? 'Management' : 'Assessment';
+            sourceBadgeHtml = `<span style="display: inline-block; font-size: 0.7em; padding: 2px 8px; border-radius: 10px; background: ${badge.bg}; border: 1px solid ${badge.border}; color: ${badge.text}; margin-left: 8px; vertical-align: middle;">${badge.label}</span><span style="display: inline-block; font-size: 0.7em; padding: 2px 8px; border-radius: 10px; background: var(--bg-tertiary); border: 1px solid var(--border-color); color: var(--text-secondary); margin-left: 4px; vertical-align: middle;">${elementLabel}</span>`;
+        }
+
         // Calculate Counts for Header
         let highCount = 0, medCount = 0, lowCount = 0;
         state.queue.forEach(s => {
@@ -191,7 +205,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                             <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
                                 <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
                                     ${priorityLabel}
-                                </span>
+                                </span>${sourceBadgeHtml}
                                 <span style="font-size: 0.85em; color: var(--text-secondary);">
                                     ${currentNumber} of ${total}
                                 </span>
