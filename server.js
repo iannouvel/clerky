@@ -19362,8 +19362,14 @@ Return an empty array [] if the note appears sufficiently complete.`;
                             g.title.toLowerCase().includes(s.sourceGuidelineName.toLowerCase()) ||
                             s.sourceGuidelineName.toLowerCase().includes(g.title.toLowerCase())
                         );
-                        s.sourceGuidelineName = match ? (match.displayName || match.title) : null;
-                        s.sourceGuidelineId = match ? match.id : null;
+                        if (match) {
+                            // Found a match: use displayName and set ID
+                            s.sourceGuidelineName = match.displayName || match.title;
+                            s.sourceGuidelineId = match.id;
+                        } else {
+                            // No match found: keep AI's suggested name, but can't resolve to ID
+                            s.sourceGuidelineId = null;
+                        }
                     }
                 });
             } catch (e) {
