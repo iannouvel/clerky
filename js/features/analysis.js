@@ -2,7 +2,7 @@ import { auth } from '../../firebase-init.js';
 import { postAuthenticated } from '../api/client.js';
 import { API_ENDPOINTS } from '../api/config.js';
 import { getUserInputContent, setUserInputContent, appendToOutputField } from '../utils/editor.js';
-import { showPIIReviewInterface, ensureAnonymisedForOutbound } from './pii.js';
+import { ensureAnonymisedForOutbound } from './pii.js';
 import { updateUser } from '../ui/status.js';
 import { initializeSuggestionWizard } from './suggestionWizard.js';
 
@@ -47,26 +47,9 @@ export async function checkAgainstGuidelines(suppressHeader = false) {
         const idToken = await user.getIdToken();
         console.log('[DEBUG] Got ID token');
 
-        // Ensure anonymisation before outbound calls
-        let anonymisedTranscript = transcript;
-        try {
-            if (typeof ensureAnonymisedForOutbound === 'function') {
-                const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
-                anonymisedTranscript = anonymisedText || transcript;
-            } else if (typeof window.clinicalAnonymiser !== 'undefined') {
-                // Fallback inline anonymisation if helper is unavailable
-                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
-                if (piiAnalysis.containsPII) {
-                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis);
-                    if (reviewResult.approved) {
-                        anonymisedTranscript = reviewResult.anonymisedText;
-                    }
-                }
-            }
-        } catch (anonError) {
-            console.warn('[ANONYMISER] Proceeding without anonymisation due to error:', anonError);
-            anonymisedTranscript = transcript;
-        }
+        // Anonymise silently before outbound calls — no user interaction
+        const { anonymisedText: _anonText } = await ensureAnonymisedForOutbound(transcript);
+        let anonymisedTranscript = _anonText || transcript;
 
         // Check if guidelines are loaded in cache
         console.log('[DEBUG] Checking guideline cache status:', {
