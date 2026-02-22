@@ -3575,6 +3575,12 @@ body {
     font-size: inherit !important;
 }
 
+/* Restore padding for parallel analysis status box */
+#summary1 .parallel-status {
+    padding: 15px !important;
+    margin-bottom: 20px !important;
+}
+
 /* Restore spacing for guideline selection interface */
 #summary1 .guideline-info {
     margin-left: 8px !important;
