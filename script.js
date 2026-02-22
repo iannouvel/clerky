@@ -395,8 +395,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         allRelevantGuidelinesLength: allRelevantGuidelines?.length || 0
     });
 
-    // Check parallel preference to adjust UI accordingly
-    const isParallelMode = typeof loadParallelAnalysisPreference === 'function' && loadParallelAnalysisPreference();
+    // Parallel analysis is always enabled — guidelines are always processed concurrently
+    const isParallelMode = true;
 
     // Note: extractRelevanceScore is imported from js/utils/relevance.js
 
@@ -6724,31 +6724,11 @@ async function showPreferencesModal() {
         }
     };
 
-    // Parallel Analysis Preference
-    const enableParallelAnalysisInput = document.getElementById('enableParallelAnalysis');
-    if (enableParallelAnalysisInput) {
-        enableParallelAnalysisInput.checked = loadParallelAnalysisPreference();
-    }
-
-    // Override handleSaveClick to include our new preference
-    // Note: We are redefining the function here, but we need to make sure the event listener uses THIS version.
-    // However, since handleSaveClick is const, we can't redefine it. We need to inject our logic into the existing function body or wrap it.
-    // The previous attempt failed because I tried to replace the whole function but missed the context.
-
-    // Better approach: Since we are inside showPreferencesModal, we can add a specific listener for our new input or modify the save handler.
-    // But modifying the save handler is tricky with find-replace.
-    // Let's TRY effectively replacing the START of handleSaveClick to inject our saving logic.
-
-    const originalHandleSaveClick = handleSaveClick;
+    // Re-bind the save button (no parallel preference to save — parallel analysis is always on)
     const newHandleSaveClick = async () => {
-        // Save Parallel Analysis Preference
-        if (enableParallelAnalysisInput) {
-            saveParallelAnalysisPreference(enableParallelAnalysisInput.checked);
-        }
-        await originalHandleSaveClick();
+        await handleSaveClick();
     };
 
-    // Re-bind the save button
     preferencesSaveBtn.removeEventListener('click', handleSaveClick);
     preferencesSaveBtn.addEventListener('click', newHandleSaveClick);
 
@@ -6778,25 +6758,6 @@ async function showPreferencesModal() {
     closeBtn.addEventListener('click', handleCloseClick);
 }
 
-// Parallel Analysis Preference Functions
-function loadParallelAnalysisPreference() {
-    try {
-        const pref = localStorage.getItem('clerky_parallel_analysis');
-        return pref === 'true';
-    } catch (e) {
-        console.error('Error loading parallel analysis preference:', e);
-        return false;
-    }
-}
-
-function saveParallelAnalysisPreference(enabled) {
-    try {
-        localStorage.setItem('clerky_parallel_analysis', enabled);
-        console.log(`[PREF] Saved Parallel Analysis preference: ${enabled}`);
-    } catch (e) {
-        console.error('Error saving parallel analysis preference:', e);
-    }
-}
 
 // Guideline Scope Selection Modal Functions
 let guidelineScopeResolve = null; // Promise resolver for scope selection
@@ -7751,36 +7712,15 @@ async function processWorkflow() {
         // Phase 1: Check note completeness with guideline context
         await runPhase1CompletenessCheck();
 
-        // CHECK PARALLEL ANALYSIS PREFERENCE
-        if (loadParallelAnalysisPreference()) {
-            console.log('[DEBUG] processWorkflow: Parallel Analysis ENABLED - skipping selection');
-            updateAnalyseButtonProgress('Processing Guidelines Concurrently...', true);
-
-            updateUser(
-                `Step 3: Processing ${window.relevantGuidelines.length} relevant guidelines concurrently...`,
-                true
-            );
-
-            // Execute Parallel Analysis
-            await runParallelAnalysis(window.relevantGuidelines);
-
-            // Workflow Complete for Parallel mode
-            console.log('[DEBUG] processWorkflow: Parallel workflow finished successfully');
-
-        } else {
-            // SEQUENTIAL / MANUAL SELECTION FLOW
-            console.log('[DEBUG] processWorkflow: Step 2 completed - now showing guideline selection interface');
-            updateAnalyseButtonProgress('Select Guidelines to Process', false);
-
-            // Step 3: Show Guideline Selection Interface
-            updateUser(
-                `Step 3: Select guidelines to process – found ${window.relevantGuidelines.length} relevant guidelines.`,
-                false
-            );
-
-            // The workflow now pauses here - user needs to manually select guidelines and click "Process Selected Guidelines"
-            console.log('[DEBUG] processWorkflow: Workflow paused - waiting for user to select and process guidelines');
-        }
+        // Phase 2: Process all relevant guidelines concurrently
+        console.log('[DEBUG] processWorkflow: Running parallel analysis');
+        updateAnalyseButtonProgress('Processing Guidelines Concurrently...', true);
+        updateUser(
+            `Step 3: Processing ${window.relevantGuidelines.length} relevant guidelines concurrently...`,
+            true
+        );
+        await runParallelAnalysis(window.relevantGuidelines);
+        console.log('[DEBUG] processWorkflow: Parallel workflow finished successfully');
 
         console.log('[DEBUG] processWorkflow: Complete workflow finished successfully');
 
