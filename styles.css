@@ -3581,6 +3581,28 @@ body {
     margin-bottom: 20px !important;
 }
 
+/* Restore padding/spacing for suggestion wizard */
+#summary1 .suggestion-wizard-container {
+    padding: 15px !important;
+}
+#summary1 .wizard-summary-header {
+    margin-bottom: 15px !important;
+}
+#summary1 .wizard-header {
+    padding: 10px 15px !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+#summary1 .wizard-body {
+    padding: 20px !important;
+}
+#summary1 .wizard-actions {
+    padding: 15px !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+#summary1 .suggestion-wizard-card {
+    border: 1px solid var(--border-color) !important;
+}
+
 /* Restore spacing for guideline selection interface */
 #summary1 .guideline-info {
     margin-left: 8px !important;
