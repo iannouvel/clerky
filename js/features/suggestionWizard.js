@@ -1,6 +1,25 @@
 import { scrollTextIntoView } from '../utils/editor.js';
 
 /**
+ * Opens the PDF for a guideline in a new tab.
+ * Fetches a fresh auth token at click time so the link never expires.
+ * Appends a #search fragment as best-effort text highlight (works in PDF.js-based viewers).
+ */
+window.openGuidelinePdf = async function(guidelineId, searchText) {
+    if (!guidelineId) return;
+    try {
+        const user = window.auth?.currentUser;
+        if (!user) { console.warn('[WIZARD] Not authenticated — cannot open guideline PDF'); return; }
+        const idToken = await user.getIdToken();
+        const base = `${window.SERVER_URL}/api/pdf/${encodeURIComponent(guidelineId)}?token=${encodeURIComponent(idToken)}`;
+        const url = searchText ? `${base}#search=${encodeURIComponent(searchText)}` : base;
+        window.open(url, '_blank');
+    } catch (e) {
+        console.error('[WIZARD] Failed to open guideline PDF:', e);
+    }
+};
+
+/**
  * Initialize the suggestion wizard in the given container
  * @param {HTMLElement} container - The container element to render the wizard into
  * @param {Array} suggestions - List of suggestions to display
@@ -69,7 +88,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         // Safely access properties
         const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
         const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-        const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+        const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || 'Unknown Guideline';
+        const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
         const contextText = suggestion.evidence || ''; // For focusing
 
@@ -193,7 +213,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                         <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
                                     </div>
                                     <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
-                                        Source: ${sourceName}
+                                        Source: ${sourceGuidelineId
+                                            ? `<a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>`
+                                            : sourceName}
                                     </div>
                                 </div>
 

@@ -7518,7 +7518,8 @@ async function runPhase1CompletenessCheck() {
 
         const guidelineContext = (window.relevantGuidelines || []).map(g => ({
             id: g.id,
-            title: g.title || g.displayName || g.id
+            title: g.title || g.id,
+            displayName: g.displayName || g.humanFriendlyName || g.title || g.id
         }));
 
         const resp = await fetch(`${window.SERVER_URL}/assessNoteCompleteness`, {
