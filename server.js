@@ -3523,7 +3523,7 @@ If all guidelines are applicable, return: {"NOT_APPLICABLE": []}`;
         // If the model's own explanation says the guideline "is relevant" or "applies",
         // trust the reason over the classification and keep the guideline.
         const contradictionPhrases = [
-            'relevant', 'applicable', 'directly applies', 'applies to', 'applies to this',
+            'directly applies', 'applies to', 'applies to this',
             'is applicable', 'is relevant', 'pertains to', 'covers this', 'related to this scenario'
         ];
         const notApplicableItems = rawNotApplicable.filter(item => {
