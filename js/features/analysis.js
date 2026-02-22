@@ -676,10 +676,10 @@ export async function runParallelAnalysis(guidelines) {
     // Update status to show completion
     updateUser(`Analysis complete - ${allSuggestions.length} ${mergedDeficiencies ? 'findings' : 'practice points'} identified from ${successfulResults.length} guidelines.`, false);
 
-    // Hide the selection interface now that we have results
+    // Remove the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');
     if (selectionInterface) {
-        selectionInterface.style.display = 'none';
+        selectionInterface.remove();
     }
 
     // Calculate priority counts for status message
