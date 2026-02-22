@@ -3395,9 +3395,14 @@ body {
 }
 
 .floating-input-buttons .record-btn {
-    padding: 6px 8px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
     font-size: 0.85em;
     min-width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Remove margin from record symbol when no text follows */
@@ -4397,7 +4402,9 @@ body {
     }
 
     .floating-input-buttons .record-btn {
-        padding: 4px 8px;
+        width: 24px;
+        height: 24px;
+        padding: 0;
         font-size: 0.75em;
     }
 

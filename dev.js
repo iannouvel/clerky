@@ -749,6 +749,46 @@ document.addEventListener('DOMContentLoaded', async function () {
             // Sync select-all checkbox state
             const selectAllCb = document.getElementById('logsSelectAll');
             if (selectAllCb) selectAllCb.checked = false;
+
+            // Auto-select the most recent interaction
+            selectLastInteraction();
+        }
+
+        // Select checkboxes for all logs belonging to the most recent interaction.
+        // An "interaction" is a cluster of logs with < 2 minutes between consecutive entries;
+        // a gap >= 2 minutes signals the boundary to the previous interaction.
+        function selectLastInteraction() {
+            if (!recentLogs || recentLogs.length === 0) return;
+
+            const GAP_MS = 2 * 60 * 1000; // 2-minute gap threshold
+
+            // Sort newest-first to walk forward through the most recent cluster
+            const sorted = [...recentLogs].sort((a, b) => {
+                const ta = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+                const tb = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+                return tb - ta;
+            });
+
+            const interactionIds = new Set();
+            interactionIds.add(sorted[0].id);
+            let prevTime = sorted[0].timestamp ? new Date(sorted[0].timestamp).getTime() : null;
+
+            for (let i = 1; i < sorted.length; i++) {
+                const t = sorted[i].timestamp ? new Date(sorted[i].timestamp).getTime() : null;
+                if (prevTime !== null && t !== null && (prevTime - t) < GAP_MS) {
+                    interactionIds.add(sorted[i].id);
+                    prevTime = t;
+                } else {
+                    break;
+                }
+            }
+
+            document.querySelectorAll('.log-select-cb').forEach(cb => {
+                cb.checked = interactionIds.has(cb.getAttribute('data-log-id'));
+            });
+
+            const selectAllCb = document.getElementById('logsSelectAll');
+            if (selectAllCb) selectAllCb.checked = false;
         }
 
         // Show details for a selected log entry
@@ -866,6 +906,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                     clearTimeout(searchTimeout);
                     searchTimeout = setTimeout(fetchRecentLogs, 500);
                 });
+            }
+
+            // Select Last Interaction button
+            const lastInteractionBtn = document.getElementById('selectLastInteractionBtn');
+            if (lastInteractionBtn) {
+                lastInteractionBtn.addEventListener('click', selectLastInteraction);
             }
 
             // Copy All button
