@@ -13,7 +13,7 @@ import { postAuthenticated, getIdToken } from './js/api/client.js';
 import { API_ENDPOINTS } from './js/api/config.js';
 
 // Import feature modules
-import { showPIIReviewInterface, ensureAnonymisedForOutbound } from './js/features/pii.js';
+import { ensureAnonymisedForOutbound } from './js/features/pii.js';
 import {
     checkAgainstGuidelines,
     runParallelAnalysis,
@@ -2425,64 +2425,10 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             appendToOutputField(searchProgress, false);
         }
 
-        // ANONYMISATION STEP: Check and anonymise clinical data before sending to server
-        console.log('[ANONYMISER] Checking transcript for PII before processing...');
-        let anonymisedTranscript = transcript;
-        let anonymisationInfo = null;
-
-        try {
-            // Check if anonymiser is available
-            if (typeof window.clinicalAnonymiser !== 'undefined') {
-                // Check for PII first
-                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
-                console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
-
-                if (piiAnalysis.containsPII) {
-                    console.log('[ANONYMISER] PII detected, showing review interface...');
-
-                    // Show PII review interface
-                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis, {
-                        appendToSummary1: typeof appendToSummary1 !== 'undefined' ? appendToSummary1 : window.appendToSummary1,
-                        updateSummaryCriticalStatus: window.updateSummaryCriticalStatus,
-                        updateUser: typeof updateUser !== 'undefined' ? updateUser : window.updateUser
-                    });
-
-                    if (reviewResult.approved) {
-                        // Use the user-approved anonymised text
-                        anonymisedTranscript = reviewResult.anonymisedText;
-                        anonymisationInfo = {
-                            originalLength: transcript.length,
-                            anonymisedLength: anonymisedTranscript.length,
-                            replacementsCount: reviewResult.replacementsCount,
-                            riskLevel: piiAnalysis.riskLevel,
-                            piiTypes: piiAnalysis.piiTypes,
-                            userReviewed: true
-                        };
-
-                        console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
-
-                        // Surface outcome via status message (decision itself happens in the PII UI)
-                        const redactedCount = reviewResult.replacementsCount;
-                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
-                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
-                    } else {
-                        // User cancelled the review, use original transcript
-                        console.log('[ANONYMISER] User cancelled PII review, using original transcript');
-                        anonymisedTranscript = transcript;
-                        updateUser('Privacy review cancelled – using original transcript.', false);
-                    }
-                } else {
-                    console.log('[ANONYMISER] No significant PII detected');
-                    updateUser('Privacy check complete – no significant personal information detected.', false);
-                }
-            } else {
-                console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
-            }
-        } catch (anonymisationError) {
-            console.error('[ANONYMISER] Error during anonymisation:', anonymisationError);
-            // Continue with original transcript if anonymisation fails
-            anonymisedTranscript = transcript;
-        }
+        // ANONYMISATION STEP: Automatically anonymise clinical data before sending to server.
+        // This is silent — the user is never prompted or shown PII details.
+        const { anonymisedText: _anonText1, anonymisationInfo } = await ensureAnonymisedForOutbound(transcript);
+        let anonymisedTranscript = _anonText1;
 
         // Get user ID token
         const user = auth.currentUser;
@@ -2762,64 +2708,10 @@ async function generateClinicalNote() {
             throw new Error('No transcript found or transcript is empty');
         }
 
-        // ANONYMISATION STEP: Check and anonymise clinical data before sending to server
-        console.log('[ANONYMISER] Checking transcript for PII before generating clinical note...');
-        let anonymisedTranscript = transcript;
-        let anonymisationInfo = null;
-
-        try {
-            // Check if anonymiser is available
-            if (typeof window.clinicalAnonymiser !== 'undefined') {
-                // Check for PII first
-                const piiAnalysis = await window.clinicalAnonymiser.checkForPII(transcript);
-                console.log('[ANONYMISER] PII Analysis:', piiAnalysis);
-
-                if (piiAnalysis.containsPII) {
-                    console.log('[ANONYMISER] PII detected, showing review interface...');
-
-                    // Show PII review interface
-                    const reviewResult = await showPIIReviewInterface(transcript, piiAnalysis, {
-                        appendToSummary1: typeof appendToSummary1 !== 'undefined' ? appendToSummary1 : window.appendToSummary1,
-                        updateSummaryCriticalStatus: window.updateSummaryCriticalStatus,
-                        updateUser: typeof updateUser !== 'undefined' ? updateUser : window.updateUser
-                    });
-
-                    if (reviewResult.approved) {
-                        // Use the user-approved anonymised text
-                        anonymisedTranscript = reviewResult.anonymisedText;
-                        anonymisationInfo = {
-                            originalLength: transcript.length,
-                            anonymisedLength: anonymisedTranscript.length,
-                            replacementsCount: reviewResult.replacementsCount,
-                            riskLevel: piiAnalysis.riskLevel,
-                            piiTypes: piiAnalysis.piiTypes,
-                            userReviewed: true
-                        };
-
-                        console.log('[ANONYMISER] User approved anonymisation:', anonymisationInfo);
-
-                        // Surface outcome via status message (decision itself happens in the PII UI)
-                        const redactedCount = reviewResult.replacementsCount;
-                        const itemLabel = redactedCount === 1 ? 'item' : 'items';
-                        updateUser(`Privacy protection applied: ${redactedCount} personal ${itemLabel} redacted.`, false);
-                    } else {
-                        // User cancelled the review, use original transcript
-                        console.log('[ANONYMISER] User cancelled PII review, using original transcript');
-                        anonymisedTranscript = transcript;
-                        updateUser('Privacy review cancelled – using original transcript.', false);
-                    }
-                } else {
-                    console.log('[ANONYMISER] No significant PII detected');
-                    updateUser('Privacy check complete – no significant personal information detected.', false);
-                }
-            } else {
-                console.warn('[ANONYMISER] Anonymiser not available, using original transcript');
-            }
-        } catch (anonymisationError) {
-            console.error('[ANONYMISER] Error during anonymisation:', anonymisationError);
-            // Continue with original transcript if anonymisation fails
-            anonymisedTranscript = transcript;
-        }
+        // ANONYMISATION STEP: Automatically anonymise clinical data before sending to server.
+        // This is silent — the user is never prompted or shown PII details.
+        const { anonymisedText: _anonText2 } = await ensureAnonymisedForOutbound(transcript);
+        let anonymisedTranscript = _anonText2;
 
         // Get the current user using imported auth object
         const user = auth.currentUser;
