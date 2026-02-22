@@ -19285,21 +19285,50 @@ app.post('/assessNoteCompleteness', authenticateUser, async (req, res) => {
     const { transcript, guidelines } = req.body;
     const userId = req.user.uid;
 
-    const guidelineContext = Array.isArray(guidelines) && guidelines.length > 0
-        ? `\nRelevant guidelines identified for this case:\n${guidelines.map(g => `- ${g.title}`).join('\n')}\n`
+    // Fetch guideline content from Firestore (best-effort — never blocks Phase 2)
+    let guidelineContextParts = [];
+    if (Array.isArray(guidelines) && guidelines.length > 0) {
+        const contentResults = await Promise.all(guidelines.map(async (g) => {
+            let content = null;
+            try {
+                const doc = await db.collection('guidelines').doc(g.id).get();
+                if (doc.exists) {
+                    const data = doc.data();
+                    content = data.condensed || data.content;
+                    if (!content) {
+                        const condensedDoc = await db.collection('guidelines').doc(g.id).collection('content').doc('condensed').get();
+                        if (condensedDoc.exists) content = condensedDoc.data()?.condensed;
+                    }
+                    if (!content) {
+                        const fullDoc = await db.collection('guidelines').doc(g.id).collection('content').doc('full').get();
+                        if (fullDoc.exists) content = fullDoc.data()?.content;
+                    }
+                }
+            } catch (e) {
+                console.warn(`[COMPLETENESS] Could not fetch content for guideline ${g.id}:`, e.message);
+            }
+            return { title: g.title, id: g.id, content };
+        }));
+        guidelineContextParts = contentResults;
+    }
+
+    const guidelineSection = guidelineContextParts.length > 0
+        ? '\n\nRelevant guidelines for this case:\n\n' + guidelineContextParts.map(gc =>
+            `### ${gc.title}\n${gc.content ? gc.content.substring(0, 2000) : '(content not available)'}`
+          ).join('\n\n---\n\n')
         : '';
 
     const prompt = `You are an experienced senior clinician reviewing a clinical note for completeness before making management recommendations.
 
 CLINICAL NOTE:
 ${transcript.substring(0, 3000)}
-${guidelineContext}
+${guidelineSection}
 Identify any crucial factual information that is ABSENT from this note but should have been established and documented during the current clinical encounter — information whose absence would prevent safe and complete clinical decision-making.
 
 Focus on:
 - Clinical measurements or findings referenced generically but not quantified where precision matters
 - Diagnostic details partially described but incomplete (e.g. chorionicity stated but amnionicity not recorded in a twin pregnancy)
-- Key history elements critical for safe management in this specific clinical context${guidelineContext ? '\n- Information specifically required by the relevant guidelines listed above' : ''}
+- Key history elements critical for safe management in this specific clinical context${guidelineContextParts.length > 0 ? '\n- Information specifically required by the guidelines provided above' : ''}
 
 Do NOT suggest future actions, investigations to order, or management plans. Only identify information that should already have been established.
 
@@ -19309,7 +19338,8 @@ Return a JSON array only, no other text:
     "suggestion": "One sentence describing what factual detail should be documented",
     "why": "Why this specific information is crucial for assessment and management in this scenario",
     "priority": "high|medium|low",
-    "sourceGuidelineName": "Name of the relevant guideline if this item is specifically required by one of the listed guidelines, otherwise null"
+    "sourceGuidelineName": "Name of the relevant guideline if this item is specifically required by one of the listed guidelines, otherwise null",
+    "verbatimQuote": "Exact sentence or phrase copied word-for-word from the guideline text above that directly supports this suggestion, or null if not guideline-specific"
   }
 ]
 Return an empty array [] if the note appears sufficiently complete.`;

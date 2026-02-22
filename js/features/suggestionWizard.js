@@ -70,6 +70,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
         const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
         const sourceName = suggestion.sourceGuidelineName || 'Unknown Guideline';
+        const verbatimQuote = suggestion.verbatimQuote || '';
         const contextText = suggestion.evidence || ''; // For focusing
 
         // Formatting
@@ -187,7 +188,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                 </div>
 
                                 <!-- Reasoning Box -->
-                                <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
+                                <div style="margin-bottom: ${verbatimQuote ? '10px' : '20px'}; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
                                     <div style="font-size: 0.95em; color: var(--text-secondary);">
                                         <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
                                     </div>
@@ -195,6 +196,13 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                         Source: ${sourceName}
                                     </div>
                                 </div>
+
+                                ${verbatimQuote ? `
+                                <!-- Verbatim Guideline Quote -->
+                                <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid #888;">
+                                    <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Guideline Quote:</div>
+                                    <div style="font-size: 0.9em; color: var(--text-secondary); font-style: italic; line-height: 1.5;">"${verbatimQuote}"</div>
+                                </div>` : ''}
 
                                 <!-- Editor for Modify Mode (Hidden by default) -->
                                 <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
