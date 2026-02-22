@@ -898,11 +898,27 @@ async function senseCheckSuggestions(suggestions, clinicalNote, patientContext, 
 
     console.log('[SENSE-CHECK] Checking', suggestions.length, 'suggestions');
 
-    const systemPrompt = `You are reviewing a list of clinical suggestions to decide whether they apply to the patient described in the clinical note.
+    const systemPrompt = `You are a quality auditor reviewing clinical suggestions. Your job is to remove suggestions that are biologically or demographically impossible for this patient.
 
-Only remove a suggestion if it is clearly and obviously inapplicable to this patient — not because it is unnecessary, suboptimal, or already partially addressed, but because no reasonable clinician could apply it given what is known about this patient.
+THE ONLY VALID REASON TO REMOVE A SUGGESTION is if it is impossible given fixed patient characteristics — for example:
+- A suggestion about breastfeeding when the baby was stillborn
+- A suggestion about anti-D prophylaxis when the patient is Rh-positive
+- A suggestion about preterm management when the patient is at 41 weeks
+- A suggestion about twin pregnancy management when the patient has a singleton
 
-Bear in mind that suggestions highlighting gaps in earlier care are still valuable even if the window has passed — they are observations about missed care, not instructions to act now. Err strongly on the side of keeping suggestions. When in doubt, keep it.
+DO NOT REMOVE a suggestion for any of these reasons — they are all invalid grounds for removal:
+- The procedure has already been performed (e.g. the caesarean section is done)
+- The action can no longer be taken (the window has passed)
+- The note already documents the action
+- The suggestion seems low priority or unnecessary
+- The suggestion is about documentation or process steps
+- You think the care was already good enough
+
+Retrospective audit observations (e.g. "WHO checklist should have been completed", "consent should have been documented") are ALWAYS valid even if the event is in the past. They identify gaps in care, not future actions.
+
+SELF-CHECK: Before adding any suggestion to filteredOut, ask yourself: "Is this suggestion literally impossible given the patient's fixed characteristics (biology, demographics)?" If the answer is anything other than a clear yes, keep the suggestion.
+
+If in doubt, keep it. It is far better to show a suggestion that was already done than to silently hide one that identifies a real gap.
 
 Return ONLY valid JSON:
 {
@@ -910,7 +926,7 @@ Return ONLY valid JSON:
   "filteredOut": [
     {
       "id": <suggestion ID>,
-      "reason": "<brief explanation of why this clearly cannot apply to this patient>"
+      "reason": "<the specific biological or demographic reason why this is impossible for this patient>"
     }
   ]
 }`;
@@ -924,7 +940,7 @@ ${clinicalNote}
 SUGGESTIONS TO REVIEW:
 ${suggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}`).join('\n')}
 
-Review each suggestion and decide whether it could reasonably apply to this patient.`;
+Remove only suggestions that are biologically or demographically impossible for this patient. Keep everything else.`;
 
     try {
         const result = await routeToAI({
