@@ -2464,6 +2464,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                     ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
                     : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
             updateUser(scopeInfo, true);
+            console.log(`[GUIDELINES] ${scopeInfo}`);
         }
 
         console.log('[DEBUG] Sample guideline from Firestore before processing:', {
@@ -2495,8 +2496,9 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         });
 
         // Update progress with guideline count
-        const analyzeMessage = `Analysing transcript against ${guidelinesList.length} available guidelines...`;
+        const analyzeMessage = `Searching ${guidelinesList.length} guidelines via semantic matching, then categorising by relevance and filtering for applicability...`;
         updateUser(analyzeMessage, true);
+        console.log(`[GUIDELINES] ${analyzeMessage}`);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
             transcriptLength: anonymisedTranscript.length,
@@ -2552,7 +2554,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
-        updateUser('Guidelines found', false);
+        console.log('[GUIDELINES] Server response received — applying scope filter and enriching with local cache...');
 
         console.log('[DEBUG] Server response categories structure:', {
             categories: data.categories,
@@ -2649,21 +2651,33 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             filtered: totalBeforeFilter - totalAfterFilter
         });
 
-        // Update progress with completion
-        const completionMessage = 'Analysis complete – categorising relevant guidelines...';
-        updateUser(completionMessage, true);
-
-        // Process and display the results with the new selection interface
+        // Process and display the results
         createGuidelineSelectionInterface(filteredCategories, window.relevantGuidelines);
 
-        // Add final summary via status message
-        const totalRelevant = (filteredCategories.mostRelevant?.length || 0) +
-            (filteredCategories.potentiallyRelevant?.length || 0) +
-            (filteredCategories.lessRelevant?.length || 0);
+        // Build rich guideline feedback for status bar and console
+        const mostRelevantNames     = (filteredCategories.mostRelevant        || []).map(g => g.title || g.id);
+        const potentiallyNames      = (filteredCategories.potentiallyRelevant || []).map(g => g.title || g.id);
+        const lessRelevantNames     = (filteredCategories.lessRelevant        || []).map(g => g.title || g.id);
+        const notRelevantNames      = (filteredCategories.notRelevant         || []).map(g => g.title || g.id);
+        const allToProcessNames     = [...mostRelevantNames, ...potentiallyNames, ...lessRelevantNames];
+        const totalToProcess        = allToProcessNames.length;
 
-        const summaryMessage = `Found ${totalRelevant} relevant guidelines. Most: ${filteredCategories.mostRelevant?.length || 0}, potentially: ${filteredCategories.potentiallyRelevant?.length || 0}, less relevant: ${filteredCategories.lessRelevant?.length || 0}.`;
+        // Console: full breakdown — persists for post-hoc inspection
+        console.log('[GUIDELINES] ═══════════════════════════════════════════════════');
+        console.log(`[GUIDELINES] Search complete — ${guidelinesList.length} searched, ${totalToProcess} selected for analysis`);
+        if (mostRelevantNames.length)  console.log(`[GUIDELINES]   Most relevant (${mostRelevantNames.length}):`,  mostRelevantNames);
+        if (potentiallyNames.length)   console.log(`[GUIDELINES]   Potentially relevant (${potentiallyNames.length}):`, potentiallyNames);
+        if (lessRelevantNames.length)  console.log(`[GUIDELINES]   Less relevant (${lessRelevantNames.length}):`,  lessRelevantNames);
+        if (notRelevantNames.length)   console.log(`[GUIDELINES]   Excluded — not applicable (${notRelevantNames.length}):`, notRelevantNames);
+        console.log('[GUIDELINES] ═══════════════════════════════════════════════════');
 
+        // Status bar: count + names (shown in fixedButtonRow serverStatusMessage)
+        const namesStr = allToProcessNames.join(', ');
+        const summaryMessage = totalToProcess > 0
+            ? `Found ${totalToProcess} guideline${totalToProcess !== 1 ? 's' : ''} to analyse: ${namesStr}`
+            : 'No relevant guidelines found for this clinical scenario.';
         updateUser(summaryMessage, false);
+        console.log(`[GUIDELINES] Status bar: "${summaryMessage}"`);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
             error: error.message,
