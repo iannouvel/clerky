@@ -19352,17 +19352,18 @@ Return an empty array [] if the note appears sufficiently complete.`;
                 const jsonMatch = aiResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
                 suggestions = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
                 if (!Array.isArray(suggestions)) suggestions = [];
-                // Validate sourceGuidelineName against the passed guidelines
-                const guidelineTitles = Array.isArray(guidelines) ? guidelines.map(g => g.title) : [];
+                // Validate sourceGuidelineName against the passed guidelines; also resolve ID and displayName
+                const guidelineObjects = Array.isArray(guidelines) ? guidelines : [];
                 suggestions.forEach(s => {
                     if (s.sourceGuidelineName) {
-                        const match = guidelineTitles.find(t =>
-                            t.toLowerCase() === s.sourceGuidelineName.toLowerCase()
-                        ) || guidelineTitles.find(t =>
-                            t.toLowerCase().includes(s.sourceGuidelineName.toLowerCase()) ||
-                            s.sourceGuidelineName.toLowerCase().includes(t.toLowerCase())
+                        const match = guidelineObjects.find(g =>
+                            g.title.toLowerCase() === s.sourceGuidelineName.toLowerCase()
+                        ) || guidelineObjects.find(g =>
+                            g.title.toLowerCase().includes(s.sourceGuidelineName.toLowerCase()) ||
+                            s.sourceGuidelineName.toLowerCase().includes(g.title.toLowerCase())
                         );
-                        s.sourceGuidelineName = match || null;
+                        s.sourceGuidelineName = match ? (match.displayName || match.title) : null;
+                        s.sourceGuidelineId = match ? match.id : null;
                     }
                 });
             } catch (e) {
