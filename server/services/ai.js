@@ -645,14 +645,16 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
     // quotes, extract patient context, and identify already-compliant items — all in one call.
     const systemPrompt = `You are a clinical advisor reviewing a clinical note against a guideline. In a single pass:
 1. Identify care gaps — recommendations from the guideline not addressed in the clinical note.
-2. For each gap: write a concise actionable suggestion, indicate priority (high/medium/low), briefly explain your reasoning, explain why it matters for THIS specific patient ("why"), provide an EXACT verbatim copy-paste from the guideline text (do not paraphrase — copy word-for-word as "verbatimQuote"), and set "sourceGuidelineId" to the guideline ID supplied.
+2. For each gap: write a concise actionable suggestion, indicate priority (high/medium/low), briefly explain your reasoning, explain why it matters for THIS specific patient ("why"), provide an EXACT verbatim copy-paste from the GUIDELINE TEXT ONLY as "verbatimQuote" (do not paraphrase, and do NOT quote from the clinical note — the quote must be a sentence or phrase that physically appears in the guideline content), and set "sourceGuidelineId" to the guideline ID supplied.
 3. Extract key patient context from the clinical note.
 4. Identify guideline recommendations that ARE already addressed in the note.
+
+CRITICAL: verbatimQuote must be copied word-for-word from the "=== GUIDELINE CONTENT ===" section below. Never quote from the clinical note section.
 
 Respond with valid JSON only, using this structure:
 { "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
 
-    const userPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\nGuideline content:\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline text above. Set sourceGuidelineId to the guideline ID provided above.`;
+    const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above.`;
 
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, targetModel);
 
@@ -942,6 +944,12 @@ Remove only suggestions that are biologically or demographically impossible for 
         const filteredOut = suggestions
             .map((s, idx) => ({ ...s, originalIndex: idx, filterReason: filteredOutMap.get(idx) }))
             .filter(s => s.filterReason);
+
+        // Guard: if the model returned both arrays empty it failed silently — keep everything.
+        if (validSuggestions.length === 0 && filteredOut.length === 0 && suggestions.length > 0) {
+            console.warn(`[SENSE-CHECK-AI] Model returned both arrays empty for ${suggestions.length} suggestion(s) — treating as failure, keeping all`);
+            return { validSuggestions: suggestions, filteredOut: [] };
+        }
 
         console.log(`[SENSE-CHECK] Final result: ${validSuggestions.length} valid, ${filteredOut.length} filtered out`);
         if (filteredOut.length > 0) {
