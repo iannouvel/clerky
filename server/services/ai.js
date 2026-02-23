@@ -641,60 +641,39 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
         if (learning) hintsText = formatLearningForPrompt(learning);
     }
 
-    const step1SystemPrompt = `You are a clinical advisor reviewing a clinical note against a guideline. Your role is to identify care gaps — things the guideline recommends that are not addressed in the note. For each gap, write a concise actionable suggestion, indicate whether it is high, medium, or low priority, and briefly explain your reasoning. Respond with valid JSON only, using the structure: { "suggestions": [{ "suggestion": "...", "priority": "high, medium, or low", "reasoning": "..." }] }`;
-    const step1UserPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline title: ${guidelineTitle}\n\nGuideline content:\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Please identify any recommendations from the guideline that are not addressed in this clinical note.`;
-    const messagesStep1 = [{ role: 'system', content: step1SystemPrompt }, { role: 'user', content: step1UserPrompt }];
-    const resultStep1 = await routeToAI({ messages: messagesStep1 }, userId, targetModel);
+    // Single-pass prompt: identify gaps, enrich with patient-specific reasoning and verbatim
+    // quotes, extract patient context, and identify already-compliant items — all in one call.
+    const systemPrompt = `You are a clinical advisor reviewing a clinical note against a guideline. In a single pass:
+1. Identify care gaps — recommendations from the guideline not addressed in the clinical note.
+2. For each gap: write a concise actionable suggestion, indicate priority (high/medium/low), briefly explain your reasoning, explain why it matters for THIS specific patient ("why"), provide an EXACT verbatim copy-paste from the guideline text (do not paraphrase — copy word-for-word as "verbatimQuote"), and set "sourceGuidelineId" to the guideline ID supplied.
+3. Extract key patient context from the clinical note.
+4. Identify guideline recommendations that ARE already addressed in the note.
 
-    if (!resultStep1 || !resultStep1.content) return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+Respond with valid JSON only, using this structure:
+{ "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
 
-    let initialSuggestions = [];
-    try {
-        const parsed = JSON.parse(resultStep1.content.trim().replace(/```json\n?|\n?```/g, ''));
-        initialSuggestions = parsed.suggestions || [];
-    } catch (e) { return { patientContext: {}, suggestions: [], alreadyCompliant: [] }; }
+    const userPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\nGuideline content:\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline text above. Set sourceGuidelineId to the guideline ID provided above.`;
 
-    if (initialSuggestions.length === 0) return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, targetModel);
 
-    const step2SystemPrompt = `You are a clinical advisor reviewing a set of draft suggestions about a patient. For each suggestion, add a "why" field explaining why it matters for this specific patient, a "verbatimQuote" field containing an exact copy-paste of a sentence or phrase from the guideline text provided — do not paraphrase or summarise, copy it word-for-word — and a "sourceGuidelineId" field set to the guideline ID. The verbatimQuote must appear verbatim in the guideline content supplied by the user. Also extract the patient context from the note and identify any guideline recommendations that are already addressed in the note. Respond with valid JSON only, using the structure: { "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
-    const step2UserPrompt = `Clinical note:\n${clinicalNote}\n\nGuideline ID: ${guidelineId || 'unknown'}\n\nGuideline content:\n${guidelineContent}\n\nDraft suggestions:\n${JSON.stringify(initialSuggestions, null, 2)}\n\nPlease enrich these suggestions with patient-specific reasoning and verbatim guideline quotes (copy exact wording from the guideline content above), extract the patient context, set sourceGuidelineId to the guideline ID provided above, and identify anything in the clinical note that is already compliant with the guideline.`;
-    const messagesStep2 = [{ role: 'system', content: step2SystemPrompt }, { role: 'user', content: step2UserPrompt }];
-    const resultStep2 = await routeToAI({ messages: messagesStep2 }, userId, targetModel);
-
-    if (!resultStep2 || !resultStep2.content) {
-        return { patientContext: {}, suggestions: initialSuggestions.map(s => ({ ...s, suggestion: s.name, why: 'Reasoning generation failed', verbatimQuote: '' })), alreadyCompliant: [] };
-    }
+    if (!result || !result.content) return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
 
     try {
-        const result = JSON.parse(resultStep2.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
 
-        // Validate and normalize sourceGuidelineId in suggestions
-        if (result.suggestions && Array.isArray(result.suggestions)) {
-            result.suggestions.forEach(s => {
-                // Ensure sourceGuidelineId is set and matches expected guideline
-                if (guidelineId && (!s.sourceGuidelineId || s.sourceGuidelineId !== guidelineId)) {
-                    s.sourceGuidelineId = guidelineId; // Force correct ID for reliability
+        // Normalise sourceGuidelineId on every suggestion
+        if (parsed.suggestions && Array.isArray(parsed.suggestions)) {
+            parsed.suggestions.forEach(s => {
+                if (guidelineId && s.sourceGuidelineId !== guidelineId) {
+                    s.sourceGuidelineId = guidelineId;
                 }
-                if (!s.sourceGuidelineId) {
-                    s.sourceGuidelineId = guidelineId; // Fallback to known ID
-                }
+                if (!s.sourceGuidelineId) s.sourceGuidelineId = guidelineId;
             });
         }
 
-        return result;
+        return parsed;
     } catch (e) {
-        // Fallback with guidelineId set
-        return {
-            patientContext: {},
-            suggestions: initialSuggestions.map(s => ({
-                ...s,
-                suggestion: s.name,
-                why: 'Reasoning generation failed',
-                verbatimQuote: '',
-                sourceGuidelineId: guidelineId
-            })),
-            alreadyCompliant: []
-        };
+        return { patientContext: {}, suggestions: [], alreadyCompliant: [] };
     }
 }
 

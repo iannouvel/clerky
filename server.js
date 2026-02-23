@@ -16604,7 +16604,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
     try {
         console.log('[SEMANTIC-SUGGESTIONS] Endpoint called - using semantic guideline analysis');
-        const { transcript, guidelineId } = req.body;
+        const { transcript, guidelineId, skipSenseCheck } = req.body;
         const userId = req.user.uid;
 
         // Validate required fields
@@ -16726,19 +16726,25 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
         console.log(`[SEMANTIC-SUGGESTIONS] Patient context: ${JSON.stringify(analysisResult.patientContext || {})}`);
 
-        // Sense-check suggestions to filter out impossible/nonsensical ones
-        const senseCheckResult = await senseCheckSuggestions(
-            formattedSuggestions,
-            transcript,
-            analysisResult.patientContext || {},
-            userId
-        );
-
-        const suggestions = senseCheckResult.validSuggestions;
-        const filteredOutSuggestions = senseCheckResult.filteredOut;
-
-        if (filteredOutSuggestions.length > 0) {
-            console.log(`[SEMANTIC-SUGGESTIONS] Sense-check filtered out ${filteredOutSuggestions.length} nonsensical suggestions`);
+        // Sense-check: skip when the caller is running parallel analysis and will batch
+        // sense-check all guidelines together in one call via /batchSenseCheck.
+        let suggestions, filteredOutSuggestions;
+        if (skipSenseCheck) {
+            suggestions = formattedSuggestions;
+            filteredOutSuggestions = [];
+            console.log(`[SEMANTIC-SUGGESTIONS] Sense-check skipped (batch mode) — ${suggestions.length} suggestions returned raw`);
+        } else {
+            const senseCheckResult = await senseCheckSuggestions(
+                formattedSuggestions,
+                transcript,
+                analysisResult.patientContext || {},
+                userId
+            );
+            suggestions = senseCheckResult.validSuggestions;
+            filteredOutSuggestions = senseCheckResult.filteredOut;
+            if (filteredOutSuggestions.length > 0) {
+                console.log(`[SEMANTIC-SUGGESTIONS] Sense-check filtered out ${filteredOutSuggestions.length} nonsensical suggestions`);
+            }
         }
 
         timer.step('Sense-check validation');
@@ -16760,11 +16766,38 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
                 suggestion: f.suggestion,
                 reason: f.filterReason
             })),
-            approach: 'semantic' // Flag to indicate new approach is being used
+            approach: 'semantic'
         });
 
     } catch (error) {
         console.error('[PRACTICE-POINTS] Error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Batch sense-check: one AI call to filter impossible suggestions across all guidelines.
+// Called by the frontend after all parallel per-guideline analyses complete.
+app.post('/batchSenseCheck', authenticateUser, async (req, res) => {
+    try {
+        const { suggestions, clinicalNote, patientContext } = req.body;
+        const userId = req.user.uid;
+
+        if (!Array.isArray(suggestions)) {
+            return res.status(400).json({ success: false, error: 'suggestions must be an array' });
+        }
+        if (!clinicalNote) {
+            return res.status(400).json({ success: false, error: 'clinicalNote is required' });
+        }
+
+        console.log(`[BATCH-SENSE-CHECK] Checking ${suggestions.length} suggestions across all guidelines`);
+
+        const result = await senseCheckSuggestions(suggestions, clinicalNote, patientContext || {}, userId);
+
+        console.log(`[BATCH-SENSE-CHECK] ${result.validSuggestions.length} valid, ${result.filteredOut.length} filtered out`);
+
+        res.json({ success: true, validSuggestions: result.validSuggestions, filteredOut: result.filteredOut });
+    } catch (error) {
+        console.error('[BATCH-SENSE-CHECK] Error:', error);
         res.status(500).json({ success: false, error: error.message });
     }
 });

@@ -3072,7 +3072,10 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
             },
             body: JSON.stringify({
                 transcript,
-                guidelineId
+                guidelineId,
+                // Skip per-guideline sense-check during parallel analysis; the frontend
+                // will run one batched sense-check across all guidelines after they complete.
+                skipSenseCheck: window.parallelAnalysisActive === true
             })
         });
 
