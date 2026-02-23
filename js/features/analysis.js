@@ -619,6 +619,27 @@ export async function runParallelAnalysis(guidelines) {
 
     console.log(`[PARALLEL] Completed. ${successfulResults.length} successful analyses. Found ${allSuggestions.length} total suggestions.`);
 
+    // ===== Batch sense-check: one AI call across all guidelines instead of N =====
+    if (allSuggestions.length > 0) {
+        const patientContext = successfulResults[0]?.suggestions?.patientContext || {};
+        try {
+            const batchResult = await postAuthenticated('/batchSenseCheck', {
+                suggestions: allSuggestions,
+                clinicalNote: getUserInputContent(),
+                patientContext
+            });
+            if (batchResult && Array.isArray(batchResult.validSuggestions)) {
+                const removedCount = allSuggestions.length - batchResult.validSuggestions.length;
+                if (removedCount > 0) {
+                    console.log(`[BATCH-SENSE-CHECK] Filtered ${removedCount} impossible suggestion(s)`);
+                }
+                allSuggestions = batchResult.validSuggestions;
+            }
+        } catch (err) {
+            console.warn('[BATCH-SENSE-CHECK] Failed (non-blocking), using unfiltered suggestions:', err.message);
+        }
+    }
+
     // ===== Merge Stage 1 (first-pass reasoning) with Stage 2 (guideline suggestions) =====
     let mergedDeficiencies = null;
     if (firstPassPromise) {
