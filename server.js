@@ -16631,23 +16631,45 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
         timer.step('Fetch guideline metadata');
 
-        // Get guideline content - prefer condensed version for better performance
-        // Also fetch from condensed subcollection if needed
-        let guidelineContent = guidelineData.condensed || guidelineData.content;
+        // RAG-first content retrieval: query Pinecone for the most relevant chunks of this
+        // guideline given the clinical note. Fall back to full Firestore content if unavailable.
+        let guidelineContent = null;
+        let contentSource = 'unknown';
 
-        if (!guidelineContent) {
-            // Try to fetch condensed content from subcollection
-            const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
-            if (condensedDoc.exists) {
-                guidelineContent = condensedDoc.data()?.condensed;
+        try {
+            const ragResult = await vectorDB.queryDocuments(transcript, {
+                topK: 8,
+                filter: { guidelineId }
+            });
+
+            const chunksWithText = (ragResult.matches || []).filter(m => m.metadata.text);
+
+            if (chunksWithText.length > 0) {
+                // Sort by chunkIndex to preserve reading order
+                chunksWithText.sort((a, b) => (a.metadata.chunkIndex ?? 0) - (b.metadata.chunkIndex ?? 0));
+                guidelineContent = chunksWithText.map(m => m.metadata.text).join('\n\n');
+                contentSource = 'rag';
+                console.log(`[RAG] Retrieved ${chunksWithText.length} chunks for guideline ${guidelineId} (${guidelineContent.length} chars)`);
+            } else {
+                console.warn(`[RAG] No chunks with text returned for guideline ${guidelineId} — falling back to Firestore`);
             }
+        } catch (ragError) {
+            console.warn(`[RAG] Query failed for guideline ${guidelineId}, falling back to Firestore:`, ragError.message);
         }
 
         if (!guidelineContent) {
-            // Last resort: try to get full content from subcollection
-            const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
-            if (fullContentDoc.exists) {
-                guidelineContent = fullContentDoc.data()?.content;
+            // Firestore fallback: condensed → full content → subcollections
+            guidelineContent = guidelineData.condensed || guidelineData.content;
+            contentSource = 'firestore';
+
+            if (!guidelineContent) {
+                const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
+                if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
+            }
+
+            if (!guidelineContent) {
+                const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
+                if (fullContentDoc.exists) guidelineContent = fullContentDoc.data()?.content;
             }
         }
 
@@ -16665,7 +16687,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             });
         }
 
-        console.log(`[SEMANTIC-SUGGESTIONS] Guideline content length: ${guidelineContent.length} characters`);
+        console.log(`[SEMANTIC-SUGGESTIONS] Guideline content: ${guidelineContent.length} chars (source: ${contentSource})`);
 
         // Perform semantic analysis - single LLM call to analyze guideline against clinical note
         // Pass guidelineId to load any interpretation hints from previous attempts

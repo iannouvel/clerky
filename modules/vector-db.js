@@ -238,7 +238,7 @@ async function queryDocuments(queryText, options = {}) {
                 inputs: { text: queryText },
                 filter: filter || undefined
             },
-            fields: ['text_preview', 'guidelineId', 'title', 'organisation', 'chunkIndex', 'totalChunks']
+            fields: ['text', 'text_preview', 'guidelineId', 'title', 'organisation', 'chunkIndex', 'totalChunks']
         });
 
         const queryTime = Date.now() - startTime;
@@ -277,10 +277,11 @@ async function queryDocuments(queryText, options = {}) {
             const guidelineId = hit.guidelineId || hit.fields?.guidelineId;
             const title = hit.title || hit.fields?.title;
             const organisation = hit.organisation || hit.fields?.organisation;
-            const chunkIndex = hit.chunkIndex || hit.fields?.chunkIndex;
+            const chunkIndex = hit.chunkIndex ?? hit.fields?.chunkIndex;
             const totalChunks = hit.totalChunks || hit.fields?.totalChunks;
             const textPreview = hit.text_preview || hit.fields?.text_preview;
-            
+            const text = hit.text || hit.fields?.text;
+
             return {
                 id: hit._id,
                 score: hit._score,
@@ -290,7 +291,8 @@ async function queryDocuments(queryText, options = {}) {
                     organisation,
                     chunkIndex,
                     totalChunks,
-                    textPreview
+                    textPreview,
+                    text
                 }
             };
         });
