@@ -4022,7 +4022,8 @@ body {
 }
 
 .clerking-buttons-group .nav-btn:disabled {
-    opacity: 0.6;
+    opacity: 1;
+    background: var(--accent-color);
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
