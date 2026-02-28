@@ -91,7 +91,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         // Safely access properties
         const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
         const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
-        const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || 'Unknown Guideline';
+        const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || '';
         const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
         const contextText = suggestion.evidence || ''; // For focusing
@@ -229,11 +229,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                     <div style="font-size: 0.95em; color: var(--text-secondary);">
                                         <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
                                     </div>
-                                    <div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
+                                    ${sourceName ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
                                         Source: ${sourceGuidelineId
                                             ? `<a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>`
                                             : sourceName}
-                                    </div>
+                                    </div>` : ''}
                                 </div>
 
                                 ${verbatimQuote ? `
