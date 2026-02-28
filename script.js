@@ -3064,28 +3064,48 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
 
         updateUser(`Analysing practice points...`, true);
 
-        const response = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${idToken}`
-            },
-            body: JSON.stringify({
-                transcript,
-                guidelineId,
-                // Skip per-guideline sense-check during parallel analysis; the frontend
-                // will run one batched sense-check across all guidelines after they complete.
-                skipSenseCheck: window.parallelAnalysisActive === true
-            })
-        });
+        const fetchSuggestions = async (allowFallback = false) => {
+            const resp = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${idToken}`
+                },
+                body: JSON.stringify({
+                    transcript,
+                    guidelineId,
+                    // Skip per-guideline sense-check during parallel analysis; the frontend
+                    // will run one batched sense-check across all guidelines after they complete.
+                    skipSenseCheck: window.parallelAnalysisActive === true,
+                    allowFallback
+                })
+            });
+            if (!resp.ok) {
+                const errorText = await resp.text();
+                console.error('[PRACTICE-POINTS] API error:', errorText);
+                throw new Error(`API error: ${resp.status}`);
+            }
+            return resp.json();
+        };
 
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[PRACTICE-POINTS] API error:', errorText);
-            throw new Error(`API error: ${response.status}`);
+        let result = await fetchSuggestions(false);
+
+        if (result.ragFailed) {
+            const guidelineLabel = result.guidelineTitle || guidelineId;
+            console.warn(`[PRACTICE-POINTS] RAG failed for guideline: ${guidelineLabel}`);
+            const useFallback = confirm(
+                `⚠️ Vector search (RAG) returned no content for:\n"${guidelineLabel}"\n\n` +
+                `This may indicate a problem with the vector index for this guideline.\n\n` +
+                `Click OK to use Firestore content as a fallback (less precise),\n` +
+                `or Cancel to skip this guideline and investigate the issue.`
+            );
+            if (!useFallback) {
+                console.warn(`[PRACTICE-POINTS] User declined fallback for guideline: ${guidelineLabel} — skipping`);
+                return { success: true, suggestions: [], guidelineTitle: result.guidelineTitle, guidelineId, suggestionsCount: 0, skippedRagFailure: true };
+            }
+            result = await fetchSuggestions(true);
         }
 
-        const result = await response.json();
         console.log('[PRACTICE-POINTS] Result:', {
             success: result.success,
             suggestionsCount: result.suggestionsCount || result.suggestions?.length,

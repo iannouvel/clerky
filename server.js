@@ -16604,7 +16604,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
     try {
         console.log('[SEMANTIC-SUGGESTIONS] Endpoint called - using semantic guideline analysis');
-        const { transcript, guidelineId, skipSenseCheck } = req.body;
+        const { transcript, guidelineId, skipSenseCheck, allowFallback } = req.body;
         const userId = req.user.uid;
 
         // Validate required fields
@@ -16651,14 +16651,26 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
                 contentSource = 'rag';
                 console.log(`[RAG] Retrieved ${chunksWithText.length} chunks for guideline ${guidelineId} (${guidelineContent.length} chars)`);
             } else {
-                console.warn(`[RAG] No chunks with text returned for guideline ${guidelineId} — falling back to Firestore`);
+                console.warn(`[RAG] No chunks with text returned for guideline ${guidelineId} — RAG unavailable`);
             }
         } catch (ragError) {
-            console.warn(`[RAG] Query failed for guideline ${guidelineId}, falling back to Firestore:`, ragError.message);
+            console.warn(`[RAG] Query failed for guideline ${guidelineId}:`, ragError.message);
         }
 
         if (!guidelineContent) {
-            // Firestore fallback: condensed → full content → subcollections
+            if (!allowFallback) {
+                // RAG failed and user hasn't approved fallback — surface to frontend
+                console.warn(`[RAG] No content via RAG for guideline ${guidelineId} — returning ragFailed to prompt user`);
+                return res.json({
+                    success: false,
+                    ragFailed: true,
+                    guidelineTitle,
+                    guidelineId,
+                    message: `Vector search returned no content for "${guidelineTitle}". Use Firestore content as fallback?`
+                });
+            }
+
+            // User approved fallback: Firestore condensed → full content → subcollections
             guidelineContent = guidelineData.condensed || guidelineData.content;
             contentSource = 'firestore';
 
