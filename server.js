@@ -19446,7 +19446,7 @@ Identify any crucial factual information that is ABSENT from this note but shoul
 Focus on:
 - Clinical measurements or findings referenced generically but not quantified where precision matters
 - Diagnostic details partially described but incomplete (e.g. chorionicity stated but amnionicity not recorded in a twin pregnancy)
-- Key history elements critical for safe management in this specific clinical context${guidelineContextParts.length > 0 ? '\n- Information specifically required by the guidelines provided above (reference by their IDs in square brackets, e.g., [GP001])' : ''}
+- Key history elements critical for safe management in this specific clinical context
 
 Do NOT suggest future actions, investigations to order, or management plans. Only identify information that should already have been established.
 
@@ -19455,9 +19455,7 @@ Return a JSON array only, no other text:
   {
     "suggestion": "One sentence describing what factual detail should be documented",
     "why": "Why this specific information is crucial for assessment and management in this scenario",
-    "priority": "high|medium|low",
-    "sourceGuidelineId": "The ID of the guideline from above (e.g., 'GP001') if this item is specifically required by one of the listed guidelines, otherwise null",
-    "verbatimQuote": "Exact sentence or phrase copied word-for-word from the guideline text above that directly supports this suggestion, or null if not guideline-specific"
+    "priority": "high|medium|low"
   }
 ]
 Return an empty array [] if the note appears sufficiently complete.`;
@@ -19470,26 +19468,6 @@ Return an empty array [] if the note appears sufficiently complete.`;
                 const jsonMatch = aiResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
                 suggestions = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
                 if (!Array.isArray(suggestions)) suggestions = [];
-                // Validate sourceGuidelineId against the passed guidelines; resolve display name
-                const guidelineObjects = Array.isArray(guidelines) ? guidelines : [];
-                suggestions.forEach(s => {
-                    if (s.sourceGuidelineId) {
-                        // AI returned an ID - validate it exists in our list
-                        const match = guidelineObjects.find(g => g.id === s.sourceGuidelineId);
-                        if (match) {
-                            // Valid ID: set display name for UI
-                            s.sourceGuidelineName = match.displayName || match.title;
-                        } else {
-                            // Invalid ID: AI hallucinated or returned unknown guideline
-                            console.warn(`[COMPLETENESS] AI returned unknown guideline ID: ${s.sourceGuidelineId}`);
-                            s.sourceGuidelineId = null;
-                            s.sourceGuidelineName = null;
-                        }
-                    } else {
-                        // No guideline specified - that's OK for guideline-independent suggestions
-                        s.sourceGuidelineName = null;
-                    }
-                });
             } catch (e) {
                 console.warn('[COMPLETENESS] JSON parse failed:', e.message);
             }
