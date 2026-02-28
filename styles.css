@@ -3967,11 +3967,11 @@ body {
 /* Reset button in the analyse bar (pushes to right edge) */
 .summary-reset-btn {
     margin-left: auto;
-    background: #6c757d;
+    background: var(--accent-color);
 }
 
 .summary-reset-btn:hover:not(:disabled) {
-    background: #5a6268;
+    background: #00a085;
 }
 
 /* Clerking buttons group */
