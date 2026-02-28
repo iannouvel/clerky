@@ -7530,7 +7530,7 @@ window.selectedGuidelineScope = null;
 // Comprehensive workflow processing function
 async function runPhase1CompletenessCheck() {
     try {
-        updateUser('Checking note completeness against guidelines...', true);
+        updateUser('Phase 1 of 2: Checking note for missing information...', true);
         const transcript = getUserInputContent();
         if (!transcript?.trim()) return;
 
@@ -7754,7 +7754,7 @@ async function processWorkflow() {
         console.log('[DEBUG] processWorkflow: Running parallel analysis');
         updateAnalyseButtonProgress('Processing Guidelines Concurrently...', true);
         updateUser(
-            `Step 3: Processing ${window.relevantGuidelines.length} relevant guidelines concurrently...`,
+            `Phase 2 of 2: Analysing note against ${window.relevantGuidelines.length} guideline${window.relevantGuidelines.length === 1 ? '' : 's'}...`,
             true
         );
         await runParallelAnalysis(window.relevantGuidelines);
