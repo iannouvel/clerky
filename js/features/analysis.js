@@ -482,6 +482,7 @@ export async function runParallelAnalysis(guidelines) {
     let firstPassPromise = null;
     if (clinicalNoteForFirstPass) {
         console.log('[FIRST-PASS] Launching Stage 1 reasoning in parallel with guideline analysis');
+        updateUser('Running independent clinical reasoning check...', true);
         firstPassPromise = postAuthenticated('/api/firstPassReasoning', {
             transcript: clinicalNoteForFirstPass
         }).catch(err => {
@@ -622,6 +623,8 @@ export async function runParallelAnalysis(guidelines) {
     // ===== Batch sense-check: one AI call across all guidelines instead of N =====
     if (allSuggestions.length > 0) {
         const patientContext = successfulResults[0]?.suggestions?.patientContext || {};
+        if (statusText) statusText.textContent = 'Checking suggestions for clinical plausibility...';
+        updateUser('Checking suggestions for clinical plausibility...', true);
         try {
             const batchResult = await postAuthenticated('/batchSenseCheck', {
                 suggestions: allSuggestions,
@@ -643,6 +646,8 @@ export async function runParallelAnalysis(guidelines) {
     // ===== Merge Stage 1 (first-pass reasoning) with Stage 2 (guideline suggestions) =====
     let mergedDeficiencies = null;
     if (firstPassPromise) {
+        if (statusText) statusText.textContent = 'Combining clinical reasoning with guideline analysis...';
+        updateUser('Combining clinical reasoning with guideline analysis...', true);
         try {
             const firstPassResult = await firstPassPromise;
             if (firstPassResult && firstPassResult.success && firstPassResult.findings) {
@@ -695,7 +700,10 @@ export async function runParallelAnalysis(guidelines) {
     }
 
     // Update status to show completion
-    updateUser(`Analysis complete - ${allSuggestions.length} ${mergedDeficiencies ? 'findings' : 'practice points'} identified from ${successfulResults.length} guidelines.`, false);
+    const findingWord = allSuggestions.length === 1 ? 'finding' : 'findings';
+    const guidelineWord = successfulResults.length === 1 ? 'guideline' : 'guidelines';
+    if (statusText) statusText.textContent = `Analysis complete — ${allSuggestions.length} ${findingWord} identified. Please review below.`;
+    updateUser(`Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}. Please review below.`, false);
 
     // Remove the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');
