@@ -19537,7 +19537,13 @@ OUTPUT RULES (STRICT)
           past medical history, medications, risk factors). Always include "None of the above" as the
           final option. Set "allow_other": true to let the user add unlisted items as free text.
           Keep options clinically specific — name actual conditions rather than vague categories.
-       e) free_text:    {"type":"free_text","notes":"..."}
+       e) free_text:    {"type":"free_text","suggested_content":"...","notes":"..."}
+          For free_text items where you CAN write plausible clinical text (e.g. a counselling
+          discussion, safety-netting advice, consent documentation), pre-write a ready-to-use
+          sentence or two in "suggested_content" that the clinician can accept as-is or edit.
+          Use language appropriate for a clinical note (past tense, third person).
+          Leave "suggested_content" as an empty string only when the specific answer is unknowable
+          from the note (e.g. a missing investigation result, a specific measurement).
 5) Order items by clinical safety criticality (highest risk/most management-changing first).
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
@@ -19556,6 +19562,7 @@ JSON SCHEMA (MUST MATCH)
         "units": "string (only if numeric)",
         "options": ["string"],
         "allow_other": true,
+        "suggested_content": "string (only if free_text — pre-written clinical text the user can accept or edit; empty string if the value is unknowable)",
         "notes": "string"
       }
     }
