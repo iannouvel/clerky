@@ -55,6 +55,39 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         total: suggestions.length
     };
 
+    // Render an appropriate input control for a structured missing-info item
+    function renderStructuredInput(id, missingInfo, dto) {
+        const escapedLabel = (missingInfo || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+        const notesHtml = dto.notes
+            ? `<div style="margin-top:5px; font-size:0.78em; color:var(--text-secondary);">${dto.notes}</div>`
+            : '';
+        switch (dto.type) {
+            case 'numeric':
+                return `<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <input type="number" step="any" id="${id}-structured-input" data-missing-info="${escapedLabel}"
+                        placeholder="Enter value…"
+                        style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:130px; font-size:1em;">
+                    ${dto.units ? `<span style="color:var(--text-secondary); font-size:0.9em;">${dto.units}</span>` : ''}
+                </div>${notesHtml}`;
+            case 'binary':
+            case 'categorical': {
+                const options = (dto.options || [])
+                    .map(opt => `<option value="${opt.replace(/"/g, '&quot;')}">${opt}</option>`)
+                    .join('');
+                return `<select id="${id}-structured-input" data-missing-info="${escapedLabel}"
+                    style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:1em; cursor:pointer; max-width:100%;">
+                    <option value="">— select —</option>
+                    ${options}
+                </select>${notesHtml}`;
+            }
+            case 'free_text':
+            default:
+                return `<textarea id="${id}-structured-input" data-missing-info="${escapedLabel}"
+                    placeholder="Enter details…" rows="2"
+                    style="width:100%; padding:8px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.95em; font-family:inherit; resize:vertical;"></textarea>${notesHtml}`;
+        }
+    }
+
     // Define Renderer
     const renderCurrentSuggestion = () => {
         const state = window.suggestionWizardState;
@@ -95,6 +128,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
         const contextText = suggestion.evidence || ''; // For focusing
+        const dataTypeOptions = suggestion.data_type_and_options || null;
 
         // Formatting
         const escapedText = suggestionText.replace(/"/g, '&quot;');
@@ -220,7 +254,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                 <!-- Suggestion Box (The Change) -->
                                 <div style="margin-bottom: 20px;">
                                     <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                                        <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">Suggested Action:</span> ${suggestionText}
+                                        <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">${dataTypeOptions ? 'Missing Information:' : 'Suggested Action:'}</span> ${suggestionText}
                                     </div>
                                 </div>
 
@@ -241,6 +275,13 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                 <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid #888;">
                                     <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Guideline Quote:</div>
                                     <div style="font-size: 0.9em; color: var(--text-secondary); font-style: italic; line-height: 1.5;">"${verbatimQuote}"</div>
+                                </div>` : ''}
+
+                                ${dataTypeOptions ? `
+                                <!-- Structured input for Phase 1 missing information -->
+                                <div style="margin-bottom: 20px; background: rgba(66,133,244,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid #4285f4;">
+                                    <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #4285f4; margin-bottom: 8px;">Enter the missing information:</div>
+                                    ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
                                 </div>` : ''}
 
                                 <!-- Editor for Modify Mode (Hidden by default) -->
@@ -272,7 +313,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                         Reject ❌
                                 </button>
                                 <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}', this)">
-                                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>Accept &amp; Next ✅
+                                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>${dataTypeOptions ? 'Add to Note ✅' : 'Accept &amp; Next ✅'}
                                 </button>
                             </div>
 
@@ -314,14 +355,26 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const textEl = card.querySelector('.text-content');
 
         const editorEl = document.getElementById(`${id}-editor`);
+        const structuredInputEl = document.getElementById(`${id}-structured-input`);
         let textToInsert = '';
 
-        if (editorEl && editorEl.value && editorEl.value.trim()) {
-            textToInsert = editorEl.value.trim();
-        } else if (textEl && textEl.dataset.rawSuggestion) {
-            textToInsert = textEl.dataset.rawSuggestion;
-        } else if (textEl) {
-            textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
+        if (structuredInputEl) {
+            // Phase 1 structured input: format as "Label: value" for insertion
+            const inputValue = structuredInputEl.value?.trim();
+            if (inputValue) {
+                const label = structuredInputEl.dataset.missingInfo || '';
+                textToInsert = label ? `${label}: ${inputValue}` : inputValue;
+            }
+        }
+
+        if (!textToInsert) {
+            if (editorEl && editorEl.value && editorEl.value.trim()) {
+                textToInsert = editorEl.value.trim();
+            } else if (textEl && textEl.dataset.rawSuggestion) {
+                textToInsert = textEl.dataset.rawSuggestion;
+            } else if (textEl) {
+                textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
+            }
         }
 
         if (!textToInsert) {
