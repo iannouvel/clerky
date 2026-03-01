@@ -104,10 +104,13 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 </div>${notesHtml}`;
             }
             case 'free_text':
-            default:
+            default: {
+                const prefill = (dto.suggested_content || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const placeholder = prefill ? '' : 'Enter details…';
                 return `<textarea id="${id}-structured-input" data-missing-info="${escapedLabel}"
-                    placeholder="Enter details…" rows="2"
-                    style="width:100%; padding:8px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.95em; font-family:inherit; resize:vertical;"></textarea>${notesHtml}`;
+                    placeholder="${placeholder}" rows="3"
+                    style="width:100%; padding:8px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.95em; font-family:inherit; resize:vertical;">${prefill}</textarea>${notesHtml}`;
+            }
         }
     }
 
@@ -257,8 +260,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 <!-- Two-Column Layout -->
                 <div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
                     
-                    <!-- Left Column: Active Suggestion -->
-                    <div class="wizard-left-column" style="flex: 1; min-width: 0;">
+                    <!-- Left Column: Active Suggestion (66%) -->
+                    <div class="wizard-left-column" style="flex: 2; min-width: 0;">
                         <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                             
                             <!-- Header with Progress -->
@@ -343,8 +346,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                         </div>
                     </div>
 
-                    <!-- Right Column: Upcoming Suggestions -->
-                    <div class="wizard-right-column" style="flex: 1; min-width: 0;">
+                    <!-- Right Column: Upcoming Suggestions (34%) -->
+                    <div class="wizard-right-column" style="flex: 1; min-width: 0; max-width: 34%;">
                         ${upcomingHtml || '<div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.</div>'}
                     </div>
                     
