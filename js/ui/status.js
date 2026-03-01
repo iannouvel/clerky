@@ -4,16 +4,12 @@
  */
 
 /**
- * Helper function to log all changes to serverStatusMessage
- * @param {string} action - Description of the action being taken
- * @param {string} message - The message being set (or empty for clear)
- * @param {boolean} isLoading - Whether loading state is active
+ * Helper function to log all changes to status channels
  */
-function logStatusChange(action, message, isLoading = false) {
+function logStatusChange(action, message, isLoading = false, channel = 'main') {
     const timestamp = new Date().toISOString().substr(11, 12);
     const callerStack = new Error().stack.split('\n')[3]?.trim() || 'unknown';
-
-    console.log(`[STATUS ${timestamp}] ${action}`, {
+    console.log(`[STATUS ${timestamp}] [${channel}] ${action}`, {
         message: message || '(clearing)',
         isLoading,
         hasOngoingWorkflows: !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive || window.parallelAnalysisActive),
@@ -22,90 +18,72 @@ function logStatusChange(action, message, isLoading = false) {
 }
 
 /**
- * Display a status message to the user in the fixed button row
- * @param {string} message - Message to display, or empty string/null to clear
- * @param {boolean} isLoading - Whether to show a loading spinner
- * @param {boolean} forceClear - If true, clears message even during ongoing workflows (default: false)
+ * Show/hide the parent #serverStatusMessage container based on whether either channel has content.
  */
-export function updateUser(message, isLoading = false, forceClear = false) {
-    const statusEl = document.getElementById('serverStatusMessage');
+function syncContainerVisibility(containerEl) {
+    const anyVisible = Array.from(containerEl.children).some(
+        c => c.style.display !== 'none' && c.innerHTML.trim()
+    );
+    containerEl.style.display = anyVisible ? 'flex' : 'none';
+}
 
-    if (!statusEl) {
+/**
+ * Display a status message to the user in the fixed button row.
+ *
+ * @param {string} message - Message to display, or empty/null to clear
+ * @param {boolean} isLoading - Whether to show a loading spinner
+ * @param {boolean} forceClear - Clear even during ongoing workflows (default: false)
+ * @param {string} channel - 'main' (default) or 'background' — selects which status row to update
+ */
+export function updateUser(message, isLoading = false, forceClear = false, channel = 'main') {
+    const containerEl = document.getElementById('serverStatusMessage');
+    if (!containerEl) {
         console.warn('[STATUS] serverStatusMessage element not found');
         return;
     }
 
-    // Avoid duplicate "Finding relevant guidelines..." indicators in the fixed button row:
-    // the Analyse button already shows this progress state with a spinner/text.
-    if (message && isLoading && /finding\s+relevant\s+guidelines/i.test(message)) {
-        const analyseSpinner = document.getElementById('analyseSpinner');
-        const analyseSpinnerVisible = !!(
-            analyseSpinner &&
-            window.getComputedStyle(analyseSpinner).display !== 'none'
-        );
-
-        if (analyseSpinnerVisible) {
-            // Ensure we don't leave stale status text visible.
-            logStatusChange('HIDING (duplicate with analyze button)', message, isLoading);
-            statusEl.style.display = 'none';
-            statusEl.textContent = '';
-            return;
-        }
-    }
+    // Resolve channel element; fall back to container if no channel divs present (backwards-compat)
+    const channelEl = document.getElementById(`statusChannel-${channel}`) || containerEl;
 
     if (message) {
-        // When loading, show spinner + message; otherwise just text
         if (isLoading) {
-            logStatusChange('SHOWING (loading)', message, isLoading);
-            statusEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
+            logStatusChange('SHOWING (loading)', message, isLoading, channel);
+            channelEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
         } else {
-            logStatusChange('SHOWING (static)', message, isLoading);
-            statusEl.textContent = message;
+            logStatusChange('SHOWING (static)', message, isLoading, channel);
+            channelEl.textContent = message;
         }
+        channelEl.style.display = 'flex';
+        syncContainerVisibility(containerEl);
 
-        statusEl.style.display = 'flex';
-
-        // Auto-hide non-loading messages after a short delay
+        // Auto-hide non-loading messages after 5 s
         if (!isLoading) {
-            const currentMessage = statusEl.textContent;
+            const snapshot = channelEl.innerHTML;
             setTimeout(() => {
-                // Only hide if nothing has changed since we scheduled the hide
-                // AND there are no ongoing workflows
+                if (channelEl.innerHTML !== snapshot) return; // message changed — leave it
                 const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
-
-                if (statusEl.textContent === currentMessage) {
-                    if (hasOngoingWorkflows) {
-                        logStatusChange('AUTO-HIDE BLOCKED (ongoing workflow detected)', currentMessage, false);
-                        console.log('[STATUS] Preserving message during workflow. Will remain visible.');
-                    } else {
-                        logStatusChange('AUTO-HIDING (5s timeout)', currentMessage, false);
-                        statusEl.style.display = 'none';
-                        statusEl.textContent = '';
-                    }
+                // Background channel always auto-hides; main channel waits for workflows to finish
+                if (channel === 'background' || !hasOngoingWorkflows) {
+                    logStatusChange('AUTO-HIDING (5s timeout)', snapshot, false, channel);
+                    channelEl.style.display = 'none';
+                    channelEl.innerHTML = '';
+                    syncContainerVisibility(containerEl);
+                } else {
+                    logStatusChange('AUTO-HIDE BLOCKED (ongoing workflow)', snapshot, false, channel);
                 }
             }, 5000);
         }
     } else {
-        // Check if there are ongoing operations - if so, preserve message unless forceClear is true
+        // Clear this channel
         const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
-
-        if (hasOngoingWorkflows && !forceClear) {
-            const currentMessage = statusEl.textContent;
-            logStatusChange('PRESERVING (ongoing workflow, use forceClear to override)', currentMessage, false);
-            console.log('[STATUS] Message preserved during ongoing workflow. Current message:', currentMessage);
-            // Don't clear - preserve the current message
+        if (channel === 'main' && hasOngoingWorkflows && !forceClear) {
+            logStatusChange('PRESERVING (ongoing workflow)', channelEl.textContent, false, channel);
             return;
         }
-
-        if (hasOngoingWorkflows && forceClear) {
-            logStatusChange('CLEARING (forceClear=true despite ongoing workflow)', '', false);
-        } else {
-            logStatusChange('CLEARING', '', false);
-        }
-
-        // Explicit clear
-        statusEl.style.display = 'none';
-        statusEl.textContent = '';
+        logStatusChange('CLEARING', '', false, channel);
+        channelEl.style.display = 'none';
+        channelEl.innerHTML = '';
+        syncContainerVisibility(containerEl);
     }
 }
 

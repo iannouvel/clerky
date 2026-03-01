@@ -2405,6 +2405,10 @@ document.addEventListener('DOMContentLoaded', function () {
 async function findRelevantGuidelines(suppressHeader = false, scope = null, hospitalTrust = null) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
+    // When running in background (suppressHeader=true), route status updates to the background channel
+    // so they don't clobber Phase 1's main-channel messages.
+    const statusChannel = suppressHeader ? 'background' : 'main';
+    const statusUpdate = (msg, loading = true) => updateUser(msg, loading, false, statusChannel);
 
     try {
         const transcript = getUserInputContent();
@@ -2439,7 +2443,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         const idToken = await user.getIdToken();
 
         // Update progress
-        updateUser('Loading guidelines from database...', true);
+        statusUpdate('Loading guidelines from database...');
 
         // Get guidelines and summaries from Firestore
         let guidelines = await loadGuidelinesFromFirestore();
@@ -2452,7 +2456,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
             if (guidelines.length === 0) {
                 const noGuidelinesMsg = 'No guidelines found for the selected scope.';
-                updateUser(noGuidelinesMsg, false);
+                statusUpdate(noGuidelinesMsg, false);
                 alert('No guidelines found for the selected scope. Please try a different option or check your trust selection.');
                 return;
             }
@@ -2463,7 +2467,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
                 : scope === 'local'
                     ? `Searching ${guidelines.length} local guidelines for ${hospitalTrust}...`
                     : `Searching ${guidelines.length} guidelines (National + ${hospitalTrust})...`;
-            updateUser(scopeInfo, true);
+            statusUpdate(scopeInfo);
             console.log(`[GUIDELINES] ${scopeInfo}`);
         }
 
@@ -2497,7 +2501,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Update progress with guideline count
         const analyzeMessage = `Searching ${guidelinesList.length} guidelines via semantic matching, then categorising by relevance and filtering for applicability...`;
-        updateUser(analyzeMessage, true);
+        statusUpdate(analyzeMessage);
         console.log(`[GUIDELINES] ${analyzeMessage}`);
 
         console.log('[DEBUG] Sending request to /findRelevantGuidelines with:', {
@@ -2519,7 +2523,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error('Analysis cancelled');
         }
 
-        updateUser('Querying server for guideline matches...', true);
+        statusUpdate('Querying server for guideline matches...');
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
@@ -2550,7 +2554,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         const data = await response.json();
         if (!data.success) {
-            updateUser('Error finding guidelines', false);
+            statusUpdate('Error finding guidelines', false);
             throw new Error(data.error || 'Failed to find relevant guidelines');
         }
 
@@ -2676,7 +2680,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
         const summaryMessage = totalToProcess > 0
             ? `Found ${totalToProcess} guideline${totalToProcess !== 1 ? 's' : ''} to analyse: ${namesStr}`
             : 'No relevant guidelines found for this clinical scenario.';
-        updateUser(summaryMessage, false);
+        statusUpdate(summaryMessage, false);
         console.log(`[GUIDELINES] Status bar: "${summaryMessage}"`);
     } catch (error) {
         console.error('[DEBUG] Error in findRelevantGuidelines:', {
@@ -2686,7 +2690,7 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
 
         // Display error via status message (alert also shown below)
         const errorMessage = `Error finding relevant guidelines: ${error.message}`;
-        updateUser(errorMessage, false);
+        statusUpdate(errorMessage, false);
 
         alert('Error finding relevant guidelines: ' + error.message);
     } finally {
@@ -7808,8 +7812,9 @@ async function processWorkflow() {
 
         // Now await guideline results (likely already done while user was in Phase 1)
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
-        updateUser('Waiting for guideline search...', true);
         await guidelinesPromise;
+        // Clear the background channel — guideline search is done
+        updateUser('', false, true, 'background');
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 

@@ -534,8 +534,11 @@
                         <span class="btn-text">Analyse</span>
                     </button>
 
-                    <!-- Server Status Message -->
-                    <div id="serverStatusMessage" class="server-status-message" style="display: none;"></div>
+                    <!-- Server Status Message (two independent channels, both visible when parallel work is running) -->
+                    <div id="serverStatusMessage" class="server-status-message" style="display: none;">
+                        <div id="statusChannel-main" class="status-channel" style="display:none;"></div>
+                        <div id="statusChannel-background" class="status-channel status-channel-background" style="display:none;"></div>
+                    </div>
 
                     <!-- Suggestion Actions Group (Hidden by default) -->
                     <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">

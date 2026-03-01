@@ -16,7 +16,8 @@ export function initializeConnectivityMonitoring(updateUserFn) {
         // Clear message after 5 seconds
         setTimeout(() => {
             const statusEl = document.getElementById('serverStatusMessage');
-            if (statusEl && statusEl.textContent === 'Connection restored. You are back online.') {
+            const mainChannel = document.getElementById('statusChannel-main') || statusEl;
+            if (statusEl && mainChannel.textContent.trim() === 'Connection restored. You are back online.') {
                 const timestamp = new Date().toISOString().substr(11, 12);
                 console.log(`[STATUS ${timestamp}] HIDING (connectivity: online timeout)`, {
                     message: statusEl.textContent,
