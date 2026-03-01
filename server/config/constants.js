@@ -37,7 +37,8 @@ const AI_MODEL_REGISTRY = {
         keyEnv: 'ANTHROPIC_API_KEY',
         endpoint: 'https://api.anthropic.com/v1/messages',
         models: [
-            { model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5', costPer1kInput: 0.005, costPer1kOutput: 0.025, description: 'Most intelligent model' },
+            { model: 'claude-opus-4-6', displayName: 'Claude Opus 4.6', costPer1kInput: 0.005, costPer1kOutput: 0.025, description: 'Most intelligent model' },
+            { model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5', costPer1kInput: 0.005, costPer1kOutput: 0.025, description: 'Most intelligent model (previous gen)' },
             { model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Balanced performance for coding and agents' },
             { model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5', costPer1kInput: 0.001, costPer1kOutput: 0.005, description: 'Fastest with near-frontier intelligence' },
             { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Previous generation Sonnet' },
@@ -277,10 +278,17 @@ const AI_PROVIDER_PREFERENCE = [
     },
     {
         name: 'Anthropic',
-        model: 'claude-opus-4-5',
+        model: 'claude-opus-4-6',
         costPer1kTokens: 0.015, // Average of input/output
         priority: 25,
         description: 'Most intelligent Claude model'
+    },
+    {
+        name: 'Anthropic',
+        model: 'claude-opus-4-5',
+        costPer1kTokens: 0.015, // Average of input/output
+        priority: 26,
+        description: 'Most intelligent Claude model (previous gen)'
     },
     // Legacy models (kept for compatibility)
     {

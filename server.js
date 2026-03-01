@@ -19490,7 +19490,7 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
         return res.json({ success: true, missing_information: [] });
     }
 
-    const prompt = `You are a clinical documentation quality checker for antenatal care notes. You will be given ONE clinical note as free text.
+    const prompt = `You are a clinical documentation quality checker for obstetric and gynaecology notes. You will be given ONE clinical note as free text.
 
 TASK
 Extract ONLY the "missing information" items required to make a safe, guideline-consistent management plan, ordered from MOST important to LEAST important.
@@ -19500,17 +19500,23 @@ OUTPUT RULES (STRICT)
 2) The JSON MUST conform exactly to the schema below.
 3) Do NOT include any information that is already present in the note.
 4) Every item must include:
-   - missing_info: a concise label of the missing data element
+   - missing_info: a concise, specific label (e.g. "Pregnancy complications" → be specific: "Pregnancy complications (e.g. pre-eclampsia, GDM, obstetric cholestasis)")
    - importance_and_management_impact: why it matters + how it would change management (1–3 sentences)
-   - target_section: the exact section heading from the note where this information should be inserted (e.g., "Investigations", "Background", "Assessment", "Plan"). Use the exact heading as it appears in the note.
-   - data_type_and_options: either:
-       a) for numeric: {"type":"numeric","units":"...","notes":"..."}
-       b) for binary: {"type":"binary","options":["yes","no"],"notes":"..."}
-       c) for categorical: {"type":"categorical","options":[...],"notes":"..."}
-       d) for free text: {"type":"free_text","notes":"..."}
+   - target_section: the exact section heading from the note where this information should be inserted. Use the exact heading as it appears in the note.
+   - data_type_and_options: one of:
+       a) numeric:      {"type":"numeric","units":"...","notes":"..."}
+       b) binary:       {"type":"binary","options":["Yes","No"],"notes":"..."}
+       c) categorical:  {"type":"categorical","options":[...],"notes":"..."}
+       d) multi_select: {"type":"multi_select","options":[...],"allow_other":true,"notes":"..."}
+          USE multi_select when the answer could be several items at once (e.g. pregnancy complications,
+          past medical history, medications, risk factors). Always include "None of the above" as the
+          final option. Set "allow_other": true to let the user add unlisted items as free text.
+          Keep options clinically specific — name actual conditions rather than vague categories.
+       e) free_text:    {"type":"free_text","notes":"..."}
 5) Order items by clinical safety criticality (highest risk/most management-changing first).
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
+8) Limit to a maximum of 5 items — only what is genuinely absent and safety-critical.
 
 JSON SCHEMA (MUST MATCH)
 {
@@ -19521,9 +19527,10 @@ JSON SCHEMA (MUST MATCH)
       "importance_and_management_impact": "string",
       "target_section": "string",
       "data_type_and_options": {
-        "type": "numeric|binary|categorical|free_text",
+        "type": "numeric|binary|categorical|multi_select|free_text",
         "units": "string (only if numeric)",
         "options": ["string"],
+        "allow_other": true,
         "notes": "string"
       }
     }
@@ -19536,7 +19543,7 @@ ${transcript.substring(0, 4000)}
 >>>`;
 
     try {
-        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, 'claude-opus-4-6');
         let missing_information = [];
         if (aiResponse?.content) {
             try {
