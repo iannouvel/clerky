@@ -19524,12 +19524,14 @@ Before identifying missing information, determine the clinical context of this n
 - What STAGE of care does it represent? (e.g. pre-labour, intrapartum, immediate postpartum, later postnatal)
 
 CONTEXT RULE (CRITICAL)
-Only suggest missing information that is clinically appropriate FOR THIS SPECIFIC CONTEXT. Do NOT suggest items that belong to a different care setting or a later/earlier stage:
-- For antenatal COUNSELLING notes (risk discussions, consent, education): do NOT suggest intrapartum management details, specific obstetric manoeuvres, team role assignments, or birth plan specifics — these belong in the birth plan or intrapartum notes, not in a counselling record.
-- For intrapartum notes: do NOT suggest antenatal history items unless directly relevant to the acute management decision.
-- For postnatal notes: do NOT suggest items that would only be relevant in pregnancy or during labour.
-- For gynaecology outpatient notes: do NOT suggest obstetric-specific items unless the patient is pregnant.
-Apply this principle to any context: ask "would a reasonable clinician, writing THIS type of note in THIS setting, be expected to document this?" If the answer is no, omit it.
+Only suggest missing information that is appropriate to the AUDIENCE and PURPOSE of this note.
+The key question is: is this information relevant to the PATIENT in this encounter, or is it operational/clinical-staff knowledge?
+
+- PATIENT-FACING notes (counselling, consent, education, risk discussion, safety-netting): only suggest items the patient needs to understand, agree to, or act on. Do NOT suggest clinician-operational details such as team role assignments, specific manoeuvres, escalation protocols, or staff checklists — these are irrelevant to the patient and do not belong in a counselling record.
+- CLINICAL MANAGEMENT notes (intrapartum care, acute assessments, ward rounds): operational details (team roles, manoeuvres, escalation steps) ARE appropriate. Do NOT suggest antenatal history items unless directly relevant to the current management decision.
+- POSTNATAL / FOLLOW-UP notes: focus on what matters for recovery, feeding, contraception, and ongoing health. Do not suggest intrapartum specifics unless documenting a complication.
+
+Apply this principle to any context: ask "is this something that a reasonable clinician would document in THIS type of note, for THIS audience?" If the answer is no, omit it.
 
 TASK
 Extract ONLY the "missing information" items required to make a safe, guideline-consistent record appropriate to this specific clinical context, ordered from MOST important to LEAST important.
