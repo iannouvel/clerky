@@ -2405,10 +2405,7 @@ document.addEventListener('DOMContentLoaded', function () {
 async function findRelevantGuidelines(suppressHeader = false, scope = null, hospitalTrust = null) {
     const findGuidelinesBtn = document.getElementById('findGuidelinesBtn');
     const originalText = findGuidelinesBtn?.textContent || 'Find Guidelines';
-    // When running in background (suppressHeader=true), route status updates to the background channel
-    // so they don't clobber Phase 1's main-channel messages.
-    const statusChannel = suppressHeader ? 'background' : 'main';
-    const statusUpdate = (msg, loading = true) => updateUser(msg, loading, false, statusChannel);
+    const statusUpdate = (msg, loading = true) => updateUser(msg, loading, false, 'main');
 
     try {
         const transcript = getUserInputContent();
@@ -7795,26 +7792,13 @@ async function processWorkflow() {
 
         updateUser(scopeMessage, false);
 
-        // Launch guideline finding in the background — Phase 1 doesn't need guidelines
-        console.log('[DEBUG] processWorkflow: Launching guideline search in background');
-        updateAnalyseButtonProgress('Finding Guidelines...', true);
-        const guidelinesPromise = findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust)
-            .catch(error => {
-                if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
-                    throw new Error('Analysis cancelled');
-                }
-                console.error('[DEBUG] processWorkflow: Guideline search failed:', error.message);
-                throw new Error(`Finding guidelines failed: ${error.message}`);
-            });
-
-        // Phase 1: Check note completeness — runs immediately, no guideline dependency
+        // Phase 1: Check note completeness
         await runPhase1CompletenessCheck();
 
-        // Now await guideline results (likely already done while user was in Phase 1)
+        // Phase 1 complete — now find relevant guidelines
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
-        await guidelinesPromise;
-        // Clear the background channel — guideline search is done
-        updateUser('', false, true, 'background');
+        updateAnalyseButtonProgress('Finding Guidelines...', true);
+        await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 
