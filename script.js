@@ -7710,51 +7710,35 @@ async function processWorkflow() {
 
         updateUser(scopeMessage, false);
 
-        console.log('[DEBUG] processWorkflow: Starting step 2 - Find Relevant Guidelines');
-        updateAnalyseButtonProgress('Finding Relevant Guidelines...', true);
-        updateUser('Step 2: Finding relevant guidelines...', true);
+        // Launch guideline finding in the background — Phase 1 doesn't need guidelines
+        console.log('[DEBUG] processWorkflow: Launching guideline search in background');
+        updateAnalyseButtonProgress('Finding Guidelines...', true);
+        const guidelinesPromise = findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust)
+            .catch(error => {
+                if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
+                    throw new Error('Analysis cancelled');
+                }
+                console.error('[DEBUG] processWorkflow: Guideline search failed:', error.message);
+                throw new Error(`Finding guidelines failed: ${error.message}`);
+            });
 
-        // Check for abort before starting step 2
-        if (window.analysisAbortController?.signal.aborted) {
-            throw new Error('Analysis cancelled');
-        }
+        // Phase 1: Check note completeness — runs immediately, no guideline dependency
+        await runPhase1CompletenessCheck();
 
-        try {
-            await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust); // Pass scope parameters
+        // Now await guideline results (likely already done while user was in Phase 1)
+        if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+        updateUser('Waiting for guideline search...', true);
+        await guidelinesPromise;
 
-            // Check for abort after step 2
-            if (window.analysisAbortController?.signal.aborted) {
-                throw new Error('Analysis cancelled');
-            }
+        if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 
-            console.log('[DEBUG] processWorkflow: Step 2 completed successfully');
-            updateAnalyseButtonProgress('Guidelines Found', false);
-
-            const step1Complete = 'Step 2 complete: relevant guidelines identified.';
-            updateUser(step1Complete, false);
-
-        } catch (error) {
-            // Check if error is due to abort
-            if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
-                throw new Error('Analysis cancelled');
-            }
-            console.error('[DEBUG] processWorkflow: Step 2 failed:', error.message);
-            throw new Error(`Step 2 (Find Guidelines) failed: ${error.message}`);
-        }
-
-        // Check if we have relevant guidelines before proceeding
-        console.log('[DEBUG] processWorkflow: Checking relevant guidelines:', {
-            hasRelevantGuidelines: !!window.relevantGuidelines,
-            guidelinesLength: window.relevantGuidelines?.length || 0,
-            guidelinesArray: window.relevantGuidelines
+        console.log('[DEBUG] processWorkflow: Guidelines ready:', {
+            guidelinesLength: window.relevantGuidelines?.length || 0
         });
 
         if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
             throw new Error('No relevant guidelines were found. Cannot proceed with analysis.');
         }
-
-        // Phase 1: Check note completeness with guideline context
-        await runPhase1CompletenessCheck();
 
         // Phase 2: Process all relevant guidelines concurrently
         console.log('[DEBUG] processWorkflow: Running parallel analysis');
