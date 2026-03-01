@@ -1110,33 +1110,40 @@ Missing contextual details, incomplete assessment framing, unclear interpretatio
 AREA 2 — MANAGEMENT PLAN
 Missing next steps, unclear escalation, missing investigations or monitoring, missing safety-netting, unclear timelines, missing communication or follow-up.
 
-For each deficiency: state what is missing, why it matters clinically, and rate severity (high / medium / low).
+For each deficiency:
+- "deficiency": name the underlying problem briefly (e.g. "Fetal alcohol risk not quantified")
+- "action": write a specific, imperative clinical recommendation beginning with a verb (e.g. "Document the estimated fetal alcohol exposure and risk of fetal alcohol spectrum disorder (FASD) in the assessment"). This is shown directly to the clinician as the suggested action — make it concrete and actionable.
+- "why_it_matters": explain why this matters for THIS patient specifically
+- "severity": high / medium / low
+- "confidence": 0.0–1.0
 
-Be honest about uncertainty. If something might be implied or context-dependent, say so rather than asserting it is definitely missing.
+Be honest about uncertainty. If something might be implied or context-dependent, say so in why_it_matters rather than asserting it is definitely missing. Limit to the 3 most important deficiencies per area.
 
 Respond with valid JSON only, no surrounding text or markdown.`;
 
     const userPrompt = `CLINICAL NOTE:
 ${clinicalNote}
 
-Identify obvious deficiencies. Return JSON:
+Identify the most important deficiencies. Return JSON:
 {
   "assessment_gaps": [
     {
       "id": "A1",
-      "description": "Short summary of what is missing",
-      "why_it_matters": "Why a clinician would want this",
+      "deficiency": "Brief name of what is missing or unclear",
+      "action": "Specific imperative recommendation starting with a verb (e.g. 'Document...', 'Clarify...', 'Add...')",
+      "why_it_matters": "Why a clinician would want this for this specific patient",
       "severity": "high|medium|low",
-      "confidence": 0.0-1.0
+      "confidence": 0.0
     }
   ],
   "management_gaps": [
     {
       "id": "M1",
-      "description": "Short summary of what is missing",
-      "why_it_matters": "Why a clinician would want this",
+      "deficiency": "Brief name of what is missing or unclear",
+      "action": "Specific imperative recommendation starting with a verb",
+      "why_it_matters": "Why a clinician would want this for this specific patient",
       "severity": "high|medium|low",
-      "confidence": 0.0-1.0
+      "confidence": 0.0
     }
   ]
 }`;
@@ -1209,7 +1216,7 @@ function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
 
     // Simple keyword-overlap matching
     function findBestMatch(findingText, suggestions) {
-        const findingWords = new Set(normalize(findingText).split(' ').filter(w => w.length > 3));
+        const findingWords = new Set(normalize(findingText).split(' ').filter(w => w.length > 4));
         let bestIdx = -1;
         let bestScore = 0;
 
@@ -1244,7 +1251,11 @@ function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
 
     for (const finding of allFindings) {
         defId++;
-        const matchIdx = findBestMatch(finding.description, stage2Suggestions);
+        // Use action as display text; fall back to deficiency or description for older schema
+        const displayText = finding.action || finding.description || finding.deficiency || '';
+        // Use deficiency + action combined for keyword matching (catches both old and new schema)
+        const matchText = [finding.deficiency, finding.description, finding.action].filter(Boolean).join(' ');
+        const matchIdx = findBestMatch(matchText, stage2Suggestions);
 
         if (matchIdx >= 0) {
             const match = stage2Suggestions[matchIdx];
@@ -1252,7 +1263,7 @@ function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
             merged.push({
                 id: `DEF-${String(defId).padStart(3, '0')}`,
                 element: finding.element,
-                description: finding.description,
+                description: displayText,
                 why_it_matters: finding.why_it_matters,
                 severity: finding.severity || 'medium',
                 confidence: finding.confidence || null,
@@ -1267,7 +1278,7 @@ function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
             merged.push({
                 id: `DEF-${String(defId).padStart(3, '0')}`,
                 element: finding.element,
-                description: finding.description,
+                description: displayText,
                 why_it_matters: finding.why_it_matters,
                 severity: finding.severity || 'medium',
                 confidence: finding.confidence || null,
