@@ -402,9 +402,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         try {
             const currentContent = getUserInputContent();
 
+            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
             const suggestionForInsertion = {
                 suggestedText: textToInsert,
-                category: 'addition'
+                category: 'addition',
+                targetSection: currentSuggestion?.target_section || null
             };
 
             let newContent;
