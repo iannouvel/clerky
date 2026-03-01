@@ -19517,8 +19517,22 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
 
     const prompt = `You are a clinical documentation quality checker for obstetric and gynaecology notes. You will be given ONE clinical note as free text.
 
+STEP 1 — IDENTIFY CLINICAL CONTEXT (do this internally before generating any output)
+Before identifying missing information, determine the clinical context of this note:
+- What TYPE of encounter is this? (e.g. antenatal clinic consultation, intrapartum care, postnatal review, gynaecology outpatient, triage assessment, ward round, discharge summary)
+- What is the PURPOSE of the note? (e.g. risk counselling, management planning, acute assessment, routine review, consent, follow-up)
+- What STAGE of care does it represent? (e.g. pre-labour, intrapartum, immediate postpartum, later postnatal)
+
+CONTEXT RULE (CRITICAL)
+Only suggest missing information that is clinically appropriate FOR THIS SPECIFIC CONTEXT. Do NOT suggest items that belong to a different care setting or a later/earlier stage:
+- For antenatal COUNSELLING notes (risk discussions, consent, education): do NOT suggest intrapartum management details, specific obstetric manoeuvres, team role assignments, or birth plan specifics — these belong in the birth plan or intrapartum notes, not in a counselling record.
+- For intrapartum notes: do NOT suggest antenatal history items unless directly relevant to the acute management decision.
+- For postnatal notes: do NOT suggest items that would only be relevant in pregnancy or during labour.
+- For gynaecology outpatient notes: do NOT suggest obstetric-specific items unless the patient is pregnant.
+Apply this principle to any context: ask "would a reasonable clinician, writing THIS type of note in THIS setting, be expected to document this?" If the answer is no, omit it.
+
 TASK
-Extract ONLY the "missing information" items required to make a safe, guideline-consistent management plan, ordered from MOST important to LEAST important.
+Extract ONLY the "missing information" items required to make a safe, guideline-consistent record appropriate to this specific clinical context, ordered from MOST important to LEAST important.
 
 OUTPUT RULES (STRICT)
 1) Return ONLY valid JSON. No markdown, no commentary, no extra text.
