@@ -7555,7 +7555,8 @@ async function runPhase1CompletenessCheck() {
             priority: item.rank === 1 ? 'high' : item.rank <= 3 ? 'medium' : 'low',
             type: item.rank === 1 ? 'high' : item.rank <= 3 ? 'medium' : 'low',
             data_type_and_options: item.data_type_and_options || null,
-            missing_info: item.missing_info
+            missing_info: item.missing_info,
+            target_section: item.target_section || null
         }));
 
         if (suggestions.length === 0) {

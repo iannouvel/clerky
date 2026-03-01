@@ -16865,7 +16865,10 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
             clinicalNoteLength: clinicalNote.length
         });
 
-        const systemPrompt = `You are a medical scribe. Insert the new item into the most appropriate place in the clinical note, maintaining the note's existing formatting and style. Return only the complete updated note — no explanation, no commentary, nothing else.`;
+        const sectionHint = suggestion.targetSection
+            ? ` Insert it into the "${suggestion.targetSection}" section.`
+            : '';
+        const systemPrompt = `You are a medical scribe. Insert the new item into the clinical note, maintaining the note's existing formatting and style.${sectionHint} Return only the complete updated note — no explanation, no commentary, nothing else.`;
 
         const userPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nNEW ITEM TO INSERT:\n${suggestion.suggestedText}`;
 
@@ -19499,6 +19502,7 @@ OUTPUT RULES (STRICT)
 4) Every item must include:
    - missing_info: a concise label of the missing data element
    - importance_and_management_impact: why it matters + how it would change management (1–3 sentences)
+   - target_section: the exact section heading from the note where this information should be inserted (e.g., "Investigations", "Background", "Assessment", "Plan"). Use the exact heading as it appears in the note.
    - data_type_and_options: either:
        a) for numeric: {"type":"numeric","units":"...","notes":"..."}
        b) for binary: {"type":"binary","options":["yes","no"],"notes":"..."}
@@ -19515,6 +19519,7 @@ JSON SCHEMA (MUST MATCH)
       "rank": 1,
       "missing_info": "string",
       "importance_and_management_impact": "string",
+      "target_section": "string",
       "data_type_and_options": {
         "type": "numeric|binary|categorical|free_text",
         "units": "string (only if numeric)",
