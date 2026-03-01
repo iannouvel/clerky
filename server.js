@@ -21,6 +21,8 @@ const {
     getProviderFromModel,
     getSecondPreferenceLLM,
     updateUserModelPreferences,
+    getUserTaskModels,
+    updateUserTaskModels,
     getUserChunkDistributionProviders,
     updateUserChunkDistributionProviders,
     getUserHospitalTrust,
@@ -5165,6 +5167,29 @@ app.post('/updateModelPreferences', authenticateUser, async (req, res) => {
     } catch (error) {
         console.error('Unexpected error in updateModelPreferences endpoint:', error);
         res.status(500).json({ success: false, message: 'Server error', error: error.message });
+    }
+});
+
+// Get user's task-specific model preferences
+app.get('/getTaskModelPreferences', authenticateUser, async (req, res) => {
+    try {
+        const taskModels = await getUserTaskModels(req.user.uid);
+        return res.json({ success: true, ...taskModels });
+    } catch (error) {
+        console.error('Error getting task model preferences:', error);
+        return res.json({ success: true, complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null });
+    }
+});
+
+// Update user's task-specific model preferences
+app.post('/updateTaskModelPreferences', authenticateUser, async (req, res) => {
+    try {
+        const { complexTaskModel, simpleTaskModel } = req.body;
+        await updateUserTaskModels(req.user.uid, { complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null });
+        return res.json({ success: true, complexTaskModel, simpleTaskModel });
+    } catch (error) {
+        console.error('Error updating task model preferences:', error);
+        return res.status(500).json({ success: false, error: error.message });
     }
 });
 
@@ -16880,7 +16905,7 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
             ]
-        }, userId);
+        }, userId, null, 4000, 'simple');
         timer.step('AI API call');
 
         if (!aiResponse || !aiResponse.content) {
@@ -19543,7 +19568,7 @@ ${transcript.substring(0, 4000)}
 >>>`;
 
     try {
-        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, 'claude-opus-4-6');
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
         let missing_information = [];
         if (aiResponse?.content) {
             try {

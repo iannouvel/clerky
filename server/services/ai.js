@@ -27,7 +27,8 @@ const {
     getProviderFromModel,
     getUserModelPreferences,
     getNextAvailableProvider,
-    getUserChunkDistributionProviders
+    getUserChunkDistributionProviders,
+    getUserTaskModels
 } = require('./preferences');
 
 const SEQUENTIAL_LLM_CHAIN = AI_PROVIDER_PREFERENCE.map(p => ({
@@ -446,12 +447,25 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
  *   temperature: 0.3
  * }, userId);
  */
-async function routeToAI(prompt, userId = null, preferredProvider = null, maxTokens = 4000) {
+async function routeToAI(prompt, userId = null, preferredProvider = null, maxTokens = 4000, taskComplexity = null) {
     try {
         const defaultProvider = AI_PROVIDER_PREFERENCE[0].name;
         let provider = preferredProvider || defaultProvider;
 
-        if (!preferredProvider && userId) {
+        // Task-specific model override (only if no explicit preferredProvider)
+        if (!preferredProvider && userId && taskComplexity) {
+            try {
+                const taskModels = await getUserTaskModels(userId);
+                const taskModel = taskComplexity === 'complex' ? taskModels.complexTaskModel
+                    : taskComplexity === 'simple' ? taskModels.simpleTaskModel
+                    : null;
+                if (taskModel) provider = taskModel;
+            } catch (error) {
+                console.error('[DEBUG] Error getting task model preference:', error.message);
+            }
+        }
+
+        if (!preferredProvider && !taskComplexity && userId) {
             try {
                 const userPreference = await getUserAIPreference(userId);
                 if (userPreference) provider = userPreference;

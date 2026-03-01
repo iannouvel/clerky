@@ -6201,6 +6201,7 @@ const AVAILABLE_MODELS = [
     { name: 'OpenAI', model: 'gpt-4.1', displayName: 'GPT-4.1' },
     { name: 'Anthropic', model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5' },
     { name: 'Anthropic', model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5' },
+    { name: 'Anthropic', model: 'claude-opus-4-6', displayName: 'Claude Opus 4.6' },
     // Legacy models
     { name: 'OpenAI', model: 'gpt-4o', displayName: 'GPT-4o' },
     { name: 'OpenAI', model: 'gpt-4o-mini', displayName: 'GPT-4o Mini' },
@@ -6394,6 +6395,66 @@ async function saveUserModelPreferences(modelOrder) {
     }
 }
 
+// ---- Task-specific model preferences ----
+
+async function fetchTaskModelPreferences() {
+    try {
+        const user = auth.currentUser;
+        if (!user) return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null };
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/getTaskModelPreferences`, {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (!response.ok) return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null };
+        const data = await response.json();
+        return {
+            complexTaskModel: data.complexTaskModel || 'claude-opus-4-6',
+            simpleTaskModel: data.simpleTaskModel || null
+        };
+    } catch (error) {
+        console.error('[TASK MODEL PREF] Error fetching task model preferences:', error);
+        return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null };
+    }
+}
+
+async function saveTaskModelPreferences(complexTaskModel, simpleTaskModel) {
+    try {
+        const user = auth.currentUser;
+        if (!user) return false;
+        const token = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateTaskModelPreferences`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({ complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null })
+        });
+        return response.ok;
+    } catch (error) {
+        console.error('[TASK MODEL PREF] Error saving task model preferences:', error);
+        return false;
+    }
+}
+
+function populateTaskModelDropdown(selectId, selectedModel, includeDefault) {
+    const select = document.getElementById(selectId);
+    if (!select) return;
+    select.innerHTML = '';
+    if (includeDefault) {
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = '';
+        defaultOpt.textContent = '— use general preference —';
+        select.appendChild(defaultOpt);
+    }
+    AVAILABLE_MODELS.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.model;
+        opt.textContent = `${m.displayName} (${m.name})`;
+        if (m.model === selectedModel) opt.selected = true;
+        select.appendChild(opt);
+    });
+    if (!selectedModel && includeDefault) select.value = '';
+}
+
 // Render model preferences list with drag and drop
 let draggedModelElement = null;
 
@@ -6580,6 +6641,17 @@ async function showPreferencesModal() {
         renderModelPreferencesList(AVAILABLE_MODELS.map(m => m.name));
     }
 
+    // Load and display task-specific model preferences
+    try {
+        const taskPrefs = await fetchTaskModelPreferences();
+        populateTaskModelDropdown('complexTaskModelSelect', taskPrefs.complexTaskModel, false);
+        populateTaskModelDropdown('simpleTaskModelSelect', taskPrefs.simpleTaskModel, true);
+    } catch (error) {
+        console.error('[ERROR] Failed to load task model preferences:', error);
+        populateTaskModelDropdown('complexTaskModelSelect', 'claude-opus-4-6', false);
+        populateTaskModelDropdown('simpleTaskModelSelect', null, true);
+    }
+
     // Load and display chunk distribution provider preferences
     try {
         const enabledProviders = await fetchChunkDistributionProviders();
@@ -6719,6 +6791,15 @@ async function showPreferencesModal() {
                 } else {
                     console.warn('[DEBUG] Failed to save model preferences');
                 }
+            }
+
+            // Save task-specific model preferences
+            const complexTaskModelSelect = document.getElementById('complexTaskModelSelect');
+            const simpleTaskModelSelect = document.getElementById('simpleTaskModelSelect');
+            if (complexTaskModelSelect || simpleTaskModelSelect) {
+                const complexModel = complexTaskModelSelect?.value || null;
+                const simpleModel = simpleTaskModelSelect?.value || null;
+                await saveTaskModelPreferences(complexModel, simpleModel);
             }
 
             // Save chunk distribution provider preferences

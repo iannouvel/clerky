@@ -22,6 +22,7 @@ const userHospitalTrustCache = new Map();
 const userGuidelineScopeCache = new Map();
 const userModelPreferencesCache = new Map();
 const userChunkDistributionProvidersCache = new Map();
+const userTaskModelsCache = new Map();
 
 // ============================================================================
 // AI PROVIDER & MODEL PREFERENCES
@@ -255,6 +256,61 @@ async function getSecondPreferenceLLM(userId) {
         console.error('Error getting second preference LLM:', error);
         return AI_PROVIDER_PREFERENCE[1]?.name || 'OpenAI';
     }
+}
+
+// ============================================================================
+// TASK-SPECIFIC MODEL PREFERENCES (complex vs simple tasks)
+// ============================================================================
+
+const TASK_MODEL_DEFAULTS = {
+    complexTaskModel: 'claude-opus-4-6',
+    simpleTaskModel: null  // null = use the user's default model preference
+};
+
+async function getUserTaskModels(userId) {
+    const cached = userTaskModelsCache.get(userId);
+    if (cached && (Date.now() - cached.timestamp) < USER_PREFERENCE_CACHE_TTL) {
+        return cached.models;
+    }
+
+    try {
+        if (db) {
+            const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
+            if (userPrefsDoc.exists) {
+                const data = userPrefsDoc.data();
+                const models = {
+                    complexTaskModel: data.complexTaskModel || TASK_MODEL_DEFAULTS.complexTaskModel,
+                    simpleTaskModel: data.simpleTaskModel || TASK_MODEL_DEFAULTS.simpleTaskModel
+                };
+                userTaskModelsCache.set(userId, { models, timestamp: Date.now() });
+                return models;
+            }
+        }
+    } catch (error) {
+        console.error('Error in getUserTaskModels:', error);
+    }
+
+    userTaskModelsCache.set(userId, { models: TASK_MODEL_DEFAULTS, timestamp: Date.now() });
+    return { ...TASK_MODEL_DEFAULTS };
+}
+
+async function updateUserTaskModels(userId, { complexTaskModel, simpleTaskModel }) {
+    const models = { complexTaskModel, simpleTaskModel };
+    userTaskModelsCache.set(userId, { models, timestamp: Date.now() });
+
+    try {
+        if (db) {
+            await db.collection('userPreferences').doc(userId).set({
+                complexTaskModel: complexTaskModel || null,
+                simpleTaskModel: simpleTaskModel || null,
+                updatedAt: new Date().toISOString()
+            }, { merge: true });
+            return true;
+        }
+    } catch (error) {
+        console.error('Error in updateUserTaskModels:', error);
+    }
+    return false;
 }
 
 // ============================================================================
@@ -515,6 +571,8 @@ module.exports = {
     updateUserModelPreferences,
     getProviderFromModel,
     getSecondPreferenceLLM,
+    getUserTaskModels,
+    updateUserTaskModels,
     getUserChunkDistributionProviders,
     updateUserChunkDistributionProviders,
     getUserHospitalTrust,
