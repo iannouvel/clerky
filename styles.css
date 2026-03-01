@@ -3876,19 +3876,32 @@ body {
     padding: 8px 10px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 4px;
     margin-left: 10px;
     flex: 1;
-    /* Expand to fill available space */
     min-width: 0;
-    /* Allow shrinking below content size if needed */
     line-height: 1.4;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+
+/* Individual status channel row */
+.status-channel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     white-space: nowrap;
-    /* Keep on single line when space permits */
     overflow: hidden;
     text-overflow: ellipsis;
-    border: 1px solid var(--border-light);
+}
+
+/* Background channel — slightly dimmer to distinguish from primary status */
+.status-channel-background {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-light);
+    padding-top: 3px;
 }
 
 .spinner-small {

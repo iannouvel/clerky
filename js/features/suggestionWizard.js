@@ -433,11 +433,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             const spinner = btn.querySelector('.wizard-accept-spinner');
             if (spinner) spinner.style.display = 'inline';
         }
-        const statusMsg = document.getElementById('serverStatusMessage');
-        if (statusMsg) {
-            statusMsg.textContent = 'Applying change...';
-            statusMsg.style.display = 'block';
-        }
+        if (typeof updateUser === 'function') updateUser('Applying change...', true);
 
         try {
             const currentContent = getUserInputContent();
