@@ -19479,4 +19479,76 @@ Return an empty array [] if the note appears sufficiently complete.`;
     }
 });
 
+app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res) => {
+    const { transcript } = req.body;
+    const userId = req.user.uid;
+
+    if (!transcript?.trim()) {
+        return res.json({ success: true, missing_information: [] });
+    }
+
+    const prompt = `You are a clinical documentation quality checker for antenatal care notes. You will be given ONE clinical note as free text.
+
+TASK
+Extract ONLY the "missing information" items required to make a safe, guideline-consistent management plan, ordered from MOST important to LEAST important.
+
+OUTPUT RULES (STRICT)
+1) Return ONLY valid JSON. No markdown, no commentary, no extra text.
+2) The JSON MUST conform exactly to the schema below.
+3) Do NOT include any information that is already present in the note.
+4) Every item must include:
+   - missing_info: a concise label of the missing data element
+   - importance_and_management_impact: why it matters + how it would change management (1–3 sentences)
+   - data_type_and_options: either:
+       a) for numeric: {"type":"numeric","units":"...","notes":"..."}
+       b) for binary: {"type":"binary","options":["yes","no"],"notes":"..."}
+       c) for categorical: {"type":"categorical","options":[...],"notes":"..."}
+       d) for free text: {"type":"free_text","notes":"..."}
+5) Order items by clinical safety criticality (highest risk/most management-changing first).
+6) Keep each field clinically specific; avoid vague phrases like "more details needed".
+7) If there are zero missing items, return an empty array for "missing_information".
+
+JSON SCHEMA (MUST MATCH)
+{
+  "missing_information": [
+    {
+      "rank": 1,
+      "missing_info": "string",
+      "importance_and_management_impact": "string",
+      "data_type_and_options": {
+        "type": "numeric|binary|categorical|free_text",
+        "units": "string (only if numeric)",
+        "options": ["string"],
+        "notes": "string"
+      }
+    }
+  ]
+}
+
+NOTE TEXT (INPUT)
+<<<
+${transcript.substring(0, 4000)}
+>>>`;
+
+    try {
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId);
+        let missing_information = [];
+        if (aiResponse?.content) {
+            try {
+                const jsonMatch = aiResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
+                const parsed = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
+                if (parsed && Array.isArray(parsed.missing_information)) {
+                    missing_information = parsed.missing_information;
+                }
+            } catch (e) {
+                console.warn('[COMPLETENESS-V2] JSON parse failed:', e.message);
+            }
+        }
+        res.json({ success: true, missing_information });
+    } catch (error) {
+        console.error('[COMPLETENESS-V2] Error:', error.message);
+        res.json({ success: true, missing_information: [] });
+    }
+});
+
 app.use('/', promptsRouter);

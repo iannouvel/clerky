@@ -7539,26 +7539,31 @@ async function runPhase1CompletenessCheck() {
         if (!user) return;
         const idToken = await user.getIdToken();
 
-        const guidelineContext = (window.relevantGuidelines || []).map(g => ({
-            id: g.id,
-            title: g.title || g.id,
-            displayName: g.displayName || g.humanFriendlyName || g.title || g.id
-        }));
-
-        const resp = await fetch(`${window.SERVER_URL}/assessNoteCompleteness`, {
+        const resp = await fetch(`${window.SERVER_URL}/assessNoteCompletenessStructured`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-            body: JSON.stringify({ transcript: anonymisedText || transcript, guidelines: guidelineContext })
+            body: JSON.stringify({ transcript: anonymisedText || transcript })
         });
         const data = await resp.json();
-        const suggestions = Array.isArray(data.suggestions) ? data.suggestions : [];
+        const rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
+
+        // Map structured schema to wizard suggestion format
+        const suggestions = rawItems.map(item => ({
+            suggestion: item.missing_info,
+            why: item.importance_and_management_impact,
+            // rank 1 = high, 2-3 = medium, 4+ = low
+            priority: item.rank === 1 ? 'high' : item.rank <= 3 ? 'medium' : 'low',
+            type: item.rank === 1 ? 'high' : item.rank <= 3 ? 'medium' : 'low',
+            data_type_and_options: item.data_type_and_options || null,
+            missing_info: item.missing_info
+        }));
 
         if (suggestions.length === 0) {
-            updateUser('Note completeness check passed.', false);
+            updateUser('Note completeness check passed — no missing information identified.', false);
             return;
         }
 
-        updateUser('Phase 1: Missing information identified — please review before proceeding.', false);
+        updateUser(`Phase 1: ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review before proceeding.`, false);
 
         // Show wizard and await user completing/skipping all suggestions
         return new Promise((resolve) => {
