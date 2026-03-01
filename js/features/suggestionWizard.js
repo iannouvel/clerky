@@ -80,6 +80,29 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                     ${options}
                 </select>${notesHtml}`;
             }
+            case 'multi_select': {
+                const checkboxes = (dto.options || []).map((opt, i) => {
+                    const optId = `${id}-ms-${i}`;
+                    const escaped = opt.replace(/"/g, '&quot;');
+                    return `<label style="display:flex; align-items:center; gap:8px; padding:4px 0; cursor:pointer; color:var(--text-primary);">
+                        <input type="checkbox" id="${optId}" class="${id}-ms-checkbox" value="${escaped}"
+                            style="width:15px; height:15px; cursor:pointer; flex-shrink:0;">
+                        <span style="font-size:0.93em;">${opt}</span>
+                    </label>`;
+                }).join('');
+                const otherField = dto.allow_other !== false
+                    ? `<div style="margin-top:8px;">
+                        <label style="font-size:0.82em; color:var(--text-secondary); display:block; margin-bottom:3px;">Other (specify):</label>
+                        <input type="text" id="${id}-ms-other" placeholder="Type here…"
+                            style="width:100%; padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.93em; box-sizing:border-box;">
+                    </div>`
+                    : '';
+                return `<div id="${id}-structured-input" data-missing-info="${escapedLabel}" data-type="multi_select"
+                    style="display:flex; flex-direction:column; gap:2px;">
+                    ${checkboxes}
+                    ${otherField}
+                </div>${notesHtml}`;
+            }
             case 'free_text':
             default:
                 return `<textarea id="${id}-structured-input" data-missing-info="${escapedLabel}"
@@ -359,11 +382,28 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         let textToInsert = '';
 
         if (structuredInputEl) {
-            // Phase 1 structured input: format as "Label: value" for insertion
-            const inputValue = structuredInputEl.value?.trim();
-            if (inputValue) {
-                const label = structuredInputEl.dataset.missingInfo || '';
-                textToInsert = label ? `${label}: ${inputValue}` : inputValue;
+            const label = structuredInputEl.dataset.missingInfo || '';
+            if (structuredInputEl.dataset.type === 'multi_select') {
+                // Collect checked options
+                const checked = Array.from(structuredInputEl.querySelectorAll(`.${id}-ms-checkbox:checked`))
+                    .map(cb => cb.value)
+                    .filter(v => v && v !== 'None of the above');
+                const otherInput = structuredInputEl.querySelector(`#${id}-ms-other`);
+                const otherVal = otherInput?.value?.trim();
+                if (otherVal) checked.push(otherVal);
+                // If only "None of the above" was selected or nothing, record that
+                const noneChecked = structuredInputEl.querySelector(`.${id}-ms-checkbox[value="None of the above"]:checked`);
+                if (checked.length === 0 && noneChecked) {
+                    textToInsert = label ? `${label}: None` : 'None';
+                } else if (checked.length > 0) {
+                    textToInsert = label ? `${label}: ${checked.join(', ')}` : checked.join(', ');
+                }
+            } else {
+                // Phase 1 structured input: format as "Label: value" for insertion
+                const inputValue = structuredInputEl.value?.trim();
+                if (inputValue) {
+                    textToInsert = label ? `${label}: ${inputValue}` : inputValue;
+                }
             }
         }
 
