@@ -89,6 +89,42 @@ export function clearHighlightInEditor() {
 }
 
 /**
+ * Temporarily bold newly inserted text in the TipTap editor for 3 seconds, then remove bold.
+ * @param {string} text - The text to bold
+ */
+export function flashBoldInEditor(text) {
+    const editor = window.editors?.userInput;
+    if (!editor || !text) return;
+
+    try {
+        const content = editor.getText();
+        const startPos = content.toLowerCase().indexOf(text.toLowerCase());
+        if (startPos === -1) return;
+
+        const from = startPos + 1;
+        const to = from + text.length;
+
+        editor.commands.setTextSelection({ from, to });
+        editor.commands.setBold();
+        editor.commands.setTextSelection(to);
+
+        setTimeout(() => {
+            try {
+                const updatedContent = editor.getText();
+                const pos = updatedContent.toLowerCase().indexOf(text.toLowerCase());
+                if (pos !== -1) {
+                    editor.commands.setTextSelection({ from: pos + 1, to: pos + 1 + text.length });
+                    editor.commands.unsetBold();
+                    editor.commands.setTextSelection(pos + 1 + text.length);
+                }
+            } catch (_) { /* text may have changed, ignore */ }
+        }, 3000);
+    } catch (error) {
+        console.error('[BOLD FLASH] Error:', error);
+    }
+}
+
+/**
  * Scroll the specified text into view in the editor
  * @param {string} text - The text to scroll to
  * @returns {boolean} - True if scrolled successfully

@@ -19560,6 +19560,11 @@ OUTPUT RULES (STRICT)
           Use language appropriate for a clinical note (past tense, third person).
           Leave "suggested_content" as an empty string only when the specific answer is unknowable
           from the note (e.g. a missing investigation result, a specific measurement).
+       f) compound:     {"type":"compound","fields":[{"label":"...","units":"..."},...],"notes":"..."}
+          USE compound when the missing item is inherently TWO OR MORE distinct numeric values that
+          must each be entered separately (e.g. weight + BMI, systolic + diastolic BP, height + weight).
+          Each field object requires a "label" and optionally "units". Do NOT use compound for items
+          that are a single measurement, even if they have multiple possible interpretations.
 5) Order items by clinical safety criticality (highest risk/most management-changing first).
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
@@ -19574,10 +19579,11 @@ JSON SCHEMA (MUST MATCH)
       "importance_and_management_impact": "string",
       "target_section": "string",
       "data_type_and_options": {
-        "type": "numeric|binary|categorical|multi_select|free_text",
+        "type": "numeric|binary|categorical|multi_select|free_text|compound",
         "units": "string (only if numeric)",
         "options": ["string"],
         "allow_other": true,
+        "fields": [{"label":"string","units":"string"}],
         "suggested_content": "string (only if free_text — pre-written clinical text the user can accept or edit; empty string if the value is unknowable)",
         "notes": "string"
       }
