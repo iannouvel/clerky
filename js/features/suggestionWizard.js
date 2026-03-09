@@ -106,12 +106,20 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             case 'compound': {
                 const fields = (dto.fields || []).map((f, i) => {
                     const fid = `${id}-compound-${i}`;
+                    const escapedFieldLabel = f.label.replace(/"/g, '&quot;');
+                    const inputEl = Array.isArray(f.options) && f.options.length > 0
+                        ? `<select id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
+                               style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:1em; cursor:pointer;">
+                               <option value="">— select —</option>
+                               ${f.options.map(o => `<option value="${o.replace(/"/g,'&quot;')}">${o}</option>`).join('')}
+                           </select>`
+                        : `<input type="number" step="any" id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
+                               placeholder="Enter value…"
+                               style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:120px; font-size:1em;">
+                           ${f.units ? `<span style="color:var(--text-secondary); font-size:0.9em;">${f.units}</span>` : ''}`;
                     return `<div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-                        <label for="${fid}" style="font-size:0.88em; color:var(--text-secondary); min-width:80px;">${f.label}:</label>
-                        <input type="number" step="any" id="${fid}" class="${id}-compound-field" data-label="${f.label.replace(/"/g,'&quot;')}"
-                            placeholder="Enter value…"
-                            style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:120px; font-size:1em;">
-                        ${f.units ? `<span style="color:var(--text-secondary); font-size:0.9em;">${f.units}</span>` : ''}
+                        <label for="${fid}" style="font-size:0.88em; color:var(--text-secondary); min-width:120px;">${f.label}:</label>
+                        ${inputEl}
                     </div>`;
                 }).join('');
                 return `<div id="${id}-structured-input" data-missing-info="${escapedLabel}" data-type="compound">
