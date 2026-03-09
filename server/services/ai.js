@@ -663,16 +663,17 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 3. Extract key patient context from the clinical note.
 4. Identify guideline recommendations that ARE already addressed in the note.
 
-APPLICABILITY CHECK (perform this before generating any suggestion):
-Before adding a suggestion, ask: "Is this recommendation applicable to this specific patient in their current clinical state?"
-- Do NOT suggest actions that are no longer possible given the patient's current situation (e.g. do not suggest pre-pregnancy counselling to a patient who is already pregnant — if the guideline has a separate pathway for patients who present already pregnant, apply that instead).
-- Do NOT apply condition-specific pathways (e.g. COVID-19, eclampsia, twin pregnancy) to a patient who does not have that condition, even if those pathways appear in the guideline content.
-- If a guideline section clearly does not apply to this patient, skip it entirely.
+APPLICABILITY CHECK (you MUST complete this first — populate "guidelineApplicability" before generating any suggestions):
+1. Identify the target population this guideline is written for (e.g. "patients with a previous caesarean section", "patients with BMI ≥30", "patients with COVID-19").
+2. Determine whether this specific patient belongs to that target population.
+3. Set "patientQualifies" to true or false and write a one-sentence "reason".
+- If patientQualifies is FALSE: set suggestions to [] and stop. Do not generate any suggestions.
+- If patientQualifies is TRUE: proceed, but still skip any individual sections that do not apply (e.g. COVID pathway for a non-COVID patient, BMI ≥40 section for a patient with BMI 24).
 
 CRITICAL: verbatimQuote must be copied word-for-word from the "=== GUIDELINE CONTENT ===" section below. Never quote from the clinical note section.
 
 Respond with valid JSON only, using this structure:
-{ "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
+{ "guidelineApplicability": { "targetPopulation": "...", "patientQualifies": true, "reason": "..." }, "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
 
     const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above.`;
 
@@ -682,6 +683,13 @@ Respond with valid JSON only, using this structure:
 
     try {
         const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+
+        // Enforce applicability check — discard suggestions if guideline does not apply to this patient
+        if (parsed.guidelineApplicability?.patientQualifies === false) {
+            console.log(`[APPLICABILITY] Guideline ${guidelineId} does not apply to this patient: ${parsed.guidelineApplicability.reason}`);
+            parsed.suggestions = [];
+            parsed.alreadyCompliant = [];
+        }
 
         // Normalise sourceGuidelineId on every suggestion
         if (parsed.suggestions && Array.isArray(parsed.suggestions)) {
