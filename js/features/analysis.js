@@ -482,7 +482,7 @@ export async function runParallelAnalysis(guidelines) {
     let firstPassPromise = null;
     if (clinicalNoteForFirstPass) {
         console.log('[FIRST-PASS] Launching Stage 1 reasoning in parallel with guideline analysis');
-        updateUser('Running independent clinical reasoning check...', true);
+        updateUser('Phase 2 of 2: Running independent clinical reasoning check alongside guideline analysis...', true);
         firstPassPromise = postAuthenticated('/api/firstPassReasoning', {
             transcript: clinicalNoteForFirstPass
         }).catch(err => {
@@ -647,7 +647,7 @@ export async function runParallelAnalysis(guidelines) {
     let mergedDeficiencies = null;
     if (firstPassPromise) {
         if (statusText) statusText.textContent = 'Combining clinical reasoning with guideline analysis...';
-        updateUser('Combining clinical reasoning with guideline analysis...', true);
+        updateUser('Merging independent clinical reasoning findings with guideline-backed suggestions...', true);
         try {
             const firstPassResult = await firstPassPromise;
             if (firstPassResult && firstPassResult.success && firstPassResult.findings) {
@@ -699,11 +699,18 @@ export async function runParallelAnalysis(guidelines) {
         }
     }
 
-    // Update status to show completion
+    // Update status to show completion — break down by source if merged
     const findingWord = allSuggestions.length === 1 ? 'finding' : 'findings';
     const guidelineWord = successfulResults.length === 1 ? 'guideline' : 'guidelines';
     if (statusText) statusText.textContent = `Analysis complete — ${allSuggestions.length} ${findingWord} identified. Please review below.`;
-    updateUser(`Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}. Please review below.`, false);
+    const guidelineBacked = allSuggestions.filter(s => s._source === 'both' || s._source === 'guideline_only').length;
+    const reasoningOnly  = allSuggestions.filter(s => s._source === 'reasoning_only').length;
+    let completionMsg = `Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}`;
+    if (guidelineBacked > 0 && reasoningOnly > 0) {
+        completionMsg += ` (${guidelineBacked} guideline-backed, ${reasoningOnly} from independent clinical reasoning)`;
+    }
+    completionMsg += '. Please review below.';
+    updateUser(completionMsg, false);
 
     // Remove the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');

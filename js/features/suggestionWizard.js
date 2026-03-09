@@ -304,10 +304,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                                     <div style="font-size: 0.95em; color: var(--text-secondary);">
                                         <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
                                     </div>
-                                    ${sourceName ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
-                                        Source: ${sourceGuidelineId
-                                            ? `<a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>`
-                                            : sourceName}
+                                    ${sourceGuidelineId ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
+                                        Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>
                                     </div>` : ''}
                                 </div>
 
@@ -502,9 +500,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const spinner = btn.querySelector('.wizard-accept-spinner');
                 if (spinner) spinner.style.display = 'none';
             }
-            if (statusMsg) {
-                statusMsg.style.display = 'none';
-            }
+            // statusMsg removed — spinner on the button is sufficient feedback
         }
     };
 

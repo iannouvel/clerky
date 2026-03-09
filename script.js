@@ -7612,7 +7612,7 @@ window.selectedGuidelineScope = null;
 // Comprehensive workflow processing function
 async function runPhase1CompletenessCheck() {
     try {
-        updateUser('Phase 1 of 2: Checking note for missing information...', true);
+        updateUser('Phase 1 of 2: Checking note completeness — identifying any missing clinical information before guideline analysis begins...', true);
         const transcript = getUserInputContent();
         if (!transcript?.trim()) return;
 
@@ -7646,7 +7646,7 @@ async function runPhase1CompletenessCheck() {
             return;
         }
 
-        updateUser(`Phase 1: ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review before proceeding.`, false);
+        updateUser(`Phase 1 complete: ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review and add any relevant details before guideline analysis begins.`, false);
 
         // Show wizard and await user completing/skipping all suggestions
         return new Promise((resolve) => {
