@@ -431,10 +431,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                     textToInsert = label ? `${label}: ${joined}` : joined;
                 }
             } else {
-                // Phase 1 structured input: format as "Label: value" for insertion
                 const inputValue = structuredInputEl.value?.trim();
                 if (inputValue) {
-                    textToInsert = label ? `${label}: ${inputValue}` : inputValue;
+                    // For free_text (textarea): the user writes their own prose — insert as-is.
+                    // For select/number inputs: prepend the label so the value has context in the note.
+                    const isTextarea = structuredInputEl.tagName === 'TEXTAREA';
+                    textToInsert = (!isTextarea && label) ? `${label}: ${inputValue}` : inputValue;
                 }
             }
         }
