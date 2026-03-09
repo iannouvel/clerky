@@ -1,4 +1,4 @@
-import { scrollTextIntoView } from '../utils/editor.js';
+import { scrollTextIntoView, flashBoldInEditor } from '../utils/editor.js';
 
 /**
  * Opens the PDF for a guideline in a new tab.
@@ -101,6 +101,21 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                     style="display:flex; flex-direction:column; gap:2px;">
                     ${checkboxes}
                     ${otherField}
+                </div>${notesHtml}`;
+            }
+            case 'compound': {
+                const fields = (dto.fields || []).map((f, i) => {
+                    const fid = `${id}-compound-${i}`;
+                    return `<div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
+                        <label for="${fid}" style="font-size:0.88em; color:var(--text-secondary); min-width:80px;">${f.label}:</label>
+                        <input type="number" step="any" id="${fid}" class="${id}-compound-field" data-label="${f.label.replace(/"/g,'&quot;')}"
+                            placeholder="Enter value…"
+                            style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:120px; font-size:1em;">
+                        ${f.units ? `<span style="color:var(--text-secondary); font-size:0.9em;">${f.units}</span>` : ''}
+                    </div>`;
+                }).join('');
+                return `<div id="${id}-structured-input" data-missing-info="${escapedLabel}" data-type="compound">
+                    ${fields}
                 </div>${notesHtml}`;
             }
             case 'free_text':
@@ -305,8 +320,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
                                 ${dataTypeOptions ? `
                                 <!-- Structured input for Phase 1 missing information -->
-                                <div style="margin-bottom: 20px; background: rgba(66,133,244,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid #4285f4;">
-                                    <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #4285f4; margin-bottom: 8px;">Enter the missing information:</div>
+                                <div style="margin-bottom: 20px; background: rgba(0,184,148,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid #00B894;">
+                                    <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #00B894; margin-bottom: 8px;">Enter the missing information:</div>
                                     ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
                                 </div>` : ''}
 
@@ -401,6 +416,14 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 } else if (checked.length > 0) {
                     textToInsert = label ? `${label}: ${checked.join(', ')}` : checked.join(', ');
                 }
+            } else if (structuredInputEl.dataset.type === 'compound') {
+                const parts = Array.from(structuredInputEl.querySelectorAll(`.${id}-compound-field`))
+                    .map(f => ({ label: f.dataset.label, value: f.value?.trim() }))
+                    .filter(f => f.value);
+                if (parts.length > 0) {
+                    const joined = parts.map(f => `${f.label}: ${f.value}`).join(', ');
+                    textToInsert = label ? `${label}: ${joined}` : joined;
+                }
             } else {
                 // Phase 1 structured input: format as "Label: value" for insertion
                 const inputValue = structuredInputEl.value?.trim();
@@ -464,6 +487,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             }
 
             setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
+
+            // Briefly bold the inserted text so the user can see where it landed
+            setTimeout(() => flashBoldInEditor(textToInsert), 150);
 
             console.log('[WIZARD] Suggestion accepted and inserted:', textToInsert.substring(0, 50) + '...');
             window.nextWizardSuggestion();
