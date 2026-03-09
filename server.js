@@ -16893,7 +16893,7 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
         const sectionHint = suggestion.targetSection
             ? ` Insert it into the "${suggestion.targetSection}" section.`
             : '';
-        const systemPrompt = `You are a medical scribe. Insert the new item into the clinical note, maintaining the note's existing formatting and style.${sectionHint} Return only the complete updated note — no explanation, no commentary, nothing else.`;
+        const systemPrompt = `You are a medical scribe. Insert the new item into the clinical note, maintaining the note's existing formatting and style.${sectionHint} The new item MUST start on a new line — do not append it to the end of an existing sentence or paragraph. Return only the complete updated note — no explanation, no commentary, nothing else.`;
 
         const userPrompt = `CLINICAL NOTE:\n${clinicalNote}\n\nNEW ITEM TO INSERT:\n${suggestion.suggestedText}`;
 
