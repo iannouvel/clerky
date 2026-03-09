@@ -19575,11 +19575,15 @@ OUTPUT RULES (STRICT)
           patient has had the opportunity to ask questions".
           Leave "suggested_content" as an empty string only when the specific answer is unknowable
           from the note (e.g. a missing investigation result, a specific measurement).
-       f) compound:     {"type":"compound","fields":[{"label":"...","units":"..."},...],"notes":"..."}
-          USE compound when the missing item is inherently TWO OR MORE distinct numeric values that
-          must each be entered separately (e.g. weight + BMI, systolic + diastolic BP, height + weight).
-          Each field object requires a "label" and optionally "units". Do NOT use compound for items
-          that are a single measurement, even if they have multiple possible interpretations.
+       f) compound:     {"type":"compound","fields":[{"label":"...","units":"...","options":[...]},...], "notes":"..."}
+          USE compound when the missing item is inherently TWO OR MORE distinct values that must
+          each be entered separately — whether numeric or categorical.
+          Examples: weight + BMI (numeric), systolic + diastolic BP (numeric),
+                    blood group + rhesus status + antibody status (categorical).
+          Each field requires a "label". For categorical sub-fields, add an "options" array
+          (the UI will render a dropdown). For numeric sub-fields, add "units" (the UI will
+          render a number input). A field may have either options OR units, not both.
+          Do NOT use compound for items that are a single measurement.
 5) Order items by clinical safety criticality (highest risk/most management-changing first).
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
@@ -19598,7 +19602,7 @@ JSON SCHEMA (MUST MATCH)
         "units": "string (only if numeric)",
         "options": ["string"],
         "allow_other": true,
-        "fields": [{"label":"string","units":"string"}],
+        "fields": [{"label":"string","units":"string (numeric sub-fields only)","options":["string (categorical sub-fields only)"]}],
         "suggested_content": "string (only if free_text — pre-written clinical text the user can accept or edit; empty string if the value is unknowable)",
         "notes": "string"
       }
