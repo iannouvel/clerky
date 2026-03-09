@@ -19558,6 +19558,21 @@ OUTPUT RULES (STRICT)
           discussion, safety-netting advice, consent documentation), pre-write a ready-to-use
           sentence or two in "suggested_content" that the clinician can accept as-is or edit.
           Use language appropriate for a clinical note (past tense, third person).
+          CRITICAL — suggested_content MUST be clinically specific to the actual diagnoses,
+          conditions, and findings present in THIS note. Do NOT write generic templates.
+          BAD (generic, useless): "Safety-netting advice was provided including signs to monitor
+            and when to seek medical attention."
+          GOOD (specific, useful): "Safety-netting advice was given: the patient was advised to
+            attend urgently if she experiences reduced fetal movements, worsening breathlessness,
+            chest pain, or signs of cardiac decompensation, given the fetal diagnosis of tetralogy
+            of Fallot."
+          For counselling: name the specific condition, the specific risks discussed, and the
+          specific actions or thresholds the patient was given.
+          For safety-netting: list the actual red-flag symptoms relevant to this diagnosis.
+          For consent/decisions: state the specific option chosen and what was discussed.
+          The "notes" field should only contain genuinely useful clinical guidance not already
+          covered by the suggested_content — omit obvious checklist items like "ensure the
+          patient has had the opportunity to ask questions".
           Leave "suggested_content" as an empty string only when the specific answer is unknowable
           from the note (e.g. a missing investigation result, a specific measurement).
        f) compound:     {"type":"compound","fields":[{"label":"...","units":"..."},...],"notes":"..."}
