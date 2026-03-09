@@ -663,6 +663,12 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
 3. Extract key patient context from the clinical note.
 4. Identify guideline recommendations that ARE already addressed in the note.
 
+APPLICABILITY CHECK (perform this before generating any suggestion):
+Before adding a suggestion, ask: "Is this recommendation applicable to this specific patient in their current clinical state?"
+- Do NOT suggest actions that are no longer possible given the patient's current situation (e.g. do not suggest pre-pregnancy counselling to a patient who is already pregnant — if the guideline has a separate pathway for patients who present already pregnant, apply that instead).
+- Do NOT apply condition-specific pathways (e.g. COVID-19, eclampsia, twin pregnancy) to a patient who does not have that condition, even if those pathways appear in the guideline content.
+- If a guideline section clearly does not apply to this patient, skip it entirely.
+
 CRITICAL: verbatimQuote must be copied word-for-word from the "=== GUIDELINE CONTENT ===" section below. Never quote from the clinical note section.
 
 Respond with valid JSON only, using this structure:
