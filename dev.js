@@ -937,36 +937,45 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         }
 
-        // Copy all logs to clipboard as formatted text
-        async function copyAllLogs() {
-            if (!recentLogs || recentLogs.length === 0) {
-                alert('No logs to copy. Click Refresh to load logs first.');
-                return;
-            }
+        // Format a list of logs for copying, deduplicating identical message content across logs
+        function formatLogsForCopy(logs) {
+            const MIN_LENGTH_TO_DEDUPLICATE = 100; // don't deduplicate short strings
+            const seen = new Map(); // trimmed content -> "LOG N [ROLE]" label
 
-            const formattedLogs = recentLogs.map((log, idx) => {
+            return logs.map((log, idx) => {
+                const logNum = idx + 1;
                 const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
                 const divider = '='.repeat(80);
 
-                // Parse prompt content if it's JSON
+                // Parse prompt into role/content pairs if possible
                 let promptText = log.fullPrompt || 'No prompt content';
+                let formattedPrompt;
                 try {
                     const parsed = JSON.parse(promptText);
                     if (Array.isArray(parsed)) {
-                        promptText = parsed.map(msg => {
+                        formattedPrompt = parsed.map(msg => {
                             const role = (msg.role || 'unknown').toUpperCase();
-                            return `[${role}]\n${msg.content || ''}`;
+                            const content = msg.content || '';
+                            const key = content.trim();
+                            if (key.length >= MIN_LENGTH_TO_DEDUPLICATE && seen.has(key)) {
+                                return `[${role}]\n[Identical to ${seen.get(key)} — omitted to reduce size]`;
+                            }
+                            if (key.length >= MIN_LENGTH_TO_DEDUPLICATE) {
+                                seen.set(key, `LOG ${logNum} ${role}`);
+                            }
+                            return `[${role}]\n${content}`;
                         }).join('\n\n');
+                    } else {
+                        formattedPrompt = promptText;
                     }
                 } catch (e) {
-                    // Keep as-is if not valid JSON
+                    formattedPrompt = promptText;
                 }
 
-                // Response text
-                let responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
+                const responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
 
                 return `${divider}
-LOG ${idx + 1} of ${recentLogs.length}
+LOG ${logNum} of ${logs.length}
 ${divider}
 Time: ${time}
 Endpoint: ${log.endpoint || 'Unknown'}
@@ -978,22 +987,28 @@ Cost: $${(log.estimatedCostUsd || 0).toFixed(6)}
 Status: ${log.success ? 'Success' : 'Error'}
 
 --- PROMPT ---
-${promptText}
+${formattedPrompt}
 
 --- RESPONSE ---
 ${responseText}
 `;
             }).join('\n\n');
+        }
+
+        // Copy all logs to clipboard as formatted text
+        async function copyAllLogs() {
+            if (!recentLogs || recentLogs.length === 0) {
+                alert('No logs to copy. Click Refresh to load logs first.');
+                return;
+            }
 
             try {
-                await navigator.clipboard.writeText(formattedLogs);
+                await navigator.clipboard.writeText(formatLogsForCopy(recentLogs));
                 const copyBtn = document.getElementById('copyAllLogsBtn');
                 if (copyBtn) {
                     const originalText = copyBtn.textContent;
                     copyBtn.textContent = '✅ Copied!';
-                    setTimeout(() => {
-                        copyBtn.textContent = originalText;
-                    }, 2000);
+                    setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
                 }
             } catch (err) {
                 console.error('Failed to copy:', err);
@@ -1014,45 +1029,8 @@ ${responseText}
 
             const selectedLogs = recentLogs.filter(log => checkedIds.has(log.id));
 
-            const formattedLogs = selectedLogs.map((log, idx) => {
-                const time = log.timestamp ? new Date(log.timestamp).toLocaleString() : 'Unknown time';
-                const divider = '='.repeat(80);
-
-                let promptText = log.fullPrompt || 'No prompt content';
-                try {
-                    const parsed = JSON.parse(promptText);
-                    if (Array.isArray(parsed)) {
-                        promptText = parsed.map(msg => {
-                            const role = (msg.role || 'unknown').toUpperCase();
-                            return `[${role}]\n${msg.content || ''}`;
-                        }).join('\n\n');
-                    }
-                } catch (e) { /* keep as-is */ }
-
-                const responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
-
-                return `${divider}
-LOG ${idx + 1} of ${selectedLogs.length}
-${divider}
-Time: ${time}
-Endpoint: ${log.endpoint || 'Unknown'}
-Provider: ${log.provider || 'N/A'}
-Model: ${log.model || 'N/A'}
-Tokens: ${log.promptTokens || 0} in / ${log.completionTokens || 0} out (${log.totalTokens || 0} total)
-Latency: ${log.latencyMs ? log.latencyMs + 'ms' : 'N/A'}
-Cost: $${(log.estimatedCostUsd || 0).toFixed(6)}
-Status: ${log.success ? 'Success' : 'Error'}
-
---- PROMPT ---
-${promptText}
-
---- RESPONSE ---
-${responseText}
-`;
-            }).join('\n\n');
-
             try {
-                await navigator.clipboard.writeText(formattedLogs);
+                await navigator.clipboard.writeText(formatLogsForCopy(selectedLogs));
                 const copyBtn = document.getElementById('copySelectedLogsBtn');
                 if (copyBtn) {
                     const originalText = copyBtn.textContent;
