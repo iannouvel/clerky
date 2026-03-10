@@ -814,6 +814,21 @@
                 </div>
             </div>
             <div class="tools-section" style="margin-top:20px;">
+                <h4>Target Population Generator</h4>
+                <p style="color:var(--text-secondary);font-size:13px;margin-bottom:10px;">
+                    Generate a concise <code>targetPopulation</code> field for each guideline — used by the relevance assessor to avoid misclassifying guidelines based on title alone.
+                </p>
+                <div class="tools-grid">
+                    <button id="generateTargetPopOneBtn" class="dev-btn"
+                        style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">🎯 Generate for 1 guideline</button>
+                    <button id="generateTargetPopAllBtn" class="dev-btn"
+                        style="background-color:#6f42c1;color:#fff;border-color:#6f42c1;">🎯 Generate for all guidelines</button>
+                </div>
+                <div id="targetPopStatus"
+                    style="margin-top:10px;padding:10px;background:var(--bg-tertiary);border-radius:4px;display:none;color:var(--text-primary);">
+                </div>
+            </div>
+            <div class="tools-section" style="margin-top:20px;">
                 <h4>Clinical Issues Synchronization</h4>
                 <p style="color:var(--text-secondary);font-size:13px;margin-bottom:10px;">
                     Scan all guidelines against the clinical issues list. If a guideline's main topic is not covered,

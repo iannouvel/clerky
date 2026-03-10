@@ -19636,4 +19636,117 @@ ${transcript.substring(0, 4000)}
     }
 });
 
+// Generate targetPopulation field for one or all guidelines
+// POST /generateTargetPopulations
+//   body: {}                   → process one guideline missing targetPopulation
+//   body: { all: true }        → process all guidelines missing targetPopulation
+//   body: { guidelineId: "…" } → process a specific guideline
+app.post('/generateTargetPopulations', authenticateUser, async (req, res) => {
+    const userId = req.user.uid;
+    const { all, guidelineId } = req.body || {};
+
+    try {
+        let snapshot;
+        if (guidelineId) {
+            const doc = await db.collection('guidelines').doc(guidelineId).get();
+            if (!doc.exists) return res.status(404).json({ error: 'Guideline not found' });
+            snapshot = { docs: [doc] };
+        } else if (all) {
+            snapshot = await db.collection('guidelines').get();
+        } else {
+            // Single: pick the first guideline that is missing targetPopulation
+            snapshot = await db.collection('guidelines').where('targetPopulation', '==', null).limit(1).get();
+            if (snapshot.empty) {
+                // Also try where field doesn't exist
+                snapshot = await db.collection('guidelines').limit(100).get();
+                const missing = snapshot.docs.find(d => !d.data().targetPopulation);
+                if (!missing) return res.json({ success: true, updated: 0, message: 'All guidelines already have targetPopulation' });
+                snapshot = { docs: [missing] };
+            }
+        }
+
+        const results = [];
+        let updated = 0;
+        let skipped = 0;
+
+        for (const doc of snapshot.docs) {
+            const data = doc.data();
+
+            // Skip if already populated (unless specific guidelineId requested)
+            if (!guidelineId && data.targetPopulation) {
+                skipped++;
+                continue;
+            }
+
+            const title = data.humanFriendlyTitle || data.displayName || data.title || doc.id;
+
+            // Get a content chunk — prefer summary, fall back to condensed or first 2000 chars of content
+            let contentChunk = data.summary || data.condensed || '';
+            if (!contentChunk && data.content) {
+                contentChunk = data.content.substring(0, 2000);
+            }
+            if (!contentChunk) {
+                // Try subcollection
+                try {
+                    const condensedDoc = await db.collection('guidelines').doc(doc.id).collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) contentChunk = (condensedDoc.data().condensed || condensedDoc.data().content || '').substring(0, 2000);
+                } catch (_) {}
+            }
+            if (!contentChunk) {
+                results.push({ id: doc.id, title, status: 'skipped', reason: 'no content available' });
+                skipped++;
+                continue;
+            }
+
+            const prompt = {
+                messages: [
+                    {
+                        role: 'user',
+                        content: `Read this clinical guideline and write ONE sentence (maximum 25 words) describing the specific patient population this guideline is written for. Be concrete — name specific conditions, BMI thresholds, prior procedures, gestational age criteria, or demographic criteria as appropriate.
+
+Examples of good responses:
+- "Pregnant women with a previous caesarean section considering VBAC or elective repeat CS"
+- "Pregnant women with BMI ≥30 at booking"
+- "Pregnant women with pre-existing medical conditions including IBD, epilepsy, thyroid disorders, and other chronic illnesses"
+- "Pregnant women with confirmed or suspected intrahepatic cholestasis of pregnancy (ICP)"
+- "All pregnant women and birthing people receiving antenatal care"
+
+Guideline title: ${title}
+
+Guideline content excerpt:
+${contentChunk.substring(0, 1500)}
+
+Respond with ONLY the target population sentence — no explanation, no quotes, no bullet points.`
+                    }
+                ]
+            };
+
+            try {
+                const aiResult = await routeToAI(prompt, userId);
+                const targetPopulation = aiResult?.content?.trim().replace(/^["']|["']$/g, '') || null;
+
+                if (targetPopulation) {
+                    await db.collection('guidelines').doc(doc.id).update({ targetPopulation });
+                    results.push({ id: doc.id, title, status: 'updated', targetPopulation });
+                    updated++;
+                    console.log(`[TARGET_POP] ${doc.id}: ${targetPopulation}`);
+                } else {
+                    results.push({ id: doc.id, title, status: 'failed', reason: 'AI returned empty' });
+                    skipped++;
+                }
+            } catch (err) {
+                console.error(`[TARGET_POP] Error for ${doc.id}:`, err.message);
+                results.push({ id: doc.id, title, status: 'error', reason: err.message });
+                skipped++;
+            }
+        }
+
+        res.json({ success: true, updated, skipped, total: snapshot.docs.length, results });
+
+    } catch (error) {
+        console.error('[TARGET_POP] Error:', error.message);
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.use('/', promptsRouter);
