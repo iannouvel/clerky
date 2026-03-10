@@ -3223,6 +3223,70 @@ ${responseText}
             });
         }
 
+        // Target Population Generator handlers
+        async function runTargetPopGeneration(all) {
+            const statusDiv = document.getElementById('targetPopStatus');
+            const oneBtn = document.getElementById('generateTargetPopOneBtn');
+            const allBtn = document.getElementById('generateTargetPopAllBtn');
+
+            statusDiv.style.display = 'block';
+            statusDiv.style.backgroundColor = '#fff3cd';
+            statusDiv.style.border = '1px solid #ffc107';
+            statusDiv.style.color = '#856404';
+            statusDiv.textContent = all ? 'Generating targetPopulation for all guidelines — this may take a while...' : 'Generating targetPopulation for 1 guideline...';
+            oneBtn.disabled = true;
+            allBtn.disabled = true;
+
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/generateTargetPopulations`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                    body: JSON.stringify(all ? { all: true } : {})
+                });
+                const result = await response.json();
+                if (!response.ok) throw new Error(result.error || `HTTP ${response.status}`);
+
+                const rows = (result.results || []).map(r =>
+                    `<tr><td style="padding:4px 8px;border-bottom:1px solid var(--border-color)">${r.id}</td>` +
+                    `<td style="padding:4px 8px;border-bottom:1px solid var(--border-color)">${r.status}</td>` +
+                    `<td style="padding:4px 8px;border-bottom:1px solid var(--border-color);color:#555">${r.targetPopulation || r.reason || ''}</td></tr>`
+                ).join('');
+
+                statusDiv.style.backgroundColor = '#d4edda';
+                statusDiv.style.border = '1px solid #c3e6cb';
+                statusDiv.style.color = '#155724';
+                statusDiv.innerHTML = `<strong>Done — ${result.updated} updated, ${result.skipped} skipped</strong>` +
+                    (rows ? `<table style="width:100%;margin-top:8px;font-size:12px;border-collapse:collapse">
+                        <thead><tr>
+                            <th style="text-align:left;padding:4px 8px">Guideline ID</th>
+                            <th style="text-align:left;padding:4px 8px">Status</th>
+                            <th style="text-align:left;padding:4px 8px">Result</th>
+                        </tr></thead><tbody>${rows}</tbody></table>` : '');
+            } catch (err) {
+                statusDiv.style.backgroundColor = '#f8d7da';
+                statusDiv.style.border = '1px solid #f5c6cb';
+                statusDiv.style.color = '#721c24';
+                statusDiv.textContent = `Error: ${err.message}`;
+                console.error('[TARGET_POP]', err);
+            } finally {
+                oneBtn.disabled = false;
+                allBtn.disabled = false;
+            }
+        }
+
+        const generateTargetPopOneBtn = document.getElementById('generateTargetPopOneBtn');
+        if (generateTargetPopOneBtn) {
+            generateTargetPopOneBtn.addEventListener('click', () => runTargetPopGeneration(false));
+        }
+        const generateTargetPopAllBtn = document.getElementById('generateTargetPopAllBtn');
+        if (generateTargetPopAllBtn) {
+            generateTargetPopAllBtn.addEventListener('click', () => {
+                if (!confirm('Generate targetPopulation for ALL guidelines missing this field? This will make one AI call per guideline. Continue?')) return;
+                runTargetPopGeneration(true);
+            });
+        }
+
         // Reingest single guideline to Pinecone handlers
         const reingestGuidelineSelect = document.getElementById('reingestGuidelineSelect');
         const reingestSingleBtn = document.getElementById('reingestSingleBtn');
