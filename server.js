@@ -3460,27 +3460,32 @@ async function validateGuidelinesWithAI(transcript, categories, userId) {
 
     if (candidates.length === 0) return categories;
 
-    // Fetch summaries from Firestore in parallel
-    const summaryMap = {};
+    // Fetch summaries and targetPopulation from Firestore in parallel
+    const metaMap = {};
     await Promise.all(candidates.map(async (g) => {
         try {
             const doc = await db.collection('guidelines').doc(g.id).get();
             if (doc.exists) {
                 const data = doc.data();
-                summaryMap[g.id] = data.summary || data.condensed || null;
+                metaMap[g.id] = {
+                    summary: data.summary || data.condensed || null,
+                    targetPopulation: data.targetPopulation || null
+                };
             }
         } catch (err) {
-            console.warn(`[RAG] Could not fetch summary for ${g.id}:`, err.message);
+            console.warn(`[RAG] Could not fetch metadata for ${g.id}:`, err.message);
         }
     }));
 
     const candidateList = candidates.map((g) => {
-        const summary = summaryMap[g.id];
-        const summaryText = summary ? summary.substring(0, 400) : 'No summary available';
-        return `[${g.id}] ${g.title}\nSummary: ${summaryText}`;
+        const meta = metaMap[g.id] || {};
+        let entry = `[${g.id}] ${g.title}`;
+        if (meta.targetPopulation) entry += `\nTarget population: ${meta.targetPopulation}`;
+        if (meta.summary) entry += `\nSummary: ${meta.summary.substring(0, 400)}`;
+        return entry;
     }).join('\n\n');
 
-    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and candidate guidelines with summaries, identify which guidelines are NOT applicable.
+    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and candidate guidelines (with target population and summary where available), identify which guidelines are NOT applicable.
 
 CLINICAL SCENARIO:
 ${transcript.substring(0, 2000)}
@@ -3488,7 +3493,7 @@ ${transcript.substring(0, 2000)}
 CANDIDATE GUIDELINES:
 ${candidateList}
 
-Your task is to identify guidelines that are clearly from a COMPLETELY DIFFERENT clinical domain and therefore cannot provide any useful guidance for this scenario.
+Your task is to identify guidelines that are clearly from a COMPLETELY DIFFERENT clinical domain and therefore cannot provide any useful guidance for this scenario. Use the "Target population" field as the primary signal — if the patient clearly does not belong to that population, consider marking the guideline as NOT_APPLICABLE.
 
 Only mark a guideline as NOT_APPLICABLE if it is obviously irrelevant — for example, a neonatal resuscitation guideline when the scenario is about maternal haemorrhage, or a gynaecology guideline when the scenario is about a newborn.
 

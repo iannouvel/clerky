@@ -52,6 +52,9 @@ const SEQUENTIAL_LLM_CHAIN = AI_PROVIDER_PREFERENCE.map(p => ({
 function createPromptForChunk(transcript, guidelinesChunk) {
     const guidelinesText = guidelinesChunk.map(g => {
         let guidelineInfo = `[${g.id}] ${g.title}`;
+        if (g.targetPopulation && g.targetPopulation.trim()) {
+            guidelineInfo += `\nTarget population: ${g.targetPopulation.trim()}`;
+        }
         if (g.summary && g.summary.trim()) {
             guidelineInfo += `\nSummary: ${g.summary.trim()}`;
         }
@@ -69,7 +72,7 @@ ${transcript}
 Available guidelines:
 ${guidelinesText}
 
-For each guideline, consider whether it directly addresses the patient's primary condition and context, whether it applies to their demographics and clinical situation, and whether it might inform management or differential diagnosis. Assign a relevance score between 0.0 and 1.0, where scores above 0.8 mean the guideline directly applies, scores between 0.5 and 0.8 suggest it may be useful for secondary issues, scores between 0.2 and 0.5 indicate limited background relevance, and scores below 0.2 mean the guideline is not applicable to this case.
+For each guideline, use the "Target population" field (where provided) as the primary signal for applicability — if the patient does not belong to that target population, assign a low score (below 0.2). Then consider whether it directly addresses the patient's primary condition and context, whether it applies to their demographics and clinical situation, and whether it might inform management or differential diagnosis. Assign a relevance score between 0.0 and 1.0, where scores above 0.8 mean the guideline directly applies, scores between 0.5 and 0.8 suggest it may be useful for secondary issues, scores between 0.2 and 0.5 indicate limited background relevance, and scores below 0.2 mean the guideline is not applicable to this case.
 
 Respond with a JSON object grouping the guidelines into four arrays — mostRelevant, potentiallyRelevant, lessRelevant, and notRelevant — where each entry contains the guideline id, title, and relevance score. Return only the JSON with no surrounding text.`;
 }
