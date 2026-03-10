@@ -3354,9 +3354,26 @@ async function rerankWithAI(transcript, categories, userId) {
         return categories;
     }
 
-    const candidateList = allCandidates.map((g) =>
-        `[${g.id}] ${g.title} (${g.organisation || 'Unknown'})\n   Preview: ${(g.snippet || '').substring(0, 200)}...`
-    ).join('\n\n');
+    // Fetch targetPopulation from Firestore for each candidate
+    const metaMap = {};
+    await Promise.all(allCandidates.map(async (g) => {
+        try {
+            const doc = await db.collection('guidelines').doc(g.id).get();
+            if (doc.exists) {
+                const data = doc.data();
+                metaMap[g.id] = data.targetPopulation || null;
+            }
+        } catch (err) {
+            console.warn(`[RAG] Could not fetch targetPopulation for ${g.id}:`, err.message);
+        }
+    }));
+
+    const candidateList = allCandidates.map((g) => {
+        let entry = `[${g.id}] ${g.title} (${g.organisation || 'Unknown'})`;
+        if (metaMap[g.id]) entry += `\n   Target population: ${metaMap[g.id]}`;
+        entry += `\n   Preview: ${(g.snippet || '').substring(0, 200)}...`;
+        return entry;
+    }).join('\n\n');
 
     const prompt = `You are a clinical guideline relevance assessor. Given a clinical transcript and candidate guidelines, categorise each by relevance.
 
@@ -3365,6 +3382,8 @@ ${transcript.substring(0, 2000)}
 
 CANDIDATE GUIDELINES:
 ${candidateList}
+
+Use the "Target population" field (where provided) as the primary signal — if the patient clearly does not belong to that population, score it lower. A guideline covering a RISK or COMPLICATION that applies to this patient (even if not the primary diagnosis) should still be scored highly.
 
 Categorise each guideline into exactly one of these categories:
 - MOST_RELEVANT: Directly applicable to the clinical scenario
@@ -3497,7 +3516,12 @@ Your task is to identify guidelines that are clearly from a COMPLETELY DIFFERENT
 
 Only mark a guideline as NOT_APPLICABLE if it is obviously irrelevant — for example, a neonatal resuscitation guideline when the scenario is about maternal haemorrhage, or a gynaecology guideline when the scenario is about a newborn.
 
-Do NOT exclude a guideline just because it is not the primary focus of the scenario. If the guideline covers any condition, complication, or aspect of care that is present or mentioned in the scenario, it is applicable. When in doubt, keep the guideline — it is better to include a borderline guideline than to miss one that is relevant.
+IMPORTANT: Do NOT exclude guidelines that cover RISKS or COMPLICATIONS that may occur in this patient, even if those complications have not yet happened. For example:
+- A shoulder dystocia guideline is applicable to a patient with a macrosomic fetus planning a vaginal birth — shoulder dystocia is a known risk.
+- A PPH guideline is applicable to any labouring patient.
+- A VTE guideline is applicable to any surgical or postpartum patient.
+
+Do NOT exclude a guideline just because it is not the primary diagnosis. If the guideline covers any condition, complication, or risk factor that is present or relevant in the scenario, it is applicable. When in doubt, keep the guideline — it is better to include a borderline guideline than to miss one that is relevant.
 
 CRITICAL SELF-CHECK: Before adding any guideline to NOT_APPLICABLE, re-read your reason. If your reason contains words such as "relevant", "applicable", "applies", "directly applies", "covers", or "pertains to this scenario" — you have made an error. That guideline IS applicable and must NOT appear in NOT_APPLICABLE. Only include a guideline if your reason clearly explains why it is from a completely unrelated clinical domain.
 
