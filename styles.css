@@ -3318,6 +3318,89 @@ body {
     border: none;
 }
 
+/* Editor + Floating Wizard Row */
+.editor-wizard-row {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+    gap: 0;
+    order: 1;
+    transition: gap 0.3s ease;
+}
+
+.editor-wizard-row.wizard-active {
+    gap: 10px;
+}
+
+.editor-wizard-row .chatbot-input-section {
+    transition: flex 0.3s ease;
+}
+
+.editor-wizard-row.wizard-active .chatbot-input-section {
+    flex: 0 0 60% !important;
+    max-width: 60%;
+}
+
+/* Floating Wizard Panel */
+.wizard-panel {
+    flex: 0 0 40%;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 200px);
+    animation: wizardSlideIn 0.3s ease;
+}
+
+@keyframes wizardSlideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.wizard-panel #wizardPanelContent {
+    padding: 12px;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px) {
+    .editor-wizard-row {
+        flex-direction: column;
+    }
+    .editor-wizard-row.wizard-active .chatbot-input-section {
+        flex: 1 1 auto !important;
+        max-width: 100% !important;
+    }
+    .wizard-panel {
+        flex: 0 0 auto;
+        max-width: 100%;
+        max-height: 50vh;
+    }
+}
+
+/* Insertion preview styling (shown before accept) */
+.insertion-preview {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 3px dashed #4caf50;
+    padding: 6px 8px;
+    margin: 4px 0;
+    color: #2e7d32;
+    font-style: italic;
+    font-size: 0.92em;
+    border-radius: 4px;
+    animation: previewFadeIn 0.3s ease;
+    pointer-events: none;
+}
+
+@keyframes previewFadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .chatbot-input-section {
     background: var(--card-background);
     border-radius: 8px;

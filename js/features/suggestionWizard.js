@@ -1,4 +1,4 @@
-import { scrollTextIntoView, flashBoldInEditor } from '../utils/editor.js';
+import { scrollTextIntoView, flashBoldInEditor, showInsertionPreview, clearInsertionPreview } from '../utils/editor.js';
 
 /**
  * Opens the PDF for a guideline in a new tab.
@@ -137,11 +137,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     }
 
+    // Detect if we're inside the floating wizard panel (narrow mode)
+    const isFloatingPanel = container.id === 'wizardPanelContent' || container.closest?.('.wizard-panel') !== null;
+
     // Define Renderer
     const renderCurrentSuggestion = () => {
         const state = window.suggestionWizardState;
 
         if (!container) return;
+
+        // Clear any previous insertion preview when moving between suggestions
+        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
 
         // Check for completion
         if (state.currentIndex >= state.total) {
@@ -272,112 +278,130 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             upcomingHtml += `</div>`;
         }
 
-        container.innerHTML = `
-            <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
-                
-                <!-- Global Summary Header -->
-                <div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: 1.1em;">
-                    ${summaryString}
+        // Floating panel: compact single-column; Default: two-column layout
+        const bodyPadding = isFloatingPanel ? '12px' : '20px';
+        const fontSize = isFloatingPanel ? '0.95em' : '1.1em';
+        const headerFontSize = isFloatingPanel ? '0.95em' : '1.1em';
+
+        const cardHtml = `
+            <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+
+                <!-- Header with Progress -->
+                <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: ${isFloatingPanel ? '8px 12px' : '10px 15px'}; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px;">
+                    <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
+                        ${priorityLabel}
+                    </span>${sourceBadgeHtml}
+                    <span style="font-size: 0.85em; color: var(--text-secondary);">
+                        ${currentNumber} of ${total}
+                    </span>
                 </div>
 
-                <!-- Two-Column Layout -->
-                <div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
-                    
-                    <!-- Left Column: Active Suggestion (66%) -->
-                    <div class="wizard-left-column" style="flex: 2; min-width: 0;">
-                        <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                            
-                            <!-- Header with Progress -->
-                            <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: 10px 15px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                                <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
-                                    ${priorityLabel}
-                                </span>${sourceBadgeHtml}
-                                <span style="font-size: 0.85em; color: var(--text-secondary);">
-                                    ${currentNumber} of ${total}
-                                </span>
-                            </div>
+                <!-- Main Content -->
+                <div class="wizard-body" style="padding: ${bodyPadding};">
 
-                            <!-- Main Content -->
-                            <div class="wizard-body" style="padding: 20px;">
-                                
-                                <!-- Suggestion Box (The Change) -->
-                                <div style="margin-bottom: 20px;">
-                                    <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: 1.1em; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                                        <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">${dataTypeOptions ? 'Missing Information:' : 'Suggested Action:'}</span> ${suggestionText}
-                                    </div>
-                                </div>
-
-                                <!-- Reasoning Box -->
-                                <div style="margin-bottom: ${verbatimQuote ? '10px' : '20px'}; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid var(--accent-color);">
-                                    <div style="font-size: 0.95em; color: var(--text-secondary);">
-                                        <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
-                                    </div>
-                                    ${sourceGuidelineId ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
-                                        Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>
-                                    </div>` : ''}
-                                </div>
-
-                                ${verbatimQuote ? `
-                                <!-- Verbatim Guideline Quote -->
-                                <div style="margin-bottom: 20px; background: rgba(0,0,0,0.02); padding: 12px; border-radius: 6px; border-left: 3px solid #888;">
-                                    <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Guideline Quote:</div>
-                                    <div style="font-size: 0.9em; color: var(--text-secondary); font-style: italic; line-height: 1.5;">"${verbatimQuote}"</div>
-                                </div>` : ''}
-
-                                ${dataTypeOptions ? `
-                                <!-- Structured input for Phase 1 missing information -->
-                                <div style="margin-bottom: 20px; background: rgba(0,184,148,0.06); padding: 12px; border-radius: 6px; border-left: 3px solid #00B894;">
-                                    <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #00B894; margin-bottom: 8px;">Enter the missing information:</div>
-                                    ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
-                                </div>` : ''}
-
-                                <!-- Editor for Modify Mode (Hidden by default) -->
-                                <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
-                                    <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
-                                    <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
-                                    <div style="display: flex; gap: 10px; margin-top: 10px;">
-                                        <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
-                                        <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Action Bar -->
-                            <div id="${uniqueId}-actions" class="wizard-actions" style="padding: 15px; border-top: 1px solid var(--border-color); display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
-                                    <!-- Navigation only -->
-                                <button class="wizard-suggestion-btn" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled' : ''}>
-                                    ⬅ Back
-                                </button>
-
-                                <button class="wizard-suggestion-btn" onclick="enableWizardModify('${uniqueId}')">
-                                        ✏️ Modify
-                                </button>
-                                <button class="wizard-suggestion-btn" onclick="skipWizardSuggestion()">
-                                        Skip ⏭
-                                </button>
-                                <button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
-                                        Reject ❌
-                                </button>
-                                <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}', this)">
-                                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>${dataTypeOptions ? 'Add to Note ✅' : 'Accept &amp; Next ✅'}
-                                </button>
-                            </div>
-
+                    <!-- Suggestion Box (The Change) -->
+                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'};">
+                        <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: ${fontSize}; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
+                            <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">${dataTypeOptions ? 'Missing Information:' : 'Suggested Action:'}</span> ${suggestionText}
                         </div>
                     </div>
 
-                    <!-- Right Column: Upcoming Suggestions (34%) -->
-                    <div class="wizard-right-column" style="flex: 1; min-width: 0; max-width: 34%;">
-                        ${upcomingHtml || '<div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.</div>'}
+                    <!-- Reasoning Box -->
+                    <div style="margin-bottom: ${verbatimQuote ? '10px' : (isFloatingPanel ? '12px' : '20px')}; background: rgba(0,0,0,0.02); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid var(--accent-color);">
+                        <div style="font-size: ${isFloatingPanel ? '0.85em' : '0.95em'}; color: var(--text-secondary);">
+                            <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
+                        </div>
+                        ${sourceGuidelineId ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
+                            Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>
+                        </div>` : ''}
                     </div>
-                    
-                </div>
-            </div>
-        `;
 
-        // Auto-focus logic
-        if (contextText && typeof scrollTextIntoView === 'function') {
+                    ${verbatimQuote ? `
+                    <!-- Verbatim Guideline Quote -->
+                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'}; background: rgba(0,0,0,0.02); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid #888;">
+                        <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Guideline Quote:</div>
+                        <div style="font-size: ${isFloatingPanel ? '0.82em' : '0.9em'}; color: var(--text-secondary); font-style: italic; line-height: 1.5;">"${verbatimQuote}"</div>
+                    </div>` : ''}
+
+                    ${dataTypeOptions ? `
+                    <!-- Structured input for Phase 1 missing information -->
+                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'}; background: rgba(0,184,148,0.06); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid #00B894;">
+                        <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #00B894; margin-bottom: 8px;">Enter the missing information:</div>
+                        ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
+                    </div>` : ''}
+
+                    <!-- Editor for Modify Mode (Hidden by default) -->
+                    <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
+                        <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
+                        <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
+                            <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Action Bar -->
+                <div id="${uniqueId}-actions" class="wizard-actions" style="padding: ${isFloatingPanel ? '10px' : '15px'}; border-top: 1px solid var(--border-color); display: flex; gap: ${isFloatingPanel ? '6px' : '10px'}; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
+                    <button class="wizard-suggestion-btn" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled' : ''}>
+                        ⬅ Back
+                    </button>
+                    <button class="wizard-suggestion-btn" onclick="enableWizardModify('${uniqueId}')">
+                        ✏️ Modify
+                    </button>
+                    <button class="wizard-suggestion-btn" onclick="skipWizardSuggestion()">
+                        Skip ⏭
+                    </button>
+                    <button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
+                        Reject ❌
+                    </button>
+                    <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}', this)">
+                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>${dataTypeOptions ? 'Add to Note ✅' : 'Accept &amp; Next ✅'}
+                    </button>
+                </div>
+
+            </div>`;
+
+        if (isFloatingPanel) {
+            // Single-column compact layout for floating panel
+            container.innerHTML = `
+                <div class="suggestion-wizard-container" style="width: 100%;">
+                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 10px; font-weight: 500; color: var(--text-primary); font-size: ${headerFontSize};">
+                        ${summaryString}
+                    </div>
+                    ${cardHtml}
+                    ${upcomingHtml ? `<div style="margin-top: 12px;">${upcomingHtml}</div>` : ''}
+                </div>
+            `;
+        } else {
+            // Full two-column layout for inline/stacked display
+            container.innerHTML = `
+                <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
+                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: ${headerFontSize};">
+                        ${summaryString}
+                    </div>
+                    <div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
+                        <div class="wizard-left-column" style="flex: 2; min-width: 0;">
+                            ${cardHtml}
+                        </div>
+                        <div class="wizard-right-column" style="flex: 1; min-width: 0; max-width: 34%;">
+                            ${upcomingHtml || '<div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.</div>'}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Auto-focus logic + inline preview in editor
+        if (isFloatingPanel && typeof showInsertionPreview === 'function') {
+            setTimeout(() => {
+                // Show a green preview in the editor where this suggestion would be inserted
+                const previewText = suggestionText;
+                const anchor = contextText || suggestion.evidence || suggestion.target_section || '';
+                showInsertionPreview(previewText, anchor, 'after');
+            }, 200);
+        } else if (contextText && typeof scrollTextIntoView === 'function') {
             setTimeout(() => {
                 scrollTextIntoView(contextText);
             }, 100);
@@ -470,6 +494,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (typeof updateUser === 'function') updateUser('Applying change...', true);
 
         try {
+            // Clear inline preview before modifying content
+            if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
+
             const currentContent = getUserInputContent();
 
             const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
@@ -559,10 +586,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     };
 
     window.closeSuggestionWizard = function (containerId) {
+        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
         // Find the container, or use the one we have
         const c = document.getElementById(containerId) || container;
         if (c) {
             c.innerHTML = '';
+        }
+        // Close floating panel if active
+        const wizardPanel = document.getElementById('wizardPanel');
+        if (wizardPanel) {
+            wizardPanel.style.display = 'none';
+            document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
         }
     }
 
