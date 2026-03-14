@@ -6,6 +6,104 @@ import { ensureAnonymisedForOutbound } from './pii.js';
 import { updateUser } from '../ui/status.js';
 import { initializeSuggestionWizard } from './suggestionWizard.js';
 
+// ---- Summary Dashboard ----
+
+/**
+ * Shows a summary dashboard after analysis, before launching the suggestion wizard.
+ * Returns a Promise that resolves with { action: 'review'|'dismiss', suggestions: [...] }
+ */
+function showSummaryDashboard(container, allSuggestions, successfulResults) {
+    return new Promise((resolve) => {
+        // Count by priority
+        const counts = { high: 0, medium: 0, low: 0 };
+        allSuggestions.forEach(s => {
+            const p = (s.type || s.priority || 'info').toLowerCase();
+            if (p === 'critical' || p === 'high') counts.high++;
+            else if (p === 'medium' || p === 'important') counts.medium++;
+            else counts.low++;
+        });
+
+        // Group by guideline
+        const byGuideline = {};
+        allSuggestions.forEach(s => {
+            const name = s.sourceGuidelineName || 'Unknown Guideline';
+            if (!byGuideline[name]) byGuideline[name] = [];
+            byGuideline[name].push(s);
+        });
+
+        const guidelineRows = Object.entries(byGuideline).map(([name, items]) =>
+            `<div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border-color);">
+                <span style="color: var(--text-primary); font-size: 0.9em;">${name}</span>
+                <span style="color: var(--text-secondary); font-size: 0.85em;">${items.length} suggestion${items.length === 1 ? '' : 's'}</span>
+            </div>`
+        ).join('');
+
+        const highOnly = allSuggestions.filter(s => {
+            const p = (s.type || s.priority || 'info').toLowerCase();
+            return p === 'critical' || p === 'high';
+        });
+
+        container.innerHTML = `
+            <div class="summary-dashboard" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 10px; padding: 25px; max-width: 600px; margin: 0 auto;">
+                <h3 style="margin: 0 0 5px 0; color: var(--text-primary); font-size: 1.2em;">Analysis Complete</h3>
+                <p style="margin: 0 0 20px 0; color: var(--text-secondary); font-size: 0.9em;">
+                    ${allSuggestions.length} suggestion${allSuggestions.length === 1 ? '' : 's'} across ${successfulResults.length} guideline${successfulResults.length === 1 ? '' : 's'}
+                </p>
+
+                <!-- Priority summary -->
+                <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+                    ${counts.high > 0 ? `<div style="flex: 1; text-align: center; padding: 12px; border-radius: 8px; background: rgba(211,47,47,0.08); border: 1px solid rgba(211,47,47,0.2);">
+                        <div style="font-size: 1.5em; font-weight: 700; color: #d32f2f;">${counts.high}</div>
+                        <div style="font-size: 0.8em; color: #d32f2f; text-transform: uppercase;">High</div>
+                    </div>` : ''}
+                    ${counts.medium > 0 ? `<div style="flex: 1; text-align: center; padding: 12px; border-radius: 8px; background: rgba(245,124,0,0.08); border: 1px solid rgba(245,124,0,0.2);">
+                        <div style="font-size: 1.5em; font-weight: 700; color: #f57c00;">${counts.medium}</div>
+                        <div style="font-size: 0.8em; color: #f57c00; text-transform: uppercase;">Medium</div>
+                    </div>` : ''}
+                    ${counts.low > 0 ? `<div style="flex: 1; text-align: center; padding: 12px; border-radius: 8px; background: rgba(56,142,60,0.08); border: 1px solid rgba(56,142,60,0.2);">
+                        <div style="font-size: 1.5em; font-weight: 700; color: #388e3c;">${counts.low}</div>
+                        <div style="font-size: 0.8em; color: #388e3c; text-transform: uppercase;">Low</div>
+                    </div>` : ''}
+                </div>
+
+                <!-- By guideline -->
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 8px;">By Guideline</div>
+                    ${guidelineRows}
+                </div>
+
+                <!-- Action buttons -->
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <button id="dashboard-review-all" class="summary-analyse-btn" style="display: flex;">
+                        <span class="btn-icon">📝</span>
+                        <span class="btn-text">Review All (${allSuggestions.length})</span>
+                    </button>
+                    ${counts.high > 0 ? `<button id="dashboard-review-high" class="nav-btn warning" style="padding: 8px 16px;">
+                        Review High Only (${counts.high})
+                    </button>` : ''}
+                    <button id="dashboard-dismiss" class="nav-btn secondary" style="padding: 8px 16px;">Dismiss</button>
+                </div>
+            </div>
+        `;
+
+        // Wire up buttons
+        container.querySelector('#dashboard-review-all')?.addEventListener('click', () => {
+            container.innerHTML = '';
+            resolve({ action: 'review', suggestions: allSuggestions });
+        });
+
+        container.querySelector('#dashboard-review-high')?.addEventListener('click', () => {
+            container.innerHTML = '';
+            resolve({ action: 'review', suggestions: highOnly });
+        });
+
+        container.querySelector('#dashboard-dismiss')?.addEventListener('click', () => {
+            container.innerHTML = '';
+            resolve({ action: 'dismiss', suggestions: [] });
+        });
+    });
+}
+
 // ---- Analysis Functions ----
 
 export async function checkAgainstGuidelines(suppressHeader = false) {
@@ -716,16 +814,45 @@ export async function runParallelAnalysis(guidelines) {
             return (priorityScore[pB] || 0) - (priorityScore[pA] || 0);
         });
 
-        // 2. Initialize Suggestion Wizard
-        // Note: we need to pass the window functions if they are not imported
-        // But some are available in this module's imports (getUserInputContent, setUserInputContent)
-        // determineInsertionPoint and insertTextAtPoint are expected to be on window
-        initializeSuggestionWizard(finalOutputContainer, sortedSuggestions, {
-            getUserInputContent: getUserInputContent,
-            setUserInputContent: setUserInputContent,
-            determineInsertionPoint: window.determineInsertionPoint,
-            insertTextAtPoint: window.insertTextAtPoint
-        });
+        // 2. Show Summary Dashboard and wait for user choice
+        const userChoice = await showSummaryDashboard(finalOutputContainer, sortedSuggestions, successfulResults);
+
+        if (userChoice.action === 'dismiss') {
+            finalOutputContainer.innerHTML = '<div class="alert alert-info">Suggestions dismissed.</div>';
+        } else if (userChoice.action === 'review') {
+            // 3. Initialize Suggestion Wizard in the floating panel
+            const wizardPanel = document.getElementById('wizardPanel');
+            const wizardContent = document.getElementById('wizardPanelContent');
+            const useFloating = wizardPanel && wizardContent && window.innerWidth >= 900;
+
+            if (useFloating) {
+                // Show floating wizard panel, shrink editor
+                wizardPanel.style.display = 'flex';
+                document.getElementById('editorWizardRow')?.classList.add('wizard-active');
+                finalOutputContainer.innerHTML = '';
+
+                initializeSuggestionWizard(wizardContent, userChoice.suggestions, {
+                    getUserInputContent: getUserInputContent,
+                    setUserInputContent: setUserInputContent,
+                    determineInsertionPoint: window.determineInsertionPoint,
+                    insertTextAtPoint: window.insertTextAtPoint,
+                    onComplete: () => {
+                        // Close floating panel
+                        wizardPanel.style.display = 'none';
+                        wizardContent.innerHTML = '';
+                        document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
+                    }
+                });
+            } else {
+                // Fallback: render wizard in summary section (stacked layout)
+                initializeSuggestionWizard(finalOutputContainer, userChoice.suggestions, {
+                    getUserInputContent: getUserInputContent,
+                    setUserInputContent: setUserInputContent,
+                    determineInsertionPoint: window.determineInsertionPoint,
+                    insertTextAtPoint: window.insertTextAtPoint
+                });
+            }
+        }
     }
 
     // Clear parallel analysis flag

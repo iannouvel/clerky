@@ -497,18 +497,26 @@
                     <!-- Chatbot-style single column layout -->
                     <div id="chatbotLayout" class="chatbot-layout">
                         <!-- Clinical Note Input Section -->
-                        <div class="chatbot-input-section">
-                            <!-- Floating buttons in top right of input area -->
-                            <div class="floating-input-buttons floating-input-buttons-top">
-                                <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
-                                <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
-                                <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting"
-                                    style="display: none;">✓</button>
-                                <button id="recordBtn" class="nav-btn record-btn" title="Record">
-                                    <span id="recordSymbol" class="record-symbol"></span>
-                                </button>
+                        <!-- Editor + Floating Wizard Row -->
+                        <div id="editorWizardRow" class="editor-wizard-row">
+                            <div class="chatbot-input-section">
+                                <!-- Floating buttons in top right of input area -->
+                                <div class="floating-input-buttons floating-input-buttons-top">
+                                    <button id="undoBtn" class="nav-btn icon-btn" title="Undo" disabled>↶</button>
+                                    <button id="redoBtn" class="nav-btn icon-btn" title="Redo" disabled>↷</button>
+                                    <button id="clearFormattingBtn" class="nav-btn icon-btn" title="Clear Highlighting"
+                                        style="display: none;">✓</button>
+                                    <button id="recordBtn" class="nav-btn record-btn" title="Record">
+                                        <span id="recordSymbol" class="record-symbol"></span>
+                                    </button>
+                                </div>
+                                <div id="userInput" class="expandable-input tiptap-editor"></div>
                             </div>
-                            <div id="userInput" class="expandable-input tiptap-editor"></div>
+
+                            <!-- Floating Wizard Panel (hidden by default, shown during suggestion review) -->
+                            <div id="wizardPanel" class="wizard-panel" style="display: none;">
+                                <div id="wizardPanelContent"></div>
+                            </div>
                         </div>
 
                         <!-- Summary Section (shown only when it has content) -->
@@ -528,10 +536,15 @@
 
                 <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
                 <div id="fixedButtonRow" class="fixed-button-row">
-                    <button id="analyseBtn" class="summary-analyse-btn" title="Analyse">
-                        <span id="analyseSpinner" class="spinner-icon" style="display: none;">⟳</span>
-                        <span class="btn-icon">🔍</span>
-                        <span class="btn-text">Analyse</span>
+                    <button id="checkCompletenessBtn" class="summary-analyse-btn" title="Check Completeness" style="display: none;">
+                        <span class="spinner-icon" style="display: none;">⟳</span>
+                        <span class="btn-icon">📋</span>
+                        <span class="btn-text">Check Completeness</span>
+                    </button>
+                    <button id="checkGuidelinesBtn2" class="summary-analyse-btn" title="Check Against Guidelines" style="display: none;">
+                        <span class="spinner-icon" style="display: none;">⟳</span>
+                        <span class="btn-icon">📚</span>
+                        <span class="btn-text">Check Against Guidelines</span>
                     </button>
 
                     <!-- Server Status Message (two independent channels, both visible when parallel work is running) -->

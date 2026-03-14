@@ -421,6 +421,99 @@ export function updateChatbotButtonVisibility() {
 }
 
 /**
+ * Show an insertion preview in the TipTap editor — a green dashed preview of text
+ * that would be inserted at a specific position. Used by the floating wizard to
+ * let the user "see" the proposed change before accepting.
+ *
+ * @param {string} text - The text to preview
+ * @param {string} anchorText - Existing text near the insertion point (used to locate position)
+ * @param {'after'|'before'} position - Insert after or before the anchor text
+ * @returns {boolean} - True if preview was shown
+ */
+export function showInsertionPreview(text, anchorText, position = 'after') {
+    clearInsertionPreview(); // only one preview at a time
+
+    const editor = window.editors?.userInput;
+    if (!editor || !text) return false;
+
+    try {
+        const editorElement = document.getElementById('userInput');
+        const proseMirror = editorElement?.querySelector('.ProseMirror');
+        if (!proseMirror) return false;
+
+        // Find the anchor text in the editor DOM
+        const content = editor.getText();
+        const anchorIndex = anchorText
+            ? content.toLowerCase().indexOf(anchorText.toLowerCase())
+            : -1;
+
+        // Create the preview element
+        const previewEl = document.createElement('div');
+        previewEl.className = 'insertion-preview';
+        previewEl.id = 'wizardInsertionPreview';
+        previewEl.textContent = text;
+        previewEl.setAttribute('contenteditable', 'false');
+
+        if (anchorIndex !== -1 && anchorText) {
+            // Walk text nodes to find the DOM node containing the anchor
+            const walker = document.createTreeWalker(proseMirror, NodeFilter.SHOW_TEXT, null, false);
+            let node, charCount = 0, targetNode = null, targetOffset = 0;
+
+            while ((node = walker.nextNode())) {
+                const nodeLen = node.textContent.length;
+                if (charCount + nodeLen > anchorIndex) {
+                    targetNode = node;
+                    targetOffset = anchorIndex - charCount;
+                    break;
+                }
+                charCount += nodeLen;
+            }
+
+            if (targetNode) {
+                // Find the closest block-level parent (p, div, etc.)
+                let block = targetNode.parentElement;
+                while (block && block !== proseMirror && !['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'BLOCKQUOTE'].includes(block.tagName)) {
+                    block = block.parentElement;
+                }
+
+                if (block && block !== proseMirror) {
+                    if (position === 'after') {
+                        block.parentNode.insertBefore(previewEl, block.nextSibling);
+                    } else {
+                        block.parentNode.insertBefore(previewEl, block);
+                    }
+
+                    // Scroll preview into view
+                    previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    console.log('[PREVIEW] Insertion preview shown near anchor:', anchorText?.substring(0, 40));
+                    return true;
+                }
+            }
+        }
+
+        // Fallback: append preview at the end of the editor
+        proseMirror.appendChild(previewEl);
+        previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        console.log('[PREVIEW] Insertion preview shown at end (anchor not found)');
+        return true;
+    } catch (error) {
+        console.error('[PREVIEW] Error showing insertion preview:', error);
+        return false;
+    }
+}
+
+/**
+ * Remove any insertion preview from the editor
+ */
+export function clearInsertionPreview() {
+    const existing = document.getElementById('wizardInsertionPreview');
+    if (existing) {
+        existing.remove();
+        console.log('[PREVIEW] Insertion preview cleared');
+    }
+}
+
+/**
  * Helper to apply color to replacing text
  * @param {string} text - Original text
  * @param {Array} replacements - Array of replacement objects or strings

@@ -2846,41 +2846,27 @@ function removeTransientMessages() {
 // ==================== ANALYSE BUTTON PROGRESS INDICATOR ====================
 
 function updateAnalyseButtonProgress(stepText = null, isActive = false) {
-    const analyseBtn = document.getElementById('analyseBtn');
-    const analyseSpinner = document.getElementById('analyseSpinner');
-    const btnIcon = analyseBtn?.querySelector('.btn-icon');
-    const btnText = analyseBtn?.querySelector('.btn-text');
+    // Try legacy button first, then fall back to guidelines button
+    const analyseBtn = document.getElementById('analyseBtn') || document.getElementById('checkGuidelinesBtn2');
+    if (!analyseBtn) return;
 
-    if (!analyseBtn) {
-        console.warn('[PROGRESS] Analyse button not found');
-        return;
-    }
-
-    console.log('[PROGRESS] Updating analyse button:', { stepText, isActive });
+    const analyseSpinner = analyseBtn.querySelector('.spinner-icon');
+    const btnIcon = analyseBtn.querySelector('.btn-icon');
+    const btnText = analyseBtn.querySelector('.btn-text');
 
     if (isActive && stepText) {
-        // Show progress with spinner
         if (analyseSpinner) analyseSpinner.style.display = 'inline-block';
         if (btnIcon) btnIcon.style.display = 'none';
         if (btnText) btnText.textContent = stepText;
         analyseBtn.disabled = true;
     } else if (stepText) {
-        // Show completion message briefly, then reset
         if (analyseSpinner) analyseSpinner.style.display = 'none';
         if (btnIcon) btnIcon.style.display = 'inline';
         if (btnText) btnText.textContent = stepText;
         analyseBtn.disabled = false;
-
-        // Reset after 2 seconds
-        setTimeout(() => {
-            if (btnIcon) btnIcon.style.display = 'inline';
-            if (btnText) btnText.textContent = 'Analyse';
-        }, 2000);
     } else {
-        // Reset to default state
         if (analyseSpinner) analyseSpinner.style.display = 'none';
         if (btnIcon) btnIcon.style.display = 'inline';
-        if (btnText) btnText.textContent = 'Analyse';
         analyseBtn.disabled = false;
     }
 }
@@ -5445,142 +5431,154 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Add click handler for process workflow button
-    // Add click handler for analyse button
-    const analyseBtn = document.getElementById('analyseBtn');
-    const analyseSpinner = document.getElementById('analyseSpinner');
-    if (analyseSpinner) {
-        // Ensure spinner is hidden on initialization
-        analyseSpinner.style.display = 'none';
-    }
+    // Split buttons: Check Completeness + Check Against Guidelines
+    const checkCompletenessBtn = document.getElementById('checkCompletenessBtn');
+    const checkGuidelinesBtn2 = document.getElementById('checkGuidelinesBtn2');
 
     // Global abort controller for cancelling analysis
     window.analysisAbortController = null;
     window.isAnalysisRunning = false;
 
-    // Helper function to transform button to "Stop" mode
-    function transformToStopButton() {
-        if (!analyseBtn) return;
-        const btnIcon = analyseBtn.querySelector('.btn-icon');
-        const btnText = analyseBtn.querySelector('.btn-text');
-        if (btnIcon) btnIcon.textContent = '⏹';
-        if (btnText) btnText.textContent = 'Stop';
-        analyseBtn.classList.add('stop-mode');
+    // Helper: hide both split buttons during analysis
+    function hideSplitButtons() {
+        if (checkCompletenessBtn) checkCompletenessBtn.style.display = 'none';
+        if (checkGuidelinesBtn2) checkGuidelinesBtn2.style.display = 'none';
         window.isAnalysisRunning = true;
     }
 
-    // Helper function to restore button to "Analyse" mode
-    function restoreAnalyseButton() {
-        if (!analyseBtn) return;
-        const btnIcon = analyseBtn.querySelector('.btn-icon');
-        const btnText = analyseBtn.querySelector('.btn-text');
-        if (btnIcon) btnIcon.textContent = '🔍';
-        if (btnText) btnText.textContent = 'Analyse';
-        analyseBtn.classList.remove('stop-mode');
+    // Helper: restore split buttons after analysis
+    function restoreSplitButtons() {
         window.isAnalysisRunning = false;
-        if (analyseSpinner) analyseSpinner.style.display = 'none';
-        // Keep button hidden after analysis completes
-        analyseBtn.style.display = 'none';
+        // Buttons will be shown/hidden by updateAnalyseAndResetButtons based on content
+        const editor = window.editors?.userInput;
+        const hasContent = editor ? editor.getText().trim().length > 0 : false;
+        if (typeof updateAnalyseAndResetButtons === 'function') {
+            updateAnalyseAndResetButtons(hasContent);
+        }
     }
 
-    if (analyseBtn) {
-        // Prevent duplicate event listeners
-        if (analyseBtn.dataset.listenerAttached === 'true') {
-            console.log('[DEBUG] Analyse button listener already attached, skipping');
-        } else {
-            console.log('[DEBUG] Attaching analyse button listener');
-            analyseBtn.dataset.listenerAttached = 'true';
+    // --- Check Completeness button (Phase 1 only) ---
+    if (checkCompletenessBtn && !checkCompletenessBtn.dataset.listenerAttached) {
+        checkCompletenessBtn.dataset.listenerAttached = 'true';
+        checkCompletenessBtn.addEventListener('click', async () => {
+            if (window.workflowInProgress) return;
 
-            analyseBtn.addEventListener('click', async () => {
-                // Check if we're in stop mode
-                if (window.isAnalysisRunning && window.analysisAbortController) {
-                    console.log('[DEBUG] Stop button clicked - cancelling analysis');
+            const editor = window.editors?.userInput;
+            if (!editor || !editor.getText().trim()) {
+                alert('Please enter some text first.');
+                return;
+            }
+
+            // Detect if question
+            const btnIcon = checkCompletenessBtn.querySelector('.btn-icon');
+            const btnText = checkCompletenessBtn.querySelector('.btn-text');
+            if (btnIcon) btnIcon.textContent = '⏳';
+            if (btnText) btnText.textContent = 'Detecting...';
+            checkCompletenessBtn.disabled = true;
+
+            const isQuestion = await detectInputType(editor.getText().trim());
+            if (isQuestion) {
+                if (btnIcon) btnIcon.textContent = '📋';
+                if (btnText) btnText.textContent = 'Check Completeness';
+                checkCompletenessBtn.disabled = false;
+                window.selectedMode = 'ask-guidelines';
+                await askGuidelinesQuestion();
+                return;
+            }
+
+            // Run Phase 1 only
+            window.workflowInProgress = true;
+            window.analysisAbortController = new AbortController();
+            hideSplitButtons();
+
+            try {
+                await runPhase1CompletenessCheck();
+                updateUser('Completeness check finished. Click "Check Against Guidelines" to continue.', false);
+            } catch (error) {
+                if (error.name !== 'AbortError') {
+                    console.error('[COMPLETENESS] Error:', error);
+                    updateUser('Completeness check failed: ' + error.message, false);
+                }
+            } finally {
+                window.workflowInProgress = false;
+                window.analysisAbortController = null;
+                restoreSplitButtons();
+                if (btnIcon) btnIcon.textContent = '📋';
+                if (btnText) btnText.textContent = 'Check Completeness';
+                checkCompletenessBtn.disabled = false;
+            }
+        });
+    }
+
+    // --- Check Against Guidelines button (Phase 2 only) ---
+    if (checkGuidelinesBtn2 && !checkGuidelinesBtn2.dataset.listenerAttached) {
+        checkGuidelinesBtn2.dataset.listenerAttached = 'true';
+        checkGuidelinesBtn2.addEventListener('click', async () => {
+            if (window.workflowInProgress) return;
+
+            const editor = window.editors?.userInput;
+            if (!editor || !editor.getText().trim()) {
+                alert('Please enter some text first.');
+                return;
+            }
+
+            // Detect if question
+            const btnIcon = checkGuidelinesBtn2.querySelector('.btn-icon');
+            const btnText = checkGuidelinesBtn2.querySelector('.btn-text');
+            if (btnIcon) btnIcon.textContent = '⏳';
+            if (btnText) btnText.textContent = 'Detecting...';
+            checkGuidelinesBtn2.disabled = true;
+
+            const isQuestion = await detectInputType(editor.getText().trim());
+            if (isQuestion) {
+                if (btnIcon) btnIcon.textContent = '📚';
+                if (btnText) btnText.textContent = 'Check Against Guidelines';
+                checkGuidelinesBtn2.disabled = false;
+                window.selectedMode = 'ask-guidelines';
+                await askGuidelinesQuestion();
+                return;
+            }
+
+            // Run Phase 2: scope → find guidelines → checkpoint → analyse → summary → wizard
+            window.workflowInProgress = true;
+            window.analysisAbortController = new AbortController();
+            hideSplitButtons();
+
+            if (btnIcon) btnIcon.textContent = '⏹';
+            if (btnText) btnText.textContent = 'Stop';
+            checkGuidelinesBtn2.disabled = false;
+            checkGuidelinesBtn2.style.display = 'flex';
+            checkGuidelinesBtn2.classList.add('stop-mode');
+
+            // Allow the stop button to cancel
+            const stopHandler = () => {
+                if (window.analysisAbortController) {
                     window.analysisAbortController.abort();
-                    window.analysisAbortController = null;
-                    restoreAnalyseButton();
-
-                    // Show cancellation message via status bar
-                    const cancelMessage = 'Analysis cancelled by user.';
-                    updateUser(cancelMessage, false);
-                    hideSummaryLoading();
-                    // Keep button hidden after cancellation
-                    if (analyseBtn) analyseBtn.style.display = 'none';
-                    return;
+                    updateUser('Analysis cancelled.', false);
                 }
+            };
+            checkGuidelinesBtn2.addEventListener('click', stopHandler, { once: true });
 
-                // Check if workflow is already in progress
-                if (window.workflowInProgress) {
-                    console.log('[DEBUG] Analyse button clicked but workflow already in progress, ignoring');
-                    return;
+            try {
+                window.selectedMode = 'guideline-suggestions';
+                await processGuidelinesWorkflow();
+            } catch (error) {
+                if (error.name !== 'AbortError' && error.message !== 'Analysis cancelled') {
+                    console.error('[GUIDELINES] Error:', error);
+                    updateUser('Guideline analysis failed: ' + error.message, false);
                 }
-
-                // Get user input text
-                const editor = window.editors?.userInput;
-                if (!editor) {
-                    alert('Editor not available. Please try again.');
-                    return;
-                }
-
-                const inputText = editor.getHTML();
-                const plainText = editor.getText().trim();
-
-                if (!plainText) {
-                    alert('Please enter some text to analyse.');
-                    return;
-                }
-
-                // Show loading state
-                const btnIcon = analyseBtn.querySelector('.btn-icon');
-                const btnText = analyseBtn.querySelector('.btn-text');
-                if (btnIcon) btnIcon.textContent = '⏳';
-                if (btnText) btnText.textContent = 'Detecting...';
-                analyseBtn.disabled = true;
-
-                // Detect if input is a question or clinical note using LLM
-                const isQuestion = await detectInputType(plainText);
-                console.log('[DEBUG] Analyse button clicked, detected type:', isQuestion ? 'question' : 'clinical note');
-
-                // Restore button state
-                if (btnIcon) btnIcon.textContent = '🔍';
-                if (btnText) btnText.textContent = 'Analyse';
-                analyseBtn.disabled = false;
-
-                // Create new abort controller for this analysis
-                window.analysisAbortController = new AbortController();
-                transformToStopButton();
-
-                // Hide the analyse button once analysis starts
-                window.analyseButtonUsed = true;
-                if (analyseBtn) {
-                    analyseBtn.style.display = 'none';
-                }
-
-                try {
-                    // Route to appropriate function based on detected type
-                    if (isQuestion) {
-                        // Set mode for ask-guidelines workflow
-                        window.selectedMode = 'ask-guidelines';
-                        await askGuidelinesQuestion();
-                    } else {
-                        // Set mode for guideline-suggestions (dynamic advice) workflow
-                        window.selectedMode = 'guideline-suggestions';
-                        await processWorkflow();
-                    }
-                } catch (error) {
-                    // Check if error is due to abort
-                    if (error.name === 'AbortError' || window.analysisAbortController?.signal.aborted) {
-                        console.log('[DEBUG] Analysis was aborted');
-                        return;
-                    }
-                    throw error;
-                } finally {
-                    // Only restore if not already aborted
-                    if (!window.analysisAbortController?.signal.aborted) {
-                        restoreAnalyseButton();
-                    }
-                    window.analysisAbortController = null;
-                }
-            });
-        }
+            } finally {
+                checkGuidelinesBtn2.removeEventListener('click', stopHandler);
+                checkGuidelinesBtn2.classList.remove('stop-mode');
+                window.workflowInProgress = false;
+                window.analysisAbortController = null;
+                restoreSplitButtons();
+                if (btnIcon) btnIcon.textContent = '📚';
+                if (btnText) btnText.textContent = 'Check Against Guidelines';
+                checkGuidelinesBtn2.disabled = false;
+                hideSummaryLoading();
+            }
+        });
     }
 
     // Add click handler for make advice dynamic button
@@ -7675,6 +7673,177 @@ async function runPhase1CompletenessCheck() {
         console.warn('[COMPLETENESS] Phase 1 failed, skipping:', e.message);
         // Never block Phase 2
     }
+}
+
+// Phase 2 standalone: scope → find guidelines → checkpoint selection → analyse → summary dashboard → wizard
+async function processGuidelinesWorkflow() {
+    console.log('[DEBUG] processGuidelinesWorkflow started');
+
+    try {
+        const transcript = getUserInputContent();
+        if (!transcript?.trim()) {
+            alert('Please enter some text first');
+            return;
+        }
+
+        // Step 1: Scope selection (reuse persisted or show modal)
+        updateUser('Checking guideline scope...', true);
+        let scopeSelection;
+        const savedScopeSelection = await loadGuidelineScopeSelection();
+
+        if (savedScopeSelection) {
+            if (savedScopeSelection.scope === 'local' || savedScopeSelection.scope === 'both') {
+                try {
+                    const response = await fetch(`${window.SERVER_URL}/getUserHospitalTrust`, {
+                        method: 'GET',
+                        headers: { 'Authorization': `Bearer ${await auth.currentUser.getIdToken()}` }
+                    });
+                    const result = await response.json();
+                    if (result.success && result.hospitalTrust) {
+                        scopeSelection = { scope: savedScopeSelection.scope, hospitalTrust: result.hospitalTrust };
+                    } else {
+                        scopeSelection = await showGuidelineScopeModal();
+                    }
+                } catch {
+                    scopeSelection = await showGuidelineScopeModal();
+                }
+            } else {
+                scopeSelection = savedScopeSelection;
+            }
+        } else {
+            updateUser('Select which guidelines to apply...', true);
+            scopeSelection = await showGuidelineScopeModal();
+        }
+        window.selectedGuidelineScope = scopeSelection;
+
+        if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+
+        // Step 2: Find relevant guidelines
+        updateUser('Searching for relevant guidelines...', true);
+        await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
+
+        if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+
+        if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
+            throw new Error('No relevant guidelines were found.');
+        }
+
+        // Step 3: Guideline Selection Checkpoint
+        const selectedGuidelines = await showGuidelineSelectionCheckpoint(window.relevantGuidelines);
+
+        if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+
+        if (!selectedGuidelines || selectedGuidelines.length === 0) {
+            updateUser('No guidelines selected. Analysis cancelled.', false);
+            return;
+        }
+
+        // Step 4: Run parallel analysis (will show summary dashboard internally)
+        updateUser(`Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}...`, true);
+        await runParallelAnalysis(selectedGuidelines);
+
+        console.log('[DEBUG] processGuidelinesWorkflow completed');
+    } catch (error) {
+        if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
+            console.log('[DEBUG] processGuidelinesWorkflow: cancelled');
+            return;
+        }
+        console.error('[DEBUG] processGuidelinesWorkflow failed:', error);
+        updateUser('Guideline analysis failed: ' + error.message, false);
+    }
+}
+
+// Guideline Selection Checkpoint: show interactive guideline list with checkboxes
+function showGuidelineSelectionCheckpoint(guidelines) {
+    return new Promise((resolve) => {
+        const summary1 = document.getElementById('summary1');
+        const summarySection = document.getElementById('summarySection');
+        if (summarySection) summarySection.classList.remove('hidden');
+        if (!summary1) { resolve(guidelines); return; }
+
+        // Clear existing content
+        summary1.innerHTML = '';
+
+        const container = document.createElement('div');
+        container.className = 'guideline-selection-checkpoint';
+        container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding: 20px;';
+
+        // Count pre-selected (score >= 0.6)
+        const preSelected = guidelines.filter(g => (g.relevance || 0) >= 0.6);
+
+        let html = `
+            <div style="margin-bottom: 15px;">
+                <h3 style="margin: 0 0 8px 0; color: var(--text-primary); font-size: 1.2em;">Select Guidelines to Analyse</h3>
+                <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
+                    Found ${guidelines.length} relevant guidelines. ${preSelected.length} pre-selected based on relevance.
+                    Uncheck any you want to skip, or check additional ones.
+                </p>
+            </div>
+            <div class="checkpoint-guidelines-list" style="border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); margin-bottom: 15px;">
+        `;
+
+        guidelines.forEach((g, i) => {
+            const score = g.relevance || 0;
+            const pct = Math.round(score * 100);
+            const isChecked = score >= 0.6 ? 'checked' : '';
+            const guidelineData = window.globalGuidelines?.[g.id];
+            const displayTitle = typeof getCleanDisplayTitle === 'function'
+                ? getCleanDisplayTitle(g, guidelineData)
+                : (g.title || g.id);
+            const org = g.organisation || guidelineData?.organisation || '';
+            const orgDisplay = org ? ` <span style="color: var(--text-tertiary); font-size: 0.85em;">(${typeof abbreviateOrganization === 'function' ? abbreviateOrganization(org) : org})</span>` : '';
+            const scoreColor = score >= 0.8 ? '#4caf50' : score >= 0.6 ? '#ff9800' : '#999';
+
+            html += `
+                <div style="border-bottom: 1px solid var(--border-color); padding: 10px 15px; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" class="checkpoint-cb" data-idx="${i}" ${isChecked}
+                        style="width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;">
+                    <div style="flex: 1; min-width: 0;">
+                        <span style="font-weight: 500; color: var(--text-primary);">${displayTitle}</span>${orgDisplay}
+                    </div>
+                    <span style="flex-shrink: 0; font-size: 0.85em; font-weight: 600; color: ${scoreColor};">${pct}%</span>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+
+        // Count initially selected
+        const initialCount = preSelected.length;
+        html += `
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button id="checkpoint-analyse-btn" class="summary-analyse-btn" style="display: flex;">
+                    <span class="btn-icon">📚</span>
+                    <span class="btn-text">Analyse Selected (${initialCount})</span>
+                </button>
+                <button id="checkpoint-cancel-btn" class="nav-btn secondary" style="padding: 8px 16px;">Cancel</button>
+            </div>
+        `;
+
+        container.innerHTML = html;
+        summary1.appendChild(container);
+
+        // Update count on checkbox changes
+        container.addEventListener('change', () => {
+            const checked = container.querySelectorAll('.checkpoint-cb:checked');
+            const btn = container.querySelector('#checkpoint-analyse-btn .btn-text');
+            if (btn) btn.textContent = `Analyse Selected (${checked.length})`;
+        });
+
+        // Analyse button
+        container.querySelector('#checkpoint-analyse-btn').addEventListener('click', () => {
+            const checked = Array.from(container.querySelectorAll('.checkpoint-cb:checked'));
+            const selected = checked.map(cb => guidelines[parseInt(cb.dataset.idx)]);
+            container.remove();
+            resolve(selected);
+        });
+
+        // Cancel button
+        container.querySelector('#checkpoint-cancel-btn').addEventListener('click', () => {
+            container.remove();
+            resolve([]);
+        });
+    });
 }
 
 async function processWorkflow() {
