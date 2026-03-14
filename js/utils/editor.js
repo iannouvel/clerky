@@ -203,7 +203,10 @@ export function setUserInputContent(content, isProgrammatic = false, changeType 
     const editor = window.editors?.userInput;
 
     if (!editor || !editor.commands) {
-        console.error('[PROGRAMMATIC] TipTap editor not ready');
+        console.warn('[PROGRAMMATIC] TipTap editor not ready — queuing content until tiptapReady');
+        window.addEventListener('tiptapReady', () => {
+            setUserInputContent(content, isProgrammatic, changeType, replacements, isHtml);
+        }, { once: true });
         return;
     }
 
