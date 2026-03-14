@@ -1115,13 +1115,14 @@
 
     <!-- TipTap Editor - Load from CDN -->
     <script type="module">
-        // Import TipTap from CDN (esm.sh ensures single shared dependency graph)
-        import { Editor } from 'https://esm.sh/@tiptap/core@2.1.13';
-        import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.1.13';
-        import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13';
-        import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13';
-        import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13';
-        import Link from 'https://esm.sh/@tiptap/extension-link@2.1.13';
+        // Import TipTap from CDN — ?bundle forces esm.sh to inline all sub-dependencies
+        // (avoids "Uncaught SyntaxError" from individual sub-dependency fetches like schema-list)
+        import { Editor } from 'https://esm.sh/@tiptap/core@2.1.13?bundle';
+        import StarterKit from 'https://esm.sh/@tiptap/starter-kit@2.1.13?bundle&deps=@tiptap/core@2.1.13';
+        import Placeholder from 'https://esm.sh/@tiptap/extension-placeholder@2.1.13?bundle&deps=@tiptap/core@2.1.13';
+        import TextStyle from 'https://esm.sh/@tiptap/extension-text-style@2.1.13?bundle&deps=@tiptap/core@2.1.13';
+        import Color from 'https://esm.sh/@tiptap/extension-color@2.1.13?bundle&deps=@tiptap/core@2.1.13,@tiptap/extension-text-style@2.1.13';
+        import Link from 'https://esm.sh/@tiptap/extension-link@2.1.13?bundle&deps=@tiptap/core@2.1.13';
 
         // Extend TipTap's Link extension to preserve our data-link-data attribute
         const GuidelineLink = Link.extend({
