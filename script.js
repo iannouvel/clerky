@@ -7766,20 +7766,24 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 
         const container = document.createElement('div');
         container.className = 'guideline-selection-checkpoint';
-        container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding: 20px;';
+        container.style.cssText = 'display: flex; flex-direction: column; max-height: calc(100vh - 250px); padding: 20px;';
 
         // Count pre-selected (score >= 0.6)
         const preSelected = guidelines.filter(g => (g.relevance || 0) >= 0.6);
 
         let html = `
-            <div style="margin-bottom: 15px;">
-                <h3 style="margin: 0 0 8px 0; color: var(--text-primary); font-size: 1.2em;">Select Guidelines to Analyse</h3>
-                <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">
+            <div style="flex-shrink: 0; margin-bottom: 12px;">
+                <h3 style="margin: 0 0 6px 0; color: var(--text-primary); font-size: 1.2em;">Select Guidelines to Analyse</h3>
+                <p style="margin: 0 0 10px 0; color: var(--text-secondary); font-size: 0.9em;">
                     Found ${guidelines.length} relevant guidelines. ${preSelected.length} pre-selected based on relevance.
                     Uncheck any you want to skip, or check additional ones.
                 </p>
+                <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9em; color: var(--text-secondary); user-select: none;">
+                    <input type="checkbox" id="checkpoint-select-all" style="width: 16px; height: 16px; cursor: pointer;">
+                    Select all
+                </label>
             </div>
-            <div class="checkpoint-guidelines-list" style="border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary); margin-bottom: 15px;">
+            <div class="checkpoint-guidelines-list" style="flex: 1; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary);">
         `;
 
         guidelines.forEach((g, i) => {
@@ -7808,10 +7812,10 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 
         html += `</div>`;
 
-        // Count initially selected
+        // Action buttons — outside the scrollable list so always visible
         const initialCount = preSelected.length;
         html += `
-            <div style="display: flex; gap: 10px; align-items: center;">
+            <div style="flex-shrink: 0; padding-top: 15px; display: flex; gap: 10px; align-items: center;">
                 <button id="checkpoint-analyse-btn" class="summary-analyse-btn" style="display: flex;">
                     <span class="btn-icon">📚</span>
                     <span class="btn-text">Analyse Selected (${initialCount})</span>
@@ -7823,11 +7827,28 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         container.innerHTML = html;
         summary1.appendChild(container);
 
-        // Update count on checkbox changes
-        container.addEventListener('change', () => {
+        const updateCount = () => {
             const checked = container.querySelectorAll('.checkpoint-cb:checked');
             const btn = container.querySelector('#checkpoint-analyse-btn .btn-text');
             if (btn) btn.textContent = `Analyse Selected (${checked.length})`;
+            // Sync select-all checkbox state
+            const selectAll = container.querySelector('#checkpoint-select-all');
+            if (selectAll) {
+                const total = container.querySelectorAll('.checkpoint-cb').length;
+                selectAll.checked = checked.length === total;
+                selectAll.indeterminate = checked.length > 0 && checked.length < total;
+            }
+        };
+
+        // Update count on individual checkbox changes
+        container.addEventListener('change', (e) => {
+            if (e.target.classList.contains('checkpoint-cb')) updateCount();
+        });
+
+        // Select All toggle
+        container.querySelector('#checkpoint-select-all').addEventListener('change', (e) => {
+            container.querySelectorAll('.checkpoint-cb').forEach(cb => { cb.checked = e.target.checked; });
+            updateCount();
         });
 
         // Analyse button
@@ -7843,6 +7864,9 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             container.remove();
             resolve([]);
         });
+
+        // Initialise select-all state to reflect pre-selection
+        updateCount();
     });
 }
 
