@@ -7646,27 +7646,48 @@ async function runPhase1CompletenessCheck() {
 
         updateUser(`Phase 1 complete: ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review and add any relevant details before guideline analysis begins.`, false);
 
-        // Show wizard and await user completing/skipping all suggestions
+        // Show wizard using the floating panel (same as guideline suggestions)
         return new Promise((resolve) => {
-            const summary1 = document.getElementById('summary1');
-            const summarySection = document.getElementById('summarySection');
-            if (summarySection) summarySection.classList.remove('hidden');
+            const wizardPanel = document.getElementById('wizardPanel');
+            const wizardContent = document.getElementById('wizardPanelContent');
+            const useFloating = wizardPanel && wizardContent && window.innerWidth >= 900;
 
-            const container = document.createElement('div');
-            container.id = `completeness-wizard-${Date.now()}`;
-            container.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;';
-            if (summary1) summary1.appendChild(container);
+            const closeWizard = () => {
+                if (useFloating) {
+                    wizardPanel.style.display = 'none';
+                    wizardContent.innerHTML = '';
+                    document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
+                } else if (fallbackContainer) {
+                    fallbackContainer.remove();
+                }
+                resolve();
+            };
 
-            initializeSuggestionWizard(container, suggestions, {
+            let fallbackContainer = null;
+            let targetContainer;
+
+            if (useFloating) {
+                wizardPanel.style.display = 'flex';
+                document.getElementById('editorWizardRow')?.classList.add('wizard-active');
+                wizardContent.innerHTML = '';
+                targetContainer = wizardContent;
+            } else {
+                const summary1 = document.getElementById('summary1');
+                const summarySection = document.getElementById('summarySection');
+                if (summarySection) summarySection.classList.remove('hidden');
+                fallbackContainer = document.createElement('div');
+                fallbackContainer.style.cssText = 'max-height: calc(100vh - 250px); overflow-y: auto;';
+                if (summary1) summary1.appendChild(fallbackContainer);
+                targetContainer = fallbackContainer;
+            }
+
+            initializeSuggestionWizard(targetContainer, suggestions, {
                 getUserInputContent,
                 setUserInputContent,
                 determineInsertionPoint: window.determineInsertionPoint,
                 insertTextAtPoint: window.insertTextAtPoint,
-                phaseLabel: 'Missing Information',
-                onComplete: () => {
-                    container.remove();
-                    resolve();
-                }
+                phaseLabel: 'Identify Missing Information',
+                onComplete: closeWizard
             });
         });
     } catch (e) {

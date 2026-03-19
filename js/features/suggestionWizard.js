@@ -1,4 +1,4 @@
-import { scrollTextIntoView, flashBoldInEditor, showInsertionPreview, clearInsertionPreview } from '../utils/editor.js';
+import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview } from '../utils/editor.js';
 
 /**
  * Opens the PDF for a guideline in a new tab.
@@ -137,9 +137,6 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     }
 
-    // Detect if we're inside the floating wizard panel (narrow mode)
-    const isFloatingPanel = container.id === 'wizardPanelContent' || container.closest?.('.wizard-panel') !== null;
-
     // Define Renderer
     const renderCurrentSuggestion = () => {
         const state = window.suggestionWizardState;
@@ -151,24 +148,22 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Check for completion
         if (state.currentIndex >= state.total) {
-            if (onComplete) {
-                container.innerHTML = `
-                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
-                        <h3 style="color: var(--text-primary);">Missing Information Review Complete</h3>
-                        <p style="color: var(--text-secondary);">Loading management recommendations...</p>
+            container.innerHTML = `
+                <div class="sw-wrap">
+                  <div class="sw-header">
+                    <div class="sw-header-top">
+                      <span class="sw-title">AI Suggestions</span>
+                      <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
                     </div>
-                `;
-                setTimeout(() => onComplete(), 800);
-            } else {
-                container.innerHTML = `
-                    <div class="suggestions-complete" style="text-align: center; padding: 30px;">
-                        <span style="font-size: 3em; display: block; margin-bottom: 20px;">🎉</span>
-                        <h3 style="color: var(--text-primary);">Review Complete</h3>
-                        <p style="color: var(--text-secondary);">You have reviewed all ${state.total} suggestions.</p>
-                        <button class="btn btn-primary" onclick="window.closeSuggestionWizard('${container.id}')" style="margin-top: 20px;">Close Review</button>
-                    </div>
-                `;
-            }
+                  </div>
+                  <div class="sw-body" style="text-align:center; padding:30px;">
+                    <div style="font-size:2.5em; margin-bottom:16px;">&#x2713;</div>
+                    <h3 style="color:var(--text-primary); margin:0 0 8px 0;">Review Complete</h3>
+                    <p style="color:var(--text-secondary); margin:0;">All ${state.total} suggestion${state.total === 1 ? '' : 's'} reviewed.</p>
+                  </div>
+                </div>
+            `;
+            setTimeout(() => window._wizardClose(), 800);
             return;
         }
 
@@ -182,32 +177,26 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || '';
         const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
-        const contextText = suggestion.evidence || ''; // For focusing
+        const contextText = suggestion.evidence || '';
         const dataTypeOptions = suggestion.data_type_and_options || null;
 
-        // Formatting
         const escapedText = suggestionText.replace(/"/g, '&quot;');
         const uniqueId = `suggestion-wizard-${Date.now()}`;
 
-        // Priority Styling
+        // Priority styling
         const priority = (suggestion.type || suggestion.priority || 'info').toLowerCase();
-        let priorityColor = 'var(--text-secondary)';
-        let priorityLabel = 'Suggestion';
+        let priorityColor = '#43a047';
+        let priorityLabel = 'Low Priority';
 
         if (priority === 'critical' || priority === 'high') {
-            priorityColor = '#d32f2f'; // Softer Red (Material Design Red 700)
-            priorityLabel = 'High Priority Suggestion';
+            priorityColor = '#e53935';
+            priorityLabel = 'High Priority';
         } else if (priority === 'medium' || priority === 'important') {
-            priorityColor = '#f57c00'; // Darker Orange (Material Design Orange 700)
-            priorityLabel = 'Medium Priority Suggestion';
-        } else {
-            priorityColor = '#388e3c'; // Darker Green (Material Design Green 700)
-            priorityLabel = 'Low Priority Suggestion';
+            priorityColor = '#fb8c00';
+            priorityLabel = 'Medium Priority';
         }
 
-        const labelColor = 'var(--text-primary)';
-
-        // Source badge for merged first-pass + guideline findings
+        // Source badge
         const mergeSource = suggestion._source || null;
         let sourceBadgeHtml = '';
         if (mergeSource) {
@@ -218,197 +207,93 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             };
             const badge = badgeColors[mergeSource] || badgeColors['guideline_only'];
             const elementLabel = suggestion._element === 'management' ? 'Management' : 'Assessment';
-            sourceBadgeHtml = `<span style="display: inline-block; font-size: 0.7em; padding: 2px 8px; border-radius: 10px; background: ${badge.bg}; border: 1px solid ${badge.border}; color: ${badge.text}; margin-left: 8px; vertical-align: middle;">${badge.label}</span><span style="display: inline-block; font-size: 0.7em; padding: 2px 8px; border-radius: 10px; background: var(--bg-tertiary); border: 1px solid var(--border-color); color: var(--text-secondary); margin-left: 4px; vertical-align: middle;">${elementLabel}</span>`;
+            sourceBadgeHtml = `<span style="display:inline-block; font-size:0.7em; padding:2px 8px; border-radius:10px; background:${badge.bg}; border:1px solid ${badge.border}; color:${badge.text}; margin-left:8px; vertical-align:middle;">${badge.label}</span><span style="display:inline-block; font-size:0.7em; padding:2px 8px; border-radius:10px; background:var(--bg-tertiary); border:1px solid var(--border-color); color:var(--text-secondary); margin-left:4px; vertical-align:middle;">${elementLabel}</span>`;
         }
 
-        // Calculate Counts for Header
-        let highCount = 0, medCount = 0, lowCount = 0;
-        state.queue.forEach(s => {
-            const p = (s.type || s.priority || 'info').toLowerCase();
-            if (p === 'critical' || p === 'high') highCount++;
-            else if (p === 'medium' || p === 'important') medCount++;
-            else lowCount++;
-        });
+        // Source link
+        const sourceLinkHtml = sourceGuidelineId
+            ? `<div class="sw-source-link">Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" title="Open guideline PDF">${sourceName}</a></div>`
+            : '';
 
-        // Build Header HTML
-        let summaryParts = [];
-        if (highCount > 0) summaryParts.push(`${highCount} high`);
-        if (medCount > 0) summaryParts.push(`${medCount} medium`);
-        if (lowCount > 0) summaryParts.push(`${lowCount} low`);
+        // Verbatim quote block
+        const quoteHtml = verbatimQuote
+            ? `<div class="sw-quote">&ldquo;${verbatimQuote}&rdquo;</div>`
+            : '';
 
-        const summaryString = `${phaseLabel || 'Clinical Suggestions'}: ${summaryParts.join(', ')} priority`;
+        // Structured input section
+        const inputSectionHtml = dataTypeOptions
+            ? `<div class="sw-input-section">
+                <div class="sw-input-label">Enter the missing information:</div>
+                ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
+              </div>`
+            : '';
 
-        // Build Upcoming List HTML (Text Only)
-        let upcomingHtml = '';
-        const upcomingSuggestions = state.queue.slice(state.currentIndex + 1);
-        if (upcomingSuggestions.length > 0) {
-            upcomingHtml += `<div class="upcoming-suggestions" style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 15px;">`;
+        const sectionLabel = dataTypeOptions ? 'Missing Information:' : 'Suggestion:';
+        const acceptLabel = dataTypeOptions ? 'Add to Note &#x2713;' : 'Insert &#x2713;';
+        const backDisabled = state.currentIndex === 0 ? 'disabled' : '';
+        const phaseLabelText = (phaseLabel || 'AI Suggestions').toUpperCase();
 
-            // Group by simple priority for display
-            const upcomingHigh = upcomingSuggestions.filter(s => ['critical', 'high'].includes((s.type || s.priority || '').toLowerCase()));
-            const upcomingMed = upcomingSuggestions.filter(s => ['medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
-            const upcomingLow = upcomingSuggestions.filter(s => !['critical', 'high', 'medium', 'important'].includes((s.type || s.priority || '').toLowerCase()));
-
-            const renderGroup = (title, items, color) => {
-                if (items.length === 0) return '';
-
-                // Show only first 3 items
-                const displayItems = items.slice(0, 3);
-                const hasMore = items.length > 3;
-
-                let html = `<div style="margin-bottom: 15px;">
-                    <div style="font-size: 0.8em; font-weight: 600; color: white; text-transform: uppercase; margin-bottom: 5px;">${items.length} ${title}</div>`;
-                displayItems.forEach(item => {
-                    const text = item.suggestion || item.recommendation || item.name || item.issue || item.text || item.action || item.what || item.title || item.description || item.content || item.advice || '';
-                    if (text) {
-                        html += `<div style="font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; padding-left: 10px; border-left: 2px solid ${color}; opacity: 0.7;">${text}</div>`;
-                    }
-                });
-                if (hasMore) {
-                    html += `<div style="font-size: 0.85em; color: var(--text-tertiary); margin-top: 6px; padding-left: 10px; font-style: italic;">...and ${items.length - 3} more</div>`;
-                }
-                html += `</div>`;
-                return html;
-            };
-
-            upcomingHtml += renderGroup('Upcoming High Priority Suggestions', upcomingHigh, '#d32f2f');
-            upcomingHtml += renderGroup('Upcoming Medium Priority Suggestions', upcomingMed, '#f57c00');
-            upcomingHtml += renderGroup('Upcoming Low Priority Suggestions', upcomingLow, '#388e3c');
-
-            upcomingHtml += `</div>`;
-        }
-
-        // Floating panel: compact single-column; Default: two-column layout
-        const bodyPadding = isFloatingPanel ? '12px' : '20px';
-        const fontSize = isFloatingPanel ? '0.95em' : '1.1em';
-        const headerFontSize = isFloatingPanel ? '0.95em' : '1.1em';
-
-        const cardHtml = `
-            <div class="suggestion-wizard-card" id="${uniqueId}" style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-
-                <!-- Header with Progress -->
-                <div class="wizard-header" style="background: rgba(0,0,0,0.03); padding: ${isFloatingPanel ? '8px 12px' : '10px 15px'}; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 4px;">
-                    <span style="font-size: 0.85em; font-weight: 600; color: ${labelColor}; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid ${priorityColor}; padding-bottom: 2px;">
-                        ${priorityLabel}
-                    </span>${sourceBadgeHtml}
-                    <span style="font-size: 0.85em; color: var(--text-secondary);">
-                        ${currentNumber} of ${total}
-                    </span>
+        container.innerHTML = `
+            <div class="sw-wrap">
+              <div class="sw-header">
+                <div class="sw-header-top">
+                  <span class="sw-title">AI Suggestions</span>
+                  <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
                 </div>
-
-                <!-- Main Content -->
-                <div class="wizard-body" style="padding: ${bodyPadding};">
-
-                    <!-- Suggestion Box (The Change) -->
-                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'};">
-                        <div class="text-content" data-raw-suggestion="${escapedText}" style="font-size: ${fontSize}; font-weight: 500; color: var(--text-primary); line-height: 1.4;">
-                            <span style="font-size: 0.7em; text-transform: uppercase; color: var(--text-secondary); font-weight: 600;">${dataTypeOptions ? 'Missing Information:' : 'Suggested Action:'}</span> ${suggestionText}
-                        </div>
-                    </div>
-
-                    <!-- Reasoning Box -->
-                    <div style="margin-bottom: ${verbatimQuote ? '10px' : (isFloatingPanel ? '12px' : '20px')}; background: rgba(0,0,0,0.02); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid var(--accent-color);">
-                        <div style="font-size: ${isFloatingPanel ? '0.85em' : '0.95em'}; color: var(--text-secondary);">
-                            <span style="font-size: 0.8em; text-transform: uppercase; font-weight: 600;">Why:</span> ${suggestionReasoning}
-                        </div>
-                        ${sourceGuidelineId ? `<div style="margin-top: 8px; font-size: 0.8em; color: var(--text-tertiary); text-align: left;">
-                            Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" style="color: var(--accent-color); text-decoration: none;" title="Open guideline PDF">${sourceName}</a>
-                        </div>` : ''}
-                    </div>
-
-                    ${verbatimQuote ? `
-                    <!-- Verbatim Guideline Quote -->
-                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'}; background: rgba(0,0,0,0.02); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid #888;">
-                        <div style="font-size: 0.8em; text-transform: uppercase; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">Guideline Quote:</div>
-                        <div style="font-size: ${isFloatingPanel ? '0.82em' : '0.9em'}; color: var(--text-secondary); font-style: italic; line-height: 1.5;">"${verbatimQuote}"</div>
-                    </div>` : ''}
-
-                    ${dataTypeOptions ? `
-                    <!-- Structured input for Phase 1 missing information -->
-                    <div style="margin-bottom: ${isFloatingPanel ? '12px' : '20px'}; background: rgba(0,184,148,0.06); padding: ${isFloatingPanel ? '8px' : '12px'}; border-radius: 6px; border-left: 3px solid #00B894;">
-                        <div style="font-size: 0.78em; text-transform: uppercase; font-weight: 600; color: #00B894; margin-bottom: 8px;">Enter the missing information:</div>
-                        ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
-                    </div>` : ''}
-
-                    <!-- Editor for Modify Mode (Hidden by default) -->
-                    <div id="${uniqueId}-edit-mode" style="display: none; margin-bottom: 15px;">
-                        <label style="display: block; font-size: 0.75em; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 5px;">Edit Suggestion</label>
-                        <textarea id="${uniqueId}-editor" class="form-control" style="width: 100%; min-height: 80px; padding: 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-input); color: var(--text-primary); font-family: inherit;">${suggestionText}</textarea>
-                        <div style="display: flex; gap: 10px; margin-top: 10px;">
-                            <button class="btn-sm btn-success" onclick="saveWizardModification('${uniqueId}')">Save & Update</button>
-                            <button class="btn-sm btn-secondary" onclick="cancelWizardModification('${uniqueId}')">Cancel</button>
-                        </div>
-                    </div>
-
+                <div class="sw-phase-bar">
+                  <span class="sw-phase-text">${phaseLabelText}</span>
+                  <span class="sw-count">${currentNumber} / ${total}</span>
                 </div>
-
-                <!-- Action Bar -->
-                <div id="${uniqueId}-actions" class="wizard-actions" style="padding: ${isFloatingPanel ? '10px' : '15px'}; border-top: 1px solid var(--border-color); display: flex; gap: ${isFloatingPanel ? '6px' : '10px'}; flex-wrap: wrap; justify-content: flex-start; background: var(--bg-secondary);">
-                    <button class="wizard-suggestion-btn" onclick="prevWizardSuggestion()" ${state.currentIndex === 0 ? 'disabled' : ''}>
-                        ⬅ Back
-                    </button>
-                    <button class="wizard-suggestion-btn" onclick="enableWizardModify('${uniqueId}')">
-                        ✏️ Modify
-                    </button>
-                    <button class="wizard-suggestion-btn" onclick="skipWizardSuggestion()">
-                        Skip ⏭
-                    </button>
-                    <button class="wizard-suggestion-btn" onclick="rejectWizardSuggestion('${uniqueId}')">
-                        Reject ❌
-                    </button>
-                    <button class="wizard-suggestion-btn" onclick="acceptWizardSuggestion('${uniqueId}', this)">
-                        <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">⟳</span>${dataTypeOptions ? 'Add to Note ✅' : 'Accept &amp; Next ✅'}
-                    </button>
+              </div>
+              <div class="sw-body">
+                <div class="sw-priority" style="color:${priorityColor};">${priorityLabel}${sourceBadgeHtml}</div>
+                <div class="sw-section">
+                  <div class="sw-section-label">${sectionLabel}</div>
+                  <div class="sw-section-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
                 </div>
-
-            </div>`;
-
-        if (isFloatingPanel) {
-            // Single-column compact layout for floating panel
-            container.innerHTML = `
-                <div class="suggestion-wizard-container" style="width: 100%;">
-                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 10px; font-weight: 500; color: var(--text-primary); font-size: ${headerFontSize};">
-                        ${summaryString}
-                    </div>
-                    ${cardHtml}
-                    ${upcomingHtml ? `<div style="margin-top: 12px;">${upcomingHtml}</div>` : ''}
+                <div class="sw-why-box">
+                  <span class="sw-why-label">WHY:</span> ${suggestionReasoning}
+                  ${sourceLinkHtml}
                 </div>
-            `;
-        } else {
-            // Full two-column layout for inline/stacked display
-            container.innerHTML = `
-                <div class="suggestion-wizard-container" style="width: 100%; margin: 0 auto;">
-                    <div class="wizard-summary-header" style="text-align: left; margin-bottom: 15px; font-weight: 500; color: var(--text-primary); font-size: ${headerFontSize};">
-                        ${summaryString}
-                    </div>
-                    <div class="wizard-columns" style="display: flex; gap: 20px; align-items: flex-start;">
-                        <div class="wizard-left-column" style="flex: 2; min-width: 0;">
-                            ${cardHtml}
-                        </div>
-                        <div class="wizard-right-column" style="flex: 1; min-width: 0; max-width: 34%;">
-                            ${upcomingHtml || '<div style="color: var(--text-secondary); font-style: italic;">No more upcoming suggestions.</div>'}
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+                ${quoteHtml}
+                ${inputSectionHtml}
+              </div>
+              <div class="sw-footer" id="${uniqueId}-actions">
+                <button class="sw-btn" onclick="prevWizardSuggestion()" ${backDisabled}>&#x25C4; Back</button>
+                <button class="sw-btn" onclick="skipWizardSuggestion()">Skip</button>
+                <button class="sw-btn" onclick="rejectWizardSuggestion()">Reject</button>
+                <button class="sw-btn sw-btn-insert" onclick="acceptWizardSuggestion('${uniqueId}', this)">
+                  <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>
+                  ${acceptLabel}
+                </button>
+              </div>
+            </div>
+        `;
 
-        // Auto-focus logic + inline preview in editor
-        if (isFloatingPanel && typeof showInsertionPreview === 'function') {
+        // Show insertion preview in editor
+        if (typeof showInsertionPreview === 'function') {
             setTimeout(() => {
-                // Show a green preview in the editor where this suggestion would be inserted
-                const previewText = suggestionText;
-                const anchor = contextText || suggestion.evidence || suggestion.target_section || '';
-                showInsertionPreview(previewText, anchor, 'after');
+                const anchor = contextText || suggestion.target_section || '';
+                showInsertionPreview(suggestionText, anchor, 'after');
             }, 200);
-        } else if (contextText && typeof scrollTextIntoView === 'function') {
-            setTimeout(() => {
-                scrollTextIntoView(contextText);
-            }, 100);
         }
     };
 
-    // Attach Global Handlers
+    // _wizardClose: clears preview, empties container, hides panel, calls onComplete
+    window._wizardClose = function () {
+        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
+        container.innerHTML = '';
+        const wizardPanel = document.getElementById('wizardPanel');
+        if (wizardPanel) {
+            wizardPanel.style.display = 'none';
+            document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
+        }
+        if (onComplete) onComplete();
+    };
+
+    // Backwards compat
+    window.closeSuggestionWizard = () => window._wizardClose();
+
     window.nextWizardSuggestion = function () {
         window.suggestionWizardState.currentIndex++;
         renderCurrentSuggestion();
@@ -421,11 +306,18 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     };
 
+    window.skipWizardSuggestion = function () {
+        window.nextWizardSuggestion();
+    };
+
+    window.rejectWizardSuggestion = function () {
+        window.nextWizardSuggestion();
+    };
+
     window.acceptWizardSuggestion = async function (id, btn) {
         const card = document.getElementById(id);
-        const textEl = card.querySelector('.text-content');
+        const textEl = card ? card.querySelector('.sw-text-content') : null;
 
-        const editorEl = document.getElementById(`${id}-editor`);
         const structuredInputEl = document.getElementById(`${id}-structured-input`);
         let textToInsert = '';
 
@@ -466,12 +358,10 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
 
         if (!textToInsert) {
-            if (editorEl && editorEl.value && editorEl.value.trim()) {
-                textToInsert = editorEl.value.trim();
-            } else if (textEl && textEl.dataset.rawSuggestion) {
-                textToInsert = textEl.dataset.rawSuggestion;
+            if (textEl && textEl.dataset.raw) {
+                textToInsert = textEl.dataset.raw;
             } else if (textEl) {
-                textToInsert = textEl.textContent.replace(/^\s*Suggested Action:\s*/i, '').trim();
+                textToInsert = textEl.textContent.trim();
             }
         }
 
@@ -485,7 +375,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             return;
         }
 
-        // Show spinner on button and status message in fixedButtonRow
+        // Show spinner on button
         if (btn) {
             btn.disabled = true;
             const spinner = btn.querySelector('.wizard-accept-spinner');
@@ -537,68 +427,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const spinner = btn.querySelector('.wizard-accept-spinner');
                 if (spinner) spinner.style.display = 'none';
             }
-            // statusMsg removed — spinner on the button is sufficient feedback
         }
     };
-
-    window.rejectWizardSuggestion = function (id) {
-        window.nextWizardSuggestion();
-    };
-
-    window.skipWizardSuggestion = function () {
-        window.nextWizardSuggestion();
-    };
-
-    window.enableWizardModify = function (id) {
-        const editMode = document.getElementById(`${id}-edit-mode`);
-        const actions = document.getElementById(`${id}-actions`);
-
-        if (editMode && actions) {
-            editMode.style.display = 'block';
-            actions.style.display = 'none';
-        }
-    };
-
-    window.saveWizardModification = function (id) {
-        const editor = document.getElementById(`${id}-editor`);
-        const display = document.querySelector(`#${id} .text-content`);
-        const editMode = document.getElementById(`${id}-edit-mode`);
-        const actions = document.getElementById(`${id}-actions`);
-
-        if (editor && display) {
-            const modifiedText = editor.value.trim();
-            display.textContent = modifiedText;
-            display.dataset.rawSuggestion = modifiedText;
-
-            editMode.style.display = 'none';
-            actions.style.display = 'flex';
-        }
-    };
-
-    window.cancelWizardModification = function (id) {
-        const editMode = document.getElementById(`${id}-edit-mode`);
-        const actions = document.getElementById(`${id}-actions`);
-
-        if (editMode && actions) {
-            editMode.style.display = 'none';
-            actions.style.display = 'flex';
-        }
-    };
-
-    window.closeSuggestionWizard = function (containerId) {
-        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
-        // Find the container, or use the one we have
-        const c = document.getElementById(containerId) || container;
-        if (c) {
-            c.innerHTML = '';
-        }
-        // Close floating panel if active
-        const wizardPanel = document.getElementById('wizardPanel');
-        if (wizardPanel) {
-            wizardPanel.style.display = 'none';
-            document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
-        }
-    }
 
     // Initial render
     renderCurrentSuggestion();

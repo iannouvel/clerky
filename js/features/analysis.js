@@ -836,6 +836,7 @@ export async function runParallelAnalysis(guidelines) {
                     setUserInputContent: setUserInputContent,
                     determineInsertionPoint: window.determineInsertionPoint,
                     insertTextAtPoint: window.insertTextAtPoint,
+                    phaseLabel: 'Guideline Suggestions',
                     onComplete: () => {
                         // Close floating panel
                         wizardPanel.style.display = 'none';
@@ -849,7 +850,8 @@ export async function runParallelAnalysis(guidelines) {
                     getUserInputContent: getUserInputContent,
                     setUserInputContent: setUserInputContent,
                     determineInsertionPoint: window.determineInsertionPoint,
-                    insertTextAtPoint: window.insertTextAtPoint
+                    insertTextAtPoint: window.insertTextAtPoint,
+                    phaseLabel: 'Guideline Suggestions'
                 });
             }
         }
