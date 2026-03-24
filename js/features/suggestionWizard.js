@@ -107,12 +107,23 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const fields = (dto.fields || []).map((f, i) => {
                     const fid = `${id}-compound-${i}`;
                     const escapedFieldLabel = f.label.replace(/"/g, '&quot;');
+                    const unitsLower = (f.units || '').toLowerCase();
+                    const labelLower = (f.label || '').toLowerCase();
+                    const isDateField = unitsLower.includes('date') || labelLower === 'date';
+                    const isGestationField = unitsLower.includes('gestation') || unitsLower.includes('weeks') || labelLower.includes('gestation');
                     const inputEl = Array.isArray(f.options) && f.options.length > 0
                         ? `<select id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
                                style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:1em; cursor:pointer;">
                                <option value="">— select —</option>
                                ${f.options.map(o => `<option value="${o.replace(/"/g,'&quot;')}">${o}</option>`).join('')}
                            </select>`
+                        : isDateField
+                        ? `<input type="date" id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
+                               style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:1em;">`
+                        : isGestationField
+                        ? `<input type="text" id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
+                               placeholder="e.g. 28+3"
+                               style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:120px; font-size:1em;">`
                         : `<input type="number" step="any" id="${fid}" class="${id}-compound-field" data-label="${escapedFieldLabel}"
                                placeholder="Enter value…"
                                style="padding:6px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); width:120px; font-size:1em;">
