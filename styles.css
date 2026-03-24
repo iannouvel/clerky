@@ -3354,6 +3354,7 @@ body {
     overflow: hidden;
     max-height: calc(100vh - 200px);
     animation: wizardSlideIn 0.3s ease;
+    order: 2;
 }
 
 @keyframes wizardSlideIn {
