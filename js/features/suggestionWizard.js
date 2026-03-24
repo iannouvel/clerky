@@ -390,25 +390,45 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             const currentContent = getUserInputContent();
 
             const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
-            const suggestionForInsertion = {
-                suggestedText: textToInsert,
-                category: 'addition',
-                targetSection: currentSuggestion?.target_section || null
-            };
 
+            // Try replace_pattern (explicit from AI) or fuzzy-match missing_info as a standalone line
+            const replacePattern = currentSuggestion?.replace_pattern;
+            const missingInfo = currentSuggestion?.missing_info || '';
             let newContent;
-            try {
-                const updatedNote = await determineInsertionPoint(suggestionForInsertion, currentContent);
-                if (updatedNote) {
-                    newContent = updatedNote;
-                    console.log('[WIZARD] AI inserted suggestion directly into note');
+
+            if (replacePattern && currentContent.includes(replacePattern)) {
+                // AI identified an exact placeholder line — replace it in-place
+                newContent = currentContent.replace(replacePattern, textToInsert);
+                console.log('[WIZARD] Replaced placeholder line in-place:', replacePattern);
+            } else {
+                // Fuzzy fallback: check if missing_info appears as a standalone line (case-insensitive)
+                const lines = currentContent.split('\n');
+                const matchIdx = lines.findIndex(line => line.trim().toLowerCase() === missingInfo.trim().toLowerCase());
+                if (matchIdx !== -1) {
+                    lines[matchIdx] = textToInsert;
+                    newContent = lines.join('\n');
+                    console.log('[WIZARD] Fuzzy-replaced standalone line matching missing_info:', missingInfo);
                 } else {
-                    throw new Error('No updated note returned');
+                    // Normal AI-guided insertion
+                    const suggestionForInsertion = {
+                        suggestedText: textToInsert,
+                        category: 'addition',
+                        targetSection: currentSuggestion?.target_section || null
+                    };
+                    try {
+                        const updatedNote = await determineInsertionPoint(suggestionForInsertion, currentContent);
+                        if (updatedNote) {
+                            newContent = updatedNote;
+                            console.log('[WIZARD] AI inserted suggestion directly into note');
+                        } else {
+                            throw new Error('No updated note returned');
+                        }
+                    } catch (insertError) {
+                        console.warn('[WIZARD] AI insertion failed, falling back to append:', insertError);
+                        const spacing = currentContent.endsWith('\n') ? '' : '\n';
+                        newContent = currentContent + spacing + textToInsert;
+                    }
                 }
-            } catch (insertError) {
-                console.warn('[WIZARD] AI insertion failed, falling back to append:', insertError);
-                const spacing = currentContent.endsWith('\n') ? '' : '\n';
-                newContent = currentContent + spacing + textToInsert;
             }
 
             setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
