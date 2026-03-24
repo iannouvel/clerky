@@ -19629,6 +19629,14 @@ OUTPUT RULES (STRICT)
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
 8) Limit to a maximum of 5 items — only what is genuinely absent and safety-critical.
+9) BLOOD PRESSURE: ALWAYS use compound type with two separate numeric fields — never a single
+   numeric field. Fields must be: {"label":"Systolic","units":"mmHg"} and {"label":"Diastolic","units":"mmHg"}.
+   If temporal context is also needed, add a third field: {"label":"When taken","units":"gestation (weeks) or date","optional":true}.
+10) REPLACE vs INSERT: Scan the note for placeholder lines — lines that name this missing item
+    without providing a value (e.g. a line reading exactly "Results of urine pregnancy test" or
+    "Maternal blood pressure" with no result appended). If such a line exists, set replace_pattern
+    to that exact text verbatim. The insertion logic will replace that line in-place, preventing
+    duplicate lines. Leave replace_pattern absent or null if no placeholder line exists.
 
 JSON SCHEMA (MUST MATCH)
 {
@@ -19638,6 +19646,7 @@ JSON SCHEMA (MUST MATCH)
       "missing_info": "string",
       "importance_and_management_impact": "string",
       "target_section": "string",
+      "replace_pattern": "string | null (the exact placeholder text in the note to replace in-place, if one exists)",
       "data_type_and_options": {
         "type": "numeric|binary|categorical|multi_select|free_text|compound",
         "units": "string (only if numeric)",
