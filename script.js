@@ -7796,7 +7796,7 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             <div style="flex-shrink: 0; margin-bottom: 12px;">
                 <h3 style="margin: 0 0 6px 0; color: var(--text-primary); font-size: 1.2em;">Select Guidelines to Analyse</h3>
                 <p style="margin: 0 0 10px 0; color: var(--text-secondary); font-size: 0.9em;">
-                    Found ${guidelines.length} relevant guidelines. ${preSelected.length} pre-selected based on relevance.
+                    Found ${guidelines.length} relevant guidelines.
                     Uncheck any you want to skip, or check additional ones.
                 </p>
                 <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9em; color: var(--text-secondary); user-select: none;">
@@ -7826,7 +7826,6 @@ function showGuidelineSelectionCheckpoint(guidelines) {
                     <div style="flex: 1; min-width: 0;">
                         <span style="font-weight: 500; color: var(--text-primary);">${displayTitle}</span>${orgDisplay}
                     </div>
-                    <span style="flex-shrink: 0; font-size: 0.85em; font-weight: 600; color: ${scoreColor};">${pct}%</span>
                 </div>
             `;
         });
