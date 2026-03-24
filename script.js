@@ -7610,7 +7610,7 @@ window.selectedGuidelineScope = null;
 // Comprehensive workflow processing function
 async function runPhase1CompletenessCheck() {
     try {
-        updateUser('Phase 1 of 2: Checking note completeness — identifying any missing clinical information before guideline analysis begins...', true);
+        updateUser('Reviewing note for missing clinical details before guideline analysis — suggestions to improve your note will follow shortly...', true);
         const transcript = getUserInputContent();
         if (!transcript?.trim()) return;
 
@@ -7644,7 +7644,7 @@ async function runPhase1CompletenessCheck() {
             return;
         }
 
-        updateUser(`Phase 1 complete: ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review and add any relevant details before guideline analysis begins.`, false);
+        updateUser(`${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review and add any relevant details before continuing.`, false);
 
         // Show wizard using the floating panel (same as guideline suggestions)
         return new Promise((resolve) => {
@@ -7983,7 +7983,7 @@ async function processWorkflow() {
         } else {
             // No saved selection, show modal
             console.log('[DEBUG] processWorkflow: No persisted selection, showing guideline scope selection modal');
-            updateUser('Step 1: Select which guidelines to apply...', true);
+            updateUser('Select which guidelines to apply...', true);
 
             try {
                 scopeSelection = await showGuidelineScopeModal();
@@ -8027,8 +8027,15 @@ async function processWorkflow() {
         // Phase 2: Process all relevant guidelines concurrently
         console.log('[DEBUG] processWorkflow: Running parallel analysis');
         updateAnalyseButtonProgress('Processing Guidelines Concurrently...', true);
+        const _scope = window.selectedGuidelineScope;
+        const _trustAbbr = _scope.hospitalTrust ? abbreviateOrganization(_scope.hospitalTrust) : _scope.hospitalTrust;
+        const _scopeLabel = _scope.scope === 'national'
+            ? 'national'
+            : _scope.scope === 'local'
+                ? `local (${_trustAbbr})`
+                : `national and local (${_trustAbbr})`;
         updateUser(
-            `Phase 2 of 2: Analysing note against ${window.relevantGuidelines.length} guideline${window.relevantGuidelines.length === 1 ? '' : 's'}...`,
+            `Analysing note against ${window.relevantGuidelines.length} ${_scopeLabel} guideline${window.relevantGuidelines.length === 1 ? '' : 's'} — will return with suggestions to improve compliance shortly...`,
             true
         );
         await runParallelAnalysis(window.relevantGuidelines);
