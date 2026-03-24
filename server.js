@@ -19624,21 +19624,21 @@ OUTPUT RULES (STRICT)
 
           TEMPORAL CONTEXT RULE: Clinical measurements whose interpretation depends on WHEN they
           were taken (e.g. haemoglobin, blood pressure, weight, HbA1c, renal function, urine
-          protein) MUST use compound type with an additional timing field:
-            {"label":"When taken","units":"gestation (weeks) or date","optional":true}
+          protein) MUST use compound type with TWO separate timing fields after the measurement:
+            {"label":"Gestation","units":"weeks+days (e.g. 28+3)","optional":true}
+            {"label":"Date","units":"date","optional":true}
+          Always include BOTH timing fields — the user will fill in whichever is applicable.
           This is especially important in obstetrics where the same value (e.g. Hb 9 g/dL) has
           different clinical weight depending on gestation (booking vs 28 weeks vs 34 weeks).
-          Mark the timing field as optional:true if there is genuinely only one plausible
-          timepoint for this measurement in context (e.g. a booking blood result in a note that
-          covers only the booking visit). Mark it as optional:false (or omit "optional") if
-          the timing is clinically important and the note spans multiple possible timepoints.
+          Mark both timing fields as optional:true if there is only one plausible timepoint in
+          context. Mark as optional:false if timing is clinically important and ambiguous.
 5) Order items by clinical safety criticality (highest risk/most management-changing first).
 6) Keep each field clinically specific; avoid vague phrases like "more details needed".
 7) If there are zero missing items, return an empty array for "missing_information".
 8) Limit to a maximum of 5 items — only what is genuinely absent and safety-critical.
 9) BLOOD PRESSURE: ALWAYS use compound type with two separate numeric fields — never a single
    numeric field. Fields must be: {"label":"Systolic","units":"mmHg"} and {"label":"Diastolic","units":"mmHg"}.
-   If temporal context is also needed, add a third field: {"label":"When taken","units":"gestation (weeks) or date","optional":true}.
+   If temporal context is also needed, add two further fields: {"label":"Gestation","units":"weeks+days (e.g. 28+3)","optional":true} and {"label":"Date","units":"date","optional":true}.
 10) REPLACE vs INSERT: Scan the note for placeholder lines — lines that name this missing item
     without providing a value (e.g. a line reading exactly "Results of urine pregnancy test" or
     "Maternal blood pressure" with no result appended). If such a line exists, set replace_pattern
