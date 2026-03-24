@@ -3291,16 +3291,15 @@ body {
     /* Let margins define width */
     max-width: none;
     /* Allow full width */
-    margin: 0 5px;
-    /* Small consistent margin */
+    margin: 0;
     gap: 0;
     padding-top: 8px;
     padding-bottom: 0;
+    padding-right: 10px;
     flex: 1 1 auto;
     /* Allow shrinking and growing */
     min-height: 0;
-    overflow: hidden;
-    /* Ensure layout respects fixed button row at bottom */
+    overflow: visible;
     margin-bottom: 0;
 }
 
@@ -3329,7 +3328,7 @@ body {
 }
 
 .editor-wizard-row.wizard-active {
-    gap: 10px;
+    gap: 0;
 }
 
 .editor-wizard-row .chatbot-input-section {
