@@ -137,6 +137,30 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     }
 
+    // Returns true if the suggestion is no longer needed given the current note content
+    const isSuggestionStale = (suggestion) => {
+        const noteContent = getUserInputContent() || '';
+        const replacePattern = suggestion.replace_pattern;
+        const missingInfo = (suggestion.missing_info || '').trim();
+
+        // If a replace_pattern was set and it no longer exists in the note, the placeholder
+        // was already replaced — this suggestion is done
+        if (replacePattern && !noteContent.includes(replacePattern)) {
+            return true;
+        }
+
+        // If missing_info now appears in the note as "Label: <value>" (i.e. it's been filled in),
+        // skip it
+        if (missingInfo) {
+            const escapedLabel = missingInfo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            if (new RegExp(escapedLabel + '\\s*:', 'i').test(noteContent)) {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
     // Define Renderer
     const renderCurrentSuggestion = () => {
         const state = window.suggestionWizardState;
@@ -145,6 +169,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Clear any previous insertion preview when moving between suggestions
         if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
+
+        // Auto-skip suggestions whose information is already present in the note
+        while (state.currentIndex < state.total && isSuggestionStale(state.queue[state.currentIndex])) {
+            console.log('[WIZARD] Auto-skipping stale suggestion:', state.queue[state.currentIndex].missing_info);
+            state.currentIndex++;
+        }
 
         // Check for completion
         if (state.currentIndex >= state.total) {

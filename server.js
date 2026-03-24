@@ -19637,6 +19637,11 @@ OUTPUT RULES (STRICT)
     "Maternal blood pressure" with no result appended). If such a line exists, set replace_pattern
     to that exact text verbatim. The insertion logic will replace that line in-place, preventing
     duplicate lines. Leave replace_pattern absent or null if no placeholder line exists.
+11) PREREQUISITES FIRST: If item B is a sub-component of or can only be meaningfully answered
+    after item A (e.g. "Discussion of teratogenic risks during neurologist consultation" presupposes
+    "Neurologist consultation has been arranged/completed"), item A MUST have a lower rank number
+    and appear first in the list. Never rank a sub-item above its logical prerequisite. Ask
+    "could this item exist without the previous one?" — if no, the previous one ranks first.
 
 JSON SCHEMA (MUST MATCH)
 {
