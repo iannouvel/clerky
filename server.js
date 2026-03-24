@@ -3500,11 +3500,11 @@ async function validateGuidelinesWithAI(transcript, categories, userId) {
         const meta = metaMap[g.id] || {};
         let entry = `[${g.id}] ${g.title}`;
         if (meta.targetPopulation) entry += `\nTarget population: ${meta.targetPopulation}`;
-        if (meta.summary) entry += `\nSummary: ${meta.summary.substring(0, 400)}`;
+        if (meta.summary) entry += `\nSummary: ${meta.summary.substring(0, 700)}`;
         return entry;
     }).join('\n\n');
 
-    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and candidate guidelines (with target population and summary where available), identify which guidelines are NOT applicable.
+    const prompt = `You are a clinical guideline applicability validator. Given a clinical scenario and candidate guidelines (with target population and summary where available), identify which guidelines are NOT applicable to this specific patient.
 
 CLINICAL SCENARIO:
 ${transcript.substring(0, 2000)}
@@ -3512,23 +3512,30 @@ ${transcript.substring(0, 2000)}
 CANDIDATE GUIDELINES:
 ${candidateList}
 
-Your task is to identify guidelines that are clearly from a COMPLETELY DIFFERENT clinical domain and therefore cannot provide any useful guidance for this scenario. Use the "Target population" field as the primary signal — if the patient clearly does not belong to that population, consider marking the guideline as NOT_APPLICABLE.
+TASK: Identify guidelines that should be excluded because a specific clinical fact about this patient directly contradicts the guideline's intended population or context.
 
-Only mark a guideline as NOT_APPLICABLE if it is obviously irrelevant — for example, a neonatal resuscitation guideline when the scenario is about maternal haemorrhage, or a gynaecology guideline when the scenario is about a newborn.
+TWO CATEGORIES of valid exclusion:
 
-IMPORTANT: Do NOT exclude guidelines that cover RISKS or COMPLICATIONS that may occur in this patient, even if those complications have not yet happened. For example:
-- A shoulder dystocia guideline is applicable to a patient with a macrosomic fetus planning a vaginal birth — shoulder dystocia is a known risk.
-- A PPH guideline is applicable to any labouring patient.
-- A VTE guideline is applicable to any surgical or postpartum patient.
+1. DIFFERENT CLINICAL DOMAIN — the guideline covers a completely unrelated condition with no overlap.
+   Example: a neonatal resuscitation guideline when the scenario is about maternal haemorrhage.
 
-Do NOT exclude a guideline just because it is not the primary diagnosis. If the guideline covers any condition, complication, or risk factor that is present or relevant in the scenario, it is applicable. When in doubt, keep the guideline — it is better to include a borderline guideline than to miss one that is relevant.
+2. CONTRADICTED BY CLINICAL FACTS — a specific, objective fact about this patient rules out the guideline's applicability.
+   This is the more important category. Examples:
+   - Patient is ≥37 weeks gestation → preterm labour / preterm birth guidelines do NOT apply (preterm = <37 weeks by definition).
+   - Patient has had a normal vaginal delivery → antenatal guidelines about mode of delivery do not apply.
+   - Patient is postpartum → intrapartum guidelines do not apply unless documenting a complication of delivery.
+   - Patient has no history of caesarean → "birth after caesarean" guidelines do not apply.
+   Read the summary carefully: if the summary states the guideline is specifically for a population this patient does not belong to, exclude it.
 
-CRITICAL SELF-CHECK: Before adding any guideline to NOT_APPLICABLE, re-read your reason. If your reason contains words such as "relevant", "applicable", "applies", "directly applies", "covers", or "pertains to this scenario" — you have made an error. That guideline IS applicable and must NOT appear in NOT_APPLICABLE. Only include a guideline if your reason clearly explains why it is from a completely unrelated clinical domain.
+KEEP guidelines that:
+- Cover risks or complications that COULD occur in this patient (e.g. PPH guidelines for any labouring patient).
+- Are not the primary diagnosis but cover relevant co-existing conditions.
+- Are borderline — if uncertain, keep.
 
-Use the guideline ID shown in brackets to identify each. Include a brief reason for any guideline you exclude. Respond with valid JSON only, no other text:
+Use the guideline ID shown in brackets. Respond with valid JSON only:
 {
   "NOT_APPLICABLE": [
-    {"id": "...", "reason": "brief explanation of why this guideline is from a completely different clinical domain"}
+    {"id": "...", "reason": "specific clinical fact that contradicts this guideline's applicability"}
   ]
 }
 If all guidelines are applicable, return: {"NOT_APPLICABLE": []}`;
