@@ -140,8 +140,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const prefill = (dto.suggested_content || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                 const placeholder = prefill ? '' : 'Enter details…';
                 return `<textarea id="${id}-structured-input" data-missing-info="${escapedLabel}"
-                    placeholder="${placeholder}" rows="3"
-                    style="width:100%; padding:8px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.95em; font-family:inherit; resize:vertical;">${prefill}</textarea>${notesHtml}`;
+                    placeholder="${placeholder}"
+                    style="width:100%; height:100%; min-height:80px; padding:8px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.95em; font-family:inherit; resize:none; box-sizing:border-box;">${prefill}</textarea>${notesHtml}`;
             }
         }
     }
@@ -273,28 +273,20 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         container.innerHTML = `
             <div class="sw-wrap">
               <div class="sw-header">
-                <span class="sw-title">AI Suggestions</span>
-                <span class="sw-phase-text">${phaseLabelText}</span>
+                <span class="sw-title">Suggestions</span>
                 <span class="sw-count">${currentNumber} / ${total}</span>
                 <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
               </div>
               <div class="sw-body">
-                <div class="sw-priority" style="color:${priorityColor};">${priorityLabel}${sourceBadgeHtml}</div>
-                <div class="sw-section">
-                  <span class="sw-section-label">${sectionLabel}</span>
-                  <span class="sw-section-text sw-text-content" data-raw="${escapedText}">${suggestionText}</span>
+                <div class="sw-suggestion-why">
+                  <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
+                  <div class="sw-why-sentence">${suggestionReasoning}${sourceLinkHtml}</div>
                 </div>
-                <div class="sw-why-box">
-                  <span class="sw-why-label">WHY:</span> ${suggestionReasoning}
-                  ${sourceLinkHtml}
-                </div>
-                ${quoteHtml}
                 ${inputSectionHtml}
               </div>
               <div class="sw-footer" id="${uniqueId}-actions">
                 <button class="sw-btn" onclick="prevWizardSuggestion()" ${backDisabled}>&#x25C4; Back</button>
                 <button class="sw-btn" onclick="skipWizardSuggestion()">Skip</button>
-                <button class="sw-btn" onclick="rejectWizardSuggestion()">Reject</button>
                 <button class="sw-btn sw-btn-insert" onclick="acceptWizardSuggestion('${uniqueId}', this)">
                   <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>
                   ${acceptLabel}
