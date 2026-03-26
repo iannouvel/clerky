@@ -3396,15 +3396,12 @@ body {
 
 .sw-header {
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
     border-bottom: 1px solid var(--border-color);
     background: var(--bg-secondary);
-}
-
-.sw-header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 14px 6px;
 }
 
 .sw-title {
@@ -3412,6 +3409,7 @@ body {
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: 0.2px;
+    flex-shrink: 0;
 }
 
 .sw-close-btn {
@@ -3425,18 +3423,12 @@ body {
     line-height: 1;
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .sw-close-btn:hover {
     background: var(--border-color);
     color: var(--text-primary);
-}
-
-.sw-phase-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2px 14px 10px;
 }
 
 .sw-phase-text {
@@ -3445,12 +3437,14 @@ body {
     text-transform: uppercase;
     color: var(--accent-color);
     letter-spacing: 0.6px;
+    flex-shrink: 0;
 }
 
 .sw-count {
     font-size: 0.8em;
     color: var(--text-secondary);
     font-weight: 500;
+    flex-shrink: 0;
 }
 
 .sw-body {
@@ -3470,6 +3464,10 @@ body {
 
 .sw-section {
     margin-bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 
 .sw-section-label {
@@ -3478,7 +3476,7 @@ body {
     text-transform: uppercase;
     color: var(--text-secondary);
     letter-spacing: 0.5px;
-    margin-bottom: 5px;
+    flex-shrink: 0;
 }
 
 .sw-section-text {

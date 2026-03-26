@@ -58,9 +58,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     // Render an appropriate input control for a structured missing-info item
     function renderStructuredInput(id, missingInfo, dto) {
         const escapedLabel = (missingInfo || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-        const notesHtml = dto.notes
-            ? `<div style="margin-top:5px; font-size:0.78em; color:var(--text-secondary);">${dto.notes}</div>`
-            : '';
+        const notesHtml = '';
         switch (dto.type) {
             case 'numeric':
                 return `<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
@@ -192,10 +190,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             container.innerHTML = `
                 <div class="sw-wrap">
                   <div class="sw-header">
-                    <div class="sw-header-top">
-                      <span class="sw-title">AI Suggestions</span>
-                      <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
-                    </div>
+                    <span class="sw-title">AI Suggestions</span>
+                    <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
                   </div>
                   <div class="sw-body" style="text-align:center; padding:30px;">
                     <div style="font-size:2.5em; margin-bottom:16px;">&#x2713;</div>
@@ -277,20 +273,16 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         container.innerHTML = `
             <div class="sw-wrap">
               <div class="sw-header">
-                <div class="sw-header-top">
-                  <span class="sw-title">AI Suggestions</span>
-                  <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
-                </div>
-                <div class="sw-phase-bar">
-                  <span class="sw-phase-text">${phaseLabelText}</span>
-                  <span class="sw-count">${currentNumber} / ${total}</span>
-                </div>
+                <span class="sw-title">AI Suggestions</span>
+                <span class="sw-phase-text">${phaseLabelText}</span>
+                <span class="sw-count">${currentNumber} / ${total}</span>
+                <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
               </div>
               <div class="sw-body">
                 <div class="sw-priority" style="color:${priorityColor};">${priorityLabel}${sourceBadgeHtml}</div>
                 <div class="sw-section">
-                  <div class="sw-section-label">${sectionLabel}</div>
-                  <div class="sw-section-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
+                  <span class="sw-section-label">${sectionLabel}</span>
+                  <span class="sw-section-text sw-text-content" data-raw="${escapedText}">${suggestionText}</span>
                 </div>
                 <div class="sw-why-box">
                   <span class="sw-why-label">WHY:</span> ${suggestionReasoning}
