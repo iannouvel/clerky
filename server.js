@@ -19701,6 +19701,40 @@ ${transcript.substring(0, 4000)}
     }
 });
 
+// Format clinical field data (e.g., compound measurements) into natural language
+// POST /formatClinicalData
+//   body: { fieldLabel: "Maternal blood pressure", fieldData: "Systolic: 130, Diastolic: 74, Gestation: 30" }
+//   returns: { formatted: "BP 130/74 at 30 weeks" }
+app.post('/formatClinicalData', authenticateUser, async (req, res) => {
+    const { fieldLabel, fieldData } = req.body;
+    const userId = req.user.uid;
+
+    if (!fieldLabel || !fieldData) {
+        return res.json({ formatted: '' });
+    }
+
+    const prompt = `Format this clinical measurement data into a single concise natural-language phrase suitable for a clinical note.
+Field: ${fieldLabel}
+Raw data: ${fieldData}
+
+Guidelines:
+- Use standard clinical abbreviations (e.g., "BP" for blood pressure, "Hb" for haemoglobin)
+- Express measurements with units (e.g., "130/74 mmHg" not "130 Diastolic 74")
+- Express time/gestation as "at XX weeks" or similar
+- Respond with ONLY the formatted phrase, no explanation
+
+Example: "Systolic: 130, Diastolic: 74, Gestation: 30" → "BP 130/74 at 30 weeks"`;
+
+    try {
+        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 200, 'fast');
+        const formatted = aiResponse?.content?.trim() || `${fieldLabel}: ${fieldData}`;
+        res.json({ formatted });
+    } catch (error) {
+        console.warn('[FORMAT-CLINICAL] Error formatting field:', error.message);
+        res.json({ formatted: `${fieldLabel}: ${fieldData}` });
+    }
+});
+
 // Generate targetPopulation field for one or all guidelines
 // POST /generateTargetPopulations
 //   body: {}                   → process one guideline missing targetPopulation
