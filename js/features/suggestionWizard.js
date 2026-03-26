@@ -339,6 +339,36 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         window.nextWizardSuggestion();
     };
 
+    // Helper: Format compound field data via LLM for natural language
+    async function formatCompoundFieldData(fieldLabel, parts) {
+        if (!parts || parts.length === 0) return '';
+
+        const fieldStr = parts.map(f => `${f.label}: ${f.value}`).join(', ');
+
+        try {
+            const user = window.auth?.currentUser;
+            if (!user) return `${fieldLabel}: ${fieldStr}`;
+
+            const idToken = await user.getIdToken();
+            const resp = await fetch(`${window.SERVER_URL}/formatClinicalData`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                body: JSON.stringify({ fieldLabel, fieldData: fieldStr })
+            });
+
+            if (!resp.ok) {
+                console.warn('[WIZARD] Formatting endpoint failed, using raw format');
+                return `${fieldLabel}: ${fieldStr}`;
+            }
+
+            const result = await resp.json();
+            return result.formatted || `${fieldLabel}: ${fieldStr}`;
+        } catch (err) {
+            console.warn('[WIZARD] Error formatting compound field:', err);
+            return `${fieldLabel}: ${fieldStr}`;
+        }
+    }
+
     window.acceptWizardSuggestion = async function (id, btn) {
         const card = document.getElementById(id);
         const textEl = card ? card.querySelector('.sw-text-content') : null;
@@ -368,8 +398,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                     .map(f => ({ label: f.dataset.label, value: f.value?.trim() }))
                     .filter(f => f.value);
                 if (parts.length > 0) {
-                    const joined = parts.map(f => `${f.label}: ${f.value}`).join(', ');
-                    textToInsert = label ? `${label}: ${joined}` : joined;
+                    textToInsert = await formatCompoundFieldData(label, parts);
                 }
             } else {
                 const inputValue = structuredInputEl.value?.trim();
