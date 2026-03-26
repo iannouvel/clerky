@@ -597,6 +597,11 @@
                     </div>
 
                     <!-- Global Reset button (aligned to right) -->
+                    <button id="feedbackBtn" class="summary-analyse-btn summary-feedback-btn"
+                        title="Send feedback about what just happened">
+                        <span class="btn-icon">⚑</span>
+                        <span class="btn-text">Feedback</span>
+                    </button>
                     <button id="resetBtn" class="summary-analyse-btn summary-reset-btn"
                         title="Reset transcript and summary">
                         <span class="btn-icon">↺</span>
@@ -1075,6 +1080,38 @@
             </div>
             <div class="preferences-modal-footer">
                 <button id="preferencesSaveBtn" class="preferences-save-btn">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-modal hidden" role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
+        <div class="feedback-modal-content">
+            <div class="feedback-modal-header">
+                <h2 id="feedbackModalTitle">Send Feedback</h2>
+                <button id="closeFeedbackModal" class="close-modal-btn" aria-label="Close feedback">&times;</button>
+            </div>
+            <div class="feedback-modal-body">
+                <div class="feedback-context-block">
+                    <div class="feedback-context-label">Last action</div>
+                    <div id="feedbackLastAction" class="feedback-context-value feedback-last-action"></div>
+                </div>
+                <div class="feedback-context-block">
+                    <div class="feedback-context-label">State before that action</div>
+                    <pre id="feedbackPriorState" class="feedback-context-value feedback-state-pre"></pre>
+                </div>
+                <div class="feedback-context-block">
+                    <div class="feedback-context-label">Current state</div>
+                    <pre id="feedbackCurrentState" class="feedback-context-value feedback-state-pre"></pre>
+                </div>
+                <div class="feedback-context-block">
+                    <label for="feedbackText" class="feedback-context-label">What went wrong / what did you expect?</label>
+                    <textarea id="feedbackText" class="feedback-textarea" placeholder="Describe the issue or unexpected behaviour..." rows="4"></textarea>
+                </div>
+            </div>
+            <div class="feedback-modal-footer">
+                <button id="feedbackSubmitBtn" class="feedback-submit-btn">Send Feedback</button>
+                <button id="feedbackCancelBtn" class="feedback-cancel-btn">Cancel</button>
             </div>
         </div>
     </div>
