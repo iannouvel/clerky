@@ -19672,6 +19672,9 @@ JSON SCHEMA (MUST MATCH)
   ]
 }
 
+ANONYMISATION NOTE
+The note below has had personally identifiable information (PII) redacted and replaced with placeholder tokens (e.g. [AGE], [DATE], [NAME], [HOSPITALNAME], [MEDICALRECORDNUMBER]). Treat each placeholder token as if the actual value IS present in the note — do NOT flag any item corresponding to a placeholder token as missing information.
+
 NOTE TEXT (INPUT)
 <<<
 ${transcript.substring(0, 4000)}
