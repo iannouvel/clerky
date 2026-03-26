@@ -4161,6 +4161,17 @@ body {
     animation: spin 0.8s linear infinite;
 }
 
+/* Status overlay fade-out: fully visible for first half, fades over second half */
+@keyframes statusFadeOut {
+    0%   { opacity: 1; }
+    50%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.server-status-message.status-fading {
+    animation: statusFadeOut 5s ease-in forwards;
+}
+
 /* Server status message — centred overlay on the clinical note area */
 .server-status-message {
     position: absolute;

@@ -56,16 +56,25 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
         channelEl.style.display = 'flex';
         syncContainerVisibility(containerEl);
 
-        // Auto-hide non-loading messages after 5 s (always — overlay blocks content if left visible)
+        // Auto-hide non-loading messages with a progressive fade over 5 s
         if (!isLoading) {
+            // Reset any in-progress fade, then start fresh
+            containerEl.classList.remove('status-fading');
+            void containerEl.offsetWidth; // force reflow so animation restarts
+            containerEl.classList.add('status-fading');
+
             const snapshot = channelEl.innerHTML;
             setTimeout(() => {
                 if (channelEl.innerHTML !== snapshot) return; // message changed — leave it
                 logStatusChange('AUTO-HIDING (5s timeout)', snapshot, false, channel);
+                containerEl.classList.remove('status-fading');
                 channelEl.style.display = 'none';
                 channelEl.innerHTML = '';
                 syncContainerVisibility(containerEl);
             }, 5000);
+        } else {
+            // Loading state — cancel any active fade
+            containerEl.classList.remove('status-fading');
         }
     } else {
         // Clear this channel
@@ -75,6 +84,7 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
             return;
         }
         logStatusChange('CLEARING', '', false, channel);
+        containerEl.classList.remove('status-fading');
         channelEl.style.display = 'none';
         channelEl.innerHTML = '';
         syncContainerVisibility(containerEl);
