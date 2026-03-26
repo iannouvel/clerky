@@ -7777,17 +7777,16 @@ async function processGuidelinesWorkflow() {
 // Guideline Selection Checkpoint: show interactive guideline list with checkboxes
 function showGuidelineSelectionCheckpoint(guidelines) {
     return new Promise((resolve) => {
-        const summary1 = document.getElementById('summary1');
-        const summarySection = document.getElementById('summarySection');
-        if (summarySection) summarySection.classList.remove('hidden');
-        if (!summary1) { resolve(guidelines); return; }
+        const modal = document.getElementById('guidelineCheckpointModal');
+        const modalBody = document.getElementById('guidelineCheckpointBody');
+        if (!modal || !modalBody) { resolve(guidelines); return; }
 
         // Clear existing content
-        summary1.innerHTML = '';
+        modalBody.innerHTML = '';
 
         const container = document.createElement('div');
         container.className = 'guideline-selection-checkpoint';
-        container.style.cssText = 'display: flex; flex-direction: column; max-height: calc(100vh - 250px); padding: 20px;';
+        container.style.cssText = 'display: flex; flex-direction: column; gap: 16px;';
 
         // Count pre-selected (score >= 0.6)
         const preSelected = guidelines.filter(g => (g.relevance || 0) >= 0.6);
@@ -7832,12 +7831,12 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 
         html += `</div>`;
 
-        // Action buttons — outside the scrollable list so always visible
+        // Action buttons — at bottom of modal
         const initialCount = preSelected.length;
         html += `
-            <div style="flex-shrink: 0; padding-top: 15px; display: flex; gap: 10px; align-items: center;">
+            <div style="display: flex; gap: 10px; align-items: center; flex-shrink: 0; padding-top: 10px; border-top: 1px solid var(--border-color);">
                 <button id="checkpoint-analyse-btn" class="summary-analyse-btn" style="display: flex;">
-                    <span class="btn-icon">📚</span>
+                    <span class="btn-icon">🚀</span>
                     <span class="btn-text">Analyse Selected (${initialCount})</span>
                 </button>
                 <button id="checkpoint-cancel-btn" class="nav-btn secondary" style="padding: 8px 16px;">Cancel</button>
@@ -7845,7 +7844,8 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         `;
 
         container.innerHTML = html;
-        summary1.appendChild(container);
+        modalBody.appendChild(container);
+        modal.classList.remove('hidden');
 
         const updateCount = () => {
             const checked = container.querySelectorAll('.checkpoint-cb:checked');
@@ -7875,13 +7875,13 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         container.querySelector('#checkpoint-analyse-btn').addEventListener('click', () => {
             const checked = Array.from(container.querySelectorAll('.checkpoint-cb:checked'));
             const selected = checked.map(cb => guidelines[parseInt(cb.dataset.idx)]);
-            container.remove();
+            modal.classList.add('hidden');
             resolve(selected);
         });
 
         // Cancel button
         container.querySelector('#checkpoint-cancel-btn').addEventListener('click', () => {
-            container.remove();
+            modal.classList.add('hidden');
             resolve([]);
         });
 
