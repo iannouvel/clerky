@@ -4272,12 +4272,181 @@ body {
 
 /* Reset button in the analyse bar (pushes to right edge) */
 .summary-reset-btn {
-    margin-left: auto;
     background: var(--accent-color);
 }
 
 .summary-reset-btn:hover:not(:disabled) {
     background: #00a085;
+}
+
+/* Feedback button — sits just left of reset, both pushed to the right together */
+.summary-feedback-btn {
+    margin-left: auto;
+    background: #6c757d;
+    color: #fff;
+}
+
+.summary-feedback-btn:hover:not(:disabled) {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
+}
+
+/* Feedback Modal */
+.feedback-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.feedback-modal.hidden {
+    display: none;
+}
+
+.feedback-modal-content {
+    background: var(--bg-primary, #fff);
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 640px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color, #e0e0e0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feedback-modal-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-primary, #333);
+}
+
+.feedback-modal-body {
+    padding: 16px 20px;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feedback-context-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feedback-context-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary, #666);
+}
+
+.feedback-context-value {
+    font-size: 0.8rem;
+    color: var(--text-primary, #333);
+}
+
+.feedback-last-action {
+    background: var(--bg-secondary, #f5f5f5);
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+
+.feedback-state-pre {
+    background: var(--bg-secondary, #f5f5f5);
+    border-radius: 4px;
+    padding: 8px 10px;
+    max-height: 120px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+    font-family: monospace;
+}
+
+.feedback-textarea {
+    width: 100%;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    color: var(--text-primary, #333);
+    background: var(--bg-primary, #fff);
+}
+
+.feedback-textarea:focus {
+    outline: none;
+    border-color: var(--accent-color, #00b894);
+    box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+}
+
+.feedback-modal-footer {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border-color, #e0e0e0);
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.feedback-submit-btn {
+    background: var(--accent-color, #00b894);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.feedback-submit-btn:hover:not(:disabled) {
+    background: #00a085;
+}
+
+.feedback-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.feedback-cancel-btn {
+    background: transparent;
+    color: var(--text-secondary, #666);
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.feedback-cancel-btn:hover {
+    background: var(--bg-secondary, #f5f5f5);
+}
+
+@media (prefers-color-scheme: dark) {
+    .feedback-last-action,
+    .feedback-state-pre {
+        background: rgba(255, 255, 255, 0.05);
+    }
 }
 
 /* Clerking buttons group */

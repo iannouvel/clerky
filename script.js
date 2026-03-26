@@ -2,7 +2,7 @@
 import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
-import { doc, getDoc, setDoc, collection, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { doc, getDoc, setDoc, collection, onSnapshot, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Import utility modules
 import { escapeHtml, unescapeHtml } from './js/utils/text.js';
@@ -11054,3 +11054,109 @@ function initializeSummaryAutoHeight() {
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', initializeSummaryAutoHeight);
+
+// ============================================================
+// FEEDBACK SYSTEM
+// ============================================================
+
+// Tracks the last button clicked before feedback is submitted
+let _lastInteraction = null;
+
+function _captureUIState() {
+    const views = ['threeColumnView', 'workflowsView', 'proformaView'];
+    const activeView = views.find(id => {
+        const el = document.getElementById(id);
+        return el && !el.classList.contains('hidden');
+    }) || 'unknown';
+
+    const summaryEl = document.getElementById('summary1');
+    const editorText = typeof getUserInputContent === 'function' ? getUserInputContent() : '';
+
+    return {
+        activeView,
+        editorText: (editorText || '').slice(0, 800),
+        summaryText: summaryEl ? (summaryEl.innerText || '').slice(0, 1200) : '',
+    };
+}
+
+// Intercept all button mousedowns (capture phase = fires before handlers)
+document.addEventListener('mousedown', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn || btn.id === 'feedbackBtn') return;
+    _lastInteraction = {
+        buttonId: btn.id || '(no id)',
+        buttonLabel: btn.textContent.trim().replace(/\s+/g, ' ').slice(0, 80),
+        timestamp: new Date().toISOString(),
+        stateBefore: _captureUIState()
+    };
+}, true);
+
+function openFeedbackModal() {
+    const current = _captureUIState();
+
+    const lastActionEl = document.getElementById('feedbackLastAction');
+    const priorStateEl = document.getElementById('feedbackPriorState');
+    const currentStateEl = document.getElementById('feedbackCurrentState');
+
+    if (_lastInteraction) {
+        lastActionEl.textContent = `"${_lastInteraction.buttonLabel}" (id: ${_lastInteraction.buttonId}) at ${_lastInteraction.timestamp}`;
+        priorStateEl.textContent = JSON.stringify(_lastInteraction.stateBefore, null, 2);
+    } else {
+        lastActionEl.textContent = 'No action recorded yet.';
+        priorStateEl.textContent = '{}';
+    }
+
+    currentStateEl.textContent = JSON.stringify(current, null, 2);
+    document.getElementById('feedbackText').value = '';
+    document.getElementById('feedbackModal').classList.remove('hidden');
+    document.getElementById('feedbackText').focus();
+}
+
+async function submitFeedback() {
+    const text = document.getElementById('feedbackText').value.trim();
+    const current = _captureUIState();
+
+    const payload = {
+        submittedAt: serverTimestamp(),
+        userExplanation: text || '(no explanation provided)',
+        currentState: current,
+        lastInteraction: _lastInteraction || null,
+        userEmail: (auth && auth.currentUser) ? auth.currentUser.email : 'anonymous',
+        userAgent: navigator.userAgent.slice(0, 200),
+        pageUrl: window.location.href
+    };
+
+    const submitBtn = document.getElementById('feedbackSubmitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+        await addDoc(collection(db, 'feedback'), payload);
+        document.getElementById('feedbackModal').classList.add('hidden');
+        updateUser('Feedback sent — thank you!', false);
+    } catch (err) {
+        console.error('[ERROR] Failed to submit feedback:', err);
+        updateUser('Failed to send feedback. Please try again.', false);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Feedback';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('feedbackBtn')?.addEventListener('click', openFeedbackModal);
+    document.getElementById('closeFeedbackModal')?.addEventListener('click', () => {
+        document.getElementById('feedbackModal').classList.add('hidden');
+    });
+    document.getElementById('feedbackCancelBtn')?.addEventListener('click', () => {
+        document.getElementById('feedbackModal').classList.add('hidden');
+    });
+    document.getElementById('feedbackSubmitBtn')?.addEventListener('click', submitFeedback);
+
+    // Close on backdrop click
+    document.getElementById('feedbackModal')?.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('feedbackModal')) {
+            document.getElementById('feedbackModal').classList.add('hidden');
+        }
+    });
+});
