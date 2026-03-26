@@ -532,6 +532,12 @@
                         </div>
 
                     </div>
+
+                    <!-- Server Status Message: centred overlay on the clinical note area -->
+                    <div id="serverStatusMessage" class="server-status-message" style="display: none;">
+                        <div id="statusChannel-main" class="status-channel" style="display:none;"></div>
+                        <div id="statusChannel-background" class="status-channel status-channel-background" style="display:none;"></div>
+                    </div>
                 </div>
 
                 <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
@@ -547,11 +553,6 @@
                         <span class="btn-text">Check Against Guidelines</span>
                     </button>
 
-                    <!-- Server Status Message (two independent channels, both visible when parallel work is running) -->
-                    <div id="serverStatusMessage" class="server-status-message" style="display: none;">
-                        <div id="statusChannel-main" class="status-channel" style="display:none;"></div>
-                        <div id="statusChannel-background" class="status-channel status-channel-background" style="display:none;"></div>
-                    </div>
 
                     <!-- Suggestion Actions Group (Hidden by default) -->
                     <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">
