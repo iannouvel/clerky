@@ -56,21 +56,15 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
         channelEl.style.display = 'flex';
         syncContainerVisibility(containerEl);
 
-        // Auto-hide non-loading messages after 5 s
+        // Auto-hide non-loading messages after 5 s (always — overlay blocks content if left visible)
         if (!isLoading) {
             const snapshot = channelEl.innerHTML;
             setTimeout(() => {
                 if (channelEl.innerHTML !== snapshot) return; // message changed — leave it
-                const hasOngoingWorkflows = !!(window.workflowInProgress || window.isAnalysisRunning || window.sequentialProcessingActive);
-                // Background channel always auto-hides; main channel waits for workflows to finish
-                if (channel === 'background' || !hasOngoingWorkflows) {
-                    logStatusChange('AUTO-HIDING (5s timeout)', snapshot, false, channel);
-                    channelEl.style.display = 'none';
-                    channelEl.innerHTML = '';
-                    syncContainerVisibility(containerEl);
-                } else {
-                    logStatusChange('AUTO-HIDE BLOCKED (ongoing workflow)', snapshot, false, channel);
-                }
+                logStatusChange('AUTO-HIDING (5s timeout)', snapshot, false, channel);
+                channelEl.style.display = 'none';
+                channelEl.innerHTML = '';
+                syncContainerVisibility(containerEl);
             }, 5000);
         }
     } else {
