@@ -814,46 +814,36 @@ export async function runParallelAnalysis(guidelines) {
             return (priorityScore[pB] || 0) - (priorityScore[pA] || 0);
         });
 
-        // 2. Show Summary Dashboard and wait for user choice
-        const userChoice = await showSummaryDashboard(finalOutputContainer, sortedSuggestions, successfulResults);
+        // 2. Launch Suggestion Wizard directly (all suggestions, high→medium→low)
+        const wizardPanel = document.getElementById('wizardPanel');
+        const wizardContent = document.getElementById('wizardPanelContent');
+        const useFloating = wizardPanel && wizardContent && window.innerWidth >= 900;
 
-        if (userChoice.action === 'dismiss') {
-            finalOutputContainer.innerHTML = '<div class="alert alert-info">Suggestions dismissed.</div>';
-        } else if (userChoice.action === 'review') {
-            // 3. Initialize Suggestion Wizard in the floating panel
-            const wizardPanel = document.getElementById('wizardPanel');
-            const wizardContent = document.getElementById('wizardPanelContent');
-            const useFloating = wizardPanel && wizardContent && window.innerWidth >= 900;
+        if (useFloating) {
+            wizardPanel.style.display = 'flex';
+            document.getElementById('editorWizardRow')?.classList.add('wizard-active');
+            finalOutputContainer.innerHTML = '';
 
-            if (useFloating) {
-                // Show floating wizard panel, shrink editor
-                wizardPanel.style.display = 'flex';
-                document.getElementById('editorWizardRow')?.classList.add('wizard-active');
-                finalOutputContainer.innerHTML = '';
-
-                initializeSuggestionWizard(wizardContent, userChoice.suggestions, {
-                    getUserInputContent: getUserInputContent,
-                    setUserInputContent: setUserInputContent,
-                    determineInsertionPoint: window.determineInsertionPoint,
-                    insertTextAtPoint: window.insertTextAtPoint,
-                    phaseLabel: 'Guideline Suggestions',
-                    onComplete: () => {
-                        // Close floating panel
-                        wizardPanel.style.display = 'none';
-                        wizardContent.innerHTML = '';
-                        document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
-                    }
-                });
-            } else {
-                // Fallback: render wizard in summary section (stacked layout)
-                initializeSuggestionWizard(finalOutputContainer, userChoice.suggestions, {
-                    getUserInputContent: getUserInputContent,
-                    setUserInputContent: setUserInputContent,
-                    determineInsertionPoint: window.determineInsertionPoint,
-                    insertTextAtPoint: window.insertTextAtPoint,
-                    phaseLabel: 'Guideline Suggestions'
-                });
-            }
+            initializeSuggestionWizard(wizardContent, sortedSuggestions, {
+                getUserInputContent: getUserInputContent,
+                setUserInputContent: setUserInputContent,
+                determineInsertionPoint: window.determineInsertionPoint,
+                insertTextAtPoint: window.insertTextAtPoint,
+                phaseLabel: 'Guideline Suggestions',
+                onComplete: () => {
+                    wizardPanel.style.display = 'none';
+                    wizardContent.innerHTML = '';
+                    document.getElementById('editorWizardRow')?.classList.remove('wizard-active');
+                }
+            });
+        } else {
+            initializeSuggestionWizard(finalOutputContainer, sortedSuggestions, {
+                getUserInputContent: getUserInputContent,
+                setUserInputContent: setUserInputContent,
+                determineInsertionPoint: window.determineInsertionPoint,
+                insertTextAtPoint: window.insertTextAtPoint,
+                phaseLabel: 'Guideline Suggestions'
+            });
         }
     }
 
