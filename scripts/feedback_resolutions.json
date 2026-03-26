@@ -1,0 +1,23 @@
+{
+  "GFQG0aNbKHXc4s0EWTym": {
+    "date": "2026-03-26",
+    "version": "v9.0.20",
+    "issue": "Analyse Selected button misplacement",
+    "resolution": "Fix guideline selection checkpoint modal placement - moved to overlay modal",
+    "commit": "c421fdf35"
+  },
+  "PDYmePZLMJN5Ma9ovvtS": {
+    "date": "2026-03-26",
+    "version": "v9.0.21",
+    "issue": "Compound field formatting (Systolic 130 → BP 130/74 at 30 weeks)",
+    "resolution": "Add LLM-based formatting endpoint /formatClinicalData to format clinical measurements naturally",
+    "commit": "83637d12d"
+  },
+  "shJ0PmrV9wE70rUNuYIb": {
+    "date": "2026-03-26",
+    "version": "v9.0.22",
+    "issue": "Hemorrhage risk suggestions lack clinical context (missing personnel/equipment details)",
+    "resolution": "Enhanced guideline analysis prompt to require specific personnel, equipment, and contingencies for high-risk scenarios",
+    "commit": "c370a3760"
+  }
+}

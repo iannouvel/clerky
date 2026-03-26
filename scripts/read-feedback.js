@@ -70,6 +70,14 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
+// Load feedback resolutions tracking
+let resolutions = {};
+try {
+    resolutions = require('./feedback_resolutions.json');
+} catch (_) {
+    // File doesn't exist yet or can't be read - that's ok
+}
+
 async function main() {
     const snap = await db.collection('feedback')
         .orderBy('submittedAt', 'desc')
@@ -88,11 +96,22 @@ async function main() {
     snap.forEach((docSnap) => {
         const d = docSnap.data();
         const ts = d.submittedAt ? d.submittedAt.toDate().toISOString() : 'unknown time';
+        const fbId = docSnap.id;
+        const resolution = resolutions[fbId];
 
         console.log(`${sep}`);
         console.log(`#${i + 1}  ${ts}`);
-        console.log(`ID: ${docSnap.id}`);
+        console.log(`ID: ${fbId}`);
         console.log(`User: ${d.userEmail || 'anonymous'}`);
+
+        if (resolution) {
+            console.log(`✅ STATUS: RESOLVED (${resolution.version})`);
+            console.log(`   Issue: ${resolution.issue}`);
+            console.log(`   Resolution: ${resolution.resolution}`);
+        } else {
+            console.log(`⏳ STATUS: UNRESOLVED`);
+        }
+
         console.log(`\nEXPLANATION:\n  ${d.userExplanation || '(none)'}`);
 
         if (d.lastInteraction) {
@@ -122,8 +141,12 @@ async function main() {
     });
 
     console.log(`${sep}`);
-    console.log(`\nTip: run with --full to include editor/summary content snapshots`);
-    console.log(`     run with --limit N to fetch more records\n`);
+    console.log(`\n✅ = Resolved (added to feedback_resolutions.json)`);
+    console.log(`⏳ = Unresolved (no resolution tracked yet)\n`);
+    console.log(`Tips:`);
+    console.log(`  run with --full to include editor/summary content snapshots`);
+    console.log(`  run with --limit N to fetch more records`);
+    console.log(`  edit feedback_resolutions.json to mark feedback as resolved\n`);
 }
 
 main().catch(err => {
