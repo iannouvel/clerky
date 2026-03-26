@@ -81,12 +81,13 @@ async function main() {
         return;
     }
 
+    const sep = '─'.repeat(60);
     console.log(`\n=== ${snap.size} feedback submission(s) (newest first) ===\n`);
 
-    snap.forEach((docSnap, i) => {
+    let i = 1;
+    snap.forEach((docSnap) => {
         const d = docSnap.data();
         const ts = d.submittedAt ? d.submittedAt.toDate().toISOString() : 'unknown time';
-        const sep = '─'.repeat(60);
 
         console.log(`${sep}`);
         console.log(`#${i + 1}  ${ts}`);
