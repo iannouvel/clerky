@@ -19,6 +19,9 @@ window.openGuidelinePdf = async function(guidelineId, searchText) {
     }
 };
 
+// Tracks the pending showInsertionPreview timeout so stale timeouts can be cancelled
+let _previewTimeout = null;
+
 /**
  * Initialize the suggestion wizard in the given container
  * @param {HTMLElement} container - The container element to render the wizard into
@@ -176,8 +179,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         if (!container) return;
 
-        // Clear any previous insertion preview when moving between suggestions
-        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
+        // Cancel any pending preview timeout and clear any existing preview
+        if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
+        clearInsertionPreview();
 
         // Auto-skip suggestions whose information is already present in the note
         while (state.currentIndex < state.total && isSuggestionStale(state.queue[state.currentIndex])) {
@@ -271,7 +275,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const phaseLabelText = (phaseLabel || 'AI Suggestions').toUpperCase();
 
         container.innerHTML = `
-            <div class="sw-wrap">
+            <div class="sw-wrap" id="${uniqueId}">
               <div class="sw-header">
                 <span class="sw-title">Suggestions</span>
                 <span class="sw-count">${currentNumber} / ${total}</span>
@@ -295,18 +299,19 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             </div>
         `;
 
-        // Show insertion preview in editor
-        if (typeof showInsertionPreview === 'function') {
-            setTimeout(() => {
-                const anchor = contextText || suggestion.target_section || '';
-                showInsertionPreview(suggestionText, anchor, 'after');
-            }, 200);
-        }
+        // Show insertion preview in editor (cancel any stale pending timeout first)
+        if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
+        _previewTimeout = setTimeout(() => {
+            _previewTimeout = null;
+            const anchor = contextText || suggestion.target_section || '';
+            showInsertionPreview(suggestionText, anchor, 'after');
+        }, 200);
     };
 
     // _wizardClose: clears preview, empties container, hides panel, calls onComplete
     window._wizardClose = function () {
-        if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
+        if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
+        clearInsertionPreview();
         container.innerHTML = '';
         const wizardPanel = document.getElementById('wizardPanel');
         if (wizardPanel) {
