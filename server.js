@@ -19575,7 +19575,13 @@ Extract ONLY the "missing information" items required to make a safe, guideline-
 OUTPUT RULES (STRICT)
 1) Return ONLY valid JSON. No markdown, no commentary, no extra text.
 2) The JSON MUST conform exactly to the schema below.
-3) Do NOT include any information that is already present in the note.
+3) Do NOT include any information that is already present in the note — this includes information found in ANY part of the note: headers, opening lines, section headings, or anywhere in the body. Scan the ENTIRE note before deciding something is missing.
+   CRITICAL EXAMPLES of information that must NOT be flagged as missing:
+   - If the note contains "28yo" or "28-year-old" or "[AGE]", patient age is PRESENT — do not ask for it.
+   - If the note contains "32+4" or "32 weeks" or "32+4 weeks gestation" or "[GESTATION]", gestational age is PRESENT — do not ask for it.
+   - If the note contains a blood pressure reading anywhere (e.g. "BP 120/80"), blood pressure is PRESENT.
+   - If the note contains a fetal heart rate, CTG result, USS finding, or any investigation result, it is PRESENT.
+   Patient demographics (age, gestation, gravida/para) typically appear in the first line or header. Always read the full note before generating output.
 4) Every item must include:
    - missing_info: a concise, specific label (e.g. "Pregnancy complications" → be specific: "Pregnancy complications (e.g. pre-eclampsia, GDM, obstetric cholestasis)")
    - importance_and_management_impact: why it matters + how it would change management (1–3 sentences)

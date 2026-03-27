@@ -19,5 +19,33 @@
     "issue": "Hemorrhage risk suggestions lack clinical context (missing personnel/equipment details)",
     "resolution": "Enhanced guideline analysis prompt to require specific personnel, equipment, and contingencies for high-risk scenarios",
     "commit": "c370a3760"
+  },
+  "FCaEIY34StYxbsvJdRtN": {
+    "date": "2026-03-27",
+    "version": "v9.0.23",
+    "issue": "Insertion preview appears to already be in the note before pressing Insert",
+    "resolution": "Added 'Pending insertion — press Insert to confirm:' label above preview text; strengthened CSS with dashed green border and distinct label styling",
+    "commit": "pending"
+  },
+  "5aZWNziguX031uRi2VNM": {
+    "date": "2026-03-27",
+    "version": "v9.0.23",
+    "issue": "Suggestions placed in text before pressing Insert with no visual distinction",
+    "resolution": "Same as FCaEIY34 — insertion preview now clearly labelled as pending with green dashed border",
+    "commit": "pending"
+  },
+  "IVecsVQIPnaPEg2cFyiY": {
+    "date": "2026-03-27",
+    "version": "v9.0.23",
+    "issue": "Missing info wizard asked for gestational age when already present in note (32+4)",
+    "resolution": "Strengthened /assessNoteCompletenessStructured prompt rule 3 with explicit examples: '32+4' means gestation IS present, '28yo' means age IS present — scan entire note including headers",
+    "commit": "pending"
+  },
+  "2WzE4ElzGeHa0P1iZ600": {
+    "date": "2026-03-27",
+    "version": "v9.0.23",
+    "issue": "Missing info wizard asked for patient age when already present in note (28yo)",
+    "resolution": "Same as IVecsVQIPnaPEg2cFyiY — prompt now explicitly flags age and gestational age detection from headers/opening lines",
+    "commit": "pending"
   }
 }
