@@ -465,6 +465,7 @@ export function showInsertionPreview(text, anchorText, position = 'after') {
         textNode.textContent = text;
 
         previewEl.appendChild(label);
+        previewEl.appendChild(document.createElement('br'));
         previewEl.appendChild(textNode);
 
         if (anchorIndex !== -1 && anchorText) {
