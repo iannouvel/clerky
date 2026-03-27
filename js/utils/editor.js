@@ -454,8 +454,18 @@ export function showInsertionPreview(text, anchorText, position = 'after') {
         const previewEl = document.createElement('div');
         previewEl.className = 'insertion-preview';
         previewEl.id = 'wizardInsertionPreview';
-        previewEl.textContent = text;
         previewEl.setAttribute('contenteditable', 'false');
+
+        const label = document.createElement('span');
+        label.className = 'insertion-preview-label';
+        label.textContent = 'Pending insertion — press Insert to confirm:';
+
+        const textNode = document.createElement('span');
+        textNode.className = 'insertion-preview-text';
+        textNode.textContent = text;
+
+        previewEl.appendChild(label);
+        previewEl.appendChild(textNode);
 
         if (anchorIndex !== -1 && anchorText) {
             // Walk text nodes to find the DOM node containing the anchor
