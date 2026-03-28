@@ -47,5 +47,26 @@
     "issue": "Missing info wizard asked for patient age when already present in note (28yo)",
     "resolution": "Same as IVecsVQIPnaPEg2cFyiY — prompt now explicitly flags age and gestational age detection from headers/opening lines",
     "commit": "602dbd3d5"
+  },
+  "jpXN8upMafJ115p3Sdcz": {
+    "date": "2026-03-28",
+    "version": "v9.0.27",
+    "issue": "Insertion preview text leaked into committed note content",
+    "resolution": "Replaced DOM-injection approach with content-based INSERTION_PLACEHOLDER (⟨TEXT TO BE INSERTED HERE⟩) inserted via TipTap API; on Insert placeholder is replaced in-place, on Skip/Close it is removed cleanly",
+    "commit": "pending"
+  },
+  "bqoT6kxvzkUowrKMPbmu": {
+    "date": "2026-03-28",
+    "version": "v9.0.27",
+    "issue": "Existing placeholder line in note (e.g. 'Blood Pressure') not highlighted before user fills wizard",
+    "resolution": "showInsertionPreview now replaces the replace_pattern/missing_info line with the styled ⟨TEXT TO BE INSERTED HERE⟩ placeholder so the user can see exactly where their input will land",
+    "commit": "pending"
+  },
+  "gPHsO6UptY5sQzJgURF0": {
+    "date": "2026-03-28",
+    "version": "v9.0.25",
+    "issue": "Empty suggestion text alert still firing",
+    "resolution": "Fixed in v9.0.25 (id= uniqueId added to sw-wrap); this submission was before that deploy",
+    "commit": "d2a596c10"
   }
 }

@@ -3564,43 +3564,25 @@ body {
     border-color: #00a085;
 }
 
-/* Insertion preview styling (shown before accept) */
-.insertion-preview {
-    background: rgba(76, 175, 80, 0.12);
-    border: 2px dashed #4caf50;
-    border-radius: 4px;
-    padding: 6px 10px;
-    margin: 6px 0;
-    animation: previewFadeIn 0.3s ease;
-    pointer-events: none;
-    display: block;
-}
-
-.insertion-preview-label {
-    display: block;
-    font-size: 0.75em;
-    font-weight: 600;
+/* Insertion placeholder — styled span living inside TipTap content */
+.insertion-placeholder {
     color: #2e7d32;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 4px;
-    opacity: 0.85;
-}
-
-.insertion-preview-text {
-    display: block;
-    color: #1b5e20;
+    background: rgba(76, 175, 80, 0.12);
+    border: 1px dashed #4caf50;
+    border-radius: 3px;
+    padding: 1px 5px;
     font-style: italic;
-    font-size: 0.92em;
+    font-weight: 600;
+    font-size: 0.93em;
+    animation: previewFadeIn 0.25s ease;
 }
 
 @media (prefers-color-scheme: dark) {
-    .insertion-preview {
-        background: rgba(76, 175, 80, 0.15);
+    .insertion-placeholder {
+        color: #a5d6a7;
+        background: rgba(76, 175, 80, 0.18);
         border-color: #66bb6a;
     }
-    .insertion-preview-label { color: #81c784; }
-    .insertion-preview-text { color: #a5d6a7; }
 }
 
 @keyframes previewFadeIn {

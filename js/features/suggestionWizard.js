@@ -1,4 +1,4 @@
-import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview } from '../utils/editor.js';
+import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER } from '../utils/editor.js';
 
 /**
  * Opens the PDF for a guideline in a new tab.
@@ -299,12 +299,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             </div>
         `;
 
-        // Show insertion preview in editor (cancel any stale pending timeout first)
+        // Show insertion placeholder in editor (cancel any stale pending timeout first)
         if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
         _previewTimeout = setTimeout(() => {
             _previewTimeout = null;
-            const anchor = contextText || suggestion.target_section || '';
-            showInsertionPreview(suggestionText, anchor, 'after');
+            showInsertionPreview(suggestion);
         }, 200);
     };
 
@@ -443,49 +442,43 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (typeof updateUser === 'function') updateUser('Applying change...', true);
 
         try {
-            // Clear inline preview before modifying content
-            if (typeof clearInsertionPreview === 'function') clearInsertionPreview();
-
             const currentContent = getUserInputContent();
-
-            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
-
-            // Try replace_pattern (explicit from AI) or fuzzy-match missing_info as a standalone line
-            const replacePattern = currentSuggestion?.replace_pattern;
-            const missingInfo = currentSuggestion?.missing_info || '';
             let newContent;
 
-            if (replacePattern && currentContent.includes(replacePattern)) {
-                // AI identified an exact placeholder line — replace it in-place
-                newContent = currentContent.replace(replacePattern, textToInsert);
-                console.log('[WIZARD] Replaced placeholder line in-place:', replacePattern);
-            } else {
-                // Fuzzy fallback: check if missing_info appears as a standalone line (case-insensitive)
+            // Primary path: replace the placeholder that showInsertionPreview already placed
+            if (currentContent.includes(INSERTION_PLACEHOLDER)) {
                 const lines = currentContent.split('\n');
-                const matchIdx = lines.findIndex(line => line.trim().toLowerCase() === missingInfo.trim().toLowerCase());
-                if (matchIdx !== -1) {
-                    lines[matchIdx] = textToInsert;
-                    newContent = lines.join('\n');
-                    console.log('[WIZARD] Fuzzy-replaced standalone line matching missing_info:', missingInfo);
+                const phIdx = lines.findIndex(l => l.includes(INSERTION_PLACEHOLDER));
+                // Preserve any list prefix (e.g. "6. " or "- ") that was added by the preview
+                lines[phIdx] = lines[phIdx].replace(INSERTION_PLACEHOLDER, textToInsert);
+                newContent = lines.join('\n');
+                console.log('[WIZARD] Replaced insertion placeholder with accepted text');
+            } else {
+                // Fallback: placeholder wasn't found (e.g. user edited note while wizard open)
+                const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
+                const replacePattern = currentSuggestion?.replace_pattern;
+                const missingInfo = currentSuggestion?.missing_info || '';
+
+                if (replacePattern && currentContent.includes(replacePattern)) {
+                    newContent = currentContent.replace(replacePattern, textToInsert);
+                    console.log('[WIZARD] Fallback: replaced replace_pattern');
                 } else {
-                    // Normal AI-guided insertion
-                    const suggestionForInsertion = {
-                        suggestedText: textToInsert,
-                        category: 'addition',
-                        targetSection: currentSuggestion?.target_section || null
-                    };
-                    try {
-                        const updatedNote = await determineInsertionPoint(suggestionForInsertion, currentContent);
-                        if (updatedNote) {
-                            newContent = updatedNote;
-                            console.log('[WIZARD] AI inserted suggestion directly into note');
-                        } else {
-                            throw new Error('No updated note returned');
+                    const lines = currentContent.split('\n');
+                    const matchIdx = lines.findIndex(l => l.trim().toLowerCase() === missingInfo.trim().toLowerCase());
+                    if (matchIdx !== -1) {
+                        lines[matchIdx] = textToInsert;
+                        newContent = lines.join('\n');
+                        console.log('[WIZARD] Fallback: fuzzy-replaced missing_info line');
+                    } else {
+                        try {
+                            const updatedNote = await determineInsertionPoint(
+                                { suggestedText: textToInsert, category: 'addition', targetSection: currentSuggestion?.target_section || null },
+                                currentContent
+                            );
+                            newContent = updatedNote || (currentContent + '\n' + textToInsert);
+                        } catch {
+                            newContent = currentContent + '\n' + textToInsert;
                         }
-                    } catch (insertError) {
-                        console.warn('[WIZARD] AI insertion failed, falling back to append:', insertError);
-                        const spacing = currentContent.endsWith('\n') ? '' : '\n';
-                        newContent = currentContent + spacing + textToInsert;
                     }
                 }
             }
