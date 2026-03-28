@@ -129,12 +129,57 @@ async function main() {
             console.log(`\nLAST ACTION: (none recorded)`);
         }
 
-        if (FULL && d.currentState) {
+        if (d.currentState) {
             const cs = d.currentState;
-            console.log(`\nCURRENT STATE (at time of feedback):`);
-            console.log('  view:    ' + cs.activeView);
-            console.log('  editor:  ' + (cs.editorText || '').slice(0, 120).replace(/\n/g, ' '));
-            console.log('  summary: ' + (cs.summaryText || '').slice(0, 120).replace(/\n/g, ' '));
+            const editorPreview = (cs.editorText || '').slice(0, FULL ? 2000 : 300).replace(/\n/g, ' ');
+            console.log(`\nEDITOR NOTE (at time of feedback):`);
+            console.log(`  ${editorPreview}${(cs.editorText || '').length > (FULL ? 2000 : 300) ? '…' : ''}`);
+            if (FULL && cs.summaryText) {
+                console.log(`\nSUMMARY PANEL:`);
+                console.log('  ' + cs.summaryText.slice(0, 400).replace(/\n/g, '\n  '));
+            }
+        }
+
+        if (d.wizardState) {
+            const ws = d.wizardState;
+            console.log(`\nWIZARD STATE:`);
+            console.log(`  Step ${ws.currentIndex + 1} of ${ws.total}`);
+            if (ws.currentSuggestion) {
+                const s = ws.currentSuggestion;
+                const text = s.suggestion || s.text || s.recommendation || s.missing_info || '';
+                console.log(`  Current: "${text.slice(0, 120)}"`);
+                if (s.guidelineTitle || s.sourceGuidelineName) {
+                    console.log(`  Guideline: ${s.guidelineTitle || s.sourceGuidelineName}`);
+                }
+            }
+            if (FULL && ws.allSuggestions?.length > 0) {
+                console.log(`  All suggestions:`);
+                ws.allSuggestions.forEach((s, idx) => {
+                    const text = s.suggestion || s.text || s.recommendation || s.missing_info || '';
+                    console.log(`    ${idx + 1}. ${text.slice(0, 100)}`);
+                });
+            }
+        }
+
+        if (d.lastAiContext) {
+            const ctx = d.lastAiContext;
+            console.log(`\nLAST AI CONTEXT (${ctx.source}, ${ctx.timestamp?.slice(0, 16) || ''}):`);
+            if (ctx.source === 'completeness') {
+                console.log(`  ${ctx.itemCount} missing info item(s) identified:`);
+                (ctx.items || []).forEach((item, idx) => {
+                    console.log(`    ${idx + 1}. [${item.data_type_and_options?.type || '?'}] ${item.missing_info}`);
+                });
+            } else if (ctx.source === 'guidelines') {
+                console.log(`  ${ctx.guidelineCount} guideline(s) analysed:`);
+                (ctx.guidelines || []).forEach(g => {
+                    console.log(`    • ${g.title} — ${g.suggestionCount} suggestion(s)`);
+                    if (FULL) {
+                        (g.suggestions || []).forEach((s, idx) => {
+                            console.log(`        ${idx + 1}. ${s.text.slice(0, 100)}`);
+                        });
+                    }
+                });
+            }
         }
 
         console.log('');
@@ -144,8 +189,8 @@ async function main() {
     console.log(`\n✅ = Resolved (added to feedback_resolutions.json)`);
     console.log(`⏳ = Unresolved (no resolution tracked yet)\n`);
     console.log(`Tips:`);
-    console.log(`  run with --full to include editor/summary content snapshots`);
-    console.log(`  run with --limit N to fetch more records`);
+    console.log(`  run with --full to include full editor text, summary panel, all wizard suggestions, and guideline details`);
+    console.log(`  run with --limit N to fetch more records (default: 20)`);
     console.log(`  edit feedback_resolutions.json to mark feedback as resolved\n`);
 }
 
