@@ -424,107 +424,153 @@ export function updateChatbotButtonVisibility() {
 }
 
 /**
- * Show an insertion preview in the TipTap editor — a green dashed preview of text
- * that would be inserted at a specific position. Used by the floating wizard to
- * let the user "see" the proposed change before accepting.
- *
- * @param {string} text - The text to preview
- * @param {string} anchorText - Existing text near the insertion point (used to locate position)
- * @param {'after'|'before'} position - Insert after or before the anchor text
- * @returns {boolean} - True if preview was shown
+ * Placeholder text inserted into the note to show where a suggestion will land.
+ * Styled in green via CSS class "insertion-placeholder".
  */
-export function showInsertionPreview(text, anchorText, position = 'after') {
-    clearInsertionPreview(); // only one preview at a time
+export const INSERTION_PLACEHOLDER = '⟨TEXT TO BE INSERTED HERE⟩';
+
+/**
+ * Insert a styled placeholder into the TipTap content at the predicted insertion
+ * point for the given suggestion. The placeholder lives in TipTap's actual document
+ * (not in injected DOM) so it cannot leak into saved content unexpectedly.
+ *
+ * List-aware: if inserting after a numbered plan item, prefixes with the next number.
+ * If inserting after a dashed bullet, prefixes with "- ".
+ *
+ * @param {Object} suggestion - The suggestion object (replace_pattern, missing_info, target_section, evidence)
+ * @returns {boolean} - True if preview was placed
+ */
+export function showInsertionPreview(suggestion) {
+    clearInsertionPreview();
 
     const editor = window.editors?.userInput;
-    if (!editor || !text) return false;
+    if (!editor) return false;
 
-    try {
-        const editorElement = document.getElementById('userInput');
-        const proseMirror = editorElement?.querySelector('.ProseMirror');
-        if (!proseMirror) return false;
+    const content = editor.getText();
+    if (!content?.trim()) return false;
 
-        // Find the anchor text in the editor DOM
-        const content = editor.getText();
-        const anchorIndex = anchorText
-            ? content.toLowerCase().indexOf(anchorText.toLowerCase())
-            : -1;
+    const lines = content.split('\n');
+    const replacePattern = suggestion?.replace_pattern;
+    const missingInfo = (suggestion?.missing_info || '').trim();
+    const targetSection = suggestion?.target_section || suggestion?.evidence || '';
 
-        // Create the preview element
-        const previewEl = document.createElement('div');
-        previewEl.className = 'insertion-preview';
-        previewEl.id = 'wizardInsertionPreview';
-        previewEl.setAttribute('contenteditable', 'false');
+    let insertIdx = lines.length; // default: append
+    let replaceExisting = false;
 
-        const label = document.createElement('span');
-        label.className = 'insertion-preview-label';
-        label.textContent = 'Pending insertion — press Insert to confirm:';
+    // 1. Exact replace_pattern match — placeholder replaces that line in-place
+    if (replacePattern) {
+        const idx = lines.findIndex(l => l.includes(replacePattern));
+        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
+    }
 
-        const textNode = document.createElement('span');
-        textNode.className = 'insertion-preview-text';
-        textNode.textContent = text;
+    // 2. missing_info as a standalone label line (case-insensitive)
+    if (!replaceExisting && missingInfo) {
+        const idx = lines.findIndex(l => l.trim().toLowerCase() === missingInfo.toLowerCase());
+        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
+    }
 
-        previewEl.appendChild(label);
-        previewEl.appendChild(document.createElement('br'));
-        previewEl.appendChild(textNode);
-
-        if (anchorIndex !== -1 && anchorText) {
-            // Walk text nodes to find the DOM node containing the anchor
-            const walker = document.createTreeWalker(proseMirror, NodeFilter.SHOW_TEXT, null, false);
-            let node, charCount = 0, targetNode = null, targetOffset = 0;
-
-            while ((node = walker.nextNode())) {
-                const nodeLen = node.textContent.length;
-                if (charCount + nodeLen > anchorIndex) {
-                    targetNode = node;
-                    targetOffset = anchorIndex - charCount;
-                    break;
-                }
-                charCount += nodeLen;
+    // 3. After the target section heading
+    if (!replaceExisting && targetSection) {
+        const lowerTarget = targetSection.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const idx = lines.findIndex(l => l.toLowerCase().replace(/[^a-z0-9]/g, '').includes(lowerTarget));
+        if (idx !== -1) {
+            // Find the end of that section (next blank line or end of content)
+            let sectionEnd = idx;
+            for (let i = idx + 1; i < lines.length; i++) {
+                if (lines[i].trim() === '' && i > idx + 1) break;
+                sectionEnd = i;
             }
+            insertIdx = sectionEnd + 1;
+        }
+    }
 
-            if (targetNode) {
-                // Find the closest block-level parent (p, div, etc.)
-                let block = targetNode.parentElement;
-                while (block && block !== proseMirror && !['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'BLOCKQUOTE'].includes(block.tagName)) {
-                    block = block.parentElement;
-                }
+    // Detect list context from the line at or before the insertion point
+    const contextLine = (lines[replaceExisting ? insertIdx : insertIdx - 1] || '').trimStart();
+    let placeholder = INSERTION_PLACEHOLDER;
+    const numberedMatch = contextLine.match(/^(\d+)\.\s/);
+    const dashedMatch = contextLine.match(/^[-–]\s/);
+    if (numberedMatch) {
+        placeholder = `${parseInt(numberedMatch[1], 10) + 1}. ${INSERTION_PLACEHOLDER}`;
+    } else if (dashedMatch) {
+        placeholder = `- ${INSERTION_PLACEHOLDER}`;
+    }
 
-                if (block && block !== proseMirror) {
-                    if (position === 'after') {
-                        block.parentNode.insertBefore(previewEl, block.nextSibling);
-                    } else {
-                        block.parentNode.insertBefore(previewEl, block);
-                    }
+    // Build new content with placeholder
+    const newLines = [...lines];
+    if (replaceExisting) {
+        newLines[insertIdx] = placeholder;
+    } else {
+        newLines.splice(insertIdx, 0, placeholder);
+    }
 
-                    // Scroll preview into view
-                    previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    console.log('[PREVIEW] Insertion preview shown near anchor:', anchorText?.substring(0, 40));
-                    return true;
-                }
+    // Convert to HTML, styling the placeholder line in green
+    const html = _buildHtmlWithPlaceholder(newLines.join('\n'));
+    editor.commands.setContent(html);
+
+    // Scroll placeholder into view
+    setTimeout(() => {
+        const pm = document.querySelector('#userInput .ProseMirror');
+        if (!pm) return;
+        const walker = document.createTreeWalker(pm, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+            if (node.textContent.includes(INSERTION_PLACEHOLDER)) {
+                node.parentElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                break;
             }
         }
+    }, 50);
 
-        // Fallback: append preview at the end of the editor
-        proseMirror.appendChild(previewEl);
-        previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        console.log('[PREVIEW] Insertion preview shown at end (anchor not found)');
-        return true;
-    } catch (error) {
-        console.error('[PREVIEW] Error showing insertion preview:', error);
-        return false;
-    }
+    console.log('[PREVIEW] Placeholder inserted at line', insertIdx, replaceExisting ? '(replacing existing)' : '(new line)');
+    return true;
 }
 
 /**
- * Remove any insertion preview from the editor
+ * Remove the insertion placeholder from the note content.
+ * Safe to call even if no placeholder is present.
  */
 export function clearInsertionPreview() {
-    const existing = document.getElementById('wizardInsertionPreview');
-    if (existing) {
-        existing.remove();
-        console.log('[PREVIEW] Insertion preview cleared');
-    }
+    const editor = window.editors?.userInput;
+    if (!editor) return;
+
+    const text = editor.getText();
+    if (!text.includes(INSERTION_PLACEHOLDER)) return;
+
+    const cleaned = text.split('\n')
+        .filter(l => !l.includes(INSERTION_PLACEHOLDER))
+        .join('\n');
+
+    // Rebuild HTML without placeholder and set directly (no history entry)
+    const normalised = cleaned.replace(/\n{3,}/g, '\n\n');
+    const html = normalised.split('\n\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${p.split('\n').map(l => escapeHtml(l)).join('<br>')}</p>`)
+        .join('');
+    editor.commands.setContent(html || '<p></p>');
+    console.log('[PREVIEW] Placeholder cleared');
+}
+
+/**
+ * Build HTML content where lines containing INSERTION_PLACEHOLDER are styled in green.
+ * All other content is plain-escaped.
+ */
+function _buildHtmlWithPlaceholder(text) {
+    const normalised = text.replace(/\n{3,}/g, '\n\n');
+    return normalised.split('\n\n')
+        .filter(p => p.trim())
+        .map(p => {
+            const lines = p.split('\n').map(line => {
+                if (line.includes(INSERTION_PLACEHOLDER)) {
+                    // Split on placeholder so we can style it; preserve any list prefix
+                    const parts = line.split(INSERTION_PLACEHOLDER);
+                    const prefix = escapeHtml(parts[0] || '');
+                    return `${prefix}<span class="insertion-placeholder">${escapeHtml(INSERTION_PLACEHOLDER)}</span>`;
+                }
+                return escapeHtml(line);
+            });
+            return `<p>${lines.join('<br>')}</p>`;
+        })
+        .join('');
 }
 
 /**
