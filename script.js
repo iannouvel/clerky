@@ -7627,6 +7627,14 @@ async function runPhase1CompletenessCheck() {
         const data = await resp.json();
         const rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
 
+        // Store for feedback context
+        window._lastAiContext = {
+            source: 'completeness',
+            timestamp: new Date().toISOString(),
+            itemCount: rawItems.length,
+            items: rawItems
+        };
+
         // Map structured schema to wizard suggestion format
         const suggestions = rawItems.map(item => ({
             suggestion: item.missing_info,
@@ -10247,6 +10255,23 @@ async function multiGuidelineDynamicAdvice(selectedGuidelines) {
             throw new Error('No guidelines were successfully processed. Please check the error messages above and try again.');
         }
 
+        // Store for feedback context
+        window._lastAiContext = {
+            source: 'guidelines',
+            timestamp: new Date().toISOString(),
+            guidelineCount: successfulResults.length,
+            guidelines: successfulResults.map(r => ({
+                id: r.guideline.id,
+                title: r.guideline.title,
+                suggestionCount: r.result?.suggestions?.length || 0,
+                suggestions: (r.result?.suggestions || []).map(s => ({
+                    text: s.suggestion || s.text || s.recommendation || '',
+                    priority: s.priority || s.type || '',
+                    why: s.why || s.reasoning || ''
+                }))
+            }))
+        };
+
         // Combine and display all suggestions from successful results
         await displayCombinedSuggestions(successfulResults, failedResults);
 
@@ -11074,7 +11099,7 @@ function _captureUIState() {
 
     return {
         activeView,
-        editorText: (editorText || '').slice(0, 800),
+        editorText: (editorText || '').slice(0, 5000),
         summaryText: summaryEl ? (summaryEl.innerText || '').slice(0, 1200) : '',
     };
 }
@@ -11116,11 +11141,22 @@ async function submitFeedback() {
     const text = document.getElementById('feedbackText').value.trim();
     const current = _captureUIState();
 
+    const wizardState = window.suggestionWizardState
+        ? {
+            currentIndex: window.suggestionWizardState.currentIndex,
+            total: window.suggestionWizardState.total,
+            currentSuggestion: window.suggestionWizardState.queue?.[window.suggestionWizardState.currentIndex] || null,
+            allSuggestions: window.suggestionWizardState.queue || []
+          }
+        : null;
+
     const payload = {
         submittedAt: serverTimestamp(),
         userExplanation: text || '(no explanation provided)',
         currentState: current,
         lastInteraction: _lastInteraction || null,
+        wizardState,
+        lastAiContext: window._lastAiContext || null,
         userEmail: (auth && auth.currentUser) ? auth.currentUser.email : 'anonymous',
         userAgent: navigator.userAgent.slice(0, 200),
         pageUrl: window.location.href
