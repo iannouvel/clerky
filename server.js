@@ -16263,7 +16263,10 @@ Other important guidelines:
 - For modifications, ensure original text selections are precise and findable in the transcript
 - Prioritize suggestions based on clinical importance and appropriateness
 - When transcript details are limited, suggest guideline-recommended actions that are generally appropriate for the presenting condition, with appropriate context
-- If no clinically appropriate suggestions can be made that are supported by the guideline, return {"suggestions": []}`;
+- If no clinically appropriate suggestions can be made that are supported by the guideline, return {"suggestions": []}
+
+SELF-CONSISTENCY CHECK:
+Before returning your suggestions, review them as a set and remove any logical contradictions. If one suggestion implies a more intensive level of monitoring, treatment, or care than another suggestion recommends, the less intensive one is redundant and should be omitted. A set of suggestions must be internally coherent — a clinician reading them together should receive a consistent clinical message, not conflicting instructions.`;
 
         const userPrompt = `Original Transcript:
 ${transcript}

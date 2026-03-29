@@ -89,5 +89,12 @@
     "issue": "Empty suggestion text alert still firing",
     "resolution": "Fixed in v9.0.25 (id= uniqueId added to sw-wrap); this submission was before that deploy",
     "commit": "d2a596c10"
+  },
+  "bYBajf3nlc7DeeWI26an": {
+    "date": "2026-03-27",
+    "version": "v9.0.32",
+    "issue": "Contradictory guideline suggestions: continuous fetal monitoring AND CTG every 4 hours in same plan",
+    "resolution": "Added SELF-CONSISTENCY CHECK principle to /dynamicAdvice system prompt: model must review suggestions as a set before returning, remove logical contradictions, and ensure the set is internally coherent",
+    "commit": "pending"
   }
 }
