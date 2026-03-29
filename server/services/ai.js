@@ -1362,6 +1362,72 @@ function mergeFirstPassWithSuggestions(stage1Findings, stage2Suggestions) {
     return { deficiencies: merged, summary };
 }
 
+/**
+ * Evaluates the output of the completeness checker against a clinical note.
+ * Used by the prompt evolution system to judge whether missing_information items are correct.
+ *
+ * @async
+ * @param {string} clinicalNote - The input clinical note
+ * @param {Array<Object>} missingItems - The missing_information array returned by the completeness prompt
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object>} Evaluation with recall/precision scores and item-level verdicts
+ */
+async function evaluateCompletenessOutput(clinicalNote, missingItems, userId) {
+    const systemPrompt = `You are an expert clinical documentation auditor. Your task is to evaluate whether an AI system correctly identified missing information in a clinical note.
+
+EVALUATION CRITERIA:
+1. PRECISION: For each flagged item, is it genuinely missing and clinically important for this type of note?
+   - "correct": The item IS genuinely absent AND safety-relevant for this encounter type
+   - "false_positive": The item is already present (explicitly or implicitly) in the note, OR is not appropriate to flag for this type of encounter
+   - "borderline": Debatable — could go either way depending on clinical context
+
+2. RECALL: Are there important gaps the AI missed entirely?
+   - Consider the encounter type and what documentation standards require
+   - Only flag genuinely important omissions, not nice-to-haves
+
+3. DATA TYPE APPROPRIATENESS: Is the suggested input method realistic?
+   - Does the data_type match how a clinician would actually document this?
+
+Return ONLY valid JSON, no markdown or commentary.`;
+
+    const userPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+AI-IDENTIFIED MISSING ITEMS:
+${JSON.stringify(missingItems, null, 2)}
+
+Evaluate each item and identify any missed gaps. Return JSON:
+{
+  "precisionScore": 0.0-1.0,
+  "recallScore": 0.0-1.0,
+  "itemEvaluations": [
+    {
+      "missing_info": "label from the AI output",
+      "verdict": "correct|false_positive|borderline",
+      "reason": "why this verdict",
+      "dataTypeAppropriate": true/false
+    }
+  ],
+  "missedGaps": [
+    {
+      "missing_info": "what was missed",
+      "importance": "why it matters"
+    }
+  ],
+  "overallAssessment": "brief summary"
+}`;
+
+    const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, null, 4000, 'complex');
+    if (!result || !result.content) {
+        return { precisionScore: 0, recallScore: 0, itemEvaluations: [], missedGaps: [], error: 'No response from evaluator' };
+    }
+    try {
+        return JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+    } catch (e) {
+        return { precisionScore: 0, recallScore: 0, itemEvaluations: [], missedGaps: [], error: 'Failed to parse evaluation' };
+    }
+}
+
 module.exports = {
     createPromptForChunk,
     mergeChunkResults,
@@ -1375,6 +1441,7 @@ module.exports = {
     loadGuidelineLearning,
     storeGuidelineLearning,
     evaluateSuggestions,
+    evaluateCompletenessOutput,
     generatePromptImprovements,
     extractLessonsLearned,
     refineSuggestions,

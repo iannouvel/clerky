@@ -16184,103 +16184,10 @@ app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
         }
         timer.step('Fetch guideline content');
 
-        // Create AI prompt to convert analysis into structured suggestions
-        const systemPrompt = `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions. 
-
-Your task is to analyze the provided guideline analysis and extract specific, actionable suggestions that can be presented to the user for acceptance, rejection, or modification.
-
-CLINICAL REASONING GUIDELINES:
-- First understand the specific clinical scenario and current diagnosis from the transcript
-- Assess whether each potential recommendation is appropriate and indicated for this clinical scenario
-- When the transcript is brief or lacks detail, suggest guideline-recommended actions that are generally indicated for the presenting condition
-- Provide context explaining when/why the suggestion would be appropriate
-- Do not reject suggestions solely because transcript lacks sufficient detail to confirm every criterion
-- Apply the principle: "Would this investigation or intervention improve patient care in this type of scenario?"
-- Consider the clinical context: is this an acute emergency, established diagnosis, or uncertain diagnostic situation?
-
-GENERAL CLINICAL APPROPRIATENESS PRINCIPLES:
-- Generally avoid suggesting diagnostic investigations when the diagnosis is already clearly established
-- Avoid recommending interventions that directly conflict with the current evidence-based management plan
-- When transcript details are limited, err on the side of suggesting guideline-recommended actions with appropriate context
-- Evaluate whether the suggestion would be helpful for the general clinical scenario described
-
-LEARNED CLINICAL PATTERNS:
-When available, you will be provided with aggregated feedback from experienced clinicians about this guideline's application. This feedback represents real-world clinical wisdom about when certain recommendations may not be appropriate. Consider these patterns alongside the guideline text when making suggestions.
-
-For each suggestion you identify, return ONLY a valid JSON object with the following structure:
-{
-  "suggestions": [
-    {
-      "id": "1",
-      "originalText": "text from transcript that needs changing OR description of missing element",
-      "suggestedText": "proposed replacement text",
-      "context": "detailed explanation of why this change is suggested, including relevant quoted text from the guideline in quotation marks, and confirmation that this recommendation is appropriate for the specific clinical scenario",
-      "hasVerbatimQuote": true,
-      "category": "addition|modification|deletion|formatting",
-      "priority": "high|medium|low",
-      "guidelineReference": "specific guideline section or rule"
-    }
-  ]
-}
-
-CRITICAL - hasVerbatimQuote field:
-- Set to true ONLY if the context field contains text EXACTLY copied from the Full Guideline Content in quotation marks
-- Set to false if paraphrasing guideline recommendations or if exact quotes are not available
-- This field enables PDF highlighting, so accuracy is essential
-
-CRITICAL FORMATTING REQUIREMENTS:
-- Return ONLY the JSON object - no markdown code blocks, no explanatory text
-- Do not wrap the JSON in \`\`\`json or \`\`\` blocks
-- Start your response directly with { and end with }
-- Use sequential numeric IDs starting from "1"
-- Ensure all JSON is properly formatted and valid
-
-Important guidelines for originalText field:
-- For MODIFICATIONS: Use the exact text from the transcript that needs to be changed
-- For ADDITIONS (missing elements): Use descriptive text like "Missing: cervical length screening documentation" or "Gap: no discussion of antenatal corticosteroids"
-- DO NOT use phrases like "no additional cervical length screening ordered" unless those exact words appear in the transcript
-- For missing elements, be clear that you're identifying an absence, not quoting existing text
-Important guidelines for context field:
-- Provide detailed explanations including WHY the change is needed AND why it's appropriate for this specific case
-- Reference specific guideline recommendations or requirements
-- Explain the clinical rationale behind the suggestion
-- State why this recommendation is indicated in this particular clinical scenario
-- Make the context informative and educational
-- DO NOT add meta-commentary like "this text appears in the guideline" or "this is from the guideline content"
-
-CRITICAL QUOTING GUIDELINES:
-- ONLY use quotation marks around text that is EXACTLY copied verbatim from the Full Guideline Content provided
-- Before adding quotation marks, verify the exact text exists in the Full Guideline Content section
-- Set hasVerbatimQuote to true ONLY when you include exact quoted text in the context field
-- Set hasVerbatimQuote to false when paraphrasing or when no exact match can be found
-- PREFER verbatim quotes when available as they enable PDF highlighting for users
-- When paraphrasing, use phrases like "The guideline recommends..." WITHOUT quotation marks
-- Example with verbatim quote (hasVerbatimQuote: true): 
-  context: "The patient requires major PPH management. The guideline states: 'Immediate venepuncture (20 ml) for: cross-match (4 units minimum)' for major PPH with ongoing bleeding."
-- Example with paraphrase (hasVerbatimQuote: false): 
-  context: "The guideline recommends cross-matching at least 4 units for major PPH with blood loss exceeding 1000ml and ongoing bleeding."
-- DO NOT fabricate or approximate quotes - if you cannot find exact text, set hasVerbatimQuote to false and paraphrase clearly
-- DO NOT add phrases like "this exact text appears in the guideline" or similar meta-commentary
-- If Full Guideline Content is unavailable or condensed, set hasVerbatimQuote to false and paraphrase accurately
-
-Other important guidelines:
-- Only suggest changes that are explicitly supported by the guideline analysis AND clinically appropriate for the specific scenario
-- Make suggestions specific and actionable
-- For modifications, ensure original text selections are precise and findable in the transcript
-- Prioritize suggestions based on clinical importance and appropriateness
-- When transcript details are limited, suggest guideline-recommended actions that are generally appropriate for the presenting condition, with appropriate context
-- If no clinically appropriate suggestions can be made that are supported by the guideline, return {"suggestions": []}
-
-SELF-CONSISTENCY CHECK:
-Before returning your suggestions, review them as a set and remove any logical contradictions. If one suggestion implies a more intensive level of monitoring, treatment, or care than another suggestion recommends, the less intensive one is redundant and should be omitted. A set of suggestions must be internally coherent — a clinician reading them together should receive a consistent clinical message, not conflicting instructions.
-
-RELEVANCE CHECK:
-Before returning any suggestion, verify it is not already covered by the clinical note. Read the transcript carefully. If the note already documents an assessment, investigation, or management step — even in general terms — do not suggest it again. Suggestions that merely restate what the clinician has already done have no clinical value and must be omitted.
-
-CLINICAL SPECIFICITY CHECK:
-Every suggestion must match the clinical situation as precisely as possible. Apply two tests:
-1. Recency: A result from a previous encounter does not automatically substitute for a current-visit assessment when management depends on the current clinical state. If a finding has direct management implications (e.g. fetal presentation near term), check whether current-visit confirmation is also needed — and flag it if not documented.
-2. Modality: The investigation or monitoring method you recommend must be appropriate to the clinical urgency and the information needed. Do not recommend a less direct method when the clinical situation clearly calls for a more urgent or informative approach.`;
+        // Load dynamic advice system prompt from evolvable storage with hardcoded fallback
+        const dynamicAdviceConfig = global.prompts?.['dynamicAdviceSystemPrompt'] || require('./prompts.json')['dynamicAdviceSystemPrompt'];
+        const systemPrompt = dynamicAdviceConfig?.prompt || `You are a medical AI assistant that converts clinical guideline analysis into structured, actionable suggestions.`;
+        // Note: full fallback prompt previously hardcoded here — now lives in prompts.json['dynamicAdviceSystemPrompt']
 
         const userPrompt = `Original Transcript:
 ${transcript}
@@ -19568,77 +19475,11 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
         return res.json({ success: true, missing_information: [] });
     }
 
-    const prompt = `You are a clinical documentation quality checker for obstetric and gynaecology notes.
-
-REASONING STEPS — complete all three before producing any output.
-
-STEP 1: UNDERSTAND THE ENCOUNTER
-Determine the type, purpose, and stage of care this note represents. This governs what belongs in the record.
-
-STEP 2: APPLY THE AUDIENCE PRINCIPLE
-Only flag information that a reasonable clinician would be expected to document in this type of note for this purpose and audience.
-- Notes focused on patient communication (counselling, consent, safety-netting): flag only what the patient needs to understand or act on. Operational clinical details do not belong here.
-- Notes focused on clinical management (acute care, intrapartum, ward rounds): operational details are appropriate. Background history is only relevant if it directly affects current decisions.
-- Notes focused on follow-up or ongoing care: flag gaps in continuity and future management, not historical re-documentation.
-For acute or emergency presentations (urgent attendances, active complications, MAU/A&E): apply strict clinical relevance. Only flag information directly relevant to the acute problem. Do not flag routine preventive or future-planning items that would be clinically inappropriate to address during an acute encounter.
-If information would not naturally appear in this type of note, do not flag it as missing.
-
-STEP 3: ASSESS PRESENCE HONESTLY
-Before flagging anything, ask: "Has a reasonable clinician reading this note already addressed this?" Use genuine clinical judgement:
-- Read the entire note. Information in any part of the note — header, opening line, body — counts as present.
-- Information that is logically implied by what is written counts as present. Do not demand explicit restatement of something already clear from context.
-- Placeholder tokens such as [AGE], [DATE], [NAME] represent real values that were redacted — treat them as present.
-Only flag information whose absence creates a genuine clinical or documentation risk.
-
-TASK
-Identify the information items that are both genuinely absent and safety-critical or necessary for guideline-consistent documentation. Return at most 5, ordered from most to least clinically important.
-
-OUTPUT RULES
-1) Return ONLY valid JSON matching the schema below. No markdown, no commentary, no extra text.
-2) If nothing is genuinely missing, return an empty array for "missing_information".
-3) Every item must have:
-   - rank: integer, 1 = most critical
-   - missing_info: a concise, specific label for the gap
-   - importance_and_management_impact: why this absence matters and how it affects management (1–3 sentences)
-   - target_section: the exact section heading from the note where this belongs
-   - replace_pattern: if the note contains a line that labels this item but provides no value (a named placeholder with no result), copy that line verbatim so the UI can replace it in-place. Otherwise null.
-   - data_type_and_options: choose the input type that best matches how the clinician would ACTUALLY obtain and document this in the given clinical context:
-       numeric     — a single measured value with units. Only use this when a single number is the standard documentation (e.g. temperature, cervical length). Do NOT use numeric for fetal heart rate monitoring in pregnancy — that is documented as a CTG interpretation (free_text), not a single number.
-       binary      — a yes/no or present/absent question
-       categorical — one answer chosen from a fixed list
-       multi_select — potentially several answers from a list; always include "None of the above"; set allow_other: true; use for anything where multiple co-existing values are possible
-       free_text   — narrative clinical text; pre-write a suggested_content that is specific to the actual clinical situation in this note, written in past tense, third person, ready to insert as-is. Leave suggested_content empty only when the value cannot be inferred from the note at all.
-       compound    — two or more distinct sub-values that must be entered separately; each sub-field needs a label and either units (numeric) or options (categorical); mark sub-fields optional: true if useful but not essential. Use compound for any measurement where the clinical interpretation depends on when it was taken — include gestation and/or date as optional timing sub-fields.
-       General rule: the data type must reflect the realistic documentation method. A complex clinical assessment (e.g. fetal wellbeing in a high-risk pregnancy) should never be reduced to a single numeric value — use free_text and pre-write the appropriate clinical narrative.
-4) Rank by clinical safety impact — the gap most likely to affect management or patient safety ranks first.
-5) If answering one item logically requires another to be established first, the prerequisite must have a lower rank number.
-
-JSON SCHEMA (MUST MATCH EXACTLY)
-{
-  "missing_information": [
-    {
-      "rank": 1,
-      "missing_info": "string",
-      "importance_and_management_impact": "string",
-      "target_section": "string",
-      "replace_pattern": "string | null",
-      "data_type_and_options": {
-        "type": "numeric|binary|categorical|multi_select|free_text|compound",
-        "units": "string (numeric only)",
-        "options": ["string"],
-        "allow_other": true,
-        "fields": [{"label":"string","units":"string","options":["string"],"optional":true}],
-        "suggested_content": "string (free_text only)",
-        "notes": "string"
-      }
-    }
-  ]
-}
-
-NOTE TEXT (INPUT)
-<<<
-${transcript.substring(0, 4000)}
->>>`;
+    // Load completeness prompt from evolvable storage with hardcoded fallback
+    const completenessConfig = global.prompts?.['assessNoteCompletenessStructured'] || require('./prompts.json')['assessNoteCompletenessStructured'];
+    const promptTemplate = completenessConfig?.prompt || 'You are a clinical documentation quality checker for obstetric and gynaecology notes.\n\nNOTE TEXT (INPUT)\n<<<\n{{transcript}}\n>>>';
+    // Note: full fallback prompt previously hardcoded here — now lives in prompts.json['assessNoteCompletenessStructured']
+    const prompt = promptTemplate.replace('{{transcript}}', transcript.substring(0, 4000));
 
     try {
         const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
