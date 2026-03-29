@@ -14156,18 +14156,24 @@ app.post('/ingestGuidelines', authenticateUser, async (req, res) => {
             }
         };
 
-        const results = await ragIngestion.ingestFromFirestore(db, {
+        // Respond immediately — ingestion can take several minutes and will timeout on Render
+        res.json({
+            success: true,
+            message: dryRun ? 'Dry run started (check server logs)' : 'Ingestion started in background — check server logs for progress',
+            source: 'firestore',
+            background: true
+        });
+
+        // Run ingestion after response is sent
+        ragIngestion.ingestFromFirestore(db, {
             dryRun,
             limit,
             batchSize,
             fetchContent: fetchGuidelineContentFromStorage
-        });
-
-        res.json({
-            success: true,
-            message: dryRun ? 'Dry run complete' : 'Ingestion complete',
-            source: 'firestore',
-            ...results  // Spread results at top level for client compatibility
+        }).then(results => {
+            console.log(`[RAG-INGESTION] Background ingestion complete:`, JSON.stringify(results));
+        }).catch(err => {
+            console.error('[RAG-INGESTION] Background ingestion failed:', err.message);
         });
     } catch (error) {
         console.error('[ERROR] Ingestion failed:', error);
