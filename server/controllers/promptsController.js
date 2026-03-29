@@ -676,8 +676,10 @@ exports.evolveEvolvablePrompt = (req, res) => {
 
     // Fire and forget — not async, not returning a promise to Express
     runEvolutionBackground(jobId, promptKey, currentConfig.prompt, count, userId).catch(err => {
-        console.error(`[EVOLVE-EVOLVABLE] Fatal error in background job ${jobId}:`, err?.message || err);
-        evolutionJobs[jobId] = { status: 'error', error: err?.message || 'Fatal background error' };
+        const errInfo = `type=${typeof err} str=${String(err)} msg=${err?.message} name=${err?.name} keys=${err ? Object.keys(err).join(',') : 'null'}`;
+        console.error(`[EVOLVE-FATAL] Job ${jobId}: ${errInfo}`);
+        if (err?.stack) console.error(`[EVOLVE-FATAL] Stack: ${err.stack}`);
+        evolutionJobs[jobId] = { status: 'error', error: errInfo };
     });
 };
 
