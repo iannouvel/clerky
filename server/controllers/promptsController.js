@@ -444,10 +444,13 @@ async function activatePromptVersion(promptKey, versionId) {
 exports.getPromptVersions = async (req, res) => {
     try {
         const { promptKey } = req.query;
-        let query = db.collection('promptVersions').orderBy('createdAt', 'desc').limit(20);
+        let query = db.collection('promptVersions');
         if (promptKey) query = query.where('promptKey', '==', promptKey);
         const snap = await query.get();
-        const versions = snap.docs.map(d => ({ id: d.id, ...d.data(), createdAt: d.data().createdAt?.toDate?.() }));
+        const versions = snap.docs
+            .map(d => ({ id: d.id, ...d.data(), createdAt: d.data().createdAt?.toDate?.() }))
+            .sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0))
+            .slice(0, 20);
         res.json({ success: true, versions });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
