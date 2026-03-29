@@ -6249,11 +6249,19 @@ ${responseText}
         }
 
         async function loadPromptVersions() {
+            console.log('[VERSIONS] loadPromptVersions called');
             const container = document.getElementById('promptVersionsList');
+            if (!container) { console.error('[VERSIONS] promptVersionsList element not found'); return; }
             const promptKey = document.getElementById('evolvablePromptSelect').value;
             container.innerHTML = '<div style="padding:15px;color:var(--text-secondary);text-align:center;">Loading...</div>';
 
             try {
+                if (!auth.currentUser) {
+                    // Wait for auth to be ready
+                    await new Promise((resolve, reject) => {
+                        const unsub = auth.onAuthStateChanged(user => { unsub(); user ? resolve(user) : reject(new Error('Not signed in')); });
+                    });
+                }
                 const token = await auth.currentUser.getIdToken();
                 const response = await fetch(`${SERVER_URL}/getPromptVersions?promptKey=${promptKey}`, {
                     headers: { 'Authorization': `Bearer ${token}` }
