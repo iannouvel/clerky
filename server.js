@@ -16269,7 +16269,12 @@ SELF-CONSISTENCY CHECK:
 Before returning your suggestions, review them as a set and remove any logical contradictions. If one suggestion implies a more intensive level of monitoring, treatment, or care than another suggestion recommends, the less intensive one is redundant and should be omitted. A set of suggestions must be internally coherent — a clinician reading them together should receive a consistent clinical message, not conflicting instructions.
 
 RELEVANCE CHECK:
-Before returning any suggestion, verify it is not already covered by the clinical note. Read the transcript carefully. If the note already documents an assessment, investigation, or management step — even in general terms — do not suggest it again. Suggestions that merely restate what the clinician has already done have no clinical value and must be omitted.`;
+Before returning any suggestion, verify it is not already covered by the clinical note. Read the transcript carefully. If the note already documents an assessment, investigation, or management step — even in general terms — do not suggest it again. Suggestions that merely restate what the clinician has already done have no clinical value and must be omitted.
+
+CLINICAL SPECIFICITY CHECK:
+Every suggestion must match the clinical situation as precisely as possible. Apply two tests:
+1. Recency: A result from a previous encounter does not automatically substitute for a current-visit assessment when management depends on the current clinical state. If a finding has direct management implications (e.g. fetal presentation near term), check whether current-visit confirmation is also needed — and flag it if not documented.
+2. Modality: The investigation or monitoring method you recommend must be appropriate to the clinical urgency and the information needed. Do not recommend a less direct method when the clinical situation clearly calls for a more urgent or informative approach.`;
 
         const userPrompt = `Original Transcript:
 ${transcript}

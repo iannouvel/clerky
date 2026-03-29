@@ -145,5 +145,26 @@
     "issue": "BP value inserted in the wrong place by the missing info wizard",
     "resolution": "showInsertionPreview improved in v9.0.34 to better locate insertion point using target_section and guidelineReference; falls back to list-context detection if no section match found",
     "commit": "0d246236d"
+  },
+  "zhCeSXghvvJ5HOZxQ0Ta": {
+    "date": "2026-03-27",
+    "version": "v9.0.36",
+    "issue": "USS/BPP suggested when CTG would be more appropriate for fetal hydrops",
+    "resolution": "Added CLINICAL SPECIFICITY CHECK principle to /dynamicAdvice: recommended monitoring method must match the clinical urgency — do not suggest a less direct method when the situation calls for a more informative approach",
+    "commit": "pending"
+  },
+  "8DzptrAcd00DK6jLwYF9": {
+    "date": "2026-03-27",
+    "version": "v9.0.36",
+    "issue": "Transverse lie suggestion should prompt USS confirmation of presentation at current visit if not documented",
+    "resolution": "Same CLINICAL SPECIFICITY CHECK: added recency test — a previous-visit result does not substitute for current-visit confirmation when management depends on the current clinical state",
+    "commit": "pending"
+  },
+  "TbulgJamkd1DpjtTajAg": {
+    "date": "2026-03-28",
+    "version": "v9.0.36",
+    "issue": "Reduced fetal movements guideline not included in Check Against Guidelines",
+    "resolution": "Likely a guideline database coverage issue — the RFM guideline may not be indexed in the vector database. Needs investigation: check Firestore 'guidelines' collection for an RFM guideline and whether it has embeddings. No code change made.",
+    "commit": "pending"
   }
 }
