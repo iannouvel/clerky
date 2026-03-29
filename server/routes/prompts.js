@@ -16,6 +16,7 @@ router.post('/syncPromptsToFirestore', authenticateUser, promptsController.syncP
 router.post('/evolvePrompts', authenticateUser, promptsController.evolvePrompts);
 router.post('/evolvePromptsSequential', authenticateUser, promptsController.evolvePromptsSequential);
 router.post('/evolveEvolvablePrompt', authenticateUser, promptsController.evolveEvolvablePrompt);
+router.get('/getEvolutionJobStatus', authenticateUser, promptsController.getEvolutionJobStatus);
 
 // Prompt Versions
 router.get('/getPromptVersions', authenticateUser, promptsController.getPromptVersions);

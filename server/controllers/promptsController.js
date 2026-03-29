@@ -469,191 +469,201 @@ exports.activatePromptVersion = async (req, res) => {
 
 // ─── Evolvable Prompt Evolution ──────────────────────────────────────────────
 
+// In-memory store for evolution job status (keyed by jobId)
+const evolutionJobs = {};
+
+exports.getEvolutionJobStatus = async (req, res) => {
+    const { jobId } = req.query;
+    if (!jobId || !evolutionJobs[jobId]) {
+        return res.status(404).json({ success: false, error: 'Job not found' });
+    }
+    res.json({ success: true, ...evolutionJobs[jobId] });
+};
+
 exports.evolveEvolvablePrompt = async (req, res) => {
+    const { promptKey, scenarioCount } = req.body;
+    const userId = req.user.uid;
+
+    if (!promptKey || !['assessNoteCompletenessStructured', 'dynamicAdviceSystemPrompt'].includes(promptKey)) {
+        return res.status(400).json({ success: false, error: 'promptKey must be assessNoteCompletenessStructured or dynamicAdviceSystemPrompt' });
+    }
+
+    // Load current prompt
+    const currentConfig = global.prompts?.[promptKey] || getPromptsJson()[promptKey];
+    if (!currentConfig?.prompt) {
+        return res.status(400).json({ success: false, error: `No prompt found for ${promptKey}` });
+    }
+
+    // Generate job ID and respond immediately (Render has 30s timeout)
+    const jobId = `evolve_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    const count = Math.min(scenarioCount || 5, 26);
+    evolutionJobs[jobId] = { status: 'running', promptKey, progress: 0, totalScenarios: count, startedAt: new Date().toISOString() };
+
+    res.json({ success: true, jobId, message: `Evolution started for ${promptKey} with ${count} scenarios. Poll /getEvolutionJobStatus?jobId=${jobId} for results.` });
+
+    // Run evolution in background
+    const currentPrompt = currentConfig.prompt;
     const timer = new StepTimer('/evolveEvolvablePrompt');
 
-    try {
-        const { promptKey, scenarioCount } = req.body;
-        const userId = req.user.uid;
-
-        if (!promptKey || !['assessNoteCompletenessStructured', 'dynamicAdviceSystemPrompt'].includes(promptKey)) {
-            return res.status(400).json({ success: false, error: 'promptKey must be assessNoteCompletenessStructured or dynamicAdviceSystemPrompt' });
-        }
-
-        // Load current prompt
-        const currentConfig = global.prompts?.[promptKey] || getPromptsJson()[promptKey];
-        if (!currentConfig?.prompt) {
-            return res.status(400).json({ success: false, error: `No prompt found for ${promptKey}` });
-        }
-        const currentPrompt = currentConfig.prompt;
-
-        // Load fake transcripts
-        const transcriptsPath = path.join(__dirname, '../../fake_transcripts.json');
-        const allTranscripts = JSON.parse(fs.readFileSync(transcriptsPath, 'utf8'));
-        const flatScenarios = [];
-        for (const [category, scenarios] of Object.entries(allTranscripts)) {
-            for (const [name, transcript] of Object.entries(scenarios)) {
-                flatScenarios.push({ name: `${category}/${name}`, transcript });
-            }
-        }
-
-        // Pick random subset
-        const count = Math.min(scenarioCount || 5, flatScenarios.length);
-        const shuffled = flatScenarios.sort(() => Math.random() - 0.5).slice(0, count);
-
-        timer.step('Setup');
-        console.log(`[EVOLVE-${promptKey}] Starting evolution with ${count} scenarios`);
-
-        const scenarioResults = [];
-        let totalLatency = 0;
-
-        for (let i = 0; i < shuffled.length; i++) {
-            const scenario = shuffled[i];
-            const startTime = Date.now();
-
-            console.log(`[EVOLVE-${promptKey}] Scenario ${i + 1}/${count}: ${scenario.name}`);
-
-            if (promptKey === 'assessNoteCompletenessStructured') {
-                // Run completeness check
-                const prompt = currentPrompt.replace('{{transcript}}', scenario.transcript.substring(0, 4000));
-                const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
-
-                let missingItems = [];
-                if (aiResponse?.content) {
-                    try {
-                        const parsed = JSON.parse(aiResponse.content.trim().replace(/```json\n?|\n?```/g, ''));
-                        missingItems = parsed.missing_information || [];
-                    } catch (e) { console.warn(`[EVOLVE] Parse error for scenario ${i + 1}`); }
+    Promise.resolve().then(async () => {
+        try {
+            // Load fake transcripts
+            const transcriptsPath = path.join(__dirname, '../../fake_transcripts.json');
+            const allTranscripts = JSON.parse(fs.readFileSync(transcriptsPath, 'utf8'));
+            const flatScenarios = [];
+            for (const [category, scenarios] of Object.entries(allTranscripts)) {
+                for (const [name, transcript] of Object.entries(scenarios)) {
+                    flatScenarios.push({ name: `${category}/${name}`, transcript });
                 }
+            }
 
-                timer.step(`Scenario ${i + 1} completeness check`);
+            const shuffled = flatScenarios.sort(() => Math.random() - 0.5).slice(0, count);
 
-                // Judge the output
-                const evaluation = await evaluateCompletenessOutput(scenario.transcript, missingItems, userId);
+            timer.step('Setup');
+            console.log(`[EVOLVE-${promptKey}] Starting evolution with ${count} scenarios`);
 
-                timer.step(`Scenario ${i + 1} evaluation`);
+            const scenarioResults = [];
+            let totalLatency = 0;
 
-                const latency = Date.now() - startTime;
-                totalLatency += latency;
+            for (let i = 0; i < shuffled.length; i++) {
+                const scenario = shuffled[i];
+                const startTime = Date.now();
 
-                scenarioResults.push({
-                    scenarioName: scenario.name,
-                    missingItemsCount: missingItems.length,
-                    missingItems,
-                    evaluation,
-                    latencyMs: latency
-                });
+                evolutionJobs[jobId].progress = i;
+                evolutionJobs[jobId].currentScenario = scenario.name;
+                console.log(`[EVOLVE-${promptKey}] Scenario ${i + 1}/${count}: ${scenario.name}`);
 
-            } else if (promptKey === 'dynamicAdviceSystemPrompt') {
-                // For dynamicAdvice, we need a guideline too — find the best-matching one
-                // Use a simplified flow: pick a random guideline that has content
-                const guidelinesSnap = await db.collection('guidelines')
-                    .where('vectorDbIngested', '==', true)
-                    .limit(50)
+                if (promptKey === 'assessNoteCompletenessStructured') {
+                    const prompt = currentPrompt.replace('{{transcript}}', scenario.transcript.substring(0, 4000));
+                    const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
+
+                    let missingItems = [];
+                    if (aiResponse?.content) {
+                        try {
+                            const parsed = JSON.parse(aiResponse.content.trim().replace(/```json\n?|\n?```/g, ''));
+                            missingItems = parsed.missing_information || [];
+                        } catch (e) { console.warn(`[EVOLVE] Parse error for scenario ${i + 1}`); }
+                    }
+
+                    timer.step(`Scenario ${i + 1} completeness check`);
+
+                    const evaluation = await evaluateCompletenessOutput(scenario.transcript, missingItems, userId);
+                    timer.step(`Scenario ${i + 1} evaluation`);
+
+                    const latency = Date.now() - startTime;
+                    totalLatency += latency;
+
+                    scenarioResults.push({
+                        scenarioName: scenario.name,
+                        missingItemsCount: missingItems.length,
+                        missingItems,
+                        evaluation,
+                        latencyMs: latency
+                    });
+
+                } else if (promptKey === 'dynamicAdviceSystemPrompt') {
+                    const guidelinesSnap = await db.collection('guidelines')
+                        .where('vectorDbIngested', '==', true)
+                        .limit(50)
+                        .get();
+
+                    if (guidelinesSnap.empty) {
+                        console.warn('[EVOLVE] No ingested guidelines available');
+                        continue;
+                    }
+
+                    const guidelines = guidelinesSnap.docs;
+                    const randomGuideline = guidelines[Math.floor(Math.random() * guidelines.length)];
+                    const guidelineData = randomGuideline.data();
+                    let guidelineContent = guidelineData.content || guidelineData.condensed;
+
+                    if (!guidelineContent) {
+                        const fullDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('full').get();
+                        if (fullDoc.exists) guidelineContent = fullDoc.data()?.content;
+                    }
+                    if (!guidelineContent) {
+                        const condensedDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('condensed').get();
+                        if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
+                    }
+                    if (!guidelineContent) continue;
+
+                    const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || randomGuideline.id;
+
+                    const analysisResult = await analyzeGuidelineForPatient(
+                        scenario.transcript, guidelineContent, guidelineTitle, userId, randomGuideline.id
+                    );
+                    timer.step(`Scenario ${i + 1} analysis`);
+
+                    const evaluation = await evaluateSuggestions(
+                        scenario.transcript, guidelineContent, guidelineTitle,
+                        analysisResult.suggestions || [], analysisResult.alreadyCompliant || [], userId
+                    );
+                    timer.step(`Scenario ${i + 1} evaluation`);
+
+                    const latency = Date.now() - startTime;
+                    totalLatency += latency;
+
+                    scenarioResults.push({
+                        scenarioName: scenario.name,
+                        guidelineTitle,
+                        suggestionsCount: analysisResult.suggestions?.length || 0,
+                        evaluation,
+                        latencyMs: latency
+                    });
+                }
+            }
+
+            if (scenarioResults.length === 0) {
+                evolutionJobs[jobId] = { status: 'error', error: 'No scenarios could be processed' };
+                return;
+            }
+
+            const avgRecall = scenarioResults.reduce((sum, r) => sum + (r.evaluation.recallScore ?? 0), 0) / scenarioResults.length;
+            const avgPrecision = scenarioResults.reduce((sum, r) => sum + (r.evaluation.precisionScore ?? 0), 0) / scenarioResults.length;
+            const avgLatency = totalLatency / scenarioResults.length;
+            timer.step('Aggregate metrics');
+
+            const evaluations = scenarioResults.map(r => r.evaluation);
+            const improvements = await generatePromptImprovements(
+                currentPrompt, evaluations, avgRecall, avgPrecision, avgLatency, userId, {}
+            );
+            timer.step('Generate improvements');
+
+            let newVersion = null;
+            const newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
+            if (newPromptText && newPromptText !== currentPrompt) {
+                const currentVersionSnap = await db.collection('promptVersions')
+                    .where('promptKey', '==', promptKey)
+                    .where('active', '==', true)
+                    .limit(1)
                     .get();
+                const parentVersion = currentVersionSnap.empty ? null : currentVersionSnap.docs[0].data().version;
 
-                if (guidelinesSnap.empty) {
-                    console.warn('[EVOLVE] No ingested guidelines available');
-                    continue;
-                }
-
-                const guidelines = guidelinesSnap.docs;
-                const randomGuideline = guidelines[Math.floor(Math.random() * guidelines.length)];
-                const guidelineData = randomGuideline.data();
-                let guidelineContent = guidelineData.content || guidelineData.condensed;
-
-                if (!guidelineContent) {
-                    const fullDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('full').get();
-                    if (fullDoc.exists) guidelineContent = fullDoc.data()?.content;
-                }
-                if (!guidelineContent) {
-                    const condensedDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('condensed').get();
-                    if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
-                }
-
-                if (!guidelineContent) continue;
-
-                const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || randomGuideline.id;
-
-                // Run guideline analysis then evaluate
-                const analysisResult = await analyzeGuidelineForPatient(
-                    scenario.transcript, guidelineContent, guidelineTitle, userId, randomGuideline.id
-                );
-
-                timer.step(`Scenario ${i + 1} analysis`);
-
-                const evaluation = await evaluateSuggestions(
-                    scenario.transcript, guidelineContent, guidelineTitle,
-                    analysisResult.suggestions || [], analysisResult.alreadyCompliant || [], userId
-                );
-
-                timer.step(`Scenario ${i + 1} evaluation`);
-
-                const latency = Date.now() - startTime;
-                totalLatency += latency;
-
-                scenarioResults.push({
-                    scenarioName: scenario.name,
-                    guidelineTitle,
-                    suggestionsCount: analysisResult.suggestions?.length || 0,
-                    evaluation,
-                    latencyMs: latency
-                });
+                newVersion = await storePromptVersion(promptKey, newPromptText, {
+                    avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length
+                }, parentVersion);
             }
+
+            console.log(`[EVOLVE-${promptKey}] Complete. ${scenarioResults.length} scenarios. Recall: ${avgRecall.toFixed(2)}, Precision: ${avgPrecision.toFixed(2)}`);
+
+            evolutionJobs[jobId] = {
+                status: 'complete',
+                promptKey,
+                scenarioResults,
+                aggregatedMetrics: { avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length },
+                suggestedImprovements: improvements,
+                newVersion,
+                timing: timer.getSummary()
+            };
+
+        } catch (error) {
+            console.error('[EVOLVE-EVOLVABLE] Error:', error);
+            evolutionJobs[jobId] = { status: 'error', error: error.message };
         }
 
-        if (scenarioResults.length === 0) {
-            return res.status(400).json({ success: false, error: 'No scenarios could be processed' });
-        }
-
-        // Aggregate metrics
-        const avgRecall = scenarioResults.reduce((sum, r) => sum + (r.evaluation.recallScore ?? 0), 0) / scenarioResults.length;
-        const avgPrecision = scenarioResults.reduce((sum, r) => sum + (r.evaluation.precisionScore ?? 0), 0) / scenarioResults.length;
-        const avgLatency = totalLatency / scenarioResults.length;
-
-        timer.step('Aggregate metrics');
-
-        // Generate improvements
-        const evaluations = scenarioResults.map(r => r.evaluation);
-        const improvements = await generatePromptImprovements(
-            currentPrompt, evaluations, avgRecall, avgPrecision, avgLatency, userId, {}
-        );
-
-        timer.step('Generate improvements');
-
-        // Store new version if an improved prompt was generated
-        let newVersion = null;
-        const newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
-        if (newPromptText && newPromptText !== currentPrompt) {
-            // Find current version number
-            const currentVersionSnap = await db.collection('promptVersions')
-                .where('promptKey', '==', promptKey)
-                .where('active', '==', true)
-                .limit(1)
-                .get();
-            const parentVersion = currentVersionSnap.empty ? null : currentVersionSnap.docs[0].data().version;
-
-            newVersion = await storePromptVersion(promptKey, newPromptText, {
-                avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length
-            }, parentVersion);
-        }
-
-        console.log(`[EVOLVE-${promptKey}] Complete. ${scenarioResults.length} scenarios. Recall: ${avgRecall.toFixed(2)}, Precision: ${avgPrecision.toFixed(2)}`);
-
-        res.json({
-            success: true,
-            promptKey,
-            scenarioResults,
-            aggregatedMetrics: { avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length },
-            suggestedImprovements: improvements,
-            newVersion,
-            timing: timer.getSummary()
-        });
-
-    } catch (error) {
-        console.error('[EVOLVE-EVOLVABLE] Error:', error);
-        res.status(500).json({ success: false, error: error.message });
-    }
+        // Clean up old jobs after 30 minutes
+        setTimeout(() => { delete evolutionJobs[jobId]; }, 30 * 60 * 1000);
+    });
 };
 
 exports.evolvePromptsSequential = async (req, res) => {
