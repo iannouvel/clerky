@@ -53,21 +53,35 @@
     "version": "v9.0.27",
     "issue": "Insertion preview text leaked into committed note content",
     "resolution": "Replaced DOM-injection approach with content-based INSERTION_PLACEHOLDER (⟨TEXT TO BE INSERTED HERE⟩) inserted via TipTap API; on Insert placeholder is replaced in-place, on Skip/Close it is removed cleanly",
-    "commit": "pending"
+    "commit": "30874d21e"
   },
   "bqoT6kxvzkUowrKMPbmu": {
     "date": "2026-03-28",
     "version": "v9.0.27",
     "issue": "Existing placeholder line in note (e.g. 'Blood Pressure') not highlighted before user fills wizard",
     "resolution": "showInsertionPreview now replaces the replace_pattern/missing_info line with the styled ⟨TEXT TO BE INSERTED HERE⟩ placeholder so the user can see exactly where their input will land",
-    "commit": "pending"
+    "commit": "30874d21e"
+  },
+  "spE6nFMSxmW4clntuNJ4": {
+    "date": "2026-03-29",
+    "version": "v9.0.29",
+    "issue": "Completeness wizard asked for BP when note said 'vital signs within normal limits'",
+    "resolution": "Rewrote /assessNoteCompletenessStructured prompt using reasoning principles: implied information counts as present — model now uses clinical judgement rather than pattern matching",
+    "commit": "a0c3cd3e7"
+  },
+  "jAoIciFHzAkYJ0XRwbS6": {
+    "date": "2026-03-29",
+    "version": "v9.0.29",
+    "issue": "Completeness wizard asked for consent documentation when risks already documented in note",
+    "resolution": "Same as spE6nFMSxmW4clntuNJ4 — prompt rewrite instructs model to treat logically implied information as present",
+    "commit": "a0c3cd3e7"
   },
   "5m987u2bnucLNSyodmuS": {
     "date": "2026-03-29",
     "version": "v9.0.30",
     "issue": "Review all vs high-only step is unhelpful, should default to all sorted by priority",
     "resolution": "showSummaryDashboard was already dead code — current flow goes directly to wizard with suggestions sorted high→medium→low. Removed the unused function.",
-    "commit": "pending"
+    "commit": "b2d349c0c"
   },
   "gPHsO6UptY5sQzJgURF0": {
     "date": "2026-03-28",
