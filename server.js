@@ -16266,7 +16266,10 @@ Other important guidelines:
 - If no clinically appropriate suggestions can be made that are supported by the guideline, return {"suggestions": []}
 
 SELF-CONSISTENCY CHECK:
-Before returning your suggestions, review them as a set and remove any logical contradictions. If one suggestion implies a more intensive level of monitoring, treatment, or care than another suggestion recommends, the less intensive one is redundant and should be omitted. A set of suggestions must be internally coherent — a clinician reading them together should receive a consistent clinical message, not conflicting instructions.`;
+Before returning your suggestions, review them as a set and remove any logical contradictions. If one suggestion implies a more intensive level of monitoring, treatment, or care than another suggestion recommends, the less intensive one is redundant and should be omitted. A set of suggestions must be internally coherent — a clinician reading them together should receive a consistent clinical message, not conflicting instructions.
+
+RELEVANCE CHECK:
+Before returning any suggestion, verify it is not already covered by the clinical note. Read the transcript carefully. If the note already documents an assessment, investigation, or management step — even in general terms — do not suggest it again. Suggestions that merely restate what the clinician has already done have no clinical value and must be omitted.`;
 
         const userPrompt = `Original Transcript:
 ${transcript}

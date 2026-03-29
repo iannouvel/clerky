@@ -457,6 +457,11 @@ export function showInsertionPreview(suggestion) {
     let insertIdx = lines.length; // default: append
     let replaceExisting = false;
 
+    // Guideline suggestion fields (from /dynamicAdvice)
+    const originalText = suggestion?.originalText || '';
+    const guidelineRef = suggestion?.guidelineReference || '';
+    const category = suggestion?.category || '';
+
     // 1. Exact replace_pattern match — placeholder replaces that line in-place
     if (replacePattern) {
         const idx = lines.findIndex(l => l.includes(replacePattern));
@@ -469,9 +474,17 @@ export function showInsertionPreview(suggestion) {
         if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
     }
 
-    // 3. After the target section heading
-    if (!replaceExisting && targetSection) {
-        const lowerTarget = targetSection.toLowerCase().replace(/[^a-z0-9]/g, '');
+    // 3. For modification suggestions: find originalText in the note and replace it
+    if (!replaceExisting && category === 'modification' && originalText && !originalText.startsWith('Missing:') && !originalText.startsWith('Gap:')) {
+        const snippet = originalText.slice(0, 60).toLowerCase();
+        const idx = lines.findIndex(l => l.toLowerCase().includes(snippet));
+        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
+    }
+
+    // 4. After the target section heading (completeness items) or guideline reference (guideline suggestions)
+    const sectionHint = targetSection || guidelineRef;
+    if (!replaceExisting && sectionHint) {
+        const lowerTarget = sectionHint.toLowerCase().replace(/[^a-z0-9]/g, '');
         const idx = lines.findIndex(l => l.toLowerCase().replace(/[^a-z0-9]/g, '').includes(lowerTarget));
         if (idx !== -1) {
             // Find the end of that section (next blank line or end of content)

@@ -116,6 +116,13 @@
     "version": "v9.0.33",
     "issue": "Completeness wizard asked for postnatal contraception discussion during acute secondary PPH presentation",
     "resolution": "Strengthened STEP 2 of /assessNoteCompletenessStructured prompt: acute/emergency encounters must not flag routine preventive or future-planning items that are clinically inappropriate to address during the acute encounter",
+    "commit": "b1aa345f7"
+  },
+  "DZalnlfTinpmh0QBh31u": {
+    "date": "2026-03-29",
+    "version": "v9.0.34",
+    "issue": "Guideline suggestion: wrong insertion point, vague suggestion, no verbatim quote",
+    "resolution": "1) showInsertionPreview now maps guideline suggestion fields (originalText for modifications, guidelineReference as section target) so placeholder lands in the correct part of the note. 2) Added RELEVANCE CHECK principle to /dynamicAdvice: do not suggest things already documented in the note. 3) Verbatim quoting already handled by hasVerbatimQuote field — no change needed.",
     "commit": "pending"
   }
 }
