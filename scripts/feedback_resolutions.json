@@ -123,6 +123,27 @@
     "version": "v9.0.34",
     "issue": "Guideline suggestion: wrong insertion point, vague suggestion, no verbatim quote",
     "resolution": "1) showInsertionPreview now maps guideline suggestion fields (originalText for modifications, guidelineReference as section target) so placeholder lands in the correct part of the note. 2) Added RELEVANCE CHECK principle to /dynamicAdvice: do not suggest things already documented in the note. 3) Verbatim quoting already handled by hasVerbatimQuote field — no change needed.",
-    "commit": "pending"
+    "commit": "0d246236d"
+  },
+  "dy9bGUjMQ5eIhcnFar6A": {
+    "date": "2026-03-27",
+    "version": "v9.0.34",
+    "issue": "Guideline suggested USS rescan when USS was already documented in the note",
+    "resolution": "RELEVANCE CHECK principle added to /dynamicAdvice in v9.0.34: model must verify a step is not already documented before suggesting it",
+    "commit": "0d246236d"
+  },
+  "kH9wyyqXKaM2rtQjOdLz": {
+    "date": "2026-03-26",
+    "version": "v9.0.34",
+    "issue": "Nonsensical suggestion to confirm gestational age when patient is already 32+4 weeks",
+    "resolution": "RELEVANCE CHECK principle added to /dynamicAdvice in v9.0.34: gestational age is in the header — model must not suggest confirming information already clearly documented",
+    "commit": "0d246236d"
+  },
+  "tzHc9RpDP7iUrCl8aFmZ": {
+    "date": "2026-03-27",
+    "version": "v9.0.34",
+    "issue": "BP value inserted in the wrong place by the missing info wizard",
+    "resolution": "showInsertionPreview improved in v9.0.34 to better locate insertion point using target_section and guidelineReference; falls back to list-context detection if no section match found",
+    "commit": "0d246236d"
   }
 }
