@@ -5986,6 +5986,299 @@ ${responseText}
             loadEvolveScenarios();
         }
 
+        // ===== EVOLVABLE PROMPT EVOLUTION =====
+
+        let currentEvolvableResults = null;
+
+        async function runEvolvableEvolution() {
+            const promptKey = document.getElementById('evolvablePromptSelect').value;
+            const scenarioCount = parseInt(document.getElementById('evolvableScenarioCount').value);
+            const status = document.getElementById('evolvableStatus');
+            const progressSection = document.getElementById('evolvableProgressSection');
+            const progressText = document.getElementById('evolvableProgressText');
+            const progressPercent = document.getElementById('evolvableProgressPercent');
+            const progressBar = document.getElementById('evolvableProgressBar');
+            const resultsSection = document.getElementById('evolvableResultsSection');
+            const runBtn = document.getElementById('runEvolvableBtn');
+
+            runBtn.disabled = true;
+            progressSection.style.display = 'block';
+            resultsSection.style.display = 'none';
+            status.textContent = '';
+
+            const promptLabel = promptKey === 'assessNoteCompletenessStructured' ? 'Completeness Check' : 'Dynamic Advice';
+            progressText.textContent = `Running ${scenarioCount} scenarios through ${promptLabel}...`;
+            progressBar.style.width = '10%';
+            progressPercent.textContent = '10%';
+
+            try {
+                const token = await auth.currentUser.getIdToken();
+
+                // Simulate progress while waiting
+                let progress = 10;
+                const progressInterval = setInterval(() => {
+                    progress = Math.min(progress + Math.random() * 8, 85);
+                    progressBar.style.width = progress + '%';
+                    progressPercent.textContent = Math.round(progress) + '%';
+                }, 3000);
+
+                const response = await fetch(`${SERVER_URL}/evolveEvolvablePrompt`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ promptKey, scenarioCount })
+                });
+
+                clearInterval(progressInterval);
+
+                if (!response.ok) {
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.error || `Server returned ${response.status}`);
+                }
+
+                const result = await response.json();
+                if (!result.success) throw new Error(result.error || 'Evolution failed');
+
+                currentEvolvableResults = result;
+
+                progressBar.style.width = '100%';
+                progressPercent.textContent = '100%';
+                progressText.textContent = 'Complete!';
+
+                displayEvolvableResults(result);
+                status.textContent = `Evolution complete — ${result.scenarioResults.length} scenarios processed`;
+
+            } catch (error) {
+                console.error('Evolvable evolution error:', error);
+                status.textContent = 'Error: ' + error.message;
+                status.style.color = '#dc3545';
+            } finally {
+                runBtn.disabled = false;
+                setTimeout(() => { progressSection.style.display = 'none'; }, 2000);
+            }
+        }
+
+        function displayEvolvableResults(result) {
+            const resultsSection = document.getElementById('evolvableResultsSection');
+            resultsSection.style.display = 'block';
+
+            const m = result.aggregatedMetrics;
+            document.getElementById('evolvableMetricRecall').textContent = (m.avgRecall * 100).toFixed(0) + '%';
+            document.getElementById('evolvableMetricRecall').style.color = m.avgRecall >= 0.8 ? '#28a745' : m.avgRecall >= 0.6 ? '#ff9800' : '#dc3545';
+            document.getElementById('evolvableMetricPrecision').textContent = (m.avgPrecision * 100).toFixed(0) + '%';
+            document.getElementById('evolvableMetricPrecision').style.color = m.avgPrecision >= 0.8 ? '#28a745' : m.avgPrecision >= 0.6 ? '#ff9800' : '#dc3545';
+            document.getElementById('evolvableMetricLatency').textContent = (m.avgLatency / 1000).toFixed(1) + 's';
+            document.getElementById('evolvableMetricScenarios').textContent = m.scenarioCount;
+
+            // Per-scenario results table
+            const scenarioResults = document.getElementById('evolvableScenarioResults');
+            const isCompleteness = result.promptKey === 'assessNoteCompletenessStructured';
+
+            let tableHtml = `<table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead><tr style="background:var(--bg-tertiary);position:sticky;top:0;">
+                    <th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Scenario</th>
+                    ${isCompleteness ? '<th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Items Found</th>' : '<th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Guideline</th>'}
+                    <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Recall</th>
+                    <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Precision</th>
+                    <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Latency</th>
+                </tr></thead><tbody>`;
+
+            for (const sr of result.scenarioResults) {
+                const recall = sr.evaluation?.recallScore ?? 0;
+                const precision = sr.evaluation?.precisionScore ?? 0;
+                const recallColor = recall >= 0.8 ? '#28a745' : recall >= 0.6 ? '#ff9800' : '#dc3545';
+                const precColor = precision >= 0.8 ? '#28a745' : precision >= 0.6 ? '#ff9800' : '#dc3545';
+
+                tableHtml += `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;" onclick="this.nextElementSibling && (this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'table-row' : 'none')">
+                    <td style="padding:8px;">${sr.scenarioName}</td>
+                    ${isCompleteness ? `<td style="padding:8px;text-align:center;">${sr.missingItemsCount ?? '-'}</td>` : `<td style="padding:8px;font-size:12px;">${(sr.guidelineTitle || '').substring(0, 40)}...</td>`}
+                    <td style="padding:8px;text-align:center;font-weight:bold;color:${recallColor};">${(recall * 100).toFixed(0)}%</td>
+                    <td style="padding:8px;text-align:center;font-weight:bold;color:${precColor};">${(precision * 100).toFixed(0)}%</td>
+                    <td style="padding:8px;text-align:center;">${(sr.latencyMs / 1000).toFixed(1)}s</td>
+                </tr>`;
+
+                // Expandable detail row
+                const assessment = sr.evaluation?.overallAssessment || '';
+                const itemDetails = isCompleteness
+                    ? (sr.evaluation?.itemEvaluations || []).map(ie => `<span style="display:inline-block;margin:2px;padding:2px 6px;border-radius:3px;font-size:11px;background:${ie.verdict === 'correct' ? 'rgba(40,167,69,0.15)' : ie.verdict === 'false_positive' ? 'rgba(220,53,69,0.15)' : 'rgba(255,152,0,0.15)'}">${ie.verdict}: ${ie.missing_info}</span>`).join('')
+                    : (sr.evaluation?.suggestionEvaluations || []).map(se => `<span style="display:inline-block;margin:2px;padding:2px 6px;border-radius:3px;font-size:11px;background:${se.verdict === 'correct' ? 'rgba(40,167,69,0.15)' : se.verdict === 'incorrect' ? 'rgba(220,53,69,0.15)' : 'rgba(255,152,0,0.15)'}">${se.verdict}: ${se.suggestionName || ''}</span>`).join('');
+
+                tableHtml += `<tr style="display:none;background:var(--bg-tertiary);">
+                    <td colspan="5" style="padding:10px;font-size:12px;">
+                        ${assessment ? `<div style="margin-bottom:6px;"><strong>Assessment:</strong> ${assessment}</div>` : ''}
+                        ${itemDetails ? `<div>${itemDetails}</div>` : ''}
+                    </td>
+                </tr>`;
+            }
+
+            tableHtml += '</tbody></table>';
+            scenarioResults.innerHTML = tableHtml;
+
+            // Improvements
+            const improvementsDiv = document.getElementById('evolvableImprovements');
+            const imp = result.suggestedImprovements;
+            if (!imp) {
+                improvementsDiv.innerHTML = '<div style="color:var(--text-secondary);">No improvements generated.</div>';
+            } else {
+                let impHtml = '';
+                if (imp.analysis) {
+                    if (imp.analysis.keyPatterns?.length) {
+                        impHtml += `<div style="margin-bottom:10px;"><strong>Key Patterns:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.keyPatterns.map(p => `<li style="font-size:13px;">${p}</li>`).join('')}</ul></div>`;
+                    }
+                    if (imp.analysis.rootCauses?.length) {
+                        impHtml += `<div style="margin-bottom:10px;"><strong>Root Causes:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.rootCauses.map(r => `<li style="font-size:13px;">${r}</li>`).join('')}</ul></div>`;
+                    }
+                    if (imp.analysis.strengthsToPreserve?.length) {
+                        impHtml += `<div style="margin-bottom:10px;"><strong>Strengths to Preserve:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.strengthsToPreserve.map(s => `<li style="font-size:13px;">${s}</li>`).join('')}</ul></div>`;
+                    }
+                }
+                if (imp.suggestedChanges?.length) {
+                    impHtml += '<div style="margin-bottom:10px;"><strong>Suggested Changes:</strong></div>';
+                    for (const ch of imp.suggestedChanges) {
+                        impHtml += `<div style="margin-bottom:8px;padding:8px;background:var(--bg-tertiary);border-radius:4px;font-size:13px;">
+                            <div><strong>${ch.changeType}</strong> in ${ch.section} — <em>${ch.rationale}</em></div>
+                            ${ch.newText ? `<div style="margin-top:4px;padding:6px;background:rgba(40,167,69,0.1);border-radius:3px;font-family:monospace;font-size:12px;white-space:pre-wrap;max-height:100px;overflow-y:auto;">${ch.newText.substring(0, 500)}</div>` : ''}
+                        </div>`;
+                    }
+                }
+                if (imp.expectedImprovement) {
+                    impHtml += `<div style="margin-top:10px;padding:8px;background:rgba(155,89,182,0.1);border-radius:4px;font-size:13px;">
+                        <strong>Expected:</strong> Recall ${imp.expectedImprovement.recall || 'N/A'}, Precision ${imp.expectedImprovement.precision || 'N/A'}
+                        ${imp.expectedImprovement.tradeoffs ? ` — <em>${imp.expectedImprovement.tradeoffs}</em>` : ''}
+                    </div>`;
+                }
+
+                // Show new prompt preview
+                const newPromptText = imp.newSystemPrompt || imp.newPrompt || '';
+                if (newPromptText) {
+                    impHtml += `<div style="margin-top:15px;">
+                        <strong>New Prompt Preview:</strong>
+                        <div style="margin-top:6px;padding:10px;background:#1a1a2e;color:#e0e0ff;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;max-height:300px;overflow-y:auto;">${newPromptText.replace(/</g, '&lt;').substring(0, 3000)}</div>
+                    </div>`;
+                }
+
+                improvementsDiv.innerHTML = impHtml || '<div style="color:var(--text-secondary);">No specific improvements suggested.</div>';
+            }
+
+            // New version info
+            const versionInfo = document.getElementById('evolvableVersionInfo');
+            const activateBtn = document.getElementById('activateEvolvableBtn');
+            if (result.newVersion) {
+                versionInfo.style.display = 'block';
+                document.getElementById('evolvableVersionText').textContent =
+                    `New version ${result.newVersion.version} stored (ID: ${result.newVersion.id}). Click Activate to make it live.`;
+                activateBtn.disabled = false;
+            } else {
+                versionInfo.style.display = 'none';
+                activateBtn.disabled = true;
+            }
+        }
+
+        async function activateEvolvableVersion() {
+            if (!currentEvolvableResults?.newVersion) return;
+            const status = document.getElementById('evolvableActivateStatus');
+            const btn = document.getElementById('activateEvolvableBtn');
+            btn.disabled = true;
+            status.textContent = 'Activating...';
+
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/activatePromptVersion`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ versionId: currentEvolvableResults.newVersion.id })
+                });
+                const result = await response.json();
+                if (!result.success) throw new Error(result.error || 'Activation failed');
+                status.textContent = `Activated ${result.activated.promptKey} v${result.activated.version}`;
+                status.style.color = '#28a745';
+            } catch (error) {
+                status.textContent = 'Error: ' + error.message;
+                status.style.color = '#dc3545';
+                btn.disabled = false;
+            }
+        }
+
+        function copyEvolvablePrompt() {
+            const imp = currentEvolvableResults?.suggestedImprovements;
+            const text = imp?.newSystemPrompt || imp?.newPrompt || '';
+            if (!text) { alert('No improved prompt available'); return; }
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById('evolvableActivateStatus').textContent = 'Copied to clipboard!';
+            });
+        }
+
+        async function loadPromptVersions() {
+            const container = document.getElementById('promptVersionsList');
+            const promptKey = document.getElementById('evolvablePromptSelect').value;
+            container.innerHTML = '<div style="padding:15px;color:var(--text-secondary);text-align:center;">Loading...</div>';
+
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/getPromptVersions?promptKey=${promptKey}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const result = await response.json();
+                if (!result.success) throw new Error(result.error);
+
+                if (!result.versions?.length) {
+                    container.innerHTML = '<div style="padding:15px;color:var(--text-secondary);text-align:center;">No versions stored yet. Run an evolution cycle to create the first version.</div>';
+                    return;
+                }
+
+                let html = `<table style="width:100%;border-collapse:collapse;font-size:13px;">
+                    <thead><tr style="background:var(--bg-tertiary);position:sticky;top:0;">
+                        <th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Version</th>
+                        <th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Prompt</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Recall</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Precision</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Scenarios</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Status</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Action</th>
+                    </tr></thead><tbody>`;
+
+                for (const v of result.versions) {
+                    const recall = v.metrics?.avgRecall;
+                    const precision = v.metrics?.avgPrecision;
+                    const date = v.createdAt ? new Date(v.createdAt).toLocaleDateString() : '—';
+                    const label = v.promptKey === 'assessNoteCompletenessStructured' ? 'Completeness' : 'Dynamic Advice';
+
+                    html += `<tr style="border-bottom:1px solid var(--border-color);">
+                        <td style="padding:8px;">v${v.version} <span style="font-size:11px;color:var(--text-secondary);">${date}</span></td>
+                        <td style="padding:8px;font-size:12px;">${label}</td>
+                        <td style="padding:8px;text-align:center;">${recall != null ? (recall * 100).toFixed(0) + '%' : '—'}</td>
+                        <td style="padding:8px;text-align:center;">${precision != null ? (precision * 100).toFixed(0) + '%' : '—'}</td>
+                        <td style="padding:8px;text-align:center;">${v.metrics?.scenarioCount || '—'}</td>
+                        <td style="padding:8px;text-align:center;">${v.active ? '<span style="color:#28a745;font-weight:bold;">ACTIVE</span>' : '<span style="color:var(--text-secondary);">inactive</span>'}</td>
+                        <td style="padding:8px;text-align:center;">${v.active ? '—' : `<button class="dev-btn" style="padding:4px 10px;font-size:11px;" onclick="activateVersionById('${v.id}')">Activate</button>`}</td>
+                    </tr>`;
+                }
+
+                html += '</tbody></table>';
+                container.innerHTML = html;
+            } catch (error) {
+                container.innerHTML = `<div style="padding:15px;color:#dc3545;text-align:center;">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Global function for inline onclick handlers in version table
+        window.activateVersionById = async function(versionId) {
+            if (!confirm('Activate this prompt version? This will replace the current live prompt.')) return;
+            try {
+                const token = await auth.currentUser.getIdToken();
+                const response = await fetch(`${SERVER_URL}/activatePromptVersion`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ versionId })
+                });
+                const result = await response.json();
+                if (!result.success) throw new Error(result.error);
+                alert(`Activated ${result.activated.promptKey} v${result.activated.version}`);
+                loadPromptVersions();
+            } catch (error) {
+                alert('Activation failed: ' + error.message);
+            }
+        };
+
         // Set up evolution button handlers
         const runEvolutionBtn = document.getElementById('runEvolutionBtn');
         if (runEvolutionBtn) {
@@ -6016,6 +6309,19 @@ ${responseText}
         if (copyEvolutionBtn) {
             copyEvolutionBtn.addEventListener('click', copyEvolutionPrompt);
         }
+
+        // Evolvable prompt handlers
+        const runEvolvableBtn = document.getElementById('runEvolvableBtn');
+        if (runEvolvableBtn) runEvolvableBtn.addEventListener('click', runEvolvableEvolution);
+
+        const activateEvolvableBtn = document.getElementById('activateEvolvableBtn');
+        if (activateEvolvableBtn) activateEvolvableBtn.addEventListener('click', activateEvolvableVersion);
+
+        const copyEvolvableBtn = document.getElementById('copyEvolvableBtn');
+        if (copyEvolvableBtn) copyEvolvableBtn.addEventListener('click', copyEvolvablePrompt);
+
+        const loadVersionsBtn = document.getElementById('loadVersionsBtn');
+        if (loadVersionsBtn) loadVersionsBtn.addEventListener('click', loadPromptVersions);
 
         // Hook into tab switching to initialize evolution tab
         const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');

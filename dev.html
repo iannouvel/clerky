@@ -1348,6 +1348,110 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ─── Evolvable Prompt Evolution ─── -->
+            <div class="tools-section" style="margin-top:30px;border-top:2px solid var(--border-color);padding-top:20px;">
+                <h4>Evolvable Prompt Evolution</h4>
+                <p style="color:var(--text-secondary);font-size:13px;margin-bottom:15px;">
+                    Evolve the <strong>Completeness Check</strong> and <strong>Dynamic Advice</strong> prompts using fake clinical scenarios.
+                    The system runs scenarios, judges output quality, generates an improved prompt, and stores it as a new version you can review and activate.
+                </p>
+
+                <!-- Prompt Selection + Config -->
+                <div style="display:flex;gap:15px;align-items:flex-end;margin-bottom:20px;flex-wrap:wrap;">
+                    <div>
+                        <label style="display:block;font-weight:600;margin-bottom:6px;font-size:13px;">Prompt to Evolve</label>
+                        <select id="evolvablePromptSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:280px;">
+                            <option value="assessNoteCompletenessStructured">Completeness Check</option>
+                            <option value="dynamicAdviceSystemPrompt">Dynamic Advice (Guidelines)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block;font-weight:600;margin-bottom:6px;font-size:13px;">Scenarios</label>
+                        <select id="evolvableScenarioCount" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);">
+                            <option value="3">3 (quick)</option>
+                            <option value="5" selected>5 (balanced)</option>
+                            <option value="10">10 (thorough)</option>
+                            <option value="20">20 (comprehensive)</option>
+                        </select>
+                    </div>
+                    <button id="runEvolvableBtn" class="dev-btn" style="background-color:#9b59b6;color:#fff;border-color:#9b59b6;padding:10px 20px;">
+                        🧬 Run Evolution
+                    </button>
+                    <span id="evolvableStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                </div>
+
+                <!-- Progress -->
+                <div id="evolvableProgressSection" style="display:none;margin-bottom:20px;padding:15px;background:var(--bg-tertiary);border-radius:6px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <span id="evolvableProgressText" style="font-weight:600;">Processing...</span>
+                        <span id="evolvableProgressPercent">0%</span>
+                    </div>
+                    <div style="height:8px;background:var(--bg-input);border-radius:4px;overflow:hidden;">
+                        <div id="evolvableProgressBar" style="height:100%;width:0%;background:#9b59b6;transition:width 0.3s;"></div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="evolvableResultsSection" style="display:none;">
+                    <!-- Metrics -->
+                    <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:12px;margin-bottom:15px;">
+                        <div class="stat-box" style="background:var(--bg-tertiary);padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Avg Recall</div>
+                            <div id="evolvableMetricRecall" style="font-size:24px;font-weight:bold;color:#28a745;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:var(--bg-tertiary);padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Avg Precision</div>
+                            <div id="evolvableMetricPrecision" style="font-size:24px;font-weight:bold;color:#007bff;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:var(--bg-tertiary);padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Avg Latency</div>
+                            <div id="evolvableMetricLatency" style="font-size:24px;font-weight:bold;color:#ff9800;">-</div>
+                        </div>
+                        <div class="stat-box" style="background:var(--bg-tertiary);padding:15px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Scenarios</div>
+                            <div id="evolvableMetricScenarios" style="font-size:24px;font-weight:bold;color:#6c757d;">-</div>
+                        </div>
+                    </div>
+
+                    <!-- Per-Scenario Results -->
+                    <div style="margin-bottom:20px;">
+                        <h5 style="margin-bottom:10px;">Per-Scenario Results</h5>
+                        <div id="evolvableScenarioResults" style="max-height:300px;overflow-y:auto;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-secondary);"></div>
+                    </div>
+
+                    <!-- Improvements -->
+                    <div style="margin-bottom:20px;">
+                        <h5 style="margin-bottom:10px;">Suggested Prompt Improvements</h5>
+                        <div id="evolvableImprovements" style="border:1px solid var(--border-color);border-radius:6px;background:var(--bg-secondary);padding:15px;"></div>
+                    </div>
+
+                    <!-- New Version Info + Activate -->
+                    <div id="evolvableVersionInfo" style="display:none;margin-bottom:15px;padding:12px;background:rgba(155,89,182,0.1);border:1px solid rgba(155,89,182,0.3);border-radius:6px;">
+                        <span id="evolvableVersionText" style="font-weight:600;"></span>
+                    </div>
+                    <div style="display:flex;gap:10px;align-items:center;">
+                        <button id="activateEvolvableBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;" disabled>
+                            ✅ Activate New Version
+                        </button>
+                        <button id="copyEvolvableBtn" class="dev-btn" style="padding:10px 20px;">
+                            📋 Copy Improved Prompt
+                        </button>
+                        <span id="evolvableActivateStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                    </div>
+                </div>
+
+                <!-- Version History -->
+                <div style="margin-top:25px;border-top:1px solid var(--border-color);padding-top:15px;">
+                    <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;">
+                        <h5 style="margin:0;">Prompt Version History</h5>
+                        <button id="loadVersionsBtn" class="dev-btn" style="padding:6px 12px;font-size:12px;">🔄 Load Versions</button>
+                    </div>
+                    <div id="promptVersionsList" style="max-height:300px;overflow-y:auto;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-secondary);">
+                        <div style="padding:15px;color:var(--text-secondary);text-align:center;font-size:13px;">Click "Load Versions" to see version history</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="tab-content" id="dangerContent" style="display:none;padding:12px">
