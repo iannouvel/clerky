@@ -36,13 +36,6 @@ jobs:
             echo "bump=patch" >> $GITHUB_OUTPUT
           fi
 
-      - name: Bump version
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm version ${{ steps.version-type.outputs.bump }} -m "Bump version to %s [skip ci]"
-          git push origin main --follow-tags
-
       - name: Build
         run: npm run build
 
@@ -50,4 +43,11 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: gh-pages 
+          branch: gh-pages
+
+      - name: Bump version
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm version ${{ steps.version-type.outputs.bump }} -m "Bump version to %s [skip ci]"
+          git push origin main --follow-tags 
