@@ -62,6 +62,13 @@
     "resolution": "showInsertionPreview now replaces the replace_pattern/missing_info line with the styled ⟨TEXT TO BE INSERTED HERE⟩ placeholder so the user can see exactly where their input will land",
     "commit": "pending"
   },
+  "5m987u2bnucLNSyodmuS": {
+    "date": "2026-03-29",
+    "version": "v9.0.30",
+    "issue": "Review all vs high-only step is unhelpful, should default to all sorted by priority",
+    "resolution": "showSummaryDashboard was already dead code — current flow goes directly to wizard with suggestions sorted high→medium→low. Removed the unused function.",
+    "commit": "pending"
+  },
   "gPHsO6UptY5sQzJgURF0": {
     "date": "2026-03-28",
     "version": "v9.0.25",
