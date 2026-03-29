@@ -19596,13 +19596,14 @@ OUTPUT RULES
    - importance_and_management_impact: why this absence matters and how it affects management (1–3 sentences)
    - target_section: the exact section heading from the note where this belongs
    - replace_pattern: if the note contains a line that labels this item but provides no value (a named placeholder with no result), copy that line verbatim so the UI can replace it in-place. Otherwise null.
-   - data_type_and_options: choose the input type that best matches how the clinician would enter this:
-       numeric     — a single measured value with units
+   - data_type_and_options: choose the input type that best matches how the clinician would ACTUALLY obtain and document this in the given clinical context:
+       numeric     — a single measured value with units. Only use this when a single number is the standard documentation (e.g. temperature, cervical length). Do NOT use numeric for fetal heart rate monitoring in pregnancy — that is documented as a CTG interpretation (free_text), not a single number.
        binary      — a yes/no or present/absent question
        categorical — one answer chosen from a fixed list
        multi_select — potentially several answers from a list; always include "None of the above"; set allow_other: true; use for anything where multiple co-existing values are possible
        free_text   — narrative clinical text; pre-write a suggested_content that is specific to the actual clinical situation in this note, written in past tense, third person, ready to insert as-is. Leave suggested_content empty only when the value cannot be inferred from the note at all.
        compound    — two or more distinct sub-values that must be entered separately; each sub-field needs a label and either units (numeric) or options (categorical); mark sub-fields optional: true if useful but not essential. Use compound for any measurement where the clinical interpretation depends on when it was taken — include gestation and/or date as optional timing sub-fields.
+       General rule: the data type must reflect the realistic documentation method. A complex clinical assessment (e.g. fetal wellbeing in a high-risk pregnancy) should never be reduced to a single numeric value — use free_text and pre-write the appropriate clinical narrative.
 4) Rank by clinical safety impact — the gap most likely to affect management or patient safety ranks first.
 5) If answering one item logically requires another to be established first, the prerequisite must have a lower rank number.
 

@@ -160,6 +160,20 @@
     "resolution": "Same CLINICAL SPECIFICITY CHECK: added recency test — a previous-visit result does not substitute for current-visit confirmation when management depends on the current clinical state",
     "commit": "pending"
   },
+  "mV2Kc6IkaoOFEBLuPDJp": {
+    "date": "2026-03-29",
+    "version": "v9.0.38",
+    "issue": "SGA/FGR guideline not returned by vector search for FGR case",
+    "resolution": "Root cause: bulk ingest stored full hospitalTrust name in Pinecone metadata but scope filter uses shortHospitalTrust ('UHSussex'). Fixed rag-ingestion.js to store shortHospitalTrust preferentially. Requires re-ingest of local guidelines via admin panel.",
+    "commit": "pending"
+  },
+  "1tzvxRstJfWUbrvbCURt": {
+    "date": "2026-03-29",
+    "version": "v9.0.38",
+    "issue": "Completeness wizard asked for Fetal Heart Rate as a numeric value at 32 weeks with FGR/RFM — should be CTG",
+    "resolution": "Updated data type selection rules in /assessNoteCompletenessStructured: numeric must not be used for fetal heart rate monitoring in pregnancy; added general principle that data type must reflect realistic documentation method",
+    "commit": "pending"
+  },
   "TbulgJamkd1DpjtTajAg": {
     "date": "2026-03-28",
     "version": "v9.0.36",

@@ -349,7 +349,7 @@ function processFirestoreGuideline(guideline) {
                 title,
                 organisation,
                 scope: guideline.scope || 'national',
-                hospitalTrust: guideline.hospitalTrust || null,
+                hospitalTrust: guideline.shortHospitalTrust || guideline.hospitalTrust || null,
                 chunkIndex: index,
                 totalChunks: chunks.length
             }
