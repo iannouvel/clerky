@@ -506,9 +506,14 @@ exports.evolveEvolvablePrompt = async (req, res) => {
     const timer = new StepTimer('/evolveEvolvablePrompt');
 
     Promise.resolve().then(async () => {
+        console.log(`[EVOLVE-${promptKey}] Background job ${jobId} starting...`);
         try {
             // Load fake transcripts
             const transcriptsPath = path.join(__dirname, '../../fake_transcripts.json');
+            console.log(`[EVOLVE-${promptKey}] Loading transcripts from: ${transcriptsPath}`);
+            if (!fs.existsSync(transcriptsPath)) {
+                throw new Error(`fake_transcripts.json not found at ${transcriptsPath}`);
+            }
             const allTranscripts = JSON.parse(fs.readFileSync(transcriptsPath, 'utf8'));
             const flatScenarios = [];
             for (const [category, scenarios] of Object.entries(allTranscripts)) {
@@ -657,12 +662,15 @@ exports.evolveEvolvablePrompt = async (req, res) => {
             };
 
         } catch (error) {
-            console.error('[EVOLVE-EVOLVABLE] Error:', error);
-            evolutionJobs[jobId] = { status: 'error', error: error.message };
+            console.error(`[EVOLVE-EVOLVABLE] Job ${jobId} error:`, error?.message || error, error?.stack || '');
+            evolutionJobs[jobId] = { status: 'error', error: error?.message || String(error) };
         }
 
         // Clean up old jobs after 30 minutes
         setTimeout(() => { delete evolutionJobs[jobId]; }, 30 * 60 * 1000);
+    }).catch(outerError => {
+        console.error(`[EVOLVE-EVOLVABLE] Unhandled rejection in job ${jobId}:`, outerError?.message || outerError, outerError?.stack || '');
+        evolutionJobs[jobId] = { status: 'error', error: outerError?.message || 'Unhandled background error' };
     });
 };
 

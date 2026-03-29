@@ -5350,7 +5350,7 @@ app.use((err, req, res, next) => {
 
 // Catch unhandled rejections
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    console.error('Unhandled Rejection reason:', reason?.message || reason, reason?.stack || '');
 });
 
 // Update the firebase-config endpoint
