@@ -164,7 +164,7 @@
     "date": "2026-03-28",
     "version": "v9.0.36",
     "issue": "Reduced fetal movements guideline not included in Check Against Guidelines",
-    "resolution": "Likely a guideline database coverage issue — the RFM guideline may not be indexed in the vector database. Needs investigation: check Firestore 'guidelines' collection for an RFM guideline and whether it has embeddings. No code change made.",
-    "commit": "pending"
+    "resolution": "Root cause: 'reduced-fetal-movements-guideline-pdf' was not indexed in Pinecone (vectorDbIngested was undefined). Fixed by re-ingesting via admin panel. Also triggered full re-ingest of all 374 guidelines (18,016 chunks) — previously only 16/374 had embeddings.",
+    "commit": "admin-action"
   }
 }
