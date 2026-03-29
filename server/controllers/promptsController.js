@@ -385,12 +385,10 @@ exports.evolvePrompts = async (req, res) => {
 
 async function storePromptVersion(promptKey, promptText, metrics, parentVersion = null) {
     const versionsRef = db.collection('promptVersions');
-    const lastSnap = await versionsRef
-        .where('promptKey', '==', promptKey)
-        .orderBy('version', 'desc')
-        .limit(1)
-        .get();
-    const nextVersion = lastSnap.empty ? 1 : (lastSnap.docs[0].data().version + 1);
+    const allSnap = await versionsRef.where('promptKey', '==', promptKey).get();
+    let maxVersion = 0;
+    allSnap.forEach(d => { const v = d.data().version || 0; if (v > maxVersion) maxVersion = v; });
+    const nextVersion = maxVersion + 1;
 
     const doc = {
         promptKey,
@@ -622,6 +620,7 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
 
         let newVersion = null;
         const newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
+        console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, differs from current: ${newPromptText !== currentPrompt}`);
         if (newPromptText && newPromptText !== currentPrompt) {
             const currentVersionSnap = await db.collection('promptVersions')
                 .where('promptKey', '==', promptKey)
