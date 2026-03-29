@@ -773,9 +773,17 @@ async function evaluateSuggestions(clinicalNote, guidelineContent, guidelineTitl
  */
 async function generatePromptImprovements(currentPrompt, evaluationResults, avgRecall, avgPrecision, avgLatency, userId, additionalMetrics = {}) {
     const promptConfig = (global.prompts || require('../../prompts.json'))['generatePromptImprovements'];
-    const systemPrompt = promptConfig?.system_prompt || `You are an expert at improving AI prompts for clinical use. Analyse the evaluation results and suggest concrete changes to the prompt that would improve performance. Respond with valid JSON only, with no surrounding text or markdown.`;
+    const systemPrompt = promptConfig?.system_prompt || `You are an expert at improving AI prompts for clinical use. Analyse the evaluation results and suggest concrete changes to the prompt that would improve performance.
+
+CRITICAL: Your response MUST include a "newSystemPrompt" field containing the COMPLETE rewritten prompt with your improvements applied. Do not just describe changes — produce the full improved prompt text.
+
+Respond with valid JSON only, with no surrounding text or markdown. The JSON must include these fields:
+- "analysis": { "keyPatterns": [...], "rootCauses": [...], "strengthsToPreserve": [...] }
+- "suggestedChanges": [{ "changeType": "add|modify|remove", "section": "...", "rationale": "...", "newText": "..." }]
+- "newSystemPrompt": "<the COMPLETE rewritten prompt with all improvements applied>"
+- "expectedImprovement": { "recall": "...", "precision": "...", "tradeoffs": "..." }`;
     const evaluationSummary = evaluationResults.map((evaluationItem, idx) => ({ scenario: idx + 1, recall: evaluationItem.recallScore, precision: evaluationItem.precisionScore, assessment: evaluationItem.overallAssessment }));
-    const userPrompt = (promptConfig?.prompt || `The prompt being evaluated:\n{{currentPrompt}}\n\nEvaluation results across test cases:\n{{evaluationResults}}\n\nOverall recall score: {{avgRecall}}\nOverall precision score: {{avgPrecision}}\n\nBased on these results, please suggest specific changes to the prompt that would improve its recall and precision.`)
+    const userPrompt = (promptConfig?.prompt || `The prompt being evaluated:\n{{currentPrompt}}\n\nEvaluation results across test cases:\n{{evaluationResults}}\n\nOverall recall score: {{avgRecall}}\nOverall precision score: {{avgPrecision}}\n\nBased on these results, suggest specific changes and produce the COMPLETE improved prompt in the "newSystemPrompt" field.`)
         .replace('{{currentPrompt}}', JSON.stringify(currentPrompt)).replace('{{evaluationResults}}', JSON.stringify(evaluationSummary))
         .replace('{{avgRecall}}', avgRecall).replace('{{avgPrecision}}', avgPrecision);
 
