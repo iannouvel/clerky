@@ -506,11 +506,12 @@ exports.evolveEvolvablePrompt = async (req, res) => {
     const timer = new StepTimer('/evolveEvolvablePrompt');
 
     Promise.resolve().then(async () => {
+        evolutionJobs[jobId].debug = 'promise-started';
         console.log(`[EVOLVE-${promptKey}] Background job ${jobId} starting...`);
         try {
             // Load fake transcripts
             const transcriptsPath = path.join(__dirname, '../../fake_transcripts.json');
-            console.log(`[EVOLVE-${promptKey}] Loading transcripts from: ${transcriptsPath}`);
+            evolutionJobs[jobId].debug = `loading-transcripts:${transcriptsPath}`;
             if (!fs.existsSync(transcriptsPath)) {
                 throw new Error(`fake_transcripts.json not found at ${transcriptsPath}`);
             }
@@ -523,6 +524,7 @@ exports.evolveEvolvablePrompt = async (req, res) => {
             }
 
             const shuffled = flatScenarios.sort(() => Math.random() - 0.5).slice(0, count);
+            evolutionJobs[jobId].debug = `setup-complete:${flatScenarios.length}-scenarios-available`;
 
             timer.step('Setup');
             console.log(`[EVOLVE-${promptKey}] Starting evolution with ${count} scenarios`);
@@ -536,11 +538,14 @@ exports.evolveEvolvablePrompt = async (req, res) => {
 
                 evolutionJobs[jobId].progress = i;
                 evolutionJobs[jobId].currentScenario = scenario.name;
+                evolutionJobs[jobId].debug = `scenario-${i + 1}/${count}:${scenario.name}`;
                 console.log(`[EVOLVE-${promptKey}] Scenario ${i + 1}/${count}: ${scenario.name}`);
 
                 if (promptKey === 'assessNoteCompletenessStructured') {
                     const prompt = currentPrompt.replace('{{transcript}}', scenario.transcript.substring(0, 4000));
+                    evolutionJobs[jobId].debug = `scenario-${i + 1}:calling-routeToAI`;
                     const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
+                    evolutionJobs[jobId].debug = `scenario-${i + 1}:routeToAI-returned`;
 
                     let missingItems = [];
                     if (aiResponse?.content) {
@@ -662,15 +667,17 @@ exports.evolveEvolvablePrompt = async (req, res) => {
             };
 
         } catch (error) {
-            console.error(`[EVOLVE-EVOLVABLE] Job ${jobId} error:`, error?.message || error, error?.stack || '');
-            evolutionJobs[jobId] = { status: 'error', error: error?.message || String(error) };
+            const lastDebug = evolutionJobs[jobId]?.debug || 'unknown';
+            console.error(`[EVOLVE-EVOLVABLE] Job ${jobId} error at ${lastDebug}:`, error?.message || error, error?.stack || '');
+            evolutionJobs[jobId] = { status: 'error', error: error?.message || String(error), failedAt: lastDebug };
         }
 
         // Clean up old jobs after 30 minutes
         setTimeout(() => { delete evolutionJobs[jobId]; }, 30 * 60 * 1000);
     }).catch(outerError => {
-        console.error(`[EVOLVE-EVOLVABLE] Unhandled rejection in job ${jobId}:`, outerError?.message || outerError, outerError?.stack || '');
-        evolutionJobs[jobId] = { status: 'error', error: outerError?.message || 'Unhandled background error' };
+        const lastDebug = evolutionJobs[jobId]?.debug || 'unknown';
+        console.error(`[EVOLVE-EVOLVABLE] Outer catch job ${jobId} at ${lastDebug}:`, outerError?.message || outerError, outerError?.stack || '');
+        evolutionJobs[jobId] = { status: 'error', error: outerError?.message || 'Unhandled background error', failedAt: lastDebug };
     });
 };
 
