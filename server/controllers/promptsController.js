@@ -505,9 +505,11 @@ exports.evolveEvolvablePrompt = async (req, res) => {
     const currentPrompt = currentConfig.prompt;
     const timer = new StepTimer('/evolveEvolvablePrompt');
 
-    Promise.resolve().then(async () => {
-        evolutionJobs[jobId].debug = 'promise-started';
-        console.log(`[EVOLVE-${promptKey}] Background job ${jobId} starting...`);
+    // Use setImmediate to fully detach from Express request lifecycle
+    setImmediate(() => {
+        evolutionJobs[jobId].debug = 'setImmediate-fired';
+        console.log(`[EVOLVE-${promptKey}] Background job ${jobId} starting via setImmediate...`);
+        (async () => {
         try {
             // Load fake transcripts
             const transcriptsPath = path.join(__dirname, '../../fake_transcripts.json');
@@ -674,11 +676,12 @@ exports.evolveEvolvablePrompt = async (req, res) => {
 
         // Clean up old jobs after 30 minutes
         setTimeout(() => { delete evolutionJobs[jobId]; }, 30 * 60 * 1000);
-    }).catch(outerError => {
-        const lastDebug = evolutionJobs[jobId]?.debug || 'unknown';
-        console.error(`[EVOLVE-EVOLVABLE] Outer catch job ${jobId} at ${lastDebug}:`, outerError?.message || outerError, outerError?.stack || '');
-        evolutionJobs[jobId] = { status: 'error', error: outerError?.message || 'Unhandled background error', failedAt: lastDebug };
-    });
+        })().catch(outerError => {
+            const lastDebug = evolutionJobs[jobId]?.debug || 'unknown';
+            console.error(`[EVOLVE-EVOLVABLE] Outer catch job ${jobId} at ${lastDebug}:`, outerError?.message || outerError, outerError?.stack || '');
+            evolutionJobs[jobId] = { status: 'error', error: outerError?.message || 'Unhandled background error', failedAt: lastDebug };
+        });
+    }); // end setImmediate
 };
 
 exports.evolvePromptsSequential = async (req, res) => {
