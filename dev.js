@@ -6007,36 +6007,76 @@ ${responseText}
             status.textContent = '';
 
             const promptLabel = promptKey === 'assessNoteCompletenessStructured' ? 'Completeness Check' : 'Dynamic Advice';
-            progressText.textContent = `Running ${scenarioCount} scenarios through ${promptLabel}...`;
-            progressBar.style.width = '10%';
-            progressPercent.textContent = '10%';
+            progressText.textContent = `Starting ${scenarioCount} scenarios for ${promptLabel}...`;
+            progressBar.style.width = '5%';
+            progressPercent.textContent = '5%';
 
             try {
                 const token = await auth.currentUser.getIdToken();
 
-                // Simulate progress while waiting
-                let progress = 10;
-                const progressInterval = setInterval(() => {
-                    progress = Math.min(progress + Math.random() * 8, 85);
-                    progressBar.style.width = progress + '%';
-                    progressPercent.textContent = Math.round(progress) + '%';
-                }, 3000);
-
-                const response = await fetch(`${SERVER_URL}/evolveEvolvablePrompt`, {
+                // Step 1: Start the job (returns immediately with jobId)
+                const startResponse = await fetch(`${SERVER_URL}/evolveEvolvablePrompt`, {
                     method: 'POST',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ promptKey, scenarioCount })
                 });
 
-                clearInterval(progressInterval);
-
-                if (!response.ok) {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.error || `Server returned ${response.status}`);
+                if (!startResponse.ok) {
+                    const errData = await startResponse.json().catch(() => ({}));
+                    throw new Error(errData.error || `Server returned ${startResponse.status}`);
                 }
 
-                const result = await response.json();
-                if (!result.success) throw new Error(result.error || 'Evolution failed');
+                const startResult = await startResponse.json();
+                if (!startResult.success || !startResult.jobId) throw new Error(startResult.error || 'Failed to start job');
+
+                const jobId = startResult.jobId;
+                progressText.textContent = 'Job started. Processing scenarios...';
+                progressBar.style.width = '10%';
+                progressPercent.textContent = '10%';
+
+                // Step 2: Poll for completion
+                const maxPolls = 120; // 10 minutes at 5s intervals
+                const pollInterval = 5000;
+                let pollCount = 0;
+
+                const result = await new Promise((resolve, reject) => {
+                    const poll = async () => {
+                        pollCount++;
+                        if (pollCount > maxPolls) {
+                            reject(new Error('Evolution timed out after 10 minutes'));
+                            return;
+                        }
+                        try {
+                            const freshToken = await auth.currentUser.getIdToken();
+                            const pollResponse = await fetch(`${SERVER_URL}/getEvolutionJobStatus?jobId=${jobId}`, {
+                                headers: { 'Authorization': `Bearer ${freshToken}` }
+                            });
+                            const pollResult = await pollResponse.json();
+
+                            if (pollResult.status === 'complete') {
+                                resolve(pollResult);
+                                return;
+                            } else if (pollResult.status === 'error') {
+                                reject(new Error(pollResult.error || 'Evolution failed on server'));
+                                return;
+                            }
+
+                            // Update progress from server
+                            const done = pollResult.progress || 0;
+                            const total = pollResult.totalScenarios || scenarioCount;
+                            const pct = Math.round(10 + (done / total) * 80);
+                            progressBar.style.width = pct + '%';
+                            progressPercent.textContent = pct + '%';
+                            progressText.textContent = `Scenario ${done + 1}/${total}: ${pollResult.currentScenario || '...'}`;
+
+                            setTimeout(poll, pollInterval);
+                        } catch (pollError) {
+                            console.warn('Poll error, retrying:', pollError.message);
+                            setTimeout(poll, pollInterval);
+                        }
+                    };
+                    setTimeout(poll, pollInterval);
+                });
 
                 currentEvolvableResults = result;
 
@@ -6046,6 +6086,7 @@ ${responseText}
 
                 displayEvolvableResults(result);
                 status.textContent = `Evolution complete — ${result.scenarioResults.length} scenarios processed`;
+                status.style.color = 'var(--text-secondary)';
 
             } catch (error) {
                 console.error('Evolvable evolution error:', error);
@@ -6053,7 +6094,7 @@ ${responseText}
                 status.style.color = '#dc3545';
             } finally {
                 runBtn.disabled = false;
-                setTimeout(() => { progressSection.style.display = 'none'; }, 2000);
+                setTimeout(() => { progressSection.style.display = 'none'; }, 3000);
             }
         }
 
