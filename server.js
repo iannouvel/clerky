@@ -19566,6 +19566,7 @@ Only flag information that a reasonable clinician would be expected to document 
 - Notes focused on patient communication (counselling, consent, safety-netting): flag only what the patient needs to understand or act on. Operational clinical details do not belong here.
 - Notes focused on clinical management (acute care, intrapartum, ward rounds): operational details are appropriate. Background history is only relevant if it directly affects current decisions.
 - Notes focused on follow-up or ongoing care: flag gaps in continuity and future management, not historical re-documentation.
+For acute or emergency presentations (urgent attendances, active complications, MAU/A&E): apply strict clinical relevance. Only flag information directly relevant to the acute problem. Do not flag routine preventive or future-planning items that would be clinically inappropriate to address during an acute encounter.
 If information would not naturally appear in this type of note, do not flag it as missing.
 
 STEP 3: ASSESS PRESENCE HONESTLY
