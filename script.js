@@ -7789,6 +7789,9 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         const modalBody = document.getElementById('guidelineCheckpointBody');
         if (!modal || !modalBody) { resolve(guidelines); return; }
 
+        // Move to body so it sits above all layout containers and stacking contexts
+        document.body.appendChild(modal);
+
         // Clear existing content
         modalBody.innerHTML = '';
 
