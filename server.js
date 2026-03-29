@@ -19551,112 +19551,50 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
         return res.json({ success: true, missing_information: [] });
     }
 
-    const prompt = `You are a clinical documentation quality checker for obstetric and gynaecology notes. You will be given ONE clinical note as free text.
+    const prompt = `You are a clinical documentation quality checker for obstetric and gynaecology notes.
 
-STEP 1 — IDENTIFY CLINICAL CONTEXT (do this internally before generating any output)
-Before identifying missing information, determine the clinical context of this note:
-- What TYPE of encounter is this? (e.g. antenatal clinic consultation, intrapartum care, postnatal review, gynaecology outpatient, triage assessment, ward round, discharge summary)
-- What is the PURPOSE of the note? (e.g. risk counselling, management planning, acute assessment, routine review, consent, follow-up)
-- What STAGE of care does it represent? (e.g. pre-labour, intrapartum, immediate postpartum, later postnatal)
+REASONING STEPS — complete all three before producing any output.
 
-CONTEXT RULE (CRITICAL)
-Only suggest missing information that is appropriate to the AUDIENCE and PURPOSE of this note.
-The key question is: is this information relevant to the PATIENT in this encounter, or is it operational/clinical-staff knowledge?
+STEP 1: UNDERSTAND THE ENCOUNTER
+Determine the type, purpose, and stage of care this note represents. This governs what belongs in the record.
 
-- PATIENT-FACING notes (counselling, consent, education, risk discussion, safety-netting): only suggest items the patient needs to understand, agree to, or act on. Do NOT suggest clinician-operational details such as team role assignments, specific manoeuvres, escalation protocols, or staff checklists — these are irrelevant to the patient and do not belong in a counselling record.
-- CLINICAL MANAGEMENT notes (intrapartum care, acute assessments, ward rounds): operational details (team roles, manoeuvres, escalation steps) ARE appropriate. Do NOT suggest antenatal history items unless directly relevant to the current management decision.
-- POSTNATAL / FOLLOW-UP notes: focus on what matters for recovery, feeding, contraception, and ongoing health. Do not suggest intrapartum specifics unless documenting a complication.
+STEP 2: APPLY THE AUDIENCE PRINCIPLE
+Only flag information that a reasonable clinician would be expected to document in this type of note for this purpose and audience.
+- Notes focused on patient communication (counselling, consent, safety-netting): flag only what the patient needs to understand or act on. Operational clinical details do not belong here.
+- Notes focused on clinical management (acute care, intrapartum, ward rounds): operational details are appropriate. Background history is only relevant if it directly affects current decisions.
+- Notes focused on follow-up or ongoing care: flag gaps in continuity and future management, not historical re-documentation.
+If information would not naturally appear in this type of note, do not flag it as missing.
 
-Apply this principle to any context: ask "is this something that a reasonable clinician would document in THIS type of note, for THIS audience?" If the answer is no, omit it.
+STEP 3: ASSESS PRESENCE HONESTLY
+Before flagging anything, ask: "Has a reasonable clinician reading this note already addressed this?" Use genuine clinical judgement:
+- Read the entire note. Information in any part of the note — header, opening line, body — counts as present.
+- Information that is logically implied by what is written counts as present. Do not demand explicit restatement of something already clear from context.
+- Placeholder tokens such as [AGE], [DATE], [NAME] represent real values that were redacted — treat them as present.
+Only flag information whose absence creates a genuine clinical or documentation risk.
 
 TASK
-Extract ONLY the "missing information" items required to make a safe, guideline-consistent record appropriate to this specific clinical context, ordered from MOST important to LEAST important.
+Identify the information items that are both genuinely absent and safety-critical or necessary for guideline-consistent documentation. Return at most 5, ordered from most to least clinically important.
 
-OUTPUT RULES (STRICT)
-1) Return ONLY valid JSON. No markdown, no commentary, no extra text.
-2) The JSON MUST conform exactly to the schema below.
-3) Do NOT include any information that is already present in the note — this includes information found in ANY part of the note: headers, opening lines, section headings, or anywhere in the body. Scan the ENTIRE note before deciding something is missing.
-   CRITICAL EXAMPLES of information that must NOT be flagged as missing:
-   - If the note contains "28yo" or "28-year-old" or "[AGE]", patient age is PRESENT — do not ask for it.
-   - If the note contains "32+4" or "32 weeks" or "32+4 weeks gestation" or "[GESTATION]", gestational age is PRESENT — do not ask for it.
-   - If the note contains a blood pressure reading anywhere (e.g. "BP 120/80"), blood pressure is PRESENT.
-   - If the note contains a fetal heart rate, CTG result, USS finding, or any investigation result, it is PRESENT.
-   Patient demographics (age, gestation, gravida/para) typically appear in the first line or header. Always read the full note before generating output.
-4) Every item must include:
-   - missing_info: a concise, specific label (e.g. "Pregnancy complications" → be specific: "Pregnancy complications (e.g. pre-eclampsia, GDM, obstetric cholestasis)")
-   - importance_and_management_impact: why it matters + how it would change management (1–3 sentences)
-   - target_section: the exact section heading from the note where this information should be inserted. Use the exact heading as it appears in the note.
-   - data_type_and_options: one of:
-       a) numeric:      {"type":"numeric","units":"...","notes":"..."}
-       b) binary:       {"type":"binary","options":["Yes","No"],"notes":"..."}
-       c) categorical:  {"type":"categorical","options":[...],"notes":"..."}
-       d) multi_select: {"type":"multi_select","options":[...],"allow_other":true,"notes":"..."}
-          USE multi_select when the answer could be several items at once (e.g. pregnancy complications,
-          past medical history, medications, risk factors). Always include "None of the above" as the
-          final option. Set "allow_other": true to let the user add unlisted items as free text.
-          Keep options clinically specific — name actual conditions rather than vague categories.
-       e) free_text:    {"type":"free_text","suggested_content":"...","notes":"..."}
-          For free_text items where you CAN write plausible clinical text (e.g. a counselling
-          discussion, safety-netting advice, consent documentation), pre-write a ready-to-use
-          sentence or two in "suggested_content" that the clinician can accept as-is or edit.
-          Use language appropriate for a clinical note (past tense, third person).
-          CRITICAL — suggested_content MUST be clinically specific to the actual diagnoses,
-          conditions, and findings present in THIS note. Do NOT write generic templates.
-          BAD (generic, useless): "Safety-netting advice was provided including signs to monitor
-            and when to seek medical attention."
-          GOOD (specific, useful): "Safety-netting advice was given: the patient was advised to
-            attend urgently if she experiences reduced fetal movements, worsening breathlessness,
-            chest pain, or signs of cardiac decompensation, given the fetal diagnosis of tetralogy
-            of Fallot."
-          For counselling: name the specific condition, the specific risks discussed, and the
-          specific actions or thresholds the patient was given.
-          For safety-netting: list the actual red-flag symptoms relevant to this diagnosis.
-          For consent/decisions: state the specific option chosen and what was discussed.
-          The "notes" field should only contain genuinely useful clinical guidance not already
-          covered by the suggested_content — omit obvious checklist items like "ensure the
-          patient has had the opportunity to ask questions".
-          Leave "suggested_content" as an empty string only when the specific answer is unknowable
-          from the note (e.g. a missing investigation result, a specific measurement).
-       f) compound:     {"type":"compound","fields":[{"label":"...","units":"...","options":[...],"optional":true},...], "notes":"..."}
-          USE compound when the missing item is inherently TWO OR MORE distinct values that must
-          each be entered separately — whether numeric or categorical.
-          Examples: weight + BMI (numeric), systolic + diastolic BP (numeric),
-                    blood group + rhesus status + antibody status (categorical).
-          Each field requires a "label". For categorical sub-fields, add an "options" array
-          (the UI will render a dropdown). For numeric sub-fields, add "units" (the UI will
-          render a number input). A field may have either options OR units, not both.
-          Set "optional": true on any field that adds useful context but is not strictly required.
-          Do NOT use compound for items that are a single measurement with no meaningful context.
+OUTPUT RULES
+1) Return ONLY valid JSON matching the schema below. No markdown, no commentary, no extra text.
+2) If nothing is genuinely missing, return an empty array for "missing_information".
+3) Every item must have:
+   - rank: integer, 1 = most critical
+   - missing_info: a concise, specific label for the gap
+   - importance_and_management_impact: why this absence matters and how it affects management (1–3 sentences)
+   - target_section: the exact section heading from the note where this belongs
+   - replace_pattern: if the note contains a line that labels this item but provides no value (a named placeholder with no result), copy that line verbatim so the UI can replace it in-place. Otherwise null.
+   - data_type_and_options: choose the input type that best matches how the clinician would enter this:
+       numeric     — a single measured value with units
+       binary      — a yes/no or present/absent question
+       categorical — one answer chosen from a fixed list
+       multi_select — potentially several answers from a list; always include "None of the above"; set allow_other: true; use for anything where multiple co-existing values are possible
+       free_text   — narrative clinical text; pre-write a suggested_content that is specific to the actual clinical situation in this note, written in past tense, third person, ready to insert as-is. Leave suggested_content empty only when the value cannot be inferred from the note at all.
+       compound    — two or more distinct sub-values that must be entered separately; each sub-field needs a label and either units (numeric) or options (categorical); mark sub-fields optional: true if useful but not essential. Use compound for any measurement where the clinical interpretation depends on when it was taken — include gestation and/or date as optional timing sub-fields.
+4) Rank by clinical safety impact — the gap most likely to affect management or patient safety ranks first.
+5) If answering one item logically requires another to be established first, the prerequisite must have a lower rank number.
 
-          TEMPORAL CONTEXT RULE: Clinical measurements whose interpretation depends on WHEN they
-          were taken (e.g. haemoglobin, blood pressure, weight, HbA1c, renal function, urine
-          protein) MUST use compound type with TWO separate timing fields after the measurement:
-            {"label":"Gestation","units":"weeks+days (e.g. 28+3)","optional":true}
-            {"label":"Date","units":"date","optional":true}
-          Always include BOTH timing fields — the user will fill in whichever is applicable.
-          This is especially important in obstetrics where the same value (e.g. Hb 9 g/dL) has
-          different clinical weight depending on gestation (booking vs 28 weeks vs 34 weeks).
-          Mark both timing fields as optional:true if there is only one plausible timepoint in
-          context. Mark as optional:false if timing is clinically important and ambiguous.
-5) Order items by clinical safety criticality (highest risk/most management-changing first).
-6) Keep each field clinically specific; avoid vague phrases like "more details needed".
-7) If there are zero missing items, return an empty array for "missing_information".
-8) Limit to a maximum of 5 items — only what is genuinely absent and safety-critical.
-9) BLOOD PRESSURE: ALWAYS use compound type with two separate numeric fields — never a single
-   numeric field. Fields must be: {"label":"Systolic","units":"mmHg"} and {"label":"Diastolic","units":"mmHg"}.
-   If temporal context is also needed, add two further fields: {"label":"Gestation","units":"weeks+days (e.g. 28+3)","optional":true} and {"label":"Date","units":"date","optional":true}.
-10) REPLACE vs INSERT: Scan the note for placeholder lines — lines that name this missing item
-    without providing a value (e.g. a line reading exactly "Results of urine pregnancy test" or
-    "Maternal blood pressure" with no result appended). If such a line exists, set replace_pattern
-    to that exact text verbatim. The insertion logic will replace that line in-place, preventing
-    duplicate lines. Leave replace_pattern absent or null if no placeholder line exists.
-11) PREREQUISITES FIRST: If item B is a sub-component of or can only be meaningfully answered
-    after item A (e.g. "Discussion of teratogenic risks during neurologist consultation" presupposes
-    "Neurologist consultation has been arranged/completed"), item A MUST have a lower rank number
-    and appear first in the list. Never rank a sub-item above its logical prerequisite. Ask
-    "could this item exist without the previous one?" — if no, the previous one ranks first.
-
-JSON SCHEMA (MUST MATCH)
+JSON SCHEMA (MUST MATCH EXACTLY)
 {
   "missing_information": [
     {
@@ -19664,22 +19602,19 @@ JSON SCHEMA (MUST MATCH)
       "missing_info": "string",
       "importance_and_management_impact": "string",
       "target_section": "string",
-      "replace_pattern": "string | null (the exact placeholder text in the note to replace in-place, if one exists)",
+      "replace_pattern": "string | null",
       "data_type_and_options": {
         "type": "numeric|binary|categorical|multi_select|free_text|compound",
-        "units": "string (only if numeric)",
+        "units": "string (numeric only)",
         "options": ["string"],
         "allow_other": true,
-        "fields": [{"label":"string","units":"string (numeric sub-fields only)","options":["string (categorical sub-fields only)"],"optional":"boolean (true if this field is useful but not required)"}],
-        "suggested_content": "string (only if free_text — pre-written clinical text the user can accept or edit; empty string if the value is unknowable)",
+        "fields": [{"label":"string","units":"string","options":["string"],"optional":true}],
+        "suggested_content": "string (free_text only)",
         "notes": "string"
       }
     }
   ]
 }
-
-ANONYMISATION NOTE
-The note below has had personally identifiable information (PII) redacted and replaced with placeholder tokens (e.g. [AGE], [DATE], [NAME], [HOSPITALNAME], [MEDICALRECORDNUMBER]). Treat each placeholder token as if the actual value IS present in the note — do NOT flag any item corresponding to a placeholder token as missing information.
 
 NOTE TEXT (INPUT)
 <<<
