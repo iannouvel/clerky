@@ -775,6 +775,13 @@ async function generatePromptImprovements(currentPrompt, evaluationResults, avgR
     const promptConfig = (global.prompts || require('../../prompts.json'))['generatePromptImprovements'];
     const systemPrompt = promptConfig?.system_prompt || `You are an expert at improving AI prompts for clinical use. Analyse the evaluation results and suggest concrete changes to the prompt that would improve performance.
 
+DESIGN PHILOSOPHY — you MUST follow these principles when rewriting prompts:
+1. EXPRESS RULES AS GENERALISABLE REASONING PRINCIPLES, never as specific examples or enumerated cases. Specific example lists grow unwieldy, miss edge cases, and confuse the model into pattern-matching instead of reasoning.
+   - BAD: "If the note says 'vital signs within normal limits' or 'obs stable', blood pressure is PRESENT"
+   - GOOD: "Use clinical judgement — if a statement logically implies a value is present, treat it as documented"
+2. The completeness check prompt is designed for a reasoning LLM to use common sense and clinical judgement. Do NOT add condition-specific checklists, specific criteria lists, or enumerated documentation requirements.
+3. Improvements should refine the reasoning framework (e.g. how the model thinks about what counts as "present" or "relevant"), not add content-specific rules.
+
 CRITICAL: Your response MUST include a "newSystemPrompt" field containing the COMPLETE rewritten prompt with your improvements applied. Do not just describe changes — produce the full improved prompt text.
 
 Respond with valid JSON only, with no surrounding text or markdown. The JSON must include these fields:
