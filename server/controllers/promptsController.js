@@ -619,8 +619,21 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
         timer.step('Generate improvements');
 
         let newVersion = null;
-        const newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
-        console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, differs from current: ${newPromptText !== currentPrompt}`);
+        const improvementKeys = Object.keys(improvements || {});
+        console.log(`[EVOLVE-${promptKey}] Improvements keys: ${improvementKeys.join(', ')}`);
+        let newPromptText = improvements.newSystemPrompt || improvements.newPrompt || improvements.improvedPrompt || improvements.new_system_prompt || improvements.revised_prompt;
+        // If LLM didn't provide the full rewrite, check for any large string field that looks like a prompt
+        if (!newPromptText) {
+            for (const key of improvementKeys) {
+                const val = improvements[key];
+                if (typeof val === 'string' && val.length > 500 && val.length > currentPrompt.length * 0.5) {
+                    console.log(`[EVOLVE-${promptKey}] Found candidate prompt in field "${key}" (${val.length} chars)`);
+                    newPromptText = val;
+                    break;
+                }
+            }
+        }
+        console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, length: ${newPromptText?.length || 0}`);
         if (newPromptText && newPromptText !== currentPrompt) {
             const currentVersionSnap = await db.collection('promptVersions')
                 .where('promptKey', '==', promptKey)
