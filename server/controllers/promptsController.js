@@ -600,7 +600,7 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                 // Extract and store per-guideline learning (cheat sheet)
                 let lessonsLearned = null;
                 const hasMisses = (evaluation.missedRecommendations?.length || 0) > 0;
-                const hasErrors = (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) > 0;
+                const hasErrors = evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant') || false;
                 if (hasMisses || hasErrors) {
                     lessonsLearned = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
                     if (lessonsLearned) {
@@ -879,7 +879,7 @@ exports.evolvePromptsSequential = async (req, res) => {
                 currentEvaluation = evaluation;
                 timer.step(`Scenario ${scenarioIdx + 1} ${displayName} evaluation`);
 
-                if (!evaluation.error && (evaluation.missedRecommendations?.length > 0 || evaluation.suggestionEvaluations?.some(s => s.assessment === 'incorrect' || s.assessment === 'redundant'))) {
+                if (!evaluation.error && (evaluation.missedRecommendations?.length > 0 || evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant'))) {
                     try {
                         const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
                         if (lessons && lessons.learningText) {

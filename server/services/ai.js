@@ -841,7 +841,8 @@ Respond with valid JSON only, with no surrounding text or markdown. The JSON mus
  * @returns {string} returns.learningText - Prose summary of lessons
  */
 async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, userId) {
-    if ((evaluation.missedRecommendations?.length || 0) === 0 && (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) === 0) return null;
+    const hasIssues = (evaluation.missedRecommendations?.length || 0) > 0 || (evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant') || false);
+    if (!hasIssues) return null;
     const systemPrompt = `You are an expert at analysing AI performance on clinical tasks. Write a concise summary, in plain prose, of what went wrong and what the AI should do differently next time. Aim for two or three short paragraphs.`;
     const userPrompt = `Guideline: ${guidelineTitle}\n\nEvaluation results:\n${JSON.stringify(evaluation, null, 2)}\n\nSuggestions that were evaluated:\n${JSON.stringify(suggestions, null, 2)}\n\nPlease write a concise prose summary of the key lessons learned from this evaluation, focusing on what the AI got wrong and how it could improve.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
