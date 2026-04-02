@@ -6154,50 +6154,71 @@ ${responseText}
             tableHtml += '</tbody></table>';
             scenarioResults.innerHTML = tableHtml;
 
-            // Improvements
+            // Improvements / Learning
             const improvementsDiv = document.getElementById('evolvableImprovements');
-            const imp = result.suggestedImprovements;
-            if (!imp) {
-                improvementsDiv.innerHTML = '<div style="color:var(--text-secondary);">No improvements generated.</div>';
-            } else {
+            const improvementsTitle = document.getElementById('evolvableImprovementsTitle');
+            const isGuidelines = result.promptKey === 'dynamicAdviceSystemPrompt';
+            improvementsTitle.textContent = isGuidelines ? 'Per-Guideline Learning Updates' : 'Suggested Prompt Improvements';
+
+            if (isGuidelines && result.guidelinesUpdated) {
+                // Per-guideline learning display
                 let impHtml = '';
-                if (imp.analysis) {
-                    if (imp.analysis.keyPatterns?.length) {
-                        impHtml += `<div style="margin-bottom:10px;"><strong>Key Patterns:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.keyPatterns.map(p => `<li style="font-size:13px;">${p}</li>`).join('')}</ul></div>`;
-                    }
-                    if (imp.analysis.rootCauses?.length) {
-                        impHtml += `<div style="margin-bottom:10px;"><strong>Root Causes:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.rootCauses.map(r => `<li style="font-size:13px;">${r}</li>`).join('')}</ul></div>`;
-                    }
-                    if (imp.analysis.strengthsToPreserve?.length) {
-                        impHtml += `<div style="margin-bottom:10px;"><strong>Strengths to Preserve:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.strengthsToPreserve.map(s => `<li style="font-size:13px;">${s}</li>`).join('')}</ul></div>`;
-                    }
-                }
-                if (imp.suggestedChanges?.length) {
-                    impHtml += '<div style="margin-bottom:10px;"><strong>Suggested Changes:</strong></div>';
-                    for (const ch of imp.suggestedChanges) {
-                        impHtml += `<div style="margin-bottom:8px;padding:8px;background:var(--bg-tertiary);border-radius:4px;font-size:13px;">
-                            <div><strong>${ch.changeType}</strong> in ${ch.section} — <em>${ch.rationale}</em></div>
-                            ${ch.newText ? `<div style="margin-top:4px;padding:6px;background:rgba(40,167,69,0.1);border-radius:3px;font-family:monospace;font-size:12px;white-space:pre-wrap;max-height:100px;overflow-y:auto;">${ch.newText.substring(0, 500)}</div>` : ''}
+                if (result.guidelinesUpdated.length === 0) {
+                    impHtml = '<div style="padding:10px;color:#28a745;font-size:13px;">All guidelines performed well — no interpretation hints needed updating.</div>';
+                } else {
+                    impHtml += `<div style="margin-bottom:10px;font-size:13px;color:var(--text-secondary);">Per-guideline interpretation hints have been stored and will be used automatically in future analyses.</div>`;
+                    for (const g of result.guidelinesUpdated) {
+                        impHtml += `<div style="margin-bottom:10px;padding:10px;background:var(--bg-tertiary);border-radius:6px;border-left:3px solid #ff9800;">
+                            <div style="font-weight:bold;font-size:13px;margin-bottom:4px;">${g.guideline}</div>
+                            <div style="font-size:12px;color:var(--text-secondary);white-space:pre-wrap;">${(g.learning || '').replace(/</g, '&lt;')}</div>
                         </div>`;
                     }
                 }
-                if (imp.expectedImprovement) {
-                    impHtml += `<div style="margin-top:10px;padding:8px;background:rgba(155,89,182,0.1);border-radius:4px;font-size:13px;">
-                        <strong>Expected:</strong> Recall ${imp.expectedImprovement.recall || 'N/A'}, Precision ${imp.expectedImprovement.precision || 'N/A'}
-                        ${imp.expectedImprovement.tradeoffs ? ` — <em>${imp.expectedImprovement.tradeoffs}</em>` : ''}
-                    </div>`;
-                }
+                improvementsDiv.innerHTML = impHtml;
+            } else {
+                // Completeness prompt improvement display
+                const imp = result.suggestedImprovements;
+                if (!imp) {
+                    improvementsDiv.innerHTML = '<div style="color:var(--text-secondary);">No improvements generated.</div>';
+                } else {
+                    let impHtml = '';
+                    if (imp.analysis) {
+                        if (imp.analysis.keyPatterns?.length) {
+                            impHtml += `<div style="margin-bottom:10px;"><strong>Key Patterns:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.keyPatterns.map(p => `<li style="font-size:13px;">${p}</li>`).join('')}</ul></div>`;
+                        }
+                        if (imp.analysis.rootCauses?.length) {
+                            impHtml += `<div style="margin-bottom:10px;"><strong>Root Causes:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.rootCauses.map(r => `<li style="font-size:13px;">${r}</li>`).join('')}</ul></div>`;
+                        }
+                        if (imp.analysis.strengthsToPreserve?.length) {
+                            impHtml += `<div style="margin-bottom:10px;"><strong>Strengths to Preserve:</strong><ul style="margin:4px 0;padding-left:20px;">${imp.analysis.strengthsToPreserve.map(s => `<li style="font-size:13px;">${s}</li>`).join('')}</ul></div>`;
+                        }
+                    }
+                    if (imp.suggestedChanges?.length) {
+                        impHtml += '<div style="margin-bottom:10px;"><strong>Suggested Changes:</strong></div>';
+                        for (const ch of imp.suggestedChanges) {
+                            impHtml += `<div style="margin-bottom:8px;padding:8px;background:var(--bg-tertiary);border-radius:4px;font-size:13px;">
+                                <div><strong>${ch.changeType}</strong> in ${ch.section} — <em>${ch.rationale}</em></div>
+                                ${ch.newText ? `<div style="margin-top:4px;padding:6px;background:rgba(40,167,69,0.1);border-radius:3px;font-family:monospace;font-size:12px;white-space:pre-wrap;max-height:100px;overflow-y:auto;">${ch.newText.substring(0, 500)}</div>` : ''}
+                            </div>`;
+                        }
+                    }
+                    if (imp.expectedImprovement) {
+                        impHtml += `<div style="margin-top:10px;padding:8px;background:rgba(155,89,182,0.1);border-radius:4px;font-size:13px;">
+                            <strong>Expected:</strong> Recall ${imp.expectedImprovement.recall || 'N/A'}, Precision ${imp.expectedImprovement.precision || 'N/A'}
+                            ${imp.expectedImprovement.tradeoffs ? ` — <em>${imp.expectedImprovement.tradeoffs}</em>` : ''}
+                        </div>`;
+                    }
 
-                // Show new prompt preview
-                const newPromptText = imp.newSystemPrompt || imp.newPrompt || '';
-                if (newPromptText) {
-                    impHtml += `<div style="margin-top:15px;">
-                        <strong>New Prompt Preview:</strong>
-                        <div style="margin-top:6px;padding:10px;background:#1a1a2e;color:#e0e0ff;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;max-height:300px;overflow-y:auto;">${newPromptText.replace(/</g, '&lt;').substring(0, 3000)}</div>
-                    </div>`;
-                }
+                    const newPromptText = imp.newSystemPrompt || imp.newPrompt || '';
+                    if (newPromptText) {
+                        impHtml += `<div style="margin-top:15px;">
+                            <strong>New Prompt Preview:</strong>
+                            <div style="margin-top:6px;padding:10px;background:#1a1a2e;color:#e0e0ff;border-radius:4px;font-family:monospace;font-size:11px;white-space:pre-wrap;max-height:300px;overflow-y:auto;">${newPromptText.replace(/</g, '&lt;').substring(0, 3000)}</div>
+                        </div>`;
+                    }
 
-                improvementsDiv.innerHTML = impHtml || '<div style="color:var(--text-secondary);">No specific improvements suggested.</div>';
+                    improvementsDiv.innerHTML = impHtml || '<div style="color:var(--text-secondary);">No specific improvements suggested.</div>';
+                }
             }
 
             // New version info
@@ -6208,6 +6229,13 @@ ${responseText}
                 document.getElementById('evolvableVersionText').textContent =
                     `New version ${result.newVersion.version} stored (ID: ${result.newVersion.id}). Click Activate to make it live.`;
                 activateBtn.disabled = false;
+            } else if (isGuidelines) {
+                versionInfo.style.display = 'block';
+                const updated = result.guidelinesUpdated?.length || 0;
+                document.getElementById('evolvableVersionText').textContent =
+                    updated > 0 ? `${updated} guideline interpretation hint(s) updated. These are applied automatically — no activation needed.`
+                    : 'All guidelines performed well. No updates needed.';
+                activateBtn.disabled = true;
             } else {
                 versionInfo.style.display = 'none';
                 activateBtn.disabled = true;

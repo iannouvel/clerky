@@ -597,14 +597,29 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                 );
                 timer.step(`Scenario ${i + 1} evaluation`);
 
+                // Extract and store per-guideline learning (cheat sheet)
+                let lessonsLearned = null;
+                const hasMisses = (evaluation.missedRecommendations?.length || 0) > 0;
+                const hasErrors = (evaluation.suggestionEvaluations?.filter(s => s.verdict === 'incorrect').length || 0) > 0;
+                if (hasMisses || hasErrors) {
+                    lessonsLearned = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
+                    if (lessonsLearned) {
+                        await storeGuidelineLearning(guidelineId, lessonsLearned, guidelineTitle, userId);
+                        console.log(`[EVOLVE-LEARNING] Stored learning for guideline "${guidelineTitle}" (${guidelineId})`);
+                    }
+                }
+                timer.step(`Scenario ${i + 1} learning`);
+
                 const latency = Date.now() - startTime;
                 totalLatency += latency;
 
                 scenarioResults.push({
                     scenarioName: scenario.name,
                     guidelineTitle,
+                    guidelineId,
                     suggestionsCount: analysisResult.suggestions?.length || 0,
                     evaluation,
+                    lessonsLearned: lessonsLearned?.learningText || null,
                     latencyMs: latency
                 });
             }
@@ -620,55 +635,89 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
         const avgLatency = totalLatency / scenarioResults.length;
         timer.step('Aggregate metrics');
 
-        const evaluations = scenarioResults.map(r => r.evaluation);
-        const improvements = await generatePromptImprovements(
-            currentPrompt, evaluations, avgRecall, avgPrecision, avgLatency, userId, {}
-        );
-        timer.step('Generate improvements');
+        if (promptKey === 'dynamicAdviceSystemPrompt') {
+            // Guidelines evolution: per-guideline learning (already stored above per scenario)
+            // Summarise what was learned across all scenarios
+            const guidelinesWithLearning = scenarioResults.filter(r => r.lessonsLearned);
+            const guidelinesUpdated = guidelinesWithLearning.map(r => ({
+                guideline: r.guidelineTitle,
+                guidelineId: r.guidelineId,
+                learning: r.lessonsLearned
+            }));
 
-        let newVersion = null;
-        let newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
+            console.log(`[EVOLVE-${promptKey}] Complete. ${scenarioResults.length} scenarios, ${guidelinesWithLearning.length} guidelines updated with learning. Recall: ${avgRecall.toFixed(2)}, Precision: ${avgPrecision.toFixed(2)}`);
 
-        // If the improvements analysis came back but the full rewrite is empty (LLM hit output limits),
-        // make a dedicated second call to apply the suggested changes to the current prompt
-        if (!newPromptText && improvements.suggestedChanges?.length > 0) {
-            console.log(`[EVOLVE-${promptKey}] No rewritten prompt in improvements response — making dedicated rewrite call`);
-            const rewriteResult = await routeToAI({ messages: [
-                { role: 'system', content: 'You are a prompt engineer. Apply the requested changes to the given prompt. Return ONLY the complete rewritten prompt text, nothing else — no JSON, no markdown fences, no commentary.' },
-                { role: 'user', content: `CURRENT PROMPT:\n${currentPrompt}\n\nCHANGES TO APPLY:\n${JSON.stringify(improvements.suggestedChanges, null, 2)}\n\nReturn the complete rewritten prompt with these changes applied.` }
-            ] }, userId, null, 16000, 'complex');
-            if (rewriteResult?.content) {
-                newPromptText = rewriteResult.content.trim();
-                console.log(`[EVOLVE-${promptKey}] Rewrite call returned ${newPromptText.length} chars`);
+            evolutionJobs[jobId] = {
+                status: 'complete',
+                promptKey,
+                scenarioResults,
+                aggregatedMetrics: { avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length },
+                guidelinesUpdated,
+                suggestedImprovements: {
+                    analysis: {
+                        keyPatterns: guidelinesWithLearning.length > 0
+                            ? [`${guidelinesWithLearning.length} guideline(s) had errors and received updated interpretation hints`]
+                            : ['All guidelines performed well — no learning updates needed'],
+                        rootCauses: guidelinesWithLearning.map(r => `${r.guidelineTitle}: ${r.lessonsLearned?.substring(0, 150)}...`),
+                        strengthsToPreserve: ['Per-guideline learning is stored and will be used automatically in future analyses']
+                    },
+                    suggestedChanges: []
+                },
+                newVersion: null,
+                timing: timer.getSummary()
+            };
+        } else {
+            // Completeness evolution: global prompt rewrite
+            const evaluations = scenarioResults.map(r => r.evaluation);
+            const improvements = await generatePromptImprovements(
+                currentPrompt, evaluations, avgRecall, avgPrecision, avgLatency, userId, {}
+            );
+            timer.step('Generate improvements');
+
+            let newVersion = null;
+            let newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
+
+            // If the improvements analysis came back but the full rewrite is empty (LLM hit output limits),
+            // make a dedicated second call to apply the suggested changes to the current prompt
+            if (!newPromptText && improvements.suggestedChanges?.length > 0) {
+                console.log(`[EVOLVE-${promptKey}] No rewritten prompt in improvements response — making dedicated rewrite call`);
+                const rewriteResult = await routeToAI({ messages: [
+                    { role: 'system', content: 'You are a prompt engineer. Apply the requested changes to the given prompt. Return ONLY the complete rewritten prompt text, nothing else — no JSON, no markdown fences, no commentary.' },
+                    { role: 'user', content: `CURRENT PROMPT:\n${currentPrompt}\n\nCHANGES TO APPLY:\n${JSON.stringify(improvements.suggestedChanges, null, 2)}\n\nReturn the complete rewritten prompt with these changes applied.` }
+                ] }, userId, null, 16000, 'complex');
+                if (rewriteResult?.content) {
+                    newPromptText = rewriteResult.content.trim();
+                    console.log(`[EVOLVE-${promptKey}] Rewrite call returned ${newPromptText.length} chars`);
+                }
+                timer.step('Dedicated rewrite call');
             }
-            timer.step('Dedicated rewrite call');
+
+            console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, length: ${newPromptText?.length || 0}`);
+            if (newPromptText && newPromptText !== currentPrompt) {
+                const currentVersionSnap = await db.collection('promptVersions')
+                    .where('promptKey', '==', promptKey)
+                    .where('active', '==', true)
+                    .limit(1)
+                    .get();
+                const parentVersion = currentVersionSnap.empty ? null : currentVersionSnap.docs[0].data().version;
+
+                newVersion = await storePromptVersion(promptKey, newPromptText, {
+                    avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length
+                }, parentVersion);
+            }
+
+            console.log(`[EVOLVE-${promptKey}] Complete. ${scenarioResults.length} scenarios. Recall: ${avgRecall.toFixed(2)}, Precision: ${avgPrecision.toFixed(2)}`);
+
+            evolutionJobs[jobId] = {
+                status: 'complete',
+                promptKey,
+                scenarioResults,
+                aggregatedMetrics: { avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length },
+                suggestedImprovements: improvements,
+                newVersion,
+                timing: timer.getSummary()
+            };
         }
-
-        console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, length: ${newPromptText?.length || 0}`);
-        if (newPromptText && newPromptText !== currentPrompt) {
-            const currentVersionSnap = await db.collection('promptVersions')
-                .where('promptKey', '==', promptKey)
-                .where('active', '==', true)
-                .limit(1)
-                .get();
-            const parentVersion = currentVersionSnap.empty ? null : currentVersionSnap.docs[0].data().version;
-
-            newVersion = await storePromptVersion(promptKey, newPromptText, {
-                avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length
-            }, parentVersion);
-        }
-
-        console.log(`[EVOLVE-${promptKey}] Complete. ${scenarioResults.length} scenarios. Recall: ${avgRecall.toFixed(2)}, Precision: ${avgPrecision.toFixed(2)}`);
-
-        evolutionJobs[jobId] = {
-            status: 'complete',
-            promptKey,
-            scenarioResults,
-            aggregatedMetrics: { avgRecall, avgPrecision, avgLatency, scenarioCount: scenarioResults.length },
-            suggestedImprovements: improvements,
-            newVersion,
-            timing: timer.getSummary()
-        };
 
     } catch (error) {
         const lastDebug = evolutionJobs[jobId]?.debug || 'unknown';
