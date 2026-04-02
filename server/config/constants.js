@@ -103,12 +103,14 @@ const AI_MODEL_REGISTRY = {
 
 // Provider preference array ordered by cost (cheapest first, most expensive last)
 // This ensures we try the most cost-effective providers before falling back to expensive ones
+// contextWindow = max input tokens the model accepts (used by routeToAI to skip models that are too small)
 const AI_PROVIDER_PREFERENCE = [
     // Tier 1: Free/Ultra-cheap models
     {
         name: 'Groq',
         model: 'groq/compound',
         costPer1kTokens: 0.0,
+        contextWindow: 128000,
         priority: 1,
         description: 'Agentic system with web search and code execution'
     },
@@ -116,6 +118,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'groq/compound-mini',
         costPer1kTokens: 0.0,
+        contextWindow: 128000,
         priority: 2,
         description: 'Lightweight agentic system'
     },
@@ -123,6 +126,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'moonshotai/kimi-k2-instruct',
         costPer1kTokens: 0.0,
+        contextWindow: 131072,
         priority: 3,
         description: 'Kimi K2 instruction model on Groq'
     },
@@ -131,6 +135,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'DeepSeek',
         model: 'deepseek-chat',
         costPer1kTokens: 0.00021, // Average of input/output
+        contextWindow: 64000,
         priority: 4,
         description: 'Most cost-effective option'
     },
@@ -138,6 +143,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'llama-3.1-8b-instant',
         costPer1kTokens: 0.000065, // Ultra-fast 560 T/s
+        contextWindow: 8192,
         priority: 5,
         description: 'Ultra-fast Llama 3.1 8B on Groq'
     },
@@ -145,6 +151,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Gemini',
         model: 'gemini-3-flash-preview',
         costPer1kTokens: 0.00175, // Average of input/output
+        contextWindow: 1048576,
         priority: 5.5,
         description: 'Latest fast model with advanced reasoning (Preview)'
     },
@@ -152,6 +159,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Gemini',
         model: 'gemini-2.5-flash',
         costPer1kTokens: 0.000375, // Average of input/output
+        contextWindow: 1048576,
         priority: 6,
         description: 'Google\'s fast and cost-effective model'
     },
@@ -159,6 +167,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'openai/gpt-oss-20b',
         costPer1kTokens: 0.000188, // Average of input/output
+        contextWindow: 32768,
         priority: 7,
         description: 'Open-source GPT 20B on Groq'
     },
@@ -166,6 +175,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'meta-llama/llama-4-scout-17b-16e-instruct',
         costPer1kTokens: 0.000225, // Average of input/output
+        contextWindow: 131072,
         priority: 8,
         description: 'Llama 4 Scout 17B on Groq - 750 T/s'
     },
@@ -173,6 +183,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Grok',
         model: 'grok-4-1-fast-reasoning',
         costPer1kTokens: 0.00035, // Average of input/output
+        contextWindow: 2000000,
         priority: 9,
         description: 'xAI Grok 4.1 Fast - 2M context'
     },
@@ -180,6 +191,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Grok',
         model: 'grok-4-1-fast-non-reasoning',
         costPer1kTokens: 0.00035,
+        contextWindow: 2000000,
         priority: 10,
         description: 'xAI Grok 4.1 Fast (Non-Reasoning)'
     },
@@ -187,6 +199,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Grok',
         model: 'grok-4-fast-reasoning',
         costPer1kTokens: 0.00035,
+        contextWindow: 2000000,
         priority: 10.1,
         description: 'xAI Grok 4 Fast - 2M context'
     },
@@ -194,6 +207,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Grok',
         model: 'grok-4-fast-non-reasoning',
         costPer1kTokens: 0.00035,
+        contextWindow: 2000000,
         priority: 10.2,
         description: 'xAI Grok 4 Fast (Non-Reasoning)'
     },
@@ -201,6 +215,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'openai/gpt-oss-120b',
         costPer1kTokens: 0.000375, // Average of input/output
+        contextWindow: 32768,
         priority: 11,
         description: 'Open-source GPT 120B on Groq'
     },
@@ -208,6 +223,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Mistral',
         model: 'mistral-large-latest',
         costPer1kTokens: 0.004, // Average of input/output
+        contextWindow: 128000,
         priority: 12,
         description: 'Good balance of cost and quality'
     },
@@ -215,6 +231,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'meta-llama/llama-4-maverick-17b-128e-instruct',
         costPer1kTokens: 0.0004, // Average of input/output
+        contextWindow: 131072,
         priority: 13,
         description: 'Llama 4 Maverick on Groq - 600 T/s'
     },
@@ -222,6 +239,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'qwen/qwen3-32b',
         costPer1kTokens: 0.00044, // Average of input/output
+        contextWindow: 32768,
         priority: 14,
         description: 'Alibaba Qwen3 32B on Groq'
     },
@@ -230,6 +248,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'llama-3.3-70b-versatile',
         costPer1kTokens: 0.00069, // Average of input/output
+        contextWindow: 128000,
         priority: 16,
         description: 'Ultra-fast inference on Groq LPU - Llama 3.3 70B'
     },
@@ -237,6 +256,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Anthropic',
         model: 'claude-3-haiku-20240307',
         costPer1kTokens: 0.00075, // Average of input/output
+        contextWindow: 200000,
         priority: 17,
         description: 'Fast and cost-effective Claude'
     },
@@ -244,6 +264,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Groq',
         model: 'moonshotai/kimi-k2-instruct-0905',
         costPer1kTokens: 0.002, // Average of input/output
+        contextWindow: 262144,
         priority: 18,
         description: 'Kimi K2 with 262K context'
     },
@@ -251,6 +272,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Anthropic',
         model: 'claude-haiku-4-5',
         costPer1kTokens: 0.003, // Average of input/output
+        contextWindow: 200000,
         priority: 20,
         description: 'Fastest Claude 4.5 with near-frontier intelligence'
     },
@@ -259,6 +281,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'OpenAI',
         model: 'gpt-4.1',
         costPer1kTokens: 0.0075, // Average of input/output
+        contextWindow: 1047576,
         priority: 21,
         description: 'Smartest non-reasoning model'
     },
@@ -266,6 +289,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Anthropic',
         model: 'claude-sonnet-4-5',
         costPer1kTokens: 0.009, // Average of input/output
+        contextWindow: 200000,
         priority: 22,
         description: 'Balanced Claude 4.5 for coding and agents'
     },
@@ -273,6 +297,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Grok',
         model: 'grok-4-0709',
         costPer1kTokens: 0.009, // Average of input/output
+        contextWindow: 2000000,
         priority: 23,
         description: 'Flagship Grok 4 model'
     },
@@ -280,6 +305,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Anthropic',
         model: 'claude-opus-4-6',
         costPer1kTokens: 0.015, // Average of input/output
+        contextWindow: 200000,
         priority: 25,
         description: 'Most intelligent Claude model'
     },
@@ -287,6 +313,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'Anthropic',
         model: 'claude-opus-4-5',
         costPer1kTokens: 0.015, // Average of input/output
+        contextWindow: 200000,
         priority: 26,
         description: 'Most intelligent Claude model (previous gen)'
     },
@@ -295,6 +322,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'OpenAI',
         model: 'gpt-4o',
         costPer1kTokens: 0.00625, // Average of input/output
+        contextWindow: 128000,
         priority: 27,
         description: 'Previous flagship OpenAI model'
     },
@@ -302,6 +330,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'OpenAI',
         model: 'gpt-4o-mini',
         costPer1kTokens: 0.000375, // Average of input/output
+        contextWindow: 128000,
         priority: 28,
         description: 'Fast and affordable GPT-4o'
     },
@@ -309,6 +338,7 @@ const AI_PROVIDER_PREFERENCE = [
         name: 'OpenAI',
         model: 'gpt-3.5-turbo',
         costPer1kTokens: 0.001, // Average of input/output
+        contextWindow: 16385,
         priority: 29,
         description: 'Legacy fast model'
     }

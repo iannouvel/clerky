@@ -564,15 +564,16 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                 const guidelines = guidelinesSnap.docs;
                 const randomGuideline = guidelines[Math.floor(Math.random() * guidelines.length)];
                 const guidelineData = randomGuideline.data();
-                let guidelineContent = guidelineData.content || guidelineData.condensed;
+                // Prefer condensed version to avoid token limits
+                let guidelineContent = guidelineData.condensed || guidelineData.content;
 
-                if (!guidelineContent) {
-                    const fullDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('full').get();
-                    if (fullDoc.exists) guidelineContent = fullDoc.data()?.content;
-                }
                 if (!guidelineContent) {
                     const condensedDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('condensed').get();
                     if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
+                }
+                if (!guidelineContent) {
+                    const fullDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('full').get();
+                    if (fullDoc.exists) guidelineContent = fullDoc.data()?.content;
                 }
                 if (!guidelineContent) continue;
 

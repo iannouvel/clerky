@@ -476,13 +476,36 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         }
 
         let model;
-        const modelConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === provider);
+        let modelConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === provider);
         if (modelConfig) {
             model = provider;
             provider = modelConfig.name;
         } else {
             const map = { 'OpenAI': 'gpt-3.5-turbo', 'DeepSeek': 'deepseek-chat', 'Anthropic': 'claude-3-haiku-20240307', 'Mistral': 'mistral-large-latest', 'Gemini': 'gemini-2.5-flash', 'Groq': 'llama-3.3-70b-versatile' };
             model = map[provider] || 'deepseek-chat';
+            modelConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === model);
+        }
+
+        // Estimate token count and check against context window
+        // Rough estimate: 1 token ≈ 4 characters
+        const messageText = typeof prompt === 'object' && prompt.messages
+            ? prompt.messages.map(m => m.content || '').join(' ')
+            : (prompt || '');
+        const estimatedTokens = Math.ceil(messageText.length / 4) + maxTokens;
+
+        if (modelConfig?.contextWindow && estimatedTokens > modelConfig.contextWindow) {
+            const originalModel = model;
+            // Find the cheapest model with a large enough context window
+            const suitable = AI_PROVIDER_PREFERENCE
+                .filter(p => p.contextWindow && p.contextWindow >= estimatedTokens)
+                .sort((a, b) => a.priority - b.priority);
+            if (suitable.length > 0) {
+                model = suitable[0].model;
+                provider = suitable[0].name;
+                console.log(`[CONTEXT-CHECK] ${originalModel} context ${modelConfig.contextWindow} too small for ~${estimatedTokens} tokens, upgraded to ${model} (${suitable[0].contextWindow})`);
+            } else {
+                console.warn(`[CONTEXT-CHECK] No model has a large enough context window for ~${estimatedTokens} tokens, proceeding with ${model}`);
+            }
         }
 
         const skipUserPreference = !!preferredProvider;
