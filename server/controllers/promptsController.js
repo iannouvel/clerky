@@ -619,20 +619,23 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
         timer.step('Generate improvements');
 
         let newVersion = null;
-        const improvementKeys = Object.keys(improvements || {});
-        console.log(`[EVOLVE-${promptKey}] Improvements keys: ${improvementKeys.join(', ')}`);
-        let newPromptText = improvements.newSystemPrompt || improvements.newPrompt || improvements.improvedPrompt || improvements.new_system_prompt || improvements.revised_prompt;
-        // If LLM didn't provide the full rewrite, check for any large string field that looks like a prompt
-        if (!newPromptText) {
-            for (const key of improvementKeys) {
-                const val = improvements[key];
-                if (typeof val === 'string' && val.length > 500 && val.length > currentPrompt.length * 0.5) {
-                    console.log(`[EVOLVE-${promptKey}] Found candidate prompt in field "${key}" (${val.length} chars)`);
-                    newPromptText = val;
-                    break;
-                }
+        let newPromptText = improvements.newSystemPrompt || improvements.newPrompt;
+
+        // If the improvements analysis came back but the full rewrite is empty (LLM hit output limits),
+        // make a dedicated second call to apply the suggested changes to the current prompt
+        if (!newPromptText && improvements.suggestedChanges?.length > 0) {
+            console.log(`[EVOLVE-${promptKey}] No rewritten prompt in improvements response — making dedicated rewrite call`);
+            const rewriteResult = await routeToAI({ messages: [
+                { role: 'system', content: 'You are a prompt engineer. Apply the requested changes to the given prompt. Return ONLY the complete rewritten prompt text, nothing else — no JSON, no markdown fences, no commentary.' },
+                { role: 'user', content: `CURRENT PROMPT:\n${currentPrompt}\n\nCHANGES TO APPLY:\n${JSON.stringify(improvements.suggestedChanges, null, 2)}\n\nReturn the complete rewritten prompt with these changes applied.` }
+            ] }, userId, null, 16000, 'complex');
+            if (rewriteResult?.content) {
+                newPromptText = rewriteResult.content.trim();
+                console.log(`[EVOLVE-${promptKey}] Rewrite call returned ${newPromptText.length} chars`);
             }
+            timer.step('Dedicated rewrite call');
         }
+
         console.log(`[EVOLVE-${promptKey}] newPromptText present: ${!!newPromptText}, length: ${newPromptText?.length || 0}`);
         if (newPromptText && newPromptText !== currentPrompt) {
             const currentVersionSnap = await db.collection('promptVersions')
