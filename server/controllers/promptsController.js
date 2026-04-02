@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { db, admin } = require('../config/firebase');
 const StepTimer = require('../utils/stepTimer');
+const vectorDB = require('../../modules/vector-db');
 const {
     evaluateSuggestions,
     evaluateCompletenessOutput,
@@ -551,36 +552,42 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                 });
 
             } else if (promptKey === 'dynamicAdviceSystemPrompt') {
-                const guidelinesSnap = await db.collection('guidelines')
-                    .where('vectorDbIngested', '==', true)
-                    .limit(50)
-                    .get();
-
-                if (guidelinesSnap.empty) {
-                    console.warn('[EVOLVE] No ingested guidelines available');
+                // Use vector search to find a relevant guideline for this scenario (same as live Analyse flow)
+                if (!vectorDB.isVectorDBAvailable()) {
+                    console.warn('[EVOLVE] Vector DB not available, skipping scenario');
                     continue;
                 }
 
-                const guidelines = guidelinesSnap.docs;
-                const randomGuideline = guidelines[Math.floor(Math.random() * guidelines.length)];
-                const guidelineData = randomGuideline.data();
+                const queryResult = await vectorDB.queryDocuments(scenario.transcript, { topK: 5 });
+                const categories = vectorDB.categoriseByScore(queryResult.matches || []);
+                const topMatch = (categories.mostRelevant?.[0] || categories.potentiallyRelevant?.[0]);
+
+                if (!topMatch) {
+                    console.warn(`[EVOLVE] No relevant guideline found for ${scenario.name}`);
+                    continue;
+                }
+
+                const guidelineId = topMatch.guidelineId || topMatch.metadata?.guidelineId;
+                const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+                if (!guidelineDoc.exists) { console.warn(`[EVOLVE] Guideline ${guidelineId} not found`); continue; }
+                const guidelineData = guidelineDoc.data();
+
                 // Prefer condensed version to avoid token limits
                 let guidelineContent = guidelineData.condensed || guidelineData.content;
-
                 if (!guidelineContent) {
-                    const condensedDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('condensed').get();
+                    const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
                     if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
                 }
                 if (!guidelineContent) {
-                    const fullDoc = await db.collection('guidelines').doc(randomGuideline.id).collection('content').doc('full').get();
+                    const fullDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
                     if (fullDoc.exists) guidelineContent = fullDoc.data()?.content;
                 }
                 if (!guidelineContent) continue;
 
-                const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || randomGuideline.id;
+                const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineId;
 
                 const analysisResult = await analyzeGuidelineForPatient(
-                    scenario.transcript, guidelineContent, guidelineTitle, userId, randomGuideline.id
+                    scenario.transcript, guidelineContent, guidelineTitle, userId, guidelineId
                 );
                 timer.step(`Scenario ${i + 1} analysis`);
 
