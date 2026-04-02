@@ -567,7 +567,7 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                     continue;
                 }
 
-                const guidelineId = topMatch.guidelineId || topMatch.metadata?.guidelineId;
+                const guidelineId = topMatch.id || topMatch.guidelineId || topMatch.metadata?.guidelineId;
                 const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
                 if (!guidelineDoc.exists) { console.warn(`[EVOLVE] Guideline ${guidelineId} not found`); continue; }
                 const guidelineData = guidelineDoc.data();
