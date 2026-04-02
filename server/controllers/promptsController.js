@@ -7,7 +7,8 @@ const {
     evaluateSuggestions,
     evaluateCompletenessOutput,
     generatePromptImprovements,
-    extractLessonsLearned,
+    extractGuidelineLessons,
+    extractCompletenessLessons,
     storeGuidelineLearning,
     analyzeGuidelineForPatient,
     refineSuggestions,
@@ -301,7 +302,7 @@ exports.evolvePrompts = async (req, res) => {
             timer.step(`Scenario ${i + 1} evaluation`);
 
             try {
-                const lessons = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
+                const lessons = await extractGuidelineLessons(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
                 if (lessons && lessons.learningText) {
                     await storeGuidelineLearning(scenarioGuidelineId, lessons, guidelineTitle, userId);
                     console.log(`[EVOLVE] Stored learning for ${guidelineTitle}`);
@@ -602,7 +603,7 @@ async function runEvolutionBackground(jobId, promptKey, currentPrompt, count, us
                 const hasMisses = (evaluation.missedRecommendations?.length || 0) > 0;
                 const hasErrors = evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant') || false;
                 if (hasMisses || hasErrors) {
-                    lessonsLearned = await extractLessonsLearned(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
+                    lessonsLearned = await extractGuidelineLessons(guidelineTitle, evaluation, analysisResult.suggestions || [], userId);
                     if (lessonsLearned) {
                         await storeGuidelineLearning(guidelineId, lessonsLearned, guidelineTitle, userId);
                         console.log(`[EVOLVE-LEARNING] Stored learning for guideline "${guidelineTitle}" (${guidelineId})`);
@@ -881,7 +882,7 @@ exports.evolvePromptsSequential = async (req, res) => {
 
                 if (!evaluation.error && (evaluation.missedRecommendations?.length > 0 || evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant'))) {
                     try {
-                        const lessons = await extractLessonsLearned(guidelineTitle, evaluation, currentSuggestions, userId);
+                        const lessons = await extractGuidelineLessons(guidelineTitle, evaluation, currentSuggestions, userId);
                         if (lessons && lessons.learningText) {
                             await storeGuidelineLearning(scenarioGuidelineId, lessons, guidelineTitle, userId);
                             console.log(`[EVOLVE-SEQ] Stored learning from ${displayName} for ${guidelineTitle}`);

@@ -840,11 +840,56 @@ Respond with valid JSON only, with no surrounding text or markdown. The JSON mus
  * @returns {Promise<Object|null>} Lessons learned or null if no issues found
  * @returns {string} returns.learningText - Prose summary of lessons
  */
-async function extractLessonsLearned(guidelineTitle, evaluation, suggestions, userId) {
-    const hasIssues = (evaluation.missedRecommendations?.length || 0) > 0 || (evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant') || false);
+/**
+ * Extracts per-guideline interpretation hints from an evaluation.
+ *
+ * Produces a concise prose "cheat sheet" focused on what the AI needs to know
+ * when applying THIS specific guideline — covering edge cases missed, recommendations
+ * over-applied, and nuances the AI failed to recognise. Stored per-guideline in
+ * Firestore and injected automatically on future analyses of the same guideline.
+ *
+ * Only runs when the evaluation found missed recommendations, incorrect suggestions,
+ * or redundant suggestions (over-suggestions that shouldn't have been made).
+ *
+ * @async
+ * @param {string} guidelineTitle - Title of the guideline being evaluated
+ * @param {Object} evaluation - Output from evaluateSuggestions
+ * @param {Array} suggestions - Suggestions that were evaluated
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object|null>} { learningText } or null if no issues found
+ */
+async function extractGuidelineLessons(guidelineTitle, evaluation, suggestions, userId) {
+    const hasIssues = (evaluation.missedRecommendations?.length || 0) > 0
+        || evaluation.suggestionEvaluations?.some(s => s.verdict === 'incorrect' || s.verdict === 'redundant')
+        || false;
     if (!hasIssues) return null;
-    const systemPrompt = `You are an expert at analysing AI performance on clinical tasks. Write a concise summary, in plain prose, of what went wrong and what the AI should do differently next time. Aim for two or three short paragraphs.`;
-    const userPrompt = `Guideline: ${guidelineTitle}\n\nEvaluation results:\n${JSON.stringify(evaluation, null, 2)}\n\nSuggestions that were evaluated:\n${JSON.stringify(suggestions, null, 2)}\n\nPlease write a concise prose summary of the key lessons learned from this evaluation, focusing on what the AI got wrong and how it could improve.`;
+    const systemPrompt = `You are a clinical guideline expert reviewing how well an AI applied a specific guideline to a patient case. Write a concise "interpretation guide" in plain prose — two or three short paragraphs — describing what the AI needs to know when applying this guideline to future patients. Focus on: (1) recommendations it missed and why, (2) suggestions it made that were redundant or incorrect and under what conditions those mistakes occur, (3) any nuances in how this guideline should be applied that were not handled correctly. Do not describe the evaluation process itself — write directly about the guideline and how to apply it correctly.`;
+    const userPrompt = `Guideline: ${guidelineTitle}\n\nEvaluation results:\n${JSON.stringify(evaluation, null, 2)}\n\nSuggestions that were evaluated:\n${JSON.stringify(suggestions, null, 2)}\n\nWrite the interpretation guide for this guideline based on what went wrong.`;
+    const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
+    if (!result || !result.content) return null;
+    return { learningText: result.content.trim() };
+}
+
+/**
+ * Extracts cross-scenario lessons from a completeness check evaluation.
+ *
+ * Produces a prose summary of what general patterns the completeness check
+ * missed or got wrong, suitable for feeding into generatePromptImprovements
+ * to improve the global completeness prompt. Unlike extractGuidelineLessons,
+ * this is about generalising — what principles should apply to ALL note types.
+ *
+ * @async
+ * @param {Object} evaluation - Output from evaluateCompletenessOutput
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object|null>} { learningText } or null if no issues found
+ */
+async function extractCompletenessLessons(evaluation, userId) {
+    const hasIssues = (evaluation.falsePositives?.length || 0) > 0
+        || (evaluation.missedItems?.length || 0) > 0
+        || false;
+    if (!hasIssues) return null;
+    const systemPrompt = `You are an expert at improving AI completeness checks for clinical documentation. Write a concise analysis in plain prose — two or three short paragraphs — describing what general principles the AI should apply differently when assessing note completeness. Focus on: (1) items it flagged as missing that were actually present or irrelevant (false positives), (2) genuinely missing items it failed to detect, (3) any reasoning patterns that led to these errors. Write as generalisable principles applicable to any clinical note type, not as observations about this specific case.`;
+    const userPrompt = `Evaluation results:\n${JSON.stringify(evaluation, null, 2)}\n\nWrite the lessons learned as generalisable principles for improving the completeness check.`;
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
     if (!result || !result.content) return null;
     return { learningText: result.content.trim() };
@@ -1482,7 +1527,8 @@ module.exports = {
     evaluateSuggestions,
     evaluateCompletenessOutput,
     generatePromptImprovements,
-    extractLessonsLearned,
+    extractGuidelineLessons,
+    extractCompletenessLessons,
     refineSuggestions,
     senseCheckSuggestions,
     senseCheckGuidelines,
