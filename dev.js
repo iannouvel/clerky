@@ -3699,6 +3699,7 @@ ${responseText}
                     dateStr = date.toLocaleDateString() + ' ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                 }
 
+                const detailRowId = `detail-${g.id}`;
                 tr.innerHTML = `
                     <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
                     <td style="padding:8px;">
@@ -3708,11 +3709,14 @@ ${responseText}
                     <td style="padding:8px; color:#666;">${g.organisation || '-'}</td>
                     <td style="padding:8px; text-align:center; color:#666;">${g.yearProduced || '-'}</td>
                     <td style="padding:8px; color:#666;">${dateStr}</td>
+                    <td style="padding:8px; text-align:center;">
+                        ${elementsCount > 0 ? `<button class="view-elements-btn dev-btn" data-id="${g.id}" data-detail="${detailRowId}" style="padding:2px 8px;font-size:11px;">👁 View</button>` : ''}
+                    </td>
                 `;
 
-                // Allow clicking the row to toggle checkbox
+                // Allow clicking the row to toggle checkbox (but not the view button)
                 tr.addEventListener('click', (e) => {
-                    if (e.target.type !== 'checkbox') {
+                    if (e.target.type !== 'checkbox' && !e.target.classList.contains('view-elements-btn')) {
                         const cb = tr.querySelector('.batch-regen-cb');
                         cb.checked = !cb.checked;
                         updateBatchSelectedCount();
@@ -3720,6 +3724,13 @@ ${responseText}
                 });
 
                 batchRegenTableBody.appendChild(tr);
+
+                // Detail row (hidden by default)
+                const detailTr = document.createElement('tr');
+                detailTr.id = detailRowId;
+                detailTr.style.display = 'none';
+                detailTr.innerHTML = `<td colspan="6" style="padding:0;background:var(--bg-secondary);"></td>`;
+                batchRegenTableBody.appendChild(detailTr);
             });
 
             if (batchRegenTotalInfo) batchRegenTotalInfo.textContent = `Showing ${filteredGuidelines.length} of ${allGuidelinesForBatch.length}`;
@@ -3739,6 +3750,73 @@ ${responseText}
                 const totalVisible = document.querySelectorAll('.batch-regen-cb').length;
                 batchRegenSelectAll.checked = totalVisible > 0 && count === totalVisible;
             }
+        }
+
+        // View elements click handler (delegated)
+        if (batchRegenTableBody) {
+            batchRegenTableBody.addEventListener('click', async (e) => {
+                const btn = e.target.closest('.view-elements-btn');
+                if (!btn) return;
+                e.stopPropagation();
+
+                const guidelineId = btn.dataset.id;
+                const detailRowId = btn.dataset.detail;
+                const detailRow = document.getElementById(detailRowId);
+                if (!detailRow) return;
+
+                if (detailRow.style.display !== 'none') {
+                    detailRow.style.display = 'none';
+                    btn.textContent = '👁 View';
+                    return;
+                }
+
+                btn.textContent = '⌛';
+                btn.disabled = true;
+                detailRow.style.display = '';
+                detailRow.querySelector('td').innerHTML = '<div style="padding:10px;color:var(--text-secondary);font-size:12px;">Loading...</div>';
+
+                try {
+                    const token = await auth.currentUser?.getIdToken();
+                    const res = await fetch(`${SERVER_URL}/guideline/${guidelineId}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const data = await res.json();
+                    const elements = data.auditableElements || [];
+
+                    if (elements.length === 0) {
+                        detailRow.querySelector('td').innerHTML = '<div style="padding:10px;color:var(--text-secondary);font-size:12px;">No elements found.</div>';
+                    } else {
+                        const sigColor = { high: '#dc3545', medium: '#fd7e14', low: '#6c757d' };
+                        const rows = elements.map((el, i) => `
+                            <tr style="border-bottom:1px solid var(--border-light);">
+                                <td style="padding:6px 10px;font-size:11px;color:var(--text-secondary);width:28px;text-align:right;">${i + 1}</td>
+                                <td style="padding:6px 10px;font-size:12px;font-weight:500;">${el.name || el.title || '—'}</td>
+                                <td style="padding:6px 10px;font-size:11px;color:var(--text-secondary);max-width:320px;">${el.description || ''}</td>
+                                <td style="padding:6px 10px;font-size:11px;text-align:center;">
+                                    <span style="color:${sigColor[el.significance] || '#6c757d'};font-weight:600;">${el.significance || ''}</span>
+                                </td>
+                            </tr>`).join('');
+                        detailRow.querySelector('td').innerHTML = `
+                            <div style="padding:8px 12px;">
+                                <table style="width:100%;border-collapse:collapse;font-size:12px;color:var(--text-primary);">
+                                    <thead><tr style="border-bottom:2px solid var(--border-color);">
+                                        <th style="padding:4px 10px;width:28px;">#</th>
+                                        <th style="padding:4px 10px;text-align:left;">Name</th>
+                                        <th style="padding:4px 10px;text-align:left;">Description</th>
+                                        <th style="padding:4px 10px;width:60px;">Sig.</th>
+                                    </tr></thead>
+                                    <tbody>${rows}</tbody>
+                                </table>
+                            </div>`;
+                    }
+                    btn.textContent = '👁 Hide';
+                } catch (err) {
+                    detailRow.querySelector('td').innerHTML = `<div style="padding:10px;color:red;font-size:12px;">Error: ${err.message}</div>`;
+                    btn.textContent = '👁 View';
+                } finally {
+                    btn.disabled = false;
+                }
+            });
         }
 
         // Event Listeners
