@@ -30,7 +30,8 @@ exports.syncPracticePoints = async (req, res) => {
             }
             const totalCreated = results.reduce((s, r) => s + (r.created || 0), 0);
             const totalExisting = results.reduce((s, r) => s + (r.existing || 0), 0);
-            return res.json({ success: true, results, totalCreated, totalExisting });
+            const totalPruned = results.reduce((s, r) => s + (r.pruned || 0), 0);
+            return res.json({ success: true, results, totalCreated, totalExisting, totalPruned });
         }
 
         if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });

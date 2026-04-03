@@ -53,42 +53,66 @@ async function syncPracticePoints(guidelineId) {
 
     const metricsCol = guidelineRef.collection('practicePointMetrics');
 
-    // Fetch existing point IDs to avoid overwriting accumulated accuracy data
+    // Fetch existing docs so we can preserve accumulated accuracy and prune stale points
     const existingSnap = await metricsCol.get();
-    const existingIds = new Set(existingSnap.docs.map(d => d.id));
+    const existingDocs = new Map(existingSnap.docs.map(d => [d.id, d.data()]));
+
+    // Compute the canonical IDs for the current auditableElements
+    const currentIds = new Set(
+        auditableElements
+            .map(e => e.name || e.title || '')
+            .filter(Boolean)
+            .map(generatePointId)
+    );
 
     const batch = db.batch();
     let created = 0;
     let existing = 0;
+    let pruned = 0;
 
+    // Add new points; update name/description on existing ones (preserving accuracy data)
     for (const element of auditableElements) {
         const name = element.name || element.title || '';
         if (!name) continue;
 
         const pointId = generatePointId(name);
 
-        if (existingIds.has(pointId)) {
+        if (existingDocs.has(pointId)) {
+            // Update name/description in case wording improved, but keep accuracy data
+            batch.update(metricsCol.doc(pointId), {
+                name,
+                description: element.description || '',
+                significance: element.significance || '',
+                syncedAt: new Date().toISOString()
+            });
             existing++;
-            continue;
+        } else {
+            batch.set(metricsCol.doc(pointId), {
+                name,
+                description: element.description || '',
+                significance: element.significance || '',
+                accuracy: null,
+                evaluationCount: 0,
+                lastEvaluated: null,
+                syncedAt: new Date().toISOString(),
+                guidelineId,
+                guidelineTitle: title || ''
+            });
+            created++;
         }
-
-        batch.set(metricsCol.doc(pointId), {
-            name,
-            description: element.description || '',
-            significance: element.significance || '',
-            accuracy: null,       // not yet evaluated
-            evaluationCount: 0,
-            lastEvaluated: null,
-            syncedAt: new Date().toISOString(),
-            guidelineId,
-            guidelineTitle: title || ''
-        });
-        created++;
     }
 
-    if (created > 0) await batch.commit();
+    // Delete orphaned points that have no accuracy data (safe to remove after regeneration)
+    for (const [id, data] of existingDocs) {
+        if (!currentIds.has(id) && (data.evaluationCount || 0) === 0) {
+            batch.delete(metricsCol.doc(id));
+            pruned++;
+        }
+    }
 
-    return { created, existing, total: auditableElements.length };
+    await batch.commit();
+
+    return { created, existing, pruned, total: auditableElements.length };
 }
 
 // ─── Weighted sampling ────────────────────────────────────────────────────────

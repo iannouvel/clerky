@@ -9150,11 +9150,12 @@ RULES:
 - Both name and description must read as natural clinical prose — no labels like 'APPLIES TO:', no bullet points, no 'N/A'.
 - Include specific values where the guideline states them: drug names, doses, routes, time limits, attempt limits, gestational ages, numeric thresholds.
 - Capture conditional logic in plain language: 'if … then … otherwise …', 'unless …', 'except when …'.
-- Group related conditions into one point rather than splitting them. 'If A then B, if not A then C' is one practice point.
+- Each practice point should cover ONE distinct clinical decision — do not bundle unrelated recommendations together. A guideline with 20 distinct recommendations should produce ~20 practice points, not 5.
+- Only merge when two rules have an identical population AND action and differ only by a single threshold (e.g. nulliparous vs multiparous time limits for the same intervention).
 - Omit background, rationale, and epidemiology — only extract actionable recommendations.
 
-CATEGORIES TO COVER:
-- Screening thresholds, drug dosing, timing of interventions, safety limits, escalation criteria, location of care, special populations, documentation requirements.
+CATEGORIES TO COVER (aim for thorough coverage across all that apply):
+- Screening thresholds, prerequisites and contraindications, drug dosing, timing of interventions, safety limits, attempt limits, escalation criteria, consent requirements, location of care, instrument/device selection, special populations, documentation requirements, postpartum care.
 
 Return a JSON array of objects.
 
