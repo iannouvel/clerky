@@ -9167,7 +9167,7 @@ ${content}`;
                     content: prompt
                 }
             ]
-        }, userId, null, 8000); // Higher max tokens for extraction
+        }, userId);
 
         if (result && result.content) {
             console.log(`[AUDITABLE-OPT] Step 1: Got response (${result.content.length} chars)`);
@@ -9308,7 +9308,7 @@ Return a JSON array with the same number of objects, each with: name (decision r
                         content: prompt
                     }
                 ]
-            }, userId, null, 8000); // Higher max tokens for expansion
+            }, userId);
 
             if (result && result.content) {
                 const cleanedContent = cleanJsonResponse(result.content);
