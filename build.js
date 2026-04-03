@@ -72,6 +72,12 @@ filesToCopy.forEach(file => {
     }
 });
 
+// Write version.json so the client can fetch the version without relying on package.json
+// (which is excluded from Firebase hosting via firebase.json ignore list)
+const { version } = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+fs.writeFileSync(path.join('dist', 'version.json'), JSON.stringify({ version }));
+console.log(`Written dist/version.json: ${version}`);
+
 // Copy algos directory
 if (fs.existsSync('algos')) {
     const algoFiles = fs.readdirSync('algos');
