@@ -9136,30 +9136,25 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
 
     const summaryContext = guidelineSummary ? `\nGUIDELINE SUMMARY: ${guidelineSummary}\n` : '';
 
-    const prompt = `Analyse this clinical guideline and extract the distinct practice points as structured JSON.
+    const prompt = `Analyse this clinical guideline and extract the distinct practice points as plain-English clinical rules in JSON format.
 ${summaryContext}
 CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
-  "name": "A testable clinical decision rule written as a complete sentence with maximum clinical specificity. Include specific drug names, doses, routes, timing, and numeric criteria where stated in the guideline. E.g. 'Offer a single dose of co-amoxiclav 1.2g IV (or cefalexin 1g + metronidazole 500mg IV if penicillin allergic) at the time of operative vaginal birth to reduce infection' or 'Use Kielland's forceps only when an operator trained in rotational forceps delivery is present and delivery is anticipated within 15 minutes'. A clinician must be able to answer yes/no whether a given note complies.",
-  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [specific clinical criteria — gestational age, clinical state, sub-population — not just 'patients in labour'] • NOT APPLICABLE: [specific contraindications and exclusions from the guideline — do not write N/A; list actual exclusions or state 'None specified'] • ACTION: [specific intervention with drug name/dose/route/device/timing as stated — do not restate the name; give the operational detail] • THRESHOLDS: [exact numeric values, durations, or criteria from the guideline — do not write N/A; state actual values or 'Not specified in guideline']",
+  "name": "A single plain-English sentence that a clinician can immediately act on. Write it as a complete clinical rule: who, in what circumstances, should do exactly what (with specific drug/dose/route/device where stated), and any key exceptions. E.g.: 'At the time of operative vaginal birth, offer all women a single dose of co-amoxiclav 1.2g IV (or cefalexin 1g + metronidazole 500mg IV if penicillin-allergic) to reduce infection risk, unless intrapartum antibiotics for GBS have already been given.' Another example: 'Use Kielland's forceps only when a trained operator is available, the cervix is fully dilated, the head is not deeply impacted, and delivery can be anticipated within 15 minutes — if these conditions are not met, proceed to caesarean section.'",
+  "description": "Two to four plain-English sentences elaborating the full clinical context. Cover: which specific patients this applies to and under what circumstances; what exactly to do including any doses, devices, timings, or numeric thresholds from the guideline; when this rule does NOT apply or what the contraindications are; and why this matters or what the consequence of non-compliance is. Write as a clinician explaining to a colleague — no bullet points, no headers, no structured labels.",
   "significance": "high" or "medium" or "low"
 }
 
-RULES FOR CLINICAL SPECIFICITY:
-- name: include the specific drug/device/dose/route/timing from the guideline. Wrong: "offer antibiotics". Right: "offer co-amoxiclav 1.2g IV single dose at time of delivery".
-- APPLIES TO: name the specific patient sub-group with clinical detail. Wrong: "women in labour". Right: "nulliparous women with second stage >1 hour despite active pushing, or any woman where fetal or maternal indication is present".
-- NOT APPLICABLE: list real contraindications from the guideline (face presentation, bleeding disorders, gestation <34 weeks, etc.). Never write N/A unless the guideline genuinely states no exclusions.
-- ACTION: give the operational instruction a clinician would follow — drug, dose, route, timing, who performs it. Do not repeat the name.
-- THRESHOLDS: give the numeric criteria (e.g. ">1 hour second stage", "≤3 pulls per attempt", "Apgar <7 at 5 min"). State "Not specified in guideline" only if truly absent.
-
-GROUPING STRATEGY:
-- Group related conditional logic into a single point ("If A then B, otherwise C" = one point).
-- Combine points that share the same population and action but differ only by sub-thresholds.
-- Focus on actionable recommendations; omit background/rationale text.
+RULES:
+- Both name and description must read as natural clinical prose — no labels like 'APPLIES TO:', no bullet points, no 'N/A'.
+- Include specific values where the guideline states them: drug names, doses, routes, time limits, attempt limits, gestational ages, numeric thresholds.
+- Capture conditional logic in plain language: 'if … then … otherwise …', 'unless …', 'except when …'.
+- Group related conditions into one point rather than splitting them. 'If A then B, if not A then C' is one practice point.
+- Omit background, rationale, and epidemiology — only extract actionable recommendations.
 
 CATEGORIES TO COVER:
-- SCREENING, THRESHOLDS, DOSAGES, TIMING, SAFETY, ESCALATION, LOCATION, SPECIAL POPULATIONS, ADMINISTRATIVE.
+- Screening thresholds, drug dosing, timing of interventions, safety limits, escalation criteria, location of care, special populations, documentation requirements.
 
 Return a JSON array of objects.
 
@@ -9262,13 +9257,12 @@ ${content}`;
 async function batchExpandPracticePoints(practicePoints, content, userId = null, batchSize = 15) {
     if (!practicePoints || practicePoints.length === 0) return [];
 
-    // Skip expansion only if descriptions are genuinely detailed (long, have real exclusions, no N/A placeholders)
+    // Skip expansion only if descriptions are genuinely detailed plain-English prose
     const needsExpansion = practicePoints.some(p =>
         !p.description ||
-        p.description.length < 150 ||
-        !p.description.includes('APPLIES TO') ||
-        p.description.includes('NOT APPLICABLE: N/A') ||
-        p.description.includes('THRESHOLDS: N/A')
+        p.description.length < 120 ||
+        p.description.includes('APPLIES TO:') ||
+        p.description.includes('N/A')
     );
 
     if (!needsExpansion) {
@@ -9291,22 +9285,19 @@ async function batchExpandPracticePoints(practicePoints, content, userId = null,
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
 
-        const prompt = `Expand these practice points with maximum clinical specificity using the guideline content below.
+        const prompt = `Rewrite these practice points as plain-English clinical rules using the guideline content below.
 
-PRACTICE POINTS TO EXPAND:
+PRACTICE POINTS TO REWRITE:
 ${JSON.stringify(batch, null, 2)}
 
-For EACH practice point apply these rules:
-1. NAME: If the name is vague (e.g. "offer antibiotics", "consider positions"), rewrite it with the specific drug/dose/route/device/timing/criteria from the guideline. A clinician must be able to answer yes/no from a clinical note.
-2. APPLIES TO: Name the specific clinical sub-group with diagnostic or obstetric criteria. Not "women in labour" — instead e.g. "nulliparous women with passive second stage >1 hour or active pushing >1 hour".
-3. NOT APPLICABLE: List actual contraindications from the guideline (e.g. face presentation, fetal coagulopathy, gestation <34 weeks). Never write "N/A" — write "None specified in guideline" if truly absent.
-4. ACTION: Give the operational instruction — specific drug, dose, route, device, who performs it, how many attempts. Do NOT restate the name.
-5. THRESHOLDS: State exact numeric values, durations, attempt limits, or gestational ages from the guideline. Write "Not specified in guideline" only if genuinely absent.
+For EACH practice point:
+1. NAME: Rewrite as a single complete sentence a clinician can immediately act on — who, in what circumstances, does exactly what (specific drug/dose/route/device/timing), and any key exceptions or otherwise-clauses. No labels, no bullet points.
+2. DESCRIPTION: Write 2–4 plain-English sentences covering: which patients and under what circumstances; what exactly to do with specific doses/devices/timings from the guideline; when this does NOT apply or the contraindications; and the clinical consequence of non-compliance. Write as a clinician explaining to a colleague — no bullet points, no headers like 'APPLIES TO:'.
 
 GUIDELINE CONTEXT:
 ${content.substring(0, 10000)}${content.length > 10000 ? '\n...[truncated]...' : ''}
 
-Return a JSON array with the same number of objects, each with: name, description (with all five bullet sections), significance.`;
+Return a JSON array with the same number of objects, each with: name, description, significance.`;
 
         try {
             const result = await routeToAI({
