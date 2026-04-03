@@ -6530,7 +6530,7 @@ ${responseText}
                         ? `<strong>${failed.length} failed:</strong> ` + failed.map(r => `${r.guidelineId}: ${r.error}`).join('; ')
                         : '';
                 } else {
-                    status.textContent = `Done — ${data.created} new, ${data.existing} existing (${data.total} total).`;
+                    status.textContent = `Done — ${data.created} new, ${data.existing} existing, ${data.pruned || 0} stale removed (${data.total} total).`;
                 }
                 results.style.display = results.innerHTML ? 'block' : 'none';
             } catch (err) {
