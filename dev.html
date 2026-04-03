@@ -1457,22 +1457,58 @@
             <div class="tools-section" style="margin-top:30px;border-top:2px solid var(--border-color);padding-top:20px;">
                 <h4>Guideline Calibration</h4>
                 <p style="color:var(--text-secondary);font-size:13px;margin-bottom:15px;">
-                    Syncs <strong>practice points</strong> from each guideline's auditable elements into Firestore,
-                    ready for accuracy tracking over calibration runs. Existing accuracy data is preserved.
+                    Generates contrastive clinical scenarios from practice points, evaluates AI performance per point,
+                    and updates accuracy scores and the guideline cheat sheet automatically.
                 </p>
-                <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-                    <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:260px;">
+
+                <!-- Guideline selector (shared by both steps) -->
+                <div style="margin-bottom:16px;">
+                    <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
+                    <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
                         <option value="">Loading guidelines...</option>
                     </select>
-                    <button id="syncPracticePointsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;padding:10px 20px;">
-                        Sync Practice Points
-                    </button>
-                    <button id="syncAllPracticePointsBtn" class="dev-btn" style="padding:10px 20px;">
-                        Sync All Guidelines
-                    </button>
-                    <span id="calibrationStatus" style="font-size:13px;color:var(--text-secondary);"></span>
                 </div>
-                <div id="calibrationResults" style="display:none;margin-top:15px;padding:12px;background:var(--bg-tertiary);border-radius:6px;font-size:13px;max-height:300px;overflow-y:auto;"></div>
+
+                <!-- Step 1: Sync -->
+                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Sync practice points</p>
+                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                        <button id="syncPracticePointsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">Sync Selected</button>
+                        <button id="syncAllPracticePointsBtn" class="dev-btn">Sync All Guidelines</button>
+                        <span id="calibrationSyncStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                    </div>
+                    <div id="calibrationSyncResults" style="display:none;margin-top:10px;font-size:13px;"></div>
+                </div>
+
+                <!-- Step 2: Run calibration -->
+                <div style="padding:14px;background:var(--bg-tertiary);border-radius:6px;">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Run calibration</p>
+                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px;">
+                        <div>
+                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Practice points</label>
+                            <select id="calibrationPointCount" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
+                                <option value="5">5</option>
+                                <option value="10" selected>10</option>
+                                <option value="15">15</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Scenarios per run</label>
+                            <select id="calibrationScenarioCount" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
+                                <option value="2">2 (quick)</option>
+                                <option value="4" selected>4 (standard)</option>
+                                <option value="6">6 (thorough)</option>
+                            </select>
+                        </div>
+                        <button id="runCalibrationBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;">Run Calibration</button>
+                        <span id="calibrationRunStatus" style="font-size:13px;color:var(--text-secondary);align-self:center;"></span>
+                    </div>
+                    <div id="calibrationProgress" style="display:none;padding:10px;background:var(--bg-input);border-radius:4px;margin-bottom:12px;">
+                        <div style="font-size:13px;font-weight:600;" id="calibrationProgressStep"></div>
+                        <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;" id="calibrationProgressMsg"></div>
+                    </div>
+                    <div id="calibrationRunResults" style="display:none;font-size:13px;"></div>
+                </div>
             </div>
         </div>
 
