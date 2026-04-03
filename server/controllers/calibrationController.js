@@ -1,7 +1,10 @@
 'use strict';
 
 const { db } = require('../config/firebase');
-const { syncPracticePoints, samplePracticePoints } = require('../services/calibration');
+const { syncPracticePoints, samplePracticePoints, runCalibrationRun } = require('../services/calibration');
+
+// In-memory job store — same pattern as evolutionJobs in promptsController
+const calibrationJobs = {};
 
 /**
  * POST /syncPracticePoints
@@ -92,6 +95,87 @@ exports.samplePracticePoints = async (req, res) => {
 
     } catch (err) {
         console.error('[CALIBRATION] samplePracticePoints error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /runCalibration
+ * Body: { guidelineId, pointCount?, scenarioCount? }
+ *
+ * Starts a background calibration run. Returns immediately with a jobId.
+ * Poll GET /getCalibrationJobStatus?jobId=xxx for progress.
+ */
+exports.runCalibration = (req, res) => {
+    const { guidelineId, pointCount, scenarioCount } = req.body;
+    if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });
+
+    const userId = req.user.uid;
+    const jobId = `cal_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+
+    calibrationJobs[jobId] = {
+        status: 'running',
+        guidelineId,
+        step: 'starting',
+        stepMessage: 'Initialising...',
+        startedAt: new Date().toISOString()
+    };
+
+    res.json({ success: true, jobId, message: 'Calibration run started.' });
+
+    // Fire and forget
+    runCalibrationRun(
+        guidelineId,
+        userId,
+        { pointCount: parseInt(pointCount) || 10, scenarioCount: parseInt(scenarioCount) || 4 },
+        (step, message) => {
+            calibrationJobs[jobId] = { ...calibrationJobs[jobId], step, stepMessage: message };
+        }
+    ).then(result => {
+        calibrationJobs[jobId] = { status: 'complete', guidelineId, result, completedAt: new Date().toISOString() };
+    }).catch(err => {
+        console.error(`[CALIBRATION] Job ${jobId} failed:`, err.message);
+        calibrationJobs[jobId] = { status: 'error', guidelineId, error: err.message };
+    });
+
+    // Clean up after 1 hour
+    setTimeout(() => { delete calibrationJobs[jobId]; }, 60 * 60 * 1000);
+};
+
+/**
+ * GET /getCalibrationJobStatus?jobId=xxx
+ */
+exports.getCalibrationJobStatus = (req, res) => {
+    const { jobId } = req.query;
+    if (!jobId || !calibrationJobs[jobId]) {
+        return res.status(404).json({ success: false, error: 'Job not found' });
+    }
+    res.json({ success: true, ...calibrationJobs[jobId] });
+};
+
+/**
+ * GET /getCalibrationRuns?guidelineId=xxx&limit=10
+ *
+ * Returns recent calibration runs for a guideline, most recent first.
+ */
+exports.getCalibrationRuns = async (req, res) => {
+    try {
+        const { guidelineId, limit } = req.query;
+        if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });
+
+        const snap = await db
+            .collection('guidelines')
+            .doc(guidelineId)
+            .collection('calibrationRuns')
+            .orderBy('timestamp', 'desc')
+            .limit(parseInt(limit) || 10)
+            .get();
+
+        const runs = snap.docs.map(d => d.data());
+        res.json({ success: true, guidelineId, count: runs.length, runs });
+
+    } catch (err) {
+        console.error('[CALIBRATION] getCalibrationRuns error:', err.message);
         res.status(500).json({ success: false, error: err.message });
     }
 };

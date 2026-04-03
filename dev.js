@@ -6412,16 +6412,17 @@ ${responseText}
 
         async function populateCalibrationGuidelineSelect() {
             const sel = document.getElementById('calibrationGuidelineSelect');
-            if (!sel) return;
+            if (!sel || sel.dataset.loaded) return;
             try {
                 const token = await getCalibrationToken();
                 const res = await fetch(`${SERVER_URL}/getAllGuidelines`, { headers: { Authorization: `Bearer ${token}` } });
                 const data = await res.json();
                 const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
-                guidelines.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+                guidelines.sort((a, b) => (a.displayName || a.title || '').localeCompare(b.displayName || b.title || ''));
                 sel.innerHTML = guidelines.map(g =>
                     `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
                 ).join('');
+                sel.dataset.loaded = '1';
             } catch (err) {
                 sel.innerHTML = '<option value="">Failed to load guidelines</option>';
                 console.error('[CALIBRATION] Failed to load guidelines:', err.message);
@@ -6429,17 +6430,15 @@ ${responseText}
         }
 
         async function syncPracticePoints(all = false) {
-            const status = document.getElementById('calibrationStatus');
-            const results = document.getElementById('calibrationResults');
+            const status = document.getElementById('calibrationSyncStatus');
+            const results = document.getElementById('calibrationSyncResults');
             status.textContent = all ? 'Syncing all guidelines...' : 'Syncing...';
             results.style.display = 'none';
-
             try {
                 const token = await getCalibrationToken();
                 const body = all
                     ? { all: true }
                     : { guidelineId: document.getElementById('calibrationGuidelineSelect').value };
-
                 if (!all && !body.guidelineId) { status.textContent = 'Select a guideline first.'; return; }
 
                 const res = await fetch(`${SERVER_URL}/syncPracticePoints`, {
@@ -6453,22 +6452,117 @@ ${responseText}
                 if (all) {
                     const succeeded = data.results.filter(r => !r.error);
                     const failed = data.results.filter(r => r.error);
-                    status.textContent = `Done. ${data.totalCreated} new points across ${succeeded.length} guidelines.`;
-                    let html = `<strong>${succeeded.length} guidelines synced</strong>, ${data.totalCreated} new points created, ${data.totalExisting} already existed.`;
-                    if (failed.length) {
-                        html += `<br><br><strong>${failed.length} failed:</strong><br>` +
-                            failed.map(r => `• ${r.guidelineId}: ${r.error}`).join('<br>');
-                    }
-                    results.innerHTML = html;
+                    status.textContent = `Done — ${data.totalCreated} new points across ${succeeded.length} guidelines.`;
+                    results.innerHTML = failed.length
+                        ? `<strong>${failed.length} failed:</strong> ` + failed.map(r => `${r.guidelineId}: ${r.error}`).join('; ')
+                        : '';
                 } else {
-                    status.textContent = `Done. ${data.created} new, ${data.existing} already existed (${data.total} total).`;
-                    results.innerHTML = `<strong>${data.total} practice points</strong> in guideline — ${data.created} created, ${data.existing} already had metrics.`;
+                    status.textContent = `Done — ${data.created} new, ${data.existing} existing (${data.total} total).`;
                 }
-                results.style.display = 'block';
+                results.style.display = results.innerHTML ? 'block' : 'none';
             } catch (err) {
                 status.textContent = `Error: ${err.message}`;
-                console.error('[CALIBRATION] sync error:', err);
             }
+        }
+
+        async function runCalibration() {
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
+            if (!guidelineId) { document.getElementById('calibrationRunStatus').textContent = 'Select a guideline first.'; return; }
+
+            const pointCount = document.getElementById('calibrationPointCount').value;
+            const scenarioCount = document.getElementById('calibrationScenarioCount').value;
+            const status = document.getElementById('calibrationRunStatus');
+            const progress = document.getElementById('calibrationProgress');
+            const progressStep = document.getElementById('calibrationProgressStep');
+            const progressMsg = document.getElementById('calibrationProgressMsg');
+            const resultsEl = document.getElementById('calibrationRunResults');
+
+            status.textContent = 'Starting...';
+            progress.style.display = 'block';
+            resultsEl.style.display = 'none';
+            progressStep.textContent = 'Initialising...';
+            progressMsg.textContent = '';
+
+            try {
+                const token = await getCalibrationToken();
+                const startRes = await fetch(`${SERVER_URL}/runCalibration`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId, pointCount: parseInt(pointCount), scenarioCount: parseInt(scenarioCount) })
+                });
+                const startData = await startRes.json();
+                if (!startData.success) throw new Error(startData.error);
+
+                const jobId = startData.jobId;
+                status.textContent = 'Running...';
+
+                // Poll for completion
+                await new Promise((resolve, reject) => {
+                    const poll = setInterval(async () => {
+                        try {
+                            const t = await getCalibrationToken();
+                            const r = await fetch(`${SERVER_URL}/getCalibrationJobStatus?jobId=${jobId}`, {
+                                headers: { Authorization: `Bearer ${t}` }
+                            });
+                            const d = await r.json();
+                            if (d.step) {
+                                progressStep.textContent = d.step;
+                                progressMsg.textContent = d.stepMessage || '';
+                            }
+                            if (d.status === 'complete') { clearInterval(poll); resolve(d.result); }
+                            if (d.status === 'error') { clearInterval(poll); reject(new Error(d.error)); }
+                        } catch (e) { clearInterval(poll); reject(e); }
+                    }, 3000);
+                }).then(result => {
+                    status.textContent = `Done — ${(result.overallAccuracy * 100).toFixed(1)}% overall accuracy`;
+                    progress.style.display = 'none';
+                    renderCalibrationResults(result, resultsEl);
+                });
+
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+                progress.style.display = 'none';
+                console.error('[CALIBRATION] run error:', err);
+            }
+        }
+
+        function renderCalibrationResults(result, container) {
+            const accuracyColour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
+            const pct = v => v !== null && v !== undefined ? (v * 100).toFixed(0) + '%' : '—';
+
+            const pointRows = Object.entries(result.pointAccuracies || {}).map(([id, acc]) => {
+                const colour = acc !== null ? accuracyColour(acc) : '#6c757d';
+                return `<tr>
+                    <td style="padding:6px 8px;font-size:12px;">${id.replace(/_/g, ' ')}</td>
+                    <td style="padding:6px 8px;text-align:center;font-weight:bold;color:${colour};">${pct(acc)}</td>
+                </tr>`;
+            }).join('');
+
+            container.innerHTML = `
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;">
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Overall Accuracy</div>
+                        <div style="font-size:22px;font-weight:bold;color:${accuracyColour(result.overallAccuracy)};">${pct(result.overallAccuracy)}</div>
+                    </div>
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Points Tested</div>
+                        <div style="font-size:22px;font-weight:bold;">${result.pointCount}</div>
+                    </div>
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Cheat Sheet</div>
+                        <div style="font-size:14px;font-weight:bold;color:${result.cheatSheetUpdated ? '#28a745' : '#6c757d'};">
+                            ${result.cheatSheetUpdated ? 'Updated' : 'No change'}
+                        </div>
+                    </div>
+                </div>
+                <table style="width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
+                    <thead><tr style="background:var(--bg-tertiary);">
+                        <th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Practice Point</th>
+                        <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Accuracy</th>
+                    </tr></thead>
+                    <tbody>${pointRows}</tbody>
+                </table>`;
+            container.style.display = 'block';
         }
 
         const syncBtn = document.getElementById('syncPracticePointsBtn');
@@ -6476,6 +6570,9 @@ ${responseText}
 
         const syncAllBtn = document.getElementById('syncAllPracticePointsBtn');
         if (syncAllBtn) syncAllBtn.addEventListener('click', () => syncPracticePoints(true));
+
+        const runCalBtn = document.getElementById('runCalibrationBtn');
+        if (runCalBtn) runCalBtn.addEventListener('click', runCalibration);
 
         // Populate guideline dropdown when evolve tab is opened
         const evolveTabTrigger = document.querySelector('[data-content="evolveContent"]');

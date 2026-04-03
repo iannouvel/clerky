@@ -12,4 +12,9 @@ router.get('/getPracticePointMetrics', authenticateUser, calibrationController.g
 // Weighted sample — preview which points would be selected for a calibration run
 router.get('/samplePracticePoints', authenticateUser, calibrationController.samplePracticePoints);
 
+// Calibration runs
+router.post('/runCalibration', authenticateUser, calibrationController.runCalibration);
+router.get('/getCalibrationJobStatus', authenticateUser, calibrationController.getCalibrationJobStatus);
+router.get('/getCalibrationRuns', authenticateUser, calibrationController.getCalibrationRuns);
+
 module.exports = router;
