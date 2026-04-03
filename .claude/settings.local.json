@@ -12,7 +12,30 @@
       "Bash(not a function\" errors during parallel guideline analysis.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(npm run build:*)",
       "Bash(git checkout:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(git stash:*)",
+      "Bash(node -e \"const v=require\\(''./package.json''\\).version.split\\(''.''\\); v[2]=+v[2]+1; console.log\\(''v''+v.join\\(''.''\\)\\)\")",
+      "Bash(find /c/Users/ianno/github/clerky -name *vector* -o -name *rag*)",
+      "Bash(npm install:*)",
+      "Bash(node -e \"require\\(''firebase-admin''\\); console.log\\(''firebase-admin OK''\\)\")",
+      "Bash(node -e \"console.log\\(require\\(''./package.json''\\).version\\)\")",
+      "Bash(node scripts/read-feedback.js)",
+      "Bash(node scripts/read-feedback.js --full)",
+      "Bash(firebase deploy:*)",
+      "Bash(find /c/Users/ianno/github/clerky/js -type f -name *.js)",
+      "WebSearch",
+      "Bash(node scripts/read-feedback.js --limit 5)",
+      "Bash(grep -n '\"\"analyzeClinicalNote\"\"' prompts.json)",
+      "Bash(grep '\"\"version\"\"' package.json)",
+      "Bash(find C:Usersiannogithubclerky -type f -name *feedback*)",
+      "Bash(find C:Usersiannogithubclerky -type f -name *.js -path */server/*)",
+      "Bash(node:*)",
+      "Bash(awk:*)",
+      "Bash(head:*)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\(''C:/Users/ianno/github/clerky/fake_transcripts.json''\\)\\); print\\(''Top keys:'', list\\(d.keys\\(\\)\\)\\); [print\\(f''  {k}: {len\\(v\\)} entries, keys: {list\\(v.keys\\(\\)\\)[:3]}...''\\) for k,v in d.items\\(\\) if isinstance\\(v, dict\\)]\")",
+      "Bash(python -c \"import json; d=json.load\\(open\\(''C:/Users/ianno/github/clerky/fake_transcripts.json''\\)\\); print\\(''Top keys:'', list\\(d.keys\\(\\)\\)\\); [print\\(f''  {k}: {len\\(v\\)} entries, keys: {list\\(v.keys\\(\\)\\)[:3]}...''\\) for k,v in d.items\\(\\) if isinstance\\(v, dict\\)]\")",
+      "Bash(python:*)",
+      "Bash(python3:*)"
     ]
   }
 }

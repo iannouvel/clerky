@@ -11035,7 +11035,9 @@ app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
                 humanFriendlyTitle: data.humanFriendlyTitle,
                 title: data.title,
                 filename: data.filename || data.originalFilename,
-                summary: data.summary,
+                organisation: data.organisation || null,
+                yearProduced: data.yearProduced || null,
+                vectorDbIngested: data.vectorDbIngested || false,
                 hasContent: !!(data.content || data.condensed),
                 hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0)
             });
