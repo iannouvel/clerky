@@ -326,10 +326,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         // Check authentication state on page load
+        // Debounce the sign-out redirect — Firebase Auth briefly emits null cross-tab
+        // when another tab refreshes its SDK, which would otherwise kick us out of dev.html.
+        let signOutRedirectTimer = null;
         onAuthStateChanged(auth, (user) => {
             console.log('Auth state changed:', user ? 'User logged in' : 'User logged out');
             if (user) {
-                // User is signed in
+                // User is signed in — cancel any pending redirect
+                if (signOutRedirectTimer) { clearTimeout(signOutRedirectTimer); signOutRedirectTimer = null; }
                 console.log('User is signed in:', user.email);
                 // Enable discovery scan
                 const scanBtnEl = document.getElementById('scanGuidanceBtn');
@@ -344,14 +348,16 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const status = document.getElementById('discoveryStatus');
                 if (status && status.textContent.includes('Please sign in')) status.textContent = '';
             } else {
-                // User is signed out - redirect to login page
+                // User is signed out — wait 1.5s before redirecting so transient null
+                // states from other tabs re-initialising Firebase don't boot us out.
                 console.log('User is signed out');
-                try {
-                    // Use sessionStorage so redirect intent is scoped to this tab only
-                    sessionStorage.setItem('returnToPage', 'dev.html');
-                    sessionStorage.setItem('returnAfterLogin', '1');
-                } catch (_) { }
-                window.location.href = 'index.html';
+                signOutRedirectTimer = setTimeout(() => {
+                    try {
+                        sessionStorage.setItem('returnToPage', 'dev.html');
+                        sessionStorage.setItem('returnAfterLogin', '1');
+                    } catch (_) { }
+                    window.location.href = 'index.html';
+                }, 1500);
             }
         });
 
