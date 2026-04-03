@@ -264,7 +264,7 @@ All ${practicePoints.length} practice point IDs must appear in exactly one of ap
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, null, 6000);
+    }, userId);
 
     if (!result?.content) throw new Error('No response from scenario generator');
 
@@ -336,7 +336,7 @@ Return ONLY valid JSON:
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, null, 2000);
+    }, userId);
 
     if (!result?.content) throw new Error('No response from evaluator');
 
