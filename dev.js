@@ -3062,8 +3062,8 @@ ${responseText}
 
             const filtered = allGuidelinesData.filter(g => {
                 const searchLower = searchTerm.toLowerCase();
-                const title = (g.title || '').toLowerCase();
-                const displayName = (g.displayName || '').toLowerCase();
+                const title = (g.humanFriendlyTitle || g.displayName || g.title || '').toLowerCase();
+                const displayName = title;
                 const organisation = (g.organisation || '').toLowerCase();
                 const id = (g.id || g.guidelineId || '').toLowerCase();
 
@@ -3311,7 +3311,7 @@ ${responseText}
                             const option = document.createElement('option');
                             option.value = g.id;
                             const status = g.vectorDbIngested ? '✅' : (g.hasContent ? '⏳' : '❌');
-                            option.textContent = `${status} ${g.title || g.displayName || g.id}`;
+                            option.textContent = `${status} ${g.humanFriendlyTitle || g.displayName || g.title || g.id}`;
                             reingestGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3405,7 +3405,7 @@ ${responseText}
                         guidelines.forEach(g => {
                             const option = document.createElement('option');
                             option.value = g.id;
-                            option.textContent = `${g.title || g.displayName || g.id} (${g.id})`;
+                            option.textContent = `${g.humanFriendlyTitle || g.displayName || g.title || g.id} (${g.id})`;
                             reextractGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3646,9 +3646,10 @@ ${responseText}
 
             filteredGuidelines = allGuidelinesForBatch.filter(g => {
                 const matchesSearch = !search ||
+                    (g.humanFriendlyTitle && g.humanFriendlyTitle.toLowerCase().includes(search)) ||
+                    (g.displayName && g.displayName.toLowerCase().includes(search)) ||
                     (g.title && g.title.toLowerCase().includes(search)) ||
-                    (g.id && g.id.toLowerCase().includes(search)) ||
-                    (g.humanFriendlyName && g.humanFriendlyName.toLowerCase().includes(search));
+                    (g.id && g.id.toLowerCase().includes(search));
                 const matchesOrg = !org || g.organisation === org;
                 const matchesYear = !year || String(g.yearProduced) === String(year);
 
@@ -3703,7 +3704,7 @@ ${responseText}
                 tr.innerHTML = `
                     <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
                     <td style="padding:8px;">
-                        <div style="font-weight:500;">${g.title || g.id}</div>
+                        <div style="font-weight:500;">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</div>
                         <div style="font-size:10px; color:#888;">${g.id} • <span style="color:${statusColor}">${elementsCount} elements</span></div>
                     </td>
                     <td style="padding:8px; color:#666;">${g.organisation || '-'}</td>
@@ -6492,7 +6493,7 @@ ${responseText}
                 const data = await res.json();
                 const guidelines = data.guidelines || [];
                 sel.innerHTML = guidelines.map(g =>
-                    `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
+                    `<option value="${g.id}">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</option>`
                 ).join('');
                 sel.dataset.loaded = '1';
             } catch (err) {
@@ -6801,7 +6802,7 @@ ${responseText}
                 const data = await res.json();
                 const guidelines = data.guidelines || [];
                 sel.innerHTML = '<option value="">Select a guideline...</option>' + guidelines.map(g =>
-                    `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
+                    `<option value="${g.id}">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</option>`
                 ).join('');
                 sel.dataset.loaded = '1';
             } catch (err) {
