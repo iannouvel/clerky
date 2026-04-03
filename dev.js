@@ -6579,6 +6579,156 @@ ${responseText}
         if (evolveTabTrigger) evolveTabTrigger.addEventListener('click', populateCalibrationGuidelineSelect);
         // ─────────────────────────────────────────────────────────────────────
 
+        // ─── Calibration Dashboard ────────────────────────────────────────────
+        function sparkline(values, width = 90, height = 26) {
+            if (!values.length) return '<span style="font-size:11px;color:#6c757d;">no data</span>';
+            const colour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
+            if (values.length === 1) {
+                const cy = height - 4 - Math.round(values[0] * (height - 8));
+                return `<svg width="${width}" height="${height}"><circle cx="${width / 2}" cy="${cy}" r="3" fill="${colour(values[0])}"/></svg>`;
+            }
+            const xStep = (width - 6) / (values.length - 1);
+            const pts = values.map((v, i) => ({ x: 3 + i * xStep, y: height - 4 - Math.round(v * (height - 8)) }));
+            const path = pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
+            const lastC = colour(values[values.length - 1]);
+            const dots = pts.map((p, i) => `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="${colour(values[i])}"/>`).join('');
+            return `<svg width="${width}" height="${height}"><path d="${path}" stroke="${lastC}" stroke-width="1.5" fill="none" opacity="0.6"/>${dots}</svg>`;
+        }
+
+        function accuracyBar(value, width = 110) {
+            if (value === null || value === undefined) {
+                return '<span style="font-size:11px;color:#6c757d;">untested</span>';
+            }
+            const pct = Math.round(value * 100);
+            const c = value >= 0.9 ? '#28a745' : value >= 0.7 ? '#ff9800' : '#dc3545';
+            return `<div style="display:flex;align-items:center;gap:6px;">
+                <div style="width:${width}px;height:8px;background:var(--bg-input);border-radius:4px;overflow:hidden;">
+                    <div style="width:${pct}%;height:100%;background:${c};transition:width 0.4s;"></div>
+                </div>
+                <span style="font-size:12px;font-weight:bold;color:${c};min-width:34px;">${pct}%</span>
+            </div>`;
+        }
+
+        async function populateDashGuidelineSelect() {
+            const sel = document.getElementById('dashGuidelineSelect');
+            if (!sel || sel.dataset.loaded) return;
+            try {
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/getAllGuidelines`, { headers: { Authorization: `Bearer ${token}` } });
+                const data = await res.json();
+                const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                guidelines.sort((a, b) => (a.displayName || a.title || '').localeCompare(b.displayName || b.title || ''));
+                sel.innerHTML = '<option value="">Select a guideline...</option>' + guidelines.map(g =>
+                    `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
+                ).join('');
+                sel.dataset.loaded = '1';
+            } catch (err) {
+                console.error('[DASH] guideline load error:', err.message);
+            }
+        }
+
+        async function loadDashboard() {
+            const guidelineId = document.getElementById('dashGuidelineSelect').value;
+            if (!guidelineId) { document.getElementById('dashStatus').textContent = 'Select a guideline first.'; return; }
+
+            const status = document.getElementById('dashStatus');
+            status.textContent = 'Loading...';
+            document.getElementById('dashSummary').style.display = 'none';
+            document.getElementById('dashPointsTable').style.display = 'none';
+            document.getElementById('dashPointDetail').style.display = 'none';
+
+            try {
+                const token = await getCalibrationToken();
+
+                // Fetch points + runs in parallel
+                const [pointsRes, runsRes] = await Promise.all([
+                    fetch(`${SERVER_URL}/getPracticePointMetrics?guidelineId=${guidelineId}`, { headers: { Authorization: `Bearer ${token}` } }),
+                    fetch(`${SERVER_URL}/getCalibrationRuns?guidelineId=${guidelineId}&limit=20`, { headers: { Authorization: `Bearer ${token}` } })
+                ]);
+                const [pointsData, runsData] = await Promise.all([pointsRes.json(), runsRes.json()]);
+
+                if (!pointsData.success) throw new Error(pointsData.error);
+                const points = pointsData.points || [];
+                const runs = (runsData.success ? runsData.runs : []).sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+
+                // Build per-point run history from calibration run records
+                const pointHistory = {};  // pointId → [accuracy, ...]
+                for (const run of runs) {
+                    for (const [pointId, acc] of Object.entries(run.pointAccuracies || {})) {
+                        if (!pointHistory[pointId]) pointHistory[pointId] = [];
+                        if (acc !== null) pointHistory[pointId].push(acc);
+                    }
+                }
+
+                // Summary stats
+                const tested = points.filter(p => p.accuracy !== null);
+                const above70 = tested.filter(p => p.accuracy >= 0.7);
+                const avgAcc = tested.length ? tested.reduce((s, p) => s + p.accuracy, 0) / tested.length : null;
+                const avgC = avgAcc !== null ? (avgAcc >= 0.9 ? '#28a745' : avgAcc >= 0.7 ? '#ff9800' : '#dc3545') : '#6c757d';
+
+                document.getElementById('dashTotalPoints').textContent = points.length;
+                document.getElementById('dashTestedPoints').textContent = tested.length;
+                document.getElementById('dashAvgAccuracy').innerHTML = avgAcc !== null
+                    ? `<span style="color:${avgC};">${Math.round(avgAcc * 100)}%</span>` : '—';
+                document.getElementById('dashAbove70').textContent = tested.length
+                    ? `${above70.length} / ${tested.length}` : '—';
+                document.getElementById('dashRunCount').textContent = runs.length;
+                document.getElementById('dashSummary').style.display = 'block';
+
+                // Points table
+                const tbody = document.getElementById('dashPointsBody');
+                tbody.innerHTML = points.map(p => {
+                    const history = pointHistory[p.id] || [];
+                    const lastEval = p.lastEvaluated
+                        ? new Date(p.lastEvaluated).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })
+                        : '—';
+                    const rowBg = p.accuracy !== null && p.accuracy < 0.7 ? 'background:rgba(220,53,69,0.06);' : '';
+                    return `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;${rowBg}"
+                                onclick="window._showPointDetail('${p.id}', ${JSON.stringify(p.name).replace(/'/g, "\\'")} , ${JSON.stringify(p.description || '').replace(/'/g, "\\'")} , ${JSON.stringify(history)})">
+                        <td style="padding:9px 12px;">${p.name}</td>
+                        <td style="padding:9px 12px;text-align:center;">${accuracyBar(p.accuracy)}</td>
+                        <td style="padding:9px 12px;text-align:center;">${sparkline(history)}</td>
+                        <td style="padding:9px 12px;text-align:center;color:var(--text-secondary);">${p.evaluationCount || 0}</td>
+                        <td style="padding:9px 12px;color:var(--text-secondary);font-size:12px;">${lastEval}</td>
+                    </tr>`;
+                }).join('') || '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--text-secondary);">No practice points found — run Sync Practice Points first.</td></tr>';
+
+                document.getElementById('dashPointsTable').style.display = 'block';
+                status.textContent = `${points.length} points, ${runs.length} calibration run${runs.length !== 1 ? 's' : ''}`;
+
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+                console.error('[DASH] load error:', err);
+            }
+        }
+
+        // Point detail expand (called from table row onclick)
+        window._showPointDetail = function(id, name, description, history) {
+            const detail = document.getElementById('dashPointDetail');
+            document.getElementById('dashDetailTitle').textContent = name;
+            document.getElementById('dashDetailDescription').textContent = description || 'No description available.';
+
+            if (history.length === 0) {
+                document.getElementById('dashDetailHistory').innerHTML = '<span style="color:#6c757d;">No calibration runs for this point yet.</span>';
+            } else {
+                const rows = history.map((acc, i) => {
+                    const c = acc >= 0.9 ? '#28a745' : acc >= 0.7 ? '#ff9800' : '#dc3545';
+                    return `<span style="display:inline-block;margin:2px 4px;padding:3px 8px;border-radius:12px;background:${c}22;color:${c};font-weight:bold;font-size:12px;">Run ${i + 1}: ${Math.round(acc * 100)}%</span>`;
+                }).join('');
+                document.getElementById('dashDetailHistory').innerHTML =
+                    `<div style="margin-bottom:8px;font-weight:600;font-size:12px;color:var(--text-secondary);">Run-by-run accuracy (oldest → newest):</div>${rows}`;
+            }
+            detail.style.display = 'block';
+            detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        const loadDashBtn = document.getElementById('loadDashboardBtn');
+        if (loadDashBtn) loadDashBtn.addEventListener('click', loadDashboard);
+
+        const calibDashTab = document.querySelector('[data-content="calibrationDashboardContent"]');
+        if (calibDashTab) calibDashTab.addEventListener('click', populateDashGuidelineSelect);
+        // ─────────────────────────────────────────────────────────────────────
+
         // Hook into tab switching to initialize evolution tab
         const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');
         if (evolveNavBtn) {

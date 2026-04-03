@@ -562,6 +562,7 @@
             <button class="nav-btn" data-content="discoveryContent">Discovery</button>
             <button class="nav-btn" data-content="transcriptsContent">Transcripts</button>
             <button class="nav-btn" data-content="evolveContent">Evolve</button>
+            <button class="nav-btn" data-content="calibrationDashboardContent">Calibration</button>
             <button class="nav-btn" data-content="dangerContent">Danger</button>
         </div>
         <div class="top-bar-right"></div>
@@ -1508,6 +1509,89 @@
                         <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;" id="calibrationProgressMsg"></div>
                     </div>
                     <div id="calibrationRunResults" style="display:none;font-size:13px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ Calibration Dashboard Tab ═══ -->
+        <div class="tab-content" id="calibrationDashboardContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Guideline Calibration Dashboard</h4>
+                <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">
+                    Per-practice-point accuracy across calibration runs. Worst-performing points shown first.
+                    Accuracy is an exponential moving average (EMA) — recent runs weighted more.
+                </p>
+
+                <!-- Controls -->
+                <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px;">
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
+                        <select id="dashGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
+                            <option value="">Select a guideline...</option>
+                        </select>
+                    </div>
+                    <button id="loadDashboardBtn" class="dev-btn" style="background-color:#6f42c1;color:#fff;border-color:#6f42c1;padding:10px 20px;">Load Dashboard</button>
+                    <span id="dashStatus" style="font-size:13px;color:var(--text-secondary);align-self:center;"></span>
+                </div>
+
+                <!-- Summary row -->
+                <div id="dashSummary" style="display:none;margin-bottom:20px;">
+                    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+                        <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Total Points</div>
+                            <div id="dashTotalPoints" style="font-size:22px;font-weight:bold;">—</div>
+                        </div>
+                        <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Tested</div>
+                            <div id="dashTestedPoints" style="font-size:22px;font-weight:bold;">—</div>
+                        </div>
+                        <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Avg Accuracy</div>
+                            <div id="dashAvgAccuracy" style="font-size:22px;font-weight:bold;">—</div>
+                        </div>
+                        <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Above 70%</div>
+                            <div id="dashAbove70" style="font-size:22px;font-weight:bold;color:#28a745;">—</div>
+                        </div>
+                        <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Calibration Runs</div>
+                            <div id="dashRunCount" style="font-size:22px;font-weight:bold;">—</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Points table -->
+                <div id="dashPointsTable" style="display:none;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <h5 style="margin:0;">Practice Points — Accuracy</h5>
+                        <div style="display:flex;gap:8px;font-size:12px;align-items:center;">
+                            <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#28a745;display:inline-block;"></span>≥90%</span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#ff9800;display:inline-block;"></span>70–90%</span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#dc3545;display:inline-block;"></span>&lt;70%</span>
+                            <span style="display:inline-flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;border-radius:2px;background:#6c757d;display:inline-block;"></span>untested</span>
+                        </div>
+                    </div>
+                    <div style="border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
+                        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                            <thead>
+                                <tr style="background:var(--bg-tertiary);">
+                                    <th style="padding:10px 12px;text-align:left;border-bottom:1px solid var(--border-color);">Practice Point</th>
+                                    <th style="padding:10px 12px;text-align:center;border-bottom:1px solid var(--border-color);width:160px;">Accuracy</th>
+                                    <th style="padding:10px 12px;text-align:center;border-bottom:1px solid var(--border-color);width:100px;">Trend</th>
+                                    <th style="padding:10px 12px;text-align:center;border-bottom:1px solid var(--border-color);width:70px;">Runs</th>
+                                    <th style="padding:10px 12px;text-align:left;border-bottom:1px solid var(--border-color);width:130px;">Last Evaluated</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashPointsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Expanded point detail -->
+                <div id="dashPointDetail" style="display:none;margin-top:16px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
+                    <h5 id="dashDetailTitle" style="margin:0 0 8px;"></h5>
+                    <p id="dashDetailDescription" style="font-size:13px;color:var(--text-secondary);margin:0 0 12px;"></p>
+                    <div id="dashDetailHistory" style="font-size:12px;"></div>
                 </div>
             </div>
         </div>
