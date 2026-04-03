@@ -6400,6 +6400,88 @@ ${responseText}
         const loadVersionsBtn = document.getElementById('loadVersionsBtn');
         if (loadVersionsBtn) loadVersionsBtn.addEventListener('click', loadPromptVersions);
 
+        // ─── Guideline Calibration ────────────────────────────────────────────
+        async function getCalibrationToken() {
+            if (!auth.currentUser) {
+                await new Promise((resolve, reject) => {
+                    const unsub = auth.onAuthStateChanged(u => { unsub(); u ? resolve(u) : reject(new Error('Not signed in')); });
+                });
+            }
+            return auth.currentUser.getIdToken();
+        }
+
+        async function populateCalibrationGuidelineSelect() {
+            const sel = document.getElementById('calibrationGuidelineSelect');
+            if (!sel) return;
+            try {
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/getAllGuidelines`, { headers: { Authorization: `Bearer ${token}` } });
+                const data = await res.json();
+                const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                guidelines.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
+                sel.innerHTML = guidelines.map(g =>
+                    `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
+                ).join('');
+            } catch (err) {
+                sel.innerHTML = '<option value="">Failed to load guidelines</option>';
+                console.error('[CALIBRATION] Failed to load guidelines:', err.message);
+            }
+        }
+
+        async function syncPracticePoints(all = false) {
+            const status = document.getElementById('calibrationStatus');
+            const results = document.getElementById('calibrationResults');
+            status.textContent = all ? 'Syncing all guidelines...' : 'Syncing...';
+            results.style.display = 'none';
+
+            try {
+                const token = await getCalibrationToken();
+                const body = all
+                    ? { all: true }
+                    : { guidelineId: document.getElementById('calibrationGuidelineSelect').value };
+
+                if (!all && !body.guidelineId) { status.textContent = 'Select a guideline first.'; return; }
+
+                const res = await fetch(`${SERVER_URL}/syncPracticePoints`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify(body)
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error);
+
+                if (all) {
+                    const succeeded = data.results.filter(r => !r.error);
+                    const failed = data.results.filter(r => r.error);
+                    status.textContent = `Done. ${data.totalCreated} new points across ${succeeded.length} guidelines.`;
+                    let html = `<strong>${succeeded.length} guidelines synced</strong>, ${data.totalCreated} new points created, ${data.totalExisting} already existed.`;
+                    if (failed.length) {
+                        html += `<br><br><strong>${failed.length} failed:</strong><br>` +
+                            failed.map(r => `• ${r.guidelineId}: ${r.error}`).join('<br>');
+                    }
+                    results.innerHTML = html;
+                } else {
+                    status.textContent = `Done. ${data.created} new, ${data.existing} already existed (${data.total} total).`;
+                    results.innerHTML = `<strong>${data.total} practice points</strong> in guideline — ${data.created} created, ${data.existing} already had metrics.`;
+                }
+                results.style.display = 'block';
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+                console.error('[CALIBRATION] sync error:', err);
+            }
+        }
+
+        const syncBtn = document.getElementById('syncPracticePointsBtn');
+        if (syncBtn) syncBtn.addEventListener('click', () => syncPracticePoints(false));
+
+        const syncAllBtn = document.getElementById('syncAllPracticePointsBtn');
+        if (syncAllBtn) syncAllBtn.addEventListener('click', () => syncPracticePoints(true));
+
+        // Populate guideline dropdown when evolve tab is opened
+        const evolveTabTrigger = document.querySelector('[data-content="evolveContent"]');
+        if (evolveTabTrigger) evolveTabTrigger.addEventListener('click', populateCalibrationGuidelineSelect);
+        // ─────────────────────────────────────────────────────────────────────
+
         // Hook into tab switching to initialize evolution tab
         const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');
         if (evolveNavBtn) {
