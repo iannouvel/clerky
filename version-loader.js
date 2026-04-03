@@ -3,7 +3,7 @@
 
 async function loadAndDisplayVersion() {
     try {
-        const response = await fetch('./package.json?v=' + Date.now());
+        const response = await fetch('./version.json?v=' + Date.now());
         const packageData = await response.json();
         const versionElement = document.getElementById('appVersion');
         if (versionElement && packageData.version) {
