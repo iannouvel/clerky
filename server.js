@@ -9141,16 +9141,22 @@ ${summaryContext}
 CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
-  "name": "A testable clinical decision rule written as a complete sentence: who should receive what action under what condition. E.g. 'Offer prophylactic antibiotics at the time of instrumental delivery to reduce infection risk' or 'Use Kielland's forceps only when a trained operator is available for rotational mid-cavity delivery'. Must be specific enough that a clinician can answer yes/no whether a given note complies.",
-  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [population] • NOT APPLICABLE: [exclusions] • ACTION: [recommendation/algorithm step] • THRESHOLDS: [values/timing]",
+  "name": "A testable clinical decision rule written as a complete sentence with maximum clinical specificity. Include specific drug names, doses, routes, timing, and numeric criteria where stated in the guideline. E.g. 'Offer a single dose of co-amoxiclav 1.2g IV (or cefalexin 1g + metronidazole 500mg IV if penicillin allergic) at the time of operative vaginal birth to reduce infection' or 'Use Kielland's forceps only when an operator trained in rotational forceps delivery is present and delivery is anticipated within 15 minutes'. A clinician must be able to answer yes/no whether a given note complies.",
+  "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [specific clinical criteria — gestational age, clinical state, sub-population — not just 'patients in labour'] • NOT APPLICABLE: [specific contraindications and exclusions from the guideline — do not write N/A; list actual exclusions or state 'None specified'] • ACTION: [specific intervention with drug name/dose/route/device/timing as stated — do not restate the name; give the operational detail] • THRESHOLDS: [exact numeric values, durations, or criteria from the guideline — do not write N/A; state actual values or 'Not specified in guideline']",
   "significance": "high" or "medium" or "low"
 }
 
-STRATEGY FOR CONCISENESS:
-- Each name must be a self-contained clinical rule — not a topic label (wrong: "kiwi forceps"), not a verb phrase (wrong: "give antibiotics"), but a full decision statement (right: "Offer a single dose of prophylactic antibiotics before instrumental delivery").
-- Group related algorithmic or conditional logic into a single practice point (e.g., "If A then B, otherwise C" should be one point, not two).
-- Focus on actionable clinical recommendations rather than background information.
-- Combine points that share the same population and action but have different sub-thresholds.
+RULES FOR CLINICAL SPECIFICITY:
+- name: include the specific drug/device/dose/route/timing from the guideline. Wrong: "offer antibiotics". Right: "offer co-amoxiclav 1.2g IV single dose at time of delivery".
+- APPLIES TO: name the specific patient sub-group with clinical detail. Wrong: "women in labour". Right: "nulliparous women with second stage >1 hour despite active pushing, or any woman where fetal or maternal indication is present".
+- NOT APPLICABLE: list real contraindications from the guideline (face presentation, bleeding disorders, gestation <34 weeks, etc.). Never write N/A unless the guideline genuinely states no exclusions.
+- ACTION: give the operational instruction a clinician would follow — drug, dose, route, timing, who performs it. Do not repeat the name.
+- THRESHOLDS: give the numeric criteria (e.g. ">1 hour second stage", "≤3 pulls per attempt", "Apgar <7 at 5 min"). State "Not specified in guideline" only if truly absent.
+
+GROUPING STRATEGY:
+- Group related conditional logic into a single point ("If A then B, otherwise C" = one point).
+- Combine points that share the same population and action but differ only by sub-thresholds.
+- Focus on actionable recommendations; omit background/rationale text.
 
 CATEGORIES TO COVER:
 - SCREENING, THRESHOLDS, DOSAGES, TIMING, SAFETY, ESCALATION, LOCATION, SPECIAL POPULATIONS, ADMINISTRATIVE.
@@ -9256,11 +9262,13 @@ ${content}`;
 async function batchExpandPracticePoints(practicePoints, content, userId = null, batchSize = 15) {
     if (!practicePoints || practicePoints.length === 0) return [];
 
-    // If we already have well-structured points, no need to expand
+    // Skip expansion only if descriptions are genuinely detailed (long, have real exclusions, no N/A placeholders)
     const needsExpansion = practicePoints.some(p =>
         !p.description ||
-        p.description.length < 50 ||
-        !p.description.includes('APPLIES TO')
+        p.description.length < 150 ||
+        !p.description.includes('APPLIES TO') ||
+        p.description.includes('NOT APPLICABLE: N/A') ||
+        p.description.includes('THRESHOLDS: N/A')
     );
 
     if (!needsExpansion) {
@@ -9283,23 +9291,22 @@ async function batchExpandPracticePoints(practicePoints, content, userId = null,
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
 
-        const prompt = `Expand these practice points with more detailed applicability criteria. Also improve any name that is a topic label (e.g. "kiwi forceps") into a complete clinical decision rule sentence.
+        const prompt = `Expand these practice points with maximum clinical specificity using the guideline content below.
 
 PRACTICE POINTS TO EXPAND:
 ${JSON.stringify(batch, null, 2)}
 
-For EACH practice point:
-1. If the name is a topic label rather than a decision rule, rewrite it as a full sentence stating who does what under what condition.
-2. Ensure the description includes:
-   • APPLIES TO: [specific patient population, phase of care, gestational age if relevant]
-   • NOT APPLICABLE: [when this does NOT apply - exclusions, different phases of care]
-   • ACTION: [what treatment/investigation/referral is recommended]
-   • THRESHOLDS: [any specific values, doses, or timing if applicable]
+For EACH practice point apply these rules:
+1. NAME: If the name is vague (e.g. "offer antibiotics", "consider positions"), rewrite it with the specific drug/dose/route/device/timing/criteria from the guideline. A clinician must be able to answer yes/no from a clinical note.
+2. APPLIES TO: Name the specific clinical sub-group with diagnostic or obstetric criteria. Not "women in labour" — instead e.g. "nulliparous women with passive second stage >1 hour or active pushing >1 hour".
+3. NOT APPLICABLE: List actual contraindications from the guideline (e.g. face presentation, fetal coagulopathy, gestation <34 weeks). Never write "N/A" — write "None specified in guideline" if truly absent.
+4. ACTION: Give the operational instruction — specific drug, dose, route, device, who performs it, how many attempts. Do NOT restate the name.
+5. THRESHOLDS: State exact numeric values, durations, attempt limits, or gestational ages from the guideline. Write "Not specified in guideline" only if genuinely absent.
 
 GUIDELINE CONTEXT:
 ${content.substring(0, 10000)}${content.length > 10000 ? '\n...[truncated]...' : ''}
 
-Return a JSON array with the same number of objects, each with: name (decision rule sentence), description (expanded), significance.`;
+Return a JSON array with the same number of objects, each with: name, description (with all five bullet sections), significance.`;
 
         try {
             const result = await routeToAI({
