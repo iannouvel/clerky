@@ -6415,10 +6415,9 @@ ${responseText}
             if (!sel || sel.dataset.loaded) return;
             try {
                 const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getAllGuidelines`, { headers: { Authorization: `Bearer ${token}` } });
+                const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
                 const data = await res.json();
-                const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
-                guidelines.sort((a, b) => (a.displayName || a.title || '').localeCompare(b.displayName || b.title || ''));
+                const guidelines = data.guidelines || [];
                 sel.innerHTML = guidelines.map(g =>
                     `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
                 ).join('');
@@ -6614,10 +6613,9 @@ ${responseText}
             if (!sel || sel.dataset.loaded) return;
             try {
                 const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getAllGuidelines`, { headers: { Authorization: `Bearer ${token}` } });
+                const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
                 const data = await res.json();
-                const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
-                guidelines.sort((a, b) => (a.displayName || a.title || '').localeCompare(b.displayName || b.title || ''));
+                const guidelines = data.guidelines || [];
                 sel.innerHTML = '<option value="">Select a guideline...</option>' + guidelines.map(g =>
                     `<option value="${g.id}">${g.displayName || g.title || g.id}</option>`
                 ).join('');
