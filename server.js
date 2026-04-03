@@ -9136,12 +9136,13 @@ ${summaryContext}
 CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
-  "name": "Brief descriptive title (5-10 words)",
+  "name": "A testable clinical decision rule written as a complete sentence: who should receive what action under what condition. E.g. 'Offer prophylactic antibiotics at the time of instrumental delivery to reduce infection risk' or 'Use Kielland's forceps only when a trained operator is available for rotational mid-cavity delivery'. Must be specific enough that a clinician can answer yes/no whether a given note complies.",
   "description": "STRUCTURED APPLICABILITY CRITERIA: • APPLIES TO: [population] • NOT APPLICABLE: [exclusions] • ACTION: [recommendation/algorithm step] • THRESHOLDS: [values/timing]",
   "significance": "high" or "medium" or "low"
 }
 
 STRATEGY FOR CONCISENESS:
+- Each name must be a self-contained clinical rule — not a topic label (wrong: "kiwi forceps"), not a verb phrase (wrong: "give antibiotics"), but a full decision statement (right: "Offer a single dose of prophylactic antibiotics before instrumental delivery").
 - Group related algorithmic or conditional logic into a single practice point (e.g., "If A then B, otherwise C" should be one point, not two).
 - Focus on actionable clinical recommendations rather than background information.
 - Combine points that share the same population and action but have different sub-thresholds.
@@ -9277,21 +9278,23 @@ async function batchExpandPracticePoints(practicePoints, content, userId = null,
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
 
-        const prompt = `Expand these practice points with more detailed applicability criteria.
+        const prompt = `Expand these practice points with more detailed applicability criteria. Also improve any name that is a topic label (e.g. "kiwi forceps") into a complete clinical decision rule sentence.
 
 PRACTICE POINTS TO EXPAND:
 ${JSON.stringify(batch, null, 2)}
 
-For EACH practice point, ensure the description includes:
-• APPLIES TO: [specific patient population, phase of care, gestational age if relevant]
-• NOT APPLICABLE: [when this does NOT apply - exclusions, different phases of care]
-• ACTION: [what treatment/investigation/referral is recommended]
-• THRESHOLDS: [any specific values, doses, or timing if applicable]
+For EACH practice point:
+1. If the name is a topic label rather than a decision rule, rewrite it as a full sentence stating who does what under what condition.
+2. Ensure the description includes:
+   • APPLIES TO: [specific patient population, phase of care, gestational age if relevant]
+   • NOT APPLICABLE: [when this does NOT apply - exclusions, different phases of care]
+   • ACTION: [what treatment/investigation/referral is recommended]
+   • THRESHOLDS: [any specific values, doses, or timing if applicable]
 
 GUIDELINE CONTEXT:
 ${content.substring(0, 10000)}${content.length > 10000 ? '\n...[truncated]...' : ''}
 
-Return a JSON array with the same number of objects, each with: name, description (expanded), significance.`;
+Return a JSON array with the same number of objects, each with: name (decision rule sentence), description (expanded), significance.`;
 
         try {
             const result = await routeToAI({
