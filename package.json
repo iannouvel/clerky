@@ -29,7 +29,7 @@
   "scripts": {
     "start": "node --max-old-space-size=4096 server.js",
     "dev": "nodemon server.js",
-    "build": "node build.js",
+    "build": "npm run bundle-libretto && node build.js",
     "bundle-libretto": "webpack --config webpack.config.js",
     "docs": "jsdoc -c jsdoc.json",
     "docs:watch": "nodemon --watch server --watch js --watch modules --ext js --exec \"npm run docs\"",
