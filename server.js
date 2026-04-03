@@ -11042,7 +11042,9 @@ app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
                 yearProduced: data.yearProduced || null,
                 vectorDbIngested: data.vectorDbIngested || false,
                 hasContent: !!(data.content || data.condensed),
-                hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0)
+                hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0),
+                auditableElementsCount: data.auditableElements?.length || 0,
+                auditableElementsRegeneratedAt: data.auditableElementsRegeneratedAt || null
             });
         });
 

@@ -76,7 +76,8 @@ filesToCopy.forEach(file => {
 // (which is excluded from Firebase hosting via firebase.json ignore list)
 const { version } = JSON.parse(fs.readFileSync('package.json', 'utf8'));
 fs.writeFileSync(path.join('dist', 'version.json'), JSON.stringify({ version }));
-console.log(`Written dist/version.json: ${version}`);
+fs.writeFileSync('version.json', JSON.stringify({ version }));
+console.log(`Written dist/version.json and version.json: ${version}`);
 
 // Copy algos directory
 if (fs.existsSync('algos')) {

@@ -3689,7 +3689,7 @@ ${responseText}
                 const tr = document.createElement('tr');
                 tr.style.borderBottom = '1px solid #eee';
 
-                const elementsCount = g.auditableElements?.length || 0;
+                const elementsCount = g.auditableElementsCount ?? (g.auditableElements?.length || 0);
                 const statusColor = elementsCount > 0 ? '#28a745' : '#6c757d';
 
                 const extractedAt = g.auditableElementsRegeneratedAt;
