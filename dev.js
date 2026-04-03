@@ -2485,7 +2485,7 @@ ${responseText}
                     const token = await user.getIdToken();
 
                     // Fetch all guidelines to get their IDs
-                    const guidelinesResponse = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                    const guidelinesResponse = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`,
@@ -3298,23 +3298,20 @@ ${responseText}
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
 
-                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                const response = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                    const guidelines = data.guidelines || [];
                     if (reingestGuidelineSelect) {
                         reingestGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
-                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
                         guidelines.forEach(g => {
                             const option = document.createElement('option');
                             option.value = g.id;
-                            const hasContent = g.content && g.content.length > 0;
-                            const isIngested = g.vectorDbIngested;
-                            const status = isIngested ? '✅' : (hasContent ? '⏳' : '❌');
-                            option.textContent = `${status} ${g.title || g.humanFriendlyName || g.id}`;
+                            const status = g.vectorDbIngested ? '✅' : (g.hasContent ? '⏳' : '❌');
+                            option.textContent = `${status} ${g.title || g.displayName || g.id}`;
                             reingestGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3396,21 +3393,19 @@ ${responseText}
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
 
-                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                const response = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    // Handle both array response and object with guidelines property
-                    const guidelines = Array.isArray(data) ? data : (data.guidelines || []);
+                    const guidelines = data.guidelines || [];
                     if (reextractGuidelineSelect) {
                         reextractGuidelineSelect.innerHTML = '<option value="">-- Select a guideline --</option>';
-                        guidelines.sort((a, b) => (a.title || a.id).localeCompare(b.title || b.id));
                         guidelines.forEach(g => {
                             const option = document.createElement('option');
                             option.value = g.id;
-                            option.textContent = `${g.title || g.id} (${g.id})`;
+                            option.textContent = `${g.title || g.displayName || g.id} (${g.id})`;
                             reextractGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3588,13 +3583,13 @@ ${responseText}
                 const token = await auth.currentUser?.getIdToken();
                 if (!token) return;
 
-                const response = await fetch(`${SERVER_URL}/getAllGuidelines`, {
+                const response = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    allGuidelinesForBatch = Array.isArray(data) ? data : (data.guidelines || []);
+                    allGuidelinesForBatch = data.guidelines || [];
 
                     // Populate filters
                     const orgs = new Set();
