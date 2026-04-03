@@ -6574,6 +6574,117 @@ ${responseText}
         // ─────────────────────────────────────────────────────────────────────
 
         // ─── Calibration Dashboard ────────────────────────────────────────────
+        function renderAccuracyChart(runs, points, pointHistory) {
+            const container = document.getElementById('dashChartContainer');
+            const svg = document.getElementById('dashAccuracyChart');
+            const tooltip = document.getElementById('dashChartTooltip');
+            if (!svg) return;
+
+            // Only show chart if we have at least 2 runs
+            if (runs.length < 2) { container.style.display = 'none'; return; }
+            container.style.display = 'block';
+
+            const W = svg.parentElement.clientWidth - 32; // padding 16px each side
+            const H = 200;
+            const PAD = { top: 12, right: 16, bottom: 36, left: 42 };
+            const chartW = W - PAD.left - PAD.right;
+            const chartH = H - PAD.top - PAD.bottom;
+
+            const colour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
+            const xScale = i => PAD.left + (i / (runs.length - 1)) * chartW;
+            const yScale = v => PAD.top + (1 - v) * chartH;
+
+            // Run labels (short date)
+            const runLabels = runs.map(r => {
+                const d = new Date(r.timestamp);
+                return isNaN(d) ? '?' : d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+            });
+
+            let svgContent = '';
+
+            // Grid lines at 0%, 50%, 70%, 90%, 100%
+            const gridLevels = [0, 0.5, 0.7, 0.9, 1.0];
+            for (const lv of gridLevels) {
+                const y = yScale(lv);
+                const isDashed = lv === 0.7 || lv === 0.9;
+                const gridColour = lv === 0.7 ? '#dc354540' : lv === 0.9 ? '#ff980040' : 'rgba(128,128,128,0.15)';
+                svgContent += `<line x1="${PAD.left}" y1="${y.toFixed(1)}" x2="${PAD.left + chartW}" y2="${y.toFixed(1)}"
+                    stroke="${gridColour}" stroke-width="${isDashed ? 1.5 : 1}" ${isDashed ? 'stroke-dasharray="4,3"' : ''}/>`;
+                svgContent += `<text x="${(PAD.left - 6).toFixed(1)}" y="${(y + 4).toFixed(1)}" text-anchor="end"
+                    font-size="10" fill="var(--text-secondary)" font-family="Inter,sans-serif">${Math.round(lv * 100)}%</text>`;
+            }
+
+            // X axis tick labels (show up to 8, evenly spaced)
+            const maxTicks = 8;
+            const tickStep = Math.max(1, Math.floor(runs.length / maxTicks));
+            for (let i = 0; i < runs.length; i += tickStep) {
+                const x = xScale(i);
+                svgContent += `<text x="${x.toFixed(1)}" y="${(PAD.top + chartH + 18).toFixed(1)}" text-anchor="middle"
+                    font-size="10" fill="var(--text-secondary)" font-family="Inter,sans-serif">${runLabels[i]}</text>`;
+            }
+
+            // Lines per practice point — build hit zones for hover
+            const hitZones = [];
+            const testedPoints = points.filter(p => pointHistory[p.id] && pointHistory[p.id].length >= 1);
+
+            for (const p of testedPoints) {
+                const runIndices = runs.reduce((acc, run, idx) => {
+                    if (run.pointAccuracies && run.pointAccuracies[p.id] !== undefined && run.pointAccuracies[p.id] !== null) acc.push(idx);
+                    return acc;
+                }, []);
+                if (runIndices.length < 1) continue;
+
+                const pts = runIndices.map(ri => {
+                    const v = runs[ri].pointAccuracies[p.id];
+                    return { x: xScale(ri), y: yScale(v), v };
+                });
+
+                if (pts.length === 0) continue;
+                const currentAcc = p.accuracy;
+                const lineColour = currentAcc !== null ? colour(currentAcc) : '#6c757d';
+
+                if (pts.length === 1) {
+                    svgContent += `<circle cx="${pts[0].x.toFixed(1)}" cy="${pts[0].y.toFixed(1)}" r="3.5" fill="${lineColour}" opacity="0.75"/>`;
+                } else {
+                    const path = pts.map((pt, i) => `${i === 0 ? 'M' : 'L'}${pt.x.toFixed(1)},${pt.y.toFixed(1)}`).join(' ');
+                    svgContent += `<path d="${path}" stroke="${lineColour}" stroke-width="2" fill="none" opacity="0.6"/>`;
+                }
+                pts.forEach(pt => {
+                    svgContent += `<circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="3.5" fill="${lineColour}" opacity="0.8"/>`;
+                });
+
+                // Invisible fat hit zone per segment for hover
+                hitZones.push({ pts, name: p.name, currentAcc });
+            }
+
+            svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+            svg.setAttribute('height', H);
+            svg.innerHTML = svgContent;
+
+            // Add interactive overlay circles (transparent, larger hit target)
+            for (const zone of hitZones) {
+                const c = zone.currentAcc !== null ? colour(zone.currentAcc) : '#6c757d';
+                for (const pt of zone.pts) {
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', pt.x.toFixed(1));
+                    circle.setAttribute('cy', pt.y.toFixed(1));
+                    circle.setAttribute('r', 10);
+                    circle.setAttribute('fill', 'transparent');
+                    circle.style.cursor = 'pointer';
+                    circle.addEventListener('mouseenter', (e) => {
+                        tooltip.textContent = `${zone.name}: ${Math.round(pt.v * 100)}%`;
+                        tooltip.style.display = 'block';
+                    });
+                    circle.addEventListener('mousemove', (e) => {
+                        tooltip.style.left = (e.clientX + 12) + 'px';
+                        tooltip.style.top = (e.clientY - 28) + 'px';
+                    });
+                    circle.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+                    svg.appendChild(circle);
+                }
+            }
+        }
+
         function sparkline(values, width = 90, height = 26) {
             if (!values.length) return '<span style="font-size:11px;color:#6c757d;">no data</span>';
             const colour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
@@ -6627,6 +6738,7 @@ ${responseText}
             const status = document.getElementById('dashStatus');
             status.textContent = 'Loading...';
             document.getElementById('dashSummary').style.display = 'none';
+            document.getElementById('dashChartContainer').style.display = 'none';
             document.getElementById('dashPointsTable').style.display = 'none';
             document.getElementById('dashPointDetail').style.display = 'none';
 
@@ -6667,6 +6779,9 @@ ${responseText}
                     ? `${above70.length} / ${tested.length}` : '—';
                 document.getElementById('dashRunCount').textContent = runs.length;
                 document.getElementById('dashSummary').style.display = 'block';
+
+                // Accuracy over time chart
+                renderAccuracyChart(runs, points, pointHistory);
 
                 // Points table
                 const tbody = document.getElementById('dashPointsBody');

@@ -1560,6 +1560,18 @@
                     </div>
                 </div>
 
+                <!-- Accuracy over time chart -->
+                <div id="dashChartContainer" style="display:none;margin-bottom:20px;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+                        <h5 style="margin:0;">Accuracy Over Time — All Practice Points</h5>
+                        <span style="font-size:11px;color:var(--text-secondary);">Hover lines for details · Each line = one practice point</span>
+                    </div>
+                    <div style="background:var(--bg-tertiary);border:1px solid var(--border-color);border-radius:6px;padding:16px 16px 8px;position:relative;">
+                        <svg id="dashAccuracyChart" width="100%" style="display:block;overflow:visible;"></svg>
+                        <div id="dashChartTooltip" style="display:none;position:fixed;background:rgba(0,0,0,0.82);color:#fff;font-size:12px;padding:6px 10px;border-radius:5px;pointer-events:none;white-space:nowrap;z-index:9999;"></div>
+                    </div>
+                </div>
+
                 <!-- Points table -->
                 <div id="dashPointsTable" style="display:none;">
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
