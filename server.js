@@ -418,6 +418,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Always-accurate version endpoint — reads directly from package.json
+app.get('/version.json', (req, res) => {
+    res.json({ version: require('./package.json').version });
+});
+
 // --- 1. Centralized CORS Configuration with Logging ---
 const corsOptions = require('./server/config/cors');
 
