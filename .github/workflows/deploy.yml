@@ -50,4 +50,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           npm version ${{ steps.version-type.outputs.bump }} -m "Bump version to %s [skip ci]"
-          git push origin main --follow-tags 
+          node -e "const v=require('./package.json').version; require('fs').writeFileSync('version.json', JSON.stringify({version:v})); console.log('version.json updated to', v);"
+          git add version.json
+          git commit --amend --no-edit
+          git push origin main --follow-tags
