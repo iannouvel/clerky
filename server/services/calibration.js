@@ -296,6 +296,27 @@ All ${practicePoints.length} practice point IDs must appear in exactly one of ap
     const parsed = JSON.parse(cleaned);
 
     if (!Array.isArray(parsed.scenarios)) throw new Error('Invalid scenario response format');
+
+    // Validate and repair ground truth: every practice point ID must appear in exactly one partition
+    const allIds = new Set(practicePoints.map(p => p.id));
+    for (const scenario of parsed.scenarios) {
+        const gt = scenario.groundTruth || {};
+        gt.applies = Array.isArray(gt.applies) ? gt.applies : [];
+        gt.doesNotApply = Array.isArray(gt.doesNotApply) ? gt.doesNotApply : [];
+
+        const covered = new Set([...gt.applies, ...gt.doesNotApply]);
+        for (const id of allIds) {
+            if (!covered.has(id)) {
+                // Assign unpartitioned IDs to doesNotApply (conservative default)
+                gt.doesNotApply.push(id);
+            }
+        }
+        // Remove any IDs not in the current practice point set
+        gt.applies = gt.applies.filter(id => allIds.has(id));
+        gt.doesNotApply = gt.doesNotApply.filter(id => allIds.has(id));
+        scenario.groundTruth = gt;
+    }
+
     return parsed.scenarios;
 }
 
@@ -319,54 +340,66 @@ All ${practicePoints.length} practice point IDs must appear in exactly one of ap
  * @returns {Promise<Object.<string, 'hit'|'miss'|'correct_absence'|'false_positive'>>}
  */
 async function evaluateScenarioVerdicts(transcript, suggestions, practicePoints, groundTruth, userId) {
-    const pointMap = Object.fromEntries(practicePoints.map(p => [p.id, p]));
-    const suggestionText = suggestions.map((s, i) => `${i + 1}. ${s.suggestion || s.action || JSON.stringify(s)}`).join('\n');
+    const suggestionText = suggestions.length > 0
+        ? suggestions.map((s, i) => `[S${i + 1}] ${s.suggestion || s.action || JSON.stringify(s)}`).join('\n')
+        : '(no suggestions made)';
 
     const pointEvalList = practicePoints.map(p => {
         const role = groundTruth.applies.includes(p.id) ? 'SHOULD be suggested' : 'should NOT be suggested';
-        return `ID: ${p.id} [${role}]\nName: ${p.name}`;
+        return `ID: ${p.id} [${role}]\nName: ${p.name}\nDescription: ${p.description || p.name}`;
     }).join('\n\n');
 
-    const systemPrompt = `You are evaluating whether an AI clinical system correctly applied a set of practice points to a patient case. For each practice point, determine the verdict based on the AI's suggestions and the declared ground truth.`;
+    const systemPrompt = `You are a strict evaluator assessing whether an AI clinical decision support system correctly applied specific clinical practice points to a patient case. You must be precise: do not conflate distinct clinical actions with each other.`;
 
     const userPrompt = `Clinical note:
 ${transcript}
 
-AI suggestions:
-${suggestionText || '(no suggestions made)'}
+AI suggestions (labelled S1, S2, ...):
+${suggestionText}
 
 Practice points to evaluate:
 ${pointEvalList}
 
-For each practice point ID, return one of these verdicts:
-- "hit": the point SHOULD be suggested AND the AI's suggestions address it
-- "miss": the point SHOULD be suggested BUT the AI did not address it
-- "correct_absence": the point should NOT be suggested AND the AI correctly omitted it
-- "false_positive": the point should NOT be suggested BUT the AI incorrectly suggested it
+Instructions:
+For each practice point, first identify which specific AI suggestion (by label, e.g. S1, S2) directly and unambiguously addresses that practice point. Then assign a verdict.
 
-Use semantic matching — if a suggestion clearly addresses the intent of a practice point (even with different wording), count it as addressed.
+Verdict rules:
+- "hit": the point SHOULD be suggested AND at least one AI suggestion directly addresses this specific clinical action (the match must be unambiguous — a general suggestion about documentation does NOT count as a hit for a specific clinical action like performing a CTG)
+- "miss": the point SHOULD be suggested AND no AI suggestion directly addresses it
+- "correct_absence": the point should NOT be suggested AND the AI made no suggestion that addresses it
+- "false_positive": the point should NOT be suggested BUT an AI suggestion explicitly recommends this specific action
 
-Return ONLY valid JSON:
+Critical: do NOT assign "hit" unless you can cite the specific suggestion label that addresses this point. Do NOT assign "false_positive" unless an AI suggestion explicitly calls for this specific action. When in doubt, prefer "miss" over "hit" and "correct_absence" over "false_positive".
+
+Return ONLY valid JSON with this exact structure:
 {
   "verdicts": {
-    "pointId1": "hit",
-    "pointId2": "miss",
-    "pointId3": "correct_absence"
+    "pointId1": { "verdict": "hit", "matchedSuggestion": "S2", "reasoning": "S2 explicitly recommends performing CTG" },
+    "pointId2": { "verdict": "miss", "matchedSuggestion": null, "reasoning": "No suggestion addressed advising the patient to report future episodes" }
   }
-}`;
+}
 
+Every practice point ID listed above must have an entry.`;
+
+    // Use a capable model for reliable semantic evaluation
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId);
+    }, userId, 'gemini-2.5-flash');
 
     if (!result?.content) throw new Error('No response from evaluator');
 
     const cleaned = result.content.trim().replace(/```json\n?|\n?```/g, '');
     const parsed = JSON.parse(cleaned);
-    return parsed.verdicts || {};
+
+    // Normalise: accept both { verdict: "..." } objects and bare strings
+    const verdicts = {};
+    for (const [pointId, value] of Object.entries(parsed.verdicts || {})) {
+        verdicts[pointId] = typeof value === 'string' ? value : (value.verdict || 'miss');
+    }
+    return verdicts;
 }
 
 // ─── Phase 2: Full calibration run ───────────────────────────────────────────
