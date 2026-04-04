@@ -1464,11 +1464,19 @@
                 </p>
 
                 <!-- Guideline selector (shared by both steps) -->
-                <div style="margin-bottom:16px;">
-                    <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
-                    <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
-                        <option value="">Loading guidelines...</option>
-                    </select>
+                <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px;">
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Scope</label>
+                        <select id="calibrationScopeFilter" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);">
+                            <option value="">All scopes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
+                        <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
+                            <option value="">Loading guidelines...</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Step 1: Sync -->
@@ -1525,6 +1533,12 @@
 
                 <!-- Controls -->
                 <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:20px;">
+                    <div>
+                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Scope</label>
+                        <select id="dashScopeFilter" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);">
+                            <option value="">All scopes</option>
+                        </select>
+                    </div>
                     <div>
                         <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
                         <select id="dashGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">

@@ -11048,7 +11048,9 @@ app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
                 hasContent: !!(data.content || data.condensed),
                 hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0),
                 auditableElementsCount: data.auditableElements?.length || 0,
-                auditableElementsRegeneratedAt: data.auditableElementsRegeneratedAt || null
+                auditableElementsRegeneratedAt: data.auditableElementsRegeneratedAt || null,
+                scope: data.scope || null,
+                hospitalTrust: data.hospitalTrust || null
             });
         });
 
