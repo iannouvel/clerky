@@ -6633,17 +6633,91 @@ ${responseText}
         function renderCalibrationResults(result, container) {
             const accuracyColour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
             const pct = v => v !== null && v !== undefined ? (v * 100).toFixed(0) + '%' : '—';
+            const pointNames = result.practicePointNames || {};
+            const pointLabel = id => pointNames[id] || id.replace(/_/g, ' ');
 
+            const VERDICT_STYLE = {
+                hit:              { bg: '#d4edda', color: '#155724', icon: '✓', label: 'Hit' },
+                miss:             { bg: '#f8d7da', color: '#721c24', icon: '✗', label: 'Miss' },
+                correct_absence:  { bg: '#e2e3e5', color: '#383d41', icon: '○', label: 'Correct absence' },
+                false_positive:   { bg: '#fff3cd', color: '#856404', icon: '!', label: 'False positive' }
+            };
+
+            // ── Per-scenario cards ──────────────────────────────────────────────
+            const scenarioCards = (result.scenarios || []).map((s, i) => {
+                const suggestions = Array.isArray(s.suggestions) && s.suggestions.length
+                    ? s.suggestions.map((txt, j) => `<li style="margin:2px 0;">[S${j+1}] ${txt}</li>`).join('')
+                    : '<li style="color:var(--text-secondary);font-style:italic;">(no suggestions)</li>';
+
+                const applies = new Set(s.groundTruth?.applies || []);
+                const doesNotApply = new Set(s.groundTruth?.doesNotApply || []);
+                const allIds = [...applies, ...doesNotApply];
+
+                const verdictRows = allIds.map(id => {
+                    const verdict = (s.verdicts || {})[id] || 'miss';
+                    const vs = VERDICT_STYLE[verdict] || VERDICT_STYLE.miss;
+                    const role = applies.has(id) ? 'Should suggest' : 'Should omit';
+                    const roleColour = applies.has(id) ? '#0c5460' : '#383d41';
+                    return `<tr>
+                        <td style="padding:5px 8px;font-size:12px;max-width:260px;">${pointLabel(id)}</td>
+                        <td style="padding:5px 8px;font-size:11px;color:${roleColour};">${role}</td>
+                        <td style="padding:5px 8px;">
+                            <span style="display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;background:${vs.bg};color:${vs.color};">
+                                ${vs.icon} ${vs.label}
+                            </span>
+                        </td>
+                    </tr>`;
+                }).join('');
+
+                const hitCount   = allIds.filter(id => (s.verdicts||{})[id] === 'hit').length;
+                const missCount  = allIds.filter(id => (s.verdicts||{})[id] === 'miss').length;
+                const fpCount    = allIds.filter(id => (s.verdicts||{})[id] === 'false_positive').length;
+                const caCount    = allIds.filter(id => (s.verdicts||{})[id] === 'correct_absence').length;
+
+                return `<details style="margin-bottom:10px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
+                    <summary style="padding:10px 14px;cursor:pointer;background:var(--bg-tertiary);font-size:13px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Scenario ${i+1}: ${s.name}</span>
+                        <span style="font-size:11px;font-weight:400;color:var(--text-secondary);">
+                            <span style="color:#155724;">✓${hitCount}</span>
+                            <span style="color:#721c24;margin-left:8px;">✗${missCount}</span>
+                            ${fpCount ? `<span style="color:#856404;margin-left:8px;">!${fpCount} FP</span>` : ''}
+                            <span style="color:#383d41;margin-left:8px;">○${caCount}</span>
+                        </span>
+                    </summary>
+                    <div style="padding:12px 14px;">
+                        <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">Clinical note (excerpt)</p>
+                        <div style="font-size:12px;background:var(--bg-input);padding:8px 10px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;margin-bottom:12px;max-height:140px;overflow-y:auto;">${s.transcript}</div>
+
+                        <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">AI suggestions</p>
+                        <ul style="font-size:12px;margin:0 0 12px;padding-left:18px;">${suggestions}</ul>
+
+                        <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">Verdict per practice point</p>
+                        <div style="border:1px solid var(--border-color);border-radius:4px;overflow:hidden;">
+                            <table style="width:100%;border-collapse:collapse;">
+                                <thead><tr style="background:var(--bg-tertiary);">
+                                    <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Practice point</th>
+                                    <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Ground truth</th>
+                                    <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Verdict</th>
+                                </tr></thead>
+                                <tbody>${verdictRows}</tbody>
+                            </table>
+                        </div>
+                    </div>
+                </details>`;
+            }).join('');
+
+            // ── Per-point accuracy summary ──────────────────────────────────────
             const pointRows = Object.entries(result.pointAccuracies || {}).map(([id, acc]) => {
                 const colour = acc !== null ? accuracyColour(acc) : '#6c757d';
+                const bar = acc !== null ? `<div style="display:inline-block;width:${Math.round(acc*80)}px;height:6px;background:${colour};border-radius:3px;vertical-align:middle;margin-right:6px;"></div>` : '';
                 return `<tr>
-                    <td style="padding:6px 8px;font-size:12px;">${id.replace(/_/g, ' ')}</td>
-                    <td style="padding:6px 8px;text-align:center;font-weight:bold;color:${colour};">${pct(acc)}</td>
+                    <td style="padding:6px 8px;font-size:12px;">${pointLabel(id)}</td>
+                    <td style="padding:6px 8px;text-align:center;font-weight:bold;color:${colour};">${bar}${pct(acc)}</td>
                 </tr>`;
             }).join('');
 
             container.innerHTML = `
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;">
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px;">
                     <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
                         <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Overall Accuracy</div>
                         <div style="font-size:22px;font-weight:bold;color:${accuracyColour(result.overallAccuracy)};">${pct(result.overallAccuracy)}</div>
@@ -6659,6 +6733,11 @@ ${responseText}
                         </div>
                     </div>
                 </div>
+
+                <h5 style="margin:0 0 10px;">Scenario Breakdown</h5>
+                ${scenarioCards || '<p style="color:var(--text-secondary);font-size:13px;">No scenario data available.</p>'}
+
+                <h5 style="margin:16px 0 10px;">Practice Point    Accuracy</h5>
                 <table style="width:100%;border-collapse:collapse;font-size:13px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
                     <thead><tr style="background:var(--bg-tertiary);">
                         <th style="padding:8px;text-align:left;border-bottom:1px solid var(--border-color);">Practice Point</th>
