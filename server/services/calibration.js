@@ -1,7 +1,7 @@
 'use strict';
 
 const { db } = require('../config/firebase');
-const { analyzeGuidelineForPatient, routeToAI, extractGuidelineLessons, storeGuidelineLearning } = require('./ai');
+const { analyzeGuidelineForPatient, routeToAI, evolvePointAdvice } = require('./ai');
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -502,38 +502,51 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     await Promise.all(updatePromises);
     log('update', `Updated accuracy for ${Object.keys(pointAccuracies).length} points`);
 
-    // 7. Extract lessons for failing points (accuracy < 0.7 in this run)
-    const failingPoints = Object.entries(pointAccuracies)
+    // 7. Evolve per-point advice for all points that failed in this run (accuracy < 0.7)
+    const failingPointIds = Object.entries(pointAccuracies)
         .filter(([, acc]) => acc !== null && acc < 0.7)
-        .map(([pointId]) => pointId);
+        .map(([id]) => id);
 
-    if (failingPoints.length > 0) {
-        log('learn', `${failingPoints.length} failing points — extracting lessons`);
-        // Build a synthetic evaluation object targeting failing scenarios
-        const missedNames = failingPoints.map(id => {
-            const pt = practicePoints.find(p => p.id === id);
-            return pt ? pt.name : id;
-        });
-        const syntheticEval = {
-            missedRecommendations: missedNames,
-            suggestionEvaluations: scenarioResults.flatMap(r =>
-                Object.entries(r.verdicts)
-                    .filter(([, v]) => v === 'false_positive')
-                    .map(([pointId]) => ({ verdict: 'redundant', pointId }))
-            )
-        };
-        const combinedSuggestions = scenarioResults.flatMap(r => r.suggestions);
-        try {
-            const lessons = await extractGuidelineLessons(guidelineTitle, syntheticEval, combinedSuggestions, userId);
-            if (lessons) {
-                await storeGuidelineLearning(guidelineId, lessons, guidelineTitle, userId);
-                log('learn', 'Cheat sheet updated with new lessons');
+    let adviceUpdated = 0;
+    if (failingPointIds.length > 0) {
+        log('learn', `${failingPointIds.length} failing points — evolving per-point advice`);
+
+        for (const pointId of failingPointIds) {
+            const point = practicePoints.find(p => p.id === pointId);
+            if (!point) continue;
+
+            // Collect every scenario that involved this point, with full context
+            const relevantScenarios = scenarioResults
+                .filter(r => [...(r.groundTruth.applies || []), ...(r.groundTruth.doesNotApply || [])].includes(pointId))
+                .map(r => ({
+                    transcript: r.transcript,
+                    suggestions: Array.isArray(r.suggestions) ? r.suggestions : [],
+                    verdict: (r.verdicts || {})[pointId] || 'unknown',
+                    shouldApply: (r.groundTruth.applies || []).includes(pointId)
+                }));
+
+            if (relevantScenarios.length === 0) continue;
+
+            // Load current advice so the evolution can improve on it
+            const pointRef = db
+                .collection('guidelines').doc(guidelineId)
+                .collection('practicePointMetrics').doc(pointId);
+            const pointSnap = await pointRef.get();
+            const currentAdvice = pointSnap.exists ? (pointSnap.data().advice || null) : null;
+
+            try {
+                const newAdvice = await evolvePointAdvice(point, currentAdvice, relevantScenarios, guidelineTitle, userId);
+                if (newAdvice) {
+                    await pointRef.update({ advice: newAdvice, adviceUpdatedAt: new Date().toISOString() });
+                    adviceUpdated++;
+                    log('learn', `Evolved advice for: ${point.name}`);
+                }
+            } catch (err) {
+                log('learn', `Advice evolution failed for ${pointId}: ${err.message}`);
             }
-        } catch (err) {
-            log('learn', `Lesson extraction failed: ${err.message}`);
         }
     } else {
-        log('learn', 'All points at or above 0.7 — no cheat sheet update needed');
+        log('learn', 'All points at or above 0.7 — no advice evolution needed');
     }
 
     // 8. Store run record
@@ -557,8 +570,8 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
         })),
         pointAccuracies,
         overallAccuracy,
-        failingPointCount: failingPoints.length,
-        cheatSheetUpdated: failingPoints.length > 0
+        failingPointCount: failingPointIds.length,
+        adviceUpdated
     };
 
     await db.collection('guidelines').doc(guidelineId).collection('calibrationRuns').doc(runId).set(runRecord);

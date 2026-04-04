@@ -6727,9 +6727,9 @@ ${responseText}
                         <div style="font-size:22px;font-weight:bold;">${result.pointCount}</div>
                     </div>
                     <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Cheat Sheet</div>
-                        <div style="font-size:14px;font-weight:bold;color:${result.cheatSheetUpdated ? '#28a745' : '#6c757d'};">
-                            ${result.cheatSheetUpdated ? 'Updated' : 'No change'}
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Advice Evolved</div>
+                        <div style="font-size:22px;font-weight:bold;color:${result.adviceUpdated > 0 ? '#28a745' : '#6c757d'};">
+                            ${result.adviceUpdated ?? 0}
                         </div>
                     </div>
                 </div>

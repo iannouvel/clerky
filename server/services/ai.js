@@ -677,8 +677,12 @@ function formatLearningForPrompt(learning) {
 async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null) {
     let hintsText = '';
     if (guidelineId) {
-        const learning = await loadGuidelineLearning(guidelineId);
+        const [learning, pointAdvice] = await Promise.all([
+            loadGuidelineLearning(guidelineId),
+            loadPracticePointAdvice(guidelineId)
+        ]);
         if (learning) hintsText = formatLearningForPrompt(learning);
+        if (pointAdvice.length > 0) hintsText += formatPointAdviceForPrompt(pointAdvice);
     }
 
     // Single-pass prompt: identify gaps, enrich with patient-specific reasoning and verbatim
@@ -868,6 +872,83 @@ async function extractGuidelineLessons(guidelineTitle, evaluation, suggestions, 
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId);
     if (!result || !result.content) return null;
     return { learningText: result.content.trim() };
+}
+
+/**
+ * Generates or improves the application guidance for a single practice point
+ * based on calibration failures. Replaces (rather than appends to) existing advice.
+ *
+ * @param {{ id, name, description }} point - The practice point
+ * @param {string|null} currentAdvice - Existing advice to improve, or null for first run
+ * @param {Array<{ transcript, suggestions, verdict, shouldApply }>} scenarios
+ *   Each entry is one calibration scenario that involved this point
+ * @param {string} guidelineTitle
+ * @param {string} userId
+ * @returns {Promise<string|null>} Improved advice text, or null on failure
+ */
+async function evolvePointAdvice(point, currentAdvice, scenarios, guidelineTitle, userId) {
+    const scenarioDescriptions = scenarios.map((s, i) => {
+        const suggestionsText = Array.isArray(s.suggestions) && s.suggestions.length
+            ? s.suggestions.map((t, j) => `  [S${j+1}] ${t}`).join('\n')
+            : '  (no suggestions made)';
+        const shouldLabel = s.shouldApply ? 'SHOULD be suggested here' : 'should NOT be suggested here';
+        const verdictLabel = { hit: 'Hit (correct)', miss: 'Miss (AI failed to suggest)', correct_absence: 'Correct absence', false_positive: 'False positive (AI wrongly suggested)' }[s.verdict] || s.verdict;
+        return `Scenario ${i + 1} — this point ${shouldLabel}:\nClinical note: ${s.transcript}\nAI suggested:\n${suggestionsText}\nVerdict: ${verdictLabel}`;
+    }).join('\n\n---\n\n');
+
+    const systemPrompt = `You are improving the application guidance for a specific clinical practice point. Write precise, conditional guidance that tells an AI clinician decision support system when to raise this recommendation, when not to, and what contextual factors determine applicability. Your output will be injected verbatim into future analysis prompts — write it as direct instruction to the AI, not as a description of what to do.`;
+
+    const userPrompt = `Guideline: ${guidelineTitle}
+
+Practice point: ${point.name}
+Description: ${point.description || point.name}
+${currentAdvice ? `\nCurrent guidance (rewrite this with improvements):\n${currentAdvice}\n` : ''}
+Calibration evidence — what actually went wrong:
+${scenarioDescriptions}
+
+Write improved application guidance for this specific practice point. Structure it exactly as:
+SUGGEST WHEN: [specific clinical conditions that warrant suggesting this]
+DO NOT SUGGEST WHEN: [conditions that make it inapplicable, premature, or already handled]
+KEY NUANCE: [timing, staging, or contextual factors — 1-2 sentences]
+
+Be specific and concrete. Reference the types of clinical situations shown above. Total length: 3-5 sentences.`;
+
+    const result = await routeToAI({ messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt }
+    ]}, userId, 'gemini-2.5-flash');
+
+    return result?.content?.trim() || null;
+}
+
+/**
+ * Loads all practice points with their calibrated advice from practicePointMetrics.
+ * Returns only points that have non-null advice.
+ *
+ * @param {string} guidelineId
+ * @returns {Promise<Array<{ id, name, advice }>>}
+ */
+async function loadPracticePointAdvice(guidelineId) {
+    try {
+        const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
+        return snap.docs
+            .map(d => ({ id: d.id, name: d.data().name || d.id, advice: d.data().advice || null }))
+            .filter(p => p.advice);
+    } catch {
+        return [];
+    }
+}
+
+/**
+ * Formats per-point calibrated advice into a structured prompt section.
+ *
+ * @param {Array<{ id, name, advice }>} points
+ * @returns {string}
+ */
+function formatPointAdviceForPrompt(points) {
+    if (!points || points.length === 0) return '';
+    const lines = points.map(p => `• ${p.name}\n${p.advice}`).join('\n\n');
+    return `\n\n=== PRACTICE POINT APPLICATION GUIDE ===\nThe following practice points have been calibrated. Apply each one according to its guidance:\n\n${lines}\n=== END GUIDE ===\n`;
 }
 
 /**
@@ -1529,6 +1610,8 @@ module.exports = {
     generatePromptImprovements,
     extractGuidelineLessons,
     extractCompletenessLessons,
+    evolvePointAdvice,
+    loadPracticePointAdvice,
     refineSuggestions,
     senseCheckSuggestions,
     senseCheckGuidelines,
