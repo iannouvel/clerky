@@ -6490,18 +6490,43 @@ ${responseText}
             return auth.currentUser.getIdToken();
         }
 
-        async function populateCalibrationGuidelineSelect() {
-            const sel = document.getElementById('calibrationGuidelineSelect');
-            if (!sel || sel.dataset.loaded) return;
-            try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
-                const data = await res.json();
-                const guidelines = data.guidelines || [];
-                sel.innerHTML = guidelines.map(g =>
+        // Shared cache so both calibration selects fetch once
+        let _calibrationGuidelines = null;
+
+        async function fetchCalibrationGuidelines() {
+            if (_calibrationGuidelines) return _calibrationGuidelines;
+            const token = await getCalibrationToken();
+            const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
+            const data = await res.json();
+            _calibrationGuidelines = data.guidelines || [];
+            return _calibrationGuidelines;
+        }
+
+        function buildScopeOptions(guidelines, scopeSel) {
+            const scopes = [...new Set(guidelines.map(g => g.scope).filter(Boolean))].sort();
+            scopeSel.innerHTML = '<option value="">All scopes</option>' +
+                scopes.map(s => `<option value="${s}">${s}</option>`).join('');
+        }
+
+        function filterGuidelineSelect(guidelines, scopeSel, guidelineSel, placeholder) {
+            const scope = scopeSel.value;
+            const filtered = scope ? guidelines.filter(g => g.scope === scope) : guidelines;
+            guidelineSel.innerHTML = (placeholder ? `<option value="">${placeholder}</option>` : '') +
+                filtered.map(g =>
                     `<option value="${g.id}">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</option>`
                 ).join('');
+        }
+
+        async function populateCalibrationGuidelineSelect() {
+            const sel = document.getElementById('calibrationGuidelineSelect');
+            const scopeSel = document.getElementById('calibrationScopeFilter');
+            if (!sel || sel.dataset.loaded) return;
+            try {
+                const guidelines = await fetchCalibrationGuidelines();
+                buildScopeOptions(guidelines, scopeSel);
+                filterGuidelineSelect(guidelines, scopeSel, sel, null);
                 sel.dataset.loaded = '1';
+                scopeSel.addEventListener('change', () => filterGuidelineSelect(guidelines, scopeSel, sel, null));
             } catch (err) {
                 sel.innerHTML = '<option value="">Failed to load guidelines</option>';
                 console.error('[CALIBRATION] Failed to load guidelines:', err.message);
@@ -6801,16 +6826,14 @@ ${responseText}
 
         async function populateDashGuidelineSelect() {
             const sel = document.getElementById('dashGuidelineSelect');
+            const scopeSel = document.getElementById('dashScopeFilter');
             if (!sel || sel.dataset.loaded) return;
             try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
-                const data = await res.json();
-                const guidelines = data.guidelines || [];
-                sel.innerHTML = '<option value="">Select a guideline...</option>' + guidelines.map(g =>
-                    `<option value="${g.id}">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</option>`
-                ).join('');
+                const guidelines = await fetchCalibrationGuidelines();
+                buildScopeOptions(guidelines, scopeSel);
+                filterGuidelineSelect(guidelines, scopeSel, sel, 'Select a guideline...');
                 sel.dataset.loaded = '1';
+                scopeSel.addEventListener('change', () => filterGuidelineSelect(guidelines, scopeSel, sel, 'Select a guideline...'));
             } catch (err) {
                 console.error('[DASH] guideline load error:', err.message);
             }
