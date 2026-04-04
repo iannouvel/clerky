@@ -547,11 +547,12 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
         pointCount: practicePoints.length,
         scenarioCount: scenarios.length,
         practicePointIds: practicePoints.map(p => p.id),
+        practicePointNames: Object.fromEntries(practicePoints.map(p => [p.id, p.name])),
         scenarios: scenarioResults.map(r => ({
             name: r.name,
-            transcript: r.transcript.substring(0, 500),  // truncate for storage
+            transcript: r.transcript.substring(0, 600),
             groundTruth: r.groundTruth,
-            suggestionsCount: r.suggestions.length,
+            suggestions: r.suggestions.map(s => (s.suggestion || s.action || JSON.stringify(s)).substring(0, 400)),
             verdicts: r.verdicts
         })),
         pointAccuracies,
