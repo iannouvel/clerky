@@ -889,7 +889,7 @@ async function extractGuidelineLessons(guidelineTitle, evaluation, suggestions, 
 async function evolvePointAdvice(point, currentAdvice, scenarios, guidelineTitle, userId) {
     const scenarioDescriptions = scenarios.map((s, i) => {
         const suggestionsText = Array.isArray(s.suggestions) && s.suggestions.length
-            ? s.suggestions.map((t, j) => `  [S${j+1}] ${t}`).join('\n')
+            ? s.suggestions.map((t, j) => `  [S${j+1}] ${t.suggestion || t.action || JSON.stringify(t)}`).join('\n')
             : '  (no suggestions made)';
         const shouldLabel = s.shouldApply ? 'SHOULD be suggested here' : 'should NOT be suggested here';
         const verdictLabel = { hit: 'Hit (correct)', miss: 'Miss (AI failed to suggest)', correct_absence: 'Correct absence', false_positive: 'False positive (AI wrongly suggested)' }[s.verdict] || s.verdict;
