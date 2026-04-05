@@ -283,12 +283,13 @@ Return ONLY valid JSON in this exact structure:
 
 All ${practicePoints.length} practice point IDs must appear in exactly one of applies or doesNotApply for each scenario.`;
 
+    // gemini-2.0-flash: no thinking tokens, so the full output budget goes to actual JSON content
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash', 8000);
+    }, userId, 'gemini-2.0-flash', 8000);
 
     if (!result?.content) throw new Error('No response from scenario generator');
 
@@ -381,13 +382,13 @@ Return ONLY valid JSON with this exact structure:
 
 Every practice point ID listed above must have an entry.`;
 
-    // Use a capable model for reliable semantic evaluation; 8000 token budget prevents mid-JSON truncation
+    // gemini-2.0-flash: no thinking tokens, so the full output budget goes to the verdict JSON
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash', 8000);
+    }, userId, 'gemini-2.0-flash', 8000);
 
     if (!result?.content) throw new Error('No response from evaluator');
 
