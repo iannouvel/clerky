@@ -288,7 +288,7 @@ All ${practicePoints.length} practice point IDs must appear in exactly one of ap
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash');
+    }, userId, 'gemini-2.5-flash', 8000);
 
     if (!result?.content) throw new Error('No response from scenario generator');
 
