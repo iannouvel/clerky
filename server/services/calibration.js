@@ -250,7 +250,7 @@ async function generateCalibrationScenarios(guidelineTitle, guidelineContent, pr
         `ID: ${p.id}\nName: ${p.name}\nDescription: ${p.description || p.name}`
     ).join('\n\n');
 
-    const systemPrompt = `You are a clinical educator generating realistic test cases for an AI system that applies clinical guidelines. You will produce clinical scenarios (patient notes) designed to test whether an AI correctly identifies which practice points from a guideline apply to a specific patient. Be precise about ground truth — only mark a practice point as applicable if the clinical note genuinely warrants it.`;
+    const systemPrompt = `You are a clinical educator generating realistic test cases for an AI system that applies clinical guidelines. You will produce clinical scenarios (patient notes) designed to test whether an AI correctly identifies which practice points from a guideline apply to a specific patient. Be precise about ground truth — only mark a practice point as applicable if the clinical note genuinely warrants it AND if acting on that point is still possible given the stage the note describes. A practice point that was relevant earlier but whose window has passed (e.g. the procedure is already complete) belongs in doesNotApply.`;
 
     const userPrompt = `Guideline: ${guidelineTitle}
 
@@ -265,7 +265,18 @@ Generate ${scenarioCount} realistic clinical notes for patients who might be man
 2. Have a varied patient context so different subsets of the practice points apply across scenarios
 3. Include enough clinical detail that it is clear whether each practice point applies or not
 
-For each scenario, declare exactly which practice point IDs apply to this specific patient (i.e., the AI SHOULD suggest action on these) and which do not apply (i.e., the AI should NOT suggest action on these — either already done, not indicated, or irrelevant to this patient).
+CRITICAL — temporal staging rule for ground truth:
+A practice point "applies" (AI SHOULD suggest it) ONLY if it represents an **actionable recommendation** given where the note sits in time. Before assigning ground truth, first determine the temporal state of the note:
+- PRE-procedure: decision to proceed has been made but instruments not yet applied
+- INTRA-procedure: procedure is actively underway
+- POST-procedure/delivery: baby has been born; the note is describing aftercare
+
+Then apply these rules:
+- POST-delivery notes: pre-procedural guidance (e.g. positioning to reduce intervention, instrument selection, vacuum discontinuation limits, episiotomy preparation) must go in doesNotApply — these actions are no longer possible. Only post-delivery care points apply (analgesia, antibiotic prophylaxis, bladder care, discharge review, adverse event reporting, future birth counselling, ongoing care after adverse events).
+- PRE/INTRA-procedure notes: post-delivery care points (analgesia after birth, antibiotic prophylaxis, future birth counselling, adverse event reporting) should go in doesNotApply — the birth has not yet occurred.
+- A point only belongs in "applies" if a clinician reading that exact note right now should take that specific action.
+
+For each scenario, declare exactly which practice point IDs apply to this specific patient and which do not apply.
 
 Return ONLY valid JSON in this exact structure:
 {
