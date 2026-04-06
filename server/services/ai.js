@@ -674,7 +674,97 @@ function formatLearningForPrompt(learning) {
  * @returns {string} returns.suggestions[].verbatimQuote - Relevant guideline quote
  * @returns {Array<string>} returns.alreadyCompliant - Points already addressed
  */
+/**
+ * Per-point analysis path for analyzeGuidelineForPatient.
+ * Runs one focused LLM call per practice point in parallel, preceded by a
+ * lightweight applicability + patient-context check. Returns the same shape
+ * as the single-pass fallback so all callers are unaffected.
+ *
+ * @param {string} clinicalNote
+ * @param {string} guidelineContent
+ * @param {string} guidelineTitle
+ * @param {string} userId
+ * @param {string} guidelineId
+ * @param {string|null} model
+ * @param {Array<{ id, name, description, advice }>} allPoints
+ * @returns {Promise<{ guidelineApplicability, patientContext, suggestions, alreadyCompliant }>}
+ */
+async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId, model, allPoints) {
+    // Step 1: Lightweight applicability + patient context — one cheap call before firing N per-point calls.
+    let patientQualifies = true;
+    let guidelineApplicability = { patientQualifies: true, targetPopulation: '', reason: '' };
+    let patientContext = {};
+
+    try {
+        const preResult = await routeToAI({
+            messages: [
+                {
+                    role: 'system',
+                    content: `You are a clinical advisor. Determine whether this patient is in the target population for this guideline, and extract brief patient context. Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": "...", "reason": "one sentence", "patientContext": {} }`
+                },
+                {
+                    role: 'user',
+                    content: `=== CLINICAL NOTE ===\n${clinicalNote}\n\n=== GUIDELINE: ${guidelineTitle} ===\n${guidelineContent.substring(0, 1500)}`
+                }
+            ]
+        }, userId, model, 300);
+
+        if (preResult?.content) {
+            const pre = JSON.parse(preResult.content.trim().replace(/```json\n?|\n?```/g, ''));
+            patientQualifies = pre.patientQualifies !== false;
+            guidelineApplicability = {
+                patientQualifies,
+                targetPopulation: pre.targetPopulation || '',
+                reason: pre.reason || ''
+            };
+            patientContext = pre.patientContext || {};
+        }
+    } catch (e) {
+        // Pre-check failure is non-fatal — proceed with analysis
+    }
+
+    if (!patientQualifies) {
+        console.log(`[PER-POINT] ${guidelineId} does not apply: ${guidelineApplicability.reason}`);
+        return { guidelineApplicability, patientContext: {}, suggestions: [], alreadyCompliant: [] };
+    }
+
+    // Step 2: One call per practice point, all in parallel.
+    const pointResults = await Promise.all(
+        allPoints.map(point => analyzePointForPatient(
+            clinicalNote, guidelineContent, guidelineTitle, point, guidelineId, userId, model
+        ))
+    );
+
+    // Step 3: Collect applicable points as suggestions in the standard shape.
+    const suggestions = pointResults
+        .filter(r => r.applies && r.suggestion)
+        .map(r => ({
+            suggestion: r.suggestion,
+            priority: r.priority || 'low',
+            reasoning: r.reason || '',
+            why: r.why || '',
+            verbatimQuote: r.verbatimQuote || '',
+            sourceGuidelineId: r.sourceGuidelineId || guidelineId
+        }));
+
+    console.log(`[PER-POINT] ${guidelineId}: ${allPoints.length} points evaluated, ${suggestions.length} applicable`);
+
+    return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
+}
+
 async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null) {
+    // Per-point path: when practice points are synced, run one focused call per point in parallel.
+    // This produces cleaner verdicts and allows calibrated advice to be applied with full attention.
+    if (guidelineId) {
+        const allPoints = await loadAllPracticePoints(guidelineId);
+        if (allPoints.length > 0) {
+            return analyzeGuidelineForPatientPerPoint(
+                clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId, targetModel, allPoints
+            );
+        }
+    }
+
+    // Fallback single-pass: for guidelines without synced practice points.
     let hintsText = '';
     if (guidelineId) {
         const [learning, pointAdvice] = await Promise.all([
@@ -936,6 +1026,106 @@ async function loadPracticePointAdvice(guidelineId) {
             .filter(p => p.advice);
     } catch {
         return [];
+    }
+}
+
+/**
+ * Loads ALL practice points from practicePointMetrics regardless of whether they have advice.
+ * Used by the per-point analysis path.
+ *
+ * @param {string} guidelineId
+ * @returns {Promise<Array<{ id, name, description, advice }>>}
+ */
+async function loadAllPracticePoints(guidelineId) {
+    try {
+        const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
+        return snap.docs.map(d => ({
+            id: d.id,
+            name: d.data().name || d.id,
+            description: d.data().description || '',
+            advice: d.data().advice || null
+        }));
+    } catch {
+        return [];
+    }
+}
+
+/**
+ * Evaluates whether a single practice point applies to a patient and, if so,
+ * generates one actionable suggestion. Designed to be called in parallel across
+ * all practice points for a guideline — one focused LLM call per point.
+ *
+ * @param {string} transcript - Clinical note
+ * @param {string} guidelineContent - Full guideline text
+ * @param {string} guidelineTitle - Guideline title
+ * @param {{ id, name, description, advice }} point - The practice point (advice may be null)
+ * @param {string|null} guidelineId
+ * @param {string} userId
+ * @param {string|null} [model]
+ * @returns {Promise<{ pointId, pointName, applies, reason, suggestion, priority, why, verbatimQuote, sourceGuidelineId }>}
+ */
+async function analyzePointForPatient(transcript, guidelineContent, guidelineTitle, point, guidelineId, userId, model = null) {
+    const adviceSection = point.advice
+        ? `\n=== APPLICATION GUIDANCE (calibrated from training) ===\n${point.advice}\n`
+        : '';
+
+    const systemPrompt = `You are a clinical decision support AI. For a given clinical note and a single practice point from a clinical guideline, decide whether that practice point applies to this patient right now — considering the clinical context, the temporal stage of care described in the note, and any calibrated guidance provided. If it applies, generate one precise actionable suggestion.`;
+
+    const userPrompt = `=== CLINICAL NOTE ===
+${transcript}
+
+=== GUIDELINE: ${guidelineTitle} (ID: ${guidelineId || 'unknown'}) ===
+${guidelineContent.substring(0, 4000)}${guidelineContent.length > 4000 ? '\n...[truncated]' : ''}
+
+=== PRACTICE POINT ===
+Name: ${point.name}
+Description: ${point.description || point.name}
+${adviceSection}
+Does this practice point apply to this patient right now?
+- "applies: true" — the patient should receive this recommendation given their current clinical context
+- "applies: false" — it does not apply (already addressed in the note, not indicated for this patient, wrong temporal stage, or clinically irrelevant)
+
+Return valid JSON only — no surrounding text or markdown:
+If applies:
+{
+  "applies": true,
+  "reason": "one sentence why",
+  "suggestion": "concise actionable clinical suggestion written for a clinician",
+  "priority": "high|medium|low",
+  "why": "why this matters for THIS specific patient",
+  "verbatimQuote": "exact verbatim phrase copied from the guideline text above"
+}
+If does not apply:
+{
+  "applies": false,
+  "reason": "one sentence why not"
+}`;
+
+    const result = await routeToAI({
+        messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ]
+    }, userId, model, 600);
+
+    if (!result?.content) return { pointId: point.id, pointName: point.name, applies: false, reason: 'No response' };
+
+    try {
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const applies = !!parsed.applies;
+        return {
+            pointId: point.id,
+            pointName: point.name,
+            applies,
+            reason: parsed.reason || '',
+            suggestion: applies ? (parsed.suggestion || null) : null,
+            priority: applies ? (parsed.priority || 'low') : null,
+            why: applies ? (parsed.why || null) : null,
+            verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
+            sourceGuidelineId: guidelineId || null
+        };
+    } catch (e) {
+        return { pointId: point.id, pointName: point.name, applies: false, reason: 'Parse error' };
     }
 }
 
@@ -1612,6 +1802,8 @@ module.exports = {
     extractCompletenessLessons,
     evolvePointAdvice,
     loadPracticePointAdvice,
+    loadAllPracticePoints,
+    analyzePointForPatient,
     refineSuggestions,
     senseCheckSuggestions,
     senseCheckGuidelines,

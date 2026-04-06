@@ -1,7 +1,7 @@
 'use strict';
 
 const { db } = require('../config/firebase');
-const { analyzeGuidelineForPatient, routeToAI, evolvePointAdvice } = require('./ai');
+const { analyzePointForPatient, routeToAI, evolvePointAdvice } = require('./ai');
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -455,33 +455,64 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     const scenarios = await generateCalibrationScenarios(guidelineTitle, guidelineContent, practicePoints, userId, scenarioCount);
     log('generate', `Generated ${scenarios.length} scenarios`);
 
-    // 4. Run analysis + evaluate each scenario
+    // 4. Run per-point analysis on each scenario.
+    // Each practice point gets its own focused LLM call (all in parallel per scenario).
+    // Verdicts are derived directly from applies:true/false vs ground truth —
+    // no separate evaluator LLM needed.
     const scenarioResults = [];
     for (let i = 0; i < scenarios.length; i++) {
         const scenario = scenarios[i];
         log('analyse', `Scenario ${i + 1}/${scenarios.length}: ${scenario.name}`);
 
-        let suggestions = [];
+        // Load current advice for each point (may be null for uncalibrated points)
+        let pointsWithAdvice = practicePoints;
         try {
-            // gemini-2.0-flash: no thinking tokens, so the full output budget goes to the JSON response
-            const analysis = await analyzeGuidelineForPatient(
-                scenario.transcript, guidelineContent, guidelineTitle, userId, guidelineId, 'gemini-2.0-flash'
+            const adviceSnaps = await Promise.all(
+                practicePoints.map(p =>
+                    db.collection('guidelines').doc(guidelineId)
+                      .collection('practicePointMetrics').doc(p.id).get()
+                )
             );
-            suggestions = analysis.suggestions || [];
+            pointsWithAdvice = practicePoints.map((p, idx) => ({
+                ...p,
+                advice: adviceSnaps[idx].exists ? (adviceSnaps[idx].data().advice || null) : null
+            }));
         } catch (err) {
-            log('analyse', `Scenario ${i + 1} analysis failed: ${err.message}`);
+            log('analyse', `Could not load advice for scenario ${i + 1}: ${err.message}`);
         }
 
-        let verdicts = {};
+        // One call per point, all in parallel
+        let pointResults = [];
         try {
-            verdicts = await evaluateScenarioVerdicts(
-                scenario.transcript, suggestions, practicePoints, scenario.groundTruth, userId
+            pointResults = await Promise.all(
+                pointsWithAdvice.map(p => analyzePointForPatient(
+                    scenario.transcript, guidelineContent, guidelineTitle, p, guidelineId, userId, 'gemini-2.0-flash'
+                ))
             );
         } catch (err) {
-            log('evaluate', `Scenario ${i + 1} evaluation failed: ${err.message}`);
+            log('analyse', `Scenario ${i + 1} per-point analysis failed: ${err.message}`);
         }
 
-        scenarioResults.push({ ...scenario, suggestions, verdicts });
+        // Derive verdicts directly — no evaluator LLM
+        const pointResultMap = Object.fromEntries(pointResults.map(r => [r.pointId, r]));
+        const verdicts = {};
+        const allPointIds = [...(scenario.groundTruth.applies || []), ...(scenario.groundTruth.doesNotApply || [])];
+        for (const pointId of allPointIds) {
+            const r = pointResultMap[pointId];
+            const modelApplies = r ? r.applies : false;
+            const shouldApply = (scenario.groundTruth.applies || []).includes(pointId);
+            if (modelApplies && shouldApply)       verdicts[pointId] = 'hit';
+            else if (!modelApplies && shouldApply) verdicts[pointId] = 'miss';
+            else if (!modelApplies && !shouldApply) verdicts[pointId] = 'correct_absence';
+            else                                    verdicts[pointId] = 'false_positive';
+        }
+
+        // Collect suggestion strings for record-keeping
+        const suggestions = pointResults
+            .filter(r => r.applies && r.suggestion)
+            .map(r => r.suggestion);
+
+        scenarioResults.push({ ...scenario, suggestions, verdicts, pointResults });
     }
 
     // 5. Compute per-point accuracy for this run
@@ -528,15 +559,22 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
             const point = practicePoints.find(p => p.id === pointId);
             if (!point) continue;
 
-            // Collect every scenario that involved this point, with full context
+            // Collect every scenario that involved this point, with full context.
+            // Pass the model's per-point suggestion and reasoning so evolvePointAdvice
+            // has precise evidence of what the model said (and why) rather than the
+            // full suggestion list from the old single-pass approach.
             const relevantScenarios = scenarioResults
                 .filter(r => [...(r.groundTruth.applies || []), ...(r.groundTruth.doesNotApply || [])].includes(pointId))
-                .map(r => ({
-                    transcript: r.transcript,
-                    suggestions: Array.isArray(r.suggestions) ? r.suggestions : [],
-                    verdict: (r.verdicts || {})[pointId] || 'unknown',
-                    shouldApply: (r.groundTruth.applies || []).includes(pointId)
-                }));
+                .map(r => {
+                    const pr = (r.pointResults || []).find(x => x.pointId === pointId);
+                    return {
+                        transcript: r.transcript,
+                        suggestions: pr?.suggestion ? [{ suggestion: pr.suggestion }] : [],
+                        modelReason: pr?.reason || null,
+                        verdict: (r.verdicts || {})[pointId] || 'unknown',
+                        shouldApply: (r.groundTruth.applies || []).includes(pointId)
+                    };
+                });
 
             if (relevantScenarios.length === 0) continue;
 
@@ -578,8 +616,12 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
             name: r.name,
             transcript: r.transcript.substring(0, 600),
             groundTruth: r.groundTruth,
-            suggestions: r.suggestions.map(s => (s.suggestion || s.action || JSON.stringify(s)).substring(0, 400)),
-            verdicts: r.verdicts
+            suggestions: r.suggestions.map(s => (typeof s === 'string' ? s : (s.suggestion || s.action || JSON.stringify(s))).substring(0, 400)),
+            verdicts: r.verdicts,
+            // Per-point detail: model's applies decision + reason for each point
+            pointDetail: r.pointResults
+                ? Object.fromEntries(r.pointResults.map(pr => [pr.pointId, { applies: pr.applies, reason: (pr.reason || '').substring(0, 200) }]))
+                : {}
         })),
         pointAccuracies,
         overallAccuracy,
