@@ -946,7 +946,31 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Format a list of logs for copying, deduplicating identical message content across logs
         function formatLogsForCopy(logs) {
             const MIN_LENGTH_TO_DEDUPLICATE = 100; // don't deduplicate short strings
-            const seen = new Map(); // trimmed content -> "LOG N [ROLE]" label
+            const seen = new Map(); // trimmed content -> reference label
+
+            // Extract plain text from a content field — handles both strings and
+            // arrays of content blocks (e.g. [{type:"text", text:"..."}])
+            function extractText(content) {
+                if (typeof content === 'string') return content;
+                if (Array.isArray(content)) {
+                    return content
+                        .filter(block => block.type === 'text')
+                        .map(block => block.text || '')
+                        .join('\n');
+                }
+                return String(content || '');
+            }
+
+            function deduplicateOrRegister(text, label) {
+                const key = text.trim();
+                if (key.length >= MIN_LENGTH_TO_DEDUPLICATE && seen.has(key)) {
+                    return `[Identical to ${seen.get(key)} — omitted to reduce size]`;
+                }
+                if (key.length >= MIN_LENGTH_TO_DEDUPLICATE) {
+                    seen.set(key, label);
+                }
+                return null; // not a duplicate
+            }
 
             return logs.map((log, idx) => {
                 const logNum = idx + 1;
@@ -961,15 +985,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                     if (Array.isArray(parsed)) {
                         formattedPrompt = parsed.map(msg => {
                             const role = (msg.role || 'unknown').toUpperCase();
-                            const content = msg.content || '';
-                            const key = content.trim();
-                            if (key.length >= MIN_LENGTH_TO_DEDUPLICATE && seen.has(key)) {
-                                return `[${role}]\n[Identical to ${seen.get(key)} — omitted to reduce size]`;
-                            }
-                            if (key.length >= MIN_LENGTH_TO_DEDUPLICATE) {
-                                seen.set(key, `LOG ${logNum} ${role}`);
-                            }
-                            return `[${role}]\n${content}`;
+                            const text = extractText(msg.content);
+                            const ref = deduplicateOrRegister(text, `LOG ${logNum} ${role}`);
+                            return `[${role}]\n${ref ?? text}`;
                         }).join('\n\n');
                     } else {
                         formattedPrompt = promptText;
@@ -978,7 +996,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                     formattedPrompt = promptText;
                 }
 
-                const responseText = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
+                const rawResponse = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
+                const responseRef = deduplicateOrRegister(rawResponse, `LOG ${logNum} RESPONSE`);
+                const responseText = responseRef ?? rawResponse;
 
                 return `${divider}
 LOG ${logNum} of ${logs.length}
