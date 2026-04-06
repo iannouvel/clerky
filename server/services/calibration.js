@@ -452,8 +452,9 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
 
         let suggestions = [];
         try {
+            // gemini-2.0-flash: no thinking tokens, so the full output budget goes to the JSON response
             const analysis = await analyzeGuidelineForPatient(
-                scenario.transcript, guidelineContent, guidelineTitle, userId, guidelineId, 'gemini-2.5-flash'
+                scenario.transcript, guidelineContent, guidelineTitle, userId, guidelineId, 'gemini-2.0-flash'
             );
             suggestions = analysis.suggestions || [];
         } catch (err) {
