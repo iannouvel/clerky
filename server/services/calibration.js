@@ -274,6 +274,7 @@ A practice point "applies" (AI SHOULD suggest it) ONLY if it represents an **act
 Then apply these rules:
 - POST-delivery notes: pre-procedural guidance (e.g. positioning to reduce intervention, instrument selection, vacuum discontinuation limits, episiotomy preparation) must go in doesNotApply — these actions are no longer possible. Only post-delivery care points apply (analgesia, antibiotic prophylaxis, bladder care, discharge review, adverse event reporting, future birth counselling, ongoing care after adverse events).
 - PRE/INTRA-procedure notes: post-delivery care points (analgesia after birth, antibiotic prophylaxis, future birth counselling, adverse event reporting) should go in doesNotApply — the birth has not yet occurred.
+- LOCATION rule: if the note explicitly documents the patient as already admitted to, or currently being assessed in, a hospital maternity unit, then any practice point about *transferring* the patient to a hospital/maternity unit must go in doesNotApply — the transfer has already happened or is happening.
 - A point only belongs in "applies" if a clinician reading that exact note right now should take that specific action.
 
 For each scenario, declare exactly which practice point IDs apply to this specific patient and which do not apply.
@@ -554,6 +555,8 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
         .map(([id]) => id);
 
     let adviceUpdated = 0;
+    const adviceEvolutionLog = [];   // [{ pointId, pointName, before, after }]
+
     if (failingPointIds.length > 0) {
         log('learn', `${failingPointIds.length} failing points — evolving per-point advice`);
 
@@ -592,6 +595,12 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
                 if (newAdvice) {
                     await pointRef.update({ advice: newAdvice, adviceUpdatedAt: new Date().toISOString() });
                     adviceUpdated++;
+                    adviceEvolutionLog.push({
+                        pointId,
+                        pointName: point.name,
+                        before: currentAdvice || null,
+                        after: newAdvice
+                    });
                     log('learn', `Evolved advice for: ${point.name}`);
                 }
             } catch (err) {
@@ -628,7 +637,8 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
         pointAccuracies,
         overallAccuracy,
         failingPointCount: failingPointIds.length,
-        adviceUpdated
+        adviceUpdated,
+        adviceEvolutionLog
     };
 
     await db.collection('guidelines').doc(guidelineId).collection('calibrationRuns').doc(runId).set(runRecord);
