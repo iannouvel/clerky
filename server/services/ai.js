@@ -1082,8 +1082,10 @@ Name: ${point.name}
 Description: ${point.description || point.name}
 ${adviceSection}
 Does this practice point apply to this patient right now?
-- "applies: true" — the patient should receive this recommendation given their current clinical context
-- "applies: false" — it does not apply (already addressed in the note, not indicated for this patient, wrong temporal stage, or clinically irrelevant)
+- "applies: true" — the patient should receive this recommendation given their current clinical context, AND the action is not already documented as taken or planned in the note
+- "applies: false" — it does not apply. Reasons include: (a) already addressed in the note — if the note documents this action as already done, planned, or in progress, do NOT suggest it again; (b) not indicated for this patient's specific clinical situation; (c) wrong temporal stage of care; (d) clinically irrelevant given the facts documented
+
+CRITICAL: If the clinical note already documents the action (e.g., referral already made, medication already started, test already sent), return applies: false. Suggesting something already done is always wrong.
 
 Return valid JSON only — no surrounding text or markdown:
 If applies:
