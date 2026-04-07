@@ -6773,7 +6773,7 @@ ${responseText}
                 <h5 style="margin:16px 0 10px;">Advice Evolution (${result.adviceEvolutionLog.length} point${result.adviceEvolutionLog.length !== 1 ? 's' : ''})</h5>
                 ${result.adviceEvolutionLog.map(entry => `
                     <details style="border:1px solid var(--border-color);border-radius:6px;margin-bottom:8px;overflow:hidden;">
-                        <summary style="padding:8px 12px;cursor:pointer;background:var(--bg-tertiary);font-size:12px;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px;">
+                        <summary style="padding:8px 12px;cursor:pointer;background:var(--bg-tertiary);font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;">
                             <span style="color:#28a745;">⟳</span> ${entry.pointName}
                         </summary>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;font-size:12px;">
