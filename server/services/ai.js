@@ -1001,7 +1001,7 @@ SUGGEST WHEN: [specific clinical conditions that warrant suggesting this]
 DO NOT SUGGEST WHEN: [conditions that make it inapplicable, premature, or already handled]
 KEY NUANCE: [timing, staging, or contextual factors — 1-2 sentences]
 
-Be specific and concrete. Reference the types of clinical situations shown above. Total length: 3-5 sentences.`;
+Be specific and concrete. Describe clinical situations in terms of clinical facts (e.g., "first primary episode near term", "asymptomatic recurrent history") — never reference "Scenario 1", "Scenario 2", etc. Those labels are ephemeral and meaningless outside this calibration run. Total length: 3-5 sentences.`;
 
     const result = await routeToAI({ messages: [
         { role: 'system', content: systemPrompt },
