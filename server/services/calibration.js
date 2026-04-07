@@ -546,9 +546,11 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     await Promise.all(updatePromises);
     log('update', `Updated accuracy for ${Object.keys(pointAccuracies).length} points`);
 
-    // 7. Evolve per-point advice for all points that failed in this run (accuracy < 0.7)
+    // 7. Evolve per-point advice for all points that had any error in this run (accuracy < 1.0).
+    // Any miss is a learning signal — 75% (3/4 scenarios correct) still means the model
+    // got one case wrong, which warrants advice refinement.
     const failingPointIds = Object.entries(pointAccuracies)
-        .filter(([, acc]) => acc !== null && acc < 0.7)
+        .filter(([, acc]) => acc !== null && acc < 1.0)
         .map(([id]) => id);
 
     let adviceUpdated = 0;
@@ -597,7 +599,7 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
             }
         }
     } else {
-        log('learn', 'All points at or above 0.7 — no advice evolution needed');
+        log('learn', 'All points scored 100% this run — no advice evolution needed');
     }
 
     // 8. Store run record
