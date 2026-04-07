@@ -250,7 +250,7 @@ async function generateCalibrationScenarios(guidelineTitle, guidelineContent, pr
         `ID: ${p.id}\nName: ${p.name}\nDescription: ${p.description || p.name}`
     ).join('\n\n');
 
-    const systemPrompt = `You are a clinical educator generating realistic test cases for an AI system that applies clinical guidelines. You will produce clinical scenarios (patient notes) designed to test whether an AI correctly identifies which practice points from a guideline apply to a specific patient. Be precise about ground truth — only mark a practice point as applicable if the clinical note genuinely warrants it AND if acting on that point is still possible given the stage the note describes. A practice point that was relevant earlier but whose window has passed (e.g. the procedure is already complete) belongs in doesNotApply.`;
+    const systemPrompt = `You are a clinical educator generating realistic test cases for an AI clinical decision support system. Your job is to produce clinical scenarios (patient notes) and a ground truth of which practice points genuinely need acting on in each note.`;
 
     const userPrompt = `Guideline: ${guidelineTitle}
 
@@ -260,33 +260,32 @@ ${guidelineContent.substring(0, 5000)}${guidelineContent.length > 5000 ? '\n...[
 Practice points to test (${practicePoints.length} total):
 ${pointList}
 
-Generate ${scenarioCount} realistic clinical notes for patients who might be managed under this guideline. Each note should:
-1. Describe a plausible clinical presentation in plain prose (150–250 words), written as a clinician would document it
-2. Have a varied patient context so different subsets of the practice points apply across scenarios
-3. Include enough clinical detail that it is clear whether each practice point applies or not
+Generate ${scenarioCount} realistic clinical notes for patients who might be managed under this guideline.
 
-CRITICAL — temporal staging rule for ground truth:
-A practice point "applies" (AI SHOULD suggest it) ONLY if it represents an **actionable recommendation** given where the note sits in time. Before assigning ground truth, first determine the temporal state of the note:
-- PRE-procedure: decision to proceed has been made but instruments not yet applied
-- INTRA-procedure: procedure is actively underway
-- POST-procedure/delivery: baby has been born; the note is describing aftercare
+=== HOW TO WRITE EACH SCENARIO ===
 
-Then apply these rules:
-- POST-delivery notes: pre-procedural guidance (e.g. positioning to reduce intervention, instrument selection, vacuum discontinuation limits, episiotomy preparation) must go in doesNotApply — these actions are no longer possible. Only post-delivery care points apply (analgesia, antibiotic prophylaxis, bladder care, discharge review, adverse event reporting, future birth counselling, ongoing care after adverse events).
-- PRE/INTRA-procedure notes: post-delivery care points (analgesia after birth, antibiotic prophylaxis, future birth counselling, adverse event reporting) should go in doesNotApply — the birth has not yet occurred.
-- LOCATION rule: if the note explicitly documents the patient as already admitted to, or currently being assessed in, a hospital maternity unit, then any practice point about *transferring* the patient to a hospital/maternity unit must go in doesNotApply — the transfer has already happened or is happening.
-- COUNSELLING rule: for practice points that advise parents or patients about actions to take AFTER the baby is born (e.g., "seek urgent medical help for concerns about the baby in the first 6 weeks", "monitor the neonate for signs of infection"), these should only go in "applies" for POSTNATAL notes where such counselling has not already been documented. Do NOT put these in "applies" for antenatal or intrapartum notes — the neonate does not yet exist and the counselling cannot be meaningfully acted upon.
-- ALREADY-DONE rule: if the clinical note you write already documents that an action has been taken or is planned (e.g., "started valaciclovir", "IV aciclovir administered", "referred to GUM"), that practice point must go in doesNotApply — the AI should not suggest something already documented. Practice points in "applies" must be genuinely outstanding actions the note has NOT yet addressed.
-- SURVEILLANCE rule: for practice points about ongoing or repeated monitoring (serial scans, regular Doppler assessments, biweekly ultrasound surveillance), these should only be in "applies" if (a) the gestational age in the note is at or beyond the recommended start point for that surveillance, AND (b) the note does NOT document that this monitoring is already established or scheduled. If the note mentions that surveillance is in progress, results have been reviewed today, or the next appointment is already booked as part of a protocol, put it in doesNotApply.
-- FINDING-REQUIRED rule: if a practice point is conditional on a specific clinical finding being present, it must only go in "applies" if the note explicitly documents that finding. Do not assign "applies" speculatively based on what might be found — only what is documented.
-- DIRECTIONALITY rule: for practice points about preventing a patient from acquiring a condition from another person (e.g., partner-to-patient transmission prevention, infection risk reduction strategies), the point only applies if the patient is currently unaffected by that condition. If the patient already has the condition themselves, prevention-of-acquisition guidance is no longer relevant and must go in doesNotApply.
-- A point only belongs in "applies" if a clinician reading that exact note right now should take that specific action.
+Step 1 — Choose which practice points will be TESTABLE in this scenario.
+Pick 2–4 practice points that should genuinely apply. For each one, decide what clinical situation makes it outstanding (not yet done). The remaining points should clearly not apply (wrong patient, wrong timing, wrong clinical context).
 
-CRITICAL SELF-CHECK — before finalising ground truth for each scenario, re-read the clinical note you wrote and verify every practice point you placed in "applies":
-1. Is the action genuinely outstanding — not yet taken, not planned, not scheduled, not documented as in progress?
-2. Is the clinical finding required for this action actually present in the note?
-3. Is the gestational age appropriate for this action right now?
-If the answer to any of these is NO, move the point to doesNotApply. A practice point placed in "applies" when the note already documents it has been done or arranged is a ground truth error that corrupts the calibration signal.
+Step 2 — Write the clinical note AROUND those gaps.
+Write a 150–250 word clinical note as a clinician would document it. The note must:
+- Set up the clinical context so the testable practice points are clearly indicated
+- DELIBERATELY OMIT any mention of those actions being done, planned, arranged, or scheduled
+- Include enough detail about the patient's situation, timing, and findings so that it is clear which points apply and which do not
+- Vary the temporal stage across scenarios (some antenatal, some intrapartum, some postnatal)
+
+The note should read as a snapshot in time where certain actions are needed but have not yet been taken. Do NOT write a comprehensive management plan that documents everything as already handled — that leaves nothing for the AI to suggest.
+
+Step 3 — Assign ground truth by checking each practice point against the note.
+For each practice point, ask: "Would a clinician reading ONLY this note right now need to take this action?"
+- "applies" = YES: the action is clinically indicated AND the note does not document it as done/planned/scheduled
+- "doesNotApply" = NO: the action is not indicated (wrong patient, wrong timing, precondition not met, already documented as done)
+
+Key principles:
+- A practice point whose action is already documented in the note (taken, planned, arranged, referred, scheduled) → doesNotApply
+- A practice point requiring a clinical finding not documented in the note → doesNotApply
+- A practice point for a different temporal stage than the note describes (e.g., postnatal advice in an antenatal note, pre-procedural guidance post-delivery) → doesNotApply
+- A practice point for a different patient subtype than described (e.g., monoamniotic guidance for a diamniotic patient) → doesNotApply
 
 For each scenario, declare exactly which practice point IDs apply to this specific patient and which do not apply.
 
