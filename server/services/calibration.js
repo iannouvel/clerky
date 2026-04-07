@@ -282,6 +282,12 @@ Then apply these rules:
 - DIRECTIONALITY rule: for practice points about preventing a patient from acquiring a condition from another person (e.g., partner-to-patient transmission prevention, infection risk reduction strategies), the point only applies if the patient is currently unaffected by that condition. If the patient already has the condition themselves, prevention-of-acquisition guidance is no longer relevant and must go in doesNotApply.
 - A point only belongs in "applies" if a clinician reading that exact note right now should take that specific action.
 
+CRITICAL SELF-CHECK — before finalising ground truth for each scenario, re-read the clinical note you wrote and verify every practice point you placed in "applies":
+1. Is the action genuinely outstanding — not yet taken, not planned, not scheduled, not documented as in progress?
+2. Is the clinical finding required for this action actually present in the note?
+3. Is the gestational age appropriate for this action right now?
+If the answer to any of these is NO, move the point to doesNotApply. A practice point placed in "applies" when the note already documents it has been done or arranged is a ground truth error that corrupts the calibration signal.
+
 For each scenario, declare exactly which practice point IDs apply to this specific patient and which do not apply.
 
 Return ONLY valid JSON in this exact structure:
