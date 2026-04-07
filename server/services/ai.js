@@ -983,7 +983,7 @@ async function evolvePointAdvice(point, currentAdvice, scenarios, guidelineTitle
             : '  (no suggestions made)';
         const shouldLabel = s.shouldApply ? 'SHOULD be suggested here' : 'should NOT be suggested here';
         const verdictLabel = { hit: 'Hit (correct)', miss: 'Miss (AI failed to suggest)', correct_absence: 'Correct absence', false_positive: 'False positive (AI wrongly suggested)' }[s.verdict] || s.verdict;
-        return `Scenario ${i + 1} — this point ${shouldLabel}:\nClinical note: ${s.transcript}\nAI suggested:\n${suggestionsText}\nVerdict: ${verdictLabel}`;
+        return `This point ${shouldLabel}:\nClinical note: ${s.transcript}\nAI suggested:\n${suggestionsText}\nVerdict: ${verdictLabel}`;
     }).join('\n\n---\n\n');
 
     const systemPrompt = `You are improving the application guidance for a specific clinical practice point. Write precise, conditional guidance that tells an AI clinician decision support system when to raise this recommendation, when not to, and what contextual factors determine applicability. Your output will be injected verbatim into future analysis prompts — write it as direct instruction to the AI, not as a description of what to do.`;
@@ -1001,7 +1001,7 @@ SUGGEST WHEN: [specific clinical conditions that warrant suggesting this]
 DO NOT SUGGEST WHEN: [conditions that make it inapplicable, premature, or already handled]
 KEY NUANCE: [timing, staging, or contextual factors — 1-2 sentences]
 
-Be specific and concrete. Describe clinical situations in terms of clinical facts (e.g., "first primary episode near term", "asymptomatic recurrent history") — never reference "Scenario 1", "Scenario 2", etc. Those labels are ephemeral and meaningless outside this calibration run. Total length: 3-5 sentences.`;
+Be specific and concrete. Describe clinical situations in terms of clinical facts (e.g., "first primary episode near term", "asymptomatic with known recurrent history"). Total length: 3-5 sentences.`;
 
     const result = await routeToAI({ messages: [
         { role: 'system', content: systemPrompt },
