@@ -6764,7 +6764,26 @@ ${responseText}
                         <th style="padding:8px;text-align:center;border-bottom:1px solid var(--border-color);">Accuracy</th>
                     </tr></thead>
                     <tbody>${pointRows}</tbody>
-                </table>`;
+                </table>
+                ${(result.adviceEvolutionLog && result.adviceEvolutionLog.length > 0) ? `
+                <h5 style="margin:16px 0 10px;">Advice Evolution (${result.adviceEvolutionLog.length} point${result.adviceEvolutionLog.length !== 1 ? 's' : ''})</h5>
+                ${result.adviceEvolutionLog.map(entry => `
+                    <details style="border:1px solid var(--border-color);border-radius:6px;margin-bottom:8px;overflow:hidden;">
+                        <summary style="padding:8px 12px;cursor:pointer;background:var(--bg-tertiary);font-size:12px;font-weight:600;list-style:none;display:flex;align-items:center;gap:8px;">
+                            <span style="color:#28a745;">⟳</span> ${entry.pointName}
+                        </summary>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;font-size:12px;">
+                            <div style="padding:10px 12px;border-right:1px solid var(--border-color);">
+                                <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">Before</div>
+                                <div style="white-space:pre-wrap;color:var(--text-secondary);font-style:${entry.before ? 'normal' : 'italic'};">${entry.before || '(no prior advice)'}</div>
+                            </div>
+                            <div style="padding:10px 12px;">
+                                <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">After</div>
+                                <div style="white-space:pre-wrap;">${entry.after}</div>
+                            </div>
+                        </div>
+                    </details>`).join('')}` : ''}
+                `;
             container.style.display = 'block';
         }
 
