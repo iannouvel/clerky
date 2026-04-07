@@ -626,13 +626,13 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
         practicePointNames: Object.fromEntries(practicePoints.map(p => [p.id, p.name])),
         scenarios: scenarioResults.map(r => ({
             name: r.name,
-            transcript: r.transcript.substring(0, 600),
+            transcript: r.transcript,
             groundTruth: r.groundTruth,
             suggestions: r.suggestions.map(s => (typeof s === 'string' ? s : (s.suggestion || s.action || JSON.stringify(s))).substring(0, 400)),
             verdicts: r.verdicts,
-            // Per-point detail: model's applies decision + reason for each point
+            // Per-point detail: model's applies decision + full reason for each point
             pointDetail: r.pointResults
-                ? Object.fromEntries(r.pointResults.map(pr => [pr.pointId, { applies: pr.applies, reason: (pr.reason || '').substring(0, 200) }]))
+                ? Object.fromEntries(r.pointResults.map(pr => [pr.pointId, { applies: pr.applies, reason: pr.reason || '' }]))
                 : {}
         })),
         pointAccuracies,

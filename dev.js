@@ -6678,14 +6678,17 @@ ${responseText}
                     const vs = VERDICT_STYLE[verdict] || VERDICT_STYLE.miss;
                     const role = applies.has(id) ? 'Should suggest' : 'Should omit';
                     const roleColour = applies.has(id) ? '#0c5460' : '#383d41';
-                    return `<tr>
-                        <td style="padding:5px 8px;font-size:12px;max-width:260px;">${pointLabel(id)}</td>
-                        <td style="padding:5px 8px;font-size:11px;color:${roleColour};">${role}</td>
-                        <td style="padding:5px 8px;">
+                    const detail = (s.pointDetail || {})[id];
+                    const reason = detail?.reason || '';
+                    return `<tr style="border-bottom:1px solid var(--border-color);">
+                        <td style="padding:5px 8px;font-size:12px;max-width:220px;">${pointLabel(id)}</td>
+                        <td style="padding:5px 8px;font-size:11px;color:${roleColour};white-space:nowrap;">${role}</td>
+                        <td style="padding:5px 8px;white-space:nowrap;">
                             <span style="display:inline-block;padding:2px 7px;border-radius:10px;font-size:11px;font-weight:600;background:${vs.bg};color:${vs.color};">
                                 ${vs.icon} ${vs.label}
                             </span>
                         </td>
+                        <td style="padding:5px 8px;font-size:11px;color:var(--text-secondary);font-style:italic;">${reason}</td>
                     </tr>`;
                 }).join('');
 
@@ -6705,8 +6708,8 @@ ${responseText}
                         </span>
                     </summary>
                     <div style="padding:12px 14px;">
-                        <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">Clinical note (excerpt)</p>
-                        <div style="font-size:12px;background:var(--bg-input);padding:8px 10px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;margin-bottom:12px;max-height:140px;overflow-y:auto;">${s.transcript}</div>
+                        <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">Clinical note</p>
+                        <div style="font-size:12px;background:var(--bg-input);padding:8px 10px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;margin-bottom:12px;max-height:240px;overflow-y:auto;">${s.transcript}</div>
 
                         <p style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin:0 0 4px;">AI suggestions</p>
                         <ul style="font-size:12px;margin:0 0 12px;padding-left:18px;">${suggestions}</ul>
@@ -6718,6 +6721,7 @@ ${responseText}
                                     <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Practice point</th>
                                     <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Ground truth</th>
                                     <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Verdict</th>
+                                    <th style="padding:5px 8px;text-align:left;font-size:11px;border-bottom:1px solid var(--border-color);">Model reasoning</th>
                                 </tr></thead>
                                 <tbody>${verdictRows}</tbody>
                             </table>
