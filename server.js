@@ -9136,37 +9136,41 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
 
     const summaryContext = guidelineSummary ? `\nGUIDELINE SUMMARY: ${guidelineSummary}\n` : '';
 
-    const prompt = `Analyse this clinical guideline and extract the distinct practice points as plain-English clinical rules in JSON format.
+    const prompt = `Extract EVERY actionable recommendation from this clinical guideline as atomic "if this, then that" clinical decision rules in JSON format.
 ${summaryContext}
 CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
 Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
 {
-  "name": "A single plain-English sentence that a clinician can immediately act on. Write it as a complete clinical rule: who, in what circumstances, should do exactly what (with specific drug/dose/route/device where stated), and any key exceptions. E.g.: 'At the time of operative vaginal birth, offer all women a single dose of co-amoxiclav 1.2g IV (or cefalexin 1g + metronidazole 500mg IV if penicillin-allergic) to reduce infection risk, unless intrapartum antibiotics for GBS have already been given.' Another example: 'Use Kielland's forceps only when a trained operator is available, the cervix is fully dilated, the head is not deeply impacted, and delivery can be anticipated within 15 minutes — if these conditions are not met, proceed to caesarean section.'",
-  "description": "Two to four plain-English sentences elaborating the full clinical context. Cover: which specific patients this applies to and under what circumstances; what exactly to do including any doses, devices, timings, or numeric thresholds from the guideline; when this rule does NOT apply or what the contraindications are; and why this matters or what the consequence of non-compliance is. Write as a clinician explaining to a colleague — no bullet points, no headers, no structured labels.",
+  "name": "An atomic IF/THEN rule in plain English. Format: 'If [specific clinical situation], then [one specific action].' Each rule must describe exactly ONE action by ONE person at ONE time. Examples: 'If a non-sensitised rhesus-negative woman undergoes an invasive prenatal procedure, then prophylactic anti-D should be administered.' 'If amniocentesis is being performed, then continuous ultrasound guidance should be used.' 'If consent is being obtained for amniocentesis, then the discussion should include procedure risks.'",
+  "description": "One to two sentences elaborating the clinical context: who this applies to, any specific doses/timings/thresholds from the guideline, and what makes this distinct from related rules.",
   "significance": "high" or "medium" or "low"
 }
 
-RULES:
-- Both name and description must read as natural clinical prose — no labels like 'APPLIES TO:', no bullet points, no 'N/A'.
-- Include specific values where the guideline states them: drug names, doses, routes, time limits, attempt limits, gestational ages, numeric thresholds.
-- Capture conditional logic in plain language: 'if … then … otherwise …', 'unless …', 'except when …'.
-- Each practice point must be a SINGLE testable clinical decision rule. Given a clinical note, it should be unambiguous whether this point applies or not.
-- NEVER bundle multiple distinct actions into one point. Each point = one action by one person at one time. If a point contains 'and' joining two different clinical actions, it MUST be split. Examples:
-  WRONG: 'Review screening results for bloodborne viruses and discuss transmission risks before invasive testing' (this is 2 actions: reviewing results + counselling about risks)
-  RIGHT: Split into 'Ensure bloodborne virus screening results are available before invasive prenatal testing' AND 'Discuss procedure-specific vertical transmission risks with the patient before amniocentesis or CVS'
-  WRONG: 'Perform CVS after 10 weeks, ideally after 11 weeks' (this bundles a safety floor with an ideal timing recommendation)
-  RIGHT: Split into 'Do not perform CVS before 10+0 weeks gestation due to limb reduction risk' AND 'Schedule CVS from 11+0 weeks gestation to reduce technical difficulty'
-  WRONG: 'Review viral screening and optimize antiretroviral therapy before invasive testing' (reviewing and optimizing are separate clinical actions by potentially different clinicians)
-  RIGHT: Split into 'Review bloodborne virus screening results before performing amniocentesis or CVS' AND 'Optimize antiretroviral therapy to achieve undetectable viral load before invasive prenatal testing in HIV-positive women'
-- A good test: if reasonable clinicians could disagree on whether this point applies in a borderline scenario, it needs splitting.
-- Prefer MORE points over FEWER. A guideline with 20 distinct recommendations should produce 20+ practice points, not 5-10. Do not consolidate for brevity.
-- Only merge when two rules have an identical population, identical action, and differ only by a single threshold (e.g. nulliparous vs multiparous time limits for the same intervention).
-- Omit background, rationale, and epidemiology — only extract actionable recommendations.
+EXTRACTION APPROACH — go section by section through the entire guideline:
+1. For each recommendation the guideline makes, create a separate practice point
+2. If a sentence contains 'and' joining two different actions, split into two points
+3. If a recommendation applies to different populations (e.g., singletons vs twins, HIV vs hepatitis B), create separate points for each
+4. If a recommendation has both a hard threshold and a soft preference, create separate points (e.g., 'do not perform before X' and 'prefer performing from Y')
+5. Consent/counselling discussions: create a separate point for EACH topic that should be covered
+6. Audit requirements: create a separate point for EACH metric
+7. Procedural preparation steps: create a separate point for EACH step
 
-CATEGORIES TO COVER (aim for thorough coverage across all that apply):
-- Screening thresholds, prerequisites and contraindications, drug dosing, timing of interventions, safety limits, attempt limits, escalation criteria, consent requirements, location of care, instrument/device selection, special populations, documentation requirements, postpartum care.
+WHAT TO EXTRACT (cover ALL of these where the guideline mentions them):
+- Hard contraindications and safety thresholds (gestational age limits, do-not-perform rules)
+- Timing recommendations (when to perform, when to defer)
+- Each distinct counselling/consent topic (risks, alternatives, results timing, aftercare, etc.)
+- Procedural technique requirements (ultrasound guidance, sterile technique, skin prep, etc.)
+- Operator competence requirements (training, annual volume, supervision)
+- Special population rules (HIV, hepatitis B, hepatitis C, Rh-negative, multiple pregnancy — EACH as separate points)
+- Drug/treatment requirements (anti-D, antiretrovirals, antibiotics)
+- Laboratory and results interpretation rules (mosaicism, culture failure, QF-PCR limitations)
+- Post-procedure care and follow-up
+- Referral and escalation criteria
+- Audit and quality metrics (EACH metric as a separate point)
+- Service organisation requirements
+- Documentation requirements
 
-Return a JSON array of objects.
+EXPECTED OUTPUT: A typical clinical guideline produces 40–150+ practice points when properly atomised. If you are producing fewer than 20, you are bundling multiple actions or skipping sections. Go back and check.
 
 GUIDELINE CONTENT:
 ${content}`;
@@ -9176,14 +9180,14 @@ ${content}`;
             messages: [
                 {
                     role: 'system',
-                    content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of objects. No other text. Each object: {name, description, significance}.'
+                    content: 'You are a clinical guideline auditor extracting atomic practice points. Return ONLY a valid JSON array of objects. No other text. Each object: {name, description, significance}. Extract EVERY actionable recommendation — typically 40-150+ per guideline. Do NOT consolidate for brevity.'
                 },
                 {
                     role: 'user',
                     content: prompt
                 }
             ]
-        }, userId);
+        }, userId, null, 8000);
 
         if (result && result.content) {
             console.log(`[AUDITABLE-OPT] Step 1: Got response (${result.content.length} chars)`);
