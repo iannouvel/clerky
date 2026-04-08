@@ -9132,134 +9132,205 @@ function repairJson(jsonString) {
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
 async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null) {
-    console.log('[AUDITABLE-OPT] Step 1: Identifying and structuring practice points...');
+    console.log('[AUDITABLE-OPT] Step 1: Stepwise structured practice point extraction...');
+
+    const RULE_TYPES = [
+        'hard_contraindication',
+        'hard_requirement',
+        'mandatory_counselling',
+        'soft_recommendation',
+        'contextual_caution',
+        'audit_metric',
+        'result_interpretation'
+    ];
+
+    // Helper to parse JSON array from AI response
+    function parseJsonArrayFromResponse(result) {
+        if (!result || !result.content) return null;
+        const cleanedContent = cleanJsonResponse(result.content);
+        try {
+            let parsed;
+            try {
+                parsed = JSON.parse(cleanedContent);
+            } catch (e) {
+                parsed = JSON.parse(repairJson(cleanedContent));
+            }
+            if (Array.isArray(parsed)) return parsed;
+        } catch (e) {
+            const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
+            if (jsonArrayMatch) {
+                try {
+                    const extracted = JSON.parse(repairJson(jsonArrayMatch[0]));
+                    if (Array.isArray(extracted)) return extracted;
+                } catch (e2) { /* fall through */ }
+            }
+        }
+        console.error(`[AUDITABLE-OPT] Failed to parse response (first 500): ${result.content.substring(0, 500).replace(/\n/g, ' ')}`);
+        return null;
+    }
 
     const summaryContext = guidelineSummary ? `\nGUIDELINE SUMMARY: ${guidelineSummary}\n` : '';
 
-    const prompt = `Extract EVERY actionable recommendation from this clinical guideline as atomic "if this, then that" clinical decision rules in JSON format.
+    try {
+        // ── Step 1a: Identify guideline sections ──
+        console.log('[AUDITABLE-OPT] Step 1a: Identifying guideline sections...');
+        const sectionResult = await routeToAI({
+            messages: [
+                {
+                    role: 'system',
+                    content: 'You are a clinical guideline analyst. Return ONLY a valid JSON array of strings. No other text.'
+                },
+                {
+                    role: 'user',
+                    content: `List every distinct section or topic area in this clinical guideline. Include introduction/background if it contains actionable recommendations. Return a JSON array of short section names.
 ${summaryContext}
-CRITICAL: Return ONLY a valid JSON array of objects. No preamble, no conversational text, no markdown outside of the JSON block.
-Ensure there are no trailing commas. Each object MUST follow this EXACT structure:
+GUIDELINE CONTENT:
+${content}`
+                }
+            ]
+        }, userId, null, 1024);
+
+        let sections = parseJsonArrayFromResponse(sectionResult);
+        if (!sections || sections.length === 0) {
+            console.warn('[AUDITABLE-OPT] Step 1a: Could not identify sections, using single-pass fallback');
+            sections = ['Full guideline'];
+        }
+        // Filter to strings only
+        sections = sections.filter(s => typeof s === 'string');
+        console.log(`[AUDITABLE-OPT] Step 1a: Identified ${sections.length} sections: ${sections.join(', ')}`);
+
+        // ── Step 1b: Extract structured practice points per section ──
+        const allPoints = [];
+        const ruleTypeList = RULE_TYPES.join(', ');
+
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            console.log(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: Extracting from "${section}"...`);
+
+            const extractionPrompt = `Extract EVERY actionable recommendation from the "${section}" section of this clinical guideline as structured practice rules.
+${summaryContext}
+Return ONLY a valid JSON array. Each object MUST have this structure:
 {
-  "name": "An atomic IF/THEN rule in plain English. Format: 'If [specific clinical situation], then [one specific action].' Each rule must describe exactly ONE action by ONE person at ONE time. Examples: 'If a non-sensitised rhesus-negative woman undergoes an invasive prenatal procedure, then prophylactic anti-D should be administered.' 'If amniocentesis is being performed, then continuous ultrasound guidance should be used.' 'If consent is being obtained for amniocentesis, then the discussion should include procedure risks.'",
-  "description": "One to two sentences elaborating the clinical context: who this applies to, any specific doses/timings/thresholds from the guideline, and what makes this distinct from related rules.",
-  "significance": "high" or "medium" or "low"
+  "condition": "The specific clinical situation that triggers this rule (e.g., 'Gestational age is less than 15+0 weeks')",
+  "action": "The ONE specific action required (e.g., 'Do not perform amniocentesis')",
+  "ruleType": "One of: ${ruleTypeList}",
+  "summary": "A plain-language sentence summarising this rule for a clinician (e.g., 'Amniocentesis must not be performed before 15 weeks gestation due to increased risk of talipes.')",
+  "evidenceGrade": "The evidence grade if stated in the guideline (e.g., 'A', 'B', 'C', 'D', 'GPP'), or 'not stated'",
+  "exceptions": "Any stated exceptions or caveats, or 'none'",
+  "dataFieldsRequired": ["Array of clinical data fields needed to evaluate this rule, e.g. 'gestational_age', 'procedure_type', 'rhesus_status'"]
 }
 
-EXTRACTION APPROACH — go section by section through the entire guideline:
-1. For each recommendation the guideline makes, create a separate practice point
-2. If a sentence contains 'and' joining two different actions, split into two points
-3. If a recommendation applies to different populations (e.g., singletons vs twins, HIV vs hepatitis B), create separate points for each
-4. If a recommendation has both a hard threshold and a soft preference, create separate points (e.g., 'do not perform before X' and 'prefer performing from Y')
-5. Consent/counselling discussions: create a separate point for EACH topic that should be covered
-6. Audit requirements: create a separate point for EACH metric
-7. Procedural preparation steps: create a separate point for EACH step
+RULE TYPE DEFINITIONS:
+- hard_contraindication: Must NOT do X under condition Y. Safety-critical absolute rule.
+- hard_requirement: MUST do X under condition Y. Mandatory, not optional.
+- mandatory_counselling: MUST discuss/inform the patient about X. A required consent or counselling topic.
+- soft_recommendation: SHOULD do X / consider X. Good practice but not absolute.
+- contextual_caution: Be aware of X when Y. A warning or consideration, not a direct action.
+- audit_metric: A measurable standard for service quality monitoring.
+- result_interpretation: How to interpret or act on a specific test result or finding.
 
-WHAT TO EXTRACT (cover ALL of these where the guideline mentions them):
-- Hard contraindications and safety thresholds (gestational age limits, do-not-perform rules)
-- Timing recommendations (when to perform, when to defer)
-- Each distinct counselling/consent topic (risks, alternatives, results timing, aftercare, etc.)
-- Procedural technique requirements (ultrasound guidance, sterile technique, skin prep, etc.)
-- Operator competence requirements (training, annual volume, supervision)
-- Special population rules (HIV, hepatitis B, hepatitis C, Rh-negative, multiple pregnancy — EACH as separate points)
-- Drug/treatment requirements (anti-D, antiretrovirals, antibiotics)
-- Laboratory and results interpretation rules (mosaicism, culture failure, QF-PCR limitations)
-- Post-procedure care and follow-up
-- Referral and escalation criteria
-- Audit and quality metrics (EACH metric as a separate point)
-- Service organisation requirements
-- Documentation requirements
+EXTRACTION RULES:
+- Each rule = ONE action by ONE person at ONE time
+- If a sentence joins two actions with 'and', split into two rules
+- Different populations (e.g., HIV vs hepatitis B, singleton vs twin) = separate rules
+- Hard threshold vs soft preference = separate rules (e.g., 'do not before 15 weeks' vs 'prefer from 16 weeks')
+- Each counselling topic = separate rule
+- Each audit metric = separate rule
+- Each procedural step = separate rule
 
-EXPECTED OUTPUT: A typical clinical guideline produces 40–150+ practice points when properly atomised. If you are producing fewer than 20, you are bundling multiple actions or skipping sections. Go back and check.
+Focus ONLY on the "${section}" section. Do not extract from other sections.
 
 GUIDELINE CONTENT:
 ${content}`;
 
-    try {
-        const result = await routeToAI({
-            messages: [
-                {
-                    role: 'system',
-                    content: 'You are a clinical guideline auditor extracting atomic practice points. Return ONLY a valid JSON array of objects. No other text. Each object: {name, description, significance}. Extract EVERY actionable recommendation — typically 40-150+ per guideline. Do NOT consolidate for brevity.'
-                },
-                {
-                    role: 'user',
-                    content: prompt
-                }
-            ]
-        }, userId, null, 8000);
-
-        if (result && result.content) {
-            console.log(`[AUDITABLE-OPT] Step 1: Got response (${result.content.length} chars)`);
-
-            const cleanedContent = cleanJsonResponse(result.content);
-
-            try {
-                // Try direct parse first
-                let parsed;
-                try {
-                    parsed = JSON.parse(cleanedContent);
-                } catch (e) {
-                    // If direct parse fails, try repair
-                    console.warn('[AUDITABLE-OPT] Step 1: Initial parse failed, attempting repair...');
-                    const repaired = repairJson(cleanedContent);
-                    parsed = JSON.parse(repaired);
-                }
-
-                if (Array.isArray(parsed)) {
-                    // Validate and filter valid elements
-                    const validElements = parsed.filter(elem =>
-                        elem && typeof elem === 'object' &&
-                        (elem.name || elem.title) // Handle common variations
-                    ).map(elem => ({
-                        name: elem.name || elem.title,
-                        description: elem.description || elem.text || elem.criteria || '',
-                        significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase())
-                            ? String(elem.significance).toLowerCase()
-                            : 'medium'
-                    }));
-
-                    console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points`);
-                    return validElements;
-                }
-            } catch (parseError) {
-                console.warn('[AUDITABLE-OPT] Step 1: Failed to parse initial or repaired content, trying regex extraction...');
-
-                // Try to extract JSON array from response using a more aggressive regex
-                // This looks for anything between the first [ and the last ]
-                const jsonArrayMatch = result.content.match(/\[\s*\{[\s\S]*\}\s*\]/);
-                if (jsonArrayMatch) {
-                    try {
-                        const extracted = JSON.parse(repairJson(jsonArrayMatch[0]));
-                        if (Array.isArray(extracted)) {
-                            const validElements = extracted.filter(elem =>
-                                elem && typeof elem === 'object' &&
-                                (elem.name || elem.title)
-                            ).map(elem => ({
-                                name: elem.name || elem.title,
-                                description: elem.description || elem.text || elem.criteria || '',
-                                significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase())
-                                    ? String(elem.significance).toLowerCase()
-                                    : 'medium'
-                            }));
-
-                            console.log(`[AUDITABLE-OPT] Step 1 complete: Extracted ${validElements.length} practice points (from regex match)`);
-                            return validElements;
-                        }
-                    } catch (e) {
-                        console.error('[AUDITABLE-OPT] Step 1: Failed to parse regex-extracted JSON array');
+            const sectionResult = await routeToAI({
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of objects. No preamble, no markdown, no conversational text. Extract every atomic practice rule from the specified section.'
+                    },
+                    {
+                        role: 'user',
+                        content: extractionPrompt
                     }
-                }
+                ]
+            }, userId, null, 4096);
 
-                console.error('[AUDITABLE-OPT] Step 1: Could not parse AI response as JSON array');
-                // CRITICAL: Use template literals for logging to ensure content is included in Winston logs
-                console.error(`[AUDITABLE-OPT] RAW RESPONSE (first 500): ${result.content.substring(0, 500).replace(/\n/g, ' ')}`);
-                console.error(`[AUDITABLE-OPT] CLEANED CONTENT (first 500): ${cleanedContent.substring(0, 500).replace(/\n/g, ' ')}`);
+            const sectionPoints = parseJsonArrayFromResponse(sectionResult);
+            if (sectionPoints && sectionPoints.length > 0) {
+                // Validate and normalise each point
+                const validPoints = sectionPoints
+                    .filter(p => p && typeof p === 'object' && (p.condition || p.action || p.summary))
+                    .map(p => ({
+                        condition: p.condition || '',
+                        action: p.action || '',
+                        ruleType: RULE_TYPES.includes(p.ruleType) ? p.ruleType : 'soft_recommendation',
+                        summary: p.summary || '',
+                        evidenceGrade: p.evidenceGrade || 'not stated',
+                        exceptions: p.exceptions || 'none',
+                        dataFieldsRequired: Array.isArray(p.dataFieldsRequired) ? p.dataFieldsRequired : [],
+                        section: section
+                    }));
+                allPoints.push(...validPoints);
+                console.log(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: Extracted ${validPoints.length} rules from "${section}"`);
+            } else {
+                console.warn(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: No rules extracted from "${section}"`);
+            }
+
+            // Small delay between section calls to avoid rate limiting
+            if (i < sections.length - 1) {
+                await new Promise(resolve => setTimeout(resolve, 200));
             }
         }
 
-        console.error('[AUDITABLE-OPT] Step 1 failed: No valid content in AI response');
-        return null;
+        if (allPoints.length === 0) {
+            console.error('[AUDITABLE-OPT] Step 1 failed: No practice points extracted from any section');
+            return null;
+        }
+
+        // ── Step 1c: Assign sequential rule IDs and map to downstream format ──
+        // Generate a short prefix from the guideline summary (e.g., "AMNIO", "VP", "PPROM")
+        const prefix = (guidelineSummary || 'RULE')
+            .replace(/[^A-Za-z0-9\s]/g, '')
+            .split(/\s+/)
+            .slice(0, 3)
+            .map(w => w.substring(0, 4).toUpperCase())
+            .join('')
+            .substring(0, 8) || 'RULE';
+
+        const result = allPoints.map((p, idx) => {
+            const ruleId = `${prefix}-${String(idx + 1).padStart(3, '0')}`;
+            // Build the name as an if/then rule for backward compatibility with calibration
+            const ifThen = p.condition && p.action
+                ? `If ${p.condition.replace(/^if\s+/i, '')}, then ${p.action.replace(/^then\s+/i, '').replace(/^\w/, c => c.toLowerCase())}`
+                : p.summary || p.action || p.condition;
+
+            return {
+                // Backward-compatible fields (used by calibration, compliance checking, etc.)
+                name: ifThen,
+                description: p.summary || ifThen,
+                significance: ['hard_contraindication', 'hard_requirement'].includes(p.ruleType) ? 'high'
+                    : ['mandatory_counselling', 'audit_metric'].includes(p.ruleType) ? 'medium'
+                    : 'low',
+                // Rich structured metadata
+                ruleId,
+                condition: p.condition,
+                action: p.action,
+                ruleType: p.ruleType,
+                evidenceGrade: p.evidenceGrade,
+                exceptions: p.exceptions,
+                dataFieldsRequired: p.dataFieldsRequired,
+                section: p.section
+            };
+        });
+
+        console.log(`[AUDITABLE-OPT] Step 1 complete: ${result.length} structured practice points across ${sections.length} sections`);
+        // Log rule type distribution
+        const typeCounts = {};
+        result.forEach(r => { typeCounts[r.ruleType] = (typeCounts[r.ruleType] || 0) + 1; });
+        console.log(`[AUDITABLE-OPT] Rule type distribution: ${JSON.stringify(typeCounts)}`);
+
+        return result;
     } catch (error) {
         console.error(`[AUDITABLE-OPT] Step 1 error: ${error.message}`);
         return null;
