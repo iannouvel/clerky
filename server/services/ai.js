@@ -998,9 +998,11 @@ Calibration evidence — what actually went wrong:
 ${scenarioDescriptions}
 
 Write improved application guidance for this specific practice point. Structure it exactly as:
-SUGGEST WHEN: [specific clinical conditions that warrant suggesting this]
+SUGGEST WHEN: [specific clinical conditions that warrant raising this recommendation]
 DO NOT SUGGEST WHEN: [conditions that make it inapplicable, premature, or already handled]
 KEY NUANCE: [timing, staging, or contextual factors — 1-2 sentences]
+
+Important distinction: SUGGEST WHEN describes when to RAISE the recommendation, not when to PERFORM the action. These are different. For example, a follow-up scan at 32 weeks should be recommended as soon as the condition is diagnosed (even at 20 weeks), not only once the patient reaches 32 weeks. Scheduling, planning, and discussing future actions are always appropriate before the action is due.
 
 Be specific and concrete. Describe clinical situations in terms of clinical facts (e.g., "first primary episode near term", "asymptomatic with known recurrent history"). Total length: 3-5 sentences.`;
 
