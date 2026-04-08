@@ -1788,6 +1788,80 @@ Evaluate each item and identify any missed gaps. Return JSON:
     }
 }
 
+/**
+ * Rewrites an ambiguous practice point into 2–3 distinct, unambiguous sub-points.
+ * Called by the calibration loop when a point oscillates (both FP and miss errors
+ * across iterations), indicating its applicability boundary is unclear.
+ *
+ * @param {{ name: string, description: string }} point - The ambiguous practice point
+ * @param {Array<{ transcript: string, verdict: string, modelReason: string, shouldApply: boolean }>} errorEvidence - All errors for this point
+ * @param {string} guidelineTitle
+ * @param {string} guidelineContent - Guideline text for context
+ * @param {string} userId
+ * @returns {Promise<Array<{ name: string, description: string }>>} Replacement points
+ */
+async function rewritePracticePoint(point, errorEvidence, guidelineTitle, guidelineContent, userId) {
+    const evidenceText = errorEvidence.map((e, i) => {
+        const label = e.shouldApply ? 'Ground truth: SHOULD suggest' : 'Ground truth: should NOT suggest';
+        const verdictLabel = { miss: 'Miss (model omitted)', false_positive: 'False positive (model suggested)' }[e.verdict] || e.verdict;
+        return `Case ${i + 1}:\n${label}\nVerdict: ${verdictLabel}\nModel reasoning: ${e.modelReason || 'n/a'}\nClinical note excerpt: ${(e.transcript || '').substring(0, 300)}`;
+    }).join('\n\n---\n\n');
+
+    const systemPrompt = `You are a clinical guideline expert rewriting ambiguous practice points into distinct, testable clinical decision rules. Each replacement point must have a clear, unambiguous trigger condition that an AI system can evaluate against a clinical note.`;
+
+    const userPrompt = `Guideline: ${guidelineTitle}
+
+Guideline content (excerpt):
+${guidelineContent.substring(0, 3000)}
+
+The following practice point keeps causing inconsistent results in calibration — sometimes the AI suggests it when it shouldn't (false positive), sometimes it fails to suggest it when it should (miss). This oscillation indicates the point bundles multiple distinct clinical decisions into one.
+
+Ambiguous practice point:
+Name: ${point.name}
+Description: ${point.description || point.name}
+
+Error evidence showing the oscillation:
+${evidenceText}
+
+Rewrite this single ambiguous practice point into 2–3 DISTINCT replacement points. Each replacement must:
+1. Describe exactly ONE clinical action or decision
+2. Have a clear, unambiguous trigger condition (when it applies vs when it doesn't)
+3. Be testable: given a clinical note, it should be obvious whether this point applies or not
+4. Preserve the clinical intent of the original guideline recommendation
+
+Common splits:
+- Timing recommendations → separate "do not perform before X" from "recommend performing at Y"
+- Review/documentation → separate "ensure screening is done" from "review results before proceeding"
+- Counselling → separate "inform about risk X" from "document informed consent"
+
+Return ONLY valid JSON:
+{
+  "replacements": [
+    { "name": "Concise practice point name (max 120 chars)", "description": "Full description of when and what action is needed" },
+    { "name": "...", "description": "..." }
+  ],
+  "reasoning": "Brief explanation of why the original was ambiguous and how the split resolves it"
+}`;
+
+    const result = await routeToAI({
+        messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt }
+        ]
+    }, userId, 'gemini-2.5-flash', 4000);
+
+    if (!result?.content) throw new Error('No response from practice point rewriter');
+
+    const cleaned = result.content.trim().replace(/```json\n?|\n?```/g, '');
+    const parsed = JSON.parse(cleaned);
+
+    if (!Array.isArray(parsed.replacements) || parsed.replacements.length === 0) {
+        throw new Error('No replacement points returned');
+    }
+
+    return parsed;
+}
+
 module.exports = {
     createPromptForChunk,
     mergeChunkResults,
@@ -1806,6 +1880,7 @@ module.exports = {
     extractGuidelineLessons,
     extractCompletenessLessons,
     evolvePointAdvice,
+    rewritePracticePoint,
     loadPracticePointAdvice,
     loadAllPracticePoints,
     analyzePointForPatient,

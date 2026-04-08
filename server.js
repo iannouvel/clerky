@@ -9150,8 +9150,10 @@ RULES:
 - Both name and description must read as natural clinical prose — no labels like 'APPLIES TO:', no bullet points, no 'N/A'.
 - Include specific values where the guideline states them: drug names, doses, routes, time limits, attempt limits, gestational ages, numeric thresholds.
 - Capture conditional logic in plain language: 'if … then … otherwise …', 'unless …', 'except when …'.
-- Each practice point should cover ONE distinct clinical decision — do not bundle unrelated recommendations together. A guideline with 20 distinct recommendations should produce ~20 practice points, not 5.
-- Only merge when two rules have an identical population AND action and differ only by a single threshold (e.g. nulliparous vs multiparous time limits for the same intervention).
+- Each practice point must be a SINGLE testable clinical decision rule. Given a clinical note, it should be unambiguous whether this point applies or not.
+- Split compound recommendations into separate points. For example, 'Perform CVS after 10 weeks, ideally after 11 weeks' should become two points: 'Do not perform CVS before 10+0 weeks gestation due to limb reduction risk' and 'Schedule CVS from 11+0 weeks gestation to reduce technical difficulty'. Similarly, 'Review screening results and discuss transmission risks before invasive testing' should become: 'Ensure bloodborne virus screening results are available before performing invasive prenatal testing' and 'Discuss procedure-specific vertical transmission risks with the patient before amniocentesis or CVS'.
+- A good test: if reasonable clinicians could disagree on whether this point applies in a borderline scenario, it needs splitting.
+- Only merge when two rules have an identical population, identical action, and differ only by a single threshold (e.g. nulliparous vs multiparous time limits for the same intervention).
 - Omit background, rationale, and epidemiology — only extract actionable recommendations.
 
 CATEGORIES TO COVER (aim for thorough coverage across all that apply):

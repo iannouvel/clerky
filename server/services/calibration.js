@@ -1,7 +1,7 @@
 'use strict';
 
 const { db } = require('../config/firebase');
-const { analyzePointForPatient, routeToAI, evolvePointAdvice } = require('./ai');
+const { analyzePointForPatient, routeToAI, evolvePointAdvice, rewritePracticePoint } = require('./ai');
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -698,7 +698,11 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
     let consecutivePerfect = 0;
     const allRuns = [];
     const pointFailureCounts = {};   // pointId → total failure count across all iterations
+    const pointErrorTypes = {};      // pointId → Set of error types ('miss', 'false_positive')
+    const pointErrorEvidence = {};   // pointId → [{ transcript, verdict, modelReason, shouldApply }]
     const allAdviceEvolution = [];   // { pointId, pointName, before, after, iteration }
+    const allRewrites = [];          // { pointId, pointName, replacements, reasoning, iteration }
+    const rewrittenPointIds = new Set();  // points already rewritten (don't rewrite twice)
     let exitReason = 'max_iterations';
 
     for (let iteration = 1; iteration <= maxIterations; iteration++) {
@@ -745,25 +749,133 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
             }
             consecutivePerfect = 0;
 
-            // Track per-point failures
+            // Track per-point failures and error types
+            for (const scenario of (result.scenarios || [])) {
+                const allIds = [...(scenario.groundTruth?.applies || []), ...(scenario.groundTruth?.doesNotApply || [])];
+                for (const pointId of allIds) {
+                    const verdict = (scenario.verdicts || {})[pointId];
+                    if (verdict === 'miss' || verdict === 'false_positive') {
+                        if (!pointErrorTypes[pointId]) pointErrorTypes[pointId] = new Set();
+                        pointErrorTypes[pointId].add(verdict);
+
+                        if (!pointErrorEvidence[pointId]) pointErrorEvidence[pointId] = [];
+                        const detail = (scenario.pointDetail || {})[pointId];
+                        pointErrorEvidence[pointId].push({
+                            transcript: scenario.transcript,
+                            verdict,
+                            modelReason: detail?.reason || '',
+                            shouldApply: (scenario.groundTruth?.applies || []).includes(pointId)
+                        });
+                    }
+                }
+            }
+
             for (const [pointId, acc] of Object.entries(result.pointAccuracies || {})) {
                 if (acc !== null && acc < 1.0) {
                     pointFailureCounts[pointId] = (pointFailureCounts[pointId] || 0) + 1;
                 }
             }
 
-            // Check for stuck points
+            // Check for stuck points that oscillate (both FP and miss)
             const stuckPoints = Object.entries(pointFailureCounts)
                 .filter(([, count]) => count >= maxPointFailures);
 
             if (stuckPoints.length > 0) {
-                const stuckNames = stuckPoints.map(([id]) => {
-                    const names = result.practicePointNames || {};
-                    return names[id] || id;
-                });
-                exitReason = 'stuck_points';
-                log('timeout', `Stopping — ${stuckPoints.length} point(s) stuck after ${maxPointFailures}+ failures: ${stuckNames.join(', ')}`);
-                break;
+                // Attempt to rewrite oscillating points instead of stopping
+                let rewroteAny = false;
+
+                for (const [pointId] of stuckPoints) {
+                    if (rewrittenPointIds.has(pointId)) continue;  // already tried
+
+                    const errorTypes = pointErrorTypes[pointId];
+                    const isOscillating = errorTypes && errorTypes.has('miss') && errorTypes.has('false_positive');
+
+                    if (!isOscillating) continue;  // not oscillating — can't help by rewriting
+
+                    const pointName = (result.practicePointNames || {})[pointId] || pointId;
+                    log('rewrite', `Rewriting oscillating point: ${pointName}`);
+
+                    try {
+                        const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
+                        const evidence = (pointErrorEvidence[pointId] || []).slice(-6);  // last 6 errors
+                        const rewriteResult = await rewritePracticePoint(
+                            { name: pointName, description: pointName },
+                            evidence,
+                            guidelineTitle,
+                            guidelineContent,
+                            userId
+                        );
+
+                        // Apply the rewrite: update auditableElements in Firestore
+                        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+                        const guidelineSnap = await guidelineRef.get();
+                        const guidelineData = guidelineSnap.data();
+                        const elements = Array.isArray(guidelineData.auditableElements) ? [...guidelineData.auditableElements] : [];
+
+                        // Remove the old element
+                        const oldIdx = elements.findIndex(e => generatePointId(e.name || e.title || '') === pointId);
+                        if (oldIdx !== -1) {
+                            elements.splice(oldIdx, 1);
+                        }
+
+                        // Insert replacement elements at the same position
+                        const newElements = (rewriteResult.replacements || []).map(r => ({
+                            name: r.name,
+                            description: r.description,
+                            significance: 'high'
+                        }));
+                        elements.splice(oldIdx !== -1 ? oldIdx : elements.length, 0, ...newElements);
+
+                        await guidelineRef.update({ auditableElements: elements });
+
+                        // Re-sync practice points to pick up the new elements
+                        await syncPracticePoints(guidelineId);
+
+                        // Delete the old practice point metrics doc
+                        const metricsRef = guidelineRef.collection('practicePointMetrics').doc(pointId);
+                        await metricsRef.delete();
+
+                        rewrittenPointIds.add(pointId);
+                        rewroteAny = true;
+
+                        // Reset failure tracking for this point (it no longer exists)
+                        delete pointFailureCounts[pointId];
+                        delete pointErrorTypes[pointId];
+                        delete pointErrorEvidence[pointId];
+
+                        allRewrites.push({
+                            pointId,
+                            pointName,
+                            replacements: rewriteResult.replacements,
+                            reasoning: rewriteResult.reasoning,
+                            iteration
+                        });
+
+                        log('rewrite', `Replaced "${pointName}" with ${newElements.length} distinct points: ${newElements.map(e => e.name).join('; ')}`);
+                    } catch (err) {
+                        log('rewrite', `Failed to rewrite ${pointName}: ${err.message}`);
+                        rewrittenPointIds.add(pointId);  // don't retry
+                    }
+                }
+
+                // If we rewrote at least one point, continue the loop with the new points
+                if (rewroteAny) {
+                    log('rewrite', 'Continuing loop with rewritten practice points...');
+                    continue;
+                }
+
+                // If no rewrites were possible (non-oscillating stuck points), stop
+                const remainingStuck = Object.entries(pointFailureCounts)
+                    .filter(([, count]) => count >= maxPointFailures);
+                if (remainingStuck.length > 0) {
+                    const stuckNames = remainingStuck.map(([id]) => {
+                        const names = result.practicePointNames || {};
+                        return names[id] || id;
+                    });
+                    exitReason = 'stuck_points';
+                    log('timeout', `Stopping — ${remainingStuck.length} non-oscillating stuck point(s): ${stuckNames.join(', ')}`);
+                    break;
+                }
             }
         }
     }
@@ -785,10 +897,11 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         bestAccuracy,
         pointFailureCounts,
         allAdviceEvolution,
+        allRewrites,
         runs: allRuns
     };
 
-    log('done', `Loop complete — ${allRuns.length} iterations, exit: ${exitReason}, final: ${finalAccuracy !== null ? (finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`);
+    log('done', `Loop complete — ${allRuns.length} iterations, exit: ${exitReason}, ${allRewrites.length} point(s) rewritten, final: ${finalAccuracy !== null ? (finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`);
 
     return loopSummary;
 }
