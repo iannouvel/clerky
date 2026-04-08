@@ -983,7 +983,8 @@ async function evolvePointAdvice(point, currentAdvice, scenarios, guidelineTitle
             : '  (no suggestions made)';
         const shouldLabel = s.shouldApply ? 'SHOULD be suggested here' : 'should NOT be suggested here';
         const verdictLabel = { hit: 'Hit (correct)', miss: 'Miss (AI failed to suggest)', correct_absence: 'Correct absence', false_positive: 'False positive (AI wrongly suggested)' }[s.verdict] || s.verdict;
-        return `This point ${shouldLabel}:\nClinical note: ${s.transcript}\nAI suggested:\n${suggestionsText}\nVerdict: ${verdictLabel}`;
+        const reasonLine = s.modelReason ? `\nModel's reasoning: ${s.modelReason}` : '';
+        return `This point ${shouldLabel}:\nClinical note: ${s.transcript}\nAI suggested:\n${suggestionsText}\nVerdict: ${verdictLabel}${reasonLine}`;
     }).join('\n\n---\n\n');
 
     const systemPrompt = `You are improving the application guidance for a specific clinical practice point. Write precise, conditional guidance that tells an AI clinician decision support system when to raise this recommendation, when not to, and what contextual factors determine applicability. Your output will be injected verbatim into future analysis prompts — write it as direct instruction to the AI, not as a description of what to do.`;

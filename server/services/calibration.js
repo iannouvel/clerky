@@ -246,9 +246,11 @@ async function getGuidelineForCalibration(guidelineId) {
  * @returns {Promise<Array<{ name, transcript, groundTruth: { applies: string[], doesNotApply: string[] } }>>}
  */
 async function generateCalibrationScenarios(guidelineTitle, guidelineContent, practicePoints, userId, scenarioCount = 4) {
-    const pointList = practicePoints.map(p =>
-        `ID: ${p.id}\nName: ${p.name}\nDescription: ${p.description || p.name}`
-    ).join('\n\n');
+    const pointList = practicePoints.map(p => {
+        let entry = `ID: ${p.id}\nName: ${p.name}\nDescription: ${p.description || p.name}`;
+        if (p.advice) entry += `\nEvolved advice (from prior calibration runs):\n${p.advice}`;
+        return entry;
+    }).join('\n\n');
 
     const systemPrompt = `You are a clinical educator generating realistic test cases for an AI clinical decision support system. Your job is to produce clinical scenarios (patient notes) and a ground truth of which practice points genuinely need acting on in each note.`;
 
@@ -286,6 +288,8 @@ Key principles:
 - A practice point requiring a clinical finding not documented in the note → doesNotApply
 - A practice point for a different temporal stage than the note describes (e.g., postnatal advice in an antenatal note, pre-procedural guidance post-delivery) → doesNotApply
 - A practice point for a different patient subtype than described (e.g., monoamniotic guidance for a diamniotic patient) → doesNotApply
+
+IMPORTANT — Evolved advice: Some practice points include "Evolved advice" learned from prior calibration runs. This advice captures known edge cases (e.g., "DO NOT SUGGEST WHEN diagnosis is unconfirmed"). You MUST respect these rules when assigning ground truth. If a scenario matches a "DO NOT SUGGEST WHEN" condition, that point is doesNotApply regardless of surface-level relevance.
 
 For each scenario, declare exactly which practice point IDs apply to this specific patient and which do not apply.
 
@@ -456,14 +460,31 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
     log('content', `Loaded guideline: ${guidelineTitle}`);
 
-    // 2. Sample practice points
+    // 2. Sample practice points and load their current advice
     const practicePoints = await samplePracticePoints(guidelineId, pointCount);
     if (practicePoints.length === 0) throw new Error('No practice points available — run syncPracticePoints first');
     log('sample', `Sampled ${practicePoints.length} practice points`);
 
-    // 3. Generate scenarios
+    // Load evolved advice for each point (used by both scenario generator and analyser)
+    let pointsWithAdvice = practicePoints;
+    try {
+        const adviceSnaps = await Promise.all(
+            practicePoints.map(p =>
+                db.collection('guidelines').doc(guidelineId)
+                  .collection('practicePointMetrics').doc(p.id).get()
+            )
+        );
+        pointsWithAdvice = practicePoints.map((p, idx) => ({
+            ...p,
+            advice: adviceSnaps[idx].exists ? (adviceSnaps[idx].data().advice || null) : null
+        }));
+    } catch (err) {
+        log('advice', `Could not load advice: ${err.message}`);
+    }
+
+    // 3. Generate scenarios (with advice so the generator respects known edge cases)
     log('generate', 'Generating clinical scenarios...');
-    const scenarios = await generateCalibrationScenarios(guidelineTitle, guidelineContent, practicePoints, userId, scenarioCount);
+    const scenarios = await generateCalibrationScenarios(guidelineTitle, guidelineContent, pointsWithAdvice, userId, scenarioCount);
     log('generate', `Generated ${scenarios.length} scenarios`);
 
     // 4. Run per-point analysis on each scenario.
@@ -474,23 +495,6 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     for (let i = 0; i < scenarios.length; i++) {
         const scenario = scenarios[i];
         log('analyse', `Scenario ${i + 1}/${scenarios.length}: ${scenario.name}`);
-
-        // Load current advice for each point (may be null for uncalibrated points)
-        let pointsWithAdvice = practicePoints;
-        try {
-            const adviceSnaps = await Promise.all(
-                practicePoints.map(p =>
-                    db.collection('guidelines').doc(guidelineId)
-                      .collection('practicePointMetrics').doc(p.id).get()
-                )
-            );
-            pointsWithAdvice = practicePoints.map((p, idx) => ({
-                ...p,
-                advice: adviceSnaps[idx].exists ? (adviceSnaps[idx].data().advice || null) : null
-            }));
-        } catch (err) {
-            log('analyse', `Could not load advice for scenario ${i + 1}: ${err.message}`);
-        }
 
         // One call per point, all in parallel
         let pointResults = [];
