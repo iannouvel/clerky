@@ -3088,7 +3088,7 @@ ${responseText}
 
             const filtered = allGuidelinesData.filter(g => {
                 const searchLower = searchTerm.toLowerCase();
-                const title = (g.humanFriendlyTitle || g.displayName || g.title || '').toLowerCase();
+                const title = (g.displayName || g.humanFriendlyTitle || g.title || '').toLowerCase();
                 const displayName = title;
                 const organisation = (g.organisation || '').toLowerCase();
                 const id = (g.id || g.guidelineId || '').toLowerCase();
@@ -3337,7 +3337,7 @@ ${responseText}
                             const option = document.createElement('option');
                             option.value = g.id;
                             const status = g.vectorDbIngested ? '✅' : (g.hasContent ? '⏳' : '❌');
-                            option.textContent = `${status} ${g.humanFriendlyTitle || g.displayName || g.title || g.id}`;
+                            option.textContent = `${status} ${g.displayName || g.humanFriendlyTitle || g.title || g.id}`;
                             reingestGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3431,7 +3431,7 @@ ${responseText}
                         guidelines.forEach(g => {
                             const option = document.createElement('option');
                             option.value = g.id;
-                            option.textContent = `${g.humanFriendlyTitle || g.displayName || g.title || g.id} (${g.id})`;
+                            option.textContent = `${g.displayName || g.humanFriendlyTitle || g.title || g.id} (${g.id})`;
                             reextractGuidelineSelect.appendChild(option);
                         });
                     }
@@ -3730,7 +3730,7 @@ ${responseText}
                 tr.innerHTML = `
                     <td style="padding:8px; text-align:center;"><input type="checkbox" class="batch-regen-cb" data-id="${g.id}" /></td>
                     <td style="padding:8px;">
-                        <div style="font-weight:500;">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</div>
+                        <div style="font-weight:500;">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</div>
                         <div style="font-size:10px; color:#888;">${g.id} • <span style="color:${statusColor}">${elementsCount} elements</span></div>
                     </td>
                     <td style="padding:8px; color:#666;">${g.organisation || '-'}</td>
@@ -6533,7 +6533,7 @@ ${responseText}
             const filtered = scope ? guidelines.filter(g => g.scope === scope) : guidelines;
             guidelineSel.innerHTML = (placeholder ? `<option value="">${placeholder}</option>` : '') +
                 filtered.map(g =>
-                    `<option value="${g.id}">${g.humanFriendlyTitle || g.displayName || g.title || g.id}</option>`
+                    `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`
                 ).join('');
         }
 
