@@ -6601,7 +6601,7 @@ ${responseText}
             const progressMsg = document.getElementById('calibrationProgressMsg');
             const resultsEl = document.getElementById('calibrationRunResults');
 
-            status.textContent = 'Starting...';
+            status.textContent = 'Starting calibration loop...';
             progress.style.display = 'block';
             resultsEl.style.display = 'none';
             progressStep.textContent = 'Initialising...';
@@ -6609,7 +6609,7 @@ ${responseText}
 
             try {
                 const token = await getCalibrationToken();
-                const startRes = await fetch(`${SERVER_URL}/runCalibration`, {
+                const startRes = await fetch(`${SERVER_URL}/runCalibrationLoop`, {
                     method: 'POST',
                     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ guidelineId, pointCount: parseInt(pointCount), scenarioCount: parseInt(scenarioCount) })
@@ -6618,7 +6618,7 @@ ${responseText}
                 if (!startData.success) throw new Error(startData.error);
 
                 const jobId = startData.jobId;
-                status.textContent = 'Running...';
+                status.textContent = 'Running calibration loop...';
 
                 // Poll for completion
                 await new Promise((resolve, reject) => {
@@ -6638,9 +6638,10 @@ ${responseText}
                         } catch (e) { clearInterval(poll); reject(e); }
                     }, 3000);
                 }).then(result => {
-                    status.textContent = `Done — ${(result.overallAccuracy * 100).toFixed(1)}% overall accuracy`;
+                    const exitLabel = { perfect: 'Target reached', max_iterations: 'Max iterations', stuck_points: 'Stuck points' }[result.exitReason] || result.exitReason;
+                    status.textContent = `Done — ${result.iterations} iteration${result.iterations !== 1 ? 's' : ''}, ${exitLabel}, final ${result.finalAccuracy !== null ? (result.finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`;
                     progress.style.display = 'none';
-                    renderCalibrationResults(result, resultsEl);
+                    renderCalibrationLoopResults(result, resultsEl);
                 });
 
             } catch (err) {
@@ -6648,6 +6649,185 @@ ${responseText}
                 progress.style.display = 'none';
                 console.error('[CALIBRATION] run error:', err);
             }
+        }
+
+        function renderCalibrationLoopResults(loopResult, container) {
+            const accuracyColour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
+            const pct = v => v !== null && v !== undefined ? (v * 100).toFixed(0) + '%' : '—';
+            const exitLabel = { perfect: '3x 100% achieved', max_iterations: 'Max iterations reached', stuck_points: 'Stuck practice point(s)' }[loopResult.exitReason] || loopResult.exitReason;
+            const exitColour = loopResult.exitReason === 'perfect' ? '#28a745' : loopResult.exitReason === 'stuck_points' ? '#dc3545' : '#ff9800';
+
+            // Accuracy trend chart (simple text-based sparkline)
+            const history = loopResult.accuracyHistory || [];
+            const sparkline = history.map((a, i) => {
+                const c = accuracyColour(a);
+                const w = 28;
+                const h = Math.round(a * 40);
+                return `<div style="display:inline-flex;flex-direction:column;align-items:center;margin:0 2px;">
+                    <div style="width:${w}px;height:${h}px;background:${c};border-radius:3px 3px 0 0;min-height:4px;" title="Run ${i+1}: ${(a*100).toFixed(1)}%"></div>
+                    <div style="font-size:9px;color:var(--text-secondary);margin-top:2px;">${(a*100).toFixed(0)}</div>
+                </div>`;
+            }).join('');
+
+            // Stuck points warning
+            const stuckPointsHtml = loopResult.exitReason === 'stuck_points'
+                ? `<div style="background:#f8d7da;border:1px solid #f5c6cb;border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#721c24;">
+                    <strong>Stuck practice points:</strong> ${Object.entries(loopResult.pointFailureCounts || {})
+                        .filter(([, c]) => c >= (loopResult.maxPointFailures || 5))
+                        .map(([id]) => id.replace(/_/g, ' '))
+                        .join(', ')}
+                </div>`
+                : '';
+
+            // All advice evolution across all iterations
+            const allAdvice = loopResult.allAdviceEvolution || [];
+            const adviceHtml = allAdvice.length > 0
+                ? `<h5 style="margin:16px 0 10px;">Advice Evolution (${allAdvice.length} change${allAdvice.length !== 1 ? 's' : ''} across all iterations)</h5>
+                ${allAdvice.map(entry => `
+                    <details style="border:1px solid var(--border-color);border-radius:6px;margin-bottom:8px;overflow:hidden;">
+                        <summary style="padding:8px 12px;cursor:pointer;background:var(--bg-tertiary);font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;">
+                            <span style="color:#28a745;">⟳</span>
+                            <span style="flex:1;">${entry.pointName}</span>
+                            <span style="font-size:10px;font-weight:400;color:var(--text-secondary);">Iteration ${entry.iteration}</span>
+                        </summary>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;font-size:12px;">
+                            <div style="padding:10px 12px;border-right:1px solid var(--border-color);">
+                                <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">Before</div>
+                                <div style="white-space:pre-wrap;color:var(--text-secondary);font-style:${entry.before ? 'normal' : 'italic'};">${entry.before || '(no prior advice)'}</div>
+                            </div>
+                            <div style="padding:10px 12px;">
+                                <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">After</div>
+                                <div style="white-space:pre-wrap;">${entry.after}</div>
+                            </div>
+                        </div>
+                    </details>`).join('')}`
+                : '';
+
+            // Per-iteration run details (each expandable, using existing renderCalibrationResults logic inline)
+            const iterationCards = (loopResult.runs || []).map((run, i) => {
+                if (run.error) {
+                    return `<details style="margin-bottom:8px;border:1px solid #f5c6cb;border-radius:6px;">
+                        <summary style="padding:10px 14px;cursor:pointer;background:#f8d7da;font-size:13px;color:#721c24;">
+                            Iteration ${run.iteration || i+1}: Error — ${run.error}
+                        </summary>
+                    </details>`;
+                }
+                const acc = run.overallAccuracy;
+                const accStr = acc !== null ? (acc * 100).toFixed(1) + '%' : 'n/a';
+                const adviceCount = (run.adviceEvolutionLog || []).length;
+
+                // Build mini scenario summary
+                const scenarioSummary = (run.scenarios || []).map((s, si) => {
+                    const applies = new Set(s.groundTruth?.applies || []);
+                    const doesNotApply = new Set(s.groundTruth?.doesNotApply || []);
+                    const allIds = [...applies, ...doesNotApply];
+                    const hits = allIds.filter(id => (s.verdicts || {})[id] === 'hit').length;
+                    const misses = allIds.filter(id => (s.verdicts || {})[id] === 'miss').length;
+                    const fps = allIds.filter(id => (s.verdicts || {})[id] === 'false_positive').length;
+                    return `<div style="font-size:11px;padding:4px 0;border-bottom:1px solid var(--border-color);">
+                        <strong>S${si+1}:</strong> ${s.name}
+                        <span style="float:right;color:var(--text-secondary);">
+                            <span style="color:#155724;">✓${hits}</span>
+                            ${misses ? `<span style="color:#721c24;margin-left:6px;">✗${misses}</span>` : ''}
+                            ${fps ? `<span style="color:#856404;margin-left:6px;">!${fps}</span>` : ''}
+                        </span>
+                    </div>`;
+                }).join('');
+
+                // Per-point verdicts across all scenarios in this run
+                const pointNames = run.practicePointNames || {};
+                const pointLabel = id => pointNames[id] || id.replace(/_/g, ' ');
+                const VERDICT_STYLE = {
+                    hit:              { bg: '#d4edda', color: '#155724', icon: '✓', label: 'Hit' },
+                    miss:             { bg: '#f8d7da', color: '#721c24', icon: '✗', label: 'Miss' },
+                    correct_absence:  { bg: '#e2e3e5', color: '#383d41', icon: '○', label: 'Correct absence' },
+                    false_positive:   { bg: '#fff3cd', color: '#856404', icon: '!', label: 'False positive' }
+                };
+
+                // Collect all errors (misses + false positives) for this run
+                const errors = [];
+                for (const s of (run.scenarios || [])) {
+                    const applies = new Set(s.groundTruth?.applies || []);
+                    const allIds = [...(s.groundTruth?.applies || []), ...(s.groundTruth?.doesNotApply || [])];
+                    for (const id of allIds) {
+                        const v = (s.verdicts || {})[id];
+                        if (v === 'miss' || v === 'false_positive') {
+                            const vs = VERDICT_STYLE[v];
+                            const detail = (s.pointDetail || {})[id];
+                            errors.push(`<tr style="border-bottom:1px solid var(--border-color);">
+                                <td style="padding:4px 8px;font-size:11px;">${s.name}</td>
+                                <td style="padding:4px 8px;font-size:11px;">${pointLabel(id)}</td>
+                                <td style="padding:4px 8px;">
+                                    <span style="display:inline-block;padding:1px 6px;border-radius:10px;font-size:10px;font-weight:600;background:${vs.bg};color:${vs.color};">${vs.icon} ${vs.label}</span>
+                                </td>
+                                <td style="padding:4px 8px;font-size:10px;color:var(--text-secondary);font-style:italic;">${detail?.reason || ''}</td>
+                            </tr>`);
+                        }
+                    }
+                }
+
+                const errorsTable = errors.length > 0
+                    ? `<div style="margin-top:10px;">
+                        <div style="font-size:11px;font-weight:600;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px;">Errors this iteration</div>
+                        <table style="width:100%;border-collapse:collapse;border:1px solid var(--border-color);border-radius:4px;overflow:hidden;">
+                            <thead><tr style="background:var(--bg-tertiary);">
+                                <th style="padding:4px 8px;text-align:left;font-size:10px;">Scenario</th>
+                                <th style="padding:4px 8px;text-align:left;font-size:10px;">Practice Point</th>
+                                <th style="padding:4px 8px;text-align:left;font-size:10px;">Verdict</th>
+                                <th style="padding:4px 8px;text-align:left;font-size:10px;">Model Reasoning</th>
+                            </tr></thead>
+                            <tbody>${errors.join('')}</tbody>
+                        </table>
+                    </div>`
+                    : '<div style="margin-top:8px;font-size:12px;color:#28a745;font-weight:600;">No errors this iteration</div>';
+
+                return `<details style="margin-bottom:8px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;" ${acc === 1.0 ? '' : 'open'}>
+                    <summary style="padding:10px 14px;cursor:pointer;background:var(--bg-tertiary);font-size:13px;font-weight:600;display:flex;justify-content:space-between;align-items:center;">
+                        <span>Iteration ${run.iteration || i+1}</span>
+                        <span style="display:flex;align-items:center;gap:12px;">
+                            ${adviceCount > 0 ? `<span style="font-size:10px;color:#28a745;">⟳ ${adviceCount} evolved</span>` : ''}
+                            <span style="font-size:14px;font-weight:bold;color:${accuracyColour(acc)};">${accStr}</span>
+                        </span>
+                    </summary>
+                    <div style="padding:12px 14px;">
+                        ${scenarioSummary}
+                        ${errorsTable}
+                    </div>
+                </details>`;
+            }).join('');
+
+            container.innerHTML = `
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Iterations</div>
+                        <div style="font-size:22px;font-weight:bold;">${loopResult.iterations}</div>
+                    </div>
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Final Accuracy</div>
+                        <div style="font-size:22px;font-weight:bold;color:${accuracyColour(loopResult.finalAccuracy)};">${pct(loopResult.finalAccuracy)}</div>
+                    </div>
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Best Accuracy</div>
+                        <div style="font-size:22px;font-weight:bold;color:${accuracyColour(loopResult.bestAccuracy)};">${pct(loopResult.bestAccuracy)}</div>
+                    </div>
+                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Exit Reason</div>
+                        <div style="font-size:14px;font-weight:bold;color:${exitColour};margin-top:4px;">${exitLabel}</div>
+                    </div>
+                </div>
+
+                <h5 style="margin:0 0 8px;">Accuracy Trend</h5>
+                <div style="display:flex;align-items:flex-end;padding:8px 0 4px;margin-bottom:16px;border-bottom:1px solid var(--border-color);">
+                    ${sparkline || '<span style="color:var(--text-secondary);font-size:12px;">No data</span>'}
+                </div>
+
+                ${stuckPointsHtml}
+                ${adviceHtml}
+
+                <h5 style="margin:16px 0 10px;">Iteration Details</h5>
+                ${iterationCards}
+            `;
+            container.style.display = 'block';
         }
 
         function renderCalibrationResults(result, container) {

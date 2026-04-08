@@ -661,6 +661,138 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     return runRecord;
 }
 
+// ─── Calibration loop — run until perfect or stuck ──────────────────────────
+
+/**
+ * Runs calibration repeatedly until 100% accuracy is achieved N times in a row,
+ * or a practice point is stuck (failing repeatedly across iterations).
+ *
+ * Accumulates all run records, advice evolution history, and per-point failure
+ * tracking across the full loop.
+ *
+ * @param {string} guidelineId
+ * @param {string} userId
+ * @param {Object} [options]
+ * @param {number} [options.pointCount=10]
+ * @param {number} [options.scenarioCount=4]
+ * @param {number} [options.maxIterations=10] - Hard cap on total iterations
+ * @param {number} [options.perfectTarget=3] - How many consecutive 100% runs to require
+ * @param {number} [options.maxPointFailures=5] - Stop if any single point fails this many times total
+ * @param {Function} [onProgress] - Called with (step, message) during the loop
+ * @returns {Promise<Object>} Loop summary with all runs, advice evolution, exit reason
+ */
+async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress = null) {
+    const {
+        pointCount = 10,
+        scenarioCount = 4,
+        maxIterations = 10,
+        perfectTarget = 3,
+        maxPointFailures = 5
+    } = options;
+
+    const log = (step, msg) => {
+        console.log(`[CAL-LOOP:${guidelineId}] ${step}: ${msg}`);
+        if (onProgress) onProgress(step, msg);
+    };
+
+    let consecutivePerfect = 0;
+    const allRuns = [];
+    const pointFailureCounts = {};   // pointId → total failure count across all iterations
+    const allAdviceEvolution = [];   // { pointId, pointName, before, after, iteration }
+    let exitReason = 'max_iterations';
+
+    for (let iteration = 1; iteration <= maxIterations; iteration++) {
+        log('iteration', `Iteration ${iteration}/${maxIterations} — ${consecutivePerfect}/${perfectTarget} consecutive perfect`);
+
+        let result;
+        try {
+            result = await runCalibrationRun(
+                guidelineId,
+                userId,
+                { pointCount, scenarioCount },
+                (step, msg) => {
+                    log(step, `[${iteration}/${maxIterations}] ${msg}`);
+                }
+            );
+        } catch (err) {
+            log('error', `Iteration ${iteration} failed: ${err.message}`);
+            allRuns.push({ iteration, error: err.message, overallAccuracy: null });
+            continue;
+        }
+
+        allRuns.push({ ...result, iteration });
+
+        // Accumulate advice evolution with iteration number
+        if (result.adviceEvolutionLog && result.adviceEvolutionLog.length > 0) {
+            for (const entry of result.adviceEvolutionLog) {
+                allAdviceEvolution.push({ ...entry, iteration });
+            }
+        }
+
+        // Check for perfect run
+        if (result.overallAccuracy === 1.0) {
+            consecutivePerfect++;
+            log('perfect', `Perfect run! ${consecutivePerfect}/${perfectTarget} consecutive`);
+
+            if (consecutivePerfect >= perfectTarget) {
+                exitReason = 'perfect';
+                log('complete', `Achieved ${perfectTarget} consecutive perfect runs`);
+                break;
+            }
+        } else {
+            if (consecutivePerfect > 0) {
+                log('reset', `Streak broken at ${consecutivePerfect} — back to 0`);
+            }
+            consecutivePerfect = 0;
+
+            // Track per-point failures
+            for (const [pointId, acc] of Object.entries(result.pointAccuracies || {})) {
+                if (acc !== null && acc < 1.0) {
+                    pointFailureCounts[pointId] = (pointFailureCounts[pointId] || 0) + 1;
+                }
+            }
+
+            // Check for stuck points
+            const stuckPoints = Object.entries(pointFailureCounts)
+                .filter(([, count]) => count >= maxPointFailures);
+
+            if (stuckPoints.length > 0) {
+                const stuckNames = stuckPoints.map(([id]) => {
+                    const names = result.practicePointNames || {};
+                    return names[id] || id;
+                });
+                exitReason = 'stuck_points';
+                log('timeout', `Stopping — ${stuckPoints.length} point(s) stuck after ${maxPointFailures}+ failures: ${stuckNames.join(', ')}`);
+                break;
+            }
+        }
+    }
+
+    // Build summary
+    const accuracyHistory = allRuns.map(r => r.overallAccuracy).filter(a => a !== null);
+    const finalAccuracy = accuracyHistory.length > 0 ? accuracyHistory[accuracyHistory.length - 1] : null;
+    const bestAccuracy = accuracyHistory.length > 0 ? Math.max(...accuracyHistory) : null;
+
+    const loopSummary = {
+        guidelineId,
+        iterations: allRuns.length,
+        consecutivePerfect,
+        exitReason,
+        perfectTarget,
+        maxPointFailures,
+        accuracyHistory,
+        finalAccuracy,
+        bestAccuracy,
+        pointFailureCounts,
+        allAdviceEvolution,
+        runs: allRuns
+    };
+
+    log('done', `Loop complete — ${allRuns.length} iterations, exit: ${exitReason}, final: ${finalAccuracy !== null ? (finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`);
+
+    return loopSummary;
+}
+
 module.exports = {
     generatePointId,
     syncPracticePoints,
@@ -669,5 +801,6 @@ module.exports = {
     getGuidelineForCalibration,
     generateCalibrationScenarios,
     evaluateScenarioVerdicts,
-    runCalibrationRun
+    runCalibrationRun,
+    runCalibrationLoop
 };

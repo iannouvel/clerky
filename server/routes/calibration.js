@@ -14,6 +14,7 @@ router.get('/samplePracticePoints', authenticateUser, calibrationController.samp
 
 // Calibration runs
 router.post('/runCalibration', authenticateUser, calibrationController.runCalibration);
+router.post('/runCalibrationLoop', authenticateUser, calibrationController.runCalibrationLoop);
 router.get('/getCalibrationJobStatus', authenticateUser, calibrationController.getCalibrationJobStatus);
 router.get('/getCalibrationRuns', authenticateUser, calibrationController.getCalibrationRuns);
 

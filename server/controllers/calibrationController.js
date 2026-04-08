@@ -1,7 +1,7 @@
 'use strict';
 
 const { db } = require('../config/firebase');
-const { syncPracticePoints, samplePracticePoints, runCalibrationRun } = require('../services/calibration');
+const { syncPracticePoints, samplePracticePoints, runCalibrationRun, runCalibrationLoop } = require('../services/calibration');
 
 // In-memory job store — same pattern as evolutionJobs in promptsController
 const calibrationJobs = {};
@@ -141,6 +141,55 @@ exports.runCalibration = (req, res) => {
 
     // Clean up after 1 hour
     setTimeout(() => { delete calibrationJobs[jobId]; }, 60 * 60 * 1000);
+};
+
+/**
+ * POST /runCalibrationLoop
+ * Body: { guidelineId, pointCount?, scenarioCount?, maxIterations?, perfectTarget?, maxPointFailures? }
+ *
+ * Starts a background calibration loop that repeats until 100% accuracy is achieved
+ * consecutively (perfectTarget times) or a practice point is stuck.
+ */
+exports.runCalibrationLoop = (req, res) => {
+    const { guidelineId, pointCount, scenarioCount, maxIterations, perfectTarget, maxPointFailures } = req.body;
+    if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });
+
+    const userId = req.user.uid;
+    const jobId = `calloop_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+
+    calibrationJobs[jobId] = {
+        status: 'running',
+        guidelineId,
+        step: 'starting',
+        stepMessage: 'Initialising calibration loop...',
+        startedAt: new Date().toISOString()
+    };
+
+    res.json({ success: true, jobId, message: 'Calibration loop started.' });
+
+    // Fire and forget
+    runCalibrationLoop(
+        guidelineId,
+        userId,
+        {
+            pointCount: parseInt(pointCount) || 10,
+            scenarioCount: parseInt(scenarioCount) || 4,
+            maxIterations: parseInt(maxIterations) || 10,
+            perfectTarget: parseInt(perfectTarget) || 3,
+            maxPointFailures: parseInt(maxPointFailures) || 5
+        },
+        (step, message) => {
+            calibrationJobs[jobId] = { ...calibrationJobs[jobId], step, stepMessage: message };
+        }
+    ).then(result => {
+        calibrationJobs[jobId] = { status: 'complete', guidelineId, result, completedAt: new Date().toISOString() };
+    }).catch(err => {
+        console.error(`[CALIBRATION] Loop job ${jobId} failed:`, err.message);
+        calibrationJobs[jobId] = { status: 'error', guidelineId, error: err.message };
+    });
+
+    // Clean up after 2 hours (loops take longer)
+    setTimeout(() => { delete calibrationJobs[jobId]; }, 2 * 60 * 60 * 1000);
 };
 
 /**
