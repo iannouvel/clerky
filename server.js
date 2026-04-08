@@ -9151,8 +9151,15 @@ RULES:
 - Include specific values where the guideline states them: drug names, doses, routes, time limits, attempt limits, gestational ages, numeric thresholds.
 - Capture conditional logic in plain language: 'if … then … otherwise …', 'unless …', 'except when …'.
 - Each practice point must be a SINGLE testable clinical decision rule. Given a clinical note, it should be unambiguous whether this point applies or not.
-- Split compound recommendations into separate points. For example, 'Perform CVS after 10 weeks, ideally after 11 weeks' should become two points: 'Do not perform CVS before 10+0 weeks gestation due to limb reduction risk' and 'Schedule CVS from 11+0 weeks gestation to reduce technical difficulty'. Similarly, 'Review screening results and discuss transmission risks before invasive testing' should become: 'Ensure bloodborne virus screening results are available before performing invasive prenatal testing' and 'Discuss procedure-specific vertical transmission risks with the patient before amniocentesis or CVS'.
+- NEVER bundle multiple distinct actions into one point. Each point = one action by one person at one time. If a point contains 'and' joining two different clinical actions, it MUST be split. Examples:
+  WRONG: 'Review screening results for bloodborne viruses and discuss transmission risks before invasive testing' (this is 2 actions: reviewing results + counselling about risks)
+  RIGHT: Split into 'Ensure bloodborne virus screening results are available before invasive prenatal testing' AND 'Discuss procedure-specific vertical transmission risks with the patient before amniocentesis or CVS'
+  WRONG: 'Perform CVS after 10 weeks, ideally after 11 weeks' (this bundles a safety floor with an ideal timing recommendation)
+  RIGHT: Split into 'Do not perform CVS before 10+0 weeks gestation due to limb reduction risk' AND 'Schedule CVS from 11+0 weeks gestation to reduce technical difficulty'
+  WRONG: 'Review viral screening and optimize antiretroviral therapy before invasive testing' (reviewing and optimizing are separate clinical actions by potentially different clinicians)
+  RIGHT: Split into 'Review bloodborne virus screening results before performing amniocentesis or CVS' AND 'Optimize antiretroviral therapy to achieve undetectable viral load before invasive prenatal testing in HIV-positive women'
 - A good test: if reasonable clinicians could disagree on whether this point applies in a borderline scenario, it needs splitting.
+- Prefer MORE points over FEWER. A guideline with 20 distinct recommendations should produce 20+ practice points, not 5-10. Do not consolidate for brevity.
 - Only merge when two rules have an identical population, identical action, and differ only by a single threshold (e.g. nulliparous vs multiparous time limits for the same intervention).
 - Omit background, rationale, and epidemiology — only extract actionable recommendations.
 
