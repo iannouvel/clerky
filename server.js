@@ -9129,6 +9129,152 @@ function repairJson(jsonString) {
     return repaired;
 }
 
+// Helper: build backward-compatible name/description/significance from structured fields
+function buildCompatFields(p) {
+    const ifThen = p.condition && p.action
+        ? `If ${p.condition.replace(/^if\s+/i, '')}, then ${p.action.replace(/^then\s+/i, '').replace(/^\w/, c => c.toLowerCase())}`
+        : p.summary || p.action || p.condition || p.name || '';
+    return {
+        name: ifThen,
+        description: p.summary || ifThen,
+        significance: ['hard_contraindication', 'hard_requirement'].includes(p.ruleType) ? 'high'
+            : ['mandatory_counselling', 'audit_metric'].includes(p.ruleType) ? 'medium'
+            : 'low'
+    };
+}
+
+// Step 1d: Semantic deduplication — clusters near-duplicate rules and synthesises the best version
+async function deduplicatePracticePoints(points, userId, prefix = 'RULE') {
+    if (!points || points.length < 2) return points;
+
+    console.log(`[AUDITABLE-OPT] Dedup: Clustering ${points.length} points for semantic duplicates...`);
+
+    // Build compact rule list for the clustering call
+    const ruleList = points.map((p, i) => {
+        const core = p.condition && p.action
+            ? `IF ${p.condition} | THEN ${p.action}`
+            : p.name || '';
+        return `[${i}] (${p.ruleType || 'rule'}) ${core}`;
+    }).join('\n');
+
+    // One call to identify all clusters
+    const clusterResult = await routeToAI({
+        messages: [
+            { role: 'system', content: 'You are a clinical rule analyst. Return ONLY a valid JSON array. No other text.' },
+            { role: 'user', content: `Identify groups of rules below that cover the same underlying clinical decision — same or near-identical condition AND action, even if worded differently or extracted from different sections.
+
+${ruleList}
+
+Return a JSON array of clusters. Each cluster is an array of integer indices. Only include clusters with 2 or more members. Return [] if no duplicates exist.
+Example output: [[0,3,7],[2,9]]` }
+        ]
+    }, userId, null, 1024);
+
+    let clusters = [];
+    try {
+        const raw = clusterResult?.content || '[]';
+        const cleaned = cleanJsonResponse(raw);
+        const parsed = JSON.parse(cleaned);
+        if (Array.isArray(parsed)) {
+            clusters = parsed.filter(c => Array.isArray(c) && c.length >= 2);
+        }
+    } catch (e) {
+        // Try extracting a JSON array with regex
+        const match = (clusterResult?.content || '').match(/\[\s*(?:\[\d[\d,\s]*\]\s*,?\s*)*\]/);
+        if (match) {
+            try { clusters = JSON.parse(match[0]).filter(c => Array.isArray(c) && c.length >= 2); } catch (e2) { /* skip */ }
+        }
+    }
+
+    if (clusters.length === 0) {
+        console.log('[AUDITABLE-OPT] Dedup: No duplicate clusters found');
+        return points;
+    }
+
+    console.log(`[AUDITABLE-OPT] Dedup: Found ${clusters.length} clusters — ${clusters.map(c => c.length).reduce((a, b) => a + b, 0)} points will be consolidated`);
+
+    const clusteredIndices = new Set(clusters.flat());
+    const result = [];
+
+    // Keep all unclustered points
+    points.forEach((p, i) => { if (!clusteredIndices.has(i)) result.push(p); });
+
+    // Synthesise each cluster into one definitive rule
+    for (const cluster of clusters) {
+        const members = cluster.map(i => points[i]).filter(Boolean);
+        if (members.length === 0) continue;
+        if (members.length === 1) { result.push(members[0]); continue; }
+
+        const memberText = members.map((p, i) => [
+            `Option ${i + 1}:`,
+            `  Condition: ${p.condition || ''}`,
+            `  Action: ${p.action || ''}`,
+            `  Summary: ${p.summary || p.description || ''}`,
+            `  Rule type: ${p.ruleType || ''}`,
+            `  Evidence grade: ${p.evidenceGrade || 'not stated'}`,
+            `  Exceptions: ${p.exceptions || 'none'}`
+        ].join('\n')).join('\n\n');
+
+        const synthResult = await routeToAI({
+            messages: [
+                { role: 'system', content: 'You are a clinical rule editor. Return ONLY a single valid JSON object. No other text.' },
+                { role: 'user', content: `These ${members.length} rules cover the same underlying clinical decision. Synthesise them into one definitive rule that is maximally specific and clear — use the most precise condition and action from any option, and combine any important caveats or exceptions.
+
+${memberText}
+
+Return a single JSON object:
+{
+  "condition": "the most precise condition",
+  "action": "the most precise action",
+  "ruleType": "the strictest applicable rule type from: hard_contraindication, hard_requirement, mandatory_counselling, soft_recommendation, contextual_caution, audit_metric, result_interpretation",
+  "summary": "a single plain-language sentence that a clinician can immediately act on, capturing the best detail from all options",
+  "evidenceGrade": "best evidence grade stated across options, or 'not stated'",
+  "exceptions": "combined exceptions and caveats from all options, or 'none'",
+  "dataFieldsRequired": ["combined list of required data fields from all options"]
+}` }
+            ]
+        }, userId, null, 1024);
+
+        let synthesized = null;
+        try {
+            const cleaned = cleanJsonResponse(synthResult?.content || '{}');
+            const parsed = JSON.parse(cleaned);
+            if (parsed && typeof parsed === 'object' && (parsed.condition || parsed.action || parsed.summary)) {
+                synthesized = parsed;
+            }
+        } catch (e) { /* fall through to best-member fallback */ }
+
+        const base = members.reduce((best, p) => (p.summary?.length || 0) > (best.summary?.length || 0) ? p : best, members[0]);
+
+        if (synthesized) {
+            const merged = {
+                ...base,
+                condition: synthesized.condition || base.condition,
+                action: synthesized.action || base.action,
+                ruleType: synthesized.ruleType || base.ruleType,
+                summary: synthesized.summary || base.summary,
+                evidenceGrade: synthesized.evidenceGrade || base.evidenceGrade,
+                exceptions: synthesized.exceptions || base.exceptions,
+                dataFieldsRequired: Array.isArray(synthesized.dataFieldsRequired)
+                    ? synthesized.dataFieldsRequired
+                    : base.dataFieldsRequired || [],
+                section: [...new Set(members.map(p => p.section).filter(Boolean))].join(' / ')
+            };
+            Object.assign(merged, buildCompatFields(merged));
+            result.push(merged);
+            console.log(`[AUDITABLE-OPT] Dedup: Merged ${members.length} rules → "${merged.name?.substring(0, 80)}"`);
+        } else {
+            console.warn(`[AUDITABLE-OPT] Dedup: Synthesis failed for cluster [${cluster.join(',')}], keeping most detailed member`);
+            result.push({ ...base, ...buildCompatFields(base) });
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 150));
+    }
+
+    console.log(`[AUDITABLE-OPT] Dedup: ${points.length} → ${result.length} points after semantic deduplication`);
+    return result;
+}
+
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
 async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null) {
@@ -9324,13 +9470,27 @@ ${content}`;
             };
         });
 
-        console.log(`[AUDITABLE-OPT] Step 1 complete: ${result.length} structured practice points across ${sections.length} sections`);
+        console.log(`[AUDITABLE-OPT] Step 1c: ${result.length} structured practice points across ${sections.length} sections`);
+
+        // ── Step 1d: Semantic deduplication ──
+        const deduplicated = await deduplicatePracticePoints(result, userId, prefix);
+
+        // Re-assign sequential IDs after deduplication, rebuild compat fields
+        const finalResult = deduplicated.map((p, idx) => {
+            const compat = buildCompatFields(p);
+            return {
+                ...p,
+                ...compat,
+                ruleId: `${prefix}-${String(idx + 1).padStart(3, '0')}`
+            };
+        });
+
         // Log rule type distribution
         const typeCounts = {};
-        result.forEach(r => { typeCounts[r.ruleType] = (typeCounts[r.ruleType] || 0) + 1; });
-        console.log(`[AUDITABLE-OPT] Rule type distribution: ${JSON.stringify(typeCounts)}`);
+        finalResult.forEach(r => { typeCounts[r.ruleType] = (typeCounts[r.ruleType] || 0) + 1; });
+        console.log(`[AUDITABLE-OPT] Step 1 complete: ${finalResult.length} points. Rule types: ${JSON.stringify(typeCounts)}`);
 
-        return result;
+        return finalResult;
     } catch (error) {
         console.error(`[AUDITABLE-OPT] Step 1 error: ${error.message}`);
         return null;
