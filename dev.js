@@ -6679,6 +6679,30 @@ ${responseText}
                 </div>`
                 : '';
 
+            // Practice point rewrites
+            const rewrites = loopResult.allRewrites || [];
+            const rewritesHtml = rewrites.length > 0
+                ? `<h5 style="margin:16px 0 10px;">Practice Point Rewrites (${rewrites.length})</h5>
+                ${rewrites.map(entry => `
+                    <details open style="border:1px solid #007bff;border-radius:6px;margin-bottom:8px;overflow:hidden;">
+                        <summary style="padding:8px 12px;cursor:pointer;background:#e7f1ff;font-size:12px;font-weight:600;display:flex;align-items:center;gap:8px;">
+                            <span style="color:#007bff;">✂</span>
+                            <span style="flex:1;">Split: ${entry.pointName}</span>
+                            <span style="font-size:10px;font-weight:400;color:var(--text-secondary);">Iteration ${entry.iteration} → ${(entry.replacements || []).length} new points</span>
+                        </summary>
+                        <div style="padding:10px 12px;font-size:12px;">
+                            <div style="margin-bottom:8px;color:var(--text-secondary);font-style:italic;">${entry.reasoning || ''}</div>
+                            <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">Replacement points:</div>
+                            ${(entry.replacements || []).map((r, ri) => `
+                                <div style="background:var(--bg-input);border:1px solid var(--border-color);border-radius:4px;padding:8px 10px;margin-bottom:6px;">
+                                    <div style="font-weight:600;font-size:12px;">${ri + 1}. ${r.name}</div>
+                                    <div style="font-size:11px;color:var(--text-secondary);margin-top:4px;">${r.description}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </details>`).join('')}`
+                : '';
+
             // All advice evolution across all iterations
             const allAdvice = loopResult.allAdviceEvolution || [];
             const adviceHtml = allAdvice.length > 0
@@ -6822,6 +6846,7 @@ ${responseText}
                 </div>
 
                 ${stuckPointsHtml}
+                ${rewritesHtml}
                 ${adviceHtml}
 
                 <h5 style="margin:16px 0 10px;">Iteration Details</h5>
