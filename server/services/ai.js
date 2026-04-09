@@ -1085,8 +1085,22 @@ Name: ${point.name}
 Description: ${point.description || point.name}
 ${adviceSection}
 Does this practice point apply to this patient right now?
-- "applies: true" — the patient should receive this recommendation given their current clinical context, AND the action is not already documented as taken or planned in the note
-- "applies: false" — it does not apply. Reasons include: (a) already addressed in the note — if the note documents this action as already done, planned, or in progress, do NOT suggest it again; (b) not indicated for this patient's specific clinical situation; (c) wrong temporal stage of care; (d) clinically irrelevant given the facts documented
+- "applies: true" — the action is clinically indicated for this patient AND is genuinely outstanding (not yet done, arranged, or implied by what is documented)
+- "applies: false" — for any of these reasons:
+
+ALREADY DONE (most common reason to return false):
+- The note explicitly documents the action as taken, planned, scheduled, or in progress
+- The note describes a management plan that necessarily implies this rule is already being followed — e.g. if an emergency caesarean is planned, tocolysis contraindication is already implicit; if a speculum examination is documented, avoiding digital examination is already satisfied; if the MDT is documented as assembled, MDT involvement is already met; if the patient is documented as admitted to a maternity unit, transfer to a maternity unit has already occurred
+- The note documents equivalent care under a different name — "senior fetal medicine consultant" satisfies "skilled operator"; "extensive counselling" satisfies a counselling requirement even if the exact figure is not quoted
+
+WRONG CLINICAL CONTEXT:
+- The action belongs to a different stage of the patient's journey than the note describes — a postnatal recommendation does not apply to an antenatal note; a triage action (e.g. transfer, initial assessment) does not apply once the patient is already in the appropriate care setting; a pre-procedure preparation step does not apply after the procedure is documented as complete
+- The action is indicated only for a specific patient subtype and this patient does not match — e.g. a rule about unexplained APH does not apply when the cause is known; a twin-specific rule does not apply to a singleton
+- The action is clinically inappropriate given the current acuity — e.g. corticosteroids for lung maturation are not indicated when immediate emergency delivery is already underway; long-term antenatal care planning is not appropriate during acute resuscitation
+
+NOT INDICATED:
+- The clinical situation described in the note does not meet the condition that triggers this rule
+- The action has already been rendered irrelevant by events documented in the note (e.g. the patient has delivered, the procedure is complete)
 
 CRITICAL: If the clinical note already documents the action (e.g., referral already made, medication already started, test already sent), return applies: false. Suggesting something already done is always wrong.
 

@@ -263,17 +263,23 @@ PRACTICE POINTS (${practicePoints.length} total):
 ${pointList}
 
 Use this EXACT rubric for every practice point:
-- applies = YES if: the clinical situation calls for this action AND the note does NOT document it as already taken, planned, scheduled, arranged, or in progress
+- applies = YES if: the action is clinically indicated AND genuinely outstanding — not yet done, arranged, or implied by what is already documented
 - applies = NO if ANY of these are true:
-  (a) the action is already documented as done, planned, scheduled, or in progress
-  (b) the clinical situation doesn't call for this action for this patient
-  (c) wrong temporal stage (e.g., pre-procedure guidance after the procedure is done)
-  (d) wrong patient subtype (e.g., twin guidance for a singleton)
-  (e) the application guidance explicitly says not to suggest in this scenario
+
+ALREADY DONE OR IMPLIED:
+  (a) The note explicitly documents the action as taken, planned, scheduled, or in progress
+  (b) The note describes a management plan that necessarily implies this rule is already satisfied — e.g. if emergency delivery is planned, tocolysis contraindication is implicit; if speculum examination is documented, avoiding digital examination is already satisfied; if the MDT is assembled, MDT involvement is met; if the patient is already admitted to a maternity unit, "transfer to a maternity unit" has already occurred
+  (c) Equivalent care is documented under a different name — "senior fetal medicine consultant" satisfies "skilled operator"; "extensive counselling" satisfies a counselling point even without quoting exact figures
+
+WRONG STAGE OR CONTEXT:
+  (d) The action belongs to a different stage of care than the note describes — postnatal recommendations do not apply to antenatal notes; triage actions (transfer, initial assessment) do not apply once the patient is already in the appropriate setting; pre-procedure steps do not apply after the procedure is complete; acute resuscitation actions do not apply to stable follow-up notes
+  (e) Wrong patient subtype — a rule about unexplained APH does not apply when the cause is known; twin-specific guidance does not apply to singletons; a rule gated on a specific finding (e.g. confirmed coagulopathy) does not apply when that finding is absent or unconfirmed
+  (f) Clinically inappropriate given current acuity — corticosteroids for lung maturation are not indicated when immediate emergency delivery is underway; long-term antenatal care planning is not appropriate during acute resuscitation
+  (g) The application guidance explicitly says not to suggest in this scenario
 
 KEY DISTINCTIONS:
-- A patient "considering" or "discussing" a procedure is NOT the same as it being performed or imminent — timing safety rules (e.g., "do not perform before X weeks") only apply when the procedure is actively being performed or concretely scheduled
-- If a patient is already in the correct timing window and the clinician is proceeding appropriately, timing recommendations are already satisfied → applies = NO
+- A patient "considering" or "discussing" a procedure is NOT the same as it being performed or concretely scheduled — timing safety rules only apply when the procedure is actively being performed or definitively booked
+- If a patient is already in the correct timing window and proceeding appropriately, timing recommendations are already satisfied → applies = NO
 - "Pending results" means the clinician is aware and acting — do NOT flag as a gap unless the action is genuinely omitted
 
 Return ONLY valid JSON — no other text:
