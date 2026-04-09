@@ -1083,6 +1083,10 @@ ${text.substring(0, 6000)}`;
 // BACKGROUND JOB QUEUE SYSTEM
 // ============================================================================
 
+// In-memory batch progress tracker for regeneration jobs
+// batchId -> { total, completed, failed, startedAt, results: [{guidelineId, count, success, error}] }
+const batchProgressMap = new Map();
+
 const {
     queueJob,
     clearJobQueue,
@@ -1265,28 +1269,53 @@ async function jobGenerateDisplayName(job, guidelineData) {
 async function jobRegenerateAuditable(job, guidelineData) {
     // Prefer condensed content for efficiency (no verbatim quotes needed)
     const content = guidelineData.condensed || guidelineData.content || job.data?.content;
-    if (!content) throw new Error('No content to extract auditable elements from');
+    const batchId = job.data?.batchId;
+    const batchInfo = batchId ? ` [${job.data.index}/${job.data.total}]` : '';
+
+    if (!content) {
+        if (batchId && batchProgressMap.has(batchId)) {
+            const bp = batchProgressMap.get(batchId);
+            bp.failed++;
+            bp.results.push({ guidelineId: job.guidelineId, success: false, error: 'No content' });
+        }
+        throw new Error('No content to extract auditable elements from');
+    }
 
     const userId = job.data?.userId || guidelineData.uploadedBy || null;
-    const batchInfo = job.data?.batchId ? ` [${job.data.index}/${job.data.total}]` : '';
     // Pass summary for context if available
     const summary = guidelineData.summary || guidelineData.humanFriendlyTitle || null;
 
     console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Processing ${job.guidelineId}...`);
 
-    const elements = await extractAuditableElements(content, userId, summary);
+    try {
+        const elements = await extractAuditableElements(content, userId, summary);
 
-    const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
-    await guidelineRef.update({
-        auditableElements: elements,
-        auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
-        auditableElementsRegeneratedBy: userId,
-        processing: false, // Ensure we clear the flag
-        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
-    });
+        const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+        await guidelineRef.update({
+            auditableElements: elements,
+            auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+            auditableElementsRegeneratedBy: userId,
+            processing: false,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
 
-    console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Completed ${job.guidelineId}: ${elements.length} elements`);
-    return { elementsCount: elements.length };
+        console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Completed ${job.guidelineId}: ${elements.length} elements`);
+
+        if (batchId && batchProgressMap.has(batchId)) {
+            const bp = batchProgressMap.get(batchId);
+            bp.completed++;
+            bp.results.push({ guidelineId: job.guidelineId, count: elements.length, success: true });
+        }
+
+        return { elementsCount: elements.length };
+    } catch (err) {
+        if (batchId && batchProgressMap.has(batchId)) {
+            const bp = batchProgressMap.get(batchId);
+            bp.failed++;
+            bp.results.push({ guidelineId: job.guidelineId, success: false, error: err.message });
+        }
+        throw err;
+    }
 }
 
 // Check if all processing steps are complete and update flag
@@ -5506,6 +5535,26 @@ app.post('/delete-all-logs', authenticateUser, async (req, res) => {
             details: error.response?.data
         });
     }
+});
+
+// Batch status endpoint — poll this to track regeneration job progress
+app.get('/api/batch-status/:batchId', authenticateUser, (req, res) => {
+    const { batchId } = req.params;
+    const bp = batchProgressMap.get(batchId);
+    if (!bp) {
+        return res.status(404).json({ error: 'Batch not found or already expired' });
+    }
+    const done = bp.completed + bp.failed;
+    res.json({
+        batchId,
+        total: bp.total,
+        completed: bp.completed,
+        failed: bp.failed,
+        done,
+        finished: done >= bp.total,
+        startedAt: bp.startedAt,
+        results: bp.results
+    });
 });
 
 // Endpoint to get recent endpoint timings for performance monitoring
@@ -12339,6 +12388,20 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
 
         // Queue them as background jobs and return immediately
         const batchId = `regen-${processAll ? 'all' : 'selected'}-${Date.now()}`;
+
+        // Initialise batch progress entry
+        batchProgressMap.set(batchId, {
+            total: guidelinesToQueue.length,
+            completed: 0,
+            failed: 0,
+            startedAt: new Date().toISOString(),
+            results: []
+        });
+        // Clean up old entries (keep last 50)
+        if (batchProgressMap.size > 50) {
+            const oldest = batchProgressMap.keys().next().value;
+            batchProgressMap.delete(oldest);
+        }
 
         for (let i = 0; i < guidelinesToQueue.length; i++) {
             const g = guidelinesToQueue[i];

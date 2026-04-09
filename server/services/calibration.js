@@ -231,6 +231,100 @@ async function getGuidelineForCalibration(guidelineId) {
 // ─── Phase 2: Scenario generation ────────────────────────────────────────────
 
 /**
+ * Verifies and corrects the ground truth for each scenario using the EXACT same
+ * applicability rubric as `analyzePointForPatient`. This eliminates mismatches
+ * where the generator assigns ground truth with broad reasoning ("condition present →
+ * applies") but the evaluator uses a stricter rule ("indicated AND not already
+ * documented → applies").
+ *
+ * Runs one LLM call per scenario (not per point) for efficiency.
+ */
+async function verifyScenarioGroundTruths(scenarios, guidelineTitle, practicePoints, userId) {
+    const allIds = new Set(practicePoints.map(p => p.id));
+    const verified = [];
+
+    for (let i = 0; i < scenarios.length; i++) {
+        const scenario = scenarios[i];
+
+        const pointList = practicePoints.map(p => {
+            let entry = `ID: ${p.id}\nName: ${p.name}`;
+            if (p.advice) entry += `\nApplication guidance:\n${p.advice}`;
+            return entry;
+        }).join('\n\n---\n\n');
+
+        const prompt = `You are verifying calibration ground truth for a clinical AI system. Read the clinical note and decide, for EACH practice point, whether it applies.
+
+CLINICAL NOTE:
+${scenario.transcript}
+
+GUIDELINE: ${guidelineTitle}
+
+PRACTICE POINTS (${practicePoints.length} total):
+${pointList}
+
+Use this EXACT rubric for every practice point:
+- applies = YES if: the clinical situation calls for this action AND the note does NOT document it as already taken, planned, scheduled, arranged, or in progress
+- applies = NO if ANY of these are true:
+  (a) the action is already documented as done, planned, scheduled, or in progress
+  (b) the clinical situation doesn't call for this action for this patient
+  (c) wrong temporal stage (e.g., pre-procedure guidance after the procedure is done)
+  (d) wrong patient subtype (e.g., twin guidance for a singleton)
+  (e) the application guidance explicitly says not to suggest in this scenario
+
+KEY DISTINCTIONS:
+- A patient "considering" or "discussing" a procedure is NOT the same as it being performed or imminent — timing safety rules (e.g., "do not perform before X weeks") only apply when the procedure is actively being performed or concretely scheduled
+- If a patient is already in the correct timing window and the clinician is proceeding appropriately, timing recommendations are already satisfied → applies = NO
+- "Pending results" means the clinician is aware and acting — do NOT flag as a gap unless the action is genuinely omitted
+
+Return ONLY valid JSON — no other text:
+{
+  "applies": ["id1", "id3"],
+  "doesNotApply": ["id2", "id4"]
+}
+
+All ${practicePoints.length} IDs must appear in exactly one list.`;
+
+        try {
+            const result = await routeToAI({
+                messages: [
+                    { role: 'system', content: 'You are a clinical educator verifying calibration ground truth. Return ONLY valid JSON. No preamble, no markdown.' },
+                    { role: 'user', content: prompt }
+                ]
+            }, userId, 'gemini-2.0-flash', 2000);
+
+            const cleaned = result?.content?.trim().replace(/```json\n?|\n?```/g, '') || '{}';
+            const parsed = JSON.parse(cleaned);
+
+            if (Array.isArray(parsed.applies) && Array.isArray(parsed.doesNotApply)) {
+                const verifiedGT = {
+                    applies: parsed.applies.filter(id => allIds.has(id)),
+                    doesNotApply: parsed.doesNotApply.filter(id => allIds.has(id))
+                };
+                // Ensure every ID is covered
+                const covered = new Set([...verifiedGT.applies, ...verifiedGT.doesNotApply]);
+                for (const id of allIds) {
+                    if (!covered.has(id)) verifiedGT.doesNotApply.push(id);
+                }
+
+                const before = scenario.groundTruth?.applies?.length ?? 0;
+                const after = verifiedGT.applies.length;
+                if (before !== after) {
+                    console.log(`[CALIB] Ground truth corrected for "${scenario.name}": ${before} → ${after} applies`);
+                }
+                scenario.groundTruth = verifiedGT;
+            }
+        } catch (e) {
+            console.warn(`[CALIB] Ground truth verification failed for "${scenario.name}": ${e.message} — keeping generator assignment`);
+        }
+
+        verified.push(scenario);
+        await new Promise(resolve => setTimeout(resolve, 150));
+    }
+
+    return verified;
+}
+
+/**
  * Asks an LLM to generate `scenarioCount` realistic clinical notes for the guideline,
  * each with a ground truth declaring which of the `practicePoints` apply and which don't.
  *
@@ -484,8 +578,14 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
 
     // 3. Generate scenarios (with advice so the generator respects known edge cases)
     log('generate', 'Generating clinical scenarios...');
-    const scenarios = await generateCalibrationScenarios(guidelineTitle, guidelineContent, pointsWithAdvice, userId, scenarioCount);
-    log('generate', `Generated ${scenarios.length} scenarios`);
+    const rawScenarios = await generateCalibrationScenarios(guidelineTitle, guidelineContent, pointsWithAdvice, userId, scenarioCount);
+    log('generate', `Generated ${rawScenarios.length} scenarios — verifying ground truth...`);
+
+    // 3b. Verify ground truth using the evaluator's exact rubric.
+    // The generator assigns ground truth with broad reasoning; the evaluator uses a stricter
+    // rule ("indicated AND not already documented"). This pass aligns them.
+    const scenarios = await verifyScenarioGroundTruths(rawScenarios, guidelineTitle, pointsWithAdvice, userId);
+    log('generate', `Ground truth verified for ${scenarios.length} scenarios`);
 
     // 4. Run per-point analysis on each scenario.
     // Each practice point gets its own focused LLM call (all in parallel per scenario).

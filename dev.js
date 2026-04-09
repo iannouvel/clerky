@@ -3890,14 +3890,82 @@ ${responseText}
             });
         }
 
+        let batchPollInterval = null;
+
+        function renderBatchProgress(status, queued) {
+            const done = status.completed + status.failed;
+            const pct = status.total > 0 ? Math.round((done / status.total) * 100) : 0;
+            const isFinished = status.finished;
+
+            const barColor = isFinished
+                ? (status.failed === 0 ? '#22c55e' : '#f59e0b')
+                : '#3b82f6';
+
+            let html = `<strong>${isFinished ? '✅ Done' : '⏳ Processing…'}</strong> — ${done} / ${status.total} guidelines<br><br>`;
+            html += `<div style="background:#e5e7eb;border-radius:4px;height:10px;width:100%;margin-bottom:8px;">
+                <div style="background:${barColor};height:10px;border-radius:4px;width:${pct}%;transition:width 0.4s;"></div>
+            </div>`;
+            html += `<span style="color:#6b7280;font-size:0.85em;">✓ ${status.completed} completed`;
+            if (status.failed > 0) html += ` &nbsp;✗ ${status.failed} failed`;
+            html += `</span>`;
+
+            if (isFinished) {
+                const elapsed = status.startedAt
+                    ? Math.round((Date.now() - new Date(status.startedAt)) / 1000)
+                    : null;
+                html += `<br><br><span style="color:green;">Regeneration complete</span>`;
+                if (elapsed !== null) html += ` <span style="color:#6b7280;font-size:0.85em;">(${elapsed}s)</span>`;
+                if (status.failed > 0) {
+                    html += `<br><span style="color:#f59e0b;">${status.failed} guideline(s) failed — check server logs</span>`;
+                }
+                // Show per-guideline counts
+                const successful = status.results.filter(r => r.success);
+                if (successful.length > 0 && successful.length <= 10) {
+                    html += '<br><br><strong>Results:</strong><br>';
+                    successful.forEach(r => {
+                        html += `&nbsp;• ${r.guidelineId}: ${r.count} elements<br>`;
+                    });
+                }
+                // Reload the guideline list to show updated counts
+                if (typeof loadGuidelinesForBatchRegen === 'function') loadGuidelinesForBatchRegen();
+            }
+
+            if (auditableStatus) auditableStatus.innerHTML = html;
+        }
+
+        async function pollBatchStatus(batchId, total) {
+            if (batchPollInterval) clearInterval(batchPollInterval);
+
+            batchPollInterval = setInterval(async () => {
+                try {
+                    const token = await auth.currentUser.getIdToken();
+                    const resp = await fetch(`${SERVER_URL}/api/batch-status/${batchId}`, {
+                        headers: { 'Authorization': `Bearer ${token}` }
+                    });
+                    if (!resp.ok) return;
+                    const status = await resp.json();
+                    renderBatchProgress(status, total);
+                    if (status.finished) {
+                        clearInterval(batchPollInterval);
+                        batchPollInterval = null;
+                        if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = false;
+                        if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = false;
+                    }
+                } catch (e) {
+                    console.warn('Batch status poll error:', e.message);
+                }
+            }, 3000);
+        }
+
         async function runRegeneration(body) {
             try {
+                if (batchPollInterval) { clearInterval(batchPollInterval); batchPollInterval = null; }
                 if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = true;
                 if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = true;
 
                 if (auditableStatus) {
                     auditableStatus.style.display = 'block';
-                    auditableStatus.innerHTML = '<strong>Queueing guidelines for processing...</strong>';
+                    auditableStatus.innerHTML = '<strong>Queueing guidelines for processing…</strong>';
                 }
 
                 const token = await auth.currentUser.getIdToken();
@@ -3912,20 +3980,30 @@ ${responseText}
 
                 const result = await response.json();
 
-                if (result.success) {
-                    let html = `<span style="color:green;">✅ <strong>${result.message}</strong></span><br><br>`;
-                    html += `<strong>Queued:</strong> ${result.queued} guidelines<br>`;
-                    html += `<strong>Skipped (no content):</strong> ${result.skippedNoContent}<br><br>`;
-                    html += `<em>Check server logs for progress.</em><br>`;
-                    html += `<strong>Batch ID:</strong> <code>${result.batchId}</code>`;
-                    auditableStatus.innerHTML = html;
+                if (result.success && result.batchId) {
+                    // Show initial queued state and start polling
+                    if (auditableStatus) {
+                        auditableStatus.innerHTML = `<strong>⏳ Processing…</strong> — 0 / ${result.queued} guidelines<br><br>
+                            <div style="background:#e5e7eb;border-radius:4px;height:10px;width:100%;margin-bottom:8px;">
+                                <div style="background:#3b82f6;height:10px;border-radius:4px;width:0%;"></div>
+                            </div>
+                            <span style="color:#6b7280;font-size:0.85em;">✓ 0 completed</span>`;
+                    }
+                    pollBatchStatus(result.batchId, result.queued);
+                    // Buttons stay disabled until polling reports finished
+                } else if (result.success) {
+                    // Synchronous result (single guideline legacy path)
+                    if (auditableStatus) auditableStatus.innerHTML = `<span style="color:green;">✅ ${result.message || 'Done'}</span>`;
+                    if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = false;
+                    if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = false;
                 } else {
-                    auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    if (auditableStatus) auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${result.error || 'Unknown error'}</span>`;
+                    if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = false;
+                    if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = false;
                 }
             } catch (error) {
                 console.error('Error queueing regeneration:', error);
                 if (auditableStatus) auditableStatus.innerHTML = `<span style="color:red;">❌ Error: ${error.message}</span>`;
-            } finally {
                 if (regenerateAuditableFilteredBtn) regenerateAuditableFilteredBtn.disabled = false;
                 if (regenerateAuditableAllBtn) regenerateAuditableAllBtn.disabled = false;
             }
