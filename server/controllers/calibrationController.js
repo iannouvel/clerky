@@ -243,9 +243,14 @@ exports.getCalibrationJobStatus = (req, res) => {
     if (!jobId || !calibrationJobs[jobId]) {
         return res.status(404).json({ success: false, error: 'Job not found' });
     }
-    // latestRun is already trimmed at storage time in the progress callback,
-    // so we can return the job object directly without re-trimming here.
-    res.json({ success: true, ...calibrationJobs[jobId] });
+    const job = calibrationJobs[jobId];
+    // Debug: log what's in the job on polling
+    const hasLatestRun = 'latestRun' in job;
+    const hasPointStatus = 'pointStatus' in job;
+    if (job.status === 'running' && (hasLatestRun || hasPointStatus)) {
+        console.log(`[STATUS-POLL ${jobId.slice(-5)}] iter=${job.iteration}, hasLatestRun=${hasLatestRun}, hasPointStatus=${hasPointStatus}, lrSize=${job.latestRun ? 'present' : 'null'}`);
+    }
+    res.json({ success: true, ...job });
 };
 
 /**
