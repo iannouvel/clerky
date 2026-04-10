@@ -17,5 +17,6 @@ router.post('/runCalibration', authenticateUser, calibrationController.runCalibr
 router.post('/runCalibrationLoop', authenticateUser, calibrationController.runCalibrationLoop);
 router.get('/getCalibrationJobStatus', authenticateUser, calibrationController.getCalibrationJobStatus);
 router.get('/getCalibrationRuns', authenticateUser, calibrationController.getCalibrationRuns);
+router.post('/resetGraduation', authenticateUser, calibrationController.resetGraduation);
 
 module.exports = router;

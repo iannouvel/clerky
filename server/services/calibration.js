@@ -773,19 +773,119 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     return runRecord;
 }
 
+// ─── Auto-deduplication of stuck points ──────────────────────────────────────
+
+/**
+ * When stuck points are detected, uses an LLM call to identify semantic
+ * duplicates among them. For each cluster of duplicates, keeps the most
+ * detailed version and removes the rest from both practicePointMetrics
+ * and auditableElements.
+ *
+ * @returns {{ removed: string[], kept: string[] }} IDs removed and kept
+ */
+async function deduplicateStuckPoints(guidelineId, stuckPoints, userId) {
+    if (stuckPoints.length < 2) return { removed: [], kept: [] };
+
+    const ruleList = stuckPoints.map((p, i) =>
+        `[${i}] ${p.name}`
+    ).join('\n');
+
+    const result = await routeToAI({
+        messages: [
+            { role: 'system', content: 'You are a clinical rule analyst. Return ONLY a valid JSON array. No other text.' },
+            { role: 'user', content: `Identify groups of rules below that cover the same underlying clinical decision — same or near-identical condition AND action, even if worded differently.
+
+${ruleList}
+
+Return a JSON array of clusters. Each cluster is an array of integer indices. Only include clusters with 2+ members. Return [] if no duplicates.
+Example: [[0,3,7],[2,9]]` }
+        ]
+    }, userId, null, 1024);
+
+    let clusters = [];
+    try {
+        const raw = result?.content || '[]';
+        const cleaned = raw.trim().replace(/```json\n?|\n?```/g, '');
+        clusters = JSON.parse(cleaned).filter(c => Array.isArray(c) && c.length >= 2);
+    } catch (e) {
+        const match = (result?.content || '').match(/\[\s*(?:\[\d[\d,\s]*\]\s*,?\s*)*\]/);
+        if (match) try { clusters = JSON.parse(match[0]).filter(c => Array.isArray(c) && c.length >= 2); } catch (_) {}
+    }
+
+    if (clusters.length === 0) return { removed: [], kept: [] };
+
+    const guidelineRef = db.collection('guidelines').doc(guidelineId);
+    const metricsCol = guidelineRef.collection('practicePointMetrics');
+    const removed = [];
+    const kept = [];
+
+    for (const cluster of clusters) {
+        const members = cluster.map(i => stuckPoints[i]).filter(Boolean);
+        if (members.length < 2) continue;
+
+        // Keep the member with the longest name (most detailed wording)
+        const best = members.reduce((a, b) => (b.name || '').length > (a.name || '').length ? b : a, members[0]);
+        kept.push(best.id);
+
+        const toRemove = members.filter(m => m.id !== best.id);
+        for (const dup of toRemove) {
+            // Delete from practicePointMetrics
+            await metricsCol.doc(dup.id).delete();
+            removed.push(dup.id);
+            console.log(`[CAL-DEDUP] Removed duplicate "${dup.name}" (keeping "${best.name}")`);
+        }
+
+        // Also remove from auditableElements array on the guideline doc
+        const guidelineSnap = await guidelineRef.get();
+        const data = guidelineSnap.data();
+        if (Array.isArray(data.auditableElements)) {
+            const removedIds = new Set(toRemove.map(d => d.id));
+            const filtered = data.auditableElements.filter(el => {
+                const elId = generatePointId(el.name || el.title || '');
+                return !removedIds.has(elId);
+            });
+            if (filtered.length < data.auditableElements.length) {
+                await guidelineRef.update({ auditableElements: filtered });
+                console.log(`[CAL-DEDUP] Removed ${data.auditableElements.length - filtered.length} duplicate auditableElements`);
+            }
+        }
+
+        // Reset the kept point's graduation state so it gets a fair retry
+        await metricsCol.doc(best.id).update({
+            consecutiveCorrect: 0,
+            graduated: false,
+            graduatedAt: null,
+            calibrationAttempts: 0
+        });
+    }
+
+    return { removed, kept };
+}
+
+// ─── Graduation state persistence helpers ────────────────────────────────────
+
+async function persistGraduationState(guidelineId, pointId, consec, isGraduated, attempts) {
+    const ref = db.collection('guidelines').doc(guidelineId)
+        .collection('practicePointMetrics').doc(pointId);
+    const update = {
+        consecutiveCorrect: consec,
+        graduated: isGraduated,
+        calibrationAttempts: attempts
+    };
+    if (isGraduated) update.graduatedAt = new Date().toISOString();
+    await ref.update(update);
+}
+
 // ─── Calibration loop — run until every point graduates ──────────────────────
 
 /**
  * Runs calibration repeatedly until every practice point achieves
  * `graduationThreshold` consecutive correct runs.
  *
- * Each iteration tests only the non-graduated points. A point graduates once
- * it scores 100% (all scenarios correct) in `graduationThreshold` consecutive
- * iterations. If a point fails to graduate after `maxAttemptsPerPoint`
- * iterations it is flagged as stuck and the loop exits.
- *
- * After each iteration the progress callback receives the latest run result
- * and per-point graduation status so clients can render incrementally.
+ * Graduation state is persisted in Firestore so the loop automatically
+ * resumes from the last checkpoint. Points that previously graduated are
+ * skipped. When stuck points are detected, the loop auto-deduplicates
+ * them via an LLM call before retrying.
  *
  * @param {string} guidelineId
  * @param {string} userId
@@ -810,7 +910,7 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         if (onProgress) onProgress(step, msg, extra);
     };
 
-    // 1. Load all practice points
+    // 1. Load all practice points with persisted graduation state
     const { title: guidelineTitle } = await getGuidelineForCalibration(guidelineId);
     const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
     if (snap.empty) throw new Error('No practice points found — run syncPracticePoints first');
@@ -820,34 +920,102 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
     if (pointCount > 0) allPoints = allPoints.slice(0, pointCount);
+
+    // 2. Restore graduation state from Firestore
+    const consecutiveCorrect = {};
+    const attemptCount = {};
+    const graduated = new Set();
+    let alreadyGraduated = 0;
+
+    for (const p of allPoints) {
+        consecutiveCorrect[p.id] = p.consecutiveCorrect || 0;
+        attemptCount[p.id] = p.calibrationAttempts || 0;
+        if (p.graduated) {
+            graduated.add(p.id);
+            alreadyGraduated++;
+        }
+    }
+
     const totalPoints = allPoints.length;
 
-    log('init', `Starting loop — ${totalPoints} points, graduate at ${graduationThreshold} consecutive correct`);
+    if (alreadyGraduated > 0) {
+        log('resume', `Resuming — ${alreadyGraduated}/${totalPoints} already graduated from previous run`);
+    }
+    if (graduated.size >= totalPoints) {
+        log('complete', `All ${totalPoints} points already graduated — nothing to do`);
+        return {
+            guidelineId, guidelineTitle, iterations: 0, exitReason: 'all_graduated',
+            graduatedCount: totalPoints, totalPoints, graduationThreshold,
+            pointStatus: Object.fromEntries(allPoints.map(p => [p.id, {
+                name: p.name, consecutiveCorrect: consecutiveCorrect[p.id], attempts: attemptCount[p.id], graduated: true
+            }])),
+            accuracyHistory: [], finalAccuracy: null, allAdviceEvolution: [], runs: []
+        };
+    }
 
-    // Per-point state
-    const consecutiveCorrect = Object.fromEntries(allPoints.map(p => [p.id, 0]));
-    const attemptCount    = Object.fromEntries(allPoints.map(p => [p.id, 0]));
-    const graduated       = new Set();
-    const allRuns         = [];
+    log('init', `Starting loop — ${totalPoints - graduated.size} points remaining, graduate at ${graduationThreshold} consecutive correct`);
+
+    const allRuns = [];
     const allAdviceEvolution = [];
     let exitReason = 'all_graduated';
     let iteration = 0;
+    let deduplicatedThisRun = false;  // only auto-dedup once per loop invocation
 
     while (graduated.size < totalPoints) {
         iteration++;
 
-        // Active = non-graduated points
-        const activePoints = allPoints.filter(p => !graduated.has(p.id));
+        // Active = non-graduated points that still exist
+        let activePoints = allPoints.filter(p => !graduated.has(p.id));
 
-        // Abort if any active point has exhausted its attempts
+        // Check for stuck points
         const stuckPoints = activePoints.filter(p => attemptCount[p.id] >= maxAttemptsPerPoint);
         if (stuckPoints.length > 0) {
+            if (!deduplicatedThisRun && stuckPoints.length >= 2) {
+                // Attempt auto-deduplication before giving up
+                log('dedup', `${stuckPoints.length} stuck points detected — checking for duplicates...`);
+                const { removed, kept } = await deduplicateStuckPoints(guidelineId, stuckPoints, userId);
+
+                if (removed.length > 0) {
+                    deduplicatedThisRun = true;
+                    log('dedup', `Removed ${removed.length} duplicate(s), kept ${kept.length} — retrying`);
+
+                    // Remove deleted points from allPoints and tracking maps
+                    const removedSet = new Set(removed);
+                    allPoints = allPoints.filter(p => !removedSet.has(p.id));
+                    for (const id of removed) {
+                        delete consecutiveCorrect[id];
+                        delete attemptCount[id];
+                        graduated.delete(id);
+                    }
+                    // Reset attempt counts on kept points so they get fresh attempts
+                    for (const id of kept) {
+                        attemptCount[id] = 0;
+                        consecutiveCorrect[id] = 0;
+                    }
+
+                    // Emit updated status after dedup
+                    const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
+                        name: p.name,
+                        consecutiveCorrect: consecutiveCorrect[p.id] || 0,
+                        attempts: attemptCount[p.id] || 0,
+                        graduated: graduated.has(p.id)
+                    }]));
+                    log('run_complete',
+                        `After dedup: ${graduated.size}/${allPoints.length} graduated, ${allPoints.length - graduated.size} remaining`,
+                        { pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
+                    );
+
+                    continue;  // retry the loop with cleaned-up points
+                }
+            }
+
+            // No duplicates found or already tried — give up on stuck points
             exitReason = 'stuck_points';
             log('timeout', `Stopping — stuck point(s): ${stuckPoints.map(p => p.name).join(', ')}`);
             break;
         }
 
-        log('iteration', `Iteration ${iteration} — ${graduated.size}/${totalPoints} graduated, ${activePoints.length} active`);
+        log('iteration', `Iteration ${iteration} — ${graduated.size}/${allPoints.length} graduated, ${activePoints.length} active`);
 
         let result;
         try {
@@ -860,7 +1028,6 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         } catch (err) {
             log('error', `Iteration ${iteration} failed: ${err.message}`);
             allRuns.push({ iteration, error: err.message, overallAccuracy: null });
-            // increment attempts so we don't spin forever on a broken point
             for (const p of activePoints) attemptCount[p.id]++;
             continue;
         }
@@ -871,7 +1038,8 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
             allAdviceEvolution.push({ ...entry, iteration });
         }
 
-        // Update per-point consecutive counts
+        // Update per-point consecutive counts and persist to Firestore
+        const persistPromises = [];
         for (const p of activePoints) {
             attemptCount[p.id]++;
             const acc = (result.pointAccuracies || {})[p.id];
@@ -887,7 +1055,11 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
                 }
                 consecutiveCorrect[p.id] = 0;
             }
+            persistPromises.push(
+                persistGraduationState(guidelineId, p.id, consecutiveCorrect[p.id], graduated.has(p.id), attemptCount[p.id])
+            );
         }
+        await Promise.all(persistPromises);
 
         // Build point status snapshot for the polling client
         const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
@@ -898,13 +1070,13 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         }]));
 
         log('run_complete',
-            `${graduated.size}/${totalPoints} graduated after iteration ${iteration}`,
-            { latestRun: result, iteration, pointStatus, graduatedCount: graduated.size, totalPoints }
+            `${graduated.size}/${allPoints.length} graduated after iteration ${iteration}`,
+            { latestRun: result, iteration, pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
         );
     }
 
-    if (graduated.size >= totalPoints) {
-        log('complete', `All ${totalPoints} practice points graduated after ${iteration} iteration(s)`);
+    if (graduated.size >= allPoints.length) {
+        log('complete', `All ${allPoints.length} practice points graduated after ${iteration} iteration(s)`);
     }
 
     const accuracyHistory = allRuns.map(r => r.overallAccuracy).filter(a => a !== null);
@@ -916,7 +1088,7 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         iterations: allRuns.length,
         exitReason,
         graduatedCount: graduated.size,
-        totalPoints,
+        totalPoints: allPoints.length,
         graduationThreshold,
         pointStatus: Object.fromEntries(allPoints.map(p => [p.id, {
             name: p.name,

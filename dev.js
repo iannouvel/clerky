@@ -6817,6 +6817,28 @@ ${responseText}
                 </div>`;
         }
 
+        async function resetGraduation() {
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
+            if (!guidelineId) { document.getElementById('calibrationRunStatus').textContent = 'Select a guideline first.'; return; }
+            if (!confirm('Reset all graduation state for this guideline? This will require re-running calibration from scratch.')) return;
+            const status = document.getElementById('calibrationRunStatus');
+            try {
+                status.textContent = 'Resetting graduation state...';
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/resetGraduation`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId })
+                });
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error);
+                status.textContent = `Graduation reset — ${data.count} points cleared.`;
+                document.getElementById('calibrationGraduationStatus').style.display = 'none';
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+            }
+        }
+
         function renderCalibrationLoopResults(loopResult, container) {
             // Accept either a full loop summary OR a single run record (from latestRun polling)
             const isSingleRun = !loopResult.exitReason && loopResult.runId;
@@ -7184,6 +7206,9 @@ ${responseText}
 
         const runCalBtn = document.getElementById('runCalibrationBtn');
         if (runCalBtn) runCalBtn.addEventListener('click', runCalibration);
+
+        const resetGradBtn = document.getElementById('resetGraduationBtn');
+        if (resetGradBtn) resetGradBtn.addEventListener('click', resetGraduation);
 
         // Populate guideline dropdown when evolve tab is opened
         const evolveTabTrigger = document.querySelector('[data-content="evolveContent"]');

@@ -236,3 +236,38 @@ exports.getCalibrationRuns = async (req, res) => {
         res.status(500).json({ success: false, error: err.message });
     }
 };
+
+/**
+ * POST /resetGraduation
+ * Body: { guidelineId }
+ *
+ * Clears all graduation state (consecutiveCorrect, graduated, calibrationAttempts)
+ * for every practice point in a guideline, allowing calibration to restart from scratch.
+ */
+exports.resetGraduation = async (req, res) => {
+    try {
+        const { guidelineId } = req.body;
+        if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });
+
+        const metricsCol = db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics');
+        const snap = await metricsCol.get();
+
+        const batch = db.batch();
+        let count = 0;
+        for (const doc of snap.docs) {
+            batch.update(metricsCol.doc(doc.id), {
+                consecutiveCorrect: 0,
+                graduated: false,
+                graduatedAt: null,
+                calibrationAttempts: 0
+            });
+            count++;
+        }
+        await batch.commit();
+
+        res.json({ success: true, guidelineId, count });
+    } catch (err) {
+        console.error('[CALIBRATION] resetGraduation error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
