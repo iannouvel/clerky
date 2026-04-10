@@ -178,16 +178,47 @@ exports.runCalibrationLoop = (req, res) => {
             maxAttemptsPerPoint: parseInt(maxAttemptsPerPoint) || 15
         },
         (step, message, extra) => {
-            const update = { ...calibrationJobs[jobId], step, stepMessage: message };
+            // Only update step/message on the existing object — avoid spreading a large latestRun repeatedly
+            const job = calibrationJobs[jobId] || {};
+            job.step = step;
+            job.stepMessage = message;
             if (extra) {
-                if (extra.latestRun)   update.latestRun   = extra.latestRun;
-                if (extra.pointStatus) update.pointStatus = extra.pointStatus;
-                if (extra.iteration !== undefined) update.iteration = extra.iteration;
-                if (extra.graduatedCount !== undefined) update.graduatedCount = extra.graduatedCount;
-                if (extra.totalPoints !== undefined)    update.totalPoints    = extra.totalPoints;
-                console.log(`[CAL-JOB ${jobId}] Stored run_complete: iteration=${extra.iteration}, graduated=${extra.graduatedCount}/${extra.totalPoints}, latestRun=${!!extra.latestRun}, pointStatus keys=${extra.pointStatus ? Object.keys(extra.pointStatus).length : 0}`);
+                // Trim latestRun at storage time to keep the job object small
+                if (extra.latestRun) {
+                    const lr = extra.latestRun;
+                    job.latestRun = {
+                        runId: lr.runId,
+                        iteration: lr.iteration,
+                        overallAccuracy: lr.overallAccuracy,
+                        pointCount: lr.pointCount,
+                        scenarioCount: lr.scenarioCount,
+                        practicePointNames: lr.practicePointNames,
+                        pointAccuracies: lr.pointAccuracies,
+                        adviceEvolutionLog: lr.adviceEvolutionLog,
+                        adviceUpdated: lr.adviceUpdated,
+                        scenarios: (lr.scenarios || []).map(s => ({
+                            name: s.name,
+                            groundTruth: s.groundTruth,
+                            verdicts: s.verdicts,
+                            suggestions: (s.suggestions || []).map(sg =>
+                                (typeof sg === 'string' ? sg : (sg?.suggestion || '')).substring(0, 200)
+                            ),
+                            pointDetail: Object.fromEntries(
+                                Object.entries(s.pointDetail || {}).filter(([id]) => {
+                                    const v = (s.verdicts || {})[id];
+                                    return v === 'miss' || v === 'false_positive';
+                                }).map(([id, d]) => [id, { applies: d.applies, reason: (d.reason || '').substring(0, 300) }])
+                            )
+                        }))
+                    };
+                }
+                if (extra.pointStatus) job.pointStatus = extra.pointStatus;
+                if (extra.iteration !== undefined) job.iteration = extra.iteration;
+                if (extra.graduatedCount !== undefined) job.graduatedCount = extra.graduatedCount;
+                if (extra.totalPoints !== undefined)    job.totalPoints    = extra.totalPoints;
+                console.log(`[CAL-JOB ${jobId}] run_complete: iter=${extra.iteration}, graduated=${extra.graduatedCount}/${extra.totalPoints}`);
             }
-            calibrationJobs[jobId] = update;
+            calibrationJobs[jobId] = job;
         }
     ).then(result => {
         calibrationJobs[jobId] = { status: 'complete', guidelineId, result, completedAt: new Date().toISOString() };
@@ -212,51 +243,9 @@ exports.getCalibrationJobStatus = (req, res) => {
     if (!jobId || !calibrationJobs[jobId]) {
         return res.status(404).json({ success: false, error: 'Job not found' });
     }
-    const job = calibrationJobs[jobId];
-
-    // For in-progress polling, trim latestRun to just what the client needs for rendering
-    if (job.status === 'running' && job.latestRun) {
-        const lr = job.latestRun;
-        const trimmedRun = {
-            runId: lr.runId,
-            iteration: lr.iteration,
-            overallAccuracy: lr.overallAccuracy,
-            pointCount: lr.pointCount,
-            scenarioCount: lr.scenarioCount,
-            practicePointNames: lr.practicePointNames,
-            pointAccuracies: lr.pointAccuracies,
-            adviceEvolutionLog: lr.adviceEvolutionLog,
-            adviceUpdated: lr.adviceUpdated,
-            // Trim scenarios: keep name, verdicts, brief errors — drop transcripts and full pointDetail
-            scenarios: (lr.scenarios || []).map(s => ({
-                name: s.name,
-                groundTruth: s.groundTruth,
-                verdicts: s.verdicts,
-                suggestions: (s.suggestions || []).map(sg => typeof sg === 'string' ? sg.substring(0, 200) : sg),
-                // Only include pointDetail for errors (miss/false_positive) to keep response small
-                pointDetail: Object.fromEntries(
-                    Object.entries(s.pointDetail || {}).filter(([id]) => {
-                        const v = (s.verdicts || {})[id];
-                        return v === 'miss' || v === 'false_positive';
-                    }).map(([id, detail]) => [id, { applies: detail.applies, reason: (detail.reason || '').substring(0, 300) }])
-                )
-            }))
-        };
-        return res.json({
-            success: true,
-            status: job.status,
-            step: job.step,
-            stepMessage: job.stepMessage,
-            startedAt: job.startedAt,
-            iteration: job.iteration,
-            pointStatus: job.pointStatus,
-            graduatedCount: job.graduatedCount,
-            totalPoints: job.totalPoints,
-            latestRun: trimmedRun
-        });
-    }
-
-    res.json({ success: true, ...job });
+    // latestRun is already trimmed at storage time in the progress callback,
+    // so we can return the job object directly without re-trimming here.
+    res.json({ success: true, ...calibrationJobs[jobId] });
 };
 
 /**

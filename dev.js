@@ -6718,6 +6718,9 @@ ${responseText}
                             });
                             const d = await r.json();
 
+                            // Handle 404 (job lost — server may have restarted)
+                            if (!d.success) { clearInterval(poll); reject(new Error(d.error || 'Job lost — server may have restarted')); return; }
+
                             if (d.step) {
                                 progressStep.textContent = d.step;
                                 progressMsg.textContent = d.stepMessage || '';
