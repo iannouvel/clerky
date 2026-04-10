@@ -1076,6 +1076,19 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
             graduated: graduated.has(p.id)
         }]));
 
+        // Debug: sample first scenario to identify unterminated string
+        if (result.scenarios && result.scenarios.length > 0) {
+            try {
+                const sample = JSON.stringify(result.scenarios[0]);
+                console.log('[CAL-LOOP] First scenario stringifies OK, length:', sample.length);
+            } catch (e) {
+                console.error('[CAL-LOOP] SCENARIO STRINGIFY ERROR:', e.message);
+                console.error('[CAL-LOOP] First scenario keys:', Object.keys(result.scenarios[0]));
+                console.error('[CAL-LOOP] First suggestion:', result.scenarios[0].suggestions?.[0]);
+                console.error('[CAL-LOOP] First pointDetail entry:', Object.entries(result.scenarios[0].pointDetail || {})[0]);
+            }
+        }
+
         log('run_complete',
             `${graduated.size}/${allPoints.length} graduated after iteration ${iteration}`,
             { latestRun: result, iteration, pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
