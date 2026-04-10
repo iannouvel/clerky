@@ -6580,9 +6580,14 @@ ${responseText}
 
         // ─── Guideline Calibration ────────────────────────────────────────────
         async function getCalibrationToken() {
+            // If currentUser is null it may be a transient cross-tab flicker — wait up to 2s
             if (!auth.currentUser) {
                 await new Promise((resolve, reject) => {
-                    const unsub = auth.onAuthStateChanged(u => { unsub(); u ? resolve(u) : reject(new Error('Not signed in')); });
+                    const deadline = setTimeout(() => { unsub(); reject(new Error('Not signed in')); }, 2000);
+                    const unsub = auth.onAuthStateChanged(u => {
+                        if (u) { clearTimeout(deadline); unsub(); resolve(u); }
+                        // else: keep waiting — another event will fire when auth settles
+                    });
                 });
             }
             return auth.currentUser.getIdToken();
