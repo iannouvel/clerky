@@ -973,6 +973,20 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
     let iteration = 0;
     let deduplicatedThisRun = false;  // only auto-dedup once per loop invocation
 
+    // Emit initial state immediately so client sees graduation table before first iteration
+    const initialPointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
+        name: p.name,
+        consecutiveCorrect: consecutiveCorrect[p.id] || 0,
+        attempts: attemptCount[p.id] || 0,
+        graduated: graduated.has(p.id)
+    }]));
+    onProgress('init_complete', `Ready to begin: ${totalPoints - graduated.size} active, ${graduated.size} already graduated`, {
+        iteration: 0,
+        pointStatus: initialPointStatus,
+        graduatedCount: graduated.size,
+        totalPoints: totalPoints
+    });
+
     while (graduated.size < totalPoints) {
         iteration++;
 
