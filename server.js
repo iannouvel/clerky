@@ -9433,6 +9433,13 @@ EXTRACTION RULES:
 - Each audit metric = separate rule
 - Each procedural step = separate rule
 
+TESTABILITY RULES — apply these BEFORE extracting each rule:
+- The condition MUST be objectively detectable from clinical documentation (e.g. 'gestational age < 34+0 weeks', 'patient is RhD-negative', 'placenta praevia confirmed on ultrasound'). NOT: 'if praevia suspected', 'if viability uncertain', 'if appropriate'.
+- The action MUST be a specific, documentable clinical action (e.g. 'administer Anti-D Ig 500 IU IM within 72 hours', 'perform CTG for minimum 30 minutes'). NOT: 'assess', 'consider', 'manage', 'stabilise', 'follow protocol', 'ensure', 'adhere to'.
+- DO NOT extract general management philosophies or protocol references (e.g. 'follow ABCD approach', 'use multidisciplinary team', 'adhere to local protocols') — only extract the specific individual actions within them.
+- If a rule requires clinical inference rather than reading documented data, DO NOT extract it.
+- If the condition is inherently indeterminate from a note ('if appropriate', 'if needed', 'if indicated'), DO NOT extract it.
+
 Focus ONLY on the "${section}" section. Do not extract from other sections.
 
 GUIDELINE CONTENT:
@@ -9631,9 +9638,10 @@ Return a JSON array with the same number of objects, each with: name, descriptio
                         const validElements = parsed.filter(elem =>
                             elem && typeof elem === 'object' &&
                             (elem.name || elem.title)
-                        ).map(elem => ({
-                            name: elem.name || elem.title,
-                            description: elem.description || elem.text || elem.criteria || '',
+                        ).map((elem, i) => ({
+                            ...batch[i],  // preserve all original structured fields
+                            name: elem.name || elem.title || batch[i].name,
+                            description: elem.description || elem.text || elem.criteria || batch[i].description || '',
                             significance: ['high', 'medium', 'low'].includes(String(elem.significance).toLowerCase())
                                 ? String(elem.significance).toLowerCase()
                                 : 'medium'
@@ -9669,6 +9677,120 @@ Return a JSON array with the same number of objects, each with: name, descriptio
     return expandedElements;
 }
 
+// Validation and sharpening function - filters and rewrites vague practice points
+// Ensures only testable rules proceed to expansion
+async function validateAndSharpenPracticePoints(practicePoints, userId = null) {
+    if (!practicePoints || practicePoints.length === 0) return [];
+
+    console.log(`[VALIDATE-POINTS] Validating and sharpening ${practicePoints.length} practice points...`);
+
+    // Build a numbered list for the LLM
+    const ruleList = practicePoints.map((p, idx) =>
+        `[${idx}] (${p.ruleType}) IF ${p.condition} | THEN ${p.action}`
+    ).join('\n');
+
+    const validationPrompt = `You are auditing clinical practice rules for use in AI calibration. An AI will be given a clinical note and must determine:
+(a) whether the condition is met (based only on objective, documented data)
+(b) whether the action was taken or omitted
+
+Evaluate each rule and assign a verdict:
+- "ok": condition is objective and specific; action is concrete and documentable from a clinical note
+- "rewrite": rule is valuable but condition/action is vague — provide improved versions
+- "drop": rule is fundamentally untestable (generic protocol reference, inherently subjective condition, or action that cannot be detected in documentation)
+
+BAD condition patterns → drop or rewrite: "if suspected", "if appropriate", "if uncertain/unknown", "if needed", "if viability uncertain", "if shock present" (without measurable criteria)
+BAD action patterns → drop or rewrite: "assess", "consider", "manage", "stabilise", "ensure", "follow [protocol/approach]", "adhere to", "monitor" (without specific parameters)
+
+RULES:
+${ruleList}
+
+Return a JSON array with one entry per rule (same order):
+[
+  { "index": 0, "verdict": "ok" },
+  { "index": 1, "verdict": "rewrite", "condition": "specific objective condition", "action": "specific documentable action", "reason": "brief note on what was vague" },
+  { "index": 2, "verdict": "drop", "reason": "brief note on why untestable" }
+]`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                {
+                    role: 'system',
+                    content: 'You are a clinical guideline auditor. Evaluate each rule for testability. Return ONLY a valid JSON array. No preamble, no markdown, no conversational text.'
+                },
+                {
+                    role: 'user',
+                    content: validationPrompt
+                }
+            ]
+        }, userId, null, 4096);
+
+        if (!result || !result.content) {
+            console.warn('[VALIDATE-POINTS] No validation result, returning original points');
+            return practicePoints;
+        }
+
+        const cleanedContent = cleanJsonResponse(result.content);
+        let verdicts;
+
+        try {
+            verdicts = JSON.parse(cleanedContent);
+        } catch (e) {
+            console.warn('[VALIDATE-POINTS] Parse failed, attempting repair...');
+            try {
+                const repaired = repairJson(cleanedContent);
+                verdicts = JSON.parse(repaired);
+            } catch (e2) {
+                console.error('[VALIDATE-POINTS] Repair failed, returning original points');
+                return practicePoints;
+            }
+        }
+
+        if (!Array.isArray(verdicts)) {
+            console.warn('[VALIDATE-POINTS] Verdicts not an array, returning original points');
+            return practicePoints;
+        }
+
+        // Apply verdicts
+        let okCount = 0, rewriteCount = 0, dropCount = 0;
+        const validatedPoints = [];
+
+        for (const verdict of verdicts) {
+            if (!verdict || typeof verdict !== 'object' || verdict.index === undefined) continue;
+
+            const originalPoint = practicePoints[verdict.index];
+            if (!originalPoint) continue;
+
+            if (verdict.verdict === 'ok') {
+                validatedPoints.push(originalPoint);
+                okCount++;
+            } else if (verdict.verdict === 'rewrite' && verdict.condition && verdict.action) {
+                // Apply rewrite
+                const rewrittenPoint = {
+                    ...originalPoint,
+                    condition: verdict.condition,
+                    action: verdict.action,
+                    name: `If ${verdict.condition}, then ${verdict.action}`,
+                    description: originalPoint.description || '',
+                    _rewriteReason: verdict.reason
+                };
+                validatedPoints.push(rewrittenPoint);
+                rewriteCount++;
+            } else if (verdict.verdict === 'drop') {
+                dropCount++;
+            }
+        }
+
+        console.log(`[VALIDATE-POINTS] Validation complete: ${okCount} ok, ${rewriteCount} rewritten, ${dropCount} dropped`);
+        return validatedPoints;
+
+    } catch (error) {
+        console.error('[VALIDATE-POINTS] Validation error:', error.message);
+        console.warn('[VALIDATE-POINTS] Returning original points due to error');
+        return practicePoints;
+    }
+}
+
 // Main extraction function - optimised 2-step process
 // Uses condensed content and batch processing for ~95% reduction in API calls
 async function extractAuditableElements(content, userId = null, guidelineSummary = null) {
@@ -9689,8 +9811,16 @@ async function extractAuditableElements(content, userId = null, guidelineSummary
             return [];
         }
 
+        // Step 1.5: Validate and sharpen practice points for testability
+        const validatedPoints = await validateAndSharpenPracticePoints(practicePoints, userId);
+
+        if (!validatedPoints || validatedPoints.length === 0) {
+            console.error('[AUDITABLE-OPT] Step 1.5 validation resulted in no points');
+            return [];
+        }
+
         // Step 2: Batch expand if needed (optional - only if descriptions need improvement)
-        const auditableElements = await batchExpandPracticePoints(practicePoints, content, userId);
+        const auditableElements = await batchExpandPracticePoints(validatedPoints, content, userId);
 
         console.log(`[AUDITABLE-OPT] Extraction complete: ${auditableElements.length} auditable elements`);
         return auditableElements;
