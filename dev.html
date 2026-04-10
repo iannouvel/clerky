@@ -1495,11 +1495,12 @@
                     <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Run calibration</p>
                     <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px;">
                         <div>
-                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Practice points</label>
+                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Point limit</label>
                             <select id="calibrationPointCount" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
-                                <option value="5">5</option>
-                                <option value="10" selected>10</option>
-                                <option value="15">15</option>
+                                <option value="0" selected>All points</option>
+                                <option value="10">First 10</option>
+                                <option value="20">First 20</option>
+                                <option value="50">First 50</option>
                             </select>
                         </div>
                         <div>
@@ -1517,6 +1518,7 @@
                         <div style="font-size:13px;font-weight:600;" id="calibrationProgressStep"></div>
                         <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;" id="calibrationProgressMsg"></div>
                     </div>
+                    <div id="calibrationGraduationStatus" style="display:none;margin-bottom:12px;"></div>
                     <div id="calibrationRunResults" style="display:none;font-size:13px;"></div>
                 </div>
             </div>

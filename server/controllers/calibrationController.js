@@ -151,7 +151,7 @@ exports.runCalibration = (req, res) => {
  * consecutively (perfectTarget times) or a practice point is stuck.
  */
 exports.runCalibrationLoop = (req, res) => {
-    const { guidelineId, pointCount, scenarioCount, maxIterations, perfectTarget, maxPointFailures } = req.body;
+    const { guidelineId, pointCount, scenarioCount, graduationThreshold, maxAttemptsPerPoint } = req.body;
     if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId required' });
 
     const userId = req.user.uid;
@@ -172,14 +172,21 @@ exports.runCalibrationLoop = (req, res) => {
         guidelineId,
         userId,
         {
-            pointCount: parseInt(pointCount) || 10,
+            pointCount: parseInt(pointCount) || 0,
             scenarioCount: parseInt(scenarioCount) || 4,
-            maxIterations: parseInt(maxIterations) || 10,
-            perfectTarget: parseInt(perfectTarget) || 3,
-            maxPointFailures: parseInt(maxPointFailures) || 5
+            graduationThreshold: parseInt(graduationThreshold) || 3,
+            maxAttemptsPerPoint: parseInt(maxAttemptsPerPoint) || 15
         },
-        (step, message) => {
-            calibrationJobs[jobId] = { ...calibrationJobs[jobId], step, stepMessage: message };
+        (step, message, extra) => {
+            const update = { ...calibrationJobs[jobId], step, stepMessage: message };
+            if (extra) {
+                if (extra.latestRun)   update.latestRun   = extra.latestRun;
+                if (extra.pointStatus) update.pointStatus = extra.pointStatus;
+                if (extra.iteration !== undefined) update.iteration = extra.iteration;
+                if (extra.graduatedCount !== undefined) update.graduatedCount = extra.graduatedCount;
+                if (extra.totalPoints !== undefined)    update.totalPoints    = extra.totalPoints;
+            }
+            calibrationJobs[jobId] = update;
         }
     ).then(result => {
         calibrationJobs[jobId] = { status: 'complete', guidelineId, result, completedAt: new Date().toISOString() };
@@ -188,8 +195,8 @@ exports.runCalibrationLoop = (req, res) => {
         calibrationJobs[jobId] = { status: 'error', guidelineId, error: err.message };
     });
 
-    // Clean up after 2 hours (loops take longer)
-    setTimeout(() => { delete calibrationJobs[jobId]; }, 2 * 60 * 60 * 1000);
+    // Clean up after 4 hours (large guideline loops take time)
+    setTimeout(() => { delete calibrationJobs[jobId]; }, 4 * 60 * 60 * 1000);
 };
 
 /**

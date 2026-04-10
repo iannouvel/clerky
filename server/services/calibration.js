@@ -548,22 +548,28 @@ Every practice point ID listed above must have an entry.`;
  * @returns {Promise<Object>} Run summary
  */
 async function runCalibrationRun(guidelineId, userId, options = {}, onProgress = null) {
-    const { pointCount = 10, scenarioCount = 4 } = options;
+    const { pointCount = 10, scenarioCount = 4, specificPoints = null } = options;
     const log = (step, msg) => {
         console.log(`[CALIBRATE:${guidelineId}] ${step}: ${msg}`);
         if (onProgress) onProgress(step, msg);
     };
 
-    log('start', `Calibration run started — ${pointCount} points, ${scenarioCount} scenarios`);
+    log('start', `Calibration run started — ${specificPoints ? specificPoints.length + ' specific' : pointCount} points, ${scenarioCount} scenarios`);
 
     // 1. Guideline content
     const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
     log('content', `Loaded guideline: ${guidelineTitle}`);
 
-    // 2. Sample practice points and load their current advice
-    const practicePoints = await samplePracticePoints(guidelineId, pointCount);
-    if (practicePoints.length === 0) throw new Error('No practice points available — run syncPracticePoints first');
-    log('sample', `Sampled ${practicePoints.length} practice points`);
+    // 2. Sample practice points (or use specifically provided ones)
+    let practicePoints;
+    if (specificPoints && specificPoints.length > 0) {
+        practicePoints = specificPoints;
+        log('sample', `Using ${practicePoints.length} provided practice points`);
+    } else {
+        practicePoints = await samplePracticePoints(guidelineId, pointCount);
+        if (practicePoints.length === 0) throw new Error('No practice points available — run syncPracticePoints first');
+        log('sample', `Sampled ${practicePoints.length} practice points`);
+    }
 
     // Load evolved advice for each point (used by both scenario generator and analyser)
     let pointsWithAdvice = practicePoints;
@@ -767,249 +773,162 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
     return runRecord;
 }
 
-// ─── Calibration loop — run until perfect or stuck ──────────────────────────
+// ─── Calibration loop — run until every point graduates ──────────────────────
 
 /**
- * Runs calibration repeatedly until 100% accuracy is achieved N times in a row,
- * or a practice point is stuck (failing repeatedly across iterations).
+ * Runs calibration repeatedly until every practice point achieves
+ * `graduationThreshold` consecutive correct runs.
  *
- * Accumulates all run records, advice evolution history, and per-point failure
- * tracking across the full loop.
+ * Each iteration tests only the non-graduated points. A point graduates once
+ * it scores 100% (all scenarios correct) in `graduationThreshold` consecutive
+ * iterations. If a point fails to graduate after `maxAttemptsPerPoint`
+ * iterations it is flagged as stuck and the loop exits.
+ *
+ * After each iteration the progress callback receives the latest run result
+ * and per-point graduation status so clients can render incrementally.
  *
  * @param {string} guidelineId
  * @param {string} userId
  * @param {Object} [options]
- * @param {number} [options.pointCount=10]
+ * @param {number} [options.pointCount=0] - Limit to first N points (0 = all)
  * @param {number} [options.scenarioCount=4]
- * @param {number} [options.maxIterations=10] - Hard cap on total iterations
- * @param {number} [options.perfectTarget=3] - How many consecutive 100% runs to require
- * @param {number} [options.maxPointFailures=5] - Stop if any single point fails this many times total
- * @param {Function} [onProgress] - Called with (step, message) during the loop
- * @returns {Promise<Object>} Loop summary with all runs, advice evolution, exit reason
+ * @param {number} [options.graduationThreshold=3] - Consecutive correct runs to graduate
+ * @param {number} [options.maxAttemptsPerPoint=15] - Give up after this many attempts
+ * @param {Function} [onProgress] - Called with (step, message, extra) during the loop
+ * @returns {Promise<Object>} Loop summary
  */
 async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress = null) {
     const {
-        pointCount = 10,
+        pointCount = 0,
         scenarioCount = 4,
-        maxIterations = 10,
-        perfectTarget = 3,
-        maxPointFailures = 5
+        graduationThreshold = 3,
+        maxAttemptsPerPoint = 15
     } = options;
 
-    const log = (step, msg) => {
+    const log = (step, msg, extra = null) => {
         console.log(`[CAL-LOOP:${guidelineId}] ${step}: ${msg}`);
-        if (onProgress) onProgress(step, msg);
+        if (onProgress) onProgress(step, msg, extra);
     };
 
-    let consecutivePerfect = 0;
-    const allRuns = [];
-    const pointFailureCounts = {};   // pointId → total failure count across all iterations
-    const pointErrorTypes = {};      // pointId → Set of error types ('miss', 'false_positive')
-    const pointErrorEvidence = {};   // pointId → [{ transcript, verdict, modelReason, shouldApply }]
-    const allAdviceEvolution = [];   // { pointId, pointName, before, after, iteration }
-    const allRewrites = [];          // { pointId, pointName, replacements, reasoning, iteration }
-    const rewrittenPointIds = new Set();  // points already rewritten (don't rewrite twice)
-    let exitReason = 'max_iterations';
+    // 1. Load all practice points
+    const { title: guidelineTitle } = await getGuidelineForCalibration(guidelineId);
+    const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
+    if (snap.empty) throw new Error('No practice points found — run syncPracticePoints first');
 
-    for (let iteration = 1; iteration <= maxIterations; iteration++) {
-        log('iteration', `Iteration ${iteration}/${maxIterations} — ${consecutivePerfect}/${perfectTarget} consecutive perfect`);
+    let allPoints = snap.docs
+        .map(d => ({ id: d.id, ...d.data() }))
+        .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+
+    if (pointCount > 0) allPoints = allPoints.slice(0, pointCount);
+    const totalPoints = allPoints.length;
+
+    log('init', `Starting loop — ${totalPoints} points, graduate at ${graduationThreshold} consecutive correct`);
+
+    // Per-point state
+    const consecutiveCorrect = Object.fromEntries(allPoints.map(p => [p.id, 0]));
+    const attemptCount    = Object.fromEntries(allPoints.map(p => [p.id, 0]));
+    const graduated       = new Set();
+    const allRuns         = [];
+    const allAdviceEvolution = [];
+    let exitReason = 'all_graduated';
+    let iteration = 0;
+
+    while (graduated.size < totalPoints) {
+        iteration++;
+
+        // Active = non-graduated points
+        const activePoints = allPoints.filter(p => !graduated.has(p.id));
+
+        // Abort if any active point has exhausted its attempts
+        const stuckPoints = activePoints.filter(p => attemptCount[p.id] >= maxAttemptsPerPoint);
+        if (stuckPoints.length > 0) {
+            exitReason = 'stuck_points';
+            log('timeout', `Stopping — stuck point(s): ${stuckPoints.map(p => p.name).join(', ')}`);
+            break;
+        }
+
+        log('iteration', `Iteration ${iteration} — ${graduated.size}/${totalPoints} graduated, ${activePoints.length} active`);
 
         let result;
         try {
             result = await runCalibrationRun(
                 guidelineId,
                 userId,
-                { pointCount, scenarioCount },
-                (step, msg) => {
-                    log(step, `[${iteration}/${maxIterations}] ${msg}`);
-                }
+                { specificPoints: activePoints, scenarioCount },
+                (step, msg) => log(step, `[iter ${iteration}] ${msg}`)
             );
         } catch (err) {
             log('error', `Iteration ${iteration} failed: ${err.message}`);
             allRuns.push({ iteration, error: err.message, overallAccuracy: null });
+            // increment attempts so we don't spin forever on a broken point
+            for (const p of activePoints) attemptCount[p.id]++;
             continue;
         }
 
         allRuns.push({ ...result, iteration });
 
-        // Accumulate advice evolution with iteration number
-        if (result.adviceEvolutionLog && result.adviceEvolutionLog.length > 0) {
-            for (const entry of result.adviceEvolutionLog) {
-                allAdviceEvolution.push({ ...entry, iteration });
+        for (const entry of (result.adviceEvolutionLog || [])) {
+            allAdviceEvolution.push({ ...entry, iteration });
+        }
+
+        // Update per-point consecutive counts
+        for (const p of activePoints) {
+            attemptCount[p.id]++;
+            const acc = (result.pointAccuracies || {})[p.id];
+            if (acc === 1.0) {
+                consecutiveCorrect[p.id]++;
+                if (consecutiveCorrect[p.id] >= graduationThreshold) {
+                    graduated.add(p.id);
+                    log('graduate', `Graduated: "${p.name}" (${graduationThreshold} consecutive correct)`);
+                }
+            } else {
+                if (consecutiveCorrect[p.id] > 0) {
+                    log('reset', `Streak reset for "${p.name}" (was ${consecutiveCorrect[p.id]}) — ${acc !== null ? (acc * 100).toFixed(0) + '%' : 'n/a'}`);
+                }
+                consecutiveCorrect[p.id] = 0;
             }
         }
 
-        // Check for perfect run
-        if (result.overallAccuracy === 1.0) {
-            consecutivePerfect++;
-            log('perfect', `Perfect run! ${consecutivePerfect}/${perfectTarget} consecutive`);
+        // Build point status snapshot for the polling client
+        const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
+            name: p.name,
+            consecutiveCorrect: consecutiveCorrect[p.id] || 0,
+            attempts: attemptCount[p.id] || 0,
+            graduated: graduated.has(p.id)
+        }]));
 
-            if (consecutivePerfect >= perfectTarget) {
-                exitReason = 'perfect';
-                log('complete', `Achieved ${perfectTarget} consecutive perfect runs`);
-                break;
-            }
-        } else {
-            if (consecutivePerfect > 0) {
-                log('reset', `Streak broken at ${consecutivePerfect} — back to 0`);
-            }
-            consecutivePerfect = 0;
-
-            // Track per-point failures and error types
-            for (const scenario of (result.scenarios || [])) {
-                const allIds = [...(scenario.groundTruth?.applies || []), ...(scenario.groundTruth?.doesNotApply || [])];
-                for (const pointId of allIds) {
-                    const verdict = (scenario.verdicts || {})[pointId];
-                    if (verdict === 'miss' || verdict === 'false_positive') {
-                        if (!pointErrorTypes[pointId]) pointErrorTypes[pointId] = new Set();
-                        pointErrorTypes[pointId].add(verdict);
-
-                        if (!pointErrorEvidence[pointId]) pointErrorEvidence[pointId] = [];
-                        const detail = (scenario.pointDetail || {})[pointId];
-                        pointErrorEvidence[pointId].push({
-                            transcript: scenario.transcript,
-                            verdict,
-                            modelReason: detail?.reason || '',
-                            shouldApply: (scenario.groundTruth?.applies || []).includes(pointId)
-                        });
-                    }
-                }
-            }
-
-            for (const [pointId, acc] of Object.entries(result.pointAccuracies || {})) {
-                if (acc !== null && acc < 1.0) {
-                    pointFailureCounts[pointId] = (pointFailureCounts[pointId] || 0) + 1;
-                }
-            }
-
-            // Check for stuck points that oscillate (both FP and miss)
-            const stuckPoints = Object.entries(pointFailureCounts)
-                .filter(([, count]) => count >= maxPointFailures);
-
-            if (stuckPoints.length > 0) {
-                // Attempt to rewrite oscillating points instead of stopping
-                let rewroteAny = false;
-
-                for (const [pointId] of stuckPoints) {
-                    if (rewrittenPointIds.has(pointId)) continue;  // already tried
-
-                    const errorTypes = pointErrorTypes[pointId];
-                    const isOscillating = errorTypes && errorTypes.has('miss') && errorTypes.has('false_positive');
-
-                    if (!isOscillating) continue;  // not oscillating — can't help by rewriting
-
-                    const pointName = (result.practicePointNames || {})[pointId] || pointId;
-                    log('rewrite', `Rewriting oscillating point: ${pointName}`);
-
-                    try {
-                        const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
-                        const evidence = (pointErrorEvidence[pointId] || []).slice(-6);  // last 6 errors
-                        const rewriteResult = await rewritePracticePoint(
-                            { name: pointName, description: pointName },
-                            evidence,
-                            guidelineTitle,
-                            guidelineContent,
-                            userId
-                        );
-
-                        // Apply the rewrite: update auditableElements in Firestore
-                        const guidelineRef = db.collection('guidelines').doc(guidelineId);
-                        const guidelineSnap = await guidelineRef.get();
-                        const guidelineData = guidelineSnap.data();
-                        const elements = Array.isArray(guidelineData.auditableElements) ? [...guidelineData.auditableElements] : [];
-
-                        // Remove the old element
-                        const oldIdx = elements.findIndex(e => generatePointId(e.name || e.title || '') === pointId);
-                        if (oldIdx !== -1) {
-                            elements.splice(oldIdx, 1);
-                        }
-
-                        // Insert replacement elements at the same position
-                        const newElements = (rewriteResult.replacements || []).map(r => ({
-                            name: r.name,
-                            description: r.description,
-                            significance: 'high'
-                        }));
-                        elements.splice(oldIdx !== -1 ? oldIdx : elements.length, 0, ...newElements);
-
-                        await guidelineRef.update({ auditableElements: elements });
-
-                        // Re-sync practice points to pick up the new elements
-                        await syncPracticePoints(guidelineId);
-
-                        // Delete the old practice point metrics doc
-                        const metricsRef = guidelineRef.collection('practicePointMetrics').doc(pointId);
-                        await metricsRef.delete();
-
-                        rewrittenPointIds.add(pointId);
-                        rewroteAny = true;
-
-                        // Reset failure tracking for this point (it no longer exists)
-                        delete pointFailureCounts[pointId];
-                        delete pointErrorTypes[pointId];
-                        delete pointErrorEvidence[pointId];
-
-                        allRewrites.push({
-                            pointId,
-                            pointName,
-                            replacements: rewriteResult.replacements,
-                            reasoning: rewriteResult.reasoning,
-                            iteration
-                        });
-
-                        log('rewrite', `Replaced "${pointName}" with ${newElements.length} distinct points: ${newElements.map(e => e.name).join('; ')}`);
-                    } catch (err) {
-                        log('rewrite', `Failed to rewrite ${pointName}: ${err.message}`);
-                        rewrittenPointIds.add(pointId);  // don't retry
-                    }
-                }
-
-                // If we rewrote at least one point, continue the loop with the new points
-                if (rewroteAny) {
-                    log('rewrite', 'Continuing loop with rewritten practice points...');
-                    continue;
-                }
-
-                // If no rewrites were possible (non-oscillating stuck points), stop
-                const remainingStuck = Object.entries(pointFailureCounts)
-                    .filter(([, count]) => count >= maxPointFailures);
-                if (remainingStuck.length > 0) {
-                    const stuckNames = remainingStuck.map(([id]) => {
-                        const names = result.practicePointNames || {};
-                        return names[id] || id;
-                    });
-                    exitReason = 'stuck_points';
-                    log('timeout', `Stopping — ${remainingStuck.length} non-oscillating stuck point(s): ${stuckNames.join(', ')}`);
-                    break;
-                }
-            }
-        }
+        log('run_complete',
+            `${graduated.size}/${totalPoints} graduated after iteration ${iteration}`,
+            { latestRun: result, iteration, pointStatus, graduatedCount: graduated.size, totalPoints }
+        );
     }
 
-    // Build summary
+    if (graduated.size >= totalPoints) {
+        log('complete', `All ${totalPoints} practice points graduated after ${iteration} iteration(s)`);
+    }
+
     const accuracyHistory = allRuns.map(r => r.overallAccuracy).filter(a => a !== null);
     const finalAccuracy = accuracyHistory.length > 0 ? accuracyHistory[accuracyHistory.length - 1] : null;
-    const bestAccuracy = accuracyHistory.length > 0 ? Math.max(...accuracyHistory) : null;
 
-    const loopSummary = {
+    return {
         guidelineId,
+        guidelineTitle,
         iterations: allRuns.length,
-        consecutivePerfect,
         exitReason,
-        perfectTarget,
-        maxPointFailures,
+        graduatedCount: graduated.size,
+        totalPoints,
+        graduationThreshold,
+        pointStatus: Object.fromEntries(allPoints.map(p => [p.id, {
+            name: p.name,
+            consecutiveCorrect: consecutiveCorrect[p.id] || 0,
+            attempts: attemptCount[p.id] || 0,
+            graduated: graduated.has(p.id)
+        }])),
         accuracyHistory,
         finalAccuracy,
-        bestAccuracy,
-        pointFailureCounts,
         allAdviceEvolution,
-        allRewrites,
         runs: allRuns
     };
-
-    log('done', `Loop complete — ${allRuns.length} iterations, exit: ${exitReason}, ${allRewrites.length} point(s) rewritten, final: ${finalAccuracy !== null ? (finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`);
-
-    return loopSummary;
 }
 
 module.exports = {
