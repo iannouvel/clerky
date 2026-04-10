@@ -6676,35 +6676,40 @@ ${responseText}
             const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
             if (!guidelineId) { document.getElementById('calibrationRunStatus').textContent = 'Select a guideline first.'; return; }
 
-            const pointCount = document.getElementById('calibrationPointCount').value;
+            const pointCount = parseInt(document.getElementById('calibrationPointCount').value) || 0;
             const scenarioCount = document.getElementById('calibrationScenarioCount').value;
             const status = document.getElementById('calibrationRunStatus');
             const progress = document.getElementById('calibrationProgress');
             const progressStep = document.getElementById('calibrationProgressStep');
             const progressMsg = document.getElementById('calibrationProgressMsg');
+            const graduationEl = document.getElementById('calibrationGraduationStatus');
             const resultsEl = document.getElementById('calibrationRunResults');
 
             status.textContent = 'Starting calibration loop...';
             progress.style.display = 'block';
+            graduationEl.style.display = 'none';
             resultsEl.style.display = 'none';
             progressStep.textContent = 'Initialising...';
             progressMsg.textContent = '';
+
+            document.getElementById('runCalibrationBtn').disabled = true;
 
             try {
                 const token = await getCalibrationToken();
                 const startRes = await fetch(`${SERVER_URL}/runCalibrationLoop`, {
                     method: 'POST',
                     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ guidelineId, pointCount: parseInt(pointCount), scenarioCount: parseInt(scenarioCount) })
+                    body: JSON.stringify({ guidelineId, pointCount, scenarioCount: parseInt(scenarioCount) })
                 });
                 const startData = await startRes.json();
                 if (!startData.success) throw new Error(startData.error);
 
                 const jobId = startData.jobId;
-                status.textContent = 'Running calibration loop...';
+                status.textContent = 'Running calibration loop…';
 
-                // Poll for completion
+                // Poll — render each iteration's results as they arrive
                 await new Promise((resolve, reject) => {
+                    let lastIteration = 0;
                     const poll = setInterval(async () => {
                         try {
                             const t = await getCalibrationToken();
@@ -6712,33 +6717,116 @@ ${responseText}
                                 headers: { Authorization: `Bearer ${t}` }
                             });
                             const d = await r.json();
+
                             if (d.step) {
                                 progressStep.textContent = d.step;
                                 progressMsg.textContent = d.stepMessage || '';
                             }
+
+                            // Live point graduation status
+                            if (d.pointStatus) {
+                                renderGraduationStatus(d.pointStatus, d.graduatedCount, d.totalPoints, graduationEl);
+                                graduationEl.style.display = 'block';
+                                if (d.iteration !== undefined) {
+                                    status.textContent = `Iteration ${d.iteration} complete — ${d.graduatedCount || 0}/${d.totalPoints || '?'} points graduated`;
+                                }
+                            }
+
+                            // Render latest run whenever a new iteration completes
+                            if (d.latestRun && d.iteration !== lastIteration) {
+                                lastIteration = d.iteration;
+                                renderCalibrationLoopResults(d.latestRun, resultsEl);
+                                resultsEl.style.display = 'block';
+                            }
+
                             if (d.status === 'complete') { clearInterval(poll); resolve(d.result); }
-                            if (d.status === 'error') { clearInterval(poll); reject(new Error(d.error)); }
+                            if (d.status === 'error')    { clearInterval(poll); reject(new Error(d.error)); }
                         } catch (e) { clearInterval(poll); reject(e); }
                     }, 3000);
                 }).then(result => {
-                    const exitLabel = { perfect: 'Target reached', max_iterations: 'Max iterations', stuck_points: 'Stuck points' }[result.exitReason] || result.exitReason;
-                    status.textContent = `Done — ${result.iterations} iteration${result.iterations !== 1 ? 's' : ''}, ${exitLabel}, final ${result.finalAccuracy !== null ? (result.finalAccuracy * 100).toFixed(1) + '%' : 'n/a'}`;
+                    const exitLabel = {
+                        all_graduated: `All ${result.totalPoints} points graduated`,
+                        stuck_points: 'Stuck point(s) — manual review needed'
+                    }[result.exitReason] || result.exitReason;
+                    status.textContent = `Done — ${result.iterations} iteration${result.iterations !== 1 ? 's' : ''}, ${exitLabel}`;
                     progress.style.display = 'none';
-                    renderCalibrationLoopResults(result, resultsEl);
+                    if (result.pointStatus) renderGraduationStatus(result.pointStatus, result.graduatedCount, result.totalPoints, graduationEl);
+                    renderCalibrationLoopResults(result.runs?.[result.runs.length - 1] || result, resultsEl);
+                    resultsEl.style.display = 'block';
                 });
 
             } catch (err) {
                 status.textContent = `Error: ${err.message}`;
                 progress.style.display = 'none';
                 console.error('[CALIBRATION] run error:', err);
+            } finally {
+                document.getElementById('runCalibrationBtn').disabled = false;
             }
         }
 
+        function renderGraduationStatus(pointStatus, graduatedCount, totalPoints, container) {
+            const points = Object.values(pointStatus || {});
+            if (points.length === 0) return;
+
+            const graduated = points.filter(p => p.graduated).length;
+            const pct = totalPoints > 0 ? Math.round(graduated / totalPoints * 100) : 0;
+            const barColour = pct === 100 ? '#28a745' : pct >= 50 ? '#17a2b8' : '#ff9800';
+
+            const rows = points
+                .sort((a, b) => {
+                    // graduated last, then by consecutive desc
+                    if (a.graduated !== b.graduated) return a.graduated ? 1 : -1;
+                    return (b.consecutiveCorrect || 0) - (a.consecutiveCorrect || 0);
+                })
+                .map(p => {
+                    const dots = [1, 2, 3].map(i => {
+                        const filled = (p.consecutiveCorrect || 0) >= i || p.graduated;
+                        const col = p.graduated ? '#28a745' : filled ? '#17a2b8' : '#dee2e6';
+                        return `<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${col};margin:0 2px;" title="${filled ? 'correct' : 'pending'}"></span>`;
+                    }).join('');
+                    const rowBg = p.graduated ? 'rgba(40,167,69,0.08)' : '';
+                    return `<tr style="background:${rowBg};">
+                        <td style="padding:3px 8px;font-size:12px;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${p.name || ''}">${p.name || ''}</td>
+                        <td style="padding:3px 8px;text-align:center;">${dots}</td>
+                        <td style="padding:3px 8px;text-align:center;font-size:11px;color:var(--text-secondary);">${p.attempts || 0} runs</td>
+                        <td style="padding:3px 8px;text-align:center;font-size:11px;font-weight:600;color:${p.graduated ? '#28a745' : '#6c757d'};">${p.graduated ? '✓ Done' : ''}</td>
+                    </tr>`;
+                }).join('');
+
+            container.innerHTML = `
+                <div style="padding:10px;background:var(--bg-tertiary);border-radius:6px;border:1px solid var(--border-color);">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                        <div style="flex:1;height:8px;background:#dee2e6;border-radius:4px;overflow:hidden;">
+                            <div style="width:${pct}%;height:100%;background:${barColour};transition:width 0.4s;"></div>
+                        </div>
+                        <div style="font-size:12px;font-weight:600;white-space:nowrap;">${graduated}/${totalPoints} graduated</div>
+                    </div>
+                    <div style="max-height:280px;overflow-y:auto;">
+                        <table style="width:100%;border-collapse:collapse;">
+                            <thead>
+                                <tr style="font-size:10px;color:var(--text-secondary);text-transform:uppercase;">
+                                    <th style="padding:3px 8px;text-align:left;">Practice point</th>
+                                    <th style="padding:3px 8px;">Streak</th>
+                                    <th style="padding:3px 8px;">Attempts</th>
+                                    <th style="padding:3px 8px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>
+                </div>`;
+        }
+
         function renderCalibrationLoopResults(loopResult, container) {
+            // Accept either a full loop summary OR a single run record (from latestRun polling)
+            const isSingleRun = !loopResult.exitReason && loopResult.runId;
             const accuracyColour = v => v >= 0.9 ? '#28a745' : v >= 0.7 ? '#ff9800' : '#dc3545';
             const pct = v => v !== null && v !== undefined ? (v * 100).toFixed(0) + '%' : '—';
-            const exitLabel = { perfect: '3x 100% achieved', max_iterations: 'Max iterations reached', stuck_points: 'Stuck practice point(s)' }[loopResult.exitReason] || loopResult.exitReason;
-            const exitColour = loopResult.exitReason === 'perfect' ? '#28a745' : loopResult.exitReason === 'stuck_points' ? '#dc3545' : '#ff9800';
+            const exitLabel = {
+                all_graduated: 'All points graduated',
+                stuck_points: 'Stuck point(s) — manual review needed'
+            }[loopResult.exitReason] || (isSingleRun ? 'Latest run' : (loopResult.exitReason || ''));
+            const exitColour = loopResult.exitReason === 'all_graduated' ? '#28a745' : loopResult.exitReason === 'stuck_points' ? '#dc3545' : '#17a2b8';
 
             // Accuracy trend chart (simple text-based sparkline)
             const history = loopResult.accuracyHistory || [];
@@ -6755,10 +6843,12 @@ ${responseText}
             // Stuck points warning
             const stuckPointsHtml = loopResult.exitReason === 'stuck_points'
                 ? `<div style="background:#f8d7da;border:1px solid #f5c6cb;border-radius:6px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#721c24;">
-                    <strong>Stuck practice points:</strong> ${Object.entries(loopResult.pointFailureCounts || {})
-                        .filter(([, c]) => c >= (loopResult.maxPointFailures || 5))
-                        .map(([id]) => id.replace(/_/g, ' '))
-                        .join(', ')}
+                    <strong>Stuck practice points (failed to graduate):</strong> ${
+                        Object.values(loopResult.pointStatus || {})
+                            .filter(p => !p.graduated)
+                            .map(p => p.name || '')
+                            .join(', ') || 'see graduation status above'
+                    }
                 </div>`
                 : '';
 
@@ -6810,8 +6900,9 @@ ${responseText}
                     </details>`).join('')}`
                 : '';
 
-            // Per-iteration run details (each expandable, using existing renderCalibrationResults logic inline)
-            const iterationCards = (loopResult.runs || []).map((run, i) => {
+            // Per-iteration run details (each expandable)
+            const runsForCards = isSingleRun ? [{ ...loopResult, iteration: loopResult.iteration || 1 }] : (loopResult.runs || []);
+            const iterationCards = runsForCards.map((run, i) => {
                 if (run.error) {
                     return `<details style="margin-bottom:8px;border:1px solid #f5c6cb;border-radius:6px;">
                         <summary style="padding:10px 14px;cursor:pointer;background:#f8d7da;font-size:13px;color:#721c24;">
@@ -6903,37 +6994,43 @@ ${responseText}
                 </details>`;
             }).join('');
 
+            const displayAccuracy = isSingleRun ? loopResult.overallAccuracy : loopResult.finalAccuracy;
+            const displayIterations = isSingleRun ? 1 : (loopResult.iterations || (loopResult.runs || []).length);
+
             container.innerHTML = `
-                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
-                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                <div style="display:grid;grid-template-columns:repeat(${isSingleRun ? 2 : 4},1fr);gap:10px;margin-bottom:16px;">
+                    ${!isSingleRun ? `<div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
                         <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Iterations</div>
-                        <div style="font-size:22px;font-weight:bold;">${loopResult.iterations}</div>
-                    </div>
+                        <div style="font-size:22px;font-weight:bold;">${displayIterations}</div>
+                    </div>` : ''}
                     <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Final Accuracy</div>
-                        <div style="font-size:22px;font-weight:bold;color:${accuracyColour(loopResult.finalAccuracy)};">${pct(loopResult.finalAccuracy)}</div>
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">${isSingleRun ? 'Run Accuracy' : 'Final Accuracy'}</div>
+                        <div style="font-size:22px;font-weight:bold;color:${accuracyColour(displayAccuracy)};">${pct(displayAccuracy)}</div>
                     </div>
-                    <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
+                    ${!isSingleRun ? `<div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
                         <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Best Accuracy</div>
                         <div style="font-size:22px;font-weight:bold;color:${accuracyColour(loopResult.bestAccuracy)};">${pct(loopResult.bestAccuracy)}</div>
-                    </div>
+                    </div>` : ''}
                     <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">Exit Reason</div>
-                        <div style="font-size:14px;font-weight:bold;color:${exitColour};margin-top:4px;">${exitLabel}</div>
+                        <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;">${isSingleRun ? 'Scenarios' : 'Exit Reason'}</div>
+                        <div style="font-size:${isSingleRun ? '22px' : '14px'};font-weight:bold;color:${isSingleRun ? 'inherit' : exitColour};${isSingleRun ? '' : 'margin-top:4px;'}">${isSingleRun ? (loopResult.scenarioCount || (loopResult.scenarios || []).length) : exitLabel}</div>
                     </div>
                 </div>
 
-                <h5 style="margin:0 0 8px;">Accuracy Trend</h5>
+                ${!isSingleRun && sparkline ? `<h5 style="margin:0 0 8px;">Accuracy Trend</h5>
                 <div style="display:flex;align-items:flex-end;padding:8px 0 4px;margin-bottom:16px;border-bottom:1px solid var(--border-color);">
-                    ${sparkline || '<span style="color:var(--text-secondary);font-size:12px;">No data</span>'}
-                </div>
+                    ${sparkline}
+                </div>` : ''}
 
                 ${stuckPointsHtml}
                 ${rewritesHtml}
                 ${adviceHtml}
 
-                <h5 style="margin:16px 0 10px;">Iteration Details</h5>
-                ${iterationCards}
+                <h5 style="margin:16px 0 10px;">${isSingleRun ? 'Latest Run' : 'Iteration Details'}</h5>
+                ${isSingleRun
+                    ? iterationCards.replace(/Iteration \d+/, 'This iteration')
+                    : iterationCards
+                }
             `;
             container.style.display = 'block';
         }
