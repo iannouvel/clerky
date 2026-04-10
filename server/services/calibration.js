@@ -910,14 +910,26 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         if (onProgress) onProgress(step, msg, extra);
     };
 
-    // 1. Load all practice points with persisted graduation state
+    // 1. Load practice points, filtered to only those matching current auditableElements
     const { title: guidelineTitle } = await getGuidelineForCalibration(guidelineId);
+    const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+    const auditableElements = guidelineDoc.exists ? (guidelineDoc.data().auditableElements || []) : [];
+    const currentIds = new Set(
+        auditableElements.map(e => generatePointId(e.name || e.title || '')).filter(Boolean)
+    );
+
     const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
     if (snap.empty) throw new Error('No practice points found — run syncPracticePoints first');
 
     let allPoints = snap.docs
         .map(d => ({ id: d.id, ...d.data() }))
+        .filter(p => currentIds.has(p.id))  // only points matching current auditableElements
         .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+
+    if (allPoints.length === 0) throw new Error('No practice points match current auditableElements — re-sync first');
+    if (allPoints.length < snap.docs.length) {
+        log('filter', `Filtered ${snap.docs.length} metric docs to ${allPoints.length} matching current auditableElements`);
+    }
 
     if (pointCount > 0) allPoints = allPoints.slice(0, pointCount);
 
@@ -1038,8 +1050,7 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
             allAdviceEvolution.push({ ...entry, iteration });
         }
 
-        // Update per-point consecutive counts and persist to Firestore
-        const persistPromises = [];
+        // Update per-point consecutive counts
         for (const p of activePoints) {
             attemptCount[p.id]++;
             const acc = (result.pointAccuracies || {})[p.id];
@@ -1055,13 +1066,9 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
                 }
                 consecutiveCorrect[p.id] = 0;
             }
-            persistPromises.push(
-                persistGraduationState(guidelineId, p.id, consecutiveCorrect[p.id], graduated.has(p.id), attemptCount[p.id])
-            );
         }
-        await Promise.all(persistPromises);
 
-        // Build point status snapshot for the polling client
+        // Emit run results IMMEDIATELY so the polling client can render
         const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
             name: p.name,
             consecutiveCorrect: consecutiveCorrect[p.id] || 0,
@@ -1073,6 +1080,15 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
             `${graduated.size}/${allPoints.length} graduated after iteration ${iteration}`,
             { latestRun: result, iteration, pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
         );
+
+        // Persist graduation state to Firestore (non-blocking — don't let failures block the loop)
+        try {
+            await Promise.all(activePoints.map(p =>
+                persistGraduationState(guidelineId, p.id, consecutiveCorrect[p.id], graduated.has(p.id), attemptCount[p.id])
+            ));
+        } catch (err) {
+            log('persist_warn', `Graduation state persistence failed (will retry next iteration): ${err.message}`);
+        }
     }
 
     if (graduated.size >= allPoints.length) {
