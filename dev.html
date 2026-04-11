@@ -1604,6 +1604,17 @@
                 <!-- Main content -->
                 <div id="dashMain" style="display:none;">
 
+                    <!-- Section 0: Guideline Text -->
+                    <div style="margin-bottom:24px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
+                        <div onclick="window._dashToggle('dashGuidelineTextBody')" style="padding:10px 14px;background:var(--bg-tertiary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+                            <h5 style="margin:0;" id="dashGuidelineTextTitle">Guideline Text</h5>
+                            <span style="font-size:11px;color:var(--text-secondary);">click to collapse</span>
+                        </div>
+                        <div id="dashGuidelineTextBody" style="padding:14px;">
+                            <div id="dashGuidelineTextContent" style="font-size:12px;font-family:monospace;white-space:pre-wrap;max-height:500px;overflow-y:auto;line-height:1.6;color:var(--text-primary);">Loading...</div>
+                        </div>
+                    </div>
+
                     <!-- Section 1: Practice Points -->
                     <div style="margin-bottom:28px;">
                         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
