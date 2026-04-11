@@ -9210,14 +9210,21 @@ async function deduplicatePracticePoints(points, userId, prefix = 'RULE') {
     const clusterResult = await routeToAI({
         messages: [
             { role: 'system', content: 'You are a clinical rule analyst. Return ONLY a valid JSON array. No other text.' },
-            { role: 'user', content: `Identify groups of rules below that cover the same underlying clinical decision — same or near-identical condition AND action, even if worded differently or extracted from different sections.
+            { role: 'user', content: `Identify groups of rules below that cover the same underlying clinical decision — cluster them aggressively. Rules are duplicates if they express the same condition and action, even if:
+- phrasing differs ("before 10 weeks" = "less than 10 weeks" = "prior to 10 weeks")
+- population wording differs ("women" = "pregnant individuals" = "patients"; "multiple pregnancy" = "twin pregnancy" = "twins")
+- one is an affirmative and the other a negation of the same act ("do not perform X before Y" = "avoid X before Y" = "only perform X from Y onwards")
+- one adds minor qualifiers like "if feasible", "where possible", "routinely"
+- verb choice differs ("document" = "record" = "ensure documented"; "inform" = "advise" = "counsel")
+
+Be AGGRESSIVE — if two rules would fire on the same patient in the same scenario and require the same documentation, they are duplicates.
 
 ${ruleList}
 
 Return a JSON array of clusters. Each cluster is an array of integer indices. Only include clusters with 2 or more members. Return [] if no duplicates exist.
 Example output: [[0,3,7],[2,9]]` }
         ]
-    }, userId, null, 1024);
+    }, userId, null, 1024, 'simple');
 
     let clusters = [];
     try {
@@ -9282,7 +9289,7 @@ Return a single JSON object:
   "dataFieldsRequired": ["combined list of required data fields from all options"]
 }` }
             ]
-        }, userId, null, 1024);
+        }, userId, null, 1024, 'simple');
 
         let synthesized = null;
         try {
@@ -9829,8 +9836,16 @@ async function extractAuditableElements(content, userId = null, guidelineSummary
             return [];
         }
 
+        // Step 1.6: Second dedup pass — catches any new duplicates introduced by rewriting
+        const prefix = (guidelineSummary || 'RULE')
+            .replace(/[^A-Za-z0-9\s]/g, '')
+            .split(/\s+/).slice(0, 3)
+            .map(w => w.substring(0, 4).toUpperCase())
+            .join('').substring(0, 8) || 'RULE';
+        const dedupedPoints = await deduplicatePracticePoints(validatedPoints, userId, prefix);
+
         // Step 2: Batch expand if needed (optional - only if descriptions need improvement)
-        const auditableElements = await batchExpandPracticePoints(validatedPoints, content, userId);
+        const auditableElements = await batchExpandPracticePoints(dedupedPoints, content, userId);
 
         console.log(`[AUDITABLE-OPT] Extraction complete: ${auditableElements.length} auditable elements`);
         return auditableElements;
