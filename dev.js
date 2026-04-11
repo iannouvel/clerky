@@ -7485,6 +7485,35 @@ ${responseText}
 
         // ── Dashboard helpers ──────────────────────────────────────────────────
 
+        async function loadGuidelineText(guidelineId) {
+            const el = document.getElementById('dashGuidelineTextContent');
+            const titleEl = document.getElementById('dashGuidelineTextTitle');
+            if (!el) return;
+            try {
+                const { doc, getDoc, collection } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+                let content = null;
+                // 1. Try main doc fields
+                const snap = await getDoc(doc(window.db, 'guidelines', guidelineId));
+                if (snap.exists()) {
+                    const d = snap.data();
+                    if (titleEl) titleEl.textContent = `Guideline Text — ${d.humanFriendlyTitle || d.title || guidelineId}`;
+                    content = d.condensed || d.content || null;
+                }
+                // 2. Try content subcollection
+                if (!content) {
+                    const condensedSnap = await getDoc(doc(window.db, 'guidelines', guidelineId, 'content', 'condensed'));
+                    if (condensedSnap.exists()) content = condensedSnap.data()?.condensed || null;
+                }
+                if (!content) {
+                    const fullSnap = await getDoc(doc(window.db, 'guidelines', guidelineId, 'content', 'full'));
+                    if (fullSnap.exists()) content = fullSnap.data()?.content || null;
+                }
+                el.textContent = content || '(No guideline text found in Firestore)';
+            } catch (err) {
+                el.textContent = `Error loading guideline text: ${err.message}`;
+            }
+        }
+
         function dashAccColor(acc) {
             if (acc === null || acc === undefined) return '#6c757d';
             return acc >= 0.9 ? '#28a745' : acc >= 0.7 ? '#ff9800' : '#dc3545';
@@ -7646,14 +7675,14 @@ ${responseText}
                                 ${fps > 0 ? ` <span style="color:#ff9800;font-weight:700;">✗${fps} fp</span>` : ''}
                             </span>
                         </div>
-                        <div id="${scId}" style="display:none;padding:12px;">
+                        <div id="${scId}" style="display:block;padding:12px;">
                             <div style="margin-bottom:10px;">
                                 <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px;">Ground Truth</div>
                                 <div>${gtHtml}</div>
                             </div>
                             ${s.transcript ? `<div style="margin-bottom:10px;">
-                                <span onclick="window._dashToggle('${scId}_tx')" style="font-size:11px;color:#6f42c1;cursor:pointer;font-weight:600;">▶ Show Clinical Note</span>
-                                <div id="${scId}_tx" style="display:none;margin-top:6px;padding:8px;background:var(--bg-input);border-radius:4px;font-size:11px;font-family:monospace;white-space:pre-wrap;max-height:200px;overflow-y:auto;">${s.transcript}</div>
+                                <span onclick="window._dashToggle('${scId}_tx')" style="font-size:11px;color:#6f42c1;cursor:pointer;font-weight:600;">▼ Clinical Note</span>
+                                <div id="${scId}_tx" style="display:block;margin-top:6px;padding:8px;background:var(--bg-input);border-radius:4px;font-size:11px;font-family:monospace;white-space:pre-wrap;max-height:200px;overflow-y:auto;">${s.transcript}</div>
                             </div>` : ''}
                             <table style="width:100%;border-collapse:collapse;font-size:12px;">
                                 <thead><tr style="background:var(--bg-input);font-size:10px;text-transform:uppercase;color:var(--text-secondary);">
@@ -7685,7 +7714,7 @@ ${responseText}
                         </div>
                         <span style="font-size:18px;font-weight:700;color:${dashAccColor(run.overallAccuracy)};">${acc}</span>
                     </div>
-                    <div id="${cardId}" style="display:none;padding:14px;">
+                    <div id="${cardId}" style="display:block;padding:14px;">
                         <div style="margin-bottom:14px;">
                             <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px;">Scenarios</div>
                             ${scenariosHtml || '<p style="color:var(--text-secondary);font-size:12px;">No scenario data.</p>'}
@@ -7755,6 +7784,7 @@ ${responseText}
 
                 dashRenderPoints(points, pointRunHistory);
                 dashRenderRuns(runs, pointNamesMap);
+                loadGuidelineText(guidelineId);
 
                 document.getElementById('dashMain').style.display = 'block';
                 status.textContent = `${points.length} points · ${runs.length} runs`;
