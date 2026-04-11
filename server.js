@@ -9210,14 +9210,19 @@ async function deduplicatePracticePoints(points, userId, prefix = 'RULE') {
     const clusterResult = await routeToAI({
         messages: [
             { role: 'system', content: 'You are a clinical rule analyst. Return ONLY a valid JSON array. No other text.' },
-            { role: 'user', content: `Identify groups of rules below that cover the same underlying clinical decision — cluster them aggressively. Rules are duplicates if they express the same condition and action, even if:
-- phrasing differs ("before 10 weeks" = "less than 10 weeks" = "prior to 10 weeks")
-- population wording differs ("women" = "pregnant individuals" = "patients"; "multiple pregnancy" = "twin pregnancy" = "twins")
-- one is an affirmative and the other a negation of the same act ("do not perform X before Y" = "avoid X before Y" = "only perform X from Y onwards")
-- one adds minor qualifiers like "if feasible", "where possible", "routinely"
-- verb choice differs ("document" = "record" = "ensure documented"; "inform" = "advise" = "counsel")
+            { role: 'user', content: `Identify groups of rules below that are EXACT SEMANTIC DUPLICATES — rules that express the SAME condition AND the SAME action, differing only in surface wording.
 
-Be AGGRESSIVE — if two rules would fire on the same patient in the same scenario and require the same documentation, they are duplicates.
+CLUSTER if the ONLY differences are:
+- synonymous phrasing of the same threshold ("before 10 weeks" = "less than 10 weeks" = "prior to 10+0 weeks")
+- synonymous population label ("women" = "pregnant individuals" = "patients")
+- synonymous verb for the same act ("inform" = "advise" = "counsel the patient about"; "document" = "record" = "ensure documented")
+- one negation is logically equivalent to the other ("do not perform X before 10 weeks" = "avoid X before 10 weeks" = "only perform X from 10 weeks")
+
+DO NOT CLUSTER if:
+- the conditions are different thresholds (e.g. "before 10 weeks" ≠ "before 15 weeks")
+- the actions are different acts (e.g. "perform CVS" ≠ "counsel about CVS" ≠ "document CVS decision")
+- one rule adds a meaningful extra constraint or exception the other lacks
+- the rules apply to different populations with genuinely different management (e.g. "twin pregnancy" ≠ "singleton pregnancy")
 
 ${ruleList}
 
