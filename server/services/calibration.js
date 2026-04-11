@@ -1054,6 +1054,10 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         } catch (err) {
             log('error', `Iteration ${iteration} failed: ${err.message}`);
             allRuns.push({ iteration, error: err.message, overallAccuracy: null });
+            // Don't burn attempt budget on billing/auth errors — abort the loop immediately
+            if (/insufficient balance|quota|billing|payment|rate.?limit/i.test(err.message)) {
+                throw new Error(`Calibration aborted: ${err.message}`);
+            }
             for (const p of activePoints) attemptCount[p.id]++;
             continue;
         }
