@@ -3587,6 +3587,7 @@ ${responseText}
 
         // --- NEW BATCH REGEN LOGIC ---
         const batchRegenSearch = document.getElementById('batchRegenSearch');
+        const batchRegenScopeFilter = document.getElementById('batchRegenScopeFilter');
         const batchRegenOrgFilter = document.getElementById('batchRegenOrgFilter');
         const batchRegenYearFilter = document.getElementById('batchRegenYearFilter');
         const batchRegenDateFilter = document.getElementById('batchRegenDateFilter');
@@ -3661,6 +3662,7 @@ ${responseText}
 
         function applyBatchRegenFilters() {
             const search = batchRegenSearch?.value.toLowerCase() || '';
+            const scope = batchRegenScopeFilter?.value || '';
             const org = batchRegenOrgFilter?.value || '';
             const year = batchRegenYearFilter?.value || '';
             const dateFilter = batchRegenDateFilter?.value || '';
@@ -3676,6 +3678,7 @@ ${responseText}
                     (g.displayName && g.displayName.toLowerCase().includes(search)) ||
                     (g.title && g.title.toLowerCase().includes(search)) ||
                     (g.id && g.id.toLowerCase().includes(search));
+                const matchesScope = !scope || g.scope === scope;
                 const matchesOrg = !org || g.organisation === org;
                 const matchesYear = !year || String(g.yearProduced) === String(year);
 
@@ -3696,7 +3699,7 @@ ${responseText}
                     }
                 }
 
-                return matchesSearch && matchesOrg && matchesYear && matchesDate;
+                return matchesSearch && matchesScope && matchesOrg && matchesYear && matchesDate;
             });
 
             renderBatchRegenTable();
@@ -3849,6 +3852,7 @@ ${responseText}
         // Event Listeners
         if (batchRegenLoadBtn) batchRegenLoadBtn.addEventListener('click', loadGuidelinesForBatchRegen);
         if (batchRegenSearch) batchRegenSearch.addEventListener('input', applyBatchRegenFilters);
+        if (batchRegenScopeFilter) batchRegenScopeFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenOrgFilter) batchRegenOrgFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenYearFilter) batchRegenYearFilter.addEventListener('change', applyBatchRegenFilters);
         if (batchRegenDateFilter) batchRegenDateFilter.addEventListener('change', applyBatchRegenFilters);
