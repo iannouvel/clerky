@@ -14,7 +14,7 @@ function generatePointId(name) {
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '_')
         .replace(/^_+|_+$/g, '')
-        .substring(0, 100);
+        .substring(0, 200);
 }
 
 /**
