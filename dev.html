@@ -1485,6 +1485,22 @@
                     </div>
                 </div>
 
+                <!-- Full Pipeline -->
+                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border:2px solid #28a745;border-radius:6px;">
+                    <p style="font-size:12px;font-weight:600;color:#28a745;text-transform:uppercase;margin:0 0 6px;">Full Calibration Pipeline</p>
+                    <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;">Regenerates practice points from scratch, syncs, resets graduation, then runs the calibration loop — all in one click.</p>
+                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                        <button id="runFullPipelineBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;font-weight:600;">Run Full Pipeline</button>
+                        <span id="pipelineStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                    </div>
+                    <div id="pipelineSteps" style="display:none;margin-top:12px;font-size:13px;line-height:2;">
+                        <div id="pipelineStep1" style="color:var(--text-secondary);"></div>
+                        <div id="pipelineStep2" style="color:var(--text-secondary);"></div>
+                        <div id="pipelineStep3" style="color:var(--text-secondary);"></div>
+                        <div id="pipelineStep4" style="color:var(--text-secondary);"></div>
+                    </div>
+                </div>
+
                 <!-- Step 1: Sync -->
                 <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
                     <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Sync practice points</p>
