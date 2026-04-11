@@ -7483,6 +7483,222 @@ ${responseText}
             }
         }
 
+        // ── Dashboard helpers ──────────────────────────────────────────────────
+
+        function dashAccColor(acc) {
+            if (acc === null || acc === undefined) return '#6c757d';
+            return acc >= 0.9 ? '#28a745' : acc >= 0.7 ? '#ff9800' : '#dc3545';
+        }
+
+        function dashAccBadge(acc) {
+            if (acc === null || acc === undefined) return `<span style="color:#6c757d;">—</span>`;
+            return `<span style="color:${dashAccColor(acc)};font-weight:bold;">${Math.round(acc * 100)}%</span>`;
+        }
+
+        function dashRuleTypePill(ruleType) {
+            const map = {
+                hard_contraindication: ['CONTRAIND.', '#dc3545'],
+                hard_requirement:      ['REQUIRED',  '#0d6efd'],
+                mandatory_counselling: ['COUNSEL',   '#6f42c1'],
+                soft_recommendation:   ['RECOMMEND', '#ff9800'],
+                contextual_caution:    ['CAUTION',   '#6c757d'],
+                audit_metric:          ['AUDIT',     '#20c997'],
+                result_interpretation: ['INTERPRET', '#17a2b8']
+            };
+            const [label, color] = map[ruleType] || [(ruleType || 'RULE').toUpperCase().substring(0,9), '#6c757d'];
+            return `<span style="display:inline-block;padding:2px 5px;border-radius:3px;background:${color}22;color:${color};font-size:10px;font-weight:700;letter-spacing:0.4px;white-space:nowrap;">${label}</span>`;
+        }
+
+        window._dashToggle = function(id) {
+            const el = document.getElementById(id);
+            if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        };
+        window._dashToggleRow = function(id) {
+            const el = document.getElementById(id);
+            if (el) el.style.display = el.style.display === 'none' ? 'table-row' : 'none';
+        };
+
+        function dashPointDetailHTML(p, runHistory) {
+            const parts = [];
+            if (p.condition || p.action) {
+                parts.push(`<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+                    <div><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:2px;">Condition (IF)</div><div style="font-size:12px;">${p.condition || '—'}</div></div>
+                    <div><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:2px;">Action (THEN)</div><div style="font-size:12px;">${p.action || '—'}</div></div>
+                </div>`);
+            }
+            if (p.advice) {
+                parts.push(`<div style="margin-bottom:10px;padding:8px 12px;background:rgba(111,66,193,0.08);border-left:3px solid #6f42c1;border-radius:0 4px 4px 0;">
+                    <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:#6f42c1;margin-bottom:3px;">Current Calibration Advice (hint used by evaluator)</div>
+                    <div style="font-size:12px;">${p.advice}</div>
+                </div>`);
+            }
+            if (!runHistory.length) {
+                parts.push(`<div style="color:var(--text-secondary);font-size:12px;">Never evaluated in any calibration run yet.</div>`);
+            } else {
+                const rows = runHistory.map(h => {
+                    const vColor = h.verdict === 'correct' ? '#28a745' : '#dc3545';
+                    const vLabel = h.verdict === 'correct' ? '✓ Correct' : h.verdict === 'miss' ? '✗ Miss' : '✗ False pos.';
+                    const date = new Date(h.timestamp).toLocaleDateString('en-GB', { day:'2-digit', month:'short', year:'2-digit', hour:'2-digit', minute:'2-digit' });
+                    return `<tr style="border-bottom:1px solid var(--border-color);">
+                        <td style="padding:4px 8px;font-size:11px;color:var(--text-secondary);white-space:nowrap;">${date}</td>
+                        <td style="padding:4px 8px;font-size:12px;">${h.scenarioName}</td>
+                        <td style="padding:4px 8px;white-space:nowrap;"><span style="color:${vColor};font-weight:700;font-size:12px;">${vLabel}</span></td>
+                        <td style="padding:4px 8px;font-size:11px;color:var(--text-secondary);">${h.reason || '—'}</td>
+                    </tr>`;
+                }).join('');
+                parts.push(`<div><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">All Evaluations (${runHistory.length})</div>
+                    <table style="width:100%;border-collapse:collapse;border:1px solid var(--border-color);border-radius:4px;overflow:hidden;">
+                        <thead><tr style="background:var(--bg-input);font-size:10px;text-transform:uppercase;color:var(--text-secondary);">
+                            <th style="padding:4px 8px;text-align:left;">Date</th><th style="padding:4px 8px;text-align:left;">Scenario</th>
+                            <th style="padding:4px 8px;text-align:left;width:100px;">Verdict</th><th style="padding:4px 8px;text-align:left;">Evaluator Reasoning</th>
+                        </tr></thead><tbody>${rows}</tbody>
+                    </table></div>`);
+            }
+            return parts.join('');
+        }
+
+        function dashRenderPoints(points, pointRunHistory) {
+            window._dash_points = points;
+            window._dash_pointRunHistory = pointRunHistory;
+            dashRenderPointsFiltered(document.getElementById('dashPointFilter').value || 'all');
+            document.getElementById('dashPointFilter').onchange = e => dashRenderPointsFiltered(e.target.value);
+        }
+
+        function dashRenderPointsFiltered(filter) {
+            const points = window._dash_points || [];
+            const prh = window._dash_pointRunHistory || {};
+            const filtered = points.filter(p => {
+                if (filter === 'graduated') return p.graduated;
+                if (filter === 'active') return !p.graduated;
+                if (filter === 'untested') return p.accuracy === null;
+                if (filter === 'failing') return p.accuracy !== null && p.accuracy < 0.7 && !p.graduated;
+                return true;
+            });
+            document.getElementById('dashPointsCount').textContent = `(${filtered.length} shown)`;
+            const tbody = document.getElementById('dashPointsBody');
+            if (!filtered.length) {
+                tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">No points match this filter.</td></tr>`;
+                return;
+            }
+            tbody.innerHTML = filtered.map(p => {
+                const rowId = `dpr_${CSS.escape(p.id)}`;
+                const rowBg = p.accuracy !== null && p.accuracy < 0.7 && !p.graduated ? 'background:rgba(220,53,69,0.04);' : '';
+                const statusBadge = p.graduated
+                    ? `<span style="color:#28a745;font-weight:700;font-size:11px;">GRAD</span>`
+                    : p.accuracy === null ? `<span style="color:#6c757d;font-size:11px;">UNTESTED</span>`
+                    : `<span style="color:#ff9800;font-size:11px;">ACTIVE</span>`;
+                const streak = p.consecutiveCorrect || 0;
+                return `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;${rowBg}" onclick="window._dashToggleRow('${rowId}')">
+                    <td style="padding:8px 12px;font-size:12px;">${p.name}</td>
+                    <td style="padding:8px 10px;">${dashRuleTypePill(p.ruleType)}</td>
+                    <td style="padding:8px 10px;text-align:center;">${dashAccBadge(p.accuracy)}</td>
+                    <td style="padding:8px 10px;text-align:center;${streak>0?'color:#28a745;font-weight:700;':''}">${streak}</td>
+                    <td style="padding:8px 10px;text-align:center;color:var(--text-secondary);">${p.calibrationAttempts || 0}</td>
+                    <td style="padding:8px 10px;text-align:center;">${statusBadge}</td>
+                </tr>
+                <tr id="${rowId}" style="display:none;background:var(--bg-tertiary);">
+                    <td colspan="6" style="padding:12px 16px;">${dashPointDetailHTML(p, prh[p.id] || [])}</td>
+                </tr>`;
+            }).join('');
+        }
+
+        function dashRenderRuns(runs, pointNamesMap) {
+            const container = document.getElementById('dashRunHistory');
+            document.getElementById('dashRunsCount').textContent = `(${runs.length} runs)`;
+            if (!runs.length) { container.innerHTML = '<p style="color:var(--text-secondary);font-size:13px;">No calibration runs yet — run the calibration loop first.</p>'; return; }
+            container.innerHTML = runs.map((run, idx) => {
+                const date = new Date(run.timestamp).toLocaleString('en-GB', { day:'2-digit', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' });
+                const acc = run.overallAccuracy !== undefined ? `${Math.round(run.overallAccuracy * 100)}%` : '—';
+                const advCount = run.adviceUpdated || 0;
+                const cardId = `drun_${run.runId || idx}`;
+
+                const scenariosHtml = (run.scenarios || []).map((s, si) => {
+                    const verdicts = s.verdicts || {};
+                    const detail = s.pointDetail || {};
+                    const passes = Object.values(verdicts).filter(v => v === 'correct').length;
+                    const misses = Object.values(verdicts).filter(v => v === 'miss').length;
+                    const fps = Object.values(verdicts).filter(v => v === 'false_positive').length;
+                    const scId = `${cardId}_s${si}`;
+
+                    const verdictRows = Object.entries(verdicts).map(([pId, verdict]) => {
+                        const pName = pointNamesMap[pId] || pId;
+                        const d = detail[pId] || {};
+                        const vColor = verdict === 'correct' ? '#28a745' : '#dc3545';
+                        const vLabel = verdict === 'correct' ? '✓ Correct' : verdict === 'miss' ? '✗ Miss' : '✗ False pos.';
+                        const rowBg2 = verdict !== 'correct' ? 'background:rgba(220,53,69,0.04);' : '';
+                        return `<tr style="border-bottom:1px solid var(--border-color);${rowBg2}">
+                            <td style="padding:5px 10px;font-size:12px;">${pName}</td>
+                            <td style="padding:5px 10px;white-space:nowrap;"><span style="color:${vColor};font-weight:700;font-size:12px;">${vLabel}</span></td>
+                            <td style="padding:5px 10px;font-size:11px;color:var(--text-secondary);">${d.reason || (verdict === 'correct' ? '—' : 'No reason recorded')}</td>
+                        </tr>`;
+                    }).join('');
+
+                    const gtHtml = Object.entries(s.groundTruth || {}).map(([k,v]) =>
+                        `<span style="display:inline-block;margin:2px;padding:2px 6px;background:var(--bg-input);border-radius:3px;font-size:11px;">${k}: <strong>${v}</strong></span>`
+                    ).join('') || '<span style="color:var(--text-secondary);font-size:11px;">—</span>';
+
+                    return `<div style="margin-bottom:8px;border:1px solid var(--border-color);border-radius:4px;overflow:hidden;">
+                        <div onclick="window._dashToggle('${scId}')" style="padding:8px 12px;background:var(--bg-tertiary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-size:13px;font-weight:600;">${s.name}</span>
+                            <span style="font-size:11px;">
+                                <span style="color:#28a745;">✓${passes}</span>
+                                ${misses > 0 ? ` <span style="color:#dc3545;font-weight:700;">✗${misses} miss</span>` : ''}
+                                ${fps > 0 ? ` <span style="color:#ff9800;font-weight:700;">✗${fps} fp</span>` : ''}
+                            </span>
+                        </div>
+                        <div id="${scId}" style="display:none;padding:12px;">
+                            <div style="margin-bottom:10px;">
+                                <div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:4px;">Ground Truth</div>
+                                <div>${gtHtml}</div>
+                            </div>
+                            ${s.transcript ? `<div style="margin-bottom:10px;">
+                                <span onclick="window._dashToggle('${scId}_tx')" style="font-size:11px;color:#6f42c1;cursor:pointer;font-weight:600;">▶ Show Clinical Note</span>
+                                <div id="${scId}_tx" style="display:none;margin-top:6px;padding:8px;background:var(--bg-input);border-radius:4px;font-size:11px;font-family:monospace;white-space:pre-wrap;max-height:200px;overflow-y:auto;">${s.transcript}</div>
+                            </div>` : ''}
+                            <table style="width:100%;border-collapse:collapse;font-size:12px;">
+                                <thead><tr style="background:var(--bg-input);font-size:10px;text-transform:uppercase;color:var(--text-secondary);">
+                                    <th style="padding:5px 10px;text-align:left;">Practice Point</th>
+                                    <th style="padding:5px 10px;text-align:left;width:110px;">Verdict</th>
+                                    <th style="padding:5px 10px;text-align:left;">Evaluator Reasoning</th>
+                                </tr></thead>
+                                <tbody>${verdictRows}</tbody>
+                            </table>
+                        </div>
+                    </div>`;
+                }).join('');
+
+                const adviceHtml = (run.adviceEvolutionLog || []).map(ev => `
+                    <div style="margin-bottom:8px;padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;">
+                        <div style="font-size:12px;font-weight:600;margin-bottom:6px;">${ev.pointName}</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:11px;">
+                            <div><div style="color:#dc3545;font-weight:700;font-size:10px;margin-bottom:2px;">BEFORE</div><div style="color:var(--text-secondary);">${ev.before || '(none)'}</div></div>
+                            <div><div style="color:#28a745;font-weight:700;font-size:10px;margin-bottom:2px;">AFTER</div><div>${ev.after}</div></div>
+                        </div>
+                    </div>`).join('');
+
+                return `<div style="margin-bottom:10px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
+                    <div onclick="window._dashToggle('${cardId}')" style="padding:10px 14px;background:var(--bg-tertiary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
+                        <div>
+                            <span style="font-size:13px;font-weight:600;">${date}</span>
+                            <span style="font-size:12px;color:var(--text-secondary);margin-left:12px;">${run.pointCount || '?'} points · ${(run.scenarios||[]).length} scenarios</span>
+                            ${advCount > 0 ? `<span style="font-size:11px;color:#6f42c1;margin-left:8px;font-weight:600;">⟳ ${advCount} advice updated</span>` : ''}
+                        </div>
+                        <span style="font-size:18px;font-weight:700;color:${dashAccColor(run.overallAccuracy)};">${acc}</span>
+                    </div>
+                    <div id="${cardId}" style="display:none;padding:14px;">
+                        <div style="margin-bottom:14px;">
+                            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px;">Scenarios</div>
+                            ${scenariosHtml || '<p style="color:var(--text-secondary);font-size:12px;">No scenario data.</p>'}
+                        </div>
+                        ${adviceHtml ? `<div>
+                            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px;">Advice Evolution</div>
+                            ${adviceHtml}
+                        </div>` : ''}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
         async function loadDashboard() {
             const guidelineId = document.getElementById('dashGuidelineSelect').value;
             if (!guidelineId) { document.getElementById('dashStatus').textContent = 'Select a guideline first.'; return; }
@@ -7490,14 +7706,10 @@ ${responseText}
             const status = document.getElementById('dashStatus');
             status.textContent = 'Loading...';
             document.getElementById('dashSummary').style.display = 'none';
-            document.getElementById('dashChartContainer').style.display = 'none';
-            document.getElementById('dashPointsTable').style.display = 'none';
-            document.getElementById('dashPointDetail').style.display = 'none';
+            document.getElementById('dashMain').style.display = 'none';
 
             try {
                 const token = await getCalibrationToken();
-
-                // Fetch points + runs in parallel
                 const [pointsRes, runsRes] = await Promise.all([
                     fetch(`${SERVER_URL}/getPracticePointMetrics?guidelineId=${guidelineId}`, { headers: { Authorization: `Bearer ${token}` } }),
                     fetch(`${SERVER_URL}/getCalibrationRuns?guidelineId=${guidelineId}&limit=20`, { headers: { Authorization: `Bearer ${token}` } })
@@ -7506,81 +7718,52 @@ ${responseText}
 
                 if (!pointsData.success) throw new Error(pointsData.error);
                 const points = pointsData.points || [];
-                const runs = (runsData.success ? runsData.runs : []).sort((a, b) => a.timestamp.localeCompare(b.timestamp));
+                const runs = (runsData.success ? runsData.runs : []).sort((a, b) => b.timestamp.localeCompare(a.timestamp));
 
-                // Build per-point run history from calibration run records
-                const pointHistory = {};  // pointId → [accuracy, ...]
+                // Build per-point evaluation history indexed by pointId
+                const pointRunHistory = {};
                 for (const run of runs) {
-                    for (const [pointId, acc] of Object.entries(run.pointAccuracies || {})) {
-                        if (!pointHistory[pointId]) pointHistory[pointId] = [];
-                        if (acc !== null) pointHistory[pointId].push(acc);
+                    for (const scenario of (run.scenarios || [])) {
+                        for (const [pId, verdict] of Object.entries(scenario.verdicts || {})) {
+                            if (!pointRunHistory[pId]) pointRunHistory[pId] = [];
+                            const d = (scenario.pointDetail || {})[pId] || {};
+                            pointRunHistory[pId].push({ timestamp: run.timestamp, runId: run.runId, scenarioName: scenario.name, verdict, reason: d.reason || '' });
+                        }
                     }
                 }
 
-                // Summary stats
+                // Build point names map for run history rendering
+                const pointNamesMap = {};
+                points.forEach(p => { pointNamesMap[p.id] = p.name; });
+                // Also pull names from runs in case points were removed
+                for (const run of runs) Object.assign(pointNamesMap, run.practicePointNames || {});
+
+                // Summary
                 const tested = points.filter(p => p.accuracy !== null);
+                const graduated = points.filter(p => p.graduated);
                 const above70 = tested.filter(p => p.accuracy >= 0.7);
                 const avgAcc = tested.length ? tested.reduce((s, p) => s + p.accuracy, 0) / tested.length : null;
-                const avgC = avgAcc !== null ? (avgAcc >= 0.9 ? '#28a745' : avgAcc >= 0.7 ? '#ff9800' : '#dc3545') : '#6c757d';
 
                 document.getElementById('dashTotalPoints').textContent = points.length;
+                document.getElementById('dashGraduated').textContent = graduated.length;
                 document.getElementById('dashTestedPoints').textContent = tested.length;
                 document.getElementById('dashAvgAccuracy').innerHTML = avgAcc !== null
-                    ? `<span style="color:${avgC};">${Math.round(avgAcc * 100)}%</span>` : '—';
-                document.getElementById('dashAbove70').textContent = tested.length
-                    ? `${above70.length} / ${tested.length}` : '—';
+                    ? `<span style="color:${dashAccColor(avgAcc)};">${Math.round(avgAcc * 100)}%</span>` : '—';
+                document.getElementById('dashAbove70').textContent = tested.length ? `${above70.length}/${tested.length}` : '—';
                 document.getElementById('dashRunCount').textContent = runs.length;
                 document.getElementById('dashSummary').style.display = 'block';
 
-                // Accuracy over time chart
-                renderAccuracyChart(runs, points, pointHistory);
+                dashRenderPoints(points, pointRunHistory);
+                dashRenderRuns(runs, pointNamesMap);
 
-                // Points table
-                const tbody = document.getElementById('dashPointsBody');
-                tbody.innerHTML = points.map(p => {
-                    const history = pointHistory[p.id] || [];
-                    const lastEval = p.lastEvaluated
-                        ? new Date(p.lastEvaluated).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' })
-                        : '—';
-                    const rowBg = p.accuracy !== null && p.accuracy < 0.7 ? 'background:rgba(220,53,69,0.06);' : '';
-                    return `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;${rowBg}"
-                                onclick="window._showPointDetail('${p.id}', ${JSON.stringify(p.name).replace(/'/g, "\\'")} , ${JSON.stringify(p.description || '').replace(/'/g, "\\'")} , ${JSON.stringify(history)})">
-                        <td style="padding:9px 12px;">${p.name}</td>
-                        <td style="padding:9px 12px;text-align:center;">${accuracyBar(p.accuracy)}</td>
-                        <td style="padding:9px 12px;text-align:center;">${sparkline(history)}</td>
-                        <td style="padding:9px 12px;text-align:center;color:var(--text-secondary);">${p.evaluationCount || 0}</td>
-                        <td style="padding:9px 12px;color:var(--text-secondary);font-size:12px;">${lastEval}</td>
-                    </tr>`;
-                }).join('') || '<tr><td colspan="5" style="padding:20px;text-align:center;color:var(--text-secondary);">No practice points found — run Sync Practice Points first.</td></tr>';
-
-                document.getElementById('dashPointsTable').style.display = 'block';
-                status.textContent = `${points.length} points, ${runs.length} calibration run${runs.length !== 1 ? 's' : ''}`;
+                document.getElementById('dashMain').style.display = 'block';
+                status.textContent = `${points.length} points · ${runs.length} runs`;
 
             } catch (err) {
                 status.textContent = `Error: ${err.message}`;
                 console.error('[DASH] load error:', err);
             }
         }
-
-        // Point detail expand (called from table row onclick)
-        window._showPointDetail = function(id, name, description, history) {
-            const detail = document.getElementById('dashPointDetail');
-            document.getElementById('dashDetailTitle').textContent = name;
-            document.getElementById('dashDetailDescription').textContent = description || 'No description available.';
-
-            if (history.length === 0) {
-                document.getElementById('dashDetailHistory').innerHTML = '<span style="color:#6c757d;">No calibration runs for this point yet.</span>';
-            } else {
-                const rows = history.map((acc, i) => {
-                    const c = acc >= 0.9 ? '#28a745' : acc >= 0.7 ? '#ff9800' : '#dc3545';
-                    return `<span style="display:inline-block;margin:2px 4px;padding:3px 8px;border-radius:12px;background:${c}22;color:${c};font-weight:bold;font-size:12px;">Run ${i + 1}: ${Math.round(acc * 100)}%</span>`;
-                }).join('');
-                document.getElementById('dashDetailHistory').innerHTML =
-                    `<div style="margin-bottom:8px;font-weight:600;font-size:12px;color:var(--text-secondary);">Run-by-run accuracy (oldest → newest):</div>${rows}`;
-            }
-            detail.style.display = 'block';
-            detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        };
 
         const loadDashBtn = document.getElementById('loadDashboardBtn');
         if (loadDashBtn) loadDashBtn.addEventListener('click', loadDashboard);
