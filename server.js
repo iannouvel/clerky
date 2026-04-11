@@ -9723,7 +9723,7 @@ Return a JSON array with one entry per rule (same order):
                     content: validationPrompt
                 }
             ]
-        }, userId, null, 4096);
+        }, userId, null, 4096, 'simple');
 
         if (!result || !result.content) {
             console.warn('[VALIDATE-POINTS] No validation result, returning original points');
