@@ -9764,20 +9764,30 @@ Return a JSON array with one entry per rule (same order):
             if (verdict.verdict === 'ok') {
                 validatedPoints.push(originalPoint);
                 okCount++;
-            } else if (verdict.verdict === 'rewrite' && verdict.condition && verdict.action) {
-                // Apply rewrite
-                const rewrittenPoint = {
-                    ...originalPoint,
-                    condition: verdict.condition,
-                    action: verdict.action,
-                    name: `If ${verdict.condition}, then ${verdict.action}`,
-                    description: originalPoint.description || '',
-                    _rewriteReason: verdict.reason
-                };
-                validatedPoints.push(rewrittenPoint);
-                rewriteCount++;
+            } else if (verdict.verdict === 'rewrite') {
+                if (verdict.condition && verdict.action) {
+                    // Apply rewrite
+                    const rewrittenPoint = {
+                        ...originalPoint,
+                        condition: verdict.condition,
+                        action: verdict.action,
+                        name: `If ${verdict.condition}, then ${verdict.action}`,
+                        description: originalPoint.description || '',
+                        _rewriteReason: verdict.reason
+                    };
+                    validatedPoints.push(rewrittenPoint);
+                    rewriteCount++;
+                } else {
+                    // Incomplete rewrite (missing condition or action) — pass through unchanged
+                    validatedPoints.push(originalPoint);
+                    okCount++;
+                }
             } else if (verdict.verdict === 'drop') {
                 dropCount++;
+            } else {
+                // Unknown verdict — pass through unchanged rather than silently losing the point
+                validatedPoints.push(originalPoint);
+                okCount++;
             }
         }
 
