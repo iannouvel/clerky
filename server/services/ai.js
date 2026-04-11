@@ -418,7 +418,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 
     } catch (error) {
         console.error('Error in sendToAI:', error.message);
-        throw new Error(`AI request failed: ${error.response?.data?.error?.message || error.message}`);
+        throw new Error(`AI request failed (${preferredProvider}): ${error.response?.data?.error?.message || error.message}`);
     }
 }
 
