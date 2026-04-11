@@ -7322,9 +7322,12 @@ ${responseText}
         const fullPipelineBtn = document.getElementById('runFullPipelineBtn');
         if (fullPipelineBtn) fullPipelineBtn.addEventListener('click', runFullCalibrationPipeline);
 
-        // Populate guideline dropdown when evolve tab is opened
-        const evolveTabTrigger = document.querySelector('[data-content="evolveContent"]');
-        if (evolveTabTrigger) evolveTabTrigger.addEventListener('click', populateCalibrationGuidelineSelect);
+        // Populate guideline dropdown when calibration tab opens
+        const calTabTrigger = document.querySelector('[data-content="calibrationDashboardContent"]');
+        if (calTabTrigger) calTabTrigger.addEventListener('click', () => {
+            populateCalibrationGuidelineSelect();
+            populateDashGuidelineSelect();
+        });
         // ─────────────────────────────────────────────────────────────────────
 
         // ─── Calibration Dashboard ────────────────────────────────────────────
@@ -7469,18 +7472,7 @@ ${responseText}
         }
 
         async function populateDashGuidelineSelect() {
-            const sel = document.getElementById('dashGuidelineSelect');
-            const scopeSel = document.getElementById('dashScopeFilter');
-            if (!sel || sel.dataset.loaded) return;
-            try {
-                const guidelines = await fetchCalibrationGuidelines();
-                buildScopeOptions(guidelines, scopeSel);
-                filterGuidelineSelect(guidelines, scopeSel, sel, 'Select a guideline...');
-                sel.dataset.loaded = '1';
-                scopeSel.addEventListener('change', () => filterGuidelineSelect(guidelines, scopeSel, sel, 'Select a guideline...'));
-            } catch (err) {
-                console.error('[DASH] guideline load error:', err.message);
-            }
+            // Dashboard reuses the calibrationGuidelineSelect — no separate selector needed
         }
 
         // ── Dashboard helpers ──────────────────────────────────────────────────
@@ -7729,7 +7721,7 @@ ${responseText}
         }
 
         async function loadDashboard() {
-            const guidelineId = document.getElementById('dashGuidelineSelect').value;
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
             if (!guidelineId) { document.getElementById('dashStatus').textContent = 'Select a guideline first.'; return; }
 
             const status = document.getElementById('dashStatus');
@@ -7798,18 +7790,39 @@ ${responseText}
         const loadDashBtn = document.getElementById('loadDashboardBtn');
         if (loadDashBtn) loadDashBtn.addEventListener('click', loadDashboard);
 
-        const calibDashTab = document.querySelector('[data-content="calibrationDashboardContent"]');
-        if (calibDashTab) calibDashTab.addEventListener('click', populateDashGuidelineSelect);
+        // (calibration tab trigger listener is set above near populateCalibrationGuidelineSelect)
         // ─────────────────────────────────────────────────────────────────────
 
-        // Hook into tab switching to initialize evolution tab
-        const evolveNavBtn = document.querySelector('[data-content="evolveContent"]');
-        if (evolveNavBtn) {
-            evolveNavBtn.addEventListener('click', () => {
-                // Small delay to let the tab become visible
-                setTimeout(initEvolveTab, 100);
+        // Sub-tab switching within the Calibration page
+        window.calSubTab = function(tab) {
+            const tabs = ['guideline', 'prompt'];
+            tabs.forEach(t => {
+                const pane = document.getElementById(`calPane-${t}`);
+                const btn = document.getElementById(`calTab-${t}`);
+                if (pane) pane.style.display = t === tab ? 'block' : 'none';
+                if (btn) {
+                    btn.style.fontWeight = t === tab ? '600' : '400';
+                    btn.style.color = t === tab ? 'var(--text-primary)' : 'var(--text-secondary)';
+                    btn.style.borderBottom = t === tab ? '3px solid #6f42c1' : '3px solid transparent';
+                }
             });
-        }
+            if (tab === 'prompt') {
+                // Inject prompt evolution HTML from hidden source on first activation
+                const pane = document.getElementById('calPane-prompt');
+                const source = document.getElementById('evolveContentSource');
+                if (pane && source && !pane._injected) {
+                    pane.innerHTML = source.innerHTML;
+                    pane._injected = true;
+                }
+                setTimeout(initEvolveTab, 100);
+                setTimeout(() => {
+                    const scenBtn = document.getElementById('loadEvolveScenariosBtn');
+                    if (scenBtn && !document.getElementById('evolveScenarioSelect')?.options.length) {
+                        scenBtn.click();
+                    }
+                }, 200);
+            }
+        };
 
     } catch (error) {
         console.error('Error in main script:', error);
