@@ -7497,16 +7497,16 @@ ${responseText}
                 if (snap.exists()) {
                     const d = snap.data();
                     if (titleEl) titleEl.textContent = `Guideline Text — ${d.humanFriendlyTitle || d.title || guidelineId}`;
-                    content = d.condensed || d.content || null;
+                    content = d.content || d.condensed || null;
                 }
-                // 2. Try content subcollection
-                if (!content) {
-                    const condensedSnap = await getDoc(doc(window.db, 'guidelines', guidelineId, 'content', 'condensed'));
-                    if (condensedSnap.exists()) content = condensedSnap.data()?.condensed || null;
-                }
+                // 2. Try full content subcollection first, condensed as fallback
                 if (!content) {
                     const fullSnap = await getDoc(doc(window.db, 'guidelines', guidelineId, 'content', 'full'));
                     if (fullSnap.exists()) content = fullSnap.data()?.content || null;
+                }
+                if (!content) {
+                    const condensedSnap = await getDoc(doc(window.db, 'guidelines', guidelineId, 'content', 'condensed'));
+                    if (condensedSnap.exists()) content = condensedSnap.data()?.condensed || null;
                 }
                 el.textContent = content || '(No guideline text found in Firestore)';
             } catch (err) {

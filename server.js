@@ -1267,8 +1267,17 @@ async function jobGenerateDisplayName(job, guidelineData) {
 
 // Regenerate auditable elements for a guideline (used in batch regeneration)
 async function jobRegenerateAuditable(job, guidelineData) {
-    // Prefer condensed content for efficiency (no verbatim quotes needed)
-    const content = guidelineData.condensed || guidelineData.content || job.data?.content;
+    // Use full content for practice point extraction — condensed loses clinical detail
+    let content = guidelineData.content || guidelineData.condensed || job.data?.content;
+    // If full content not on main doc, try the content subcollection
+    if (!content) {
+        const fullSub = await db.collection('guidelines').doc(job.guidelineId).collection('content').doc('full').get();
+        if (fullSub.exists) content = fullSub.data()?.content;
+    }
+    if (!content) {
+        const condensedSub = await db.collection('guidelines').doc(job.guidelineId).collection('content').doc('condensed').get();
+        if (condensedSub.exists) content = condensedSub.data()?.condensed;
+    }
     const batchId = job.data?.batchId;
     const batchInfo = batchId ? ` [${job.data.index}/${job.data.total}]` : '';
 

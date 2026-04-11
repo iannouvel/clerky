@@ -210,15 +210,16 @@ async function getGuidelineForCalibration(guidelineId) {
     if (!snap.exists) throw new Error(`Guideline ${guidelineId} not found`);
     const data = snap.data();
 
-    let content = data.condensed || data.content || null;
+    // Use full content — condensed loses clinical detail needed for accurate calibration
+    let content = data.content || data.condensed || null;
 
-    if (!content) {
-        const condensedSub = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
-        if (condensedSub.exists) content = condensedSub.data()?.condensed;
-    }
     if (!content) {
         const fullSub = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
         if (fullSub.exists) content = fullSub.data()?.content;
+    }
+    if (!content) {
+        const condensedSub = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
+        if (condensedSub.exists) content = condensedSub.data()?.condensed;
     }
     if (!content) throw new Error(`No content found for guideline ${guidelineId}`);
 
