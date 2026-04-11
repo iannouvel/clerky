@@ -6846,6 +6846,108 @@ ${responseText}
             }
         }
 
+        async function runFullCalibrationPipeline() {
+            const guidelineSelect = document.getElementById('calibrationGuidelineSelect');
+            const guidelineId = guidelineSelect.value;
+            const guidelineText = guidelineSelect.selectedOptions[0]?.text || guidelineId;
+            if (!guidelineId) { document.getElementById('pipelineStatus').textContent = 'Select a guideline first.'; return; }
+
+            if (!confirm(`Run the full calibration pipeline for:\n${guidelineText}\n\nThis will:\n1. Regenerate practice points from the guideline content\n2. Sync practice points (prunes stale)\n3. Reset all graduation state\n4. Run the calibration loop\n\nAll previous calibration data for this guideline will be lost.`)) return;
+
+            const pipelineBtn = document.getElementById('runFullPipelineBtn');
+            const pipelineStatus = document.getElementById('pipelineStatus');
+            const pipelineSteps = document.getElementById('pipelineSteps');
+            const step1 = document.getElementById('pipelineStep1');
+            const step2 = document.getElementById('pipelineStep2');
+            const step3 = document.getElementById('pipelineStep3');
+            const step4 = document.getElementById('pipelineStep4');
+
+            pipelineBtn.disabled = true;
+            pipelineSteps.style.display = 'block';
+            pipelineStatus.textContent = '';
+            step1.textContent = '⏳ Step 1/4: Regenerating practice points…';
+            step2.textContent = '';
+            step3.textContent = '';
+            step4.textContent = '';
+
+            // Reset calibration UI so step 4 results display cleanly
+            document.getElementById('calibrationRunStatus').textContent = '';
+            document.getElementById('calibrationProgress').style.display = 'none';
+            document.getElementById('calibrationGraduationStatus').style.display = 'none';
+            document.getElementById('calibrationRunResults').style.display = 'none';
+
+            try {
+                // ── Step 1: Regenerate auditable elements ──
+                const token1 = await auth.currentUser.getIdToken();
+                const regenRes = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token1}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineIds: [guidelineId] })
+                });
+                const regenData = await regenRes.json();
+                if (!regenData.success) throw new Error(regenData.error || 'Regeneration request failed');
+
+                if (regenData.batchId) {
+                    // Async batch — poll until finished
+                    await new Promise((resolve, reject) => {
+                        const poll = setInterval(async () => {
+                            try {
+                                const t = await auth.currentUser.getIdToken();
+                                const sr = await fetch(`${SERVER_URL}/api/batch-status/${regenData.batchId}`, {
+                                    headers: { Authorization: `Bearer ${t}` }
+                                });
+                                if (!sr.ok) return;
+                                const s = await sr.json();
+                                step1.textContent = `⏳ Step 1/4: Regenerating practice points… ${s.completed}/${s.total}`;
+                                if (s.finished) {
+                                    clearInterval(poll);
+                                    if (s.completed === 0) reject(new Error('Regeneration failed — 0 guidelines completed'));
+                                    else resolve(s);
+                                }
+                            } catch (e) { clearInterval(poll); reject(e); }
+                        }, 3000);
+                    });
+                }
+                step1.textContent = '✓ Step 1/4: Practice points regenerated';
+
+                // ── Step 2: Sync practice points ──
+                step2.textContent = '⏳ Step 2/4: Syncing practice points…';
+                const token2 = await getCalibrationToken();
+                const syncRes = await fetch(`${SERVER_URL}/syncPracticePoints`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token2}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId })
+                });
+                const syncData = await syncRes.json();
+                if (!syncData.success) throw new Error(syncData.error || 'Sync failed');
+                step2.textContent = `✓ Step 2/4: Synced — ${syncData.created} new, ${syncData.existing} existing, ${syncData.pruned || 0} stale removed (${syncData.total} total)`;
+
+                // ── Step 3: Reset graduation state ──
+                step3.textContent = '⏳ Step 3/4: Resetting graduation state…';
+                const token3 = await getCalibrationToken();
+                const resetRes = await fetch(`${SERVER_URL}/resetGraduation`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token3}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId })
+                });
+                const resetData = await resetRes.json();
+                if (!resetData.success) throw new Error(resetData.error || 'Reset failed');
+                step3.textContent = `✓ Step 3/4: Graduation reset — ${resetData.count} points cleared`;
+
+                // ── Step 4: Run calibration loop ──
+                step4.textContent = '⏳ Step 4/4: Running calibration loop…';
+                await runCalibration();
+                step4.textContent = '✓ Step 4/4: Calibration loop complete';
+                pipelineStatus.textContent = 'Pipeline complete.';
+
+            } catch (err) {
+                pipelineStatus.textContent = `Error: ${err.message}`;
+                console.error('[PIPELINE]', err);
+            } finally {
+                pipelineBtn.disabled = false;
+            }
+        }
+
         function renderCalibrationLoopResults(loopResult, container) {
             // Accept either a full loop summary OR a single run record (from latestRun polling)
             const isSingleRun = !loopResult.exitReason && loopResult.runId;
@@ -7216,6 +7318,9 @@ ${responseText}
 
         const resetGradBtn = document.getElementById('resetGraduationBtn');
         if (resetGradBtn) resetGradBtn.addEventListener('click', resetGraduation);
+
+        const fullPipelineBtn = document.getElementById('runFullPipelineBtn');
+        if (fullPipelineBtn) fullPipelineBtn.addEventListener('click', runFullCalibrationPipeline);
 
         // Populate guideline dropdown when evolve tab is opened
         const evolveTabTrigger = document.querySelector('[data-content="evolveContent"]');
