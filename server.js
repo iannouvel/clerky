@@ -9945,7 +9945,7 @@ Return a JSON array with one entry per rule (same order):
         }
 
         // Apply verdicts
-        let okCount = 0, rewriteCount = 0, dropCount = 0;
+        let okCount = 0, rewriteCount = 0, dropCount = 0, auditDropCount = 0;
         const validatedPoints = [];
 
         for (const verdict of verdicts) {
@@ -9953,6 +9953,13 @@ Return a JSON array with one entry per rule (same order):
 
             const originalPoint = practicePoints[verdict.index];
             if (!originalPoint) continue;
+
+            // Filter out audit_metric and result_interpretation types — not patient-relevant
+            if (originalPoint.ruleType === 'audit_metric' || originalPoint.ruleType === 'result_interpretation') {
+                auditDropCount++;
+                dropCount++;
+                continue;
+            }
 
             if (verdict.verdict === 'ok') {
                 validatedPoints.push(originalPoint);
@@ -9984,7 +9991,7 @@ Return a JSON array with one entry per rule (same order):
             }
         }
 
-        console.log(`[VALIDATE-POINTS] Validation complete: ${okCount} ok, ${rewriteCount} rewritten, ${dropCount} dropped`);
+        console.log(`[VALIDATE-POINTS] Validation complete: ${okCount} ok, ${rewriteCount} rewritten, ${dropCount} dropped${auditDropCount > 0 ? ` (${auditDropCount} audit/interpretation)` : ''}`);
         return validatedPoints;
 
     } catch (error) {
