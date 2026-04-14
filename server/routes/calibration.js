@@ -19,5 +19,8 @@ router.get('/getCalibrationJobStatus', authenticateUser, calibrationController.g
 router.get('/getCalibrationRuns', authenticateUser, calibrationController.getCalibrationRuns);
 router.get('/getPracticePointHistory', authenticateUser, calibrationController.getPracticePointHistory);
 router.post('/resetGraduation', authenticateUser, calibrationController.resetGraduation);
+router.post('/improvePracticePointAdvice', authenticateUser, calibrationController.improvePracticePointAdvice);
+router.post('/rewritePracticePointRule', authenticateUser, calibrationController.rewritePracticePointRule);
+router.post('/removePracticePoint', authenticateUser, calibrationController.removePracticePoint);
 
 module.exports = router;

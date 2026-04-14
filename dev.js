@@ -7916,7 +7916,27 @@ ${responseText}
                 alert('Please provide feedback first');
                 return;
             }
-            alert('LLM advice improvement coming soon! Feedback: ' + feedback.substring(0, 50) + '...');
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = 'Improving...';
+            try {
+                const token = await window.auth.currentUser.getIdToken();
+                const res = await fetch(`${SERVER_URL}/improvePracticePointAdvice`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                    body: JSON.stringify({ guidelineId, pointId, feedback })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+                document.getElementById('ppFeedbackText').value = '';
+                alert('Advice updated successfully!\n\nNew advice:\n' + (data.newAdvice || '').substring(0, 300));
+                window.openPracticePointModal(guidelineId, pointId);
+            } catch (e) {
+                alert('Error improving advice: ' + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Improve Advice';
+            }
         };
 
         window._rewritePPRule = async function(guidelineId, pointId) {
@@ -7925,12 +7945,45 @@ ${responseText}
                 alert('Please provide feedback first');
                 return;
             }
-            alert('LLM rule rewriting coming soon! Feedback: ' + feedback.substring(0, 50) + '...');
+            if (!confirm('This will delete the current point and create 1-3 replacement points. Continue?')) return;
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = 'Rewriting...';
+            try {
+                const token = await window.auth.currentUser.getIdToken();
+                const res = await fetch(`${SERVER_URL}/rewritePracticePointRule`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                    body: JSON.stringify({ guidelineId, pointId, feedback })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+                const count = data.replacements?.length || 0;
+                alert(`Rule rewritten! ${count} replacement point(s) created.\n\nReasoning: ${(data.reasoning || '').substring(0, 200)}`);
+                document.getElementById('ppHistoryModal').style.display = 'none';
+            } catch (e) {
+                alert('Error rewriting rule: ' + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Rewrite Rule';
+            }
         };
 
         window._removePPPoint = async function(guidelineId, pointId) {
-            if (confirm('Remove this practice point? This cannot be undone.')) {
-                alert('Point removal coming soon!');
+            if (!confirm('Remove this practice point? This cannot be undone.')) return;
+            try {
+                const token = await window.auth.currentUser.getIdToken();
+                const res = await fetch(`${SERVER_URL}/removePracticePoint`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                    body: JSON.stringify({ guidelineId, pointId })
+                });
+                const data = await res.json();
+                if (!res.ok) throw new Error(data.error || 'Failed');
+                alert('Practice point removed.');
+                document.getElementById('ppHistoryModal').style.display = 'none';
+            } catch (e) {
+                alert('Error removing point: ' + e.message);
             }
         };
 

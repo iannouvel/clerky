@@ -2,6 +2,7 @@
 
 const { db } = require('../config/firebase');
 const { syncPracticePoints, samplePracticePoints, runCalibrationRun, runCalibrationLoop } = require('../services/calibration');
+const { evolvePointAdvice, rewritePracticePoint, routeToAI } = require('../services/ai');
 
 // In-memory job store — same pattern as evolutionJobs in promptsController
 const calibrationJobs = {};
@@ -398,6 +399,233 @@ exports.resetGraduation = async (req, res) => {
         res.json({ success: true, guidelineId, count });
     } catch (err) {
         console.error('[CALIBRATION] resetGraduation error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /improvePracticePointAdvice
+ * Body: { guidelineId, pointId, feedback }
+ *
+ * Uses LLM to improve the calibrated advice for a practice point,
+ * incorporating user feedback and error history from calibration runs.
+ */
+exports.improvePracticePointAdvice = async (req, res) => {
+    try {
+        const { guidelineId, pointId, feedback } = req.body;
+        if (!guidelineId || !pointId || !feedback) {
+            return res.status(400).json({ success: false, error: 'guidelineId, pointId, and feedback required' });
+        }
+
+        const userId = req.user.uid;
+        const metricsRef = db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').doc(pointId);
+        const pointSnap = await metricsRef.get();
+        if (!pointSnap.exists) return res.status(404).json({ success: false, error: 'Practice point not found' });
+
+        const pointData = pointSnap.data();
+        const guidelineSnap = await db.collection('guidelines').doc(guidelineId).get();
+        const guidelineTitle = guidelineSnap.exists ? (guidelineSnap.data().humanFriendlyTitle || guidelineSnap.data().title || guidelineId) : guidelineId;
+
+        // Gather error history from calibration runs
+        const runsSnap = await db.collection('guidelines').doc(guidelineId).collection('calibrationRuns')
+            .orderBy('timestamp', 'desc').limit(10).get();
+
+        const scenarios = [];
+        for (const runDoc of runsSnap.docs) {
+            const run = runDoc.data();
+            for (const scenario of (run.scenarios || [])) {
+                const verdict = (scenario.verdicts || {})[pointId];
+                if (verdict && verdict !== 'correct_absence') {
+                    const detail = (scenario.pointDetail || {})[pointId] || {};
+                    scenarios.push({
+                        transcript: scenario.transcript || scenario.name,
+                        suggestions: detail.suggestion ? [{ suggestion: detail.suggestion }] : [],
+                        shouldApply: (scenario.groundTruth?.applies || []).includes(pointId),
+                        verdict,
+                        modelReason: detail.reason || ''
+                    });
+                }
+            }
+        }
+
+        // Build enhanced prompt incorporating user feedback
+        const currentAdvice = pointData.advice || '';
+        const feedbackEnhanced = currentAdvice
+            ? `${currentAdvice}\n\nUSER FEEDBACK (incorporate this into the improved guidance):\n${feedback}`
+            : `USER FEEDBACK (use as basis for guidance):\n${feedback}`;
+
+        const newAdvice = await evolvePointAdvice(
+            { name: pointData.name, description: pointData.description || pointData.name },
+            feedbackEnhanced,
+            scenarios,
+            guidelineTitle,
+            userId
+        );
+
+        if (!newAdvice) throw new Error('LLM returned no advice');
+
+        // Save to Firestore
+        await metricsRef.update({
+            advice: newAdvice,
+            adviceLastUpdated: new Date().toISOString(),
+            adviceLastFeedback: feedback.substring(0, 500),
+            // Reset graduation so the point gets re-tested with new advice
+            consecutiveCorrect: 0,
+            graduated: false,
+            graduatedAt: null
+        });
+
+        console.log(`[CALIBRATION] Advice improved for ${pointId} via user feedback`);
+        res.json({ success: true, pointId, previousAdvice: currentAdvice, newAdvice });
+
+    } catch (err) {
+        console.error('[CALIBRATION] improvePracticePointAdvice error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /rewritePracticePointRule
+ * Body: { guidelineId, pointId, feedback }
+ *
+ * Uses LLM to rewrite the practice point itself into clearer, more testable rules.
+ * Replaces the original point with 1-3 new ones in Firestore.
+ */
+exports.rewritePracticePointRule = async (req, res) => {
+    try {
+        const { guidelineId, pointId, feedback } = req.body;
+        if (!guidelineId || !pointId || !feedback) {
+            return res.status(400).json({ success: false, error: 'guidelineId, pointId, and feedback required' });
+        }
+
+        const userId = req.user.uid;
+        const metricsCol = db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics');
+        const pointSnap = await metricsCol.doc(pointId).get();
+        if (!pointSnap.exists) return res.status(404).json({ success: false, error: 'Practice point not found' });
+
+        const pointData = pointSnap.data();
+        const guidelineSnap = await db.collection('guidelines').doc(guidelineId).get();
+        const guidelineTitle = guidelineSnap.exists ? (guidelineSnap.data().humanFriendlyTitle || guidelineSnap.data().title || guidelineId) : guidelineId;
+
+        // Get guideline content for context
+        let guidelineContent = '';
+        if (guidelineSnap.exists) {
+            const data = guidelineSnap.data();
+            guidelineContent = data.content || data.condensed || '';
+        }
+        if (!guidelineContent) {
+            const fullSnap = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
+            if (fullSnap.exists) guidelineContent = fullSnap.data()?.content || '';
+        }
+
+        // Gather error evidence
+        const runsSnap = await db.collection('guidelines').doc(guidelineId).collection('calibrationRuns')
+            .orderBy('timestamp', 'desc').limit(10).get();
+
+        const errorEvidence = [];
+        for (const runDoc of runsSnap.docs) {
+            const run = runDoc.data();
+            for (const scenario of (run.scenarios || [])) {
+                const verdict = (scenario.verdicts || {})[pointId];
+                if (verdict === 'miss' || verdict === 'false_positive') {
+                    const detail = (scenario.pointDetail || {})[pointId] || {};
+                    errorEvidence.push({
+                        shouldApply: (scenario.groundTruth?.applies || []).includes(pointId),
+                        verdict,
+                        modelReason: detail.reason || '',
+                        transcript: scenario.transcript || scenario.name
+                    });
+                }
+            }
+        }
+
+        // Add user feedback as extra evidence context
+        if (feedback) {
+            errorEvidence.push({
+                shouldApply: true,
+                verdict: 'user_feedback',
+                modelReason: `User feedback: ${feedback}`,
+                transcript: ''
+            });
+        }
+
+        const result = await rewritePracticePoint(
+            { name: pointData.name, description: pointData.description || pointData.name },
+            errorEvidence,
+            guidelineTitle,
+            guidelineContent,
+            userId
+        );
+
+        // Delete old point and create replacements
+        const batch = db.batch();
+        batch.delete(metricsCol.doc(pointId));
+
+        const newPointIds = [];
+        for (const replacement of result.replacements) {
+            const newId = replacement.name
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '_')
+                .replace(/^_+|_+$/g, '')
+                .substring(0, 200);
+
+            batch.set(metricsCol.doc(newId), {
+                name: replacement.name,
+                description: replacement.description || '',
+                accuracy: null,
+                evaluationCount: 0,
+                lastEvaluated: null,
+                syncedAt: new Date().toISOString(),
+                guidelineId,
+                guidelineTitle,
+                rewrittenFrom: pointId,
+                rewriteReason: result.reasoning
+            });
+            newPointIds.push(newId);
+        }
+
+        await batch.commit();
+
+        console.log(`[CALIBRATION] Rewrote ${pointId} into ${newPointIds.length} new points`);
+        res.json({
+            success: true,
+            originalPointId: pointId,
+            replacements: result.replacements,
+            reasoning: result.reasoning,
+            newPointIds
+        });
+
+    } catch (err) {
+        console.error('[CALIBRATION] rewritePracticePointRule error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /removePracticePoint
+ * Body: { guidelineId, pointId, reason }
+ *
+ * Removes a practice point from the calibration set.
+ */
+exports.removePracticePoint = async (req, res) => {
+    try {
+        const { guidelineId, pointId, reason } = req.body;
+        if (!guidelineId || !pointId) {
+            return res.status(400).json({ success: false, error: 'guidelineId and pointId required' });
+        }
+
+        const metricsRef = db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').doc(pointId);
+        const pointSnap = await metricsRef.get();
+        if (!pointSnap.exists) return res.status(404).json({ success: false, error: 'Practice point not found' });
+
+        const pointData = pointSnap.data();
+        await metricsRef.delete();
+
+        console.log(`[CALIBRATION] Removed practice point ${pointId}: ${reason || 'no reason given'}`);
+        res.json({ success: true, pointId, removedName: pointData.name, reason });
+
+    } catch (err) {
+        console.error('[CALIBRATION] removePracticePoint error:', err.message);
         res.status(500).json({ success: false, error: err.message });
     }
 };
