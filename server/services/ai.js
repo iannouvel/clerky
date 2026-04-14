@@ -459,9 +459,11 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         if (!preferredProvider && userId && taskComplexity) {
             try {
                 const taskModels = await getUserTaskModels(userId);
+                console.log(`[ROUTE-AI] Loaded task models for userId ${userId}: ${JSON.stringify(taskModels)}`);
                 const taskModel = taskComplexity === 'complex' ? taskModels.complexTaskModel
                     : taskComplexity === 'simple' ? taskModels.simpleTaskModel
                     : null;
+                console.log(`[ROUTE-AI] Task complexity '${taskComplexity}' → selected model: ${taskModel || '(none - using default)'}`);
                 if (taskModel) provider = taskModel;
             } catch (error) {
                 console.error('[DEBUG] Error getting task model preference:', error.message);

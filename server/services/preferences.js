@@ -270,6 +270,7 @@ const TASK_MODEL_DEFAULTS = {
 async function getUserTaskModels(userId) {
     const cached = userTaskModelsCache.get(userId);
     if (cached && (Date.now() - cached.timestamp) < USER_PREFERENCE_CACHE_TTL) {
+        console.log(`[PREFS] getUserTaskModels(${userId}): returned from cache: ${JSON.stringify(cached.models)}`);
         return cached.models;
     }
 
@@ -278,18 +279,22 @@ async function getUserTaskModels(userId) {
             const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
             if (userPrefsDoc.exists) {
                 const data = userPrefsDoc.data();
+                console.log(`[PREFS] getUserTaskModels(${userId}): loaded from Firestore: complexTaskModel=${data.complexTaskModel}, simpleTaskModel=${data.simpleTaskModel}`);
                 const models = {
                     complexTaskModel: data.complexTaskModel || TASK_MODEL_DEFAULTS.complexTaskModel,
                     simpleTaskModel: data.simpleTaskModel || TASK_MODEL_DEFAULTS.simpleTaskModel
                 };
                 userTaskModelsCache.set(userId, { models, timestamp: Date.now() });
                 return models;
+            } else {
+                console.log(`[PREFS] getUserTaskModels(${userId}): Firestore doc does not exist`);
             }
         }
     } catch (error) {
-        console.error('Error in getUserTaskModels:', error);
+        console.error('[PREFS] Error in getUserTaskModels:', error);
     }
 
+    console.log(`[PREFS] getUserTaskModels(${userId}): returning defaults: ${JSON.stringify(TASK_MODEL_DEFAULTS)}`);
     userTaskModelsCache.set(userId, { models: TASK_MODEL_DEFAULTS, timestamp: Date.now() });
     return { ...TASK_MODEL_DEFAULTS };
 }
