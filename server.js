@@ -7573,51 +7573,39 @@ app.listen(PORT, () => {
                 console.log('GitHub permissions check passed');
             }
 
-            // Check API health
-            await checkAPIHealth();
-
-            // Start background scanner for incomplete guidelines
-            startBackgroundScanner();
-
-            // Warm the guidelines cache proactively
-            console.log('[WARMUP] Starting proactive guidelines cache warmup...');
-            try {
-                const guidelines = await getCachedGuidelines();
-                if (guidelines.length > 0) {
-                    console.log(`[WARMUP] ✓ Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
-                } else {
-                    console.error('[WARMUP] ✗ WARNING: Cache warmup returned 0 guidelines! Server may not function correctly.');
-                    console.error('[WARMUP] This usually indicates a Firestore connectivity issue. Retrying in 30 seconds...');
-                    // Schedule a retry after 30 seconds
-                    setTimeout(async () => {
-                        console.log('[WARMUP] Retrying cache warmup...');
-                        const retryGuidelines = await getCachedGuidelines();
-                        console.log(`[WARMUP] Retry result: ${retryGuidelines.length} guidelines`);
-                    }, 30000);
-                }
-            } catch (warmupError) {
-                console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
-            }
-
         } catch (error) {
             console.error('Background GitHub checks failed:', error.message);
             console.log('Server will continue to operate with limited GitHub functionality');
+        }
 
-            // Still start background scanner even if GitHub checks fail
-            startBackgroundScanner();
+        // Check API health (always runs, even if GitHub checks fail)
+        try {
+            await checkAPIHealth();
+        } catch (apiError) {
+            console.error('[API-HEALTH] Error during API health check:', apiError.message);
+        }
 
-            // Still try to warm the cache even if GitHub checks failed
-            console.log('[WARMUP] Starting proactive guidelines cache warmup (after GitHub check failure)...');
-            try {
-                const guidelines = await getCachedGuidelines();
-                if (guidelines.length > 0) {
-                    console.log(`[WARMUP] ✓ Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
-                } else {
-                    console.error('[WARMUP] ✗ WARNING: Cache warmup returned 0 guidelines!');
-                }
-            } catch (warmupError) {
-                console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
+        // Start background scanner for incomplete guidelines
+        startBackgroundScanner();
+
+        // Warm the guidelines cache proactively
+        console.log('[WARMUP] Starting proactive guidelines cache warmup...');
+        try {
+            const guidelines = await getCachedGuidelines();
+            if (guidelines.length > 0) {
+                console.log(`[WARMUP] ✓ Guidelines cache warmed successfully: ${guidelines.length} guidelines loaded`);
+            } else {
+                console.error('[WARMUP] ✗ WARNING: Cache warmup returned 0 guidelines! Server may not function correctly.');
+                console.error('[WARMUP] This usually indicates a Firestore connectivity issue. Retrying in 30 seconds...');
+                // Schedule a retry after 30 seconds
+                setTimeout(async () => {
+                    console.log('[WARMUP] Retrying cache warmup...');
+                    const retryGuidelines = await getCachedGuidelines();
+                    console.log(`[WARMUP] Retry result: ${retryGuidelines.length} guidelines`);
+                }, 30000);
             }
+        } catch (warmupError) {
+            console.error('[WARMUP] Failed to warm guidelines cache:', warmupError.message);
         }
     });
 });
