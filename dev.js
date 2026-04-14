@@ -6734,7 +6734,7 @@ ${responseText}
                             if (d.pointStatus) {
                                 renderGraduationStatus(d.pointStatus, d.graduatedCount, d.totalPoints, graduationEl);
                                 graduationEl.style.display = 'block';
-                                if (d.iteration !== undefined) {
+                                if (d.iteration !== undefined && d.iteration > 0) {
                                     status.textContent = `Iteration ${d.iteration} complete — ${d.graduatedCount || 0}/${d.totalPoints || '?'} points graduated`;
                                 }
                             }
