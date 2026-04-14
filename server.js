@@ -9442,7 +9442,7 @@ RULE TYPE DEFINITIONS:
 - mandatory_counselling: MUST discuss/inform the patient about X. A required consent or counselling topic.
 - soft_recommendation: SHOULD do X / consider X. Good practice but not absolute.
 - contextual_caution: Be aware of X when Y. A warning or consideration, not a direct action.
-- audit_metric: A measurable standard for service quality monitoring.
+- audit_metric: A measurable standard for service quality monitoring — ONLY use this for patient-level audit criteria (e.g. 'document pregnancy loss within 14 days of procedure in patient record'). DO NOT use for service-level institutional metrics.
 - result_interpretation: How to interpret or act on a specific test result or finding.
 
 EXTRACTION RULES:
@@ -9451,7 +9451,6 @@ EXTRACTION RULES:
 - Different populations (e.g., HIV vs hepatitis B, singleton vs twin) = separate rules
 - Hard threshold vs soft preference = separate rules (e.g., 'do not before 15 weeks' vs 'prefer from 16 weeks')
 - Each counselling topic = separate rule
-- Each audit metric = separate rule
 - Each procedural step = separate rule
 
 TESTABILITY RULES — apply these BEFORE extracting each rule:
@@ -9460,6 +9459,7 @@ TESTABILITY RULES — apply these BEFORE extracting each rule:
 - DO NOT extract general management philosophies or protocol references (e.g. 'follow ABCD approach', 'use multidisciplinary team', 'adhere to local protocols') — only extract the specific individual actions within them.
 - If a rule requires clinical inference rather than reading documented data, DO NOT extract it.
 - If the condition is inherently indeterminate from a note ('if appropriate', 'if needed', 'if indicated'), DO NOT extract it.
+- DO NOT extract service-level or institutional audit requirements that apply to the healthcare service as a whole rather than to an individual patient encounter. Examples to EXCLUDE: maintaining registers of procedures, performing annual audits, recording aggregate operator statistics, tracking population-level rates. These cannot be evaluated from a single patient's clinical note.
 
 Focus ONLY on the "${section}" section. Do not extract from other sections.
 
