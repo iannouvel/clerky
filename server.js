@@ -7350,12 +7350,193 @@ app.post('/auditElementCheck', authenticateUser, async (req, res) => {
     }
 });
 
+// ============================================================================
+// API HEALTH CHECK FUNCTION
+// ============================================================================
+
+/**
+ * Tests each configured AI provider API to verify it's accessible and has balance.
+ * Reports status on startup.
+ */
+async function checkAPIHealth() {
+    const apis = [
+        {
+            name: 'DeepSeek',
+            env: 'DEEPSEEK_API_KEY',
+            endpoint: 'https://api.deepseek.com/v1/chat/completions',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.deepseek.com/v1/chat/completions',
+                headers: {
+                    'Authorization': `Bearer ${key}`,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    model: 'deepseek-chat',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'Gemini',
+            env: 'GOOGLE_AI_API_KEY',
+            endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+                headers: { 'Content-Type': 'application/json' },
+                params: { key },
+                data: {
+                    contents: [{ parts: [{ text: 'test' }] }],
+                    generationConfig: { maxOutputTokens: 10 }
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'OpenAI',
+            env: 'OPENAI_API_KEY',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.openai.com/v1/chat/completions',
+                headers: {
+                    'Authorization': `Bearer ${key}`,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    model: 'gpt-3.5-turbo',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'Anthropic',
+            env: 'ANTHROPIC_API_KEY',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.anthropic.com/v1/messages',
+                headers: {
+                    'x-api-key': key,
+                    'Content-Type': 'application/json',
+                    'anthropic-version': '2023-06-01'
+                },
+                data: {
+                    model: 'claude-3-haiku-20240307',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'Mistral',
+            env: 'MISTRAL_API_KEY',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.mistral.ai/v1/chat/completions',
+                headers: {
+                    'Authorization': `Bearer ${key}`,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    model: 'mistral-small-latest',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'Groq',
+            env: 'GROQ_API_KEY',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.groq.com/openai/v1/chat/completions',
+                headers: {
+                    'Authorization': `Bearer ${key}`,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    model: 'mixtral-8x7b-32768',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        },
+        {
+            name: 'Grok',
+            env: 'GROK_API_KEY',
+            testPayload: (key) => ({
+                method: 'POST',
+                url: 'https://api.x.ai/v1/chat/completions',
+                headers: {
+                    'Authorization': `Bearer ${key}`,
+                    'Content-Type': 'application/json'
+                },
+                data: {
+                    model: 'grok-4-1-fast-non-reasoning',
+                    messages: [{ role: 'user', content: 'test' }],
+                    max_tokens: 10
+                },
+                timeout: 5000
+            })
+        }
+    ];
+
+    console.log('\n[API-HEALTH] Testing configured AI provider APIs...\n');
+
+    const results = [];
+    for (const api of apis) {
+        const apiKey = process.env[api.env];
+        if (!apiKey) {
+            console.log(`[API-HEALTH] ✗ ${api.name.padEnd(12)} NOT CONFIGURED (${api.env} not set)`);
+            results.push({ name: api.name, status: 'NOT_CONFIGURED' });
+            continue;
+        }
+
+        try {
+            const config = api.testPayload(apiKey);
+            const response = await axios(config);
+
+            // Check for error indicators in response
+            if (response.status >= 400) {
+                console.log(`[API-HEALTH] ✗ ${api.name.padEnd(12)} ERROR: HTTP ${response.status}`);
+                results.push({ name: api.name, status: 'HTTP_ERROR', code: response.status });
+            } else {
+                console.log(`[API-HEALTH] ✓ ${api.name.padEnd(12)} WORKING`);
+                results.push({ name: api.name, status: 'WORKING' });
+            }
+        } catch (error) {
+            const errorMsg = error.response?.status === 401 ? 'Invalid API key'
+                : error.response?.status === 429 ? 'Rate limited'
+                : error.response?.data?.error?.message || error.message;
+
+            // Shorten error message for readability
+            const shortError = errorMsg.substring(0, 60);
+            console.log(`[API-HEALTH] ✗ ${api.name.padEnd(12)} ${shortError}`);
+            results.push({ name: api.name, status: 'ERROR', error: errorMsg });
+        }
+    }
+
+    console.log('\n[API-HEALTH] Summary:');
+    const working = results.filter(r => r.status === 'WORKING').length;
+    const configured = results.filter(r => r.status !== 'NOT_CONFIGURED').length;
+    console.log(`[API-HEALTH] ${working}/${configured} configured APIs are operational\n`);
+
+    return results;
+}
+
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
     console.log('Server startup complete - performing background checks...');
 
-    // Run GitHub checks in background to avoid blocking server startup
+    // Run GitHub and API checks in background to avoid blocking server startup
     setImmediate(async () => {
         try {
             console.log('Checking GitHub token and permissions...');
@@ -7391,6 +7572,9 @@ app.listen(PORT, () => {
             } else {
                 console.log('GitHub permissions check passed');
             }
+
+            // Check API health
+            await checkAPIHealth();
 
             // Start background scanner for incomplete guidelines
             startBackgroundScanner();
