@@ -274,6 +274,100 @@ exports.getCalibrationRuns = async (req, res) => {
 };
 
 /**
+ * GET /getPracticePointHistory?guidelineId=xxx&pointId=yyy
+ *
+ * Returns the full history of a single practice point across all calibration runs.
+ * Includes all verdicts, reasoning, and trending data for detailed analysis.
+ */
+exports.getPracticePointHistory = async (req, res) => {
+    try {
+        const { guidelineId, pointId } = req.query;
+        if (!guidelineId || !pointId) {
+            return res.status(400).json({ success: false, error: 'guidelineId and pointId required' });
+        }
+
+        // Get the practice point metadata
+        const pointSnap = await db
+            .collection('guidelines')
+            .doc(guidelineId)
+            .collection('practicePointMetrics')
+            .doc(pointId)
+            .get();
+
+        if (!pointSnap.exists) {
+            return res.status(404).json({ success: false, error: 'Practice point not found' });
+        }
+
+        const pointData = pointSnap.data();
+
+        // Get all calibration runs for this guideline
+        const runsSnap = await db
+            .collection('guidelines')
+            .doc(guidelineId)
+            .collection('calibrationRuns')
+            .orderBy('timestamp', 'asc')
+            .get();
+
+        const history = [];
+        for (const runDoc of runsSnap.docs) {
+            const run = runDoc.data();
+            for (const scenario of (run.scenarios || [])) {
+                const verdict = (scenario.verdicts || {})[pointId];
+                if (verdict) {
+                    const detail = (scenario.pointDetail || {})[pointId] || {};
+                    history.push({
+                        timestamp: run.timestamp,
+                        runId: run.runId,
+                        iteration: run.iteration || 0,
+                        scenario: scenario.name,
+                        verdict,
+                        applies: detail.applies,
+                        reason: detail.reason || '',
+                        suggestion: detail.suggestion || ''
+                    });
+                }
+            }
+        }
+
+        // Compute trend (hits vs misses by iteration)
+        const trends = {};
+        for (const entry of history) {
+            const iter = entry.iteration;
+            if (!trends[iter]) {
+                trends[iter] = { hits: 0, misses: 0, falsePos: 0, correctAbs: 0, total: 0 };
+            }
+            if (entry.verdict === 'hit') trends[iter].hits++;
+            else if (entry.verdict === 'miss') trends[iter].misses++;
+            else if (entry.verdict === 'false_positive') trends[iter].falsePos++;
+            else if (entry.verdict === 'correct_absence') trends[iter].correctAbs++;
+            trends[iter].total++;
+        }
+
+        res.json({
+            success: true,
+            guidelineId,
+            pointId,
+            point: {
+                id: pointId,
+                name: pointData.name,
+                description: pointData.description,
+                advice: pointData.advice,
+                accuracy: pointData.accuracy,
+                evaluationCount: pointData.evaluationCount,
+                graduated: pointData.graduated
+            },
+            history,
+            trends,
+            totalEvaluations: history.length
+        });
+
+    } catch (err) {
+        console.error('[CALIBRATION] getPracticePointHistory error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
  * POST /resetGraduation
  * Body: { guidelineId }
  *

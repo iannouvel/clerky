@@ -7609,16 +7609,13 @@ ${responseText}
                     : p.accuracy === null ? `<span style="color:#6c757d;font-size:11px;">UNTESTED</span>`
                     : `<span style="color:#ff9800;font-size:11px;">ACTIVE</span>`;
                 const streak = p.consecutiveCorrect || 0;
-                return `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;${rowBg}" onclick="window._dashToggleRow('${rowId}')">
+                return `<tr style="border-bottom:1px solid var(--border-color);cursor:pointer;${rowBg}" onclick="window.openPracticePointModal('${p.id}')">
                     <td style="padding:8px 12px;font-size:12px;">${p.name}</td>
                     <td style="padding:8px 10px;">${dashRuleTypePill(p.ruleType)}</td>
                     <td style="padding:8px 10px;text-align:center;">${dashAccBadge(p.accuracy)}</td>
                     <td style="padding:8px 10px;text-align:center;${streak>0?'color:#28a745;font-weight:700;':''}">${streak}</td>
                     <td style="padding:8px 10px;text-align:center;color:var(--text-secondary);">${p.calibrationAttempts || 0}</td>
                     <td style="padding:8px 10px;text-align:center;">${statusBadge}</td>
-                </tr>
-                <tr id="${rowId}" style="display:none;background:var(--bg-tertiary);">
-                    <td colspan="6" style="padding:12px 16px;">${dashPointDetailHTML(p, prh[p.id] || [])}</td>
                 </tr>`;
             }).join('');
         }
@@ -7789,6 +7786,155 @@ ${responseText}
 
         const loadDashBtn = document.getElementById('loadDashboardBtn');
         if (loadDashBtn) loadDashBtn.addEventListener('click', loadDashboard);
+
+        // ─── Practice Point History Modal ──────────────────────────────────────────
+
+        async function openPracticePointModal(pointId) {
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
+            if (!guidelineId || !pointId) return;
+
+            const modal = document.getElementById('ppHistoryModal');
+            if (!modal) {
+                console.error('[DASH] History modal not found');
+                return;
+            }
+
+            // Show loading state
+            const modalContent = modal.querySelector('#ppHistoryContent');
+            modalContent.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-secondary);">Loading history...</div>';
+            modal.style.display = 'block';
+
+            try {
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/getPracticePointHistory?guidelineId=${guidelineId}&pointId=${pointId}`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                const data = await res.json();
+
+                if (!data.success) throw new Error(data.error);
+
+                const p = data.point;
+                const history = data.history || [];
+                const trends = data.trends || {};
+
+                // Build verdict timeline
+                const verdictRows = history.map(h => {
+                    const vColor = h.verdict === 'hit' ? '#28a745' : h.verdict === 'miss' ? '#dc3545' : h.verdict === 'false_positive' ? '#ff9800' : '#6c757d';
+                    const vLabel = h.verdict === 'hit' ? '✓ Hit' : h.verdict === 'miss' ? '✗ Miss' : h.verdict === 'false_positive' ? '! False +' : '✓ Correct abs.';
+                    return `<tr style="border-bottom:1px solid var(--border-color);">
+                        <td style="padding:8px 10px;font-size:12px;">${new Date(h.timestamp).toLocaleDateString('en-GB')}</td>
+                        <td style="padding:8px 10px;font-size:12px;">${h.scenario}</td>
+                        <td style="padding:8px 10px;"><span style="color:${vColor};font-weight:700;font-size:12px;">${vLabel}</span></td>
+                        <td style="padding:8px 10px;font-size:11px;color:var(--text-secondary);">${h.reason || '—'}</td>
+                    </tr>`;
+                }).join('');
+
+                const trendHtml = Object.entries(trends).map(([iter, t]) => {
+                    const pct = t.total > 0 ? Math.round(((t.hits + t.correctAbs) / t.total) * 100) : 0;
+                    return `<div style="margin-bottom:8px;padding:8px 12px;background:var(--bg-input);border-radius:4px;display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:12px;font-weight:600;">Iteration ${iter}</span>
+                        <span style="font-size:12px;color:var(--text-secondary);">
+                            <span style="color:#28a745;">✓${t.hits + t.correctAbs}</span>
+                            ${t.misses > 0 ? ` <span style="color:#dc3545;">✗${t.misses}</span>` : ''}
+                            ${t.falsePos > 0 ? ` <span style="color:#ff9800;">!${t.falsePos}</span>` : ''}
+                        </span>
+                        <span style="font-weight:700;color:${pct >= 70 ? '#28a745' : pct >= 50 ? '#ff9800' : '#dc3545'};">${pct}%</span>
+                    </div>`;
+                }).join('');
+
+                const adviceSection = p.advice ? `
+                    <div style="margin-top:16px;padding:12px;background:var(--bg-input);border-radius:4px;border-left:3px solid #6f42c1;">
+                        <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:6px;">Current Calibrated Advice</div>
+                        <div style="font-size:12px;line-height:1.5;">${p.advice}</div>
+                    </div>
+                ` : '';
+
+                const feedbackSection = `
+                    <div style="margin-top:16px;padding:12px;background:var(--bg-input);border-radius:4px;border-left:3px solid #ff9800;">
+                        <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px;">Provide Feedback</div>
+                        <textarea id="ppFeedbackText" placeholder="Describe what needs to change or why this point is failing..." style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:3px;font-family:monospace;font-size:11px;height:80px;resize:vertical;background:var(--bg-primary);color:var(--text-primary);" ></textarea>
+                        <div style="display:flex;gap:8px;margin-top:10px;font-size:12px;">
+                            <button onclick="window._improvePPAdvice('${guidelineId}','${pointId}')" style="flex:1;padding:8px;background:#6f42c1;color:white;border:none;border-radius:3px;cursor:pointer;font-weight:600;">Improve Advice</button>
+                            <button onclick="window._rewritePPRule('${guidelineId}','${pointId}')" style="flex:1;padding:8px;background:#ff9800;color:white;border:none;border-radius:3px;cursor:pointer;font-weight:600;">Rewrite Rule</button>
+                            <button onclick="window._removePPPoint('${guidelineId}','${pointId}')" style="flex:1;padding:8px;background:#dc3545;color:white;border:none;border-radius:3px;cursor:pointer;font-weight:600;">Remove Point</button>
+                        </div>
+                    </div>
+                `;
+
+                modalContent.innerHTML = `
+                    <div style="max-height:70vh;overflow-y:auto;">
+                        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--border-color);">
+                            <div>
+                                <h3 style="margin:0 0 6px 0;font-size:14px;color:var(--text-primary);">${p.name}</h3>
+                                <p style="margin:0;font-size:12px;color:var(--text-secondary);">${p.description}</p>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="font-size:11px;color:var(--text-secondary);margin-bottom:4px;">Accuracy</div>
+                                <div style="font-size:20px;font-weight:700;color:${p.accuracy !== null && p.accuracy >= 0.7 ? '#28a745' : p.accuracy !== null ? '#ff9800' : '#6c757d'};">${p.accuracy !== null ? Math.round(p.accuracy * 100) + '%' : '—'}</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom:16px;">
+                            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">Trend by Iteration</div>
+                            ${trendHtml}
+                        </div>
+
+                        <div style="margin-bottom:16px;">
+                            <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;">All Evaluations (${history.length} total)</div>
+                            <table style="width:100%;border-collapse:collapse;font-size:11px;">
+                                <thead style="background:var(--bg-input);">
+                                    <tr>
+                                        <th style="padding:6px 10px;text-align:left;">Date</th>
+                                        <th style="padding:6px 10px;text-align:left;">Scenario</th>
+                                        <th style="padding:6px 10px;text-align:left;">Verdict</th>
+                                        <th style="padding:6px 10px;text-align:left;">Reasoning</th>
+                                    </tr>
+                                </thead>
+                                <tbody>${verdictRows || '<tr><td colspan="4" style="padding:10px;text-align:center;color:var(--text-secondary);">No evaluations yet</td></tr>'}</tbody>
+                            </table>
+                        </div>
+
+                        ${adviceSection}
+                        ${feedbackSection}
+                    </div>
+                `;
+
+            } catch (err) {
+                console.error('[DASH] Error loading point history:', err);
+                modalContent.innerHTML = `<div style="padding:20px;color:#dc3545;">Error: ${err.message}</div>`;
+            }
+        }
+
+        window._dashToggleRow = function(rowId) {
+            const row = document.getElementById(rowId);
+            if (row) row.style.display = row.style.display === 'none' ? 'table-row' : 'none';
+        };
+
+        window._improvePPAdvice = async function(guidelineId, pointId) {
+            const feedback = document.getElementById('ppFeedbackText')?.value || '';
+            if (!feedback.trim()) {
+                alert('Please provide feedback first');
+                return;
+            }
+            alert('LLM advice improvement coming soon! Feedback: ' + feedback.substring(0, 50) + '...');
+        };
+
+        window._rewritePPRule = async function(guidelineId, pointId) {
+            const feedback = document.getElementById('ppFeedbackText')?.value || '';
+            if (!feedback.trim()) {
+                alert('Please provide feedback first');
+                return;
+            }
+            alert('LLM rule rewriting coming soon! Feedback: ' + feedback.substring(0, 50) + '...');
+        };
+
+        window._removePPPoint = async function(guidelineId, pointId) {
+            if (confirm('Remove this practice point? This cannot be undone.')) {
+                alert('Point removal coming soon!');
+            }
+        };
+
+        // ─────────────────────────────────────────────────────────────────────────────
 
         // (calibration tab trigger listener is set above near populateCalibrationGuidelineSelect)
         // ─────────────────────────────────────────────────────────────────────

@@ -1641,6 +1641,17 @@
                             <div id="dashRunHistory"></div>
                         </div>
                     </div>
+
+                    <!-- Practice Point History Modal -->
+                    <div id="ppHistoryModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:10000;overflow-y:auto;">
+                        <div style="background:var(--bg-primary);max-width:800px;margin:40px auto;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.2);overflow:hidden;">
+                            <div style="padding:16px 20px;background:var(--bg-tertiary);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);">
+                                <h4 style="margin:0;font-size:16px;">Practice Point History</h4>
+                                <button onclick="document.getElementById('ppHistoryModal').style.display='none'" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-secondary);">×</button>
+                            </div>
+                            <div id="ppHistoryContent" style="padding:20px;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
