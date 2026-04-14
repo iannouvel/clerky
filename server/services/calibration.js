@@ -297,7 +297,7 @@ All ${practicePoints.length} IDs must appear in exactly one list.`;
                     { role: 'system', content: 'You are a clinical educator verifying calibration ground truth. Return ONLY valid JSON. No preamble, no markdown.' },
                     { role: 'user', content: prompt }
                 ]
-            }, userId, 'gemini-2.5-flash', 2000);
+            }, userId, null, 2000, 'simple');
 
             const cleaned = result?.content?.trim().replace(/```json\n?|\n?```/g, '') || '{}';
             const parsed = JSON.parse(cleaned);
@@ -410,13 +410,13 @@ Return ONLY valid JSON in this exact structure:
 
 All ${practicePoints.length} practice point IDs must appear in exactly one of applies or doesNotApply for each scenario.`;
 
-    // gemini-2.5-flash: fast, cost-effective, no thinking tokens, so the full output budget goes to actual JSON content
+    // gemini-2.0-flash: no thinking tokens, so the full output budget goes to actual JSON content
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash', 8000);
+    }, userId, null, 8000, 'simple');
 
     if (!result?.content) throw new Error('No response from scenario generator');
 
@@ -509,13 +509,13 @@ Return ONLY valid JSON with this exact structure:
 
 Every practice point ID listed above must have an entry.`;
 
-    // gemini-2.5-flash: fast, cost-effective, no thinking tokens, so the full output budget goes to the verdict JSON
+    // gemini-2.0-flash: no thinking tokens, so the full output budget goes to the verdict JSON
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash', 8000);
+    }, userId, null, 8000, 'simple');
 
     if (!result?.content) throw new Error('No response from evaluator');
 
@@ -801,7 +801,7 @@ ${ruleList}
 Return a JSON array of clusters. Each cluster is an array of integer indices. Only include clusters with 2+ members. Return [] if no duplicates.
 Example: [[0,3,7],[2,9]]` }
         ]
-    }, userId, 'gemini-2.5-flash', 1024);
+    }, userId, null, 1024, 'simple');
 
     let clusters = [];
     try {
