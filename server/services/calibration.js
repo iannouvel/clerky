@@ -102,9 +102,9 @@ async function syncPracticePoints(guidelineId) {
         }
     }
 
-    // Delete orphaned points that have no accuracy data (safe to remove after regeneration)
+    // Delete stale points not in the current auditable elements (accuracy history is preserved in calibration runs)
     for (const [id, data] of existingDocs) {
-        if (!currentIds.has(id) && (data.evaluationCount || 0) === 0) {
+        if (!currentIds.has(id)) {
             batch.delete(metricsCol.doc(id));
             pruned++;
         }
