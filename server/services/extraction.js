@@ -19,9 +19,7 @@ Can you summarise this as a numbered list of individual practice points, written
 Return ONLY a JSON array of strings (no numbering). Each string is one simple practice point in if-then style.`;
 
     try {
-        const result = await routeToAI({
-            messages: [{ role: 'user', content: prompt }]
-        }, userId, null, 65000);
+        const result = await routeToAI(prompt, userId);
 
         if (!result?.content) throw new Error('No response from LLM');
 
