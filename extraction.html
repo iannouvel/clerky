@@ -2,52 +2,53 @@
 <html>
 <head>
     <title>Extract Practice Points</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body { font-family: sans-serif; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        select, button { padding: 8px 12px; font-size: 14px; }
-        button { background: #0066cc; color: white; border: none; cursor: pointer; }
-        button:hover { background: #0052a3; }
-        #output { margin-top: 20px; background: #f5f5f5; padding: 15px; border-radius: 4px; }
-        pre { background: #fff; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
-        .loading { color: #666; }
+        body { padding: 0; margin: 0; }
+        .container { max-width: 1200px; margin: 68px auto 0; padding: 20px; }
+        .controls { display: flex; gap: 15px; align-items: flex-end; margin-bottom: 20px; background: var(--card-background); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); }
+        .control-group { display: flex; flex-direction: column; gap: 8px; }
+        label { font-weight: 500; font-size: 14px; }
+        select, button { padding: 8px 12px; font-size: 14px; border-radius: 6px; }
+        select { border: 2px solid var(--accent-color); background: var(--input-background); color: var(--text-color); }
+        button { background: var(--accent-color); color: white; border: none; cursor: pointer; }
+        button:hover { opacity: 0.9; }
+        #output { margin-top: 20px; background: var(--card-background); padding: 20px; border-radius: 12px; box-shadow: var(--shadow); }
+        pre { background: var(--input-background); padding: 15px; border: 1px solid var(--border-color); overflow-x: auto; border-radius: 6px; font-size: 12px; }
+        .loading { color: var(--text-secondary); }
         .error { color: #d00; }
-        .success { color: #060; }
+        .success { color: #060; font-weight: 500; margin-bottom: 15px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Extract Practice Points</h1>
 
-        <div style="margin-bottom: 20px;">
-            <label for="guidelineSelect">Select Guideline:</label>
-            <select id="guidelineSelect">
-                <option value="">Loading guidelines...</option>
-            </select>
+        <div class="controls">
+            <div class="control-group">
+                <label for="guidelineSelect">Select Guideline:</label>
+                <select id="guidelineSelect">
+                    <option value="">Loading guidelines...</option>
+                </select>
+            </div>
             <button onclick="extractPoints()">Extract Practice Points</button>
         </div>
 
         <div id="output"></div>
     </div>
 
-    <script>
-        // Initialize Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyDPh9Vh_XPYv7lqLqKM7_3RnSRNkEzHxF0",
-            authDomain: "clerky-b3be8.firebaseapp.com",
-            projectId: "clerky-b3be8",
-            storageBucket: "clerky-b3be8.appspot.com",
-            messagingSenderId: "778852631191",
-            appId: "1:778852631191:web:e8f2c3e1d2a4b5c6d7e8"
-        };
+    <!-- Firebase initialization -->
+    <script type="module">
+        import { db, auth } from './firebase-init.js';
 
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+        window.db = db;
+        window.auth = auth;
 
         // Load guidelines into dropdown
         async function loadGuidelines() {
             try {
-                const snap = await db.collection('guidelines').get();
+                const { collection, getDocs } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+                const snap = await getDocs(collection(db, 'guidelines'));
                 const select = document.getElementById('guidelineSelect');
                 select.innerHTML = '<option value="">-- Select a guideline --</option>';
 
@@ -64,7 +65,7 @@
         }
 
         // Extract practice points
-        async function extractPoints() {
+        window.extractPoints = async function() {
             const guidelineId = document.getElementById('guidelineSelect').value;
             if (!guidelineId) {
                 document.getElementById('output').innerHTML =
@@ -75,17 +76,24 @@
             document.getElementById('output').innerHTML = '<div class="loading">Extracting...</div>';
 
             try {
-                const snap = await db.collection('guidelines').doc(guidelineId).get();
-                if (!snap.exists) throw new Error('Guideline not found');
+                const { getDoc, doc } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+                const snap = await getDoc(doc(db, 'guidelines', guidelineId));
+                if (!snap.exists()) throw new Error('Guideline not found');
 
                 const data = snap.data();
                 const title = data.title || guidelineId;
                 const content = data.content || data.condensed || '(No content)';
 
+                // Get auth token
+                const token = await auth.currentUser?.getIdToken();
+
                 // Call extraction API
                 const response = await fetch('/api/extractPracticePoints', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...(token && { 'Authorization': `Bearer ${token}` })
+                    },
                     body: JSON.stringify({ guidelineId, title, content })
                 });
 
@@ -107,13 +115,10 @@
                 document.getElementById('output').innerHTML =
                     `<div class="error">Error: ${err.message}</div>`;
             }
-        }
+        };
 
         // Load on startup
         loadGuidelines();
     </script>
-
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
 </body>
 </html>
