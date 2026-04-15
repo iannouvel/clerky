@@ -6626,14 +6626,14 @@ ${responseText}
 
         async function populateCalibrationGuidelineSelect() {
             const sel = document.getElementById('calibrationGuidelineSelect');
-            const scopeSel = document.getElementById('calibrationScopeFilter');
             if (!sel || sel.dataset.loaded) return;
             try {
                 const guidelines = await fetchCalibrationGuidelines();
-                buildScopeOptions(guidelines, scopeSel);
-                filterGuidelineSelect(guidelines, scopeSel, sel, null);
+                sel.innerHTML = '<option value="">-- Select a guideline --</option>' +
+                    guidelines.map(g =>
+                        `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`
+                    ).join('');
                 sel.dataset.loaded = '1';
-                scopeSel.addEventListener('change', () => filterGuidelineSelect(guidelines, scopeSel, sel, null));
             } catch (err) {
                 sel.innerHTML = '<option value="">Failed to load guidelines</option>';
                 console.error('[CALIBRATION] Failed to load guidelines:', err.message);
