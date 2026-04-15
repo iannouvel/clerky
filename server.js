@@ -9658,7 +9658,7 @@ ${content}`;
                         content: extractionPrompt
                     }
                 ]
-            }, userId, null, 8192);
+            }, userId, null, 4096);
 
             const sectionPoints = parseJsonArrayFromResponse(sectionResult);
             if (sectionPoints && sectionPoints.length > 0) {
