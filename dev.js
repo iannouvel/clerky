@@ -7331,6 +7331,51 @@ ${responseText}
             container.style.display = 'block';
         }
 
+        async function extractPracticePoints() {
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
+            if (!guidelineId) {
+                document.getElementById('extractStatus').textContent = 'Select a guideline first.';
+                return;
+            }
+
+            const status = document.getElementById('extractStatus');
+            const results = document.getElementById('extractResults');
+            status.textContent = 'Extracting...';
+            results.style.display = 'none';
+
+            try {
+                const token = await getCalibrationToken();
+                const guidelines = await fetchCalibrationGuidelines();
+                const guideline = guidelines.find(g => g.id === guidelineId);
+                if (!guideline) throw new Error('Guideline not found');
+
+                const title = guideline.displayName || guideline.humanFriendlyTitle || guideline.title || guidelineId;
+                const content = guideline.content || guideline.condensed || '(No content)';
+
+                const res = await fetch(`${SERVER_URL}/api/extractPracticePoints`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ guidelineId, title, content })
+                });
+
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error);
+
+                const points = data.practicePoints || [];
+                status.textContent = `✓ Extracted ${points.length} points`;
+                results.innerHTML = `<pre style="font-size:12px;background:var(--bg-input);padding:10px;border-radius:4px;overflow-x:auto;">${JSON.stringify(points, null, 2)}</pre>`;
+                results.style.display = 'block';
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+            }
+        }
+
+        const extractBtn = document.getElementById('extractPracticePointsBtn');
+        if (extractBtn) extractBtn.addEventListener('click', extractPracticePoints);
+
         const syncBtn = document.getElementById('syncPracticePointsBtn');
         if (syncBtn) syncBtn.addEventListener('click', () => syncPracticePoints(false));
 
