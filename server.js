@@ -9658,7 +9658,7 @@ ${content}`;
                         content: extractionPrompt
                     }
                 ]
-            }, userId, null, 4096);
+            }, userId, 'gemini-2.5-flash', 16384);
 
             const sectionPoints = parseJsonArrayFromResponse(sectionResult);
             if (sectionPoints && sectionPoints.length > 0) {
