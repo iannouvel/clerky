@@ -8,7 +8,7 @@ const { routeToAI } = require('./ai');
  */
 async function extractPracticePoints(title, content, userId) {
     const systemPrompt = `You are extracting clinical practice points from a medical guideline.
-Extract 50-200+ simple, testable, atomic practice points. Each point should be a clear clinical rule: "if X, then do Y".
+Extract all simple, testable, atomic practice points. Each point should be a clear clinical rule: "if X, then do Y".
 Keep points atomic and unambiguous — never bundle multiple actions into one point.
 Granular is better than abstract. Return ONLY valid JSON, no other text.`;
 
@@ -27,7 +27,7 @@ Example format:
   {"name": "Obtain informed consent", "description": "Before any invasive procedure"}
 ]
 
-Return the JSON array only. Aim for 50+ points.`;
+Return the JSON array only.`;
 
     try {
         const result = await routeToAI({
