@@ -885,8 +885,10 @@ async function persistGraduationState(guidelineId, pointId, consec, isGraduated,
  *
  * Graduation state is persisted in Firestore so the loop automatically
  * resumes from the last checkpoint. Points that previously graduated are
- * skipped. When stuck points are detected, the loop auto-deduplicates
- * them via an LLM call before retrying.
+ * skipped. When stuck points are detected, the loop auto-deduplicates,
+ * auto-rewrites (splitting ambiguous points via LLM), or auto-removes
+ * (if a rewritten point is still stuck) — the loop never stops due to
+ * stuck points.
  *
  * @param {string} guidelineId
  * @param {string} userId
@@ -912,7 +914,7 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
     };
 
     // 1. Load practice points, filtered to only those matching current auditableElements
-    const { title: guidelineTitle } = await getGuidelineForCalibration(guidelineId);
+    const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
     const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
     const auditableElements = guidelineDoc.exists ? (guidelineDoc.data().auditableElements || []) : [];
     const currentIds = new Set(
@@ -994,19 +996,17 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         // Active = non-graduated points that still exist
         let activePoints = allPoints.filter(p => !graduated.has(p.id));
 
-        // Check for stuck points
+        // Check for stuck points — auto-rewrite or auto-remove instead of stopping
         const stuckPoints = activePoints.filter(p => attemptCount[p.id] >= maxAttemptsPerPoint);
         if (stuckPoints.length > 0) {
+            // First try auto-deduplication if multiple stuck points
             if (!deduplicatedThisRun && stuckPoints.length >= 2) {
-                // Attempt auto-deduplication before giving up
                 log('dedup', `${stuckPoints.length} stuck points detected — checking for duplicates...`);
                 const { removed, kept } = await deduplicateStuckPoints(guidelineId, stuckPoints, userId);
 
                 if (removed.length > 0) {
                     deduplicatedThisRun = true;
                     log('dedup', `Removed ${removed.length} duplicate(s), kept ${kept.length} — retrying`);
-
-                    // Remove deleted points from allPoints and tracking maps
                     const removedSet = new Set(removed);
                     allPoints = allPoints.filter(p => !removedSet.has(p.id));
                     for (const id of removed) {
@@ -1014,13 +1014,10 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
                         delete attemptCount[id];
                         graduated.delete(id);
                     }
-                    // Reset attempt counts on kept points so they get fresh attempts
                     for (const id of kept) {
                         attemptCount[id] = 0;
                         consecutiveCorrect[id] = 0;
                     }
-
-                    // Emit updated status after dedup
                     const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
                         name: p.name,
                         consecutiveCorrect: consecutiveCorrect[p.id] || 0,
@@ -1031,15 +1028,136 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
                         `After dedup: ${graduated.size}/${allPoints.length} graduated, ${allPoints.length - graduated.size} remaining`,
                         { pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
                     );
-
-                    continue;  // retry the loop with cleaned-up points
+                    continue;
                 }
             }
 
-            // No duplicates found or already tried — give up on stuck points
-            exitReason = 'stuck_points';
-            log('timeout', `Stopping — stuck point(s): ${stuckPoints.map(p => p.name).join(', ')}`);
-            break;
+            // Auto-rewrite or auto-remove each stuck point
+            for (const stuckPoint of stuckPoints) {
+                const alreadyRewritten = stuckPoint._rewritten || false;
+
+                if (alreadyRewritten) {
+                    // Already rewritten once and still stuck — auto-remove
+                    log('auto_remove', `Removing "${stuckPoint.name}" — still stuck after rewrite, likely untestable`);
+                    try {
+                        await db.collection('guidelines').doc(guidelineId)
+                            .collection('practicePointMetrics').doc(stuckPoint.id).delete();
+                    } catch (err) {
+                        log('auto_remove', `Failed to delete from Firestore: ${err.message}`);
+                    }
+                    allPoints = allPoints.filter(p => p.id !== stuckPoint.id);
+                    delete consecutiveCorrect[stuckPoint.id];
+                    delete attemptCount[stuckPoint.id];
+                    graduated.delete(stuckPoint.id);
+                    continue;
+                }
+
+                // Gather error evidence from past runs for this point
+                const errorEvidence = [];
+                for (const run of allRuns) {
+                    if (!run.scenarios) continue;
+                    for (const sr of run.scenarios) {
+                        const verdict = sr.verdicts?.[stuckPoint.id];
+                        if (verdict === 'miss' || verdict === 'false_positive') {
+                            const shouldApply = (sr.groundTruth?.applies || []).includes(stuckPoint.id);
+                            const detail = sr.pointDetail?.[stuckPoint.id];
+                            errorEvidence.push({
+                                verdict,
+                                shouldApply,
+                                modelReason: detail?.reason || '',
+                                transcript: sr.transcript || sr.name || ''
+                            });
+                        }
+                    }
+                }
+
+                if (errorEvidence.length === 0) {
+                    // No error evidence available (e.g. errors happened before we started tracking) — remove
+                    log('auto_remove', `Removing "${stuckPoint.name}" — stuck with no error evidence to guide rewrite`);
+                    try {
+                        await db.collection('guidelines').doc(guidelineId)
+                            .collection('practicePointMetrics').doc(stuckPoint.id).delete();
+                    } catch (err) {
+                        log('auto_remove', `Failed to delete from Firestore: ${err.message}`);
+                    }
+                    allPoints = allPoints.filter(p => p.id !== stuckPoint.id);
+                    delete consecutiveCorrect[stuckPoint.id];
+                    delete attemptCount[stuckPoint.id];
+                    graduated.delete(stuckPoint.id);
+                    continue;
+                }
+
+                // Auto-rewrite: call LLM to split into better points
+                log('auto_rewrite', `Rewriting "${stuckPoint.name}" — ${errorEvidence.length} error(s) as evidence`);
+                try {
+                    const rewriteResult = await rewritePracticePoint(
+                        stuckPoint, errorEvidence, guidelineTitle, guidelineContent, userId
+                    );
+                    const replacements = rewriteResult.replacements || [];
+                    log('auto_rewrite', `Rewrite produced ${replacements.length} replacement(s): ${rewriteResult.reasoning || ''}`);
+
+                    // Delete old point from Firestore
+                    await db.collection('guidelines').doc(guidelineId)
+                        .collection('practicePointMetrics').doc(stuckPoint.id).delete();
+
+                    // Remove old point from tracking
+                    allPoints = allPoints.filter(p => p.id !== stuckPoint.id);
+                    delete consecutiveCorrect[stuckPoint.id];
+                    delete attemptCount[stuckPoint.id];
+                    graduated.delete(stuckPoint.id);
+
+                    // Create replacement points in Firestore and add to tracking
+                    for (const rep of replacements) {
+                        const newId = generatePointId(rep.name);
+                        const newDoc = {
+                            name: rep.name,
+                            description: rep.description || rep.name,
+                            accuracy: null,
+                            evaluationCount: 0,
+                            consecutiveCorrect: 0,
+                            calibrationAttempts: 0,
+                            graduated: false,
+                            createdAt: new Date().toISOString(),
+                            rewrittenFrom: stuckPoint.id
+                        };
+                        await db.collection('guidelines').doc(guidelineId)
+                            .collection('practicePointMetrics').doc(newId).set(newDoc);
+
+                        const newPoint = { id: newId, ...newDoc, _rewritten: true };
+                        allPoints.push(newPoint);
+                        consecutiveCorrect[newId] = 0;
+                        attemptCount[newId] = 0;
+                    }
+                } catch (err) {
+                    log('auto_rewrite', `Rewrite failed for "${stuckPoint.name}": ${err.message} — removing point`);
+                    try {
+                        await db.collection('guidelines').doc(guidelineId)
+                            .collection('practicePointMetrics').doc(stuckPoint.id).delete();
+                    } catch (delErr) { /* best effort */ }
+                    allPoints = allPoints.filter(p => p.id !== stuckPoint.id);
+                    delete consecutiveCorrect[stuckPoint.id];
+                    delete attemptCount[stuckPoint.id];
+                    graduated.delete(stuckPoint.id);
+                }
+            }
+
+            // After processing stuck points, emit updated status and continue
+            if (allPoints.length === 0) {
+                exitReason = 'all_removed';
+                log('complete', 'All points were removed — nothing left to calibrate');
+                break;
+            }
+            const pointStatus = Object.fromEntries(allPoints.map(p => [p.id, {
+                name: p.name,
+                consecutiveCorrect: consecutiveCorrect[p.id] || 0,
+                attempts: attemptCount[p.id] || 0,
+                graduated: graduated.has(p.id)
+            }]));
+            log('run_complete',
+                `After auto-remediation: ${graduated.size}/${allPoints.length} graduated, ${allPoints.length - graduated.size} remaining`,
+                { pointStatus, graduatedCount: graduated.size, totalPoints: allPoints.length }
+            );
+            continue;
         }
 
         log('iteration', `Iteration ${iteration} — ${graduated.size}/${allPoints.length} graduated, ${activePoints.length} active`);
