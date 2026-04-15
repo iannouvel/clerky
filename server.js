@@ -9615,13 +9615,19 @@ RULE TYPE DEFINITIONS:
 - contextual_caution: Be aware of X when Y. A warning, risk factor, or consideration relevant to an individual patient's care (e.g. 'if operator experience is limited, recognise miscarriage risk may be higher').
 - result_interpretation: How to interpret or act on a specific test result or clinical finding for an individual patient (e.g. 'if CVS shows mosaicism without structural anomaly, await full karyotype before decisions').
 
-EXTRACTION RULES:
+EXTRACTION RULES — be MAXIMALLY granular:
 - Each rule = ONE action by ONE person at ONE time
 - If a sentence joins two actions with 'and', split into two rules
 - Different populations (e.g., HIV vs hepatitis B, singleton vs twin) = separate rules
+- Different pathogens or conditions = separate rules (e.g., HIV counselling ≠ Hepatitis B counselling ≠ Hepatitis C counselling — each gets its OWN rule)
+- Different viral load thresholds or treatment statuses = separate rules (e.g., 'HIV on treatment with undetectable viral load' ≠ 'HIV not on treatment')
 - Hard threshold vs soft preference = separate rules (e.g., 'do not before 15 weeks' vs 'prefer from 16 weeks')
-- Each counselling topic = separate rule
+- Each counselling topic = separate rule (e.g., miscarriage risk, mosaicism risk, culture failure risk, preterm labour risk = 4 separate rules)
 - Each procedural step = separate rule
+- Each distinct indication for a test or procedure = separate rule (e.g., 'high-risk screening result', 'structural anomaly', 'inherited genetic risk' = 3 separate rules)
+- Each post-procedure advice item = separate rule (e.g., 'seek care if pain', 'seek care if bleeding', 'seek care if fluid loss' may be one rule if listed together, but distinct aftercare actions = separate rules)
+- Each test result interpretation = separate rule (e.g., 'mosaicism found on CVS', 'culture failure', 'inconclusive result' = separate rules)
+- DO NOT bundle multiple clinical decisions into one rule — if in doubt, SPLIT
 
 TESTABILITY RULES — apply these BEFORE extracting each rule:
 - The condition MUST be objectively detectable from clinical documentation (e.g. 'gestational age < 34+0 weeks', 'patient is RhD-negative', 'placenta praevia confirmed on ultrasound'). NOT: 'if praevia suspected', 'if viability uncertain', 'if appropriate'.
