@@ -8,16 +8,16 @@ const { routeToAI } = require('./ai');
  */
 async function extractPracticePoints(title, content, userId) {
     const systemPrompt = `You are extracting clinical practice points from a medical guideline.
-Extract 8-15 simple, testable practice points. Each point should be a clear clinical rule: "if X, then do Y".
-Keep points atomic and unambiguous — avoid bundling multiple actions.
-Return ONLY valid JSON, no other text.`;
+Extract 50-200+ simple, testable, atomic practice points. Each point should be a clear clinical rule: "if X, then do Y".
+Keep points atomic and unambiguous — never bundle multiple actions into one point.
+Granular is better than abstract. Return ONLY valid JSON, no other text.`;
 
     const userPrompt = `Guideline: ${title}
 
-Content (excerpt):
-${content.substring(0, 5000)}${content.length > 5000 ? '\n...[truncated]' : ''}
+Content:
+${content}
 
-Extract practice points as a JSON array. Each point has:
+Extract ALL practice points as a JSON array. Each point has:
 - name: the clinical rule (one sentence, "do X" or "consider X")
 - description: what this rule applies to (one sentence)
 
@@ -27,7 +27,7 @@ Example format:
   {"name": "Obtain informed consent", "description": "Before any invasive procedure"}
 ]
 
-Return the JSON array only.`;
+Return the JSON array only. Aim for 50+ points.`;
 
     try {
         const result = await routeToAI({
@@ -35,7 +35,7 @@ Return the JSON array only.`;
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
             ]
-        }, userId, null, 2000);
+        }, userId, null, 65000);
 
         if (!result?.content) throw new Error('No response from LLM');
 
