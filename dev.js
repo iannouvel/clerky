@@ -7347,10 +7347,13 @@ ${responseText}
 
             try {
                 const token = await getCalibrationToken();
-                const guidelines = await fetchCalibrationGuidelines();
-                const guideline = guidelines.find(g => g.id === guidelineId);
-                if (!guideline) throw new Error('Guideline not found');
 
+                // Get guideline from Firestore
+                const { getDoc, doc } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+                const snap = await getDoc(doc(db, 'guidelines', guidelineId));
+                if (!snap.exists()) throw new Error('Guideline not found');
+
+                const guideline = snap.data();
                 const title = guideline.displayName || guideline.humanFriendlyTitle || guideline.title || guidelineId;
                 const content = guideline.content || guideline.condensed || '(No content)';
 
