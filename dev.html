@@ -1476,182 +1476,20 @@
             <!-- ── Pane: Guideline Calibration ── -->
             <div id="calPane-guideline" style="padding:12px;">
 
-                <!-- Guideline selector -->
-                <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:16px;">
-                    <div>
-                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Scope</label>
-                        <select id="calibrationScopeFilter" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);">
-                            <option value="">All scopes</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label style="display:block;font-size:12px;font-weight:600;margin-bottom:6px;color:var(--text-secondary);text-transform:uppercase;">Guideline</label>
-                        <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
-                            <option value="">Loading guidelines...</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Full Pipeline -->
-                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border:2px solid #28a745;border-radius:6px;">
-                    <p style="font-size:12px;font-weight:600;color:#28a745;text-transform:uppercase;margin:0 0 6px;">Full Calibration Pipeline</p>
-                    <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;">Regenerates practice points from scratch, syncs, resets graduation, then runs the calibration loop — all in one click.</p>
-                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-                        <button id="runFullPipelineBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;font-weight:600;">Run Full Pipeline</button>
-                        <span id="pipelineStatus" style="font-size:13px;color:var(--text-secondary);"></span>
-                    </div>
-                    <div id="pipelineSteps" style="display:none;margin-top:12px;font-size:13px;line-height:2;">
-                        <div id="pipelineStep1" style="color:var(--text-secondary);"></div>
-                        <div id="pipelineStep2" style="color:var(--text-secondary);"></div>
-                        <div id="pipelineStep3" style="color:var(--text-secondary);"></div>
-                        <div id="pipelineStep4" style="color:var(--text-secondary);"></div>
-                    </div>
-                </div>
-
-                <!-- Step 1: Sync -->
+                <!-- Step 1: Extract Practice Points -->
                 <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
-                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Sync practice points</p>
-                    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-                        <button id="syncPracticePointsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">Sync Selected</button>
-                        <button id="syncAllPracticePointsBtn" class="dev-btn">Sync All Guidelines</button>
-                        <span id="calibrationSyncStatus" style="font-size:13px;color:var(--text-secondary);"></span>
-                    </div>
-                    <div id="calibrationSyncResults" style="display:none;margin-top:10px;font-size:13px;"></div>
-                </div>
-
-                <!-- Step 2: Run calibration -->
-                <div style="margin-bottom:28px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
-                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Run calibration</p>
-                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px;">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Extract practice points</p>
+                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
                         <div>
-                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Point limit</label>
-                            <select id="calibrationPointCount" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
-                                <option value="0" selected>All points</option>
-                                <option value="10">First 10</option>
-                                <option value="20">First 20</option>
-                                <option value="50">First 50</option>
+                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Guideline</label>
+                            <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
+                                <option value="">Loading guidelines...</option>
                             </select>
                         </div>
-                        <div>
-                            <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Scenarios per run</label>
-                            <select id="calibrationScenarioCount" style="padding:6px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
-                                <option value="2">2 (quick)</option>
-                                <option value="4" selected>4 (standard)</option>
-                                <option value="6">6 (thorough)</option>
-                            </select>
-                        </div>
-                        <button id="runCalibrationBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;">Run Calibration Loop</button>
-                        <button id="resetGraduationBtn" class="dev-btn" style="padding:10px 14px;" title="Clear all graduation state to restart calibration from scratch">Reset Graduation</button>
-                        <span id="calibrationRunStatus" style="font-size:13px;color:var(--text-secondary);align-self:center;"></span>
+                        <button id="extractPracticePointsBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;">Extract Points</button>
+                        <span id="extractStatus" style="font-size:13px;color:var(--text-secondary);"></span>
                     </div>
-                    <div id="calibrationProgress" style="display:none;padding:10px;background:var(--bg-input);border-radius:4px;margin-bottom:12px;">
-                        <div style="font-size:13px;font-weight:600;" id="calibrationProgressStep"></div>
-                        <div style="font-size:12px;color:var(--text-secondary);margin-top:2px;" id="calibrationProgressMsg"></div>
-                    </div>
-                    <div id="calibrationGraduationStatus" style="display:none;margin-bottom:12px;"></div>
-                    <div id="calibrationRunResults" style="display:none;font-size:13px;"></div>
-                </div>
-
-                <!-- ─── Dashboard ─── -->
-                <div style="border-top:2px solid var(--border-color);padding-top:20px;">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-                        <h4 style="margin:0;">Calibration Dashboard</h4>
-                        <div style="display:flex;gap:10px;align-items:center;">
-                            <button id="loadDashboardBtn" class="dev-btn" style="background-color:#6f42c1;color:#fff;border-color:#6f42c1;padding:8px 16px;">Load Dashboard</button>
-                            <span id="dashStatus" style="font-size:13px;color:var(--text-secondary);"></span>
-                        </div>
-                    </div>
-
-                    <!-- Summary cards -->
-                    <div id="dashSummary" style="display:none;margin-bottom:20px;">
-                        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;">
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Total Points</div>
-                                <div id="dashTotalPoints" style="font-size:22px;font-weight:bold;">—</div>
-                            </div>
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Graduated</div>
-                                <div id="dashGraduated" style="font-size:22px;font-weight:bold;color:#28a745;">—</div>
-                            </div>
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Tested</div>
-                                <div id="dashTestedPoints" style="font-size:22px;font-weight:bold;">—</div>
-                            </div>
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Avg Accuracy</div>
-                                <div id="dashAvgAccuracy" style="font-size:22px;font-weight:bold;">—</div>
-                            </div>
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Passing (≥70%)</div>
-                                <div id="dashAbove70" style="font-size:22px;font-weight:bold;color:#28a745;">—</div>
-                            </div>
-                            <div style="background:var(--bg-tertiary);padding:12px;border-radius:6px;text-align:center;">
-                                <div style="font-size:11px;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Calibration Runs</div>
-                                <div id="dashRunCount" style="font-size:22px;font-weight:bold;">—</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main dashboard content -->
-                    <div id="dashMain" style="display:none;">
-
-                        <!-- Section 0: Guideline Text -->
-                        <div style="margin-bottom:24px;border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
-                            <div onclick="window._dashToggle('dashGuidelineTextBody')" style="padding:10px 14px;background:var(--bg-tertiary);cursor:pointer;display:flex;justify-content:space-between;align-items:center;">
-                                <h5 style="margin:0;" id="dashGuidelineTextTitle">Guideline Text</h5>
-                                <span style="font-size:11px;color:var(--text-secondary);">click to collapse</span>
-                            </div>
-                            <div id="dashGuidelineTextBody" style="padding:14px;">
-                                <div id="dashGuidelineTextContent" style="font-size:12px;font-family:monospace;white-space:pre-wrap;max-height:500px;overflow-y:auto;line-height:1.6;color:var(--text-primary);">Loading...</div>
-                            </div>
-                        </div>
-
-                        <!-- Section 1: Practice Points -->
-                        <div style="margin-bottom:28px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-                                <h5 style="margin:0;">Practice Points <span id="dashPointsCount" style="font-size:12px;font-weight:normal;color:var(--text-secondary);"></span></h5>
-                                <select id="dashPointFilter" style="font-size:12px;padding:4px 8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);">
-                                    <option value="all">All points</option>
-                                    <option value="active">Active (not graduated)</option>
-                                    <option value="graduated">Graduated</option>
-                                    <option value="untested">Never tested</option>
-                                    <option value="failing">Failing (&lt;70%)</option>
-                                </select>
-                            </div>
-                            <div style="border:1px solid var(--border-color);border-radius:6px;overflow:hidden;">
-                                <table style="width:100%;border-collapse:collapse;font-size:12px;">
-                                    <thead>
-                                        <tr style="background:var(--bg-tertiary);font-size:11px;text-transform:uppercase;color:var(--text-secondary);">
-                                            <th style="padding:8px 12px;text-align:left;border-bottom:1px solid var(--border-color);">Practice Point <span style="font-weight:normal;">(click to expand)</span></th>
-                                            <th style="padding:8px 10px;text-align:left;border-bottom:1px solid var(--border-color);width:110px;">Type</th>
-                                            <th style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border-color);width:90px;">Accuracy</th>
-                                            <th style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border-color);width:60px;">Streak</th>
-                                            <th style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border-color);width:55px;">Tries</th>
-                                            <th style="padding:8px 10px;text-align:center;border-bottom:1px solid var(--border-color);width:80px;">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="dashPointsBody"></tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <!-- Section 2: Run History -->
-                        <div>
-                            <h5 style="margin:0 0 10px;">Calibration Run History <span id="dashRunsCount" style="font-size:12px;font-weight:normal;color:var(--text-secondary);"></span></h5>
-                            <div id="dashRunHistory"></div>
-                        </div>
-                    </div>
-
-                    <!-- Practice Point History Modal -->
-                    <div id="ppHistoryModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:10000;overflow-y:auto;">
-                        <div style="background:var(--bg-primary);max-width:800px;margin:40px auto;border-radius:8px;box-shadow:0 10px 40px rgba(0,0,0,0.2);overflow:hidden;">
-                            <div style="padding:16px 20px;background:var(--bg-tertiary);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);">
-                                <h4 style="margin:0;font-size:16px;">Practice Point History</h4>
-                                <button onclick="document.getElementById('ppHistoryModal').style.display='none'" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-secondary);">×</button>
-                            </div>
-                            <div id="ppHistoryContent" style="padding:20px;"></div>
-                        </div>
-                    </div>
+                    <div id="extractResults" style="display:none;margin-top:12px;"></div>
                 </div>
             </div>
 
