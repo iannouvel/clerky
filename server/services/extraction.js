@@ -7,17 +7,16 @@ const { routeToAI } = require('./ai');
  * Returns an array of simple if/then rule strings.
  */
 async function extractPracticePoints(title, content, userId) {
-    const prompt = `From this clinical guideline, extract simple if/then practice points.
+    const prompt = `From this guideline, extract all the relevant practice points for clinical management of individual patients (ie don't worry about audit standards for the unit, this is only to guide individuals making decisions).
 
 Guideline: ${title}
 
 Content:
 ${content}
 
-Return ONLY a JSON array of strings. Each string is one simple clinical rule. Examples:
-["If patient has symptom X, then do Y", "For condition A, consider treatment B"]
+Can you summarise this as a numbered list of individual practice points, written in the if-then style? Please break down complex practice points into individual simpler ones, if required.
 
-Extract all practice points. Return the JSON array only.`;
+Return ONLY a JSON array of strings (no numbering). Each string is one simple practice point in if-then style.`;
 
     try {
         const result = await routeToAI({
