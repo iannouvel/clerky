@@ -9627,7 +9627,8 @@ EXTRACTION RULES:
 
 TESTABILITY RULES — apply these BEFORE extracting each rule:
 - The condition MUST be objectively detectable from clinical documentation (e.g. 'gestational age < 34+0 weeks', 'patient is RhD-negative', 'placenta praevia confirmed on ultrasound'). NOT: 'if praevia suspected', 'if viability uncertain', 'if appropriate'.
-- The action MUST be a specific, documentable clinical action (e.g. 'administer Anti-D Ig 500 IU IM within 72 hours', 'perform CTG for minimum 30 minutes'). NOT: 'assess', 'consider', 'manage', 'stabilise', 'follow protocol', 'ensure', 'adhere to'.
+- For hard_contraindication and hard_requirement: The action MUST be a specific, documentable clinical action (e.g. 'administer Anti-D Ig 500 IU IM within 72 hours', 'perform CTG for minimum 30 minutes'). NOT: 'assess', 'consider', 'manage', 'stabilise', 'follow protocol', 'ensure', 'adhere to'.
+- For mandatory_counselling and soft_recommendation: The action may use 'discuss', 'inform', 'offer', 'counsel', 'advise', 'recommend', or 'consider' — these are testable because their documentation can be verified in clinical notes. Extract each distinct counselling topic or recommendation as a separate rule.
 - DO NOT extract general management philosophies or protocol references (e.g. 'follow ABCD approach', 'use multidisciplinary team', 'adhere to local protocols') — only extract the specific individual actions within them.
 - If a rule requires clinical inference rather than reading documented data, DO NOT extract it.
 - If the condition is inherently indeterminate from a note ('if appropriate', 'if needed', 'if indicated'), DO NOT extract it.
@@ -9892,7 +9893,8 @@ Evaluate each rule and assign a verdict:
 - "drop": rule is fundamentally untestable (generic protocol reference, inherently subjective condition, or action that cannot be detected in documentation)
 
 BAD condition patterns → drop or rewrite: "if suspected", "if appropriate", "if uncertain/unknown", "if needed", "if viability uncertain", "if shock present" (without measurable criteria)
-BAD action patterns → drop or rewrite: "assess", "consider", "manage", "stabilise", "ensure", "follow [protocol/approach]", "adhere to", "monitor" (without specific parameters)
+BAD action patterns → drop or rewrite: "manage", "stabilise", "follow [protocol/approach]", "adhere to" (without specific parameters)
+ACCEPTABLE action patterns for mandatory_counselling/soft_recommendation → keep: "discuss", "inform", "offer", "counsel", "advise", "recommend", "consider" — these are documentable in clinical notes
 
 RULES:
 ${ruleList}
