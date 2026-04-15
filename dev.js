@@ -6605,7 +6605,6 @@ ${responseText}
         async function fetchCalibrationGuidelines() {
             if (_calibrationGuidelines) return _calibrationGuidelines;
             try {
-                const { collection, getDocs } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
                 const snap = await getDocs(collection(db, 'guidelines'));
                 _calibrationGuidelines = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                 return _calibrationGuidelines;
@@ -7353,7 +7352,6 @@ ${responseText}
                 const token = await getCalibrationToken();
 
                 // Get guideline from Firestore
-                const { getDoc, doc } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
                 const snap = await getDoc(doc(db, 'guidelines', guidelineId));
                 if (!snap.exists()) throw new Error('Guideline not found');
 
@@ -7370,6 +7368,7 @@ ${responseText}
                     body: JSON.stringify({ guidelineId, title, content })
                 });
 
+                if (!res.ok) throw new Error(`Server error: ${res.status}`);
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error);
 
