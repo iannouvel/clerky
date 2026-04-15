@@ -6877,18 +6877,42 @@ ${responseText}
             document.getElementById('calibrationRunResults').style.display = 'none';
 
             try {
-                // ── Step 1: Regenerate auditable elements ──
+                // ── Step 1: Regenerate auditable elements (async with progress) ──
                 const token1 = await auth.currentUser.getIdToken();
                 const regenRes = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
                     method: 'POST',
                     headers: { Authorization: `Bearer ${token1}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ guidelineIds: [guidelineId] })
+                    body: JSON.stringify({ guidelineId, async: true })
                 });
                 const regenData = await regenRes.json();
                 if (!regenData.success) throw new Error(regenData.error || 'Regeneration request failed');
 
-                if (regenData.batchId) {
-                    // Async batch — poll until finished
+                if (regenData.jobId) {
+                    // Async extraction — poll for stepwise progress
+                    await new Promise((resolve, reject) => {
+                        const poll = setInterval(async () => {
+                            try {
+                                const t = await auth.currentUser.getIdToken();
+                                const sr = await fetch(`${SERVER_URL}/getExtractionJobStatus?jobId=${regenData.jobId}`, {
+                                    headers: { Authorization: `Bearer ${t}` }
+                                });
+                                if (!sr.ok) return;
+                                const s = await sr.json();
+                                if (s.stepMessage) {
+                                    step1.textContent = `⏳ Step 1/4: ${s.stepMessage}`;
+                                }
+                                if (s.status === 'complete') {
+                                    clearInterval(poll);
+                                    resolve(s);
+                                } else if (s.status === 'error') {
+                                    clearInterval(poll);
+                                    reject(new Error(s.error || 'Extraction failed'));
+                                }
+                            } catch (e) { clearInterval(poll); reject(e); }
+                        }, 2000);
+                    });
+                } else if (regenData.batchId) {
+                    // Legacy batch mode fallback
                     await new Promise((resolve, reject) => {
                         const poll = setInterval(async () => {
                             try {
