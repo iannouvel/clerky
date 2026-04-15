@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extract Practice Points</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        select, button { padding: 8px 12px; font-size: 14px; }
+        button { background: #0066cc; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0052a3; }
+        #output { margin-top: 20px; background: #f5f5f5; padding: 15px; border-radius: 4px; }
+        pre { background: #fff; padding: 10px; border: 1px solid #ddd; overflow-x: auto; }
+        .loading { color: #666; }
+        .error { color: #d00; }
+        .success { color: #060; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Extract Practice Points</h1>
+
+        <div style="margin-bottom: 20px;">
+            <label for="guidelineSelect">Select Guideline:</label>
+            <select id="guidelineSelect">
+                <option value="">Loading guidelines...</option>
+            </select>
+            <button onclick="extractPoints()">Extract Practice Points</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDPh9Vh_XPYv7lqLqKM7_3RnSRNkEzHxF0",
+            authDomain: "clerky-b3be8.firebaseapp.com",
+            projectId: "clerky-b3be8",
+            storageBucket: "clerky-b3be8.appspot.com",
+            messagingSenderId: "778852631191",
+            appId: "1:778852631191:web:e8f2c3e1d2a4b5c6d7e8"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Load guidelines into dropdown
+        async function loadGuidelines() {
+            try {
+                const snap = await db.collection('guidelines').get();
+                const select = document.getElementById('guidelineSelect');
+                select.innerHTML = '<option value="">-- Select a guideline --</option>';
+
+                snap.docs.forEach(doc => {
+                    const option = document.createElement('option');
+                    option.value = doc.id;
+                    option.textContent = doc.data().title || doc.id;
+                    select.appendChild(option);
+                });
+            } catch (err) {
+                document.getElementById('output').innerHTML =
+                    `<div class="error">Error loading guidelines: ${err.message}</div>`;
+            }
+        }
+
+        // Extract practice points
+        async function extractPoints() {
+            const guidelineId = document.getElementById('guidelineSelect').value;
+            if (!guidelineId) {
+                document.getElementById('output').innerHTML =
+                    '<div class="error">Please select a guideline</div>';
+                return;
+            }
+
+            document.getElementById('output').innerHTML = '<div class="loading">Extracting...</div>';
+
+            try {
+                const snap = await db.collection('guidelines').doc(guidelineId).get();
+                if (!snap.exists) throw new Error('Guideline not found');
+
+                const data = snap.data();
+                const title = data.title || guidelineId;
+                const content = data.content || data.condensed || '(No content)';
+
+                // Call extraction API
+                const response = await fetch('/api/extractPracticePoints', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId, title, content })
+                });
+
+                if (!response.ok) throw new Error(`API error: ${response.status}`);
+                const result = await response.json();
+
+                if (!result.success) throw new Error(result.error);
+
+                // Display results
+                const points = result.practicePoints || [];
+                const output = document.getElementById('output');
+                output.innerHTML = `
+                    <div class="success">✓ Extracted ${points.length} practice points</div>
+                    <h3>${title}</h3>
+                    <pre>${JSON.stringify(points, null, 2)}</pre>
+                    <p><small>${points.length} points</small></p>
+                `;
+            } catch (err) {
+                document.getElementById('output').innerHTML =
+                    `<div class="error">Error: ${err.message}</div>`;
+            }
+        }
+
+        // Load on startup
+        loadGuidelines();
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+</body>
+</html>

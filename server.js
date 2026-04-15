@@ -11,6 +11,7 @@ const upload = require('./server/middleware/upload');
 const promptsRouter = require('./server/routes/prompts');
 const systemRouter = require('./server/routes/system');
 const calibrationRouter = require('./server/routes/calibration');
+const extractionRouter = require('./server/routes/extraction');
 
 // Mount system routes
 // Mount system routes - Moved to after app initialization
@@ -20391,3 +20392,4 @@ Respond with ONLY the target population sentence — no explanation, no quotes, 
 
 app.use('/', promptsRouter);
 app.use('/', calibrationRouter);
+app.use('/api', extractionRouter);

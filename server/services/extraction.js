@@ -1,0 +1,67 @@
+'use strict';
+
+const { routeToAI } = require('./ai');
+
+/**
+ * Extracts simple practice points from guideline content.
+ * Returns an array of {name, description} objects.
+ */
+async function extractPracticePoints(title, content, userId) {
+    const systemPrompt = `You are extracting clinical practice points from a medical guideline.
+Extract 8-15 simple, testable practice points. Each point should be a clear clinical rule: "if X, then do Y".
+Keep points atomic and unambiguous — avoid bundling multiple actions.
+Return ONLY valid JSON, no other text.`;
+
+    const userPrompt = `Guideline: ${title}
+
+Content (excerpt):
+${content.substring(0, 5000)}${content.length > 5000 ? '\n...[truncated]' : ''}
+
+Extract practice points as a JSON array. Each point has:
+- name: the clinical rule (one sentence, "do X" or "consider X")
+- description: what this rule applies to (one sentence)
+
+Example format:
+[
+  {"name": "Perform CTG monitoring", "description": "For all patients ≥28 weeks with vaginal bleeding"},
+  {"name": "Obtain informed consent", "description": "Before any invasive procedure"}
+]
+
+Return the JSON array only.`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, null, 2000);
+
+        if (!result?.content) throw new Error('No response from LLM');
+
+        const cleaned = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const points = JSON.parse(cleaned);
+
+        if (!Array.isArray(points)) throw new Error('Response is not an array');
+
+        // Validate structure
+        const validated = points.map(p => ({
+            name: (p.name || '').substring(0, 300),
+            description: (p.description || '').substring(0, 500)
+        })).filter(p => p.name.length > 0);
+
+        return {
+            success: true,
+            practicePoints: validated,
+            count: validated.length
+        };
+    } catch (err) {
+        console.error('[EXTRACT] Error:', err.message);
+        return {
+            success: false,
+            error: err.message
+        };
+    }
+}
+
+module.exports = { extractPracticePoints };
