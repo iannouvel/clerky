@@ -6604,11 +6604,15 @@ ${responseText}
 
         async function fetchCalibrationGuidelines() {
             if (_calibrationGuidelines) return _calibrationGuidelines;
-            const token = await getCalibrationToken();
-            const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, { headers: { Authorization: `Bearer ${token}` } });
-            const data = await res.json();
-            _calibrationGuidelines = data.guidelines || [];
-            return _calibrationGuidelines;
+            try {
+                const { collection, getDocs } = await import('https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js');
+                const snap = await getDocs(collection(db, 'guidelines'));
+                _calibrationGuidelines = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                return _calibrationGuidelines;
+            } catch (err) {
+                console.error('Error fetching guidelines from Firestore:', err);
+                return [];
+            }
         }
 
         function buildScopeOptions(guidelines, scopeSel) {
