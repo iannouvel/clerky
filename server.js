@@ -9528,7 +9528,6 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
         'mandatory_counselling',
         'soft_recommendation',
         'contextual_caution',
-        'audit_metric',
         'result_interpretation'
     ];
 
@@ -9613,9 +9612,8 @@ RULE TYPE DEFINITIONS:
 - hard_requirement: MUST do X under condition Y. Mandatory, not optional.
 - mandatory_counselling: MUST discuss/inform the patient about X. A required consent or counselling topic.
 - soft_recommendation: SHOULD do X / consider X. Good practice but not absolute.
-- contextual_caution: Be aware of X when Y. A warning or consideration, not a direct action.
-- audit_metric: A measurable standard for service quality monitoring — ONLY use this for patient-level audit criteria (e.g. 'document pregnancy loss within 14 days of procedure in patient record'). DO NOT use for service-level institutional metrics.
-- result_interpretation: How to interpret or act on a specific test result or finding.
+- contextual_caution: Be aware of X when Y. A warning, risk factor, or consideration relevant to an individual patient's care (e.g. 'if operator experience is limited, recognise miscarriage risk may be higher').
+- result_interpretation: How to interpret or act on a specific test result or clinical finding for an individual patient (e.g. 'if CVS shows mosaicism without structural anomaly, await full karyotype before decisions').
 
 EXTRACTION RULES:
 - Each rule = ONE action by ONE person at ONE time
@@ -9643,14 +9641,14 @@ ${content}`;
                 messages: [
                     {
                         role: 'system',
-                        content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of objects. No preamble, no markdown, no conversational text. Extract every atomic practice rule from the specified section.'
+                        content: 'You are a clinical guideline auditor. Return ONLY a valid JSON array of objects. No preamble, no markdown, no conversational text. Be EXHAUSTIVE — extract every atomic practice rule from the specified section. Include counselling requirements, consent items, post-procedure care advice, test interpretation rules, risk communication points, and clinical decision rules. Err on the side of extracting MORE rules rather than fewer. Each distinct counselling topic, risk factor, or clinical action should be a separate rule.'
                     },
                     {
                         role: 'user',
                         content: extractionPrompt
                     }
                 ]
-            }, userId, null, 4096);
+            }, userId, null, 8192);
 
             const sectionPoints = parseJsonArrayFromResponse(sectionResult);
             if (sectionPoints && sectionPoints.length > 0) {
@@ -9894,7 +9892,7 @@ Evaluate each rule and assign a verdict:
 
 BAD condition patterns → drop or rewrite: "if suspected", "if appropriate", "if uncertain/unknown", "if needed", "if viability uncertain", "if shock present" (without measurable criteria)
 BAD action patterns → drop or rewrite: "manage", "stabilise", "follow [protocol/approach]", "adhere to" (without specific parameters)
-ACCEPTABLE action patterns for mandatory_counselling/soft_recommendation → keep: "discuss", "inform", "offer", "counsel", "advise", "recommend", "consider" — these are documentable in clinical notes
+ACCEPTABLE action patterns for mandatory_counselling/soft_recommendation/contextual_caution/result_interpretation → keep: "discuss", "inform", "offer", "counsel", "advise", "recommend", "consider", "recognise", "be aware", "await", "interpret" — these are documentable in clinical notes
 
 RULES:
 ${ruleList}
@@ -9956,8 +9954,8 @@ Return a JSON array with one entry per rule (same order):
             const originalPoint = practicePoints[verdict.index];
             if (!originalPoint) continue;
 
-            // Filter out audit_metric and result_interpretation types — not patient-relevant
-            if (originalPoint.ruleType === 'audit_metric' || originalPoint.ruleType === 'result_interpretation') {
+            // Filter out audit_metric types — not patient-relevant (service-level metrics)
+            if (originalPoint.ruleType === 'audit_metric') {
                 auditDropCount++;
                 dropCount++;
                 continue;
