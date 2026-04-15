@@ -12,9 +12,7 @@ import { doc, getDoc, collection, getDocs } from 'https://www.gstatic.com/fireba
 let analytics; // getAnalytics(app) disabled
 
 // Global variables
-const SERVER_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000'
-    : 'https://clerkyai.health';
+const SERVER_URL = 'https://clerky-uzni.onrender.com';
 const GITHUB_API_BASE = 'https://api.github.com/repos/iannouvel/clerky';
 const MAX_FILES_TO_LIST = 100; // Maximum number of files to list
 const MAX_FILES_TO_LOAD = 5;  // Maximum number of files to actually load content for
