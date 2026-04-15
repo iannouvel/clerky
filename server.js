@@ -9519,7 +9519,7 @@ Return a single JSON object:
 
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
-async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null) {
+async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null, onProgress = null) {
     console.log('[AUDITABLE-OPT] Step 1: Stepwise structured practice point extraction...');
 
     const RULE_TYPES = [
@@ -9560,7 +9560,11 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
 
     try {
         // ── Step 1a: Identify guideline sections ──
-        console.log('[AUDITABLE-OPT] Step 1a: Identifying guideline sections...');
+        const log = (step, msg, extra = null) => {
+            console.log(`[AUDITABLE-OPT] ${step}: ${msg}`);
+            if (onProgress) onProgress(step, msg, extra);
+        };
+        log('sections', 'Identifying guideline sections…');
         const sectionResult = await routeToAI({
             messages: [
                 {
@@ -9584,7 +9588,7 @@ ${content}`
         }
         // Filter to strings only
         sections = sections.filter(s => typeof s === 'string');
-        console.log(`[AUDITABLE-OPT] Step 1a: Identified ${sections.length} sections: ${sections.join(', ')}`);
+        log('sections_done', `Identified ${sections.length} sections: ${sections.join(', ')}`, { sections, count: sections.length });
 
         // ── Step 1b: Extract structured practice points per section ──
         const allPoints = [];
@@ -9592,7 +9596,7 @@ ${content}`
 
         for (let i = 0; i < sections.length; i++) {
             const section = sections[i];
-            console.log(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: Extracting from "${section}"...`);
+            log('extract_section', `Extracting from section ${i + 1}/${sections.length}: "${section}"…`, { section, index: i, total: sections.length });
 
             const extractionPrompt = `Extract EVERY actionable recommendation from the "${section}" section of this clinical guideline as structured practice rules.
 ${summaryContext}
@@ -9672,9 +9676,9 @@ ${content}`;
                         section: section
                     }));
                 allPoints.push(...validPoints);
-                console.log(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: Extracted ${validPoints.length} rules from "${section}"`);
+                log('extract_section_done', `Section ${i + 1}/${sections.length} "${section}": ${validPoints.length} rules extracted`, { section, count: validPoints.length, runningTotal: allPoints.length + validPoints.length });
             } else {
-                console.warn(`[AUDITABLE-OPT] Step 1b [${i + 1}/${sections.length}]: No rules extracted from "${section}"`);
+                log('extract_section_done', `Section ${i + 1}/${sections.length} "${section}": 0 rules (empty)`, { section, count: 0, runningTotal: allPoints.length });
             }
 
             // Small delay between section calls to avoid rate limiting
@@ -10009,44 +10013,54 @@ Return a JSON array with one entry per rule (same order):
 
 // Main extraction function - optimised 2-step process
 // Uses condensed content and batch processing for ~95% reduction in API calls
-async function extractAuditableElements(content, userId = null, guidelineSummary = null) {
+async function extractAuditableElements(content, userId = null, guidelineSummary = null, onProgress = null) {
     if (!content || typeof content !== 'string') {
         return [];
     }
 
+    const log = (step, msg, extra = null) => {
+        console.log(`[AUDITABLE-OPT] ${step}: ${msg}`);
+        if (onProgress) onProgress(step, msg, extra);
+    };
+
     try {
         const summaryInfo = guidelineSummary ? ` (with summary context)` : '';
-        console.log(`[AUDITABLE-OPT] Starting optimised 2-step extraction${summaryInfo}...`);
-        console.log(`[AUDITABLE-OPT] Content length: ${content.length} chars`);
+        log('init', `Starting extraction${summaryInfo} — ${content.length} chars`);
 
         // Step 1: Identify and structure all practice points in one call
-        const practicePoints = await identifyAndStructurePracticePoints(content, userId, guidelineSummary);
+        const practicePoints = await identifyAndStructurePracticePoints(content, userId, guidelineSummary, onProgress);
 
         if (!practicePoints || practicePoints.length === 0) {
-            console.error('[AUDITABLE-OPT] Step 1 failed to identify practice points');
+            log('error', 'Step 1 failed to identify practice points');
             return [];
         }
 
         // Step 1.5: Validate and sharpen practice points for testability
+        log('validate', `Validating ${practicePoints.length} raw practice points for testability…`);
         const validatedPoints = await validateAndSharpenPracticePoints(practicePoints, userId);
 
         if (!validatedPoints || validatedPoints.length === 0) {
-            console.error('[AUDITABLE-OPT] Step 1.5 validation resulted in no points');
+            log('error', 'Validation resulted in no points');
             return [];
         }
 
+        log('validate_done', `Validation complete: ${validatedPoints.length} points passed`, { count: validatedPoints.length });
+
         // Step 1.6: Second dedup pass — catches any new duplicates introduced by rewriting
+        log('dedup', `Deduplicating ${validatedPoints.length} validated points…`);
         const prefix = (guidelineSummary || 'RULE')
             .replace(/[^A-Za-z0-9\s]/g, '')
             .split(/\s+/).slice(0, 3)
             .map(w => w.substring(0, 4).toUpperCase())
             .join('').substring(0, 8) || 'RULE';
         const dedupedPoints = await deduplicatePracticePoints(validatedPoints, userId, prefix);
+        log('dedup_done', `Deduplication complete: ${dedupedPoints.length} unique points`, { count: dedupedPoints.length });
 
         // Step 2: Batch expand if needed (optional - only if descriptions need improvement)
+        log('expand', `Expanding ${dedupedPoints.length} points with descriptions…`);
         const auditableElements = await batchExpandPracticePoints(dedupedPoints, content, userId);
 
-        console.log(`[AUDITABLE-OPT] Extraction complete: ${auditableElements.length} auditable elements`);
+        log('complete', `Extraction complete: ${auditableElements.length} practice points`, { count: auditableElements.length });
         return auditableElements;
 
     } catch (error) {
@@ -12620,6 +12634,18 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
     }
 });
 
+// In-memory store for extraction job progress (same pattern as calibrationJobs)
+const extractionJobs = {};
+
+// GET /getExtractionJobStatus?jobId=xxx — poll for extraction progress
+app.get('/getExtractionJobStatus', authenticateUser, (req, res) => {
+    const { jobId } = req.query;
+    if (!jobId || !extractionJobs[jobId]) {
+        return res.status(404).json({ success: false, error: 'Job not found' });
+    }
+    res.json({ success: true, ...extractionJobs[jobId] });
+});
+
 // Endpoint to REGENERATE auditable elements (forces regeneration even if elements exist)
 app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
     try {
@@ -12639,38 +12665,75 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
 
         // If specific guidelineId is provided (legacy support)
         if (guidelineId && !processAll && !guidelineIds) {
+            const guidelineRef = db.collection('guidelines').doc(guidelineId);
+            const guidelineDoc = await guidelineRef.get();
+
+            if (!guidelineDoc.exists) {
+                return res.status(404).json({ success: false, error: 'Guideline not found' });
+            }
+
+            const guideline = guidelineDoc.data();
+            const content = guideline.condensed || guideline.content;
+            if (!content) {
+                return res.status(400).json({ success: false, error: 'No content available for extraction' });
+            }
+
+            const summary = guideline.summary || guideline.humanFriendlyTitle || null;
+            const asyncMode = req.body.async === true;
+
+            if (asyncMode) {
+                // Async mode — return job ID immediately, run in background
+                const jobId = `extract_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+                extractionJobs[jobId] = {
+                    status: 'running',
+                    guidelineId,
+                    step: 'init',
+                    stepMessage: 'Starting extraction…',
+                    startedAt: new Date().toISOString()
+                };
+
+                res.json({ success: true, jobId, async: true, message: 'Extraction started.' });
+
+                // Fire and forget
+                extractAuditableElements(content, userId, summary, (step, message, extra) => {
+                    extractionJobs[jobId] = {
+                        ...extractionJobs[jobId],
+                        step,
+                        stepMessage: message,
+                        ...(extra || {})
+                    };
+                }).then(async (auditableElements) => {
+                    await guidelineRef.update({
+                        auditableElements,
+                        auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+                        auditableElementsRegeneratedBy: userId,
+                        lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+                    });
+                    extractionJobs[jobId] = {
+                        status: 'complete',
+                        guidelineId,
+                        step: 'complete',
+                        stepMessage: `Extraction complete: ${auditableElements.length} practice points`,
+                        count: auditableElements.length,
+                        completedAt: new Date().toISOString()
+                    };
+                }).catch(err => {
+                    console.error(`[REGEN-AUDITABLE] Async job ${jobId} failed:`, err.message);
+                    extractionJobs[jobId] = { status: 'error', guidelineId, error: err.message };
+                });
+
+                // Clean up after 1 hour
+                setTimeout(() => { delete extractionJobs[jobId]; }, 60 * 60 * 1000);
+                return;
+            }
+
+            // Sync mode (legacy) — wait for completion
             try {
-                const guidelineRef = db.collection('guidelines').doc(guidelineId);
-                const guidelineDoc = await guidelineRef.get();
-
-                if (!guidelineDoc.exists) {
-                    return res.status(404).json({
-                        success: false,
-                        error: 'Guideline not found'
-                    });
-                }
-
-                const guideline = guidelineDoc.data();
-
-                // Prefer condensed content for efficiency (no verbatim quotes needed)
-                const content = guideline.condensed || guideline.content;
-                if (!content) {
-                    return res.status(400).json({
-                        success: false,
-                        error: 'No content available for extraction'
-                    });
-                }
-
-                // Pass summary for context if available
-                const summary = guideline.summary || guideline.humanFriendlyTitle || null;
-
                 console.log(`[REGEN-AUDITABLE] Extracting elements for ${guidelineId}, content length: ${content.length}`);
-
                 const auditableElements = await extractAuditableElements(content, userId, summary);
 
-                // Update the guideline (overwrite existing elements)
                 await guidelineRef.update({
-                    auditableElements: auditableElements,
+                    auditableElements,
                     auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
                     auditableElementsRegeneratedBy: userId,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
@@ -12691,10 +12754,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
 
             } catch (error) {
                 console.error(`[REGEN-AUDITABLE] Error regenerating elements for ${guidelineId}:`, error);
-                return res.status(500).json({
-                    success: false,
-                    error: error.message
-                });
+                return res.status(500).json({ success: false, error: error.message });
             }
         }
 
