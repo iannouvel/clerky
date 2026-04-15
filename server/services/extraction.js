@@ -4,37 +4,24 @@ const { routeToAI } = require('./ai');
 
 /**
  * Extracts simple practice points from guideline content.
- * Returns an array of {name, description} objects.
+ * Returns an array of simple if/then rule strings.
  */
 async function extractPracticePoints(title, content, userId) {
-    const systemPrompt = `You are extracting clinical practice points from a medical guideline.
-Extract 50-200+ simple, testable, atomic practice points. Each point should be a clear clinical rule: "if X, then do Y".
-Keep points atomic and unambiguous — never bundle multiple actions into one point.
-Granular is better than abstract. Return ONLY valid JSON, no other text.`;
+    const prompt = `From this clinical guideline, extract simple if/then practice points.
 
-    const userPrompt = `Guideline: ${title}
+Guideline: ${title}
 
 Content:
 ${content}
 
-Extract ALL practice points as a JSON array. Each point has:
-- name: the clinical rule (one sentence, "do X" or "consider X")
-- description: what this rule applies to (one sentence)
+Return ONLY a JSON array of strings. Each string is one simple clinical rule. Examples:
+["If patient has symptom X, then do Y", "For condition A, consider treatment B"]
 
-Example format:
-[
-  {"name": "Perform CTG monitoring", "description": "For all patients ≥28 weeks with vaginal bleeding"},
-  {"name": "Obtain informed consent", "description": "Before any invasive procedure"}
-]
-
-Return the JSON array only. Aim for 50-200+ points.`;
+Extract all practice points. Return the JSON array only.`;
 
     try {
         const result = await routeToAI({
-            messages: [
-                { role: 'system', content: systemPrompt },
-                { role: 'user', content: userPrompt }
-            ]
+            messages: [{ role: 'user', content: prompt }]
         }, userId, null, 65000);
 
         if (!result?.content) throw new Error('No response from LLM');
@@ -44,11 +31,10 @@ Return the JSON array only. Aim for 50-200+ points.`;
 
         if (!Array.isArray(points)) throw new Error('Response is not an array');
 
-        // Validate structure
-        const validated = points.map(p => ({
-            name: (p.name || '').substring(0, 300),
-            description: (p.description || '').substring(0, 500)
-        })).filter(p => p.name.length > 0);
+        // Simple validation
+        const validated = points
+            .map(p => String(p || '').trim())
+            .filter(p => p.length > 0);
 
         return {
             success: true,
