@@ -12703,6 +12703,11 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                         ...(extra || {})
                     };
                 }).then(async (auditableElements) => {
+                    if (!auditableElements || auditableElements.length === 0) {
+                        console.error(`[REGEN-AUDITABLE] Async job ${jobId}: extraction returned 0 elements`);
+                        extractionJobs[jobId] = { status: 'error', guidelineId, error: 'Extraction returned 0 practice points — check server logs' };
+                        return;
+                    }
                     await guidelineRef.update({
                         auditableElements,
                         auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
