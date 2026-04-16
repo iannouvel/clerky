@@ -7334,9 +7334,6 @@ ${responseText}
             container.style.display = 'block';
         }
 
-        // Store extracted points for Step 2 save
-        let _extractedPoints = { guidelineId: null, points: [] };
-
         async function extractPracticePoints() {
             const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
             if (!guidelineId) {
@@ -7374,8 +7371,24 @@ ${responseText}
                 if (!data.success) throw new Error(data.error);
 
                 const points = data.practicePoints || [];
-                _extractedPoints = { guidelineId, points };
-                status.textContent = `✓ Extracted ${points.length} points`;
+
+                // Automatically save to Firestore
+                status.textContent = `Extracted ${points.length} points. Saving to Firestore...`;
+
+                const saveRes = await fetch(`${SERVER_URL}/api/savePracticePoints`, {
+                    method: 'POST',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ guidelineId, points })
+                });
+
+                if (!saveRes.ok) throw new Error(`Save error: ${saveRes.status}`);
+                const saveData = await saveRes.json();
+                if (!saveData.success) throw new Error(saveData.error);
+
+                status.textContent = `✓ Extracted and stored ${points.length} practice points`;
                 results.innerHTML = `<pre style="font-size:12px;background:var(--bg-input);padding:10px;border-radius:4px;overflow-x:auto;">${JSON.stringify(points, null, 2)}</pre>`;
                 results.style.display = 'block';
             } catch (err) {
@@ -7383,98 +7396,8 @@ ${responseText}
             }
         }
 
-        async function saveExtractedPracticePoints() {
-            if (!_extractedPoints.guidelineId || _extractedPoints.points.length === 0) {
-                document.getElementById('saveStatus').textContent = 'Extract points first.';
-                return;
-            }
-
-            const status = document.getElementById('saveStatus');
-            const results = document.getElementById('saveResults');
-            status.textContent = 'Saving to Firestore...';
-            results.style.display = 'none';
-
-            try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/api/savePracticePoints`, {
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        guidelineId: _extractedPoints.guidelineId,
-                        points: _extractedPoints.points
-                    })
-                });
-
-                if (!res.ok) throw new Error(`Server error: ${res.status}`);
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error);
-
-                status.textContent = `✓ Saved ${data.savedCount || _extractedPoints.points.length} points to Firestore`;
-                if (data.details) {
-                    results.innerHTML = `<pre style="font-size:12px;background:var(--bg-input);padding:10px;border-radius:4px;overflow-x:auto;">${JSON.stringify(data.details, null, 2)}</pre>`;
-                    results.style.display = 'block';
-                }
-            } catch (err) {
-                status.textContent = `Error: ${err.message}`;
-            }
-        }
-
-        async function viewStoredPracticePoints() {
-            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
-            if (!guidelineId) {
-                document.getElementById('saveStatus').textContent = 'Select a guideline first.';
-                return;
-            }
-
-            const container = document.getElementById('storedPointsContainer');
-            const list = document.getElementById('storedPointsList');
-            const status = document.getElementById('saveStatus');
-
-            status.textContent = 'Loading stored points...';
-            list.innerHTML = '';
-            container.style.display = 'none';
-
-            try {
-                const snap = await getDocs(collection(db, 'guidelines', guidelineId, 'practicePoints'));
-
-                if (snap.empty) {
-                    status.textContent = 'No stored points found for this guideline.';
-                    return;
-                }
-
-                const points = snap.docs.map((doc, idx) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                    order: idx + 1
-                }));
-
-                status.textContent = `✓ Found ${points.length} stored points`;
-
-                list.innerHTML = points.map((point, idx) => `
-                    <div style="padding:10px;border-bottom:1px solid var(--border-color);margin-bottom:8px;">
-                        <div style="font-size:11px;color:var(--text-secondary);margin-bottom:4px;font-weight:600;">Point ${idx + 1}</div>
-                        <div style="font-size:13px;line-height:1.4;color:var(--text-primary);">${point.text}</div>
-                        <div style="font-size:10px;color:var(--text-secondary);margin-top:4px;">Status: ${point.status || 'unknown'}</div>
-                    </div>
-                `).join('');
-
-                container.style.display = 'block';
-            } catch (err) {
-                status.textContent = `Error: ${err.message}`;
-            }
-        }
-
         const extractBtn = document.getElementById('extractPracticePointsBtn');
         if (extractBtn) extractBtn.addEventListener('click', extractPracticePoints);
-
-        const saveBtn = document.getElementById('saveExtractedPointsBtn');
-        if (saveBtn) saveBtn.addEventListener('click', saveExtractedPracticePoints);
-
-        const viewBtn = document.getElementById('viewStoredPointsBtn');
-        if (viewBtn) viewBtn.addEventListener('click', viewStoredPracticePoints);
 
         const syncBtn = document.getElementById('syncPracticePointsBtn');
         if (syncBtn) syncBtn.addEventListener('click', () => syncPracticePoints(false));
