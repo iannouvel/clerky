@@ -1,6 +1,7 @@
 'use strict';
 
 const { routeToAI } = require('./ai');
+const { db } = require('../config/firebase');
 
 /**
  * Extracts simple practice points from guideline content.
@@ -47,4 +48,58 @@ Return ONLY a JSON array of strings (no numbering). Each string is one simple pr
     }
 }
 
-module.exports = { extractPracticePoints };
+/**
+ * Saves extracted practice points as individual documents to Firestore
+ * Creates a subcollection under the guideline document
+ */
+async function savePracticePoints(guidelineId, points) {
+    try {
+        if (!guidelineId || !Array.isArray(points) || points.length === 0) {
+            throw new Error('Invalid guidelineId or points array');
+        }
+
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        const practicePointsRef = guidelineRef.collection('practicePoints');
+
+        const batch = db.batch();
+        const savedPoints = [];
+
+        for (const point of points) {
+            if (!point || typeof point !== 'string') continue;
+
+            const docRef = practicePointsRef.doc();
+            const pointData = {
+                text: point.trim(),
+                createdAt: new Date(),
+                status: 'extracted',
+                order: savedPoints.length + 1
+            };
+
+            batch.set(docRef, pointData);
+            savedPoints.push({
+                id: docRef.id,
+                ...pointData
+            });
+        }
+
+        await batch.commit();
+
+        return {
+            success: true,
+            savedCount: savedPoints.length,
+            details: {
+                guidelineId,
+                totalPoints: savedPoints.length,
+                points: savedPoints
+            }
+        };
+    } catch (err) {
+        console.error('[SAVE_POINTS] Error:', err.message);
+        return {
+            success: false,
+            error: err.message
+        };
+    }
+}
+
+module.exports = { extractPracticePoints, savePracticePoints };
