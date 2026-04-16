@@ -100,7 +100,23 @@ async function savePracticePoints(guidelineId, points) {
                 text: point.trim(),
                 createdAt: new Date(),
                 status: 'extracted',
-                order: savedPoints.length + 1
+                order: savedPoints.length + 1,
+                // Initialize context structure for evolutionary refinement
+                context: {
+                    triggers: [],           // Clinical conditions that activate this rule
+                    criteria: '',           // Patient populations/scenarios where it applies
+                    exceptions: [],         // When NOT to apply
+                    edgeCases: [],          // Known ambiguities
+                    version: 1,
+                    lastRefined: new Date()
+                },
+                // Track application history for context evolution
+                applicationHistory: [],
+                // Evolution log tracks how context improves over time
+                evolution: {
+                    version: 1,
+                    refinements: []
+                }
             };
 
             batch.set(docRef, pointData);
