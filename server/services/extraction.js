@@ -24,8 +24,36 @@ Return ONLY a JSON array of strings (no numbering). Each string is one simple pr
 
         if (!result?.content) throw new Error('No response from LLM');
 
-        const cleaned = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const points = JSON.parse(cleaned);
+        let cleaned = result.content.trim().replace(/```json\n?|\n?```/g, '');
+
+        // Handle JSON parsing errors by cleaning problematic content
+        let points;
+        try {
+            points = JSON.parse(cleaned);
+        } catch (parseErr) {
+            // If initial parse fails, try to extract individual strings manually
+            console.warn('[EXTRACT] JSON parse failed, attempting line-by-line extraction:', parseErr.message);
+
+            // Try to extract quoted strings from the content
+            const stringPattern = /"([^"\\]|\\.)*"/g;
+            const matches = cleaned.match(stringPattern);
+
+            if (!matches || matches.length === 0) {
+                throw new Error(`JSON parse failed and no strings could be extracted: ${parseErr.message}`);
+            }
+
+            // Extract and unescape the strings
+            points = matches.map(m => {
+                try {
+                    return JSON.parse(m);
+                } catch (e) {
+                    // Fallback: remove quotes and return as-is
+                    return m.slice(1, -1);
+                }
+            });
+
+            console.log(`[EXTRACT] Recovered ${points.length} strings from malformed JSON`);
+        }
 
         if (!Array.isArray(points)) throw new Error('Response is not an array');
 
