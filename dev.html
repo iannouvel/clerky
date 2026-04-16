@@ -1491,6 +1491,21 @@
                     </div>
                     <div id="extractResults" style="display:none;margin-top:12px;"></div>
                 </div>
+
+                <!-- Step 2: Save Practice Points to Firestore -->
+                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Save to Firestore</p>
+                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
+                        <button id="saveExtractedPointsBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;padding:10px 20px;">💾 Save Extracted Points</button>
+                        <button id="viewStoredPointsBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;padding:10px 20px;">👁️ View Stored Points</button>
+                        <button id="syncAllPracticePointsBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;padding:10px 20px;">🔄 Sync All Guidelines</button>
+                        <span id="saveStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                    </div>
+                    <div id="saveResults" style="display:none;margin-top:12px;"></div>
+                    <div id="storedPointsContainer" style="display:none;margin-top:12px;">
+                        <div id="storedPointsList" style="max-height:400px;overflow-y:auto;background:var(--bg-input);border-radius:4px;padding:10px;"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- ── Pane: Prompt Evolution (injected by calSubTab JS) ── -->
