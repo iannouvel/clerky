@@ -7396,8 +7396,107 @@ ${responseText}
             }
         }
 
+        async function viewPracticePointsWithContext() {
+            const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
+            if (!guidelineId) {
+                document.getElementById('extractStatus').textContent = 'Select a guideline first.';
+                return;
+            }
+
+            const viewer = document.getElementById('practicePointsViewer');
+            const list = document.getElementById('pointsList');
+            const status = document.getElementById('extractStatus');
+
+            status.textContent = 'Loading practice points...';
+            list.innerHTML = '';
+            viewer.style.display = 'none';
+
+            try {
+                const snap = await getDocs(collection(db, 'guidelines', guidelineId, 'practicePoints'));
+
+                if (snap.empty) {
+                    status.textContent = 'No practice points found. Extract them first.';
+                    return;
+                }
+
+                const points = snap.docs
+                    .map(doc => ({ id: doc.id, ...doc.data() }))
+                    .sort((a, b) => (a.order || 0) - (b.order || 0));
+
+                status.textContent = `✓ Loaded ${points.length} practice points`;
+
+                list.innerHTML = points.map((point, idx) => {
+                    const context = point.context || {};
+                    const history = point.applicationHistory || [];
+                    const evolution = point.evolution || {};
+
+                    return `
+                        <div style="border:1px solid var(--border-color);border-radius:6px;padding:12px;background:var(--bg-secondary);">
+                            <div style="margin-bottom:10px;">
+                                <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Point ${idx + 1}</div>
+                                <div style="font-size:13px;line-height:1.5;color:var(--text-primary);margin-bottom:10px;">${point.text}</div>
+                            </div>
+
+                            <details style="cursor:pointer;">
+                                <summary style="font-size:12px;font-weight:600;color:var(--text-secondary);padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">
+                                    📦 Context (${context.version || 1})
+                                </summary>
+                                <div style="padding:10px;margin-top:8px;background:var(--bg-input);border-radius:4px;font-size:12px;color:var(--text-primary);">
+                                    <div style="margin-bottom:8px;">
+                                        <div style="font-weight:600;color:var(--text-secondary);font-size:11px;text-transform:uppercase;margin-bottom:4px;">Triggers</div>
+                                        <div style="color:var(--text-secondary);">${context.triggers?.length > 0 ? context.triggers.join(', ') : '(none yet)'}</div>
+                                    </div>
+                                    <div style="margin-bottom:8px;">
+                                        <div style="font-weight:600;color:var(--text-secondary);font-size:11px;text-transform:uppercase;margin-bottom:4px;">Criteria</div>
+                                        <div style="color:var(--text-secondary);">${context.criteria || '(to be refined)'}</div>
+                                    </div>
+                                    <div style="margin-bottom:8px;">
+                                        <div style="font-weight:600;color:var(--text-secondary);font-size:11px;text-transform:uppercase;margin-bottom:4px;">Exceptions</div>
+                                        <div style="color:var(--text-secondary);">${context.exceptions?.length > 0 ? context.exceptions.join(', ') : '(none defined)'}</div>
+                                    </div>
+                                    <div>
+                                        <div style="font-weight:600;color:var(--text-secondary);font-size:11px;text-transform:uppercase;margin-bottom:4px;">Edge Cases</div>
+                                        <div style="color:var(--text-secondary);">${context.edgeCases?.length > 0 ? context.edgeCases.join(', ') : '(none identified)'}</div>
+                                    </div>
+                                </div>
+                            </details>
+
+                            <details style="cursor:pointer;margin-top:8px;">
+                                <summary style="font-size:12px;font-weight:600;color:var(--text-secondary);padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">
+                                    📊 History (${history.length} applications)
+                                </summary>
+                                <div style="padding:10px;margin-top:8px;background:var(--bg-input);border-radius:4px;font-size:11px;color:var(--text-secondary);">
+                                    ${history.length > 0
+                                        ? history.map(h => `<div style="margin-bottom:6px;">✓ ${h.correct ? '✓' : '✗'} ${h.applicable ? 'Applicable' : 'Not applicable'}</div>`).join('')
+                                        : 'No applications yet'}
+                                </div>
+                            </details>
+
+                            <details style="cursor:pointer;margin-top:8px;">
+                                <summary style="font-size:12px;font-weight:600;color:var(--text-secondary);padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">
+                                    🔄 Evolution (v${evolution.version || 1})
+                                </summary>
+                                <div style="padding:10px;margin-top:8px;background:var(--bg-input);border-radius:4px;font-size:11px;color:var(--text-secondary);">
+                                    ${evolution.refinements?.length > 0
+                                        ? evolution.refinements.map(r => `<div style="margin-bottom:6px;">v${r.version}: ${r.change}</div>`).join('')
+                                        : 'No refinements yet'}
+                                </div>
+                            </details>
+                        </div>
+                    `;
+                }).join('');
+
+                viewer.style.display = 'block';
+            } catch (err) {
+                status.textContent = `Error: ${err.message}`;
+            }
+        }
+
         const extractBtn = document.getElementById('extractPracticePointsBtn');
         if (extractBtn) extractBtn.addEventListener('click', extractPracticePoints);
+
+        const viewBtn = document.getElementById('viewPracticePointsBtn');
+        if (viewBtn) viewBtn.addEventListener('click', viewPracticePointsWithContext);
 
         const syncBtn = document.getElementById('syncPracticePointsBtn');
         if (syncBtn) syncBtn.addEventListener('click', () => syncPracticePoints(false));
