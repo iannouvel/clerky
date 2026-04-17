@@ -26,6 +26,12 @@ service cloud.firestore {
       allow create: if isAuthenticated();
       allow update: if isAuthenticated();
       allow delete: if isAuthenticated() && (isAdmin() || request.auth.uid == resource.data.uploadedBy);
+
+      // Practice points subcollection - extracted from guidelines
+      match /practicePoints/{pointId} {
+        allow read: if isAuthenticated();
+        allow write: if isAuthenticated() && (isAdmin() || parent.exists());
+      }
     }
     
     // Summaries collection
