@@ -3,6 +3,42 @@
 const { routeToAI } = require('./ai');
 const { db } = require('../config/firebase');
 
+const EXTRACTION_PROMPT = `From this guideline, extract all the relevant practice points for clinical management of individual patients.
+
+Can you summarise this as a numbered list of individual practice points, written in the if-then style? Please break down complex practice points into individual simpler ones, if required.
+
+Return ONLY the practice points as a numbered list. Each line should be one simple practice point in if-then style. No JSON, no markdown, just plain numbered list.`;
+
+/**
+ * Get raw AI response for practice point extraction (no JSON parsing)
+ * Returns the plain text numbered list from the AI
+ */
+async function extractPracticePointsRaw(title, content, userId) {
+    const prompt = `Guideline: ${title}
+
+Content:
+${content}
+
+${EXTRACTION_PROMPT}`;
+
+    try {
+        const result = await routeToAI(prompt, userId);
+
+        if (!result?.content) throw new Error('No response from LLM');
+
+        return {
+            success: true,
+            rawResponse: result.content.trim()
+        };
+    } catch (err) {
+        console.error('[EXTRACT_RAW] Error:', err.message);
+        return {
+            success: false,
+            error: err.message
+        };
+    }
+}
+
 /**
  * Extracts simple practice points from guideline content.
  * Returns an array of simple if/then rule strings.
@@ -32,27 +68,49 @@ Return ONLY a JSON array of strings (no numbering). Each string is one simple pr
             points = JSON.parse(cleaned);
         } catch (parseErr) {
             // If initial parse fails, try to extract individual strings manually
-            console.warn('[EXTRACT] JSON parse failed, attempting line-by-line extraction:', parseErr.message);
+            console.warn('[EXTRACT] JSON parse failed, attempting recovery:', parseErr.message);
+            console.warn('[EXTRACT] Raw content length:', cleaned.length);
 
-            // Try to extract quoted strings from the content
-            const stringPattern = /"([^"\\]|\\.)*"/g;
-            const matches = cleaned.match(stringPattern);
+            // Strategy 1: Try to fix common JSON issues
+            let fixedJson = cleaned
+                // Handle newlines in strings by escaping them
+                .replace(/[\r\n]/g, ' ')
+                // Remove any trailing commas before ] or }
+                .replace(/,(\s*[}\]])/g, '$1')
+                // Handle unescaped quotes in values (very basic attempt)
+                .replace(/: "([^"]*)([^\\])"([^"])/g, ': "$1$2\\"$3');
 
-            if (!matches || matches.length === 0) {
-                throw new Error(`JSON parse failed and no strings could be extracted: ${parseErr.message}`);
-            }
+            try {
+                points = JSON.parse(fixedJson);
+                console.log('[EXTRACT] Successfully parsed after fixing common issues');
+            } catch (fixErr) {
+                // Strategy 2: Extract individual quoted strings as fallback
+                console.warn('[EXTRACT] Fixed JSON parse also failed, extracting strings manually');
 
-            // Extract and unescape the strings
-            points = matches.map(m => {
-                try {
-                    return JSON.parse(m);
-                } catch (e) {
-                    // Fallback: remove quotes and return as-is
-                    return m.slice(1, -1);
+                // More comprehensive regex pattern for quoted strings
+                // Handles escaped quotes and newlines within strings
+                const stringPattern = /"(?:[^"\\]|\\.)*"/g;
+                const matches = cleaned.match(stringPattern);
+
+                if (!matches || matches.length === 0) {
+                    throw new Error(`JSON parse failed and no strings could be extracted: ${parseErr.message}`);
                 }
-            });
 
-            console.log(`[EXTRACT] Recovered ${points.length} strings from malformed JSON`);
+                console.log(`[EXTRACT] Found ${matches.length} quoted strings in response`);
+
+                // Extract and unescape the strings
+                points = matches.map(m => {
+                    try {
+                        return JSON.parse(m);
+                    } catch (e) {
+                        // Fallback: remove quotes and unescape manually
+                        const unquoted = m.slice(1, -1);
+                        return unquoted.replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+                    }
+                });
+
+                console.log(`[EXTRACT] Recovered ${points.length} strings from malformed JSON`);
+            }
         }
 
         if (!Array.isArray(points)) throw new Error('Response is not an array');
@@ -60,7 +118,9 @@ Return ONLY a JSON array of strings (no numbering). Each string is one simple pr
         // Simple validation
         const validated = points
             .map(p => String(p || '').trim())
-            .filter(p => p.length > 0);
+            .filter(p => p.length > 0 && p.length > 10); // Filter out very short strings (likely not practice points)
+
+        console.log(`[EXTRACT] Validated: ${validated.length} practice points (filtered from ${points.length})`);
 
         return {
             success: true,
@@ -69,6 +129,7 @@ Return ONLY a JSON array of strings (no numbering). Each string is one simple pr
         };
     } catch (err) {
         console.error('[EXTRACT] Error:', err.message);
+        console.error('[EXTRACT] Stack:', err.stack);
         return {
             success: false,
             error: err.message
@@ -146,4 +207,4 @@ async function savePracticePoints(guidelineId, points) {
     }
 }
 
-module.exports = { extractPracticePoints, savePracticePoints };
+module.exports = { extractPracticePointsRaw, extractPracticePoints, savePracticePoints };

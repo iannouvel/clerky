@@ -1476,9 +1476,9 @@
             <!-- ── Pane: Guideline Calibration ── -->
             <div id="calPane-guideline" style="padding:12px;">
 
-                <!-- Extract and Save Practice Points -->
+                <!-- Step 1: Preview Extraction -->
                 <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
-                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Extract practice points</p>
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Preview</p>
                     <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
                         <div>
                             <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Guideline</label>
@@ -1486,10 +1486,38 @@
                                 <option value="">Loading guidelines...</option>
                             </select>
                         </div>
-                        <button id="extractPracticePointsBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;">Extract & Save</button>
-                        <span id="extractStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                        <button id="previewExtractionBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;padding:10px 20px;">👁️ Preview</button>
+                        <span id="previewStatus" style="font-size:13px;color:var(--text-secondary);"></span>
                     </div>
-                    <div id="extractResults" style="display:none;margin-top:12px;"></div>
+                    <div id="previewContainer" style="display:none;margin-top:12px;background:var(--bg-input);border-radius:4px;padding:12px;">
+                        <div style="margin-bottom:12px;">
+                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Guideline Title</div>
+                            <div id="previewTitle" style="font-size:13px;color:var(--text-primary);"></div>
+                        </div>
+                        <div style="margin-bottom:12px;">
+                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Content Preview (first 500 chars)</div>
+                            <div id="previewContent" style="font-size:12px;color:var(--text-primary);max-height:150px;overflow-y:auto;background:var(--bg-secondary);padding:8px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;"></div>
+                        </div>
+                        <details style="margin-bottom:12px;">
+                            <summary style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;cursor:pointer;padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">Prompt to be sent to AI</summary>
+                            <div id="previewPrompt" style="font-size:12px;color:var(--text-primary);background:var(--bg-secondary);padding:10px;border-radius:4px;border:1px solid var(--border-color);margin-top:8px;white-space:pre-wrap;max-height:200px;overflow-y:auto;"></div>
+                        </details>
+                        <button id="proceedToExtractBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">✓ Proceed to Step 2 (Extract Raw)</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Extract Raw Response -->
+                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;display:none;" id="step2Container">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Extract Raw Response</p>
+                    <button id="extractRawBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;padding:10px 20px;">📝 Get Response from AI</button>
+                    <span id="extractRawStatus" style="font-size:13px;color:var(--text-secondary);margin-left:10px;"></span>
+                    <div id="rawResponseContainer" style="display:none;margin-top:12px;">
+                        <div style="background:var(--bg-input);border-radius:4px;padding:12px;border:1px solid var(--border-color);">
+                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">Raw AI Response</div>
+                            <div id="rawResponse" style="font-size:12px;color:var(--text-primary);white-space:pre-wrap;max-height:300px;overflow-y:auto;margin-bottom:12px;"></div>
+                            <button id="proceedToJsonBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">✓ Proceed to Step 3 (Convert to JSON)</button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- View Practice Points with Context -->
