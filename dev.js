@@ -7334,63 +7334,83 @@ ${responseText}
             container.style.display = 'block';
         }
 
-        async function extractPracticePoints() {
+        // Store state for the multi-step extraction process
+        let _extractionState = {
+            guidelineId: null,
+            guideline: null,
+            rawResponse: null
+        };
+
+        const EXTRACTION_PROMPT = `From this guideline, extract all the relevant practice points for clinical management of individual patients.
+
+Can you summarise this as a numbered list of individual practice points, written in the if-then style? Please break down complex practice points into individual simpler ones, if required.
+
+Return ONLY the practice points as a numbered list. Each line should be one simple practice point in if-then style. No JSON, no markdown, just plain numbered list.`;
+
+        async function previewExtraction() {
             const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
             if (!guidelineId) {
-                document.getElementById('extractStatus').textContent = 'Select a guideline first.';
+                document.getElementById('previewStatus').textContent = 'Select a guideline first.';
                 return;
             }
 
-            const status = document.getElementById('extractStatus');
-            const results = document.getElementById('extractResults');
-            status.textContent = 'Extracting...';
-            results.style.display = 'none';
-
             try {
-                const token = await getCalibrationToken();
-
-                // Get guideline from Firestore
                 const snap = await getDoc(doc(db, 'guidelines', guidelineId));
                 if (!snap.exists()) throw new Error('Guideline not found');
 
                 const guideline = snap.data();
+                _extractionState = { guidelineId, guideline, rawResponse: null };
+
                 const title = guideline.displayName || guideline.humanFriendlyTitle || guideline.title || guidelineId;
                 const content = guideline.content || guideline.condensed || '(No content)';
 
-                const res = await fetch(`${SERVER_URL}/api/extractPracticePoints`, {
+                // Show preview
+                document.getElementById('previewTitle').textContent = title;
+                document.getElementById('previewContent').textContent = content.substring(0, 500);
+                document.getElementById('previewPrompt').textContent = `Guideline: ${title}\n\nContent:\n${content.substring(0, 500)}...\n\n${EXTRACTION_PROMPT}`;
+                document.getElementById('previewContainer').style.display = 'block';
+                document.getElementById('previewStatus').textContent = '✓ Preview ready';
+                document.getElementById('step2Container').style.display = 'none';
+            } catch (err) {
+                document.getElementById('previewStatus').textContent = `Error: ${err.message}`;
+            }
+        }
+
+        async function extractRaw() {
+            if (!_extractionState.guidelineId || !_extractionState.guideline) {
+                document.getElementById('extractRawStatus').textContent = 'Preview first.';
+                return;
+            }
+
+            const status = document.getElementById('extractRawStatus');
+            status.textContent = 'Getting response from AI...';
+
+            try {
+                const token = await getCalibrationToken();
+                const guideline = _extractionState.guideline;
+                const title = guideline.displayName || guideline.humanFriendlyTitle || guideline.title || _extractionState.guidelineId;
+                const content = guideline.content || guideline.condensed || '(No content)';
+
+                // Call a new endpoint that returns raw text response
+                const res = await fetch(`${SERVER_URL}/api/extractPracticePointsRaw`, {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ guidelineId, title, content })
+                    body: JSON.stringify({ guidelineId: _extractionState.guidelineId, title, content })
                 });
 
                 if (!res.ok) throw new Error(`Server error: ${res.status}`);
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error);
 
-                const points = data.practicePoints || [];
+                const rawResponse = data.rawResponse || '';
+                _extractionState.rawResponse = rawResponse;
 
-                // Automatically save to Firestore
-                status.textContent = `Extracted ${points.length} points. Saving to Firestore...`;
-
-                const saveRes = await fetch(`${SERVER_URL}/api/savePracticePoints`, {
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ guidelineId, points })
-                });
-
-                if (!saveRes.ok) throw new Error(`Save error: ${saveRes.status}`);
-                const saveData = await saveRes.json();
-                if (!saveData.success) throw new Error(saveData.error);
-
-                status.textContent = `✓ Extracted and stored ${points.length} practice points`;
-                results.innerHTML = `<pre style="font-size:12px;background:var(--bg-input);padding:10px;border-radius:4px;overflow-x:auto;">${JSON.stringify(points, null, 2)}</pre>`;
-                results.style.display = 'block';
+                status.textContent = `✓ Got response (${rawResponse.split('\n').length} lines)`;
+                document.getElementById('rawResponse').textContent = rawResponse;
+                document.getElementById('rawResponseContainer').style.display = 'block';
             } catch (err) {
                 status.textContent = `Error: ${err.message}`;
             }
@@ -7492,8 +7512,17 @@ ${responseText}
             }
         }
 
-        const extractBtn = document.getElementById('extractPracticePointsBtn');
-        if (extractBtn) extractBtn.addEventListener('click', extractPracticePoints);
+        const previewBtn = document.getElementById('previewExtractionBtn');
+        if (previewBtn) previewBtn.addEventListener('click', previewExtraction);
+
+        const proceedBtn = document.getElementById('proceedToExtractBtn');
+        if (proceedBtn) proceedBtn.addEventListener('click', () => {
+            document.getElementById('step2Container').style.display = 'block';
+            document.getElementById('proceedToExtractBtn').style.display = 'none';
+        });
+
+        const extractRawBtn = document.getElementById('extractRawBtn');
+        if (extractRawBtn) extractRawBtn.addEventListener('click', extractRaw);
 
         const viewBtn = document.getElementById('viewPracticePointsBtn');
         if (viewBtn) viewBtn.addEventListener('click', viewPracticePointsWithContext);
