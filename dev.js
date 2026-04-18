@@ -7367,9 +7367,10 @@ Return ONLY the practice points as a numbered list. Each line should be one simp
                 // Show preview
                 document.getElementById('previewTitle').textContent = title;
                 document.getElementById('previewContent').textContent = content.substring(0, 500);
-                document.getElementById('previewPrompt').textContent = `Guideline: ${title}\n\nContent:\n${content.substring(0, 500)}...\n\n${EXTRACTION_PROMPT}`;
+                document.getElementById('contentSize').textContent = `Total content size: ${content.length} characters`;
+                document.getElementById('previewFullContent').textContent = content;
                 document.getElementById('previewContainer').style.display = 'block';
-                document.getElementById('previewStatus').textContent = '✓ Preview ready';
+                document.getElementById('previewStatus').textContent = `✓ Preview ready (content: ${content.length} chars)`;
                 document.getElementById('step2Container').style.display = 'none';
             } catch (err) {
                 document.getElementById('previewStatus').textContent = `Error: ${err.message}`;

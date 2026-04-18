@@ -1499,8 +1499,11 @@
                             <div id="previewContent" style="font-size:12px;color:var(--text-primary);max-height:150px;overflow-y:auto;background:var(--bg-secondary);padding:8px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;"></div>
                         </div>
                         <details style="margin-bottom:12px;">
-                            <summary style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;cursor:pointer;padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">Prompt to be sent to AI</summary>
-                            <div id="previewPrompt" style="font-size:12px;color:var(--text-primary);background:var(--bg-secondary);padding:10px;border-radius:4px;border:1px solid var(--border-color);margin-top:8px;white-space:pre-wrap;max-height:200px;overflow-y:auto;"></div>
+                            <summary style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;cursor:pointer;padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">Content being sent to AI (full)</summary>
+                            <div style="font-size:11px;color:var(--text-secondary);padding:8px;margin-top:4px;background:var(--bg-secondary);border-radius:4px;">
+                                <div id="contentSize" style="margin-bottom:8px;"></div>
+                                <div id="previewFullContent" style="font-size:12px;color:var(--text-primary);max-height:250px;overflow-y:auto;border:1px solid var(--border-color);padding:8px;border-radius:4px;white-space:pre-wrap;"></div>
+                            </div>
                         </details>
                         <button id="proceedToExtractBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">✓ Proceed to Step 2 (Extract Raw)</button>
                     </div>
