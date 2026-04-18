@@ -7524,6 +7524,12 @@ Return ONLY the practice points as a numbered list. Each line should be one simp
         const extractRawBtn = document.getElementById('extractRawBtn');
         if (extractRawBtn) extractRawBtn.addEventListener('click', extractRaw);
 
+        const proceedToJsonBtn = document.getElementById('proceedToJsonBtn');
+        if (proceedToJsonBtn) proceedToJsonBtn.addEventListener('click', () => {
+            // Placeholder for Step 3
+            alert('Step 3: Convert to JSON will be implemented next');
+        });
+
         const viewBtn = document.getElementById('viewPracticePointsBtn');
         if (viewBtn) viewBtn.addEventListener('click', viewPracticePointsWithContext);
 
