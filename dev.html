@@ -1476,49 +1476,47 @@
             <!-- ── Pane: Guideline Calibration ── -->
             <div id="calPane-guideline" style="padding:12px;">
 
-                <!-- Step 1: Preview Extraction -->
+                <!-- Extract Practice Points -->
                 <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
-                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 1 — Preview</p>
-                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;">
-                        <div>
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Extract practice points</p>
+                    <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-bottom:12px;">
+                        <div style="flex:1;min-width:250px;">
                             <label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px;">Guideline</label>
-                            <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);min-width:300px;">
+                            <select id="calibrationGuidelineSelect" style="padding:8px 12px;border:1px solid var(--border-color);border-radius:4px;font-family:'Inter',sans-serif;background:var(--bg-input);color:var(--text-primary);width:100%;">
                                 <option value="">Loading guidelines...</option>
                             </select>
                         </div>
-                        <button id="previewExtractionBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;padding:10px 20px;">👁️ Preview</button>
-                        <span id="previewStatus" style="font-size:13px;color:var(--text-secondary);"></span>
+                        <button id="extractPracticePointsBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;">🚀 Extract</button>
                     </div>
-                    <div id="previewContainer" style="display:none;margin-top:12px;background:var(--bg-input);border-radius:4px;padding:12px;">
-                        <div style="margin-bottom:12px;">
-                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Guideline Title</div>
-                            <div id="previewTitle" style="font-size:13px;color:var(--text-primary);"></div>
-                        </div>
-                        <div style="margin-bottom:12px;">
-                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">Content Preview (first 500 chars)</div>
-                            <div id="previewContent" style="font-size:12px;color:var(--text-primary);max-height:150px;overflow-y:auto;background:var(--bg-secondary);padding:8px;border-radius:4px;border:1px solid var(--border-color);white-space:pre-wrap;"></div>
-                        </div>
-                        <details style="margin-bottom:12px;">
-                            <summary style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;cursor:pointer;padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">Content being sent to AI (full)</summary>
-                            <div style="font-size:11px;color:var(--text-secondary);padding:8px;margin-top:4px;background:var(--bg-secondary);border-radius:4px;">
-                                <div id="contentSize" style="margin-bottom:8px;"></div>
-                                <div id="previewFullContent" style="font-size:12px;color:var(--text-primary);max-height:250px;overflow-y:auto;border:1px solid var(--border-color);padding:8px;border-radius:4px;white-space:pre-wrap;"></div>
-                            </div>
-                        </details>
-                        <button id="proceedToExtractBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">✓ Proceed to Step 2 (Extract Raw)</button>
-                    </div>
-                </div>
+                    <span id="extractStatus" style="font-size:13px;color:var(--text-secondary);"></span>
 
-                <!-- Step 2: Extract Raw Response -->
-                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;display:none;" id="step2Container">
-                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">Step 2 — Extract Raw Response</p>
-                    <button id="extractRawBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;padding:10px 20px;">📝 Get Response from AI</button>
-                    <span id="extractRawStatus" style="font-size:13px;color:var(--text-secondary);margin-left:10px;"></span>
-                    <div id="rawResponseContainer" style="display:none;margin-top:12px;">
+                    <!-- Extraction Progress -->
+                    <div id="extractionProgress" style="display:none;margin-top:12px;">
                         <div style="background:var(--bg-input);border-radius:4px;padding:12px;border:1px solid var(--border-color);">
-                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">Raw AI Response</div>
-                            <div id="rawResponse" style="font-size:12px;color:var(--text-primary);white-space:pre-wrap;max-height:300px;overflow-y:auto;margin-bottom:12px;"></div>
-                            <button id="proceedToJsonBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">✓ Proceed to Step 3 (Convert to JSON)</button>
+                            <div style="margin-bottom:12px;">
+                                <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">📋 Guideline Being Processed</div>
+                                <div id="progressTitle" style="font-size:13px;color:var(--text-primary);"></div>
+                                <div id="progressSize" style="font-size:11px;color:var(--text-secondary);margin-top:4px;"></div>
+                            </div>
+
+                            <div style="margin-bottom:12px;">
+                                <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:4px;">📝 Extracted Practice Points</div>
+                                <div id="extractedPointsList" style="font-size:12px;color:var(--text-primary);white-space:pre-wrap;background:var(--bg-secondary);padding:10px;border-radius:4px;border:1px solid var(--border-color);max-height:400px;overflow-y:auto;"></div>
+                            </div>
+
+                            <div style="display:flex;gap:8px;">
+                                <button id="convertToJsonBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border-color:#007bff;padding:10px 20px;flex:1;">📦 Convert to JSON</button>
+                                <button id="retryExtractionBtn" class="dev-btn" style="background-color:#6c757d;color:#fff;border-color:#6c757d;padding:10px 20px;">🔄 Try Again</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- JSON Preview & Save -->
+                    <div id="jsonPreviewContainer" style="display:none;margin-top:12px;">
+                        <div style="background:var(--bg-input);border-radius:4px;padding:12px;border:1px solid var(--border-color);">
+                            <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">✅ JSON Ready to Save</div>
+                            <div id="jsonPreview" style="font-size:11px;color:var(--text-primary);white-space:pre-wrap;background:var(--bg-secondary);padding:10px;border-radius:4px;border:1px solid var(--border-color);max-height:300px;overflow-y:auto;margin-bottom:12px;font-family:monospace;"></div>
+                            <button id="saveJsonBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:10px 20px;width:100%;">💾 Save to Firestore</button>
                         </div>
                     </div>
                 </div>
