@@ -6630,15 +6630,26 @@ ${responseText}
         async function populateCalibrationGuidelineSelect() {
             const sel = document.getElementById('calibrationGuidelineSelect');
             if (!sel || sel.dataset.loaded) return;
+
+            console.log('[CALIBRATION] Starting to populate guidelines dropdown');
+            sel.innerHTML = '<option value="">Loading guidelines (this may take 10-15s)...</option>';
+
             try {
-                const guidelines = await fetchCalibrationGuidelines();
+                const guidelines = await Promise.race([
+                    fetchCalibrationGuidelines(),
+                    new Promise((_, reject) =>
+                        setTimeout(() => reject(new Error('Timeout loading guidelines (>30s)')), 30000)
+                    )
+                ]);
+
+                console.log('[CALIBRATION] Loaded', guidelines.length, 'guidelines');
                 sel.innerHTML = '<option value="">-- Select a guideline --</option>' +
                     guidelines.map(g =>
                         `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`
                     ).join('');
                 sel.dataset.loaded = '1';
             } catch (err) {
-                sel.innerHTML = '<option value="">Failed to load guidelines</option>';
+                sel.innerHTML = '<option value="">Failed to load guidelines: ' + err.message + '</option>';
                 console.error('[CALIBRATION] Failed to load guidelines:', err.message);
             }
         }
