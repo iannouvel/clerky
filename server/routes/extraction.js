@@ -86,4 +86,44 @@ router.post('/savePracticePoints', authenticateUser, async (req, res) => {
     }
 });
 
+/**
+ * GET /api/getPracticePoints/:guidelineId
+ * Fetch saved practice points for a guideline (server-side read using admin SDK)
+ */
+router.get('/getPracticePoints/:guidelineId', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineId } = req.params;
+
+        if (!guidelineId) {
+            return res.status(400).json({
+                success: false,
+                error: 'guidelineId required'
+            });
+        }
+
+        const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePoints')
+            .orderBy('order', 'asc')
+            .get();
+
+        const points = snap.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+
+        console.log(`[GET_POINTS] Fetched ${points.length} practice points for guideline: ${guidelineId}`);
+
+        res.json({
+            success: true,
+            count: points.length,
+            points
+        });
+    } catch (err) {
+        console.error('[GET_POINTS] Error:', err.message);
+        res.status(500).json({
+            success: false,
+            error: err.message
+        });
+    }
+});
+
 module.exports = router;

@@ -7549,9 +7549,22 @@ ${responseText}
             console.log('[VIEW_POINTS] Loading practice points for guideline:', guidelineId);
 
             try {
-                console.log('[VIEW_POINTS] Attempting to fetch from Firestore...');
-                const snap = await getDocs(collection(db, 'guidelines', guidelineId, 'practicePoints'));
-                console.log('[VIEW_POINTS] Successfully fetched from Firestore');
+                console.log('[VIEW_POINTS] Attempting to fetch from server...');
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/api/getPracticePoints/${guidelineId}`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!res.ok) throw new Error(`Server error: ${res.status}`);
+                const data = await res.json();
+                if (!data.success) throw new Error(data.error);
+
+                console.log('[VIEW_POINTS] Successfully fetched from server');
+                const snap = { docs: (data.points || []).map(p => ({ id: p.id, data: () => p })) };
 
                 if (snap.empty) {
                     status.textContent = 'No practice points found. Extract them first.';
