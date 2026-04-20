@@ -7368,6 +7368,25 @@ ${responseText}
             points: null
         };
 
+        // Helper function to show loading spinner on button
+        function setButtonLoading(buttonId, isLoading) {
+            const btn = document.getElementById(buttonId);
+            if (!btn) return;
+
+            if (isLoading) {
+                btn.classList.add('btn-loading');
+                if (!btn.dataset.originalHtml) {
+                    btn.dataset.originalHtml = btn.innerHTML;
+                }
+                btn.innerHTML = '<span class="btn-spinner"></span>' + btn.dataset.originalHtml;
+            } else {
+                btn.classList.remove('btn-loading');
+                if (btn.dataset.originalHtml) {
+                    btn.innerHTML = btn.dataset.originalHtml;
+                }
+            }
+        }
+
         async function extractPracticePoints() {
             const guidelineId = document.getElementById('calibrationGuidelineSelect').value;
             if (!guidelineId) {
@@ -7375,6 +7394,7 @@ ${responseText}
                 return;
             }
 
+            setButtonLoading('extractPracticePointsBtn', true);
             const status = document.getElementById('extractStatus');
             status.textContent = 'Extracting practice points...';
 
@@ -7437,6 +7457,8 @@ ${responseText}
                 document.getElementById('jsonPreviewContainer').style.display = 'none';
             } catch (err) {
                 document.getElementById('extractStatus').textContent = `Error: ${err.message}`;
+            } finally {
+                setButtonLoading('extractPracticePointsBtn', false);
             }
         }
 
@@ -7445,6 +7467,8 @@ ${responseText}
                 alert('Extract practice points first.');
                 return;
             }
+
+            setButtonLoading('convertToJsonBtn', true);
 
             try {
                 // Parse the numbered list into JSON array
@@ -7461,6 +7485,8 @@ ${responseText}
                 document.getElementById('jsonPreviewContainer').style.display = 'block';
             } catch (err) {
                 alert(`Error: ${err.message}`);
+            } finally {
+                setButtonLoading('convertToJsonBtn', false);
             }
         }
 
@@ -7469,6 +7495,8 @@ ${responseText}
                 alert('No points to save.');
                 return;
             }
+
+            setButtonLoading('saveJsonBtn', true);
 
             try {
                 const token = await getCalibrationToken();
@@ -7496,6 +7524,8 @@ ${responseText}
                 `;
             } catch (err) {
                 alert(`Save error: ${err.message}`);
+            } finally {
+                setButtonLoading('saveJsonBtn', false);
             }
         }
 
@@ -7505,6 +7535,8 @@ ${responseText}
                 document.getElementById('extractStatus').textContent = 'Select a guideline first.';
                 return;
             }
+
+            setButtonLoading('viewPracticePointsBtn', true);
 
             const viewer = document.getElementById('practicePointsViewer');
             const list = document.getElementById('pointsList');
@@ -7597,6 +7629,8 @@ ${responseText}
             } catch (err) {
                 console.error('[VIEW_POINTS] Error:', err.message, err);
                 status.textContent = `Error loading points: ${err.message}. Check console.`;
+            } finally {
+                setButtonLoading('viewPracticePointsBtn', false);
             }
         }
 
