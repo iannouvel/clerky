@@ -6603,11 +6603,27 @@ ${responseText}
         async function fetchCalibrationGuidelines() {
             if (_calibrationGuidelines) return _calibrationGuidelines;
             try {
-                const snap = await getDocs(collection(db, 'guidelines'));
-                _calibrationGuidelines = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/getGuidelinesMetadata`, {
+                    method: 'GET',
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!res.ok) throw new Error(`Server error: ${res.status}`);
+                const data = await res.json();
+
+                if (!Array.isArray(data.guidelines)) {
+                    throw new Error('Invalid response format from server');
+                }
+
+                _calibrationGuidelines = data.guidelines;
+                console.log('[CALIBRATION] Fetched', _calibrationGuidelines.length, 'guidelines from server');
                 return _calibrationGuidelines;
             } catch (err) {
-                console.error('Error fetching guidelines from Firestore:', err);
+                console.error('[CALIBRATION] Error fetching guidelines from server:', err);
                 return [];
             }
         }
