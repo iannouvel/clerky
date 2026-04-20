@@ -7591,6 +7591,9 @@ ${responseText}
         const retryBtn = document.getElementById('retryExtractionBtn');
         if (retryBtn) retryBtn.addEventListener('click', extractPracticePoints);
 
+        const viewBtn = document.getElementById('viewPracticePointsBtn');
+        if (viewBtn) viewBtn.addEventListener('click', viewPracticePointsWithContext);
+
         const runCalBtn = document.getElementById('runCalibrationBtn');
         if (runCalBtn) runCalBtn.addEventListener('click', runCalibration);
 
