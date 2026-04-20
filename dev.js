@@ -7373,8 +7373,8 @@ ${responseText}
                 const title = guideline.displayName || guideline.humanFriendlyTitle || guideline.title || guidelineId;
                 const content = guideline.content || guideline.condensed || '(No content)';
 
-                // Call extraction endpoint
-                const res = await fetch(`${SERVER_URL}/api/extractPracticePoints`, {
+                // Call extraction endpoint (Raw version to get plain text list)
+                const res = await fetch(`${SERVER_URL}/api/extractPracticePointsRaw`, {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -7393,12 +7393,29 @@ ${responseText}
                 // Store state
                 _extractionState = { guidelineId, title, points: pointsList };
 
-                // Show progress
+                // Show progress with what was sent
                 status.textContent = `✓ Extracted ${pointCount} practice points`;
                 document.getElementById('progressTitle').textContent = title;
                 document.getElementById('progressSize').textContent = `Content: ${content.length} chars`;
+
+                // Show what was sent to AI
+                const progressDiv = document.getElementById('extractionProgress');
+                let contentDetails = progressDiv.querySelector('[data-show-content]') || null;
+                if (!contentDetails) {
+                    contentDetails = document.createElement('details');
+                    contentDetails.setAttribute('data-show-content', '1');
+                    contentDetails.style.marginBottom = '12px';
+                    contentDetails.innerHTML = `
+                        <summary style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;cursor:pointer;padding:8px;background:var(--bg-tertiary);border-radius:4px;user-select:none;">📤 What was sent to the AI (${content.length} chars)</summary>
+                        <div style="font-size:11px;color:var(--text-secondary);padding:8px;margin-top:4px;background:var(--bg-secondary);border-radius:4px;border:1px solid var(--border-color);">
+                            <div style="font-size:12px;color:var(--text-primary);max-height:250px;overflow-y:auto;padding:8px;white-space:pre-wrap;font-family:monospace;">${content}</div>
+                        </div>
+                    `;
+                    progressDiv.insertBefore(contentDetails, progressDiv.querySelector('#extractedPointsList'));
+                }
+
                 document.getElementById('extractedPointsList').textContent = pointsList;
-                document.getElementById('extractionProgress').style.display = 'block';
+                progressDiv.style.display = 'block';
                 document.getElementById('jsonPreviewContainer').style.display = 'none';
             } catch (err) {
                 document.getElementById('extractStatus').textContent = `Error: ${err.message}`;
