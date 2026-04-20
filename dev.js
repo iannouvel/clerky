@@ -7514,8 +7514,12 @@ ${responseText}
             list.innerHTML = '';
             viewer.style.display = 'none';
 
+            console.log('[VIEW_POINTS] Loading practice points for guideline:', guidelineId);
+
             try {
+                console.log('[VIEW_POINTS] Attempting to fetch from Firestore...');
                 const snap = await getDocs(collection(db, 'guidelines', guidelineId, 'practicePoints'));
+                console.log('[VIEW_POINTS] Successfully fetched from Firestore');
 
                 if (snap.empty) {
                     status.textContent = 'No practice points found. Extract them first.';
@@ -7591,7 +7595,8 @@ ${responseText}
 
                 viewer.style.display = 'block';
             } catch (err) {
-                status.textContent = `Error: ${err.message}`;
+                console.error('[VIEW_POINTS] Error:', err.message, err);
+                status.textContent = `Error loading points: ${err.message}. Check console.`;
             }
         }
 
