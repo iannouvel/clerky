@@ -7400,7 +7400,8 @@ ${responseText}
 
                 // Show what was sent to AI
                 const progressDiv = document.getElementById('extractionProgress');
-                let contentDetails = progressDiv.querySelector('[data-show-content]') || null;
+                const pointsListDiv = document.getElementById('extractedPointsList');
+                let contentDetails = progressDiv.querySelector('[data-show-content]');
                 if (!contentDetails) {
                     contentDetails = document.createElement('details');
                     contentDetails.setAttribute('data-show-content', '1');
@@ -7411,7 +7412,8 @@ ${responseText}
                             <div style="font-size:12px;color:var(--text-primary);max-height:250px;overflow-y:auto;padding:8px;white-space:pre-wrap;font-family:monospace;">${content}</div>
                         </div>
                     `;
-                    progressDiv.insertBefore(contentDetails, progressDiv.querySelector('#extractedPointsList'));
+                    // Insert before the points list div's parent (the wrapper containing the label)
+                    pointsListDiv.parentElement.parentElement.insertBefore(contentDetails, pointsListDiv.parentElement);
                 }
 
                 document.getElementById('extractedPointsList').textContent = pointsList;
