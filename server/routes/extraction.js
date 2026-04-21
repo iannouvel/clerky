@@ -88,17 +88,17 @@ router.post('/savePracticePoints', authenticateUser, async (req, res) => {
 });
 
 /**
- * GET /api/getPracticePoints/:guidelineId
+ * GET /api/getPracticePoints?guidelineId=...
  * Fetch saved practice points for a guideline (server-side read using admin SDK)
  */
-router.get('/getPracticePoints/:guidelineId', authenticateUser, async (req, res) => {
+router.get('/getPracticePoints', authenticateUser, async (req, res) => {
     try {
-        const { guidelineId } = req.params;
+        const { guidelineId } = req.query;
 
         if (!guidelineId) {
             return res.status(400).json({
                 success: false,
-                error: 'guidelineId required'
+                error: 'guidelineId query parameter required'
             });
         }
 

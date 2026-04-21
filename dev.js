@@ -7551,7 +7551,9 @@ ${responseText}
             try {
                 console.log('[VIEW_POINTS] Attempting to fetch from server...');
                 const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/api/getPracticePoints/${guidelineId}`, {
+                const url = new URL(`${SERVER_URL}/api/getPracticePoints`);
+                url.searchParams.append('guidelineId', guidelineId);
+                const res = await fetch(url.toString(), {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
