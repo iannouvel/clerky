@@ -7927,34 +7927,21 @@ ${responseText}
                 } catch (err) { ceError(err.message); }
 
             } else if (ce.step === 2) {
-                // Load points then start automated loop
+                // Load points (extracts from guideline content if none exist) then start automated loop
                 ceBtn.disabled = true;
-                ceSetStatus('Loading practice points...');
+                ceSetStatus('Loading practice points (will extract if needed)...');
                 try {
                     const token = await getCalibrationToken();
-                    const pointsRes = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
-                        headers: { Authorization: `Bearer ${token}` }
+                    const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: ce.guidelineId })
                     });
-                    const pointsData = await pointsRes.json();
-                    if (pointsData.success && pointsData.points && pointsData.points.length > 0) {
-                        ce.allPoints = pointsData.points;
-                    } else {
-                        ceSetStatus('No points found, extracting...');
-                        const syncRes = await fetch(`${SERVER_URL}/syncPracticePoints`, {
-                            method: 'POST',
-                            headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ guidelineId: ce.guidelineId })
-                        });
-                        const syncData = await syncRes.json();
-                        if (!syncData.success) throw new Error(syncData.error);
-                        const pts2 = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
-                            headers: { Authorization: `Bearer ${token}` }
-                        });
-                        const pd2 = await pts2.json();
-                        ce.allPoints = (pd2.success && pd2.points) ? pd2.points : [];
-                    }
-                    if (ce.allPoints.length === 0) throw new Error('No practice points found');
-                    ceAddHistory(`Loaded ${ce.allPoints.length} practice points`, '#17a2b8');
+                    const data = await res.json();
+                    if (!data.success || !data.points?.length) throw new Error(data.error || 'No practice points found');
+                    ce.allPoints = data.points;
+                    const sourceLabel = data.source === 'extracted' ? 'Extracted and saved' : 'Loaded';
+                    ceAddHistory(`${sourceLabel} ${ce.allPoints.length} practice points`, '#17a2b8');
                     ceContent.style.display = 'none';
 
                     ce.pointIdx = 0;
