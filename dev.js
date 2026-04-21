@@ -7837,7 +7837,14 @@ ${responseText}
             const headline = `<strong style="color:${col}">${resultType}</strong> Scenario ${type} — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`;
             ceAddHistory(headline, col, null, body);
 
-            ce.nextScenarioType = type === 'A' ? 'B' : 'A';
+            // Focus on whichever side still needs hits
+            if (ce.tnCount < 3 && ce.tpCount >= 3) {
+                ce.nextScenarioType = 'A'; // only need TNs
+            } else if (ce.tpCount < 3 && ce.tnCount >= 3) {
+                ce.nextScenarioType = 'B'; // only need TPs
+            } else {
+                ce.nextScenarioType = type === 'A' ? 'B' : 'A'; // alternate
+            }
 
             if (ce.tpCount >= 3 && ce.tnCount >= 3) return 'point_done';
             if (ce.attempts >= MAX_ATTEMPTS_PER_POINT) return 'point_failed';
