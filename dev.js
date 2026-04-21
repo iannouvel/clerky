@@ -7682,6 +7682,7 @@ ${responseText}
             pointId: null,
             pointName: null,
             pointText: null,
+            context: null,       // structured context object that accumulates refinements
             tpCount: 0,
             tnCount: 0,
             attempts: 0,
@@ -7709,6 +7710,13 @@ ${responseText}
             ce.pointId = p.id;
             ce.pointText = p.text || p.name || p.id;
             ce.pointName = p.text || p.name || p.id;
+            ce.context = {
+                triggers: [ce.pointText],
+                criteria: ce.pointText,
+                exceptions: [],
+                edgeCases: [],
+                version: 1
+            };
             ce.tpCount = 0;
             ce.tnCount = 0;
             ce.attempts = 0;
@@ -7757,7 +7765,7 @@ ${responseText}
                 body: JSON.stringify({
                     practicePointText: ce.pointText,
                     clinicalNote: genData.clinicalNote,
-                    context: ce.pointText,
+                    context: ce.context,
                     expectedApplicable: type === 'B',
                     scenarioType: type,
                     guidelineId: ce.guidelineId
@@ -7807,19 +7815,27 @@ ${responseText}
                             clinicalNote: genData.clinicalNote,
                             failureType: resultType,
                             llmReasoning: reasoning,
-                            currentContext: {
-                                triggers: [ce.pointText],
-                                criteria: ce.pointText,
-                                exceptions: [],
-                                edgeCases: []
-                            },
+                            currentContext: ce.context,
                             guidelineId: ce.guidelineId
                         })
                     });
                     const refData = await refRes.json();
                     if (refData.success && refData.suggestedChanges?.length > 0) {
+                        // Apply refinements to ce.context for subsequent tests
+                        for (const change of refData.suggestedChanges) {
+                            const field = change.field; // triggers, criteria, exceptions, edgeCases
+                            if (field === 'criteria') {
+                                if (change.action === 'replace') ce.context.criteria = change.suggested;
+                                else ce.context.criteria += ' ' + change.suggested;
+                            } else if (Array.isArray(ce.context[field])) {
+                                if (change.action === 'add') ce.context[field].push(change.suggested);
+                                else if (change.action === 'replace') ce.context[field] = [change.suggested];
+                            }
+                        }
+                        ce.context.version = (ce.context.version || 1) + 1;
+
                         body += `<div style="margin-top:6px;padding:6px 8px;background:rgba(255,152,0,0.1);border-radius:3px;border-left:2px solid #ff9800;">`;
-                        body += `<strong>Suggested context refinements:</strong>`;
+                        body += `<strong>Context refined (v${ce.context.version}):</strong>`;
                         body += `<div style="margin-top:4px;">${refData.summary || ''}</div>`;
                         body += `<ul style="margin:4px 0 0 16px;padding:0;">`;
                         for (const change of refData.suggestedChanges) {

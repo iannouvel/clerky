@@ -1259,6 +1259,32 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
 // ─── Phase 4: Context Evolution ──────────────────────────────────────────────────
 
 /**
+ * Robustly extract JSON from LLM response text.
+ * Handles markdown fences, trailing commas, and truncated strings.
+ */
+function extractJSON(raw) {
+    let text = raw.trim();
+    // Strip markdown code fences
+    text = text.replace(/```json\n?/g, '').replace(/\n?```/g, '');
+    // Try direct parse first
+    try { return JSON.parse(text); } catch (_) { /* fall through */ }
+    // Try extracting first { ... } block
+    const start = text.indexOf('{');
+    const end = text.lastIndexOf('}');
+    if (start !== -1 && end > start) {
+        let block = text.slice(start, end + 1);
+        // Fix trailing commas before } or ]
+        block = block.replace(/,\s*([\]}])/g, '$1');
+        try { return JSON.parse(block); } catch (_) { /* fall through */ }
+        // Try fixing unterminated strings: append closing quote + brackets
+        for (const suffix of ['"]}', '"}]', '"}', '"]}]}']) {
+            try { return JSON.parse(block + suffix); } catch (_) { /* continue */ }
+        }
+    }
+    throw new Error('Failed to parse JSON from LLM response: ' + text.slice(0, 200));
+}
+
+/**
  * Generate a fresh clinical scenario for testing a practice point
  * Returns a unique scenario each time to avoid LLM memorization
  */
@@ -1287,8 +1313,7 @@ Return ONLY valid JSON (no markdown, no code blocks):
         const result = await routeToAI(prompt, userId);
         if (!result?.content) throw new Error('No response from LLM');
 
-        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const scenario = JSON.parse(parsed);
+        const scenario = extractJSON(result.content);
 
         if (!scenario.clinicalNote || !scenario.explanation) {
             throw new Error('Invalid scenario structure from LLM');
@@ -1309,6 +1334,10 @@ Return ONLY valid JSON (no markdown, no code blocks):
  * Test if a practice point applies to a clinical note using current context
  */
 async function testScenarioAgainstPoint(practicePointText, clinicalNote, context, userId) {
+    // Normalize string context to structured object
+    if (typeof context === 'string') {
+        context = { triggers: [context], criteria: context, exceptions: [], edgeCases: [], version: 1 };
+    }
     const contextStr = `
 Triggers:
 ${context.triggers?.map(t => `• ${t}`).join('\n') || '(none yet)'}
@@ -1356,8 +1385,7 @@ Return ONLY valid JSON (no markdown):
         const result = await routeToAI(prompt, userId);
         if (!result?.content) throw new Error('No response from LLM');
 
-        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const analysis = JSON.parse(parsed);
+        const analysis = extractJSON(result.content);
 
         return {
             success: true,
@@ -1452,8 +1480,7 @@ Return ONLY valid JSON:
         const result = await routeToAI(prompt, userId);
         if (!result?.content) throw new Error('No response from LLM');
 
-        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const refinement = JSON.parse(parsed);
+        const refinement = extractJSON(result.content);
 
         return {
             success: true,
