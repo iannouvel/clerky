@@ -7674,455 +7674,228 @@ ${responseText}
         if (fullPipelineBtn) fullPipelineBtn.addEventListener('click', runFullCalibrationPipeline);
 
         // ─── Context Evolution / Calibration (Phase 4) ─────────────────────────
-        // State for context evolution workflow
-        let contextEvolState = {
-            step: 0,  // 0 = not started, 1 = select point, 2-11 = test/refine cycles
+        const ce = {
+            step: 1,
             guidelineId: null,
+            guidelineName: null,
+            allPoints: [],
             pointId: null,
             pointName: null,
-            pointIndex: null,  // which point in the list (for progress display)
-            allPoints: [],  // list of all practice points for selected guideline
-            tpCount: 0,  // true positives achieved
-            tnCount: 0,  // true negatives achieved
-            testCycles: [],  // history of all test cycles (steps 2+)
-            currentScenario: null,  // current scenario A or B
-            currentScenarioType: null,  // 'A' or 'B'
-            isTestingA: false,  // whether currently on scenario A
-            testInProgress: false
+            tpCount: 0,
+            tnCount: 0,
+            nextScenarioType: 'A'
         };
 
-        async function contextEvolLoadGuidelines() {
-            try {
-                return await fetchCalibrationGuidelines();
-            } catch (err) {
-                showContextEvolStatus(`Error loading guidelines: ${err.message}`, 'error');
-                return [];
-            }
+        const ceBtn = document.getElementById('contextCalibButton');
+        const ceContent = document.getElementById('contextCalibCurrent');
+        const ceStatus = document.getElementById('contextCalibStatus');
+        const ceHistory = document.getElementById('contextCalibHistoryList');
+
+        function ceSetStatus(msg) { ceStatus.textContent = msg || ''; }
+
+        function ceSetStep(n, label) {
+            ce.step = n;
+            ceBtn.textContent = `Step ${n}: ${label}`;
         }
 
-        async function contextEvolLoadPoints(guidelineId) {
-            try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getPracticePoints?guidelineId=${encodeURIComponent(guidelineId)}`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error);
-                return data.points || [];
-            } catch (err) {
-                showContextEvolStatus(`Error loading points: ${err.message}`, 'error');
-                return [];
-            }
-        }
-
-        function renderContextEvolStep1() {
-            const div = document.getElementById('contextCalibCurrent');
-            div.innerHTML = '<div style="padding:12px;text-align:center;color:var(--text-secondary);font-size:12px;">Loading...</div>';
-            div.style.display = 'block';
-
-            contextEvolLoadGuidelines().then(guidelines => {
-                if (guidelines.length === 0) {
-                    div.innerHTML = '<div style="padding:12px;color:#dc3545;font-size:12px;">No guidelines available.</div>';
-                    return;
-                }
-
-                div.innerHTML = `
-                    <div style="display:flex;flex-direction:column;gap:10px;">
-                        <div>
-                            <label style="font-size:11px;color:var(--text-secondary);display:block;margin-bottom:6px;font-weight:600;">Guideline</label>
-                            <select id="contextEvolGuidelineSelect" style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
-                                <option value="">-- Select guideline --</option>
-                                ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
-                            </select>
-                        </div>
-                        <div>
-                            <label style="font-size:11px;color:var(--text-secondary);display:block;margin-bottom:6px;font-weight:600;">Practice Point</label>
-                            <select id="contextEvolPointSelect" style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;opacity:0.5;" disabled>
-                                <option value="">-- Select practice point --</option>
-                            </select>
-                        </div>
-                        <button id="contextEvolStartBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border:1px solid #0062cc;padding:8px;font-size:12px;font-weight:600;" disabled>
-                            Start Testing
-                        </button>
-                    </div>
-                `;
-
-                const guidelineSel = document.getElementById('contextEvolGuidelineSelect');
-                const pointSel = document.getElementById('contextEvolPointSelect');
-                const startBtn = document.getElementById('contextEvolStartBtn');
-
-                guidelineSel.addEventListener('change', async () => {
-                    if (!guidelineSel.value) {
-                        pointSel.innerHTML = '<option value="">-- Select practice point --</option>';
-                        pointSel.disabled = true;
-                        startBtn.disabled = true;
-                        return;
-                    }
-
-                    contextEvolState.guidelineId = guidelineSel.value;
-                    pointSel.innerHTML = '<option value="">Loading...</option>';
-                    pointSel.disabled = false;
-
-                    const points = await contextEvolLoadPoints(guidelineSel.value);
-                    if (points.length === 0) {
-                        pointSel.innerHTML = '<option value="">No practice points</option>';
-                        startBtn.disabled = true;
-                        return;
-                    }
-
-                    contextEvolState.allPoints = points;
-                    pointSel.innerHTML = '<option value="">-- Select practice point --</option>' +
-                        points.map((p, i) => `<option value="${i}">${p.name || p.id}</option>`).join('');
-                    pointSel.disabled = false;
-                    startBtn.disabled = true;
-                });
-
-                pointSel.addEventListener('change', () => {
-                    startBtn.disabled = pointSel.value === '';
-                });
-
-                startBtn.addEventListener('click', () => {
-                    const idx = parseInt(pointSel.value);
-                    const point = contextEvolState.allPoints[idx];
-                    contextEvolState.pointId = point.id;
-                    contextEvolState.pointName = point.name || point.id;
-                    contextEvolState.pointIndex = idx + 1;
-                    contextEvolState.step = 2;
-                    contextEvolState.tpCount = 0;
-                    contextEvolState.tnCount = 0;
-                    contextEvolState.testCycles = [];
-                    div.style.display = 'none';
-                    updateContextEvolProgress();
-                    updateContextEvolButton();
-                    contextEvolStep2();
-                });
-            });
-
-            document.getElementById('contextCalibHistory').style.display = 'none';
-        }
-
-        async function contextEvolStep2() {
-            // Step 2: Generate scenario A (wrongly applied)
-            const div = document.getElementById('contextCalibCurrent');
-            showContextEvolStatus('Generating scenario A (wrongly applied)...', 'info');
-
-            try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/contextEvolution/generateScenario`, {
-                    method: 'POST',
-                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        guidelineId: contextEvolState.guidelineId,
-                        pointId: contextEvolState.pointId,
-                        scenarioType: 'A'
-                    })
-                });
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error);
-
-                contextEvolState.currentScenario = data.scenario;
-                contextEvolState.currentScenarioType = 'A';
-                contextEvolState.isTestingA = true;
-
-                div.innerHTML = `
-                    <div style="display:flex;flex-direction:column;gap:12px;">
-                        <div style="background:var(--bg-input);border-left:4px solid #ff9800;padding:12px;border-radius:4px;">
-                            <div style="font-size:12px;font-weight:600;color:#ff9800;margin-bottom:6px;">Scenario A (Wrongly Applied)</div>
-                            <div style="font-size:13px;line-height:1.6;white-space:pre-wrap;overflow:auto;max-height:300px;color:var(--text-primary);">
-                                ${data.scenario}
-                            </div>
-                        </div>
-                        <div>
-                            <p style="font-size:12px;color:var(--text-secondary);margin:0 0 8px;">Does the practice point apply to this scenario?</p>
-                            <div style="display:flex;gap:8px;">
-                                <button id="contextEvolYesA" class="dev-btn" style="flex:1;background-color:#28a745;color:#fff;border:1px solid #1e7e34;">Yes, it applies</button>
-                                <button id="contextEvolNoA" class="dev-btn" style="flex:1;background-color:#dc3545;color:#fff;border:1px solid #bb2d3b;">No, doesn't apply</button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                div.style.display = 'block';
-
-                const yesBtn = document.getElementById('contextEvolYesA');
-                const noBtn = document.getElementById('contextEvolNoA');
-
-                if (yesBtn) {
-                    yesBtn.addEventListener('click', async () => {
-                        await contextEvolTestScenario('A', true);  // user says yes -> actually wrong
-                    });
-                }
-                if (noBtn) {
-                    noBtn.addEventListener('click', async () => {
-                        await contextEvolTestScenario('A', false);  // user says no -> correct
-                    });
-                }
-
-                showContextEvolStatus('Review Scenario A and decide if the practice point applies.', 'info');
-            } catch (err) {
-                showContextEvolStatus(`Error generating scenario: ${err.message}`, 'error');
-            }
-        }
-
-        async function contextEvolTestScenario(scenarioType, userResponse) {
-            // Test this scenario and record the result
-            const div = document.getElementById('contextCalibCurrent');
-            contextEvolState.testInProgress = true;
-            showContextEvolStatus(`Testing Scenario ${scenarioType}...`, 'info');
-
-            try {
-                const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
-                    method: 'POST',
-                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        guidelineId: contextEvolState.guidelineId,
-                        pointId: contextEvolState.pointId,
-                        scenario: contextEvolState.currentScenario,
-                        scenarioType: scenarioType
-                    })
-                });
-                const data = await res.json();
-                if (!data.success) throw new Error(data.error);
-
-                // Determine if user response was correct
-                const llmSaysApplies = data.doesApply === true;
-                const userSaysApplies = userResponse;
-                const isCorrect = llmSaysApplies === userSaysApplies;
-
-                // For Scenario A (wrongly applied), correct answer is NO
-                // For Scenario B (correctly applied), correct answer is YES
-                const correctAnswer = (scenarioType === 'A') ? false : true;
-                const userWasCorrect = userResponse === correctAnswer;
-
-                // Track TP/TN
-                const wasTP = (userWasCorrect && scenarioType === 'B');  // correctly said YES to B
-                const wasTN = (userWasCorrect && scenarioType === 'A');  // correctly said NO to A
-
-                if (wasTP) contextEvolState.tpCount++;
-                if (wasTN) contextEvolState.tnCount++;
-
-                const cycle = {
-                    timestamp: new Date().toISOString(),
-                    scenarioType: scenarioType,
-                    scenario: contextEvolState.currentScenario,
-                    userResponse: userResponse,
-                    llmResponse: llmSaysApplies,
-                    llmReasoning: data.reasoning || '',
-                    llmCitations: data.citations || '',
-                    isCorrect: userWasCorrect,
-                    wasTP: wasTP,
-                    wasTN: wasTN,
-                    result: userWasCorrect ? 'CORRECT' : 'INCORRECT'
-                };
-
-                contextEvolState.testCycles.push(cycle);
-
-                // Render result
-                const resultColour = userWasCorrect ? '#28a745' : '#dc3545';
-                const resultText = userWasCorrect ? '✓ CORRECT' : '✗ INCORRECT';
-
-                div.innerHTML = `
-                    <div style="display:flex;flex-direction:column;gap:12px;">
-                        <div style="background:${resultColour}20;border-left:4px solid ${resultColour};padding:12px;border-radius:4px;">
-                            <div style="font-size:12px;font-weight:600;color:${resultColour};margin-bottom:6px;">${resultText}</div>
-                            <div style="font-size:12px;line-height:1.5;color:var(--text-primary);">
-                                <strong>User Response:</strong> "${userResponse ? 'Yes, applies' : 'No, doesn\'t apply'}"<br/>
-                                <strong>LLM Response:</strong> "${llmSaysApplies ? 'Yes, applies' : 'No, doesn\'t apply'}"<br/>
-                                ${wasTP ? '<strong style="color:#28a745;">✓ True Positive</strong>' : wasTN ? '<strong style="color:#28a745;">✓ True Negative</strong>' : '<strong style="color:#dc3545;">✗ Mismatch</strong>'}
-                            </div>
-                        </div>
-
-                        <details open style="border:1px solid var(--border-color);border-radius:4px;padding:12px;background:var(--bg-input);">
-                            <summary style="cursor:pointer;font-weight:600;color:var(--text-primary);margin-bottom:8px;">LLM Reasoning</summary>
-                            <div style="font-size:12px;line-height:1.5;color:var(--text-primary);white-space:pre-wrap;max-height:200px;overflow-y:auto;">
-                                ${data.reasoning || '(no reasoning provided)'}
-                            </div>
-                            ${data.citations ? `<div style="margin-top:8px;font-size:11px;color:var(--text-secondary);border-top:1px solid var(--border-color);padding-top:8px;"><strong>Citations:</strong> ${data.citations}</div>` : ''}
-                        </details>
-
-                        <div style="text-align:center;">
-                            <button id="contextEvolNextBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border:1px solid #0062cc;">
-                                ${contextEvolState.tpCount >= 3 && contextEvolState.tnCount >= 3 ? 'Complete - All Targets Met ✓' : 'Next Scenario'}
-                            </button>
-                        </div>
-                    </div>
-                `;
-
-                div.style.display = 'block';
-                updateContextEvolProgress();
-                addContextEvolHistoryItem(cycle);
-
-                const nextBtn = document.getElementById('contextEvolNextBtn');
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', async () => {
-                        if (contextEvolState.tpCount >= 3 && contextEvolState.tnCount >= 3) {
-                            contextEvolComplete();
-                        } else {
-                            // Alternate between A and B
-                            const nextType = (scenarioType === 'A') ? 'B' : 'A';
-                            await contextEvolStep2();  // Generate next scenario
+        async function ceHandleClick() {
+            if (ce.step === 1) {
+                // Show guideline selector
+                ceBtn.disabled = true;
+                ceSetStatus('Loading guidelines...');
+                try {
+                    const guidelines = await fetchCalibrationGuidelines();
+                    ceContent.innerHTML = `<select id="ceGuidelineSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                        <option value="">-- Select guideline --</option>
+                        ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
+                    </select>`;
+                    ceContent.style.display = 'block';
+                    ceSetStatus('');
+                    document.getElementById('ceGuidelineSel').addEventListener('change', e => {
+                        if (e.target.value) {
+                            ce.guidelineId = e.target.value;
+                            ce.guidelineName = e.target.options[e.target.selectedIndex].text;
+                            ceContent.style.display = 'none';
+                            ceSetStep(2, 'Extract Practice Points');
+                            ceBtn.disabled = false;
                         }
                     });
+                } catch (err) {
+                    ceSetStatus('Error: ' + err.message);
+                    ceBtn.disabled = false;
                 }
 
-                showContextEvolStatus(`Test complete. TP: ${contextEvolState.tpCount}/3, TN: ${contextEvolState.tnCount}/3`, 'success');
-            } catch (err) {
-                showContextEvolStatus(`Error testing scenario: ${err.message}`, 'error');
-            } finally {
-                contextEvolState.testInProgress = false;
+            } else if (ce.step === 2) {
+                // Extract practice points
+                ceBtn.disabled = true;
+                ceSetStatus('Extracting practice points...');
+                try {
+                    const token = await getCalibrationToken();
+                    // Sync practice points (extracts if needed)
+                    const res = await fetch(`${SERVER_URL}/syncPracticePoints`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: ce.guidelineId })
+                    });
+                    const data = await res.json();
+                    if (!data.success) throw new Error(data.error);
+                    ceAddHistory(`Synced practice points: ${data.created} new, ${data.existing} existing, ${data.total} total`, '#17a2b8');
+                    ceSetStep(3, 'Select Practice Point');
+                    ceSetStatus('');
+                    ceBtn.disabled = false;
+                } catch (err) {
+                    ceSetStatus('Error: ' + err.message);
+                    ceBtn.disabled = false;
+                }
+
+            } else if (ce.step === 3) {
+                // Load and show practice point selector
+                ceBtn.disabled = true;
+                ceSetStatus('Loading practice points...');
+                try {
+                    const token = await getCalibrationToken();
+                    const res = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const data = await res.json();
+                    if (!data.success) throw new Error(data.error);
+                    ce.allPoints = data.points || [];
+                    if (ce.allPoints.length === 0) throw new Error('No practice points found');
+                    ceContent.innerHTML = `<select id="cePointSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                        <option value="">-- Select practice point (${ce.allPoints.length} available) --</option>
+                        ${ce.allPoints.map((p, i) => `<option value="${i}">${p.name || p.id}</option>`).join('')}
+                    </select>`;
+                    ceContent.style.display = 'block';
+                    ceSetStatus('');
+                    document.getElementById('cePointSel').addEventListener('change', e => {
+                        if (e.target.value !== '') {
+                            const idx = parseInt(e.target.value);
+                            ce.pointId = ce.allPoints[idx].id;
+                            ce.pointName = ce.allPoints[idx].name || ce.allPoints[idx].id;
+                            ce.tpCount = 0;
+                            ce.tnCount = 0;
+                            ce.nextScenarioType = 'A';
+                            ceContent.style.display = 'none';
+                            ceAddHistory(`Selected: ${ce.pointName}`, '#6f42c1');
+                            ceSetStep(4, 'Generate Scenario');
+                            ceBtn.disabled = false;
+                        }
+                    });
+                } catch (err) {
+                    ceSetStatus('Error: ' + err.message);
+                    ceBtn.disabled = false;
+                }
+
+            } else if (ce.step === 4) {
+                // Generate scenario
+                ceBtn.disabled = true;
+                const type = ce.nextScenarioType;
+                ceSetStatus(`Generating scenario ${type}...`);
+                try {
+                    const token = await getCalibrationToken();
+                    const res = await fetch(`${SERVER_URL}/contextEvolution/generateScenario`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: ce.guidelineId, pointId: ce.pointId, scenarioType: type })
+                    });
+                    const data = await res.json();
+                    if (!data.success) throw new Error(data.error);
+                    ce._scenario = data.scenario;
+                    ce._scenarioType = type;
+                    ceSetStep(5, 'Test Scenario');
+                    ceSetStatus(`TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3`);
+                    // Show scenario and test button
+                    const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
+                    ceContent.innerHTML = `
+                        <div style="border-left:3px solid ${type === 'A' ? '#ff9800' : '#007bff'};padding:8px 12px;margin-bottom:8px;font-size:12px;line-height:1.5;max-height:250px;overflow-y:auto;white-space:pre-wrap;background:var(--bg-input);border-radius:0 4px 4px 0;">${data.scenario}</div>
+                        <div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">Scenario ${type} (point ${typeLabel}). Now click Step 5 to test the LLM against this scenario.</div>`;
+                    ceContent.style.display = 'block';
+                    ceBtn.disabled = false;
+                } catch (err) {
+                    ceSetStatus('Error: ' + err.message);
+                    ceBtn.disabled = false;
+                }
+
+            } else if (ce.step === 5) {
+                // Test scenario against point
+                ceBtn.disabled = true;
+                ceSetStatus('Testing scenario against practice point...');
+                try {
+                    const token = await getCalibrationToken();
+                    const res = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: ce.guidelineId, pointId: ce.pointId, scenario: ce._scenario, scenarioType: ce._scenarioType })
+                    });
+                    const data = await res.json();
+                    if (!data.success) throw new Error(data.error);
+
+                    const llmApplies = data.doesApply === true;
+                    const expected = ce._scenarioType === 'B'; // B = should apply, A = should not
+                    const correct = llmApplies === expected;
+                    const isTP = correct && ce._scenarioType === 'B';
+                    const isTN = correct && ce._scenarioType === 'A';
+                    if (isTP) ce.tpCount++;
+                    if (isTN) ce.tnCount++;
+
+                    const col = correct ? '#28a745' : '#dc3545';
+                    const label = isTP ? 'True Positive' : isTN ? 'True Negative' : correct ? 'Correct' : `False ${llmApplies ? 'Positive' : 'Negative'}`;
+
+                    // Add to history
+                    ceAddHistory(`Scenario ${ce._scenarioType}: LLM said "${llmApplies ? 'applies' : 'does not apply'}" → <strong style="color:${col}">${label}</strong>`, col, data.reasoning);
+
+                    // Show result in content area
+                    ceContent.innerHTML = `
+                        <div style="border-left:3px solid ${col};padding:8px 12px;font-size:12px;background:var(--bg-input);border-radius:0 4px 4px 0;">
+                            <strong style="color:${col};">${label}</strong> — LLM said "${llmApplies ? 'applies' : 'does not apply'}", expected "${expected ? 'applies' : 'does not apply'}"
+                        </div>
+                        <details style="margin-top:6px;font-size:11px;"><summary style="cursor:pointer;color:var(--text-secondary);">LLM reasoning</summary><div style="padding:6px;white-space:pre-wrap;max-height:200px;overflow-y:auto;background:var(--bg-input);border-radius:4px;margin-top:4px;">${data.reasoning || '(none)'}</div></details>`;
+                    ceContent.style.display = 'block';
+
+                    ceSetStatus(`TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3`);
+
+                    if (ce.tpCount >= 3 && ce.tnCount >= 3) {
+                        ceSetStep(6, 'Complete!');
+                        ceAddHistory(`Context evolution complete — ${ce.tpCount} TP + ${ce.tnCount} TN achieved`, '#28a745');
+                        ceBtn.disabled = false;
+                    } else {
+                        // Alternate scenario type, go back to step 4
+                        ce.nextScenarioType = ce._scenarioType === 'A' ? 'B' : 'A';
+                        ceSetStep(4, 'Generate Scenario');
+                        ceBtn.disabled = false;
+                    }
+                } catch (err) {
+                    ceSetStatus('Error: ' + err.message);
+                    ceBtn.disabled = false;
+                }
+
+            } else if (ce.step === 6) {
+                // Complete — restart
+                ce.step = 1;
+                ce.guidelineId = null;
+                ce.allPoints = [];
+                ce.pointId = null;
+                ce.tpCount = 0;
+                ce.tnCount = 0;
+                ceContent.style.display = 'none';
+                ceHistory.innerHTML = '';
+                ceSetStatus('');
+                ceSetStep(1, 'Select Guideline');
             }
         }
 
-        function addContextEvolHistoryItem(cycle) {
-            const list = document.getElementById('contextCalibHistoryList');
-            const idx = contextEvolState.testCycles.length;
-            const resultColour = cycle.result === 'CORRECT' ? '#28a745' : '#dc3545';
-            const statusIcon = cycle.wasTP ? '📈 TP' : cycle.wasTN ? '📉 TN' : '❌ Mismatch';
-
+        function ceAddHistory(html, colour, details) {
             const item = document.createElement('div');
-            item.style.cssText = `
-                background:var(--bg-input);
-                border:1px solid var(--border-color);
-                border-radius:4px;
-                padding:12px;
-                border-left:4px solid ${resultColour};
-            `;
-            item.innerHTML = `
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span style="font-size:12px;font-weight:600;color:${resultColour};">${statusIcon} Scenario ${cycle.scenarioType}</span>
-                    <span style="font-size:11px;color:var(--text-secondary);">${new Date(cycle.timestamp).toLocaleTimeString()}</span>
-                </div>
-                <div style="font-size:12px;color:var(--text-primary);line-height:1.4;">
-                    <strong>Result:</strong> ${cycle.result}<br/>
-                    <strong>User:</strong> ${cycle.userResponse ? 'Yes' : 'No'} |
-                    <strong>LLM:</strong> ${cycle.llmResponse ? 'Yes' : 'No'}
-                </div>
-                <details style="margin-top:8px;">
-                    <summary style="cursor:pointer;font-size:11px;color:var(--text-secondary);">View LLM Response</summary>
-                    <div style="margin-top:6px;padding:8px;background:var(--bg-secondary);border-radius:3px;font-size:11px;white-space:pre-wrap;max-height:150px;overflow-y:auto;">
-                        ${cycle.llmReasoning}
-                    </div>
-                </details>
-            `;
-
-            // Insert at the beginning (reverse chronological)
-            list.insertBefore(item, list.firstChild);
-            document.getElementById('contextCalibHistory').style.display = 'block';
-        }
-
-        function updateContextEvolProgress() {
-            const progress = document.getElementById('contextCalibProgress');
-            const pointNum = document.getElementById('calibPointNumber');
-            const tpCount = document.getElementById('calibTPCount');
-            const tnCount = document.getElementById('calibTNCount');
-            const bar = document.getElementById('calibProgressBar');
-
-            if (contextEvolState.step === 0) {
-                progress.style.display = 'none';
-            } else {
-                progress.style.display = 'block';
-                pointNum.textContent = `${contextEvolState.pointIndex}/?`;
-                tpCount.textContent = contextEvolState.tpCount;
-                tnCount.textContent = contextEvolState.tnCount;
-
-                const total = 6;  // 3 TP + 3 TN
-                const achieved = contextEvolState.tpCount + contextEvolState.tnCount;
-                const pct = Math.min(100, Math.round((achieved / total) * 100));
-                bar.style.width = pct + '%';
+            item.style.cssText = `border-left:3px solid ${colour || '#6c757d'};padding:6px 10px;font-size:11px;line-height:1.4;background:var(--bg-input);border-radius:0 4px 4px 0;`;
+            const time = new Date().toLocaleTimeString();
+            item.innerHTML = `<span style="color:var(--text-secondary);margin-right:6px;">${time}</span>${html}`;
+            if (details) {
+                item.innerHTML += `<details style="margin-top:4px;"><summary style="cursor:pointer;color:var(--text-secondary);font-size:10px;">Show details</summary><div style="padding:4px;white-space:pre-wrap;max-height:120px;overflow-y:auto;font-size:10px;background:var(--bg-secondary);border-radius:3px;margin-top:3px;">${details}</div></details>`;
             }
+            ceHistory.insertBefore(item, ceHistory.firstChild);
         }
 
-        function updateContextEvolButton() {
-            const btn = document.getElementById('contextCalibButton');
-            const steps = [
-                '📌 Step 1: Select Guideline & Practice Point',
-                '🧪 Running Context Evolution...',
-                '✓ Complete'
-            ];
-
-            if (contextEvolState.step === 0) {
-                btn.textContent = steps[0];
-            } else if (contextEvolState.step < 12) {
-                btn.textContent = steps[1];
-            } else {
-                btn.textContent = steps[2];
-            }
-        }
-
-        function contextEvolComplete() {
-            contextEvolState.step = 12;
-            updateContextEvolButton();
-            showContextEvolStatus(`✓ Complete! ${contextEvolState.tpCount} TP + ${contextEvolState.tnCount} TN achieved.`, 'success');
-
-            const div = document.getElementById('contextCalibCurrent');
-            div.innerHTML = `
-                <div style="text-align:center;padding:20px;background:var(--bg-input);border-radius:4px;">
-                    <div style="font-size:24px;margin-bottom:8px;">✓</div>
-                    <div style="font-size:14px;font-weight:600;color:#28a745;margin-bottom:12px;">Context Evolution Complete</div>
-                    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">
-                        ${contextEvolState.pointName}<br/>
-                        True Positives: ${contextEvolState.tpCount}/3<br/>
-                        True Negatives: ${contextEvolState.tnCount}/3
-                    </div>
-                    <button id="contextEvolRestartBtn" class="dev-btn" style="background-color:#6f42c1;color:#fff;border:1px solid #5a32a3;">
-                        Start Over with Another Point
-                    </button>
-                </div>
-            `;
-
-            div.style.display = 'block';
-
-            const restartBtn = document.getElementById('contextEvolRestartBtn');
-            if (restartBtn) {
-                restartBtn.addEventListener('click', () => {
-                    contextEvolState.step = 0;
-                    contextEvolState.testCycles = [];
-                    updateContextEvolProgress();
-                    updateContextEvolButton();
-                    document.getElementById('contextCalibHistory').style.display = 'none';
-                    showContextEvolStatus('', '');
-                    renderContextEvolStep1();
-                });
-            }
-        }
-
-        function showContextEvolStatus(msg, type) {
-            const status = document.getElementById('contextCalibStatus');
-            if (!msg) {
-                status.style.display = 'none';
-                return;
-            }
-
-            const colours = {
-                'info': { bg: '#e7f1ff', color: '#004085', border: '#b3d9ff' },
-                'success': { bg: '#d4edda', color: '#155724', border: '#c3e6cb' },
-                'error': { bg: '#f8d7da', color: '#721c24', border: '#f5c6cb' }
-            };
-            const c = colours[type] || colours.info;
-            status.style.cssText = `display:block;background:${c.bg};color:${c.color};border:1px solid ${c.border};`;
-            status.textContent = msg;
-        }
-
-        // Button handler for context evolution workflow
-        const contextCalibBtn = document.getElementById('contextCalibButton');
-        if (contextCalibBtn) {
-            contextCalibBtn.addEventListener('click', () => {
-                if (contextEvolState.step === 0) {
-                    renderContextEvolStep1();
-                    updateContextEvolButton();
-                } else if (contextEvolState.step === 12) {
-                    // Completed, allow restart
-                    contextEvolState.step = 0;
-                    contextEvolState.testCycles = [];
-                    updateContextEvolProgress();
-                    updateContextEvolButton();
-                    document.getElementById('contextCalibHistory').style.display = 'none';
-                    showContextEvolStatus('', '');
-                    renderContextEvolStep1();
-                }
-            });
-        }
+        if (ceBtn) ceBtn.addEventListener('click', ceHandleClick);
         // ─────────────────────────────────────────────────────────────────────
 
         // Populate guideline dropdown when calibration tab opens
