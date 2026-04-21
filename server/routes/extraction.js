@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { extractPracticePointsRaw, extractPracticePoints, savePracticePoints } = require('../services/extraction');
 const { authenticateUser } = require('../middleware/auth');
+const { db } = require('../config/firebase');
 
 /**
  * POST /api/extractPracticePoints
@@ -101,9 +102,16 @@ router.get('/getPracticePoints/:guidelineId', authenticateUser, async (req, res)
             });
         }
 
-        const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePoints')
-            .orderBy('order', 'asc')
-            .get();
+        let snap;
+        try {
+            snap = await db.collection('guidelines').doc(guidelineId).collection('practicePoints')
+                .orderBy('order', 'asc')
+                .get();
+        } catch (orderErr) {
+            // Fallback if orderBy fails (e.g., missing index)
+            console.warn('[GET_POINTS] orderBy failed, falling back to unordered fetch:', orderErr.message);
+            snap = await db.collection('guidelines').doc(guidelineId).collection('practicePoints').get();
+        }
 
         const points = snap.docs.map(doc => ({
             id: doc.id,
