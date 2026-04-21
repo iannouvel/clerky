@@ -7691,23 +7691,24 @@ ${responseText}
             testInProgress: false
         };
 
-        async function contextEvolLoadPoints() {
-            const sel = document.getElementById('calibrationGuidelineSelect');
-            contextEvolState.guidelineId = sel.value;
-            if (!contextEvolState.guidelineId) {
-                showContextEvolStatus('Select a guideline first.', 'error');
+        async function contextEvolLoadGuidelines() {
+            try {
+                return await fetchCalibrationGuidelines();
+            } catch (err) {
+                showContextEvolStatus(`Error loading guidelines: ${err.message}`, 'error');
                 return [];
             }
+        }
 
+        async function contextEvolLoadPoints(guidelineId) {
             try {
                 const token = await getCalibrationToken();
-                const res = await fetch(`${SERVER_URL}/getPracticePoints?guidelineId=${encodeURIComponent(contextEvolState.guidelineId)}`, {
+                const res = await fetch(`${SERVER_URL}/getPracticePoints?guidelineId=${encodeURIComponent(guidelineId)}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 const data = await res.json();
                 if (!data.success) throw new Error(data.error);
-                contextEvolState.allPoints = data.points || [];
-                return contextEvolState.allPoints;
+                return data.points || [];
             } catch (err) {
                 showContextEvolStatus(`Error loading points: ${err.message}`, 'error');
                 return [];
@@ -7716,39 +7717,76 @@ ${responseText}
 
         function renderContextEvolStep1() {
             const div = document.getElementById('contextCalibCurrent');
-            const token = auth.currentUser?.uid;
+            div.innerHTML = '<div style="padding:12px;text-align:center;color:var(--text-secondary);font-size:12px;">Loading...</div>';
+            div.style.display = 'block';
 
-            const guidelineId = contextEvolState.guidelineId;
-            const guideline = contextEvolState.allPoints.length > 0 ? guidelineId : 'Select a guideline';
+            contextEvolLoadGuidelines().then(guidelines => {
+                if (guidelines.length === 0) {
+                    div.innerHTML = '<div style="padding:12px;color:#dc3545;font-size:12px;">No guidelines available.</div>';
+                    return;
+                }
 
-            div.innerHTML = `
-                <div style="display:flex;flex-direction:column;gap:12px;">
-                    <div>
-                        <label style="font-size:12px;color:var(--text-secondary);display:block;margin-bottom:4px;">Select Practice Point</label>
-                        <select id="contextEvolPointSelect" style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:13px;">
-                            <option value="">-- Choose a practice point --</option>
-                            ${contextEvolState.allPoints.map((p, i) => `<option value="${p.id}" data-index="${i}">${p.name || p.id}</option>`).join('')}
-                        </select>
+                div.innerHTML = `
+                    <div style="display:flex;flex-direction:column;gap:10px;">
+                        <div>
+                            <label style="font-size:11px;color:var(--text-secondary);display:block;margin-bottom:6px;font-weight:600;">Guideline</label>
+                            <select id="contextEvolGuidelineSelect" style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                                <option value="">-- Select guideline --</option>
+                                ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:11px;color:var(--text-secondary);display:block;margin-bottom:6px;font-weight:600;">Practice Point</label>
+                            <select id="contextEvolPointSelect" style="width:100%;padding:8px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;opacity:0.5;" disabled>
+                                <option value="">-- Select practice point --</option>
+                            </select>
+                        </div>
+                        <button id="contextEvolStartBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border:1px solid #0062cc;padding:8px;font-size:12px;font-weight:600;" disabled>
+                            Start Testing
+                        </button>
                     </div>
-                    <button id="contextEvolStartBtn" class="dev-btn" style="background-color:#007bff;color:#fff;border:1px solid #0062cc;">
-                        Start Context Evolution
-                    </button>
-                </div>
-            `;
+                `;
 
-            const startBtn = document.getElementById('contextEvolStartBtn');
-            if (startBtn) {
-                startBtn.addEventListener('click', async () => {
-                    const sel = document.getElementById('contextEvolPointSelect');
-                    if (!sel.value) {
-                        showContextEvolStatus('Select a practice point first.', 'error');
+                const guidelineSel = document.getElementById('contextEvolGuidelineSelect');
+                const pointSel = document.getElementById('contextEvolPointSelect');
+                const startBtn = document.getElementById('contextEvolStartBtn');
+
+                guidelineSel.addEventListener('change', async () => {
+                    if (!guidelineSel.value) {
+                        pointSel.innerHTML = '<option value="">-- Select practice point --</option>';
+                        pointSel.disabled = true;
+                        startBtn.disabled = true;
                         return;
                     }
-                    const idx = parseInt(sel.options[sel.selectedIndex].dataset.index);
+
+                    contextEvolState.guidelineId = guidelineSel.value;
+                    pointSel.innerHTML = '<option value="">Loading...</option>';
+                    pointSel.disabled = false;
+
+                    const points = await contextEvolLoadPoints(guidelineSel.value);
+                    if (points.length === 0) {
+                        pointSel.innerHTML = '<option value="">No practice points</option>';
+                        startBtn.disabled = true;
+                        return;
+                    }
+
+                    contextEvolState.allPoints = points;
+                    pointSel.innerHTML = '<option value="">-- Select practice point --</option>' +
+                        points.map((p, i) => `<option value="${i}">${p.name || p.id}</option>`).join('');
+                    pointSel.disabled = false;
+                    startBtn.disabled = true;
+                });
+
+                pointSel.addEventListener('change', () => {
+                    startBtn.disabled = pointSel.value === '';
+                });
+
+                startBtn.addEventListener('click', () => {
+                    const idx = parseInt(pointSel.value);
                     const point = contextEvolState.allPoints[idx];
                     contextEvolState.pointId = point.id;
                     contextEvolState.pointName = point.name || point.id;
-                    contextEvolState.pointIndex = idx + 1;  // 1-indexed for display
+                    contextEvolState.pointIndex = idx + 1;
                     contextEvolState.step = 2;
                     contextEvolState.tpCount = 0;
                     contextEvolState.tnCount = 0;
@@ -7756,11 +7794,10 @@ ${responseText}
                     div.style.display = 'none';
                     updateContextEvolProgress();
                     updateContextEvolButton();
-                    await contextEvolStep2();
+                    contextEvolStep2();
                 });
-            }
+            });
 
-            div.style.display = 'block';
             document.getElementById('contextCalibHistory').style.display = 'none';
         }
 
@@ -8070,16 +8107,10 @@ ${responseText}
         // Button handler for context evolution workflow
         const contextCalibBtn = document.getElementById('contextCalibButton');
         if (contextCalibBtn) {
-            contextCalibBtn.addEventListener('click', async () => {
+            contextCalibBtn.addEventListener('click', () => {
                 if (contextEvolState.step === 0) {
-                    // Step 1: Load points and show selection
-                    const points = await contextEvolLoadPoints();
-                    if (points.length > 0) {
-                        renderContextEvolStep1();
-                        updateContextEvolButton();
-                    } else {
-                        showContextEvolStatus('No practice points found. Extract them first.', 'error');
-                    }
+                    renderContextEvolStep1();
+                    updateContextEvolButton();
                 } else if (contextEvolState.step === 12) {
                     // Completed, allow restart
                     contextEvolState.step = 0;
@@ -8088,10 +8119,7 @@ ${responseText}
                     updateContextEvolButton();
                     document.getElementById('contextCalibHistory').style.display = 'none';
                     showContextEvolStatus('', '');
-                    const points = await contextEvolLoadPoints();
-                    if (points.length > 0) {
-                        renderContextEvolStep1();
-                    }
+                    renderContextEvolStep1();
                 }
             });
         }
