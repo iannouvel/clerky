@@ -23,4 +23,11 @@ router.post('/improvePracticePointAdvice', authenticateUser, calibrationControll
 router.post('/rewritePracticePointRule', authenticateUser, calibrationController.rewritePracticePointRule);
 router.post('/removePracticePoint', authenticateUser, calibrationController.removePracticePoint);
 
+// ─── Phase 4: Context Evolution ──────────────────────────────────────────────
+router.post('/contextEvolution/generateScenario', authenticateUser, calibrationController.generateFreshScenario);
+router.post('/contextEvolution/testScenario', authenticateUser, calibrationController.testScenarioAgainstPoint);
+router.get('/contextEvolution/progress', authenticateUser, calibrationController.getContextEvolutionProgress);
+router.post('/contextEvolution/refineContext', authenticateUser, calibrationController.refinePointContext);
+router.get('/contextEvolution/testHistory', authenticateUser, calibrationController.getContextEvolutionTestHistory);
+
 module.exports = router;

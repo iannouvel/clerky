@@ -629,3 +629,181 @@ exports.removePracticePoint = async (req, res) => {
         res.status(500).json({ success: false, error: err.message });
     }
 };
+
+// ─── Phase 4: Context Evolution ──────────────────────────────────────────────
+
+const { generateFreshScenario, testScenarioAgainstPoint, analyzeTestResult, refinePointContext } = require('../services/calibration');
+
+/**
+ * POST /contextEvolution/generateScenario
+ * Body: { practicePointId, practicePointText, scenarioType, guidelineId }
+ * Returns: Fresh clinical scenario
+ */
+exports.generateFreshScenario = async (req, res) => {
+    try {
+        const { practicePointText, scenarioType } = req.body;
+        const userId = req.user.uid;
+
+        if (!practicePointText || !['A', 'B'].includes(scenarioType)) {
+            return res.status(400).json({ success: false, error: 'practicePointText and scenarioType (A or B) required' });
+        }
+
+        const result = await generateFreshScenario(practicePointText, scenarioType, userId);
+        res.json(result);
+
+    } catch (err) {
+        console.error('[CALIBRATION] generateFreshScenario error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /contextEvolution/testScenario
+ * Body: { practicePointText, clinicalNote, context, expectedApplicable }
+ * Returns: Full LLM response, analysis, and evaluation
+ */
+exports.testScenarioAgainstPoint = async (req, res) => {
+    try {
+        const { practicePointText, clinicalNote, context, expectedApplicable, testNumber, scenarioType } = req.body;
+        const userId = req.user.uid;
+
+        if (!practicePointText || !clinicalNote || !context) {
+            return res.status(400).json({ success: false, error: 'practicePointText, clinicalNote, and context required' });
+        }
+
+        // Get LLM analysis
+        const testResult = await testScenarioAgainstPoint(practicePointText, clinicalNote, context, userId);
+        if (!testResult.success) throw new Error(testResult.error);
+
+        // Analyze the result
+        const analysis = analyzeTestResult(expectedApplicable, testResult.applicable, {
+            citedTriggers: testResult.citedTriggers,
+            citedCriteria: testResult.citedCriteria,
+            citedExceptions: testResult.citedExceptions,
+            citedEdgeCases: testResult.citedEdgeCases
+        });
+
+        res.json({
+            success: true,
+            testNumber,
+            scenarioType,
+            llm: {
+                response: testResult.llmResponse,
+                applicable: testResult.applicable,
+                reasoning: testResult.reasoning,
+                confidence: testResult.confidence,
+                citations: {
+                    triggers: testResult.citedTriggers,
+                    criteria: testResult.citedCriteria,
+                    exceptions: testResult.citedExceptions,
+                    edgeCases: testResult.citedEdgeCases
+                }
+            },
+            evaluation: {
+                expectedApplicable,
+                isCorrect: analysis.isCorrect,
+                resultType: analysis.resultType,
+                reasoningQuality: analysis.reasoningQuality,
+                usedContextCorrectly: analysis.usedContextCorrectly
+            }
+        });
+
+    } catch (err) {
+        console.error('[CALIBRATION] testScenarioAgainstPoint error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * GET /contextEvolution/progress?guidelineId=X&practicePointId=Y
+ * Returns: Current test progress (TP/TN counts)
+ */
+exports.getContextEvolutionProgress = async (req, res) => {
+    try {
+        const { guidelineId, practicePointId } = req.query;
+
+        if (!guidelineId || !practicePointId) {
+            return res.status(400).json({ success: false, error: 'guidelineId and practicePointId required' });
+        }
+
+        // Fetch test results for this point
+        const resultsSnap = await db.collection('guidelines').doc(guidelineId)
+            .collection('practicePoints').doc(practicePointId)
+            .collection('contextEvolutionTests')
+            .get();
+
+        const tests = resultsSnap.docs.map(d => d.data());
+        const tpCount = tests.filter(t => t.evaluation?.resultType === 'TP').length;
+        const tnCount = tests.filter(t => t.evaluation?.resultType === 'TN').length;
+        const contextVersion = tests[0]?.context?.version || 1;
+
+        res.json({
+            success: true,
+            tpCount,
+            tnCount,
+            totalTests: tests.length,
+            contextVersion,
+            isComplete: tpCount >= 3 && tnCount >= 3
+        });
+
+    } catch (err) {
+        console.error('[CALIBRATION] getContextEvolutionProgress error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /contextEvolution/refineContext
+ * Body: { guidelineId, practicePointId, failureType, llmReasoning, currentContext }
+ * Returns: Suggested refinements
+ */
+exports.refinePointContext = async (req, res) => {
+    try {
+        const { guidelineId, practicePointId, practicePointText, clinicalNote, failureType, llmReasoning, currentContext } = req.body;
+        const userId = req.user.uid;
+
+        if (!practicePointText || !clinicalNote || !failureType || !currentContext) {
+            return res.status(400).json({ success: false, error: 'Required fields missing' });
+        }
+
+        const refinements = await refinePointContext(practicePointText, clinicalNote, failureType, llmReasoning, currentContext, userId);
+        res.json(refinements);
+
+    } catch (err) {
+        console.error('[CALIBRATION] refinePointContext error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * GET /contextEvolution/testHistory?guidelineId=X&practicePointId=Y&limit=10
+ * Returns: Last N test results
+ */
+exports.getContextEvolutionTestHistory = async (req, res) => {
+    try {
+        const { guidelineId, practicePointId, limit = 10 } = req.query;
+
+        if (!guidelineId || !practicePointId) {
+            return res.status(400).json({ success: false, error: 'guidelineId and practicePointId required' });
+        }
+
+        const tests = await db.collection('guidelines').doc(guidelineId)
+            .collection('practicePoints').doc(practicePointId)
+            .collection('contextEvolutionTests')
+            .orderBy('timestamp', 'desc')
+            .limit(parseInt(limit))
+            .get();
+
+        const history = tests.docs.map(d => d.data());
+
+        res.json({
+            success: true,
+            count: history.length,
+            history
+        });
+
+    } catch (err) {
+        console.error('[CALIBRATION] getContextEvolutionTestHistory error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};

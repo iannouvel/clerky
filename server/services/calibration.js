@@ -1256,6 +1256,216 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
     };
 }
 
+// ─── Phase 4: Context Evolution ──────────────────────────────────────────────────
+
+/**
+ * Generate a fresh clinical scenario for testing a practice point
+ * Returns a unique scenario each time to avoid LLM memorization
+ */
+async function generateFreshScenario(practicePointText, scenarioType, userId) {
+    const prompt = `You are a clinical scenario generator for testing practice point applicability. Create a UNIQUE and REALISTIC clinical note for testing this practice point.
+
+PRACTICE POINT:
+"${practicePointText}"
+
+SCENARIO TYPE: ${scenarioType === 'A' ? 'WRONGLY APPLIED' : 'CORRECTLY APPLIED'}
+
+Your task:
+1. Generate a detailed, realistic clinical note (2-3 paragraphs) with patient details, test results, demographics, clinical context
+2. Ensure uniqueness - make it completely different from any previous scenarios
+3. For Scenario ${scenarioType === 'A' ? 'A' : 'B'}: the practice point should ${scenarioType === 'A' ? 'NOT apply' : 'APPLY'}
+4. Include specific values, measurements, and clinical context
+5. Provide brief explanation of why it ${scenarioType === 'A' ? 'incorrectly' : 'correctly'} applies (or doesn't)
+
+Return ONLY valid JSON (no markdown, no code blocks):
+{
+  "clinicalNote": "Patient: [detailed note]...",
+  "explanation": "This scenario ${scenarioType === 'A' ? 'wrongly' : 'correctly'} applies because..."
+}`;
+
+    try {
+        const result = await routeToAI(prompt, userId);
+        if (!result?.content) throw new Error('No response from LLM');
+
+        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const scenario = JSON.parse(parsed);
+
+        if (!scenario.clinicalNote || !scenario.explanation) {
+            throw new Error('Invalid scenario structure from LLM');
+        }
+
+        return {
+            success: true,
+            clinicalNote: scenario.clinicalNote,
+            explanation: scenario.explanation
+        };
+    } catch (err) {
+        console.error('[CONTEXT_EVOLUTION] Error generating scenario:', err.message);
+        return { success: false, error: err.message };
+    }
+}
+
+/**
+ * Test if a practice point applies to a clinical note using current context
+ */
+async function testScenarioAgainstPoint(practicePointText, clinicalNote, context, userId) {
+    const contextStr = `
+Triggers:
+${context.triggers?.map(t => `• ${t}`).join('\n') || '(none yet)'}
+
+Criteria:
+${context.criteria || '(to be defined)'}
+
+Exceptions:
+${context.exceptions?.map(e => `• ${e}`).join('\n') || '(none defined)'}
+
+Edge Cases:
+${context.edgeCases?.map(ec => `• ${ec}`).join('\n') || '(none identified)'}
+`;
+
+    const prompt = `You are a clinical decision support system. Analyze this practice point against the provided clinical note and context.
+
+PRACTICE POINT:
+"${practicePointText}"
+
+CONTEXT (Version ${context.version || 1}):
+${contextStr}
+
+CLINICAL NOTE:
+${clinicalNote}
+
+TASK:
+1. Determine if this practice point applies to this patient
+2. Answer: "Applicable" or "Not applicable"
+3. Provide detailed reasoning that references the context provided
+4. Cite specific triggers, criteria, exceptions, or edge cases
+
+Return ONLY valid JSON (no markdown):
+{
+  "applicable": true/false,
+  "answer": "Applicable" or "Not applicable",
+  "reasoning": "Detailed explanation referencing context...",
+  "citedTriggers": ["trigger 1"],
+  "citedCriteria": "the criteria text",
+  "citedExceptions": ["exception 1"],
+  "citedEdgeCases": ["edge case"],
+  "confidence": 0.95
+}`;
+
+    try {
+        const result = await routeToAI(prompt, userId);
+        if (!result?.content) throw new Error('No response from LLM');
+
+        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const analysis = JSON.parse(parsed);
+
+        return {
+            success: true,
+            llmResponse: analysis.reasoning,
+            applicable: analysis.applicable,
+            answer: analysis.answer,
+            reasoning: analysis.reasoning,
+            citedTriggers: analysis.citedTriggers || [],
+            citedCriteria: analysis.citedCriteria || '',
+            citedExceptions: analysis.citedExceptions || [],
+            citedEdgeCases: analysis.citedEdgeCases || [],
+            confidence: analysis.confidence || 0.5
+        };
+    } catch (err) {
+        console.error('[CONTEXT_EVOLUTION] Error testing scenario:', err.message);
+        return { success: false, error: err.message };
+    }
+}
+
+/**
+ * Analyze test result and determine if it's correct
+ */
+function analyzeTestResult(expectedApplicable, llmApplicable, contextUsage) {
+    const isCorrect = expectedApplicable === llmApplicable;
+
+    let resultType;
+    if (expectedApplicable === true && llmApplicable === true) resultType = 'TP';
+    else if (expectedApplicable === false && llmApplicable === false) resultType = 'TN';
+    else if (expectedApplicable === false && llmApplicable === true) resultType = 'FP';
+    else resultType = 'FN';
+
+    let reasoningQuality = 'Poor';
+    if (contextUsage.citedTriggers.length > 0 || contextUsage.citedCriteria) {
+        reasoningQuality = 'Good';
+        if (contextUsage.citedTriggers.length > 1 && contextUsage.citedExceptions.length > 0) {
+            reasoningQuality = 'Excellent';
+        }
+    }
+
+    return {
+        isCorrect,
+        resultType,
+        reasoningQuality,
+        usedContextCorrectly: contextUsage.citedTriggers.length > 0 || contextUsage.citedCriteria
+    };
+}
+
+/**
+ * Generate context refinement suggestions based on failed test
+ */
+async function refinePointContext(practicePointText, clinicalNote, failureType, llmReasoning, currentContext, userId) {
+    const failureExplanation = failureType === 'FP'
+        ? 'The LLM incorrectly marked the point as applicable when it should NOT apply'
+        : 'The LLM incorrectly marked the point as NOT applicable when it SHOULD apply';
+
+    const prompt = `You are a clinical guideline refinement expert. Analyze why a practice point's context was inadequate.
+
+PRACTICE POINT:
+"${practicePointText}"
+
+CLINICAL NOTE WHERE IT FAILED:
+${clinicalNote}
+
+FAILURE TYPE: ${failureExplanation}
+
+LLM'S REASONING:
+${llmReasoning}
+
+CURRENT CONTEXT:
+Triggers: ${currentContext.triggers?.join(', ') || '(none)'}
+Criteria: ${currentContext.criteria || '(none)'}
+Exceptions: ${currentContext.exceptions?.join(', ') || '(none)'}
+Edge Cases: ${currentContext.edgeCases?.join(', ') || '(none)'}
+
+TASK:
+Suggest specific improvements to prevent this error in future testing.
+
+Return ONLY valid JSON:
+{
+  "suggestedChanges": [
+    {
+      "field": "triggers" or "criteria" or "exceptions" or "edgeCases",
+      "action": "add" or "modify" or "clarify",
+      "suggested": "The new text or item",
+      "reason": "Why this prevents the error"
+    }
+  ],
+  "summary": "Brief summary of changes needed"
+}`;
+
+    try {
+        const result = await routeToAI(prompt, userId);
+        if (!result?.content) throw new Error('No response from LLM');
+
+        let parsed = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const refinement = JSON.parse(parsed);
+
+        return {
+            success: true,
+            suggestedChanges: refinement.suggestedChanges || [],
+            summary: refinement.summary || ''
+        };
+    } catch (err) {
+        console.error('[CONTEXT_EVOLUTION] Error refining context:', err.message);
+        return { success: false, error: err.message };
+    }
+}
+
 module.exports = {
     generatePointId,
     syncPracticePoints,
@@ -1265,5 +1475,9 @@ module.exports = {
     generateCalibrationScenarios,
     evaluateScenarioVerdicts,
     runCalibrationRun,
-    runCalibrationLoop
+    runCalibrationLoop,
+    generateFreshScenario,
+    testScenarioAgainstPoint,
+    analyzeTestResult,
+    refinePointContext
 };
