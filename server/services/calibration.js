@@ -1301,11 +1301,14 @@ function extractJSON(raw) {
             const items = m[2].match(/"([^"]*(?:\\.[^"]*)*)"/g);
             obj[m[1]] = items ? items.map(s => s.slice(1, -1)) : [];
         }
-        if (obj.applicable !== undefined || obj.answer) {
-            // Fill in missing fields with defaults
-            if (!obj.reasoning) obj.reasoning = '(reasoning truncated)';
-            if (!obj.answer) obj.answer = obj.applicable ? 'Applicable' : 'Not applicable';
-            console.warn('[extractJSON] Recovered truncated response via regex fallback');
+        if (Object.keys(obj).length > 0) {
+            // Fill in missing fields with defaults depending on response type
+            if (obj.applicable !== undefined) {
+                if (!obj.reasoning) obj.reasoning = '(reasoning truncated)';
+                if (!obj.answer) obj.answer = obj.applicable ? 'Applicable' : 'Not applicable';
+            }
+            if (obj.clinicalNote && !obj.explanation) obj.explanation = '(explanation truncated)';
+            console.warn('[extractJSON] Recovered truncated response via regex fallback:', Object.keys(obj).join(', '));
             return obj;
         }
     }
@@ -1318,28 +1321,23 @@ function extractJSON(raw) {
  * Returns a unique scenario each time to avoid LLM memorization
  */
 async function generateFreshScenario(practicePointText, scenarioType, userId) {
-    const prompt = `You are a clinical scenario generator for testing practice point applicability. Create a UNIQUE and REALISTIC clinical note for testing this practice point.
+    const prompt = `Generate a SHORT clinical scenario to test this practice point.
 
-PRACTICE POINT:
-"${practicePointText}"
+PRACTICE POINT: "${practicePointText}"
 
-SCENARIO TYPE: ${scenarioType === 'A' ? 'WRONGLY APPLIED' : 'CORRECTLY APPLIED'}
+SCENARIO TYPE: ${scenarioType === 'A' ? 'Should NOT apply' : 'Should APPLY'}
 
-Your task:
-1. Generate a detailed, realistic clinical note (2-3 paragraphs) with patient details, test results, demographics, clinical context
-2. Ensure uniqueness - make it completely different from any previous scenarios
-3. For Scenario ${scenarioType === 'A' ? 'A' : 'B'}: the practice point should ${scenarioType === 'A' ? 'NOT apply' : 'APPLY'}
-4. Include specific values, measurements, and clinical context
-5. Provide brief explanation of why it ${scenarioType === 'A' ? 'incorrectly' : 'correctly'} applies (or doesn't)
+Requirements:
+- ONE short paragraph (max 80 words): patient name, age, gestation, key findings/values
+- The practice point should ${scenarioType === 'A' ? 'NOT apply to this patient' : 'clearly APPLY to this patient'}
+- Include specific clinical values relevant to the rule
+- One sentence explanation of why it does/doesn't apply
 
-Return ONLY valid JSON (no markdown, no code blocks):
-{
-  "clinicalNote": "Patient: [detailed note]...",
-  "explanation": "This scenario ${scenarioType === 'A' ? 'wrongly' : 'correctly'} applies because..."
-}`;
+IMPORTANT: Keep it SHORT. Return ONLY valid JSON, no markdown:
+{"clinicalNote":"Patient: ...","explanation":"Applies/doesn't apply because..."}`;
 
     try {
-        const result = await routeToAI(prompt, userId);
+        const result = await routeToAI(prompt, userId, null, 1000);
         if (!result?.content) throw new Error('No response from LLM');
 
         const scenario = extractJSON(result.content);
@@ -1508,7 +1506,7 @@ Return ONLY valid JSON:
 }`;
 
     try {
-        const result = await routeToAI(prompt, userId);
+        const result = await routeToAI(prompt, userId, null, 1500);
         if (!result?.content) throw new Error('No response from LLM');
 
         const refinement = extractJSON(result.content);
