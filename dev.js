@@ -7736,7 +7736,8 @@ ${responseText}
         // Single generate→test cycle, returns 'continue' | 'point_done' | 'point_failed' | 'error'
         async function ceRunOneCycle() {
             const type = ce.nextScenarioType;
-            ceSetStatus(`Point ${ce.pointIdx + 1}/${ce.allPoints.length} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Attempt ${ce.attempts + 1}/${MAX_ATTEMPTS_PER_POINT} — generating ${type}...`);
+            const ptLabel = `Point ${ce.pointIdx + 1}/${ce.allPoints.length}`;
+            ceSetStatus(`${ptLabel} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Attempt ${ce.attempts + 1}/${MAX_ATTEMPTS_PER_POINT} — generating ${type}...`);
 
             // Generate scenario
             const token = await getCalibrationToken();
@@ -7748,11 +7749,8 @@ ${responseText}
             const genData = await genRes.json();
             if (!genData.success) throw new Error(genData.error);
 
-            const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
-            ceAddHistory(`Scenario ${type} (${typeLabel})`, '#17a2b8', `${genData.clinicalNote}\n\n— ${genData.explanation || ''}`);
-
             // Test scenario
-            ceSetStatus(`Point ${ce.pointIdx + 1}/${ce.allPoints.length} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Testing...`);
+            ceSetStatus(`${ptLabel} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Testing...`);
             const testRes = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
                 method: 'POST',
                 headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -7777,7 +7775,67 @@ ${responseText}
             ce.attempts++;
 
             const col = correct ? '#28a745' : '#dc3545';
-            ceAddHistory(`<strong style="color:${col}">${resultType}</strong> — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`, col, testData.llm?.reasoning);
+            const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
+            const reasoning = testData.llm?.reasoning || '(no reasoning)';
+
+            // Build combined entry showing everything
+            let body = `<div style="margin-top:6px;font-size:11px;line-height:1.5;">`;
+
+            // Practice point (always shown, abbreviated)
+            body += `<div style="margin-bottom:6px;padding:4px 8px;background:rgba(111,66,193,0.08);border-radius:3px;border-left:2px solid #6f42c1;"><strong>Rule:</strong> ${ce.pointName.length > 150 ? ce.pointName.slice(0, 150) + '...' : ce.pointName}</div>`;
+
+            // Clinical scenario
+            body += `<div style="margin-bottom:6px;padding:6px 8px;background:var(--bg-secondary);border-radius:3px;border-left:2px solid ${type === 'A' ? '#ff9800' : '#007bff'};max-height:120px;overflow-y:auto;white-space:pre-wrap;"><strong>Scenario ${type}:</strong> ${genData.clinicalNote}</div>`;
+
+            // Design intent
+            if (genData.explanation) {
+                body += `<div style="margin-bottom:6px;color:var(--text-secondary);font-style:italic;">Why this scenario ${typeLabel}: ${genData.explanation}</div>`;
+            }
+
+            // LLM reasoning
+            body += `<div style="padding:6px 8px;background:${correct ? 'rgba(40,167,69,0.08)' : 'rgba(220,53,69,0.08)'};border-radius:3px;border-left:2px solid ${col};"><strong>LLM reasoning:</strong> ${reasoning}</div>`;
+
+            // On failure (FP/FN), call refine endpoint and show suggested changes
+            if (!correct) {
+                ceSetStatus(`${ptLabel} | Refining context after ${resultType}...`);
+                try {
+                    const refRes = await fetch(`${SERVER_URL}/contextEvolution/refineContext`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            practicePointText: ce.pointText,
+                            clinicalNote: genData.clinicalNote,
+                            failureType: resultType,
+                            llmReasoning: reasoning,
+                            currentContext: {
+                                triggers: [ce.pointText],
+                                criteria: ce.pointText,
+                                exceptions: [],
+                                edgeCases: []
+                            },
+                            guidelineId: ce.guidelineId
+                        })
+                    });
+                    const refData = await refRes.json();
+                    if (refData.success && refData.suggestedChanges?.length > 0) {
+                        body += `<div style="margin-top:6px;padding:6px 8px;background:rgba(255,152,0,0.1);border-radius:3px;border-left:2px solid #ff9800;">`;
+                        body += `<strong>Suggested context refinements:</strong>`;
+                        body += `<div style="margin-top:4px;">${refData.summary || ''}</div>`;
+                        body += `<ul style="margin:4px 0 0 16px;padding:0;">`;
+                        for (const change of refData.suggestedChanges) {
+                            body += `<li><strong>${change.field}</strong> (${change.action}): ${change.suggested}<br/><span style="color:var(--text-secondary);">Reason: ${change.reason}</span></li>`;
+                        }
+                        body += `</ul></div>`;
+                    }
+                } catch (refErr) {
+                    body += `<div style="margin-top:6px;color:#dc3545;font-size:10px;">Refinement call failed: ${refErr.message}</div>`;
+                }
+            }
+
+            body += `</div>`;
+
+            const headline = `<strong style="color:${col}">${resultType}</strong> Scenario ${type} — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`;
+            ceAddHistory(headline, col, null, body);
 
             ce.nextScenarioType = type === 'A' ? 'B' : 'A';
 
@@ -7909,11 +7967,15 @@ ${responseText}
             }
         }
 
-        function ceAddHistory(html, colour, details) {
+        function ceAddHistory(html, colour, details, bodyHtml) {
             const item = document.createElement('div');
             item.style.cssText = `border-left:3px solid ${colour || '#6c757d'};padding:6px 10px;font-size:11px;line-height:1.4;background:var(--bg-input);border-radius:0 4px 4px 0;`;
             const time = new Date().toLocaleTimeString();
             item.innerHTML = `<span style="color:var(--text-secondary);margin-right:6px;">${time}</span>${html}`;
+            if (bodyHtml) {
+                // Rich inline content — always visible, not collapsed
+                item.innerHTML += bodyHtml;
+            }
             if (details) {
                 item.innerHTML += `<details style="margin-top:4px;"><summary style="cursor:pointer;color:var(--text-secondary);font-size:10px;">Show details</summary><div style="padding:4px;white-space:pre-wrap;max-height:120px;overflow-y:auto;font-size:10px;background:var(--bg-secondary);border-radius:3px;margin-top:3px;">${details}</div></details>`;
             }
