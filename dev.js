@@ -7681,6 +7681,7 @@ ${responseText}
             allPoints: [],
             pointId: null,
             pointName: null,
+            pointText: null,
             tpCount: 0,
             tnCount: 0,
             pointIdx: 0,  // current index into allPoints
@@ -7702,7 +7703,8 @@ ${responseText}
         function ceStartPoint() {
             const p = ce.allPoints[ce.pointIdx];
             ce.pointId = p.id;
-            ce.pointName = p.name || p.id;
+            ce.pointText = p.text || p.name || p.id;  // actual rule text for the LLM
+            ce.pointName = p.text || p.name || p.id;   // display name
             ce.tpCount = 0;
             ce.tnCount = 0;
             ce.nextScenarioType = 'A';
@@ -7790,18 +7792,18 @@ ${responseText}
                     const res = await fetch(`${SERVER_URL}/contextEvolution/generateScenario`, {
                         method: 'POST',
                         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ guidelineId: ce.guidelineId, pointId: ce.pointId, scenarioType: type })
+                        body: JSON.stringify({ practicePointText: ce.pointText, scenarioType: type, guidelineId: ce.guidelineId })
                     });
                     const data = await res.json();
                     if (!data.success) throw new Error(data.error);
-                    ce._scenario = data.scenario;
+                    ce._scenario = data.clinicalNote;
                     ce._scenarioType = type;
                     const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
-                    ceAddHistory(`Scenario ${type} generated (${typeLabel})`, '#17a2b8', data.scenario);
+                    ceAddHistory(`Scenario ${type} generated (${typeLabel})`, '#17a2b8', `${data.clinicalNote}\n\n— Explanation: ${data.explanation || ''}`);
                     ceSetStep(4, 'Test Scenario');
                     ceSetStatus(`Point ${ce.pointIdx + 1}/${ce.allPoints.length} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3`);
                     ceContent.innerHTML = `
-                        <div style="border-left:3px solid ${type === 'A' ? '#ff9800' : '#007bff'};padding:8px 12px;font-size:12px;line-height:1.5;max-height:250px;overflow-y:auto;white-space:pre-wrap;background:var(--bg-input);border-radius:0 4px 4px 0;">${data.scenario}</div>
+                        <div style="border-left:3px solid ${type === 'A' ? '#ff9800' : '#007bff'};padding:8px 12px;font-size:12px;line-height:1.5;max-height:250px;overflow-y:auto;white-space:pre-wrap;background:var(--bg-input);border-radius:0 4px 4px 0;">${data.clinicalNote}</div>
                         <div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">Click the button to test the LLM against this scenario.</div>`;
                     ceContent.style.display = 'block';
                     ceBtn.disabled = false;
@@ -7816,23 +7818,32 @@ ${responseText}
                     const res = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
                         method: 'POST',
                         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ guidelineId: ce.guidelineId, pointId: ce.pointId, scenario: ce._scenario, scenarioType: ce._scenarioType })
+                        body: JSON.stringify({
+                            practicePointText: ce.pointText,
+                            clinicalNote: ce._scenario,
+                            context: ce.pointText,  // use point text as context for now
+                            expectedApplicable: ce._scenarioType === 'B',  // B = should apply
+                            scenarioType: ce._scenarioType,
+                            guidelineId: ce.guidelineId
+                        })
                     });
                     const data = await res.json();
                     if (!data.success) throw new Error(data.error);
 
-                    const llmApplies = data.doesApply === true;
+                    const llmApplies = data.llm?.applicable === true;
                     const expected = ce._scenarioType === 'B';
-                    const correct = llmApplies === expected;
-                    const isTP = correct && ce._scenarioType === 'B';
-                    const isTN = correct && ce._scenarioType === 'A';
+                    const correct = data.evaluation?.isCorrect === true;
+                    const resultType = data.evaluation?.resultType || '';
+                    const isTP = resultType === 'TP';
+                    const isTN = resultType === 'TN';
                     if (isTP) ce.tpCount++;
                     if (isTN) ce.tnCount++;
 
                     const col = correct ? '#28a745' : '#dc3545';
-                    const label = isTP ? 'True Positive' : isTN ? 'True Negative' : `False ${llmApplies ? 'Positive' : 'Negative'}`;
+                    const label = resultType || (correct ? 'Correct' : 'Incorrect');
+                    const reasoning = data.llm?.reasoning || '';
 
-                    ceAddHistory(`<strong style="color:${col}">${label}</strong> — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`, col, data.reasoning);
+                    ceAddHistory(`<strong style="color:${col}">${label}</strong> — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`, col, reasoning);
 
                     ceContent.style.display = 'none';
 
