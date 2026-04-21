@@ -1281,6 +1281,35 @@ function extractJSON(raw) {
             try { return JSON.parse(block + suffix); } catch (_) { /* continue */ }
         }
     }
+
+    // Last resort: truncated response — extract key-value pairs with regex
+    if (start !== -1) {
+        const block = text.slice(start);
+        const obj = {};
+        // Extract booleans: "applicable": true/false
+        const boolMatch = block.match(/"applicable"\s*:\s*(true|false)/);
+        if (boolMatch) obj.applicable = boolMatch[1] === 'true';
+        // Extract simple strings: "key": "value"
+        const strPairs = block.matchAll(/"(\w+)"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/g);
+        for (const m of strPairs) obj[m[1]] = m[2].replace(/\\"/g, '"').replace(/\\n/g, '\n');
+        // Extract number: "confidence": 0.95
+        const numMatch = block.match(/"confidence"\s*:\s*([\d.]+)/);
+        if (numMatch) obj.confidence = parseFloat(numMatch[1]);
+        // Extract arrays: "citedTriggers": [...]
+        const arrPairs = block.matchAll(/"(\w+)"\s*:\s*\[([^\]]*)\]/g);
+        for (const m of arrPairs) {
+            const items = m[2].match(/"([^"]*(?:\\.[^"]*)*)"/g);
+            obj[m[1]] = items ? items.map(s => s.slice(1, -1)) : [];
+        }
+        if (obj.applicable !== undefined || obj.answer) {
+            // Fill in missing fields with defaults
+            if (!obj.reasoning) obj.reasoning = '(reasoning truncated)';
+            if (!obj.answer) obj.answer = obj.applicable ? 'Applicable' : 'Not applicable';
+            console.warn('[extractJSON] Recovered truncated response via regex fallback');
+            return obj;
+        }
+    }
+
     throw new Error('Failed to parse JSON from LLM response: ' + text.slice(0, 200));
 }
 
@@ -1366,14 +1395,16 @@ ${clinicalNote}
 TASK:
 1. Determine if this practice point applies to this patient
 2. Answer: "Applicable" or "Not applicable"
-3. Provide detailed reasoning that references the context provided
+3. Provide CONCISE reasoning (max 2 sentences) referencing the context
 4. Cite specific triggers, criteria, exceptions, or edge cases
+
+IMPORTANT: Keep reasoning SHORT to avoid truncation. Max 2 sentences.
 
 Return ONLY valid JSON (no markdown):
 {
   "applicable": true/false,
   "answer": "Applicable" or "Not applicable",
-  "reasoning": "Detailed explanation referencing context...",
+  "reasoning": "Brief explanation (max 2 sentences)",
   "citedTriggers": ["trigger 1"],
   "citedCriteria": "the criteria text",
   "citedExceptions": ["exception 1"],
@@ -1382,7 +1413,7 @@ Return ONLY valid JSON (no markdown):
 }`;
 
     try {
-        const result = await routeToAI(prompt, userId);
+        const result = await routeToAI(prompt, userId, null, 2000);
         if (!result?.content) throw new Error('No response from LLM');
 
         const analysis = extractJSON(result.content);
