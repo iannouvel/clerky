@@ -1552,6 +1552,46 @@
                         <div id="pointsList" style="display:flex;flex-direction:column;gap:12px;"></div>
                     </div>
                 </div>
+
+                <!-- Context Evolution (Phase 4) -->
+                <div style="margin-bottom:20px;padding:14px;background:var(--bg-tertiary);border-radius:6px;">
+                    <p style="font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin:0 0 10px;">📊 Context Calibration</p>
+
+                    <!-- Progress indicator -->
+                    <div id="contextCalibProgress" style="display:none;margin-bottom:12px;padding:10px;background:var(--bg-input);border-radius:4px;font-size:12px;">
+                        <div style="color:var(--text-secondary);margin-bottom:4px;">
+                            Point: <span id="calibPointNumber">-/-</span> |
+                            TP: <span id="calibTPCount">0</span>/3 |
+                            TN: <span id="calibTNCount">0</span>/3
+                        </div>
+                        <div style="background:var(--bg-secondary);height:6px;border-radius:3px;overflow:hidden;">
+                            <div id="calibProgressBar" style="height:100%;width:0%;background:#28a745;transition:width 0.3s;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step button (top) -->
+                    <button id="contextCalibButton" class="dev-btn" style="background-color:#6f42c1;color:#fff;border-color:#6f42c1;padding:12px 20px;width:100%;margin-bottom:12px;font-weight:600;font-size:14px;">
+                        📌 Step 1: Select Guideline & Practice Point
+                    </button>
+
+                    <!-- Current step content (main) -->
+                    <div id="contextCalibCurrent" style="display:none;background:var(--bg-input);border-radius:4px;padding:12px;border:1px solid var(--border-color);margin-bottom:12px;">
+                        <!-- Content injected here by JS -->
+                    </div>
+
+                    <!-- History (reverse chronological) -->
+                    <div id="contextCalibHistory" style="display:none;">
+                        <div style="font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;margin-bottom:8px;">📜 History (Newest First)</div>
+                        <div id="contextCalibHistoryList" style="display:flex;flex-direction:column;gap:8px;max-height:600px;overflow-y:auto;">
+                            <!-- History items injected here by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Status message -->
+                    <div id="contextCalibStatus" style="display:none;margin-top:12px;padding:10px;border-radius:4px;font-size:12px;color:#856404;background:#fff3cd;border:1px solid #ffeeba;">
+                        <!-- Status messages here -->
+                    </div>
+                </div>
             </div>
 
             <!-- ── Pane: Prompt Evolution (injected by calSubTab JS) ── -->
