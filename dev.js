@@ -7698,6 +7698,12 @@ ${responseText}
             ceBtn.textContent = `Step ${n}: ${label}`;
         }
 
+        function ceError(msg) {
+            ceAddHistory(`Error: ${msg}`, '#dc3545');
+            ceSetStatus('');
+            ceBtn.disabled = false;
+        }
+
         async function ceHandleClick() {
             if (ce.step === 1) {
                 // Show guideline selector
@@ -7710,81 +7716,88 @@ ${responseText}
                         ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
                     </select>`;
                     ceContent.style.display = 'block';
-                    ceSetStatus('');
+                    ceSetStatus('Select a guideline');
                     document.getElementById('ceGuidelineSel').addEventListener('change', e => {
                         if (e.target.value) {
                             ce.guidelineId = e.target.value;
                             ce.guidelineName = e.target.options[e.target.selectedIndex].text;
                             ceContent.style.display = 'none';
+                            ceAddHistory(`Guideline: <strong>${ce.guidelineName}</strong>`, '#6f42c1');
                             ceSetStep(2, 'Extract Practice Points');
+                            ceSetStatus('');
                             ceBtn.disabled = false;
                         }
                     });
-                } catch (err) {
-                    ceSetStatus('Error: ' + err.message);
-                    ceBtn.disabled = false;
-                }
+                } catch (err) { ceError(err.message); }
 
             } else if (ce.step === 2) {
-                // Extract practice points
-                ceBtn.disabled = true;
-                ceSetStatus('Extracting practice points...');
-                try {
-                    const token = await getCalibrationToken();
-                    // Sync practice points (extracts if needed)
-                    const res = await fetch(`${SERVER_URL}/syncPracticePoints`, {
-                        method: 'POST',
-                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ guidelineId: ce.guidelineId })
-                    });
-                    const data = await res.json();
-                    if (!data.success) throw new Error(data.error);
-                    ceAddHistory(`Synced practice points: ${data.created} new, ${data.existing} existing, ${data.total} total`, '#17a2b8');
-                    ceSetStep(3, 'Select Practice Point');
-                    ceSetStatus('');
-                    ceBtn.disabled = false;
-                } catch (err) {
-                    ceSetStatus('Error: ' + err.message);
-                    ceBtn.disabled = false;
-                }
-
-            } else if (ce.step === 3) {
-                // Load and show practice point selector
+                // First try to load existing points; only sync if none exist
                 ceBtn.disabled = true;
                 ceSetStatus('Loading practice points...');
                 try {
                     const token = await getCalibrationToken();
-                    const res = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
+                    const pointsRes = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
-                    const data = await res.json();
-                    if (!data.success) throw new Error(data.error);
-                    ce.allPoints = data.points || [];
-                    if (ce.allPoints.length === 0) throw new Error('No practice points found');
-                    ceContent.innerHTML = `<select id="cePointSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
-                        <option value="">-- Select practice point (${ce.allPoints.length} available) --</option>
-                        ${ce.allPoints.map((p, i) => `<option value="${i}">${p.name || p.id}</option>`).join('')}
-                    </select>`;
-                    ceContent.style.display = 'block';
-                    ceSetStatus('');
-                    document.getElementById('cePointSel').addEventListener('change', e => {
-                        if (e.target.value !== '') {
-                            const idx = parseInt(e.target.value);
-                            ce.pointId = ce.allPoints[idx].id;
-                            ce.pointName = ce.allPoints[idx].name || ce.allPoints[idx].id;
-                            ce.tpCount = 0;
-                            ce.tnCount = 0;
-                            ce.nextScenarioType = 'A';
-                            ceContent.style.display = 'none';
-                            ceAddHistory(`Selected: ${ce.pointName}`, '#6f42c1');
-                            ceSetStep(4, 'Generate Scenario');
-                            ceBtn.disabled = false;
-                        }
+                    const pointsData = await pointsRes.json();
+                    if (pointsData.success && pointsData.points && pointsData.points.length > 0) {
+                        // Points already exist — skip extraction
+                        ce.allPoints = pointsData.points;
+                        ceAddHistory(`Found ${ce.allPoints.length} existing practice points`, '#17a2b8');
+                        ceSetStep(3, 'Select Practice Point');
+                        ceSetStatus('');
+                        ceBtn.disabled = false;
+                        return;
+                    }
+
+                    // No points — try sync/extract
+                    ceSetStatus('No points found, extracting...');
+                    const syncRes = await fetch(`${SERVER_URL}/syncPracticePoints`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: ce.guidelineId })
                     });
-                } catch (err) {
-                    ceSetStatus('Error: ' + err.message);
+                    const syncData = await syncRes.json();
+                    if (!syncData.success) throw new Error(syncData.error);
+                    ceAddHistory(`Extracted practice points: ${syncData.created} new, ${syncData.total} total`, '#17a2b8');
+
+                    // Re-fetch points after sync
+                    const pts2 = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const pd2 = await pts2.json();
+                    ce.allPoints = (pd2.success && pd2.points) ? pd2.points : [];
+                    if (ce.allPoints.length === 0) throw new Error('Extraction produced 0 points');
+
+                    ceSetStep(3, 'Select Practice Point');
+                    ceSetStatus('');
                     ceBtn.disabled = false;
-                }
+                } catch (err) { ceError(err.message); }
+
+            } else if (ce.step === 3) {
+                // Show practice point selector
+                ceContent.innerHTML = `<select id="cePointSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                    <option value="">-- Select practice point (${ce.allPoints.length} available) --</option>
+                    ${ce.allPoints.map((p, i) => `<option value="${i}">${p.name || p.id}</option>`).join('')}
+                </select>`;
+                ceContent.style.display = 'block';
+                ceSetStatus('Select a practice point');
+                ceBtn.disabled = true;
+                document.getElementById('cePointSel').addEventListener('change', e => {
+                    if (e.target.value !== '') {
+                        const idx = parseInt(e.target.value);
+                        ce.pointId = ce.allPoints[idx].id;
+                        ce.pointName = ce.allPoints[idx].name || ce.allPoints[idx].id;
+                        ce.tpCount = 0;
+                        ce.tnCount = 0;
+                        ce.nextScenarioType = 'A';
+                        ceContent.style.display = 'none';
+                        ceAddHistory(`Practice point: <strong>${ce.pointName}</strong>`, '#6f42c1');
+                        ceSetStep(4, 'Generate Scenario');
+                        ceSetStatus('');
+                        ceBtn.disabled = false;
+                    }
+                });
 
             } else if (ce.step === 4) {
                 // Generate scenario
@@ -7802,24 +7815,21 @@ ${responseText}
                     if (!data.success) throw new Error(data.error);
                     ce._scenario = data.scenario;
                     ce._scenarioType = type;
+                    const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
+                    ceAddHistory(`Generated scenario ${type} (point ${typeLabel})`, '#17a2b8', data.scenario);
                     ceSetStep(5, 'Test Scenario');
                     ceSetStatus(`TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3`);
-                    // Show scenario and test button
-                    const typeLabel = type === 'A' ? 'should NOT apply' : 'should apply';
                     ceContent.innerHTML = `
-                        <div style="border-left:3px solid ${type === 'A' ? '#ff9800' : '#007bff'};padding:8px 12px;margin-bottom:8px;font-size:12px;line-height:1.5;max-height:250px;overflow-y:auto;white-space:pre-wrap;background:var(--bg-input);border-radius:0 4px 4px 0;">${data.scenario}</div>
-                        <div style="font-size:11px;color:var(--text-secondary);margin-bottom:8px;">Scenario ${type} (point ${typeLabel}). Now click Step 5 to test the LLM against this scenario.</div>`;
+                        <div style="border-left:3px solid ${type === 'A' ? '#ff9800' : '#007bff'};padding:8px 12px;font-size:12px;line-height:1.5;max-height:250px;overflow-y:auto;white-space:pre-wrap;background:var(--bg-input);border-radius:0 4px 4px 0;">${data.scenario}</div>
+                        <div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">Click the button above to test the LLM against this scenario.</div>`;
                     ceContent.style.display = 'block';
                     ceBtn.disabled = false;
-                } catch (err) {
-                    ceSetStatus('Error: ' + err.message);
-                    ceBtn.disabled = false;
-                }
+                } catch (err) { ceError(err.message); }
 
             } else if (ce.step === 5) {
                 // Test scenario against point
                 ceBtn.disabled = true;
-                ceSetStatus('Testing scenario against practice point...');
+                ceSetStatus('Testing...');
                 try {
                     const token = await getCalibrationToken();
                     const res = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
@@ -7831,7 +7841,7 @@ ${responseText}
                     if (!data.success) throw new Error(data.error);
 
                     const llmApplies = data.doesApply === true;
-                    const expected = ce._scenarioType === 'B'; // B = should apply, A = should not
+                    const expected = ce._scenarioType === 'B';
                     const correct = llmApplies === expected;
                     const isTP = correct && ce._scenarioType === 'B';
                     const isTN = correct && ce._scenarioType === 'A';
@@ -7839,38 +7849,26 @@ ${responseText}
                     if (isTN) ce.tnCount++;
 
                     const col = correct ? '#28a745' : '#dc3545';
-                    const label = isTP ? 'True Positive' : isTN ? 'True Negative' : correct ? 'Correct' : `False ${llmApplies ? 'Positive' : 'Negative'}`;
+                    const label = isTP ? 'True Positive' : isTN ? 'True Negative' : `False ${llmApplies ? 'Positive' : 'Negative'}`;
 
-                    // Add to history
-                    ceAddHistory(`Scenario ${ce._scenarioType}: LLM said "${llmApplies ? 'applies' : 'does not apply'}" → <strong style="color:${col}">${label}</strong>`, col, data.reasoning);
+                    ceAddHistory(`<strong style="color:${col}">${label}</strong> — LLM: "${llmApplies ? 'applies' : 'does not apply'}", expected: "${expected ? 'applies' : 'does not apply'}"`, col, data.reasoning);
 
-                    // Show result in content area
-                    ceContent.innerHTML = `
-                        <div style="border-left:3px solid ${col};padding:8px 12px;font-size:12px;background:var(--bg-input);border-radius:0 4px 4px 0;">
-                            <strong style="color:${col};">${label}</strong> — LLM said "${llmApplies ? 'applies' : 'does not apply'}", expected "${expected ? 'applies' : 'does not apply'}"
-                        </div>
-                        <details style="margin-top:6px;font-size:11px;"><summary style="cursor:pointer;color:var(--text-secondary);">LLM reasoning</summary><div style="padding:6px;white-space:pre-wrap;max-height:200px;overflow-y:auto;background:var(--bg-input);border-radius:4px;margin-top:4px;">${data.reasoning || '(none)'}</div></details>`;
-                    ceContent.style.display = 'block';
-
+                    ceContent.style.display = 'none';
                     ceSetStatus(`TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3`);
 
                     if (ce.tpCount >= 3 && ce.tnCount >= 3) {
-                        ceSetStep(6, 'Complete!');
-                        ceAddHistory(`Context evolution complete — ${ce.tpCount} TP + ${ce.tnCount} TN achieved`, '#28a745');
+                        ceAddHistory(`<strong>Context evolution complete</strong> — ${ce.tpCount} TP + ${ce.tnCount} TN`, '#28a745');
+                        ceSetStep(6, 'Done — Click to Restart');
                         ceBtn.disabled = false;
                     } else {
-                        // Alternate scenario type, go back to step 4
                         ce.nextScenarioType = ce._scenarioType === 'A' ? 'B' : 'A';
                         ceSetStep(4, 'Generate Scenario');
                         ceBtn.disabled = false;
                     }
-                } catch (err) {
-                    ceSetStatus('Error: ' + err.message);
-                    ceBtn.disabled = false;
-                }
+                } catch (err) { ceError(err.message); }
 
             } else if (ce.step === 6) {
-                // Complete — restart
+                // Restart
                 ce.step = 1;
                 ce.guidelineId = null;
                 ce.allPoints = [];
