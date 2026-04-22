@@ -1289,7 +1289,7 @@ function extractJSON(raw) {
         // Extract booleans: "applicable": true/false
         const boolMatch = block.match(/"applicable"\s*:\s*(true|false)/);
         if (boolMatch) obj.applicable = boolMatch[1] === 'true';
-        // Extract simple strings: "key": "value"
+        // Extract complete strings: "key": "value"
         const strPairs = block.matchAll(/"(\w+)"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/g);
         for (const m of strPairs) obj[m[1]] = m[2].replace(/\\"/g, '"').replace(/\\n/g, '\n');
         // Extract number: "confidence": 0.95
@@ -1300,6 +1300,13 @@ function extractJSON(raw) {
         for (const m of arrPairs) {
             const items = m[2].match(/"([^"]*(?:\\.[^"]*)*)"/g);
             obj[m[1]] = items ? items.map(s => s.slice(1, -1)) : [];
+        }
+        // Handle truncated string values (no closing quote) — grab the last "key":"value...
+        if (Object.keys(obj).length === 0) {
+            const truncMatch = block.match(/"(\w+)"\s*:\s*"([\s\S]+)$/);
+            if (truncMatch) {
+                obj[truncMatch[1]] = truncMatch[2].replace(/\\"/g, '"').replace(/\\n/g, '\n').trim();
+            }
         }
         if (Object.keys(obj).length > 0) {
             // Fill in missing fields with defaults depending on response type
@@ -1337,7 +1344,7 @@ IMPORTANT: Keep it SHORT. Return ONLY valid JSON, no markdown:
 {"clinicalNote":"Patient: ...","explanation":"Applies/doesn't apply because..."}`;
 
     try {
-        const result = await routeToAI(prompt, userId, null, 1000);
+        const result = await routeToAI(prompt, userId, null, 4000);
         if (!result?.content) throw new Error('No response from LLM');
 
         const scenario = extractJSON(result.content);
@@ -1411,7 +1418,7 @@ Return ONLY valid JSON (no markdown):
 }`;
 
     try {
-        const result = await routeToAI(prompt, userId, null, 2000);
+        const result = await routeToAI(prompt, userId, null, 4000);
         if (!result?.content) throw new Error('No response from LLM');
 
         const analysis = extractJSON(result.content);
@@ -1506,7 +1513,7 @@ Return ONLY valid JSON:
 }`;
 
     try {
-        const result = await routeToAI(prompt, userId, null, 1500);
+        const result = await routeToAI(prompt, userId, null, 4000);
         if (!result?.content) throw new Error('No response from LLM');
 
         const refinement = extractJSON(result.content);
