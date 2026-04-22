@@ -7755,7 +7755,12 @@ ${responseText}
                 body: JSON.stringify({ practicePointText: ce.pointText, scenarioType: type, guidelineId: ce.guidelineId })
             });
             const genData = await genRes.json();
-            if (!genData.success) throw new Error(genData.error);
+            if (!genData.success) {
+                ce.attempts++;
+                ceAddHistory(`<span style="color:#ff9800">⚠ Generation failed (attempt ${ce.attempts}/${MAX_ATTEMPTS_PER_POINT}): ${genData.error?.slice(0, 120) || 'unknown'}</span>`, '#ff9800');
+                if (ce.attempts >= MAX_ATTEMPTS_PER_POINT) return 'point_failed';
+                return 'continue';
+            }
 
             // Test scenario
             ceSetStatus(`${ptLabel} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Testing...`);
@@ -7772,7 +7777,12 @@ ${responseText}
                 })
             });
             const testData = await testRes.json();
-            if (!testData.success) throw new Error(testData.error);
+            if (!testData.success) {
+                ce.attempts++;
+                ceAddHistory(`<span style="color:#ff9800">⚠ Test failed (attempt ${ce.attempts}/${MAX_ATTEMPTS_PER_POINT}): ${testData.error?.slice(0, 120) || 'unknown'}</span>`, '#ff9800');
+                if (ce.attempts >= MAX_ATTEMPTS_PER_POINT) return 'point_failed';
+                return 'continue';
+            }
 
             const llmApplies = testData.llm?.applicable === true;
             const expected = type === 'B';
