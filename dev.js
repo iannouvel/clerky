@@ -7743,6 +7743,7 @@ ${responseText}
 
         // Single generate→test cycle, returns 'continue' | 'point_done' | 'point_failed' | 'error'
         async function ceRunOneCycle() {
+          try {
             const type = ce.nextScenarioType;
             const ptLabel = `Point ${ce.pointIdx + 1}/${ce.allPoints.length}`;
             ceSetStatus(`${ptLabel} | TP: ${ce.tpCount}/3 | TN: ${ce.tnCount}/3 | Attempt ${ce.attempts + 1}/${MAX_ATTEMPTS_PER_POINT} — generating ${type}...`);
@@ -7875,6 +7876,13 @@ ${responseText}
             if (ce.tpCount >= 3 && ce.tnCount >= 3) return 'point_done';
             if (ce.attempts >= MAX_ATTEMPTS_PER_POINT) return 'point_failed';
             return 'continue';
+          } catch (cycleErr) {
+            console.error('[CE] ceRunOneCycle error:', cycleErr);
+            ce.attempts++;
+            ceAddHistory(`<span style="color:#ff9800">⚠ Cycle error (attempt ${ce.attempts}/${MAX_ATTEMPTS_PER_POINT}): ${cycleErr.message}</span>`, '#ff9800');
+            if (ce.attempts >= MAX_ATTEMPTS_PER_POINT) return 'point_failed';
+            return 'continue';
+          }
         }
 
         // Main automated loop — runs until stopped or all points done
