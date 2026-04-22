@@ -30,4 +30,9 @@ router.get('/contextEvolution/progress', authenticateUser, calibrationController
 router.post('/contextEvolution/refineContext', authenticateUser, calibrationController.refinePointContext);
 router.get('/contextEvolution/testHistory', authenticateUser, calibrationController.getContextEvolutionTestHistory);
 
+// ─── Context Evolution: Run State Persistence ────────────────────────────────
+router.post('/contextEvolution/saveRunState', authenticateUser, calibrationController.saveContextEvolutionRunState);
+router.get('/contextEvolution/getRunState', authenticateUser, calibrationController.getContextEvolutionRunState);
+router.delete('/contextEvolution/clearRunState', authenticateUser, calibrationController.clearContextEvolutionRunState);
+
 module.exports = router;

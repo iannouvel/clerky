@@ -807,3 +807,84 @@ exports.getContextEvolutionTestHistory = async (req, res) => {
         res.status(500).json({ success: false, error: err.message });
     }
 };
+
+// ─── Context Evolution: Run State Persistence ────────────────────────────────
+
+/**
+ * POST /contextEvolution/saveRunState
+ * Saves the current context evolution run state to Firestore
+ */
+exports.saveContextEvolutionRunState = async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { guidelineId, guidelineName, allPoints, pointIdx, tpCount, tnCount, attempts,
+                nextScenarioType, context, pointResults } = req.body;
+
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'guidelineId required' });
+        }
+
+        const stateDoc = {
+            guidelineId,
+            guidelineName: guidelineName || '',
+            allPointIds: (allPoints || []).map(p => p.id),  // just IDs to keep doc small
+            pointIdx: pointIdx || 0,
+            tpCount: tpCount || 0,
+            tnCount: tnCount || 0,
+            attempts: attempts || 0,
+            nextScenarioType: nextScenarioType || 'A',
+            context: context || null,
+            pointResults: pointResults || {},  // { pointIdx: 'passed'|'failed' }
+            updatedAt: new Date().toISOString(),
+            status: 'in_progress'
+        };
+
+        await db.collection('users').doc(userId)
+            .collection('contextEvolutionRuns').doc('current')
+            .set(stateDoc, { merge: true });
+
+        res.json({ success: true });
+    } catch (err) {
+        console.error('[CE_STATE] saveRunState error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * GET /contextEvolution/getRunState
+ * Returns any saved in-progress run for the current user
+ */
+exports.getContextEvolutionRunState = async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const doc = await db.collection('users').doc(userId)
+            .collection('contextEvolutionRuns').doc('current').get();
+
+        if (!doc.exists || doc.data().status !== 'in_progress') {
+            return res.json({ success: true, hasRunState: false });
+        }
+
+        res.json({ success: true, hasRunState: true, state: doc.data() });
+    } catch (err) {
+        console.error('[CE_STATE] getRunState error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * DELETE /contextEvolution/clearRunState
+ * Clears the saved run state (on restart or completion)
+ */
+exports.clearContextEvolutionRunState = async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        await db.collection('users').doc(userId)
+            .collection('contextEvolutionRuns').doc('current')
+            .delete();
+
+        res.json({ success: true });
+    } catch (err) {
+        console.error('[CE_STATE] clearRunState error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
