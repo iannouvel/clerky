@@ -7705,6 +7705,107 @@ ${responseText}
 
         const MAX_ATTEMPTS_PER_POINT = 20;
 
+        // ─── Firestore State Persistence ─────────────────────────────────────
+        const cePointResults = {};  // { pointIdx: 'passed'|'failed' }
+
+        async function ceSaveState() {
+            try {
+                const token = await getCalibrationToken();
+                await fetch(`${SERVER_URL}/contextEvolution/saveRunState`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        guidelineId: ce.guidelineId,
+                        guidelineName: ce.guidelineName,
+                        allPoints: ce.allPoints,
+                        pointIdx: ce.pointIdx,
+                        tpCount: ce.tpCount,
+                        tnCount: ce.tnCount,
+                        attempts: ce.attempts,
+                        nextScenarioType: ce.nextScenarioType,
+                        context: ce.context,
+                        pointResults: cePointResults
+                    })
+                });
+            } catch (e) { console.warn('[CE] Failed to save state:', e.message); }
+        }
+
+        async function ceClearState() {
+            try {
+                const token = await getCalibrationToken();
+                await fetch(`${SERVER_URL}/contextEvolution/clearRunState`, {
+                    method: 'DELETE',
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+            } catch (e) { console.warn('[CE] Failed to clear state:', e.message); }
+        }
+
+        async function ceCheckSavedState() {
+            try {
+                const token = await getCalibrationToken();
+                const res = await fetch(`${SERVER_URL}/contextEvolution/getRunState`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                const data = await res.json();
+                if (data.success && data.hasRunState) return data.state;
+            } catch (e) { console.warn('[CE] Failed to check state:', e.message); }
+            return null;
+        }
+
+        async function ceRestoreAndResume(saved) {
+            ceBtn.disabled = true;
+            ceSetStatus('Restoring run...');
+            try {
+                // Fetch fresh points using saved IDs
+                const token = await getCalibrationToken();
+                const ptsRes = await fetch(`${SERVER_URL}/api/getPracticePoints?guidelineId=${encodeURIComponent(saved.guidelineId)}`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                const ptsData = await ptsRes.json();
+                if (!ptsData.success || !ptsData.points?.length) throw new Error('Could not reload practice points');
+
+                // Match points to saved order by ID
+                const pointMap = new Map(ptsData.points.map(p => [p.id, p]));
+                const orderedPoints = saved.allPointIds.map(id => pointMap.get(id)).filter(Boolean);
+                if (orderedPoints.length === 0) throw new Error('Saved point IDs no longer match');
+
+                // Restore state
+                ce.guidelineId = saved.guidelineId;
+                ce.guidelineName = saved.guidelineName;
+                ce.allPoints = orderedPoints;
+                ce.pointIdx = saved.pointIdx || 0;
+                ce.tpCount = saved.tpCount || 0;
+                ce.tnCount = saved.tnCount || 0;
+                ce.attempts = saved.attempts || 0;
+                ce.nextScenarioType = saved.nextScenarioType || 'A';
+                ce.context = saved.context || null;
+                Object.assign(cePointResults, saved.pointResults || {});
+
+                // Set up current point if context is missing
+                if (!ce.context && ce.pointIdx < ce.allPoints.length) {
+                    const p = ce.allPoints[ce.pointIdx];
+                    ce.pointText = p.text || p.name || p.id;
+                    ce.pointName = ce.pointText;
+                    ce.context = { triggers: [ce.pointText], criteria: ce.pointText, exceptions: [], edgeCases: [], version: 1 };
+                } else if (ce.pointIdx < ce.allPoints.length) {
+                    const p = ce.allPoints[ce.pointIdx];
+                    ce.pointText = p.text || p.name || p.id;
+                    ce.pointName = ce.pointText;
+                }
+
+                // Show summary of progress
+                const passed = Object.values(cePointResults).filter(r => r === 'passed').length;
+                const failed = Object.values(cePointResults).filter(r => r === 'failed').length;
+                ceAddHistory(`Resumed: <strong>${ce.guidelineName}</strong> — ${passed} passed, ${failed} failed, continuing from point ${ce.pointIdx + 1}/${ce.allPoints.length}`, '#17a2b8');
+                if (ce.tpCount > 0 || ce.tnCount > 0) {
+                    ceAddHistory(`Current point: TP ${ce.tpCount}/3, TN ${ce.tnCount}/3, attempt ${ce.attempts}/${MAX_ATTEMPTS_PER_POINT}`, '#6f42c1');
+                }
+
+                ce.step = 3;
+                ceRunLoop();
+            } catch (err) { ceError(err.message); }
+        }
+
         function ceStartPoint() {
             const p = ce.allPoints[ce.pointIdx];
             ce.pointId = p.id;
@@ -7739,6 +7840,7 @@ ${responseText}
             ceBtn.textContent = 'Resume';
             ceBtn.disabled = false;
             ceSetStatus('Stopped — click Resume to continue');
+            ceSaveState();  // persist so user can resume later
         }
 
         // Single generate→test cycle, returns 'continue' | 'point_done' | 'point_failed' | 'error'
@@ -7896,11 +7998,15 @@ ${responseText}
                     const result = await ceRunOneCycle();
 
                     if (result === 'point_done') {
+                        cePointResults[ce.pointIdx] = 'passed';
                         ceAddHistory(`Point ${ce.pointIdx + 1}/${ce.allPoints.length} <strong>passed</strong> — ${ce.tpCount} TP + ${ce.tnCount} TN in ${ce.attempts} attempts`, '#28a745');
                         if (!ceAdvancePoint()) break; // all points done
+                        ceSaveState();  // persist after each point
                     } else if (result === 'point_failed') {
+                        cePointResults[ce.pointIdx] = 'failed';
                         ceAddHistory(`Point ${ce.pointIdx + 1}/${ce.allPoints.length} <strong style="color:#dc3545">failed</strong> — only ${ce.tpCount} TP + ${ce.tnCount} TN after ${MAX_ATTEMPTS_PER_POINT} attempts`, '#dc3545');
                         if (!ceAdvancePoint()) break;
+                        ceSaveState();  // persist after each point
                     }
                     // result === 'continue' → loop continues automatically
                 } catch (err) {
@@ -7914,35 +8020,76 @@ ${responseText}
                 ceAddHistory(`<strong>All ${ce.allPoints.length} points complete</strong>`, '#28a745');
                 ceSetStep(5, 'Done — Click to Restart');
                 ceSetStatus('All points complete');
+                ceClearState();  // run complete, clear saved state
+            } else {
+                ceSaveState();   // paused/stopped mid-run — persist for later resume
             }
             ceBtn.disabled = false;
         }
 
+        async function ceShowGuidelineSelector() {
+            ceBtn.disabled = true;
+            ceSetStatus('Loading guidelines...');
+            try {
+                const guidelines = await fetchCalibrationGuidelines();
+                ceContent.innerHTML = `<select id="ceGuidelineSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
+                    <option value="">-- Select guideline --</option>
+                    ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
+                </select>`;
+                ceContent.style.display = 'block';
+                ceSetStatus('Select a guideline');
+                document.getElementById('ceGuidelineSel').addEventListener('change', e => {
+                    if (e.target.value) {
+                        ce.guidelineId = e.target.value;
+                        ce.guidelineName = e.target.options[e.target.selectedIndex].text;
+                        ceContent.style.display = 'none';
+                        ceAddHistory(`Guideline: <strong>${ce.guidelineName}</strong>`, '#6f42c1');
+                        ceSetStep(2, 'Load & Run');
+                        ceSetStatus('');
+                        ceBtn.disabled = false;
+                    }
+                });
+            } catch (err) { ceError(err.message); }
+        }
+
         async function ceHandleClick() {
             if (ce.step === 1) {
-                // Show guideline selector
+                // Check for saved state first
                 ceBtn.disabled = true;
-                ceSetStatus('Loading guidelines...');
+                ceSetStatus('Checking for saved progress...');
                 try {
-                    const guidelines = await fetchCalibrationGuidelines();
-                    ceContent.innerHTML = `<select id="ceGuidelineSel" style="width:100%;padding:6px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;">
-                        <option value="">-- Select guideline --</option>
-                        ${guidelines.map(g => `<option value="${g.id}">${g.displayName || g.humanFriendlyTitle || g.title || g.id}</option>`).join('')}
-                    </select>`;
-                    ceContent.style.display = 'block';
-                    ceSetStatus('Select a guideline');
-                    document.getElementById('ceGuidelineSel').addEventListener('change', e => {
-                        if (e.target.value) {
-                            ce.guidelineId = e.target.value;
-                            ce.guidelineName = e.target.options[e.target.selectedIndex].text;
+                    const saved = await ceCheckSavedState();
+                    if (saved) {
+                        // Offer continue or restart
+                        const passed = Object.values(saved.pointResults || {}).filter(r => r === 'passed').length;
+                        const failed = Object.values(saved.pointResults || {}).filter(r => r === 'failed').length;
+                        const total = (saved.allPointIds || []).length;
+                        ceContent.innerHTML = `
+                            <div style="padding:8px;background:var(--bg-secondary);border-radius:4px;font-size:12px;line-height:1.6;">
+                                <div style="margin-bottom:8px;"><strong>Saved run found:</strong> ${saved.guidelineName || saved.guidelineId}</div>
+                                <div style="margin-bottom:8px;">Progress: point ${(saved.pointIdx || 0) + 1}/${total} — ${passed} passed, ${failed} failed</div>
+                                <div style="display:flex;gap:8px;">
+                                    <button id="ceContinueBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:5px 12px;font-size:12px;">Continue</button>
+                                    <button id="ceRestartBtn" class="dev-btn" style="background-color:#dc3545;color:#fff;border-color:#dc3545;padding:5px 12px;font-size:12px;">Start Fresh</button>
+                                </div>
+                            </div>`;
+                        ceContent.style.display = 'block';
+                        ceSetStatus('');
+                        ceBtn.disabled = false;
+                        document.getElementById('ceContinueBtn').addEventListener('click', () => {
                             ceContent.style.display = 'none';
-                            ceAddHistory(`Guideline: <strong>${ce.guidelineName}</strong>`, '#6f42c1');
-                            ceSetStep(2, 'Load & Run');
-                            ceSetStatus('');
-                            ceBtn.disabled = false;
-                        }
-                    });
-                } catch (err) { ceError(err.message); }
+                            ceRestoreAndResume(saved);
+                        });
+                        document.getElementById('ceRestartBtn').addEventListener('click', async () => {
+                            ceContent.style.display = 'none';
+                            await ceClearState();
+                            ceShowGuidelineSelector();
+                        });
+                        return;
+                    }
+                } catch (err) { console.warn('[CE] State check failed:', err.message); }
+                // No saved state — show guideline selector
+                ceShowGuidelineSelector();
 
             } else if (ce.step === 2) {
                 // Load points (extracts from guideline content if none exist) then start automated loop
@@ -7992,6 +8139,7 @@ ${responseText}
                 ceHistory.innerHTML = '';
                 ceSetStatus('');
                 ceSetStep(1, 'Select Guideline');
+                ceClearState();
             }
         }
 
