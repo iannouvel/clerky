@@ -678,6 +678,71 @@ function formatLearningForPrompt(learning) {
  * @returns {Array<string>} returns.alreadyCompliant - Points already addressed
  */
 /**
+ * One cheap LLM call to identify which existing note text each suggestion replaces/refines.
+ * Enriches suggestion objects in-place with `originalText` and `category: 'modification'`.
+ *
+ * @param {string} clinicalNote
+ * @param {Array} suggestions - Mutable array of suggestion objects
+ * @param {string} userId
+ * @returns {Promise<Array>} The same suggestions array (mutated)
+ */
+async function identifyReplacementText(clinicalNote, suggestions, userId) {
+    if (!suggestions.length) return suggestions;
+
+    const userPrompt = `You are given a clinical note and a list of suggestions for improving it. For each suggestion, determine if it REFINES or REPLACES specific existing text in the note. If so, return the EXACT text from the note that would be replaced.
+
+=== CLINICAL NOTE ===
+${clinicalNote}
+
+=== SUGGESTIONS ===
+${suggestions.map((s, i) => `${i + 1}. ${s.suggestion}`).join('\n')}
+
+Return a JSON array with one entry per suggestion:
+[
+  { "index": 0, "originalText": "exact quote from the note that this suggestion replaces" },
+  { "index": 1, "originalText": null }
+]
+
+Rules:
+- originalText must be an EXACT substring copied character-for-character from the clinical note
+- If the suggestion adds NEW information not present in the note, set originalText to null
+- If the suggestion refines, improves, or rewords existing text, quote the specific phrase being refined
+- Only quote the minimal text being replaced, not the entire paragraph or sentence unless the whole sentence is being replaced`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: 'You identify which parts of a clinical note each suggestion replaces. Return JSON only.' },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, null, 1000, 'evaluation');
+
+        if (!result?.content) return suggestions;
+
+        const raw = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed)) return suggestions;
+
+        for (const entry of parsed) {
+            const idx = entry.index;
+            if (idx >= 0 && idx < suggestions.length && entry.originalText) {
+                if (clinicalNote.includes(entry.originalText)) {
+                    suggestions[idx].originalText = entry.originalText;
+                    suggestions[idx].category = 'modification';
+                    console.log(`[REPLACEMENT-ID] Suggestion ${idx}: replaces "${entry.originalText.substring(0, 80)}..."`);
+                } else {
+                    console.log(`[REPLACEMENT-ID] Suggestion ${idx}: originalText not found verbatim in note, skipping`);
+                }
+            }
+        }
+    } catch (e) {
+        console.warn('[REPLACEMENT-ID] Failed to identify replacement text:', e.message);
+    }
+
+    return suggestions;
+}
+
+/**
  * Per-point analysis path for analyzeGuidelineForPatient.
  * Runs one focused LLM call per practice point in parallel, preceded by a
  * lightweight applicability + patient-context check. Returns the same shape
@@ -757,6 +822,11 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
         }));
 
     console.log(`[PER-POINT] ${guidelineId}: ${allPoints.length} points evaluated, ${suggestions.length} applicable`);
+
+    // Step 4: Identify which suggestions replace existing note text (one cheap call)
+    if (suggestions.length > 0) {
+        await identifyReplacementText(clinicalNote, suggestions, userId);
+    }
 
     return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
 }

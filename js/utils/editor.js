@@ -423,6 +423,19 @@ export function updateChatbotButtonVisibility() {
     }
 }
 
+// ---- Replacement preview state ----
+// Stores editor content before any preview is applied, so we can cleanly restore it.
+let _contentBeforePreview = null;
+// When a suggestion replaces existing text, stores { originalText, suggestionText } for rendering.
+let _replacementPreview = null;
+
+/** @returns {{ originalText: string, suggestionText: string } | null} */
+export function getReplacementPreview() { return _replacementPreview; }
+/** @returns {string | null} The editor text content before the preview was applied */
+export function getContentBeforePreview() { return _contentBeforePreview; }
+/** Clear replacement state (called after accept or when preview is dismissed) */
+export function clearReplacementState() { _replacementPreview = null; _contentBeforePreview = null; }
+
 /**
  * Placeholder text inserted into the note to show where a suggestion will land.
  * Styled in green via CSS class "insertion-placeholder".
@@ -448,6 +461,9 @@ export function showInsertionPreview(suggestion) {
 
     const content = editor.getText();
     if (!content?.trim()) return false;
+
+    // Snapshot content before preview for clean restoration
+    _contentBeforePreview = content;
 
     const lines = content.split('\n');
     const replacePattern = suggestion?.replace_pattern;
@@ -478,7 +494,18 @@ export function showInsertionPreview(suggestion) {
     if (!replaceExisting && category === 'modification' && originalText && !originalText.startsWith('Missing:') && !originalText.startsWith('Gap:')) {
         const snippet = originalText.slice(0, 60).toLowerCase();
         const idx = lines.findIndex(l => l.toLowerCase().includes(snippet));
-        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
+        if (idx !== -1) {
+            insertIdx = idx;
+            replaceExisting = true;
+            // Store replacement preview state for strikethrough rendering
+            const suggestionText = suggestion?.suggestion || '';
+            if (suggestionText) {
+                _replacementPreview = {
+                    originalText: originalText,
+                    suggestionText: suggestionText
+                };
+            }
+        }
     }
 
     // 4. After the target section heading (completeness items) or guideline reference (guideline suggestions)
@@ -546,6 +573,23 @@ export function clearInsertionPreview() {
     const editor = window.editors?.userInput;
     if (!editor) return;
 
+    // Replacement preview: restore from pre-preview snapshot
+    if (_replacementPreview && _contentBeforePreview !== null) {
+        const normalised = _contentBeforePreview.replace(/\n{3,}/g, '\n\n');
+        const html = normalised.split('\n\n')
+            .filter(p => p.trim())
+            .map(p => `<p>${p.split('\n').map(l => escapeHtml(l)).join('<br>')}</p>`)
+            .join('');
+        editor.commands.setContent(html || '<p></p>');
+        _replacementPreview = null;
+        _contentBeforePreview = null;
+        console.log('[PREVIEW] Replacement preview cleared (restored from snapshot)');
+        return;
+    }
+
+    _contentBeforePreview = null;
+
+    // Standard placeholder: filter out placeholder lines
     const text = editor.getText();
     if (!text.includes(INSERTION_PLACEHOLDER)) return;
 
@@ -574,7 +618,13 @@ function _buildHtmlWithPlaceholder(text) {
         .map(p => {
             const lines = p.split('\n').map(line => {
                 if (line.includes(INSERTION_PLACEHOLDER)) {
-                    // Split on placeholder so we can style it; preserve any list prefix
+                    if (_replacementPreview) {
+                        // Replacement mode: show old text strikethrough + new text in green
+                        const oldHtml = `<span style="text-decoration:line-through; color:var(--danger-color, #e53935); opacity:0.7;">${escapeHtml(_replacementPreview.originalText)}</span>`;
+                        const newHtml = `<span class="insertion-placeholder">${escapeHtml(_replacementPreview.suggestionText)}</span>`;
+                        return `${oldHtml}<br>${newHtml}`;
+                    }
+                    // Standard mode: show placeholder text in green
                     const parts = line.split(INSERTION_PLACEHOLDER);
                     const prefix = escapeHtml(parts[0] || '');
                     return `${prefix}<span class="insertion-placeholder">${escapeHtml(INSERTION_PLACEHOLDER)}</span>`;

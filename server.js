@@ -17480,7 +17480,9 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             why: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
             context: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
             priority: suggestion.priority || 'medium',
-            applicable: true
+            applicable: true,
+            originalText: suggestion.originalText || null,
+            category: suggestion.category || null
         }));
 
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
