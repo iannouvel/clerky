@@ -5265,9 +5265,9 @@ app.get('/getTaskModelPreferences', authenticateUser, async (req, res) => {
 // Update user's task-specific model preferences
 app.post('/updateTaskModelPreferences', authenticateUser, async (req, res) => {
     try {
-        const { complexTaskModel, simpleTaskModel } = req.body;
-        await updateUserTaskModels(req.user.uid, { complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null });
-        return res.json({ success: true, complexTaskModel, simpleTaskModel });
+        const { complexTaskModel, simpleTaskModel, evaluationTaskModel } = req.body;
+        await updateUserTaskModels(req.user.uid, { complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null, evaluationTaskModel: evaluationTaskModel || null });
+        return res.json({ success: true, complexTaskModel, simpleTaskModel, evaluationTaskModel });
     } catch (error) {
         console.error('Error updating task model preferences:', error);
         return res.status(500).json({ success: false, error: error.message });

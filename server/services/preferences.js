@@ -264,7 +264,8 @@ async function getSecondPreferenceLLM(userId) {
 
 const TASK_MODEL_DEFAULTS = {
     complexTaskModel: 'claude-opus-4-6',
-    simpleTaskModel: null  // null = use the user's default model preference
+    simpleTaskModel: null,  // null = use the user's default model preference
+    evaluationTaskModel: null  // null = use the user's default model preference
 };
 
 async function getUserTaskModels(userId) {
@@ -279,10 +280,11 @@ async function getUserTaskModels(userId) {
             const userPrefsDoc = await db.collection('userPreferences').doc(userId).get();
             if (userPrefsDoc.exists) {
                 const data = userPrefsDoc.data();
-                console.log(`[PREFS] getUserTaskModels(${userId}): loaded from Firestore: complexTaskModel=${data.complexTaskModel}, simpleTaskModel=${data.simpleTaskModel}`);
+                console.log(`[PREFS] getUserTaskModels(${userId}): loaded from Firestore: complexTaskModel=${data.complexTaskModel}, simpleTaskModel=${data.simpleTaskModel}, evaluationTaskModel=${data.evaluationTaskModel}`);
                 const models = {
                     complexTaskModel: data.complexTaskModel || TASK_MODEL_DEFAULTS.complexTaskModel,
-                    simpleTaskModel: data.simpleTaskModel || TASK_MODEL_DEFAULTS.simpleTaskModel
+                    simpleTaskModel: data.simpleTaskModel || TASK_MODEL_DEFAULTS.simpleTaskModel,
+                    evaluationTaskModel: data.evaluationTaskModel || TASK_MODEL_DEFAULTS.evaluationTaskModel
                 };
                 userTaskModelsCache.set(userId, { models, timestamp: Date.now() });
                 return models;
@@ -299,8 +301,8 @@ async function getUserTaskModels(userId) {
     return { ...TASK_MODEL_DEFAULTS };
 }
 
-async function updateUserTaskModels(userId, { complexTaskModel, simpleTaskModel }) {
-    const models = { complexTaskModel, simpleTaskModel };
+async function updateUserTaskModels(userId, { complexTaskModel, simpleTaskModel, evaluationTaskModel }) {
+    const models = { complexTaskModel, simpleTaskModel, evaluationTaskModel };
     userTaskModelsCache.set(userId, { models, timestamp: Date.now() });
 
     try {
@@ -308,6 +310,7 @@ async function updateUserTaskModels(userId, { complexTaskModel, simpleTaskModel 
             await db.collection('userPreferences').doc(userId).set({
                 complexTaskModel: complexTaskModel || null,
                 simpleTaskModel: simpleTaskModel || null,
+                evaluationTaskModel: evaluationTaskModel || null,
                 updatedAt: new Date().toISOString()
             }, { merge: true });
             return true;

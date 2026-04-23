@@ -462,6 +462,7 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
                 console.log(`[ROUTE-AI] Loaded task models for userId ${userId}: ${JSON.stringify(taskModels)}`);
                 const taskModel = taskComplexity === 'complex' ? taskModels.complexTaskModel
                     : taskComplexity === 'simple' ? taskModels.simpleTaskModel
+                    : taskComplexity === 'evaluation' ? taskModels.evaluationTaskModel
                     : null;
                 console.log(`[ROUTE-AI] Task complexity '${taskComplexity}' → selected model: ${taskModel || '(none - using default)'}`);
                 if (taskModel) provider = taskModel;
@@ -1158,7 +1159,7 @@ If does not apply:
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, model, 600);
+    }, userId, model, 2000, 'evaluation');
 
     if (!result?.content) return { pointId: point.id, pointName: point.name, applies: false, reason: 'No response' };
 
