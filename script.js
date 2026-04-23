@@ -6405,19 +6405,20 @@ async function fetchTaskModelPreferences() {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        if (!response.ok) return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null };
+        if (!response.ok) return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null, evaluationTaskModel: null };
         const data = await response.json();
         return {
             complexTaskModel: data.complexTaskModel || 'claude-opus-4-6',
-            simpleTaskModel: data.simpleTaskModel || null
+            simpleTaskModel: data.simpleTaskModel || null,
+            evaluationTaskModel: data.evaluationTaskModel || null
         };
     } catch (error) {
         console.error('[TASK MODEL PREF] Error fetching task model preferences:', error);
-        return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null };
+        return { complexTaskModel: 'claude-opus-4-6', simpleTaskModel: null, evaluationTaskModel: null };
     }
 }
 
-async function saveTaskModelPreferences(complexTaskModel, simpleTaskModel) {
+async function saveTaskModelPreferences(complexTaskModel, simpleTaskModel, evaluationTaskModel) {
     try {
         const user = auth.currentUser;
         if (!user) return false;
@@ -6425,7 +6426,7 @@ async function saveTaskModelPreferences(complexTaskModel, simpleTaskModel) {
         const response = await fetch(`${window.SERVER_URL || 'https://clerky-uzni.onrender.com'}/updateTaskModelPreferences`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-            body: JSON.stringify({ complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null })
+            body: JSON.stringify({ complexTaskModel: complexTaskModel || null, simpleTaskModel: simpleTaskModel || null, evaluationTaskModel: evaluationTaskModel || null })
         });
         return response.ok;
     } catch (error) {
@@ -6645,10 +6646,12 @@ async function showPreferencesModal() {
         const taskPrefs = await fetchTaskModelPreferences();
         populateTaskModelDropdown('complexTaskModelSelect', taskPrefs.complexTaskModel, false);
         populateTaskModelDropdown('simpleTaskModelSelect', taskPrefs.simpleTaskModel, true);
+        populateTaskModelDropdown('evaluationTaskModelSelect', taskPrefs.evaluationTaskModel, true);
     } catch (error) {
         console.error('[ERROR] Failed to load task model preferences:', error);
         populateTaskModelDropdown('complexTaskModelSelect', 'claude-opus-4-6', false);
         populateTaskModelDropdown('simpleTaskModelSelect', null, true);
+        populateTaskModelDropdown('evaluationTaskModelSelect', null, true);
     }
 
     // Load and display chunk distribution provider preferences
@@ -6795,10 +6798,12 @@ async function showPreferencesModal() {
             // Save task-specific model preferences
             const complexTaskModelSelect = document.getElementById('complexTaskModelSelect');
             const simpleTaskModelSelect = document.getElementById('simpleTaskModelSelect');
-            if (complexTaskModelSelect || simpleTaskModelSelect) {
+            const evaluationTaskModelSelect = document.getElementById('evaluationTaskModelSelect');
+            if (complexTaskModelSelect || simpleTaskModelSelect || evaluationTaskModelSelect) {
                 const complexModel = complexTaskModelSelect?.value || null;
                 const simpleModel = simpleTaskModelSelect?.value || null;
-                await saveTaskModelPreferences(complexModel, simpleModel);
+                const evaluationModel = evaluationTaskModelSelect?.value || null;
+                await saveTaskModelPreferences(complexModel, simpleModel, evaluationModel);
             }
 
             // Save chunk distribution provider preferences
