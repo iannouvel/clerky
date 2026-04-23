@@ -8092,7 +8092,7 @@ ${responseText}
                 ceShowGuidelineSelector();
 
             } else if (ce.step === 2) {
-                // Load points (extracts from guideline content if none exist) then start automated loop
+                // Load points (extracts from guideline content if none exist) then check progress
                 ceBtn.disabled = true;
                 ceSetStatus('Loading practice points (will extract if needed)...');
                 try {
@@ -8107,8 +8107,78 @@ ${responseText}
                     ce.allPoints = data.points;
                     const sourceLabel = data.source === 'extracted' ? 'Extracted and saved' : 'Loaded';
                     ceAddHistory(`${sourceLabel} ${ce.allPoints.length} practice points`, '#17a2b8');
-                    ceContent.style.display = 'none';
 
+                    // Check existing context evolution progress
+                    ceSetStatus('Checking existing progress...');
+                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(ce.guidelineId)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const progData = await progRes.json();
+
+                    if (progData.success && progData.completedCount > 0) {
+                        const { completedCount, totalPoints, allComplete, points: pointProgress } = progData;
+                        // Filter to only incomplete points
+                        const incompletePoints = ce.allPoints.filter(p => !pointProgress[p.id]?.isComplete);
+
+                        if (allComplete) {
+                            ceContent.innerHTML = `
+                                <div style="padding:8px;background:var(--bg-secondary);border-radius:4px;font-size:12px;line-height:1.6;">
+                                    <div style="margin-bottom:8px;"><strong>All ${totalPoints} points already evolved</strong> for this guideline.</div>
+                                    <div style="display:flex;gap:8px;">
+                                        <button id="ceReRunBtn" class="dev-btn" style="background-color:#dc3545;color:#fff;border-color:#dc3545;padding:5px 12px;font-size:12px;">Re-run All</button>
+                                        <button id="ceBackBtn" class="dev-btn" style="padding:5px 12px;font-size:12px;">Pick Different Guideline</button>
+                                    </div>
+                                </div>`;
+                            ceContent.style.display = 'block';
+                            ceSetStatus('');
+                            ceBtn.disabled = false;
+                            document.getElementById('ceReRunBtn').addEventListener('click', () => {
+                                ceContent.style.display = 'none';
+                                ce.pointIdx = 0;
+                                ceStartPoint();
+                                ce.step = 3;
+                                ceRunLoop();
+                            });
+                            document.getElementById('ceBackBtn').addEventListener('click', () => {
+                                ceContent.style.display = 'none';
+                                ceShowGuidelineSelector();
+                            });
+                            return;
+                        } else {
+                            // Some points done, some not
+                            ceContent.innerHTML = `
+                                <div style="padding:8px;background:var(--bg-secondary);border-radius:4px;font-size:12px;line-height:1.6;">
+                                    <div style="margin-bottom:8px;"><strong>${completedCount}/${totalPoints} points already evolved.</strong></div>
+                                    <div style="display:flex;gap:8px;">
+                                        <button id="ceSkipDoneBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:5px 12px;font-size:12px;">Run Remaining ${incompletePoints.length}</button>
+                                        <button id="ceReRunAllBtn" class="dev-btn" style="background-color:#dc3545;color:#fff;border-color:#dc3545;padding:5px 12px;font-size:12px;">Re-run All ${totalPoints}</button>
+                                    </div>
+                                </div>`;
+                            ceContent.style.display = 'block';
+                            ceSetStatus('');
+                            ceBtn.disabled = false;
+                            document.getElementById('ceSkipDoneBtn').addEventListener('click', () => {
+                                ceContent.style.display = 'none';
+                                ce.allPoints = incompletePoints;
+                                ceAddHistory(`Skipping ${completedCount} already-evolved points, running ${incompletePoints.length} remaining`, '#17a2b8');
+                                ce.pointIdx = 0;
+                                ceStartPoint();
+                                ce.step = 3;
+                                ceRunLoop();
+                            });
+                            document.getElementById('ceReRunAllBtn').addEventListener('click', () => {
+                                ceContent.style.display = 'none';
+                                ce.pointIdx = 0;
+                                ceStartPoint();
+                                ce.step = 3;
+                                ceRunLoop();
+                            });
+                            return;
+                        }
+                    }
+
+                    // No prior progress — start fresh
+                    ceContent.style.display = 'none';
                     ce.pointIdx = 0;
                     ceStartPoint();
                     ce.step = 3; // running state
