@@ -753,6 +753,50 @@ exports.getContextEvolutionProgress = async (req, res) => {
 };
 
 /**
+ * GET /contextEvolution/progressBatch?guidelineId=...
+ * Returns completion status for ALL practice points in a guideline
+ */
+exports.getContextEvolutionProgressBatch = async (req, res) => {
+    try {
+        const { guidelineId } = req.query;
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'guidelineId required' });
+        }
+
+        const ppSnap = await db.collection('guidelines').doc(guidelineId)
+            .collection('practicePoints').get();
+
+        const results = {};
+        let completedCount = 0;
+
+        for (const ppDoc of ppSnap.docs) {
+            const testsSnap = await ppDoc.ref.collection('contextEvolutionTests').get();
+            if (testsSnap.empty) {
+                results[ppDoc.id] = { tpCount: 0, tnCount: 0, isComplete: false };
+                continue;
+            }
+            const tests = testsSnap.docs.map(d => d.data());
+            const tpCount = tests.filter(t => t.evaluation?.resultType === 'TP').length;
+            const tnCount = tests.filter(t => t.evaluation?.resultType === 'TN').length;
+            const isComplete = tpCount >= 3 && tnCount >= 3;
+            if (isComplete) completedCount++;
+            results[ppDoc.id] = { tpCount, tnCount, isComplete };
+        }
+
+        res.json({
+            success: true,
+            totalPoints: ppSnap.size,
+            completedCount,
+            allComplete: completedCount === ppSnap.size && ppSnap.size > 0,
+            points: results
+        });
+    } catch (err) {
+        console.error('[CALIBRATION] getContextEvolutionProgressBatch error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
  * POST /contextEvolution/refineContext
  * Body: { guidelineId, practicePointId, failureType, llmReasoning, currentContext }
  * Returns: Suggested refinements
