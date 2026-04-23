@@ -508,6 +508,36 @@ export function showInsertionPreview(suggestion) {
         }
     }
 
+    // 3b. Keyword fallback: if originalText was stale (not found in current note after edits),
+    //     try matching the suggestion text against note lines by keyword overlap.
+    if (!replaceExisting && suggestion?.suggestion) {
+        const suggWords = new Set(
+            suggestion.suggestion.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 3)
+        );
+        if (suggWords.size >= 3) {
+            let bestIdx = -1, bestScore = 0;
+            for (let i = 0; i < lines.length; i++) {
+                const lineWords = lines[i].toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/);
+                const overlap = lineWords.filter(w => suggWords.has(w)).length;
+                // Score = overlap as fraction of suggestion keywords, but require >=40% and >=3 words
+                const score = overlap / suggWords.size;
+                if (overlap >= 3 && score >= 0.4 && score > bestScore) {
+                    bestScore = score;
+                    bestIdx = i;
+                }
+            }
+            if (bestIdx !== -1) {
+                insertIdx = bestIdx;
+                replaceExisting = true;
+                _replacementPreview = {
+                    originalText: lines[bestIdx].trim(),
+                    suggestionText: suggestion.suggestion
+                };
+                console.log(`[PREVIEW] Keyword fallback matched line ${bestIdx} (score: ${bestScore.toFixed(2)})`);
+            }
+        }
+    }
+
     // 4. After the target section heading (completeness items) or guideline reference (guideline suggestions)
     const sectionHint = targetSection || guidelineRef;
     if (!replaceExisting && sectionHint) {
