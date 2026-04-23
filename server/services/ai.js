@@ -737,6 +737,12 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
         ))
     );
 
+    // Diagnostic: log every point's verdict and reason
+    for (const r of pointResults) {
+        const verdict = r.applies ? '✓ APPLIES' : '✗ does not apply';
+        console.log(`[PER-POINT] ${guidelineId} | ${verdict} | "${(r.pointName || '').substring(0, 80)}" | reason: ${(r.reason || 'none').substring(0, 150)}`);
+    }
+
     // Step 3: Collect applicable points as suggestions in the standard shape.
     const suggestions = pointResults
         .filter(r => r.applies && r.suggestion)
