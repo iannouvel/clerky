@@ -1163,23 +1163,69 @@ If does not apply:
 
     if (!result?.content) return { pointId: point.id, pointName: point.name, applies: false, reason: 'No response' };
 
+    let parsed;
+    const raw = result.content.trim().replace(/```json\n?|\n?```/g, '');
     try {
-        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
-        const applies = !!parsed.applies;
-        return {
-            pointId: point.id,
-            pointName: point.name,
-            applies,
-            reason: parsed.reason || '',
-            suggestion: applies ? (parsed.suggestion || null) : null,
-            priority: applies ? (parsed.priority || 'low') : null,
-            why: applies ? (parsed.why || null) : null,
-            verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
-            sourceGuidelineId: guidelineId || null
-        };
-    } catch (e) {
-        return { pointId: point.id, pointName: point.name, applies: false, reason: 'Parse error' };
+        parsed = JSON.parse(raw);
+    } catch (_) {
+        // Fallback: extract JSON from malformed response
+        try {
+            const start = raw.indexOf('{');
+            const end = raw.lastIndexOf('}');
+            if (start !== -1 && end > start) {
+                let block = raw.slice(start, end + 1).replace(/,\s*([\]}])/g, '$1');
+                try { parsed = JSON.parse(block); } catch (_2) {
+                    // Try appending closing characters for truncated responses
+                    for (const suffix of ['"}', '"]}', '"}]']) {
+                        try { parsed = JSON.parse(block + suffix); break; } catch (_3) { /* continue */ }
+                    }
+                }
+            }
+            // Last resort: regex extraction of key fields
+            if (!parsed && start !== -1) {
+                const block = raw.slice(start);
+                const appliesMatch = block.match(/"applies"\s*:\s*(true|false)/);
+                const reasonMatch = block.match(/"reason"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                if (appliesMatch) {
+                    parsed = {
+                        applies: appliesMatch[1] === 'true',
+                        reason: reasonMatch ? reasonMatch[1] : '(reason truncated)'
+                    };
+                    // Extract additional fields if applies is true
+                    if (parsed.applies) {
+                        const suggMatch = block.match(/"suggestion"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        const prioMatch = block.match(/"priority"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        const whyMatch = block.match(/"why"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        const quoteMatch = block.match(/"verbatimQuote"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        if (suggMatch) parsed.suggestion = suggMatch[1];
+                        if (prioMatch) parsed.priority = prioMatch[1];
+                        if (whyMatch) parsed.why = whyMatch[1];
+                        if (quoteMatch) parsed.verbatimQuote = quoteMatch[1];
+                    }
+                    console.warn(`[PER-POINT] Recovered malformed JSON via regex for point ${point.id}: applies=${parsed.applies}`);
+                }
+            }
+        } catch (fallbackErr) {
+            console.warn(`[PER-POINT] extractJSON fallback failed for point ${point.id}:`, fallbackErr.message);
+        }
     }
+
+    if (!parsed) {
+        return { pointId: point.id, pointName: point.name, applies: false, reason: 'Parse error: ' + raw.substring(0, 100) };
+    }
+
+    const applies = !!parsed.applies;
+    return {
+        pointId: point.id,
+        pointName: point.name,
+        applies,
+        reason: parsed.reason || '',
+        suggestion: applies ? (parsed.suggestion || null) : null,
+        priority: applies ? (parsed.priority || 'low') : null,
+        why: applies ? (parsed.why || null) : null,
+        verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
+        sourceGuidelineId: guidelineId || null
+    };
 }
 
 /**
