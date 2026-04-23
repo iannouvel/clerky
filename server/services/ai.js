@@ -1043,13 +1043,38 @@ async function loadPracticePointAdvice(guidelineId) {
  */
 async function loadAllPracticePoints(guidelineId) {
     try {
-        const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
-        return snap.docs.map(d => ({
-            id: d.id,
-            name: d.data().name || d.id,
-            description: d.data().description || '',
-            advice: d.data().advice || null
-        }));
+        // Primary source: practicePoints subcollection (from extraction / context evolution)
+        const guidelineRef = db.collection('guidelines').doc(guidelineId);
+        let snap = await guidelineRef.collection('practicePoints').orderBy('order', 'asc').get();
+        if (snap.empty) {
+            // Fallback: practicePointMetrics (legacy calibration sync from auditableElements)
+            snap = await guidelineRef.collection('practicePointMetrics').get();
+            return snap.docs.map(d => ({
+                id: d.id,
+                name: d.data().name || d.id,
+                description: d.data().description || '',
+                advice: d.data().advice || null
+            }));
+        }
+
+        // Map practicePoints docs — also check for calibration advice in practicePointMetrics
+        const metricsSnap = await guidelineRef.collection('practicePointMetrics').get();
+        const adviceByName = new Map();
+        for (const d of metricsSnap.docs) {
+            const data = d.data();
+            if (data.advice) adviceByName.set((data.name || '').toLowerCase().trim(), data.advice);
+        }
+
+        return snap.docs.map(d => {
+            const data = d.data();
+            const text = data.text || data.name || d.id;
+            return {
+                id: d.id,
+                name: text,
+                description: text,
+                advice: adviceByName.get(text.toLowerCase().trim()) || null
+            };
+        });
     } catch {
         return [];
     }
