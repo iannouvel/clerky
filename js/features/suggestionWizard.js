@@ -1,4 +1,4 @@
-import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER } from '../utils/editor.js';
+import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState } from '../utils/editor.js';
 
 /**
  * Opens the PDF for a guideline in a new tab.
@@ -445,8 +445,24 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             const currentContent = getUserInputContent();
             let newContent;
 
-            // Primary path: replace the placeholder that showInsertionPreview already placed
-            if (currentContent.includes(INSERTION_PLACEHOLDER)) {
+            // Replacement preview path: suggestion replaces existing text in the note
+            const replacementPreview = getReplacementPreview();
+            const contentSnapshot = getContentBeforePreview();
+            if (replacementPreview && contentSnapshot) {
+                const lines = contentSnapshot.split('\n');
+                const idx = lines.findIndex(l => l.includes(replacementPreview.originalText));
+                if (idx !== -1) {
+                    lines[idx] = lines[idx].replace(replacementPreview.originalText, textToInsert);
+                    newContent = lines.join('\n');
+                    console.log('[WIZARD] Replaced original text with accepted suggestion');
+                } else {
+                    // originalText not found in snapshot — append as fallback
+                    newContent = contentSnapshot + '\n' + textToInsert;
+                    console.log('[WIZARD] Replacement target not found in snapshot, appended');
+                }
+                clearReplacementState();
+            // Standard placeholder path
+            } else if (currentContent.includes(INSERTION_PLACEHOLDER)) {
                 const lines = currentContent.split('\n');
                 const phIdx = lines.findIndex(l => l.includes(INSERTION_PLACEHOLDER));
                 // Preserve any list prefix (e.g. "6. " or "- ") that was added by the preview
