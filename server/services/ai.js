@@ -677,70 +677,6 @@ function formatLearningForPrompt(learning) {
  * @returns {string} returns.suggestions[].verbatimQuote - Relevant guideline quote
  * @returns {Array<string>} returns.alreadyCompliant - Points already addressed
  */
-/**
- * One cheap LLM call to identify which existing note text each suggestion replaces/refines.
- * Enriches suggestion objects in-place with `originalText` and `category: 'modification'`.
- *
- * @param {string} clinicalNote
- * @param {Array} suggestions - Mutable array of suggestion objects
- * @param {string} userId
- * @returns {Promise<Array>} The same suggestions array (mutated)
- */
-async function identifyReplacementText(clinicalNote, suggestions, userId) {
-    if (!suggestions.length) return suggestions;
-
-    const userPrompt = `You are given a clinical note and a list of suggestions for improving it. For each suggestion, determine if it REFINES or REPLACES specific existing text in the note. If so, return the EXACT text from the note that would be replaced.
-
-=== CLINICAL NOTE ===
-${clinicalNote}
-
-=== SUGGESTIONS ===
-${suggestions.map((s, i) => `${i + 1}. ${s.suggestion}`).join('\n')}
-
-Return a JSON array with one entry per suggestion:
-[
-  { "index": 0, "originalText": "exact quote from the note that this suggestion replaces" },
-  { "index": 1, "originalText": null }
-]
-
-Rules:
-- originalText must be an EXACT substring copied character-for-character from the clinical note
-- If the suggestion adds NEW information not present in the note, set originalText to null
-- If the suggestion refines, improves, or rewords existing text, quote the specific phrase being refined
-- Only quote the minimal text being replaced, not the entire paragraph or sentence unless the whole sentence is being replaced`;
-
-    try {
-        const result = await routeToAI({
-            messages: [
-                { role: 'system', content: 'You identify which parts of a clinical note each suggestion replaces. Return JSON only.' },
-                { role: 'user', content: userPrompt }
-            ]
-        }, userId, null, 1000, 'evaluation');
-
-        if (!result?.content) return suggestions;
-
-        const raw = result.content.trim().replace(/```json\n?|\n?```/g, '');
-        const parsed = JSON.parse(raw);
-        if (!Array.isArray(parsed)) return suggestions;
-
-        for (const entry of parsed) {
-            const idx = entry.index;
-            if (idx >= 0 && idx < suggestions.length && entry.originalText) {
-                if (clinicalNote.includes(entry.originalText)) {
-                    suggestions[idx].originalText = entry.originalText;
-                    suggestions[idx].category = 'modification';
-                    console.log(`[REPLACEMENT-ID] Suggestion ${idx}: replaces "${entry.originalText.substring(0, 80)}..."`);
-                } else {
-                    console.log(`[REPLACEMENT-ID] Suggestion ${idx}: originalText not found verbatim in note, skipping`);
-                }
-            }
-        }
-    } catch (e) {
-        console.warn('[REPLACEMENT-ID] Failed to identify replacement text:', e.message);
-    }
-
-    return suggestions;
-}
 
 /**
  * Per-point analysis path for analyzeGuidelineForPatient.
@@ -810,23 +746,28 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
     }
 
     // Step 3: Collect applicable points as suggestions in the standard shape.
+    // originalText comes directly from the per-point LLM call (no separate batch call needed).
     const suggestions = pointResults
         .filter(r => r.applies && r.suggestion)
-        .map(r => ({
-            suggestion: r.suggestion,
-            priority: r.priority || 'low',
-            reasoning: r.reason || '',
-            why: r.why || '',
-            verbatimQuote: r.verbatimQuote || '',
-            sourceGuidelineId: r.sourceGuidelineId || guidelineId
-        }));
+        .map(r => {
+            const s = {
+                suggestion: r.suggestion,
+                priority: r.priority || 'low',
+                reasoning: r.reason || '',
+                why: r.why || '',
+                verbatimQuote: r.verbatimQuote || '',
+                sourceGuidelineId: r.sourceGuidelineId || guidelineId
+            };
+            // Only include originalText if it's a verbatim match in the clinical note
+            if (r.originalText && clinicalNote.includes(r.originalText)) {
+                s.originalText = r.originalText;
+                s.category = 'modification';
+                console.log(`[PER-POINT] Suggestion "${r.suggestion.substring(0, 60)}..." replaces: "${r.originalText.substring(0, 60)}..."`);
+            }
+            return s;
+        });
 
     console.log(`[PER-POINT] ${guidelineId}: ${allPoints.length} points evaluated, ${suggestions.length} applicable`);
-
-    // Step 4: Identify which suggestions replace existing note text (one cheap call)
-    if (suggestions.length > 0) {
-        await identifyReplacementText(clinicalNote, suggestions, userId);
-    }
 
     return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
 }
@@ -1216,7 +1157,8 @@ If applies:
   "suggestion": "concise actionable clinical suggestion written for a clinician",
   "priority": "high|medium|low",
   "why": "why this matters for THIS specific patient",
-  "verbatimQuote": "exact verbatim phrase copied from the guideline text above"
+  "verbatimQuote": "exact verbatim phrase copied from the guideline text above",
+  "originalText": "exact text from the clinical note that this suggestion refines or replaces, or null if this is new information not replacing existing text"
 }
 If does not apply:
 {
@@ -1267,10 +1209,12 @@ If does not apply:
                         const prioMatch = block.match(/"priority"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         const whyMatch = block.match(/"why"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         const quoteMatch = block.match(/"verbatimQuote"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        const origMatch = block.match(/"originalText"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         if (suggMatch) parsed.suggestion = suggMatch[1];
                         if (prioMatch) parsed.priority = prioMatch[1];
                         if (whyMatch) parsed.why = whyMatch[1];
                         if (quoteMatch) parsed.verbatimQuote = quoteMatch[1];
+                        if (origMatch) parsed.originalText = origMatch[1];
                     }
                     console.warn(`[PER-POINT] Recovered malformed JSON via regex for point ${point.id}: applies=${parsed.applies}`);
                 }
@@ -1294,6 +1238,7 @@ If does not apply:
         priority: applies ? (parsed.priority || 'low') : null,
         why: applies ? (parsed.why || null) : null,
         verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
+        originalText: applies ? (parsed.originalText || null) : null,
         sourceGuidelineId: guidelineId || null
     };
 }
