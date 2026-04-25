@@ -5058,9 +5058,9 @@ body {
 }
 
 .tiptap-editor .ProseMirror p {
-    margin: 0;
+    margin: 0 0 0.5em 0;
     line-height: 1.5;
-    /* Use consistent line-height instead of margins for spacing */
+    min-height: 1.5em; /* Preserve blank-line height for empty paragraphs */
 }
 
 /* Lists disabled - users type numbered lists manually as plain text */
