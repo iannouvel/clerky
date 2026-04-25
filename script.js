@@ -2847,7 +2847,7 @@ function removeTransientMessages() {
 
 function updateAnalyseButtonProgress(stepText = null, isActive = false) {
     // Try legacy button first, then fall back to guidelines button
-    const analyseBtn = document.getElementById('analyseBtn') || document.getElementById('checkGuidelinesBtn2');
+    const analyseBtn = document.getElementById('analyseBtn') || document.getElementById('analyseNoteBtn');
     if (!analyseBtn) return;
 
     const analyseSpinner = analyseBtn.querySelector('.spinner-icon');
@@ -5430,26 +5430,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add click handler for process workflow button
-    // Split buttons: Check Completeness + Check Against Guidelines
-    const checkCompletenessBtn = document.getElementById('checkCompletenessBtn');
-    const checkGuidelinesBtn2 = document.getElementById('checkGuidelinesBtn2');
+    // Unified Analyse Note button — chains Phase 1 (completeness) → Phase 2 (guidelines)
+    const analyseNoteBtn = document.getElementById('analyseNoteBtn');
 
     // Global abort controller for cancelling analysis
     window.analysisAbortController = null;
     window.isAnalysisRunning = false;
 
-    // Helper: hide both split buttons during analysis
-    function hideSplitButtons() {
-        if (checkCompletenessBtn) checkCompletenessBtn.style.display = 'none';
-        if (checkGuidelinesBtn2) checkGuidelinesBtn2.style.display = 'none';
+    // Helper: hide analyse button during analysis
+    function hideAnalyseButton() {
+        if (analyseNoteBtn) analyseNoteBtn.style.display = 'none';
         window.isAnalysisRunning = true;
     }
 
-    // Helper: restore split buttons after analysis
-    function restoreSplitButtons() {
+    // Helper: restore analyse button after analysis
+    function restoreAnalyseButton() {
         window.isAnalysisRunning = false;
-        // Buttons will be shown/hidden by updateAnalyseAndResetButtons based on content
         const editor = window.editors?.userInput;
         const hasContent = editor ? editor.getText().trim().length > 0 : false;
         if (typeof updateAnalyseAndResetButtons === 'function') {
@@ -5457,10 +5453,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- Check Completeness button (Phase 1 only) ---
-    if (checkCompletenessBtn && !checkCompletenessBtn.dataset.listenerAttached) {
-        checkCompletenessBtn.dataset.listenerAttached = 'true';
-        checkCompletenessBtn.addEventListener('click', async () => {
+    // --- Unified Analyse Note button ---
+    if (analyseNoteBtn && !analyseNoteBtn.dataset.listenerAttached) {
+        analyseNoteBtn.dataset.listenerAttached = 'true';
+        analyseNoteBtn.addEventListener('click', async () => {
             if (window.workflowInProgress) return;
 
             const editor = window.editors?.userInput;
@@ -5469,113 +5465,71 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const btnIcon = analyseNoteBtn.querySelector('.btn-icon');
+            const btnText = analyseNoteBtn.querySelector('.btn-text');
+
             // Detect if question
-            const btnIcon = checkCompletenessBtn.querySelector('.btn-icon');
-            const btnText = checkCompletenessBtn.querySelector('.btn-text');
             if (btnIcon) btnIcon.textContent = '⏳';
             if (btnText) btnText.textContent = 'Detecting...';
-            checkCompletenessBtn.disabled = true;
+            analyseNoteBtn.disabled = true;
 
             const isQuestion = await detectInputType(editor.getText().trim());
             if (isQuestion) {
-                if (btnIcon) btnIcon.textContent = '📋';
-                if (btnText) btnText.textContent = 'Check Completeness';
-                checkCompletenessBtn.disabled = false;
+                if (btnIcon) btnIcon.textContent = '🔍';
+                if (btnText) btnText.textContent = 'Analyse Note';
+                analyseNoteBtn.disabled = false;
                 window.selectedMode = 'ask-guidelines';
                 await askGuidelinesQuestion();
                 return;
             }
 
-            // Run Phase 1 only
+            // Start unified workflow
             window.workflowInProgress = true;
             window.analysisAbortController = new AbortController();
-            hideSplitButtons();
+            hideAnalyseButton();
 
-            try {
-                await runPhase1CompletenessCheck();
-                updateUser('Completeness check finished. Click "Check Against Guidelines" to continue.', false);
-            } catch (error) {
-                if (error.name !== 'AbortError') {
-                    console.error('[COMPLETENESS] Error:', error);
-                    updateUser('Completeness check failed: ' + error.message, false);
-                }
-            } finally {
-                window.workflowInProgress = false;
-                window.analysisAbortController = null;
-                restoreSplitButtons();
-                if (btnIcon) btnIcon.textContent = '📋';
-                if (btnText) btnText.textContent = 'Check Completeness';
-                checkCompletenessBtn.disabled = false;
-            }
-        });
-    }
-
-    // --- Check Against Guidelines button (Phase 2 only) ---
-    if (checkGuidelinesBtn2 && !checkGuidelinesBtn2.dataset.listenerAttached) {
-        checkGuidelinesBtn2.dataset.listenerAttached = 'true';
-        checkGuidelinesBtn2.addEventListener('click', async () => {
-            if (window.workflowInProgress) return;
-
-            const editor = window.editors?.userInput;
-            if (!editor || !editor.getText().trim()) {
-                alert('Please enter some text first.');
-                return;
-            }
-
-            // Detect if question
-            const btnIcon = checkGuidelinesBtn2.querySelector('.btn-icon');
-            const btnText = checkGuidelinesBtn2.querySelector('.btn-text');
-            if (btnIcon) btnIcon.textContent = '⏳';
-            if (btnText) btnText.textContent = 'Detecting...';
-            checkGuidelinesBtn2.disabled = true;
-
-            const isQuestion = await detectInputType(editor.getText().trim());
-            if (isQuestion) {
-                if (btnIcon) btnIcon.textContent = '📚';
-                if (btnText) btnText.textContent = 'Check Against Guidelines';
-                checkGuidelinesBtn2.disabled = false;
-                window.selectedMode = 'ask-guidelines';
-                await askGuidelinesQuestion();
-                return;
-            }
-
-            // Run Phase 2: scope → find guidelines → checkpoint → analyse → summary → wizard
-            window.workflowInProgress = true;
-            window.analysisAbortController = new AbortController();
-            hideSplitButtons();
-
+            // Show as stop button
             if (btnIcon) btnIcon.textContent = '⏹';
             if (btnText) btnText.textContent = 'Stop';
-            checkGuidelinesBtn2.disabled = false;
-            checkGuidelinesBtn2.style.display = 'flex';
-            checkGuidelinesBtn2.classList.add('stop-mode');
+            analyseNoteBtn.disabled = false;
+            analyseNoteBtn.style.display = 'flex';
+            analyseNoteBtn.classList.add('stop-mode');
 
-            // Allow the stop button to cancel
             const stopHandler = () => {
                 if (window.analysisAbortController) {
                     window.analysisAbortController.abort();
                     updateUser('Analysis cancelled.', false);
                 }
             };
-            checkGuidelinesBtn2.addEventListener('click', stopHandler, { once: true });
+            analyseNoteBtn.addEventListener('click', stopHandler, { once: true });
 
             try {
+                // Phase 1: Completeness check
+                updateUser('Step 1 of 2 — Checking note completeness...', true);
+                if (btnText) btnText.textContent = 'Stop (Step 1/2)';
+                await runPhase1CompletenessCheck();
+
+                if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+
+                // Phase 2: Guideline analysis
+                updateUser('Step 2 of 2 — Analysing against guidelines...', true);
+                if (btnText) btnText.textContent = 'Stop (Step 2/2)';
                 window.selectedMode = 'guideline-suggestions';
                 await processGuidelinesWorkflow();
             } catch (error) {
                 if (error.name !== 'AbortError' && error.message !== 'Analysis cancelled') {
-                    console.error('[GUIDELINES] Error:', error);
-                    updateUser('Guideline analysis failed: ' + error.message, false);
+                    console.error('[ANALYSE] Error:', error);
+                    updateUser('Analysis failed: ' + error.message, false);
                 }
             } finally {
-                checkGuidelinesBtn2.removeEventListener('click', stopHandler);
-                checkGuidelinesBtn2.classList.remove('stop-mode');
+                analyseNoteBtn.removeEventListener('click', stopHandler);
+                analyseNoteBtn.classList.remove('stop-mode');
                 window.workflowInProgress = false;
                 window.analysisAbortController = null;
-                restoreSplitButtons();
-                if (btnIcon) btnIcon.textContent = '📚';
-                if (btnText) btnText.textContent = 'Check Against Guidelines';
-                checkGuidelinesBtn2.disabled = false;
+                restoreAnalyseButton();
+                if (btnIcon) btnIcon.textContent = '🔍';
+                if (btnText) btnText.textContent = 'Analyse Note';
+                analyseNoteBtn.disabled = false;
                 hideSummaryLoading();
             }
         });
@@ -7615,7 +7569,7 @@ window.selectedGuidelineScope = null;
 // Comprehensive workflow processing function
 async function runPhase1CompletenessCheck() {
     try {
-        updateUser('Reviewing note for missing clinical details before guideline analysis — suggestions to improve your note will follow shortly...', true);
+        updateUser('Step 1 of 2 — Reviewing note for missing clinical details...', true);
         const transcript = getUserInputContent();
         if (!transcript?.trim()) return;
 
@@ -7653,11 +7607,11 @@ async function runPhase1CompletenessCheck() {
         }));
 
         if (suggestions.length === 0) {
-            updateUser('Note completeness check passed — no missing information identified.', false);
+            updateUser('Step 1 of 2 — No missing information identified. Moving to guideline analysis...', false);
             return;
         }
 
-        updateUser(`${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified — please review and add any relevant details before continuing.`, false);
+        updateUser(`Step 1 of 2 — ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified. Review below, then guideline analysis will follow.`, false);
 
         // Show wizard using the floating panel (same as guideline suggestions)
         return new Promise((resolve) => {
@@ -7699,7 +7653,7 @@ async function runPhase1CompletenessCheck() {
                 setUserInputContent,
                 determineInsertionPoint: window.determineInsertionPoint,
                 insertTextAtPoint: window.insertTextAtPoint,
-                phaseLabel: 'Identify Missing Information',
+                phaseLabel: 'Step 1 of 2: Identify Missing Information',
                 onComplete: closeWizard
             });
         });
@@ -7721,7 +7675,7 @@ async function processGuidelinesWorkflow() {
         }
 
         // Step 1: Scope selection (reuse persisted or show modal)
-        updateUser('Checking guideline scope...', true);
+        updateUser('Step 2 of 2 — Checking guideline scope...', true);
         let scopeSelection;
         const savedScopeSelection = await loadGuidelineScopeSelection();
 
@@ -7745,7 +7699,7 @@ async function processGuidelinesWorkflow() {
                 scopeSelection = savedScopeSelection;
             }
         } else {
-            updateUser('Select which guidelines to apply...', true);
+            updateUser('Step 2 of 2 — Select which guidelines to apply...', true);
             scopeSelection = await showGuidelineScopeModal();
         }
         window.selectedGuidelineScope = scopeSelection;
@@ -7753,7 +7707,7 @@ async function processGuidelinesWorkflow() {
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 
         // Step 2: Find relevant guidelines
-        updateUser('Searching for relevant guidelines...', true);
+        updateUser('Step 2 of 2 — Searching for relevant guidelines...', true);
         await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
@@ -7773,7 +7727,7 @@ async function processGuidelinesWorkflow() {
         }
 
         // Step 4: Run parallel analysis (will show summary dashboard internally)
-        updateUser(`Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}...`, true);
+        updateUser(`Step 2 of 2 — Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}...`, true);
         await runParallelAnalysis(selectedGuidelines);
 
         console.log('[DEBUG] processGuidelinesWorkflow completed');
