@@ -8613,8 +8613,10 @@ ${responseText}
 
                     const col = result.passed ? '#28a745' : '#dc3545';
                     const label = result.passed ? 'passed' : 'failed';
-                    ceAddHistory(`[${completedCount}/${totalPoints}] ${shortName}${shortName.length < (point.text||'').length ? '...' : ''} — <strong style="color:${col}">${label}</strong> (${result.tpCount}TP + ${result.tnCount}TN, ${result.attempts} attempts)`, col);
-                    ceBatchSetStatus(`Guideline ${ceBatch.queueIdx + 1}/${ceBatch.queue.length} | Points: ${completedCount}/${totalPoints} (${concurrency} parallel)`);
+                    // Find guideline short name for the log
+                    const gItem = ceBatch.queue?.find(q => q.id === guidelineId);
+                    const gShort = gItem ? gItem.displayName.split(' - ')[0].slice(0, 30) : guidelineId.slice(0, 20);
+                    ceAddHistory(`[${gShort}] [${completedCount}/${totalPoints}] ${shortName}${shortName.length < (point.text||'').length ? '...' : ''} — <strong style="color:${col}">${label}</strong> (${result.tpCount}TP + ${result.tnCount}TN, ${result.attempts} attempts)`, col);
                 }
             }
 
@@ -8623,124 +8625,154 @@ ${responseText}
             return results;
         }
 
-        // Main batch loop — processes all guidelines in the queue sequentially
+        // Process a single guideline: skip/load/run points. Returns result object.
+        async function ceProcessOneGuideline(item, pointConcurrency) {
+            const token = await getCalibrationToken();
+
+            // Fast path: use pre-fetched progressAll cache to skip without any server call
+            const cached = ceBatch.progressCache?.[item.id];
+            if (cached && cached.allComplete) {
+                ceAddHistory(`Skipping ${item.displayName} — all ${cached.totalPoints} points already complete`, '#17a2b8');
+                return { skipped: true, passed: cached.completedCount || cached.totalPoints, failed: 0, totalPoints: cached.totalPoints };
+            }
+            if (cached && cached.totalPoints === 0) {
+                ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
+                return { skipped: true, passed: 0, failed: 0, totalPoints: 0, noPoints: true };
+            }
+
+            // Not cached or partially complete — need per-point detail from server
+            const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            const progData = await progRes.json();
+
+            if (progData.success && progData.allComplete) {
+                ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
+                if (!progData.cached) {
+                    fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: item.id, pointCount: progData.totalPoints })
+                    }).catch(() => {});
+                }
+                return { skipped: true, passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
+            }
+
+            // Load practice points
+            const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                body: JSON.stringify({ guidelineId: item.id })
+            });
+            const data = await res.json();
+            if (!data.success || !data.points?.length) {
+                ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
+                return { skipped: true, passed: 0, failed: 0, totalPoints: 0, noPoints: true };
+            }
+
+            let points = data.points;
+            const totalPoints = points.length;
+            const priorCompleted = (progData.success && progData.completedCount > 0) ? progData.completedCount : 0;
+
+            // Filter to incomplete points if some already done
+            if (progData.success && progData.completedCount > 0) {
+                points = points.filter(p => !progData.points[p.id]?.isComplete);
+                ceAddHistory(`${progData.completedCount}/${totalPoints} already evolved, running ${points.length} remaining`, '#17a2b8');
+            }
+
+            ceDashboardUpdateRow(item.id, 'running', 0, 0, totalPoints);
+
+            // Run points in parallel (using per-guideline share of concurrency)
+            const pointResults = await ceRunParallelPoints(points, item.id, pointConcurrency);
+
+            const newPassed = Object.values(pointResults).filter(r => r === 'passed').length;
+            const newFailed = Object.values(pointResults).filter(r => r === 'failed').length;
+            const passed = newPassed + priorCompleted;
+            const failed = newFailed;
+
+            // Mark guideline as complete if all points passed
+            if (passed === totalPoints && failed === 0) {
+                fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId: item.id, pointCount: totalPoints })
+                }).catch(() => {});
+            }
+
+            return { skipped: false, passed, failed, totalPoints };
+        }
+
+        // Main batch loop — processes guidelines with multi-guideline parallelism
         async function ceBatchRunLoop() {
             ceBatch.active = true;
             ceRunAllBtn.style.display = 'none';
             ceStopBatchBtn.style.display = '';
 
-            while (ceBatch.active && ceBatch.queueIdx < ceBatch.queue.length) {
-                const item = ceBatch.queue[ceBatch.queueIdx];
-                ceBatchSetStatus(`Guideline ${ceBatch.queueIdx + 1}/${ceBatch.queue.length}: ${item.displayName}`);
-                ceDashboardUpdateRow(item.id, 'running', 0, 0, 0);
-                ceAddHistory(`<strong>Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]:</strong> Starting ${item.displayName}`, '#6f42c1');
+            const totalConcurrency = parseInt(document.getElementById('ceConcurrency')?.value) || 20;
+            const GUIDELINE_PARALLELISM = 3;
+            // Each active guideline gets an equal share of point-level concurrency
+            const perGuidelineConcurrency = Math.max(1, Math.floor(totalConcurrency / GUIDELINE_PARALLELISM));
 
-                try {
-                    // Set up ce state for this guideline
-                    ce.guidelineId = item.id;
-                    ce.guidelineName = item.displayName;
-                    const token = await getCalibrationToken();
+            // Guideline-level worker pool (like ceRunParallelPoints but for guidelines)
+            let nextGuidelineIdx = ceBatch.queueIdx;
+            let completedGuidelineCount = Object.keys(ceBatch.completedGuidelines).length;
 
-                    // Fast path: use pre-fetched progressAll cache to skip without any server call
-                    const cached = ceBatch.progressCache?.[item.id];
-                    if (cached && cached.allComplete) {
-                        ceAddHistory(`Skipping ${item.displayName} — all ${cached.totalPoints} points already complete`, '#17a2b8');
-                        ceBatch.completedGuidelines[item.id] = { passed: cached.completedCount || cached.totalPoints, failed: 0, totalPoints: cached.totalPoints };
-                        ceDashboardUpdateRow(item.id, 'complete', cached.completedCount || cached.totalPoints, 0, cached.totalPoints);
-                        ceBatch.queueIdx++;
-                        continue;
-                    }
-                    if (cached && cached.totalPoints === 0) {
-                        ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
-                        ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
-                        ceBatch.queueIdx++;
-                        continue;
-                    }
-
-                    // Not cached or partially complete — need per-point detail from server
-                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
-                    const progData = await progRes.json();
-
-                    if (progData.success && progData.allComplete) {
-                        ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
-                        ceBatch.completedGuidelines[item.id] = { passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
-                        ceDashboardUpdateRow(item.id, 'complete', progData.completedCount, 0, progData.totalPoints);
-                        // Ensure the fast-skip flag is set (backfill for older completions)
-                        if (!progData.cached) {
-                            fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
-                                method: 'POST',
-                                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ guidelineId: item.id, pointCount: progData.totalPoints })
-                            }).catch(() => {});
-                        }
-                        ceBatch.queueIdx++;
-                        ceSaveState();
-                        continue;
-                    }
-
-                    // Load practice points (only needed if guideline is not fully complete)
-                    const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
-                        method: 'POST',
-                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ guidelineId: item.id })
-                    });
-                    const data = await res.json();
-                    if (!data.success || !data.points?.length) {
-                        ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
-                        ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
-                        ceBatch.queueIdx++;
-                        ceSaveState();
-                        continue;
-                    }
-                    ce.allPoints = data.points;
-
-                    // Filter to incomplete points if some already done
-                    let totalPoints = ce.allPoints.length;
-                    if (progData.success && progData.completedCount > 0) {
-                        const incompletePoints = ce.allPoints.filter(p => !progData.points[p.id]?.isComplete);
-                        ceAddHistory(`${progData.completedCount}/${totalPoints} already evolved, running ${incompletePoints.length} remaining`, '#17a2b8');
-                        ce.allPoints = incompletePoints;
-                    }
-
-                    ceDashboardUpdateRow(item.id, 'running', 0, 0, totalPoints);
-
-                    // Run points in parallel
-                    const concurrency = parseInt(document.getElementById('ceConcurrency')?.value) || 3;
-                    const pointResults = await ceRunParallelPoints(ce.allPoints, item.id, concurrency);
-
-                    // Record results (include previously-completed points from prior runs)
-                    const newPassed = Object.values(pointResults).filter(r => r === 'passed').length;
-                    const newFailed = Object.values(pointResults).filter(r => r === 'failed').length;
-                    const priorCompleted = (progData.success && progData.completedCount > 0) ? progData.completedCount : 0;
-                    const passed = newPassed + priorCompleted;
-                    const failed = newFailed;
-                    ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints };
-                    ceDashboardUpdateRow(item.id, 'complete', passed, failed, totalPoints);
-                    ceAddHistory(`Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${passed} passed, ${failed} failed`, '#28a745');
-
-                    // Mark guideline as complete if all points passed
-                    if (passed === totalPoints && failed === 0) {
-                        fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
-                            method: 'POST',
-                            headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ guidelineId: item.id, pointCount: totalPoints })
-                        }).catch(() => {});
-                    }
-
-                } catch (err) {
-                    ceAddHistory(`Batch error on ${item.displayName}: ${err.message}`, '#dc3545');
-                    ceBatch.completedGuidelines[item.id] = { passed: 0, failed: 0, totalPoints: 0, error: err.message };
-                    ceDashboardUpdateRow(item.id, 'complete', 0, 0, 0);
-                }
-
-                ceBatch.queueIdx++;
-                ceSaveState();
+            function updateBatchStatus() {
+                const active = ceBatch.activeGuidelines || [];
+                const activeNames = active.map(a => a.split(' - ')[0]).join(', ');
+                ceBatchSetStatus(`${completedGuidelineCount}/${ceBatch.queue.length} guidelines done | ${active.length} running (${totalConcurrency} workers)${activeNames ? ': ' + activeNames : ''}`);
             }
+
+            ceBatch.activeGuidelines = [];
+
+            async function guidelineWorker() {
+                while (ceBatch.active) {
+                    const idx = nextGuidelineIdx++;
+                    if (idx >= ceBatch.queue.length) break;
+
+                    const item = ceBatch.queue[idx];
+                    ceBatch.activeGuidelines.push(item.displayName);
+                    updateBatchStatus();
+                    ceDashboardUpdateRow(item.id, 'running', 0, 0, 0);
+                    ceAddHistory(`<strong>Batch [${idx + 1}/${ceBatch.queue.length}]:</strong> Starting ${item.displayName}`, '#6f42c1');
+
+                    try {
+                        const result = await ceProcessOneGuideline(item, perGuidelineConcurrency);
+
+                        if (result.noPoints) {
+                            ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
+                        } else if (result.skipped) {
+                            ceDashboardUpdateRow(item.id, 'complete', result.passed, result.failed, result.totalPoints);
+                        } else {
+                            ceDashboardUpdateRow(item.id, 'complete', result.passed, result.failed, result.totalPoints);
+                            ceAddHistory(`Batch [${idx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${result.passed} passed, ${result.failed} failed`, '#28a745');
+                        }
+
+                        ceBatch.completedGuidelines[item.id] = { passed: result.passed, failed: result.failed, totalPoints: result.totalPoints };
+                    } catch (err) {
+                        ceAddHistory(`Batch error on ${item.displayName}: ${err.message}`, '#dc3545');
+                        ceBatch.completedGuidelines[item.id] = { passed: 0, failed: 0, totalPoints: 0, error: err.message };
+                        ceDashboardUpdateRow(item.id, 'complete', 0, 0, 0);
+                    }
+
+                    // Remove from active list
+                    ceBatch.activeGuidelines = ceBatch.activeGuidelines.filter(n => n !== item.displayName);
+                    completedGuidelineCount++;
+                    ceBatch.queueIdx = Math.max(ceBatch.queueIdx, idx + 1);
+                    updateBatchStatus();
+                    ceSaveState();
+                }
+            }
+
+            const guidelineWorkers = Array.from(
+                { length: Math.min(GUIDELINE_PARALLELISM, ceBatch.queue.length - ceBatch.queueIdx) },
+                () => guidelineWorker()
+            );
+            await Promise.all(guidelineWorkers);
 
             // Batch finished or stopped
             ceBatch.active = false;
+            ceBatch.activeGuidelines = [];
             ceStopBatchBtn.style.display = 'none';
             ceRunAllBtn.style.display = '';
 
