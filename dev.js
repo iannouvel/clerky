@@ -8673,9 +8673,12 @@ ${responseText}
                     const concurrency = parseInt(document.getElementById('ceConcurrency')?.value) || 3;
                     const pointResults = await ceRunParallelPoints(ce.allPoints, item.id, concurrency);
 
-                    // Record results
-                    const passed = Object.values(pointResults).filter(r => r === 'passed').length;
-                    const failed = Object.values(pointResults).filter(r => r === 'failed').length;
+                    // Record results (include previously-completed points from prior runs)
+                    const newPassed = Object.values(pointResults).filter(r => r === 'passed').length;
+                    const newFailed = Object.values(pointResults).filter(r => r === 'failed').length;
+                    const priorCompleted = (progData.success && progData.completedCount > 0) ? progData.completedCount : 0;
+                    const passed = newPassed + priorCompleted;
+                    const failed = newFailed;
                     ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints };
                     ceDashboardUpdateRow(item.id, 'complete', passed, failed, totalPoints);
                     ceAddHistory(`Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${passed} passed, ${failed} failed`, '#28a745');
