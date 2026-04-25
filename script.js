@@ -11078,6 +11078,7 @@ document.addEventListener('mousedown', (e) => {
     };
 }, true);
 
+window.openFeedbackModal = openFeedbackModal;
 function openFeedbackModal() {
     const current = _captureUIState();
 
