@@ -8153,7 +8153,15 @@ ${responseText}
                                     ceDashboardUpdateRow(item.id, 'complete', passed, failed, ce.allPoints.length);
                                     ceBatch.queueIdx++;
                                     ceSaveState();
-                                    // Continue with remaining guidelines
+                                    // Pre-fetch progress for remaining guidelines, then continue
+                                    try {
+                                        const tkn = await getCalibrationToken();
+                                        const pRes = await fetch(`${SERVER_URL}/contextEvolution/progressAll?scope=${encodeURIComponent(ceBatch.scope)}`, {
+                                            headers: { Authorization: `Bearer ${tkn}` }
+                                        });
+                                        const pData = await pRes.json();
+                                        ceBatch.progressCache = pData.success ? pData.guidelines : {};
+                                    } catch (_e) { ceBatch.progressCache = {}; }
                                     ceBatchRunLoop();
                                 };
                                 ceRestoreAndResume(saved);
@@ -8633,7 +8641,23 @@ ${responseText}
                     ce.guidelineName = item.displayName;
                     const token = await getCalibrationToken();
 
-                    // Check existing progress first — fast skip if cached flag is set
+                    // Fast path: use pre-fetched progressAll cache to skip without any server call
+                    const cached = ceBatch.progressCache?.[item.id];
+                    if (cached && cached.allComplete) {
+                        ceAddHistory(`Skipping ${item.displayName} — all ${cached.totalPoints} points already complete`, '#17a2b8');
+                        ceBatch.completedGuidelines[item.id] = { passed: cached.completedCount || cached.totalPoints, failed: 0, totalPoints: cached.totalPoints };
+                        ceDashboardUpdateRow(item.id, 'complete', cached.completedCount || cached.totalPoints, 0, cached.totalPoints);
+                        ceBatch.queueIdx++;
+                        continue;
+                    }
+                    if (cached && cached.totalPoints === 0) {
+                        ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
+                        ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
+                        ceBatch.queueIdx++;
+                        continue;
+                    }
+
+                    // Not cached or partially complete — need per-point detail from server
                     const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
@@ -8778,6 +8802,18 @@ ${responseText}
                 ceHistory.innerHTML = '';
                 const scopeLabel = scope === 'local' && ceBatch.trust ? `${scope} — ${ceBatch.trust}` : scope;
                 ceAddHistory(`<strong>Starting batch run:</strong> ${filtered.length} guidelines in ${scopeLabel}`, '#6f42c1');
+
+                // Pre-fetch all progress in one request to avoid per-guideline round-trips
+                try {
+                    const token = await getCalibrationToken();
+                    const pAllRes = await fetch(`${SERVER_URL}/contextEvolution/progressAll?scope=${encodeURIComponent(scope)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const pAllData = await pAllRes.json();
+                    ceBatch.progressCache = pAllData.success ? pAllData.guidelines : {};
+                } catch (e) {
+                    ceBatch.progressCache = {};
+                }
 
                 ceBatchRunLoop();
             });
