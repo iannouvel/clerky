@@ -18917,6 +18917,47 @@ Return the updated transcript with these changes applied.`;
 });
 
 // ========================================
+// ========================================
+// USER FEEDBACK (general — from the Feedback button)
+// ========================================
+
+app.get('/getFeedback', authenticateUser, async (req, res) => {
+    try {
+        const limitVal = Math.min(parseInt(req.query.limit) || 100, 500);
+        const snap = await db.collection('feedback')
+            .orderBy('submittedAt', 'desc')
+            .limit(limitVal)
+            .get();
+        const items = snap.docs.map(d => {
+            const data = d.data();
+            return {
+                id: d.id,
+                ...data,
+                submittedAt: data.submittedAt?.toDate?.() ? data.submittedAt.toDate().toISOString() : data.submittedAt
+            };
+        });
+        res.json({ success: true, feedback: items });
+    } catch (err) {
+        console.error('[FEEDBACK] getFeedback error:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+});
+
+app.post('/markFeedback', authenticateUser, async (req, res) => {
+    try {
+        const { feedbackId, actioned } = req.body;
+        if (!feedbackId) return res.status(400).json({ success: false, error: 'feedbackId required' });
+        await db.collection('feedback').doc(feedbackId).update({
+            actioned: !!actioned,
+            actionedAt: actioned ? new Date().toISOString() : null
+        });
+        res.json({ success: true });
+    } catch (err) {
+        console.error('[FEEDBACK] markFeedback error:', err);
+        res.status(500).json({ success: false, error: err.message });
+    }
+});
+
 // GUIDELINE FEEDBACK LEARNING SYSTEM
 // ========================================
 
