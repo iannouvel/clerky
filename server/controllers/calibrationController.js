@@ -664,7 +664,7 @@ exports.generateFreshScenario = async (req, res) => {
  */
 exports.testScenarioAgainstPoint = async (req, res) => {
     try {
-        const { practicePointText, clinicalNote, context, expectedApplicable, testNumber, scenarioType } = req.body;
+        const { practicePointText, clinicalNote, context, expectedApplicable, testNumber, scenarioType, guidelineId, practicePointId } = req.body;
         const userId = req.user.uid;
 
         if (!practicePointText || !clinicalNote || !context) {
@@ -682,6 +682,32 @@ exports.testScenarioAgainstPoint = async (req, res) => {
             citedExceptions: testResult.citedExceptions,
             citedEdgeCases: testResult.citedEdgeCases
         });
+
+        // Persist test result to contextEvolutionTests subcollection
+        if (guidelineId && practicePointId) {
+            try {
+                await db.collection('guidelines').doc(guidelineId)
+                    .collection('practicePoints').doc(practicePointId)
+                    .collection('contextEvolutionTests').add({
+                        scenarioType,
+                        clinicalNote,
+                        expectedApplicable,
+                        llmApplicable: testResult.applicable,
+                        reasoning: testResult.reasoning,
+                        confidence: testResult.confidence,
+                        evaluation: {
+                            isCorrect: analysis.isCorrect,
+                            resultType: analysis.resultType,
+                            reasoningQuality: analysis.reasoningQuality
+                        },
+                        contextVersion: context.version || 1,
+                        userId,
+                        timestamp: new Date().toISOString()
+                    });
+            } catch (saveErr) {
+                console.warn('[CE_TEST] Failed to save test result:', saveErr.message);
+            }
+        }
 
         res.json({
             success: true,

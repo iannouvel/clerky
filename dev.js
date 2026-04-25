@@ -7896,7 +7896,8 @@ ${responseText}
                     context: ce.context,
                     expectedApplicable: type === 'B',
                     scenarioType: type,
-                    guidelineId: ce.guidelineId
+                    guidelineId: ce.guidelineId,
+                    practicePointId: ce.pointId
                 })
             });
             const testData = await testRes.json();
