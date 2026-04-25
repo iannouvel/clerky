@@ -8625,8 +8625,25 @@ ${responseText}
             return results;
         }
 
+        // Semaphore: limits concurrent server calls across all guideline workers
+        function createSemaphore(max) {
+            let current = 0;
+            const queue = [];
+            return {
+                async acquire() {
+                    if (current < max) { current++; return; }
+                    await new Promise(resolve => queue.push(resolve));
+                    current++;
+                },
+                release() {
+                    current--;
+                    if (queue.length > 0) queue.shift()();
+                }
+            };
+        }
+
         // Process a single guideline: skip/load/run points. Returns result object.
-        async function ceProcessOneGuideline(item, pointConcurrency) {
+        async function ceProcessOneGuideline(item, pointConcurrency, httpSemaphore) {
             const token = await getCalibrationToken();
 
             // Fast path: use pre-fetched progressAll cache to skip without any server call
@@ -8641,10 +8658,17 @@ ${responseText}
             }
 
             // Not cached or partially complete — need per-point detail from server
-            const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
-                headers: { Authorization: `Bearer ${token}` }
-            });
-            const progData = await progRes.json();
+            // Use semaphore to avoid flooding the server
+            await httpSemaphore.acquire();
+            let progData;
+            try {
+                const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
+                    headers: { Authorization: `Bearer ${token}` }
+                });
+                progData = await progRes.json();
+            } finally {
+                httpSemaphore.release();
+            }
 
             if (progData.success && progData.allComplete) {
                 ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
@@ -8658,13 +8682,20 @@ ${responseText}
                 return { skipped: true, passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
             }
 
-            // Load practice points
-            const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
-                method: 'POST',
-                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                body: JSON.stringify({ guidelineId: item.id })
-            });
-            const data = await res.json();
+            // Load practice points (also serialised through semaphore)
+            await httpSemaphore.acquire();
+            let data;
+            try {
+                const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
+                    method: 'POST',
+                    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ guidelineId: item.id })
+                });
+                data = await res.json();
+            } finally {
+                httpSemaphore.release();
+            }
+
             if (!data.success || !data.points?.length) {
                 ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
                 return { skipped: true, passed: 0, failed: 0, totalPoints: 0, noPoints: true };
@@ -8713,6 +8744,10 @@ ${responseText}
             // Each active guideline gets an equal share of point-level concurrency
             const perGuidelineConcurrency = Math.max(1, Math.floor(totalConcurrency / GUIDELINE_PARALLELISM));
 
+            // Limit concurrent setup HTTP calls (progressBatch, ensurePracticePoints)
+            // to prevent flooding the server when multiple workers skip through fast
+            const httpSemaphore = createSemaphore(2);
+
             // Guideline-level worker pool (like ceRunParallelPoints but for guidelines)
             let nextGuidelineIdx = ceBatch.queueIdx;
             let completedGuidelineCount = Object.keys(ceBatch.completedGuidelines).length;
@@ -8737,7 +8772,7 @@ ${responseText}
                     ceAddHistory(`<strong>Batch [${idx + 1}/${ceBatch.queue.length}]:</strong> Starting ${item.displayName}`, '#6f42c1');
 
                     try {
-                        const result = await ceProcessOneGuideline(item, perGuidelineConcurrency);
+                        const result = await ceProcessOneGuideline(item, perGuidelineConcurrency, httpSemaphore);
 
                         if (result.noPoints) {
                             ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
