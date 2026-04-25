@@ -884,10 +884,11 @@ exports.saveContextEvolutionRunState = async (req, res) => {
         };
 
         // Batch mode fields (optional — only present during Run All)
-        const { batchMode, batchScope, batchQueue, batchQueueIdx, batchCompletedGuidelines, batchStartedAt } = req.body;
+        const { batchMode, batchScope, batchTrust, batchQueue, batchQueueIdx, batchCompletedGuidelines, batchStartedAt } = req.body;
         if (batchMode) {
             stateDoc.batchMode = true;
             stateDoc.batchScope = batchScope || null;
+            stateDoc.batchTrust = batchTrust || null;
             stateDoc.batchQueue = batchQueue || [];          // [{ id, displayName }]
             stateDoc.batchQueueIdx = batchQueueIdx || 0;
             stateDoc.batchCompletedGuidelines = batchCompletedGuidelines || {};
