@@ -291,6 +291,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-footer" id="${uniqueId}-actions">
                 <button class="sw-btn" onclick="prevWizardSuggestion()" ${backDisabled}>&#x25C4; Back</button>
                 <button class="sw-btn" onclick="skipWizardSuggestion()">Skip</button>
+                <button class="sw-btn sw-btn-feedback" onclick="openFeedbackModal()">Feedback</button>
                 <button class="sw-btn sw-btn-insert" onclick="acceptWizardSuggestion('${uniqueId}', this)">
                   <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>
                   ${acceptLabel}
