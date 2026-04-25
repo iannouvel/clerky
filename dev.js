@@ -8481,6 +8481,135 @@ ${responseText}
             });
         }
 
+        // ─── Parallel Point Processing ──────────────────────────────────────
+        // Self-contained: runs a single point to completion without touching global `ce` state
+        async function ceRunPointToCompletion(point, guidelineId) {
+            const s = {
+                pointId: point.id,
+                pointText: point.text || point.name || point.id,
+                context: {
+                    triggers: [point.text || point.name || point.id],
+                    criteria: point.text || point.name || point.id,
+                    exceptions: [],
+                    edgeCases: [],
+                    version: 1
+                },
+                tpCount: 0,
+                tnCount: 0,
+                attempts: 0,
+                nextScenarioType: 'A'
+            };
+
+            while (s.attempts < MAX_ATTEMPTS_PER_POINT && ceBatch.active) {
+                try {
+                    const type = s.nextScenarioType;
+                    const token = await getCalibrationToken();
+
+                    // Generate scenario
+                    const genRes = await fetch(`${SERVER_URL}/contextEvolution/generateScenario`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ practicePointText: s.pointText, scenarioType: type, guidelineId })
+                    });
+                    const genData = await genRes.json();
+                    if (!genData.success) { s.attempts++; continue; }
+
+                    // Test scenario
+                    const testRes = await fetch(`${SERVER_URL}/contextEvolution/testScenario`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            practicePointText: s.pointText,
+                            clinicalNote: genData.clinicalNote,
+                            context: s.context,
+                            expectedApplicable: type === 'B',
+                            scenarioType: type,
+                            guidelineId,
+                            practicePointId: s.pointId
+                        })
+                    });
+                    const testData = await testRes.json();
+                    if (!testData.success) { s.attempts++; continue; }
+
+                    const resultType = testData.evaluation?.resultType || '';
+                    if (resultType === 'TP') s.tpCount++;
+                    if (resultType === 'TN') s.tnCount++;
+                    s.attempts++;
+
+                    // Refine context on failure
+                    if (!testData.evaluation?.isCorrect) {
+                        try {
+                            const refRes = await fetch(`${SERVER_URL}/contextEvolution/refineContext`, {
+                                method: 'POST',
+                                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    practicePointText: s.pointText,
+                                    clinicalNote: genData.clinicalNote,
+                                    failureType: resultType,
+                                    llmReasoning: testData.llm?.reasoning || '',
+                                    currentContext: s.context,
+                                    guidelineId
+                                })
+                            });
+                            const refData = await refRes.json();
+                            if (refData.success && refData.suggestedChanges?.length > 0) {
+                                for (const change of refData.suggestedChanges) {
+                                    if (change.field === 'criteria') {
+                                        if (change.action === 'replace') s.context.criteria = change.suggested;
+                                        else s.context.criteria += ' ' + change.suggested;
+                                    } else if (Array.isArray(s.context[change.field])) {
+                                        if (change.action === 'add') s.context[change.field].push(change.suggested);
+                                        else if (change.action === 'replace') s.context[change.field] = [change.suggested];
+                                    }
+                                }
+                                s.context.version = (s.context.version || 1) + 1;
+                            }
+                        } catch (refErr) { /* refinement failure is non-fatal */ }
+                    }
+
+                    // Focus on whichever side still needs hits
+                    if (s.tnCount < 3 && s.tpCount >= 3) s.nextScenarioType = 'A';
+                    else if (s.tpCount < 3 && s.tnCount >= 3) s.nextScenarioType = 'B';
+                    else s.nextScenarioType = type === 'A' ? 'B' : 'A';
+
+                    if (s.tpCount >= 3 && s.tnCount >= 3) return { passed: true, ...s };
+                } catch (err) {
+                    s.attempts++;
+                }
+            }
+            return { passed: false, ...s };
+        }
+
+        // Runs multiple points concurrently with a worker pool
+        async function ceRunParallelPoints(points, guidelineId, concurrency) {
+            let nextIdx = 0;
+            let completedCount = 0;
+            const totalPoints = points.length;
+            const results = {}; // { idx: 'passed'|'failed' }
+
+            async function worker() {
+                while (nextIdx < totalPoints && ceBatch.active) {
+                    const idx = nextIdx++;
+                    if (idx >= totalPoints) break;
+                    const point = points[idx];
+                    const shortName = (point.text || point.name || point.id).slice(0, 80);
+
+                    const result = await ceRunPointToCompletion(point, guidelineId);
+                    completedCount++;
+                    results[idx] = result.passed ? 'passed' : 'failed';
+
+                    const col = result.passed ? '#28a745' : '#dc3545';
+                    const label = result.passed ? 'passed' : 'failed';
+                    ceAddHistory(`[${completedCount}/${totalPoints}] ${shortName}${shortName.length < (point.text||'').length ? '...' : ''} — <strong style="color:${col}">${label}</strong> (${result.tpCount}TP + ${result.tnCount}TN, ${result.attempts} attempts)`, col);
+                    ceBatchSetStatus(`Guideline ${ceBatch.queueIdx + 1}/${ceBatch.queue.length} | Points: ${completedCount}/${totalPoints} (${concurrency} parallel)`);
+                }
+            }
+
+            const workers = Array.from({ length: Math.min(concurrency, totalPoints) }, () => worker());
+            await Promise.all(workers);
+            return results;
+        }
+
         // Main batch loop — processes all guidelines in the queue sequentially
         async function ceBatchRunLoop() {
             ceBatch.active = true;
@@ -8540,17 +8669,13 @@ ${responseText}
 
                     ceDashboardUpdateRow(item.id, 'running', 0, 0, totalPoints);
 
-                    // Reset point-level state and run
-                    ce.pointIdx = 0;
-                    Object.keys(cePointResults).forEach(k => delete cePointResults[k]);
-                    ceStartPoint();
-                    ce.step = 3;
-
-                    await ceRunLoopAsync();
+                    // Run points in parallel
+                    const concurrency = parseInt(document.getElementById('ceConcurrency')?.value) || 3;
+                    const pointResults = await ceRunParallelPoints(ce.allPoints, item.id, concurrency);
 
                     // Record results
-                    const passed = Object.values(cePointResults).filter(r => r === 'passed').length;
-                    const failed = Object.values(cePointResults).filter(r => r === 'failed').length;
+                    const passed = Object.values(pointResults).filter(r => r === 'passed').length;
+                    const failed = Object.values(pointResults).filter(r => r === 'failed').length;
                     ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints };
                     ceDashboardUpdateRow(item.id, 'complete', passed, failed, totalPoints);
                     ceAddHistory(`Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${passed} passed, ${failed} failed`, '#28a745');
