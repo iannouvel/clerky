@@ -8657,22 +8657,22 @@ ${responseText}
                 ceAddHistory(`Skipping ${item.displayName} — all ${cached.totalPoints} points already complete`, '#17a2b8');
                 return { skipped: true, passed: cached.completedCount || cached.totalPoints, failed: 0, totalPoints: cached.totalPoints };
             }
-            if (cached && cached.totalPoints === 0) {
-                ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
-                return { skipped: true, passed: 0, failed: 0, totalPoints: 0, noPoints: true };
-            }
 
-            // Not cached or partially complete — need per-point detail from server
-            // Use semaphore to avoid flooding the server
-            await httpSemaphore.acquire();
-            let progData;
-            try {
-                const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
-                    headers: { Authorization: `Bearer ${token}` }
-                });
-                progData = await progRes.json();
-            } finally {
-                httpSemaphore.release();
+            // If cache says 0 points, skip the progressBatch call — go straight to ensurePracticePoints
+            // (points need generating, not skipping)
+            let progData = { success: false };
+            if (!(cached && cached.totalPoints === 0)) {
+                // Not cached or partially complete — need per-point detail from server
+                // Use semaphore to avoid flooding the server
+                await httpSemaphore.acquire();
+                try {
+                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    progData = await progRes.json();
+                } finally {
+                    httpSemaphore.release();
+                }
             }
 
             if (progData.success && progData.allComplete) {
