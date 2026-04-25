@@ -585,6 +585,7 @@
             <button class="nav-btn" data-content="discoveryContent">Discovery</button>
             <button class="nav-btn" data-content="transcriptsContent">Transcripts</button>
             <button class="nav-btn" data-content="calibrationDashboardContent">Calibration</button>
+            <button class="nav-btn" data-content="feedbackContent">Feedback</button>
             <button class="nav-btn" data-content="dangerContent">Danger</button>
         </div>
         <div class="top-bar-right"></div>
@@ -1770,6 +1771,39 @@
                     </div>
                 </div>
             </div>
+
+        <!-- ─── Feedback Tab ─────────────────────────────────────────────── -->
+        <div class="tab-content" id="feedbackContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>User Feedback</h4>
+                <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;">
+                    <label style="font-size:13px;color:var(--text-secondary);">Filter:</label>
+                    <select id="feedbackFilter" style="padding:5px 8px;border-radius:6px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);font-size:13px;">
+                        <option value="unactioned">Unactioned</option>
+                        <option value="actioned">Actioned</option>
+                        <option value="all">All</option>
+                    </select>
+                    <button id="feedbackRefreshBtn" class="action-btn" style="font-size:13px;padding:5px 12px;">Refresh</button>
+                    <span id="feedbackCount" style="font-size:12px;color:var(--text-secondary);margin-left:auto;"></span>
+                </div>
+                <div id="feedbackTableContainer" style="overflow-x:auto;">
+                    <table id="feedbackTable" style="width:100%;border-collapse:collapse;font-size:13px;">
+                        <thead>
+                            <tr style="border-bottom:2px solid var(--border-color);text-align:left;">
+                                <th style="padding:8px 6px;width:140px;">Date</th>
+                                <th style="padding:8px 6px;width:160px;">User</th>
+                                <th style="padding:8px 6px;">Feedback</th>
+                                <th style="padding:8px 6px;width:180px;">Context</th>
+                                <th style="padding:8px 6px;width:100px;">Status</th>
+                                <th style="padding:8px 6px;width:100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="feedbackTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         </div>
     </div>
     <script type="module" src="dev.js"></script>
