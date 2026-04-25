@@ -3,7 +3,7 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 // Updated imports to include collection and getDocs
-import { doc, getDoc, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { doc, getDoc, collection, getDocs, query, orderBy, limit as fbLimit, updateDoc, where } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Fetch guidelines using modular Firestore API
 // Removed top-level Firestore fetch; logic moved to syncClinicalIssues function
@@ -1651,6 +1651,11 @@ ${responseText}
                     // If it's the logs tab, fetch logs from Firestore
                     if (contentId === 'logsContent') {
                         fetchRecentLogs();
+                    }
+
+                    // If it's the feedback tab, fetch feedback
+                    if (contentId === 'feedbackContent') {
+                        fetchFeedback();
                     }
                 }
             });
@@ -10028,3 +10033,143 @@ if (document.readyState === 'loading') {
 } else {
     initFirestoreViewer();
 }
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// FEEDBACK TAB
+// ═══════════════════════════════════════════════════════════════════════════════
+
+let _feedbackCache = null;
+
+async function fetchFeedback() {
+    const tbody = document.getElementById('feedbackTableBody');
+    const countEl = document.getElementById('feedbackCount');
+    if (!tbody) return;
+
+    tbody.innerHTML = '<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">Loading feedback...</td></tr>';
+
+    try {
+        const q = query(collection(db, 'feedback'), orderBy('submittedAt', 'desc'), fbLimit(100));
+        const snap = await getDocs(q);
+        _feedbackCache = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        renderFeedbackTable();
+    } catch (err) {
+        console.error('[FEEDBACK] Failed to fetch:', err);
+        tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:#c62828;">Failed to load feedback: ${err.message}</td></tr>`;
+    }
+}
+
+function renderFeedbackTable() {
+    const tbody = document.getElementById('feedbackTableBody');
+    const countEl = document.getElementById('feedbackCount');
+    const filter = document.getElementById('feedbackFilter')?.value || 'unactioned';
+    if (!tbody || !_feedbackCache) return;
+
+    const filtered = _feedbackCache.filter(fb => {
+        if (filter === 'unactioned') return !fb.actioned;
+        if (filter === 'actioned') return !!fb.actioned;
+        return true;
+    });
+
+    if (countEl) countEl.textContent = `${filtered.length} of ${_feedbackCache.length} total`;
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">No ${filter === 'all' ? '' : filter + ' '}feedback found.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = filtered.map(fb => {
+        const ts = fb.submittedAt?.toDate ? fb.submittedAt.toDate() : (fb.submittedAt ? new Date(fb.submittedAt) : null);
+        const dateStr = ts ? ts.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + ts.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '—';
+        const email = fb.userEmail || 'anonymous';
+
+        // Build context summary
+        const contextParts = [];
+        if (fb.wizardState?.currentSuggestion) {
+            const sug = fb.wizardState.currentSuggestion;
+            contextParts.push(`Suggestion: "${(sug.suggestion || sug.missing_info || '').slice(0, 80)}"`);
+        }
+        if (fb.lastInteraction?.buttonLabel) {
+            contextParts.push(`After: "${fb.lastInteraction.buttonLabel}"`);
+        }
+        if (fb.lastAiContext?.source) {
+            contextParts.push(`Phase: ${fb.lastAiContext.source}`);
+        }
+        const contextStr = contextParts.length > 0 ? contextParts.join('<br>') : '<span style="color:var(--text-secondary)">—</span>';
+
+        const statusBadge = fb.actioned
+            ? `<span style="background:#2e7d32;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">Actioned</span>`
+            : `<span style="background:#e65100;color:white;padding:2px 8px;border-radius:10px;font-size:11px;">Open</span>`;
+
+        const actionBtn = fb.actioned
+            ? `<button class="action-btn" style="font-size:11px;padding:3px 8px;" onclick="markFeedback('${fb.id}', false)">Reopen</button>`
+            : `<button class="action-btn" style="font-size:11px;padding:3px 8px;" onclick="markFeedback('${fb.id}', true)">Mark Done</button>`;
+
+        const explanation = (fb.userExplanation || '').replace(/</g, '&lt;');
+
+        return `<tr style="border-bottom:1px solid var(--border-color);vertical-align:top;" data-fb-id="${fb.id}">
+            <td style="padding:8px 6px;white-space:nowrap;">${dateStr}</td>
+            <td style="padding:8px 6px;">${email}</td>
+            <td style="padding:8px 6px;"><div style="max-width:400px;word-break:break-word;">${explanation}</div></td>
+            <td style="padding:8px 6px;font-size:11px;"><div style="max-width:200px;word-break:break-word;">${contextStr}</div></td>
+            <td style="padding:8px 6px;text-align:center;">${statusBadge}</td>
+            <td style="padding:8px 6px;text-align:center;">${actionBtn}<br><button class="action-btn" style="font-size:11px;padding:3px 8px;margin-top:4px;" onclick="showFeedbackDetail('${fb.id}')">Detail</button></td>
+        </tr>`;
+    }).join('');
+}
+
+window.markFeedback = async function (feedbackId, actioned) {
+    try {
+        await updateDoc(doc(db, 'feedback', feedbackId), {
+            actioned: actioned,
+            actionedAt: actioned ? new Date().toISOString() : null
+        });
+        // Update cache
+        const item = _feedbackCache?.find(f => f.id === feedbackId);
+        if (item) {
+            item.actioned = actioned;
+            item.actionedAt = actioned ? new Date().toISOString() : null;
+        }
+        renderFeedbackTable();
+    } catch (err) {
+        console.error('[FEEDBACK] Failed to update:', err);
+        alert('Failed to update feedback: ' + err.message);
+    }
+};
+
+window.showFeedbackDetail = function (feedbackId) {
+    const fb = _feedbackCache?.find(f => f.id === feedbackId);
+    if (!fb) return;
+
+    // Build detail view in a modal-style overlay
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;';
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+
+    const safeJson = (obj) => JSON.stringify(obj, null, 2)?.replace(/</g, '&lt;') || '—';
+
+    overlay.innerHTML = `
+        <div style="background:var(--bg-primary);border-radius:12px;max-width:700px;width:90%;max-height:85vh;overflow-y:auto;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <h3 style="margin:0;">Feedback Detail</h3>
+                <button onclick="this.closest('div[style*=fixed]').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-primary);">&times;</button>
+            </div>
+            <div style="font-size:13px;display:flex;flex-direction:column;gap:12px;">
+                <div><strong>ID:</strong> ${fb.id}</div>
+                <div><strong>User:</strong> ${fb.userEmail || 'anonymous'}</div>
+                <div><strong>Explanation:</strong><br><div style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;white-space:pre-wrap;">${(fb.userExplanation || '').replace(/</g, '&lt;')}</div></div>
+                ${fb.wizardState ? `<div><strong>Wizard State:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.wizardState)}</pre></div>` : ''}
+                ${fb.lastAiContext ? `<div><strong>AI Context:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.lastAiContext)}</pre></div>` : ''}
+                ${fb.lastInteraction ? `<div><strong>Last Interaction:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.lastInteraction)}</pre></div>` : ''}
+                ${fb.currentState ? `<div><strong>UI State:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.currentState)}</pre></div>` : ''}
+                ${fb.actionedAt ? `<div><strong>Actioned:</strong> ${fb.actionedAt}</div>` : ''}
+            </div>
+        </div>
+    `;
+    document.body.appendChild(overlay);
+};
+
+// Wire up filter change and refresh button
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('feedbackFilter')?.addEventListener('change', renderFeedbackTable);
+    document.getElementById('feedbackRefreshBtn')?.addEventListener('click', fetchFeedback);
+});
