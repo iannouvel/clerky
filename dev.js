@@ -7691,6 +7691,16 @@ ${responseText}
             running: false
         };
 
+        // ─── Batch Calibration State ──────────────────────────────────────────
+        const ceBatch = {
+            active: false,
+            scope: null,
+            queue: [],           // [{ id, displayName }]
+            queueIdx: 0,
+            completedGuidelines: {},  // { guidelineId: { passed, failed, totalPoints } }
+            startedAt: null
+        };
+
         const ceBtn = document.getElementById('contextCalibButton');
         const ceContent = document.getElementById('contextCalibCurrent');
         const ceStatus = document.getElementById('contextCalibStatus');
@@ -7711,21 +7721,30 @@ ${responseText}
         async function ceSaveState() {
             try {
                 const token = await getCalibrationToken();
+                const payload = {
+                    guidelineId: ce.guidelineId,
+                    guidelineName: ce.guidelineName,
+                    allPoints: ce.allPoints,
+                    pointIdx: ce.pointIdx,
+                    tpCount: ce.tpCount,
+                    tnCount: ce.tnCount,
+                    attempts: ce.attempts,
+                    nextScenarioType: ce.nextScenarioType,
+                    context: ce.context,
+                    pointResults: cePointResults
+                };
+                if (ceBatch.active) {
+                    payload.batchMode = true;
+                    payload.batchScope = ceBatch.scope;
+                    payload.batchQueue = ceBatch.queue;
+                    payload.batchQueueIdx = ceBatch.queueIdx;
+                    payload.batchCompletedGuidelines = ceBatch.completedGuidelines;
+                    payload.batchStartedAt = ceBatch.startedAt;
+                }
                 await fetch(`${SERVER_URL}/contextEvolution/saveRunState`, {
                     method: 'POST',
                     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        guidelineId: ce.guidelineId,
-                        guidelineName: ce.guidelineName,
-                        allPoints: ce.allPoints,
-                        pointIdx: ce.pointIdx,
-                        tpCount: ce.tpCount,
-                        tnCount: ce.tnCount,
-                        attempts: ce.attempts,
-                        nextScenarioType: ce.nextScenarioType,
-                        context: ce.context,
-                        pointResults: cePointResults
-                    })
+                    body: JSON.stringify(payload)
                 });
             } catch (e) { console.warn('[CE] Failed to save state:', e.message); }
         }
@@ -8018,10 +8037,19 @@ ${responseText}
             ce.running = false;
             if (ce.pointIdx >= ce.allPoints.length) {
                 ceAddHistory(`<strong>All ${ce.allPoints.length} points complete</strong>`, '#28a745');
-                ceSetStep(5, 'Done — Click to Restart');
-                ceSetStatus('All points complete');
-                ceClearState();  // run complete, clear saved state
+                if (ce._onLoopComplete) {
+                    // Batch mode — signal the batch loop to advance
+                    ce._onLoopComplete();
+                } else {
+                    ceSetStep(5, 'Done — Click to Restart');
+                    ceSetStatus('All points complete');
+                    ceClearState();  // run complete, clear saved state
+                }
             } else {
+                if (ce._onLoopComplete) {
+                    // Batch mode stopped mid-guideline — resolve promise so batch loop can exit
+                    ce._onLoopComplete();
+                }
                 ceSaveState();   // paused/stopped mid-run — persist for later resume
             }
             ceBtn.disabled = false;
@@ -8060,7 +8088,74 @@ ${responseText}
                 try {
                     const saved = await ceCheckSavedState();
                     if (saved) {
-                        // Offer continue or restart
+                        if (saved.batchMode) {
+                            // Batch run found — offer batch resume
+                            const batchDone = Object.keys(saved.batchCompletedGuidelines || {}).length;
+                            const batchTotal = (saved.batchQueue || []).length;
+                            ceContent.innerHTML = `
+                                <div style="padding:8px;background:var(--bg-secondary);border-radius:4px;font-size:12px;line-height:1.6;">
+                                    <div style="margin-bottom:8px;"><strong>Batch run found:</strong> scope "${saved.batchScope}"</div>
+                                    <div style="margin-bottom:8px;">Guidelines: ${batchDone}/${batchTotal} complete, currently on "${saved.guidelineName || saved.guidelineId}"</div>
+                                    <div style="display:flex;gap:8px;">
+                                        <button id="ceBatchContinueBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:5px 12px;font-size:12px;">Continue Batch</button>
+                                        <button id="ceBatchAbandonBtn" class="dev-btn" style="background-color:#dc3545;color:#fff;border-color:#dc3545;padding:5px 12px;font-size:12px;">Abandon & Start Fresh</button>
+                                    </div>
+                                </div>`;
+                            ceContent.style.display = 'block';
+                            ceSetStatus('');
+                            ceBtn.disabled = false;
+                            document.getElementById('ceBatchContinueBtn').addEventListener('click', async () => {
+                                ceContent.style.display = 'none';
+                                // Restore batch state
+                                ceBatch.active = true;
+                                ceBatch.scope = saved.batchScope;
+                                ceBatch.queue = saved.batchQueue || [];
+                                ceBatch.queueIdx = saved.batchQueueIdx || 0;
+                                ceBatch.completedGuidelines = saved.batchCompletedGuidelines || {};
+                                ceBatch.startedAt = saved.batchStartedAt;
+
+                                if (ceScopeSel) ceScopeSel.value = ceBatch.scope || '';
+                                await ceRenderDashboard();
+                                for (const [gId, result] of Object.entries(ceBatch.completedGuidelines)) {
+                                    ceDashboardUpdateRow(gId, 'complete', result.passed || 0, result.failed || 0, result.totalPoints || 0);
+                                }
+
+                                // Restore and run current guideline, then continue batch
+                                ceRunAllBtn.style.display = 'none';
+                                ceStopBatchBtn.style.display = '';
+                                ce._onLoopComplete = () => {
+                                    ce._onLoopComplete = null;
+                                    if (!ceBatch.active) {
+                                        // Stopped by user — don't advance batch
+                                        ceStopBatchBtn.style.display = 'none';
+                                        ceRunAllBtn.style.display = '';
+                                        ceBatchSetStatus('Batch stopped');
+                                        ceSetStep(1, 'Select Guideline');
+                                        ceBtn.disabled = false;
+                                        return;
+                                    }
+                                    // Record results for current guideline
+                                    const passed = Object.values(cePointResults).filter(r => r === 'passed').length;
+                                    const failed = Object.values(cePointResults).filter(r => r === 'failed').length;
+                                    const item = ceBatch.queue[ceBatch.queueIdx];
+                                    ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints: ce.allPoints.length };
+                                    ceDashboardUpdateRow(item.id, 'complete', passed, failed, ce.allPoints.length);
+                                    ceBatch.queueIdx++;
+                                    ceSaveState();
+                                    // Continue with remaining guidelines
+                                    ceBatchRunLoop();
+                                };
+                                ceRestoreAndResume(saved);
+                            });
+                            document.getElementById('ceBatchAbandonBtn').addEventListener('click', async () => {
+                                ceContent.style.display = 'none';
+                                await ceClearState();
+                                ceShowGuidelineSelector();
+                            });
+                            return;
+                        }
+
+                        // Single-guideline run found — offer continue or restart
                         const passed = Object.values(saved.pointResults || {}).filter(r => r === 'passed').length;
                         const failed = Object.values(saved.pointResults || {}).filter(r => r === 'failed').length;
                         const total = (saved.allPointIds || []).length;
@@ -8229,6 +8324,271 @@ ${responseText}
         }
 
         if (ceBtn) ceBtn.addEventListener('click', ceHandleClick);
+
+        // ─── Batch Calibration Functions ──────────────────────────────────────
+        const ceScopeSel = document.getElementById('ceScopeSel');
+        const ceRunAllBtn = document.getElementById('ceRunAllBtn');
+        const ceStopBatchBtn = document.getElementById('ceStopBatchBtn');
+        const ceBatchStatusEl = document.getElementById('ceBatchStatus');
+        const ceDashboard = document.getElementById('ceDashboard');
+
+        function ceBatchSetStatus(msg) { if (ceBatchStatusEl) ceBatchStatusEl.textContent = msg || ''; }
+
+        // Populate scope dropdown on calibration tab open
+        async function cePopulateScopes() {
+            if (!ceScopeSel) return;
+            try {
+                const guidelines = await fetchCalibrationGuidelines();
+                buildScopeOptions(guidelines, ceScopeSel);
+            } catch (e) { console.warn('[CE_BATCH] Failed to populate scopes:', e.message); }
+        }
+
+        // Render the dashboard table showing all guidelines in scope with progress
+        async function ceRenderDashboard() {
+            if (!ceDashboard) return;
+            const scope = ceScopeSel?.value;
+            if (!scope) {
+                ceDashboard.style.display = 'none';
+                return;
+            }
+
+            ceDashboard.style.display = 'block';
+            ceDashboard.innerHTML = '<div style="padding:10px;font-size:11px;color:var(--text-secondary);">Loading progress...</div>';
+
+            try {
+                const token = await getCalibrationToken();
+                const [guidelines, progressRes] = await Promise.all([
+                    fetchCalibrationGuidelines(),
+                    fetch(`${SERVER_URL}/contextEvolution/progressAll?scope=${encodeURIComponent(scope)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    }).then(r => r.json())
+                ]);
+
+                const filtered = guidelines.filter(g => g.scope === scope);
+                const progress = progressRes.success ? progressRes.guidelines : {};
+
+                if (filtered.length === 0) {
+                    ceDashboard.innerHTML = '<div style="padding:10px;font-size:11px;color:var(--text-secondary);">No guidelines in this scope.</div>';
+                    return;
+                }
+
+                let html = `<table style="width:100%;border-collapse:collapse;font-size:11px;">
+                    <thead><tr style="background:var(--bg-secondary);border-bottom:1px solid var(--border-color);">
+                        <th style="text-align:left;padding:6px 8px;">Guideline</th>
+                        <th style="text-align:center;padding:6px 8px;width:80px;">Progress</th>
+                        <th style="text-align:center;padding:6px 8px;width:90px;">Status</th>
+                    </tr></thead><tbody>`;
+
+                for (const g of filtered) {
+                    const name = g.displayName || g.humanFriendlyTitle || g.title || g.id;
+                    const p = progress[g.id] || { totalPoints: 0, completedCount: 0, allComplete: false };
+                    const badge = ceBatchBadge(p);
+                    html += `<tr id="ceDashRow-${g.id}" style="border-bottom:1px solid var(--border-color);">
+                        <td style="padding:5px 8px;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${name}">${name}</td>
+                        <td style="text-align:center;padding:5px 8px;">${p.completedCount}/${p.totalPoints}</td>
+                        <td style="text-align:center;padding:5px 8px;">${badge}</td>
+                    </tr>`;
+                }
+                html += '</tbody></table>';
+                ceDashboard.innerHTML = html;
+            } catch (e) {
+                ceDashboard.innerHTML = `<div style="padding:10px;font-size:11px;color:#dc3545;">Error loading dashboard: ${e.message}</div>`;
+            }
+        }
+
+        function ceBatchBadge(progress) {
+            if (!progress || progress.totalPoints === 0) {
+                return '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#6c757d33;color:var(--text-secondary);">No points</span>';
+            }
+            if (progress.allComplete) {
+                return '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#28a74533;color:#28a745;font-weight:600;">Complete</span>';
+            }
+            if (progress.completedCount > 0) {
+                return '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#ff980033;color:#ff9800;">Partial</span>';
+            }
+            return '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:var(--bg-secondary);color:var(--text-secondary);">Not started</span>';
+        }
+
+        function ceDashboardUpdateRow(guidelineId, statusLabel, passed, failed, totalPoints) {
+            const row = document.getElementById(`ceDashRow-${guidelineId}`);
+            if (!row) return;
+            const cells = row.querySelectorAll('td');
+            if (cells.length >= 3) {
+                const completedCount = passed + failed;
+                cells[1].textContent = `${completedCount}/${totalPoints}`;
+                let badge;
+                if (statusLabel === 'running') {
+                    badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#6f42c133;color:#6f42c1;font-weight:600;">Running</span>';
+                } else if (statusLabel === 'complete') {
+                    badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#28a74533;color:#28a745;font-weight:600;">Complete</span>';
+                } else if (statusLabel === 'skipped') {
+                    badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#17a2b833;color:#17a2b8;">Skipped</span>';
+                } else {
+                    badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:var(--bg-secondary);color:var(--text-secondary);">Pending</span>';
+                }
+                cells[2].innerHTML = badge;
+            }
+        }
+
+        // Promisified wrapper for ceRunLoop — resolves when the loop finishes for current guideline
+        function ceRunLoopAsync() {
+            return new Promise(resolve => {
+                ce._onLoopComplete = () => {
+                    ce._onLoopComplete = null;
+                    resolve();
+                };
+                ceRunLoop();
+            });
+        }
+
+        // Main batch loop — processes all guidelines in the queue sequentially
+        async function ceBatchRunLoop() {
+            ceBatch.active = true;
+            ceRunAllBtn.style.display = 'none';
+            ceStopBatchBtn.style.display = '';
+
+            while (ceBatch.active && ceBatch.queueIdx < ceBatch.queue.length) {
+                const item = ceBatch.queue[ceBatch.queueIdx];
+                ceBatchSetStatus(`Guideline ${ceBatch.queueIdx + 1}/${ceBatch.queue.length}: ${item.displayName}`);
+                ceDashboardUpdateRow(item.id, 'running', 0, 0, 0);
+                ceAddHistory(`<strong>Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]:</strong> Starting ${item.displayName}`, '#6f42c1');
+
+                try {
+                    // Set up ce state for this guideline
+                    ce.guidelineId = item.id;
+                    ce.guidelineName = item.displayName;
+
+                    // Load practice points
+                    const token = await getCalibrationToken();
+                    const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
+                        method: 'POST',
+                        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ guidelineId: item.id })
+                    });
+                    const data = await res.json();
+                    if (!data.success || !data.points?.length) {
+                        ceAddHistory(`Skipping ${item.displayName} — no practice points`, '#ff9800');
+                        ceDashboardUpdateRow(item.id, 'skipped', 0, 0, 0);
+                        ceBatch.queueIdx++;
+                        ceSaveState();
+                        continue;
+                    }
+                    ce.allPoints = data.points;
+
+                    // Check existing progress — skip already-complete points
+                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const progData = await progRes.json();
+
+                    if (progData.success && progData.allComplete) {
+                        ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
+                        ceBatch.completedGuidelines[item.id] = { passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
+                        ceDashboardUpdateRow(item.id, 'complete', progData.completedCount, 0, progData.totalPoints);
+                        ceBatch.queueIdx++;
+                        ceSaveState();
+                        continue;
+                    }
+
+                    // Filter to incomplete points if some already done
+                    let totalPoints = ce.allPoints.length;
+                    if (progData.success && progData.completedCount > 0) {
+                        const incompletePoints = ce.allPoints.filter(p => !progData.points[p.id]?.isComplete);
+                        ceAddHistory(`${progData.completedCount}/${totalPoints} already evolved, running ${incompletePoints.length} remaining`, '#17a2b8');
+                        ce.allPoints = incompletePoints;
+                    }
+
+                    ceDashboardUpdateRow(item.id, 'running', 0, 0, totalPoints);
+
+                    // Reset point-level state and run
+                    ce.pointIdx = 0;
+                    Object.keys(cePointResults).forEach(k => delete cePointResults[k]);
+                    ceStartPoint();
+                    ce.step = 3;
+
+                    await ceRunLoopAsync();
+
+                    // Record results
+                    const passed = Object.values(cePointResults).filter(r => r === 'passed').length;
+                    const failed = Object.values(cePointResults).filter(r => r === 'failed').length;
+                    ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints };
+                    ceDashboardUpdateRow(item.id, 'complete', passed, failed, totalPoints);
+                    ceAddHistory(`Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${passed} passed, ${failed} failed`, '#28a745');
+
+                } catch (err) {
+                    ceAddHistory(`Batch error on ${item.displayName}: ${err.message}`, '#dc3545');
+                    ceBatch.completedGuidelines[item.id] = { passed: 0, failed: 0, totalPoints: 0, error: err.message };
+                    ceDashboardUpdateRow(item.id, 'complete', 0, 0, 0);
+                }
+
+                ceBatch.queueIdx++;
+                ceSaveState();
+            }
+
+            // Batch finished or stopped
+            ceBatch.active = false;
+            ceStopBatchBtn.style.display = 'none';
+            ceRunAllBtn.style.display = '';
+
+            if (ceBatch.queueIdx >= ceBatch.queue.length) {
+                ceBatchSetStatus('Batch complete');
+                ceAddHistory(`<strong>Batch run complete:</strong> ${ceBatch.queue.length} guidelines processed`, '#28a745');
+                ceClearState();
+            } else {
+                ceBatchSetStatus('Batch stopped');
+                ceSaveState();
+            }
+
+            // Reset single-guideline UI
+            ceSetStep(1, 'Select Guideline');
+            ceBtn.disabled = false;
+        }
+
+        // Event listeners for batch controls
+        if (ceScopeSel) {
+            ceScopeSel.addEventListener('change', ceRenderDashboard);
+        }
+
+        if (ceRunAllBtn) {
+            ceRunAllBtn.addEventListener('click', async () => {
+                const scope = ceScopeSel?.value;
+                if (!scope) {
+                    ceBatchSetStatus('Please select a scope first');
+                    return;
+                }
+
+                const guidelines = await fetchCalibrationGuidelines();
+                const filtered = guidelines.filter(g => g.scope === scope);
+                if (filtered.length === 0) {
+                    ceBatchSetStatus('No guidelines in this scope');
+                    return;
+                }
+
+                // Build the queue
+                ceBatch.scope = scope;
+                ceBatch.queue = filtered.map(g => ({
+                    id: g.id,
+                    displayName: g.displayName || g.humanFriendlyTitle || g.title || g.id
+                }));
+                ceBatch.queueIdx = 0;
+                ceBatch.completedGuidelines = {};
+                ceBatch.startedAt = new Date().toISOString();
+
+                ceHistory.innerHTML = '';
+                ceAddHistory(`<strong>Starting batch run:</strong> ${filtered.length} guidelines in scope "${scope}"`, '#6f42c1');
+
+                ceBatchRunLoop();
+            });
+        }
+
+        if (ceStopBatchBtn) {
+            ceStopBatchBtn.addEventListener('click', () => {
+                ceBatch.active = false;
+                ce.running = false;
+                ceBatchSetStatus('Stopping after current cycle...');
+            });
+        }
+
         // ─────────────────────────────────────────────────────────────────────
 
         // Populate guideline dropdown when calibration tab opens
@@ -8236,6 +8596,7 @@ ${responseText}
         if (calTabTrigger) calTabTrigger.addEventListener('click', () => {
             populateCalibrationGuidelineSelect();
             populateDashGuidelineSelect();
+            cePopulateScopes();
         });
         // ─────────────────────────────────────────────────────────────────────
 
