@@ -3,7 +3,7 @@ import { app, db, auth } from './firebase-init.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 // Updated imports to include collection and getDocs
-import { doc, getDoc, collection, getDocs, query, orderBy, limit as fbLimit, updateDoc, where } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { doc, getDoc, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 // Fetch guidelines using modular Firestore API
 // Removed top-level Firestore fetch; logic moved to syncClinicalIssues function
@@ -10042,15 +10042,20 @@ let _feedbackCache = null;
 
 async function fetchFeedback() {
     const tbody = document.getElementById('feedbackTableBody');
-    const countEl = document.getElementById('feedbackCount');
     if (!tbody) return;
 
     tbody.innerHTML = '<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">Loading feedback...</td></tr>';
 
     try {
-        const q = query(collection(db, 'feedback'), orderBy('submittedAt', 'desc'), fbLimit(100));
-        const snap = await getDocs(q);
-        _feedbackCache = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        const user = auth.currentUser;
+        if (!user) throw new Error('Not authenticated');
+        const token = await user.getIdToken();
+        const resp = await fetch(`${SERVER_URL}/getFeedback?limit=100`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const data = await resp.json();
+        if (!data.success) throw new Error(data.error || 'Unknown error');
+        _feedbackCache = data.feedback;
         renderFeedbackTable();
     } catch (err) {
         console.error('[FEEDBACK] Failed to fetch:', err);
@@ -10078,7 +10083,7 @@ function renderFeedbackTable() {
     }
 
     tbody.innerHTML = filtered.map(fb => {
-        const ts = fb.submittedAt?.toDate ? fb.submittedAt.toDate() : (fb.submittedAt ? new Date(fb.submittedAt) : null);
+        const ts = fb.submittedAt ? new Date(fb.submittedAt) : null;
         const dateStr = ts ? ts.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + ts.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '—';
         const email = fb.userEmail || 'anonymous';
 
@@ -10119,10 +10124,16 @@ function renderFeedbackTable() {
 
 window.markFeedback = async function (feedbackId, actioned) {
     try {
-        await updateDoc(doc(db, 'feedback', feedbackId), {
-            actioned: actioned,
-            actionedAt: actioned ? new Date().toISOString() : null
+        const user = auth.currentUser;
+        if (!user) throw new Error('Not authenticated');
+        const token = await user.getIdToken();
+        const resp = await fetch(`${SERVER_URL}/markFeedback`, {
+            method: 'POST',
+            headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ feedbackId, actioned })
         });
+        const data = await resp.json();
+        if (!data.success) throw new Error(data.error || 'Unknown error');
         // Update cache
         const item = _feedbackCache?.find(f => f.id === feedbackId);
         if (item) {
