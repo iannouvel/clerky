@@ -3552,6 +3552,11 @@ body {
     cursor: not-allowed;
 }
 
+.sw-btn-feedback {
+    color: var(--text-secondary, #777);
+    font-size: 0.78em;
+}
+
 .sw-btn-insert {
     background: var(--accent-color);
     color: white;
