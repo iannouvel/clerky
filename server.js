@@ -2205,6 +2205,49 @@ app.post('/updateTranscript/:conditionId', authenticateUser, async (req, res) =>
     }
 });
 
+// Endpoint to add a new custom clinical condition
+app.post('/addClinicalCondition', authenticateUser, async (req, res) => {
+    try {
+        const { name, category = 'obstetrics' } = req.body;
+
+        if (!name || name.trim() === '') {
+            return res.status(400).json({ success: false, error: 'Condition name is required' });
+        }
+
+        const trimmedName = name.trim();
+        const docId = `${category}-${trimmedName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+
+        console.log('[ADD-CONDITION] Adding new condition:', { docId, name: trimmedName, category, userId: req.user.uid });
+
+        // Check if it already exists
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(docId);
+        const existing = await conditionRef.get();
+
+        if (existing.exists) {
+            return res.json({ success: true, conditionId: docId, alreadyExists: true });
+        }
+
+        await conditionRef.set({
+            name: trimmedName,
+            category: category,
+            transcript: null,
+            lastGenerated: null,
+            createdAt: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            createdBy: req.user.uid,
+            version: 1
+        });
+
+        console.log('[ADD-CONDITION] Successfully added:', { docId, name: trimmedName });
+
+        res.json({ success: true, conditionId: docId });
+
+    } catch (error) {
+        console.error('[ADD-CONDITION] Error:', error);
+        res.status(500).json({ success: false, error: 'Failed to add clinical condition', details: error.message });
+    }
+});
+
 // Endpoint to batch generate all missing transcripts
 app.post('/generateAllTranscripts', authenticateUser, async (req, res) => {
     try {

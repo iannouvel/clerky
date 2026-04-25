@@ -7,6 +7,8 @@ import { ClinicalConditionsService } from './clinicalData.js';
 import { updateUser } from '../ui/status.js';
 import { appendToSummary1 } from '../ui/streaming.js';
 import { setUserInputContent, updateChatbotButtonVisibility, getUserInputContent } from '../utils/editor.js';
+import { auth } from '../../firebase-init.js';
+import { SERVER_URL } from '../api/config.js';
 
 // Track currently loaded condition for updating
 let currentLoadedCondition = null;
@@ -43,8 +45,13 @@ export async function showClinicalIssuesDropdown() {
         <select id="clinical-issues-dropdown" class="clinical-dropdown">
             <option value="">Select a clinical issue...</option>
         </select>
+        <div id="add-new-issue-row" style="display:none; margin-top:8px; gap:8px; align-items:center;">
+            <input id="new-issue-input" type="text" placeholder="Enter new clinical issue name..." style="flex:1; padding:6px 10px; border:1px solid var(--border-color, #ccc); border-radius:4px; font-size:13px; background:var(--bg-primary, #fff); color:var(--text-primary, #333);" />
+            <button id="add-issue-btn" style="padding:6px 14px; font-size:13px; border-radius:4px; border:1px solid #28a745; background:#28a745; color:#fff; cursor:pointer; white-space:nowrap;">Add</button>
+            <button id="cancel-add-issue-btn" style="padding:6px 14px; font-size:13px; border-radius:4px; border:1px solid var(--border-color, #ccc); background:var(--bg-secondary, #f5f5f5); color:var(--text-primary, #333); cursor:pointer;">Cancel</button>
+        </div>
     </div>
-    
+
     <div id="generation-status" class="generation-status" style="display: none;"></div>
 </div>`;
 
@@ -102,6 +109,12 @@ export async function showClinicalIssuesDropdown() {
             clinicalDropdown.appendChild(optgroup);
         });
 
+        // Add "Add new issue..." option at the bottom
+        const addNewOption = document.createElement('option');
+        addNewOption.value = '__add_new__';
+        addNewOption.textContent = '+ Add new issue...';
+        clinicalDropdown.appendChild(addNewOption);
+
         // Ensure summary visibility
         if (window.updateSummaryVisibility) window.updateSummaryVisibility();
         if (window.updateSummaryCriticalStatus) window.updateSummaryCriticalStatus();
@@ -118,23 +131,134 @@ export async function showClinicalIssuesDropdown() {
             }
         });
 
+        const addNewRow = document.getElementById('add-new-issue-row');
+        const newIssueInput = document.getElementById('new-issue-input');
+        const addIssueBtn = document.getElementById('add-issue-btn');
+        const cancelAddBtn = document.getElementById('cancel-add-issue-btn');
+
         function updateGenerateButton() {
             const selectedValue = clinicalDropdown?.value || '';
-            const hasSelection = selectedValue.trim() !== '';
+            const isAddNew = selectedValue === '__add_new__';
+            const hasSelection = selectedValue.trim() !== '' && !isAddNew;
 
             if (generateBtn) generateBtn.disabled = !hasSelection;
             if (regenerateBtn) regenerateBtn.disabled = !hasSelection;
+
+            // Show/hide the add-new input row
+            if (addNewRow) {
+                addNewRow.style.display = isAddNew ? 'flex' : 'none';
+                if (isAddNew && newIssueInput) {
+                    newIssueInput.value = '';
+                    newIssueInput.focus();
+                }
+            }
         }
 
         if (clinicalDropdown) {
             clinicalDropdown.addEventListener('change', updateGenerateButton);
         }
 
+        // "Add" button for new custom issue
+        if (addIssueBtn) {
+            addIssueBtn.onclick = async () => {
+                const issueName = (newIssueInput?.value || '').trim();
+                if (!issueName) {
+                    updateUser('Please enter a clinical issue name.', false);
+                    return;
+                }
+
+                try {
+                    addIssueBtn.disabled = true;
+                    addIssueBtn.textContent = 'Adding...';
+
+                    const user = auth.currentUser;
+                    if (!user) throw new Error('User not authenticated');
+                    const idToken = await user.getIdToken();
+
+                    // Create the condition in Firestore
+                    const resp = await fetch(`${SERVER_URL}/addClinicalCondition`, {
+                        method: 'POST',
+                        headers: { 'Authorization': `Bearer ${idToken}`, 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name: issueName, category: 'obstetrics' })
+                    });
+
+                    if (!resp.ok) {
+                        const errText = await resp.text();
+                        throw new Error(errText);
+                    }
+
+                    const data = await resp.json();
+                    if (!data.success) throw new Error(data.error || 'Failed to add condition');
+
+                    // Add the new option to the dropdown (in the Obstetrics optgroup)
+                    let obsGroup = Array.from(clinicalDropdown.querySelectorAll('optgroup'))
+                        .find(g => g.label.toLowerCase() === 'obstetrics');
+                    if (!obsGroup) {
+                        obsGroup = document.createElement('optgroup');
+                        obsGroup.label = 'Obstetrics';
+                        // Insert before the "Add new issue..." option
+                        clinicalDropdown.insertBefore(obsGroup, addNewOption);
+                    }
+
+                    const newOpt = document.createElement('option');
+                    newOpt.value = issueName;
+                    newOpt.dataset.conditionId = data.conditionId;
+                    newOpt.textContent = issueName;
+                    obsGroup.appendChild(newOpt);
+
+                    // Select the new option and hide the add row
+                    clinicalDropdown.value = issueName;
+                    if (addNewRow) addNewRow.style.display = 'none';
+                    updateGenerateButton();
+
+                    // Also update the local cache
+                    const cache = ClinicalConditionsService.getConditions();
+                    if (cache && cache.obstetrics) {
+                        cache.obstetrics[issueName] = {
+                            id: data.conditionId,
+                            name: issueName,
+                            category: 'obstetrics',
+                            transcript: null,
+                            hasTranscript: false
+                        };
+                    }
+
+                    updateUser(`Added new clinical issue: ${issueName}. Click "Load Clerking" to generate a transcript.`, false);
+
+                } catch (err) {
+                    console.error('[CLINICAL] Error adding new issue:', err);
+                    updateUser(`Error adding issue: ${err.message}`, false);
+                } finally {
+                    addIssueBtn.disabled = false;
+                    addIssueBtn.textContent = 'Add';
+                }
+            };
+        }
+
+        // Cancel button for add-new row
+        if (cancelAddBtn) {
+            cancelAddBtn.onclick = () => {
+                clinicalDropdown.value = '';
+                if (addNewRow) addNewRow.style.display = 'none';
+                updateGenerateButton();
+            };
+        }
+
+        // Enter key in the new issue input triggers Add
+        if (newIssueInput) {
+            newIssueInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    addIssueBtn?.click();
+                }
+            });
+        }
+
         // Button Event Handlers
         if (generateBtn) {
             generateBtn.onclick = async () => {
                 const selectedIssue = clinicalDropdown?.value || '';
-                if (selectedIssue) {
+                if (selectedIssue && selectedIssue !== '__add_new__') {
                     await generateFakeClinicalInteraction(selectedIssue);
                     hideClinicalIssuesPanel();
                 }
@@ -145,7 +269,7 @@ export async function showClinicalIssuesDropdown() {
             randomBtn.onclick = async () => {
                 if (!clinicalDropdown) return;
                 const options = Array.from(clinicalDropdown.options).filter(option =>
-                    option.value && option.value.trim() !== ''
+                    option.value && option.value.trim() !== '' && option.value !== '__add_new__'
                 );
 
                 if (options.length > 0) {
