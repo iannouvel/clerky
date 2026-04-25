@@ -8134,7 +8134,7 @@ ${responseText}
                                 // Restore and run current guideline, then continue batch
                                 ceRunAllBtn.style.display = 'none';
                                 ceStopBatchBtn.style.display = '';
-                                ce._onLoopComplete = () => {
+                                ce._onLoopComplete = async () => {
                                     ce._onLoopComplete = null;
                                     if (!ceBatch.active) {
                                         // Stopped by user — don't advance batch
