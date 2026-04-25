@@ -8467,8 +8467,11 @@ ${responseText}
             if (!row) return;
             const cells = row.querySelectorAll('td');
             if (cells.length >= 3) {
-                const completedCount = passed + failed;
-                cells[1].textContent = `${completedCount}/${totalPoints}`;
+                // Don't overwrite the progress column for errors — keep existing values
+                if (statusLabel !== 'error') {
+                    const completedCount = passed + failed;
+                    cells[1].textContent = `${completedCount}/${totalPoints}`;
+                }
                 let badge;
                 if (statusLabel === 'running') {
                     badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#6f42c133;color:#6f42c1;font-weight:600;">Running</span>';
@@ -8476,6 +8479,8 @@ ${responseText}
                     badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#28a74533;color:#28a745;font-weight:600;">Complete</span>';
                 } else if (statusLabel === 'skipped') {
                     badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#17a2b833;color:#17a2b8;">Skipped</span>';
+                } else if (statusLabel === 'error') {
+                    badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:#dc354533;color:#dc3545;font-weight:600;">Error</span>';
                 } else {
                     badge = '<span style="display:inline-block;padding:2px 6px;border-radius:3px;font-size:10px;background:var(--bg-secondary);color:var(--text-secondary);">Pending</span>';
                 }
@@ -8786,8 +8791,9 @@ ${responseText}
                         ceBatch.completedGuidelines[item.id] = { passed: result.passed, failed: result.failed, totalPoints: result.totalPoints };
                     } catch (err) {
                         ceAddHistory(`Batch error on ${item.displayName}: ${err.message}`, '#dc3545');
-                        ceBatch.completedGuidelines[item.id] = { passed: 0, failed: 0, totalPoints: 0, error: err.message };
-                        ceDashboardUpdateRow(item.id, 'complete', 0, 0, 0);
+                        // Don't overwrite real data with zeros — mark as error, don't touch progress numbers
+                        ceBatch.completedGuidelines[item.id] = { error: err.message };
+                        ceDashboardUpdateRow(item.id, 'error', 0, 0, 0);
                     }
 
                     // Remove from active list
@@ -8819,6 +8825,9 @@ ${responseText}
                 ceBatchSetStatus('Batch stopped');
                 ceSaveState();
             }
+
+            // Refresh dashboard from server to restore correct progress numbers
+            ceRenderDashboard();
 
             // Reset single-guideline UI
             ceSetStep(1, 'Select Guideline');
