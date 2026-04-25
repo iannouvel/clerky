@@ -5057,10 +5057,11 @@ app.post('/updatePrompts', authenticateUser, upload.none(), async (req, res) => 
             updatedBy: req.user.uid
         });
 
-        // Update global prompts cache
+        // Update prompt caches
         global.prompts = promptsData;
+        updatePromptsCache(promptsData);
 
-        console.log('[PROMPTS] Saved prompts to Firestore');
+        console.log('[PROMPTS] Saved prompts to Firestore and refreshed server cache');
 
         res.json({
             success: true,
