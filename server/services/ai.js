@@ -354,6 +354,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             messages.push({ role: 'user', content: prompt });
         }
 
+        console.log(`[SEND-AI] ${preferredProvider}/${model} (maxTokens=${maxTokens})`);
         const formattedMessages = formatMessagesForProvider(messages, preferredProvider);
         let responseData, content, tokenUsage = {};
 
