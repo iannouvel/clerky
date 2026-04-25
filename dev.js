@@ -7736,6 +7736,7 @@ ${responseText}
                 if (ceBatch.active) {
                     payload.batchMode = true;
                     payload.batchScope = ceBatch.scope;
+                    payload.batchTrust = ceBatch.trust || null;
                     payload.batchQueue = ceBatch.queue;
                     payload.batchQueueIdx = ceBatch.queueIdx;
                     payload.batchCompletedGuidelines = ceBatch.completedGuidelines;
@@ -8092,9 +8093,10 @@ ${responseText}
                             // Batch run found — offer batch resume
                             const batchDone = Object.keys(saved.batchCompletedGuidelines || {}).length;
                             const batchTotal = (saved.batchQueue || []).length;
+                            const batchLabel = saved.batchTrust ? `${saved.batchScope} — ${saved.batchTrust}` : saved.batchScope;
                             ceContent.innerHTML = `
                                 <div style="padding:8px;background:var(--bg-secondary);border-radius:4px;font-size:12px;line-height:1.6;">
-                                    <div style="margin-bottom:8px;"><strong>Batch run found:</strong> scope "${saved.batchScope}"</div>
+                                    <div style="margin-bottom:8px;"><strong>Batch run found:</strong> ${batchLabel}</div>
                                     <div style="margin-bottom:8px;">Guidelines: ${batchDone}/${batchTotal} complete, currently on "${saved.guidelineName || saved.guidelineId}"</div>
                                     <div style="display:flex;gap:8px;">
                                         <button id="ceBatchContinueBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;padding:5px 12px;font-size:12px;">Continue Batch</button>
@@ -8109,12 +8111,15 @@ ${responseText}
                                 // Restore batch state
                                 ceBatch.active = true;
                                 ceBatch.scope = saved.batchScope;
+                                ceBatch.trust = saved.batchTrust || null;
                                 ceBatch.queue = saved.batchQueue || [];
                                 ceBatch.queueIdx = saved.batchQueueIdx || 0;
                                 ceBatch.completedGuidelines = saved.batchCompletedGuidelines || {};
                                 ceBatch.startedAt = saved.batchStartedAt;
 
                                 if (ceScopeSel) ceScopeSel.value = ceBatch.scope || '';
+                                await ceUpdateTrustDropdown();
+                                if (ceTrustSel && ceBatch.trust) ceTrustSel.value = ceBatch.trust;
                                 await ceRenderDashboard();
                                 for (const [gId, result] of Object.entries(ceBatch.completedGuidelines)) {
                                     ceDashboardUpdateRow(gId, 'complete', result.passed || 0, result.failed || 0, result.totalPoints || 0);
@@ -8327,6 +8332,7 @@ ${responseText}
 
         // ─── Batch Calibration Functions ──────────────────────────────────────
         const ceScopeSel = document.getElementById('ceScopeSel');
+        const ceTrustSel = document.getElementById('ceTrustSel');
         const ceRunAllBtn = document.getElementById('ceRunAllBtn');
         const ceStopBatchBtn = document.getElementById('ceStopBatchBtn');
         const ceBatchStatusEl = document.getElementById('ceBatchStatus');
@@ -8343,11 +8349,44 @@ ${responseText}
             } catch (e) { console.warn('[CE_BATCH] Failed to populate scopes:', e.message); }
         }
 
+        // Show/hide trust dropdown and populate it when scope is "local"
+        async function ceUpdateTrustDropdown() {
+            if (!ceTrustSel) return;
+            const scope = ceScopeSel?.value;
+            if (scope === 'local') {
+                const guidelines = await fetchCalibrationGuidelines();
+                const trusts = [...new Set(guidelines.filter(g => g.scope === 'local' && g.hospitalTrust).map(g => g.hospitalTrust))].sort();
+                ceTrustSel.innerHTML = '<option value="">-- Select trust --</option>' +
+                    trusts.map(t => `<option value="${t}">${t}</option>`).join('');
+                ceTrustSel.style.display = '';
+            } else {
+                ceTrustSel.style.display = 'none';
+                ceTrustSel.value = '';
+            }
+        }
+
+        // Get the effective filter for guidelines based on scope + trust selection
+        function ceGetFilteredGuidelines(guidelines) {
+            const scope = ceScopeSel?.value;
+            if (!scope) return [];
+            let filtered = guidelines.filter(g => g.scope === scope);
+            const trust = ceTrustSel?.value;
+            if (scope === 'local' && trust) {
+                filtered = filtered.filter(g => g.hospitalTrust === trust);
+            }
+            return filtered;
+        }
+
         // Render the dashboard table showing all guidelines in scope with progress
         async function ceRenderDashboard() {
             if (!ceDashboard) return;
             const scope = ceScopeSel?.value;
             if (!scope) {
+                ceDashboard.style.display = 'none';
+                return;
+            }
+            // For local scope, require trust selection
+            if (scope === 'local' && !ceTrustSel?.value) {
                 ceDashboard.style.display = 'none';
                 return;
             }
@@ -8364,7 +8403,7 @@ ${responseText}
                     }).then(r => r.json())
                 ]);
 
-                const filtered = guidelines.filter(g => g.scope === scope);
+                const filtered = ceGetFilteredGuidelines(guidelines);
                 const progress = progressRes.success ? progressRes.guidelines : {};
 
                 if (filtered.length === 0) {
@@ -8546,7 +8585,13 @@ ${responseText}
 
         // Event listeners for batch controls
         if (ceScopeSel) {
-            ceScopeSel.addEventListener('change', ceRenderDashboard);
+            ceScopeSel.addEventListener('change', () => {
+                ceUpdateTrustDropdown();
+                ceRenderDashboard();
+            });
+        }
+        if (ceTrustSel) {
+            ceTrustSel.addEventListener('change', ceRenderDashboard);
         }
 
         if (ceRunAllBtn) {
@@ -8556,16 +8601,21 @@ ${responseText}
                     ceBatchSetStatus('Please select a scope first');
                     return;
                 }
+                if (scope === 'local' && !ceTrustSel?.value) {
+                    ceBatchSetStatus('Please select a trust first');
+                    return;
+                }
 
                 const guidelines = await fetchCalibrationGuidelines();
-                const filtered = guidelines.filter(g => g.scope === scope);
+                const filtered = ceGetFilteredGuidelines(guidelines);
                 if (filtered.length === 0) {
-                    ceBatchSetStatus('No guidelines in this scope');
+                    ceBatchSetStatus('No guidelines found');
                     return;
                 }
 
                 // Build the queue
                 ceBatch.scope = scope;
+                ceBatch.trust = ceTrustSel?.value || null;
                 ceBatch.queue = filtered.map(g => ({
                     id: g.id,
                     displayName: g.displayName || g.humanFriendlyTitle || g.title || g.id
@@ -8575,7 +8625,8 @@ ${responseText}
                 ceBatch.startedAt = new Date().toISOString();
 
                 ceHistory.innerHTML = '';
-                ceAddHistory(`<strong>Starting batch run:</strong> ${filtered.length} guidelines in scope "${scope}"`, '#6f42c1');
+                const scopeLabel = scope === 'local' && ceBatch.trust ? `${scope} — ${ceBatch.trust}` : scope;
+                ceAddHistory(`<strong>Starting batch run:</strong> ${filtered.length} guidelines in ${scopeLabel}`, '#6f42c1');
 
                 ceBatchRunLoop();
             });
