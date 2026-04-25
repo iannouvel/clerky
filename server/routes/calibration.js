@@ -28,6 +28,7 @@ router.post('/contextEvolution/generateScenario', authenticateUser, calibrationC
 router.post('/contextEvolution/testScenario', authenticateUser, calibrationController.testScenarioAgainstPoint);
 router.get('/contextEvolution/progress', authenticateUser, calibrationController.getContextEvolutionProgress);
 router.get('/contextEvolution/progressBatch', authenticateUser, calibrationController.getContextEvolutionProgressBatch);
+router.get('/contextEvolution/progressAll', authenticateUser, calibrationController.getContextEvolutionProgressAll);
 router.post('/contextEvolution/refineContext', authenticateUser, calibrationController.refinePointContext);
 router.get('/contextEvolution/testHistory', authenticateUser, calibrationController.getContextEvolutionTestHistory);
 

@@ -883,6 +883,17 @@ exports.saveContextEvolutionRunState = async (req, res) => {
             status: 'in_progress'
         };
 
+        // Batch mode fields (optional — only present during Run All)
+        const { batchMode, batchScope, batchQueue, batchQueueIdx, batchCompletedGuidelines, batchStartedAt } = req.body;
+        if (batchMode) {
+            stateDoc.batchMode = true;
+            stateDoc.batchScope = batchScope || null;
+            stateDoc.batchQueue = batchQueue || [];          // [{ id, displayName }]
+            stateDoc.batchQueueIdx = batchQueueIdx || 0;
+            stateDoc.batchCompletedGuidelines = batchCompletedGuidelines || {};
+            stateDoc.batchStartedAt = batchStartedAt || new Date().toISOString();
+        }
+
         await db.collection('users').doc(userId)
             .collection('contextEvolutionRuns').doc('current')
             .set(stateDoc, { merge: true });
@@ -929,6 +940,57 @@ exports.clearContextEvolutionRunState = async (req, res) => {
         res.json({ success: true });
     } catch (err) {
         console.error('[CE_STATE] clearRunState error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+// ─── Context Evolution: Batch Progress ──────────────────────────────────────
+
+/**
+ * GET /contextEvolution/progressAll?scope=X
+ * Returns completion status for ALL guidelines (optionally filtered by scope).
+ * For each guideline: count practicePoints, count those with ≥3 TP and ≥3 TN.
+ */
+exports.getContextEvolutionProgressAll = async (req, res) => {
+    try {
+        const { scope } = req.query;
+
+        // Fetch all guidelines
+        const guidelinesSnap = await db.collection('guidelines').get();
+        const guidelines = {};
+
+        for (const gDoc of guidelinesSnap.docs) {
+            const gData = gDoc.data();
+
+            // Filter by scope if provided
+            if (scope && gData.scope !== scope) continue;
+
+            const ppSnap = await gDoc.ref.collection('practicePoints').get();
+            if (ppSnap.empty) {
+                guidelines[gDoc.id] = { totalPoints: 0, completedCount: 0, allComplete: false };
+                continue;
+            }
+
+            let completedCount = 0;
+            for (const ppDoc of ppSnap.docs) {
+                const testsSnap = await ppDoc.ref.collection('contextEvolutionTests').get();
+                if (testsSnap.empty) continue;
+                const tests = testsSnap.docs.map(d => d.data());
+                const tpCount = tests.filter(t => t.evaluation?.resultType === 'TP').length;
+                const tnCount = tests.filter(t => t.evaluation?.resultType === 'TN').length;
+                if (tpCount >= 3 && tnCount >= 3) completedCount++;
+            }
+
+            guidelines[gDoc.id] = {
+                totalPoints: ppSnap.size,
+                completedCount,
+                allComplete: completedCount === ppSnap.size && ppSnap.size > 0
+            };
+        }
+
+        res.json({ success: true, guidelines });
+    } catch (err) {
+        console.error('[CALIBRATION] getContextEvolutionProgressAll error:', err.message);
         res.status(500).json({ success: false, error: err.message });
     }
 };
