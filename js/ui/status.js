@@ -96,10 +96,8 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
  * @param {boolean} hasContent - Whether the input field has content
  */
 export function updateAnalyseAndResetButtons(hasContent) {
-    // Support split buttons (new) and legacy analyseBtn
     const analyseBtn = document.getElementById('analyseBtn');
-    const checkCompletenessBtn = document.getElementById('checkCompletenessBtn');
-    const checkGuidelinesBtn2 = document.getElementById('checkGuidelinesBtn2');
+    const analyseNoteBtn = document.getElementById('analyseNoteBtn');
     const resetBtn = document.getElementById('resetBtn');
 
     // Legacy single button
@@ -107,13 +105,10 @@ export function updateAnalyseAndResetButtons(hasContent) {
         analyseBtn.style.display = hasContent ? 'flex' : 'none';
     }
 
-    // Split buttons — show when there is content and no analysis is running
+    // Unified analyse button — show when there is content and no analysis is running
     const isRunning = !!(window.workflowInProgress || window.isAnalysisRunning);
-    if (checkCompletenessBtn) {
-        checkCompletenessBtn.style.display = (hasContent && !isRunning) ? 'flex' : 'none';
-    }
-    if (checkGuidelinesBtn2) {
-        checkGuidelinesBtn2.style.display = (hasContent && !isRunning) ? 'flex' : 'none';
+    if (analyseNoteBtn) {
+        analyseNoteBtn.style.display = (hasContent && !isRunning) ? 'flex' : 'none';
     }
 
     // Reset button should remain visible at all times in the fixed bar
