@@ -8626,9 +8626,32 @@ ${responseText}
                     // Set up ce state for this guideline
                     ce.guidelineId = item.id;
                     ce.guidelineName = item.displayName;
-
-                    // Load practice points
                     const token = await getCalibrationToken();
+
+                    // Check existing progress first — fast skip if cached flag is set
+                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
+                        headers: { Authorization: `Bearer ${token}` }
+                    });
+                    const progData = await progRes.json();
+
+                    if (progData.success && progData.allComplete) {
+                        ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
+                        ceBatch.completedGuidelines[item.id] = { passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
+                        ceDashboardUpdateRow(item.id, 'complete', progData.completedCount, 0, progData.totalPoints);
+                        // Ensure the fast-skip flag is set (backfill for older completions)
+                        if (!progData.cached) {
+                            fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
+                                method: 'POST',
+                                headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ guidelineId: item.id, pointCount: progData.totalPoints })
+                            }).catch(() => {});
+                        }
+                        ceBatch.queueIdx++;
+                        ceSaveState();
+                        continue;
+                    }
+
+                    // Load practice points (only needed if guideline is not fully complete)
                     const res = await fetch(`${SERVER_URL}/api/ensurePracticePoints`, {
                         method: 'POST',
                         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -8643,21 +8666,6 @@ ${responseText}
                         continue;
                     }
                     ce.allPoints = data.points;
-
-                    // Check existing progress — skip already-complete points
-                    const progRes = await fetch(`${SERVER_URL}/contextEvolution/progressBatch?guidelineId=${encodeURIComponent(item.id)}`, {
-                        headers: { Authorization: `Bearer ${token}` }
-                    });
-                    const progData = await progRes.json();
-
-                    if (progData.success && progData.allComplete) {
-                        ceAddHistory(`Skipping ${item.displayName} — all ${progData.totalPoints} points already complete`, '#17a2b8');
-                        ceBatch.completedGuidelines[item.id] = { passed: progData.completedCount, failed: 0, totalPoints: progData.totalPoints };
-                        ceDashboardUpdateRow(item.id, 'complete', progData.completedCount, 0, progData.totalPoints);
-                        ceBatch.queueIdx++;
-                        ceSaveState();
-                        continue;
-                    }
 
                     // Filter to incomplete points if some already done
                     let totalPoints = ce.allPoints.length;
@@ -8682,6 +8690,15 @@ ${responseText}
                     ceBatch.completedGuidelines[item.id] = { passed, failed, totalPoints };
                     ceDashboardUpdateRow(item.id, 'complete', passed, failed, totalPoints);
                     ceAddHistory(`Batch [${ceBatch.queueIdx + 1}/${ceBatch.queue.length}]: ${item.displayName} done — ${passed} passed, ${failed} failed`, '#28a745');
+
+                    // Mark guideline as complete if all points passed
+                    if (passed === totalPoints && failed === 0) {
+                        fetch(`${SERVER_URL}/contextEvolution/markComplete`, {
+                            method: 'POST',
+                            headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ guidelineId: item.id, pointCount: totalPoints })
+                        }).catch(() => {});
+                    }
 
                 } catch (err) {
                     ceAddHistory(`Batch error on ${item.displayName}: ${err.message}`, '#dc3545');

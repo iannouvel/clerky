@@ -36,5 +36,6 @@ router.get('/contextEvolution/testHistory', authenticateUser, calibrationControl
 router.post('/contextEvolution/saveRunState', authenticateUser, calibrationController.saveContextEvolutionRunState);
 router.get('/contextEvolution/getRunState', authenticateUser, calibrationController.getContextEvolutionRunState);
 router.delete('/contextEvolution/clearRunState', authenticateUser, calibrationController.clearContextEvolutionRunState);
+router.post('/contextEvolution/markComplete', authenticateUser, calibrationController.markCalibrationComplete);
 
 module.exports = router;

@@ -789,6 +789,20 @@ exports.getContextEvolutionProgressBatch = async (req, res) => {
             return res.status(400).json({ success: false, error: 'guidelineId required' });
         }
 
+        // Fast path: check cached completion flag on guideline doc
+        const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
+        if (guidelineDoc.exists && guidelineDoc.data().contextEvolutionComplete) {
+            const gData = guidelineDoc.data();
+            return res.json({
+                success: true,
+                totalPoints: gData.contextEvolutionPointCount || 0,
+                completedCount: gData.contextEvolutionPointCount || 0,
+                allComplete: true,
+                points: {},
+                cached: true
+            });
+        }
+
         const ppSnap = await db.collection('guidelines').doc(guidelineId)
             .collection('practicePoints').get();
 
@@ -992,6 +1006,16 @@ exports.getContextEvolutionProgressAll = async (req, res) => {
             // Filter by scope if provided
             if (scope && gData.scope !== scope) continue;
 
+            // Fast path: use cached completion flag
+            if (gData.contextEvolutionComplete) {
+                guidelines[gDoc.id] = {
+                    totalPoints: gData.contextEvolutionPointCount || 0,
+                    completedCount: gData.contextEvolutionPointCount || 0,
+                    allComplete: true
+                };
+                continue;
+            }
+
             const ppSnap = await gDoc.ref.collection('practicePoints').get();
             if (ppSnap.empty) {
                 guidelines[gDoc.id] = { totalPoints: 0, completedCount: 0, allComplete: false };
@@ -1018,6 +1042,32 @@ exports.getContextEvolutionProgressAll = async (req, res) => {
         res.json({ success: true, guidelines });
     } catch (err) {
         console.error('[CALIBRATION] getContextEvolutionProgressAll error:', err.message);
+        res.status(500).json({ success: false, error: err.message });
+    }
+};
+
+/**
+ * POST /contextEvolution/markComplete
+ * Body: { guidelineId, pointCount }
+ * Sets contextEvolutionComplete flag on guideline doc for fast skip checks
+ */
+exports.markCalibrationComplete = async (req, res) => {
+    try {
+        const { guidelineId, pointCount } = req.body;
+        if (!guidelineId) {
+            return res.status(400).json({ success: false, error: 'guidelineId required' });
+        }
+
+        await db.collection('guidelines').doc(guidelineId).update({
+            contextEvolutionComplete: true,
+            contextEvolutionPointCount: pointCount || 0,
+            contextEvolutionCompletedAt: new Date().toISOString()
+        });
+
+        console.log(`[CALIBRATION] Marked ${guidelineId} as context-evolution complete (${pointCount} points)`);
+        res.json({ success: true });
+    } catch (err) {
+        console.error('[CALIBRATION] markCalibrationComplete error:', err.message);
         res.status(500).json({ success: false, error: err.message });
     }
 };
