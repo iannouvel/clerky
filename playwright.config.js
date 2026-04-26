@@ -1,4 +1,18 @@
 import { defineConfig, devices } from '@playwright/test';
+import fs from 'fs';
+import path from 'path';
+
+// Load .env manually (avoids CJS/ESM issues with dotenv)
+try {
+  const envPath = path.resolve('.env');
+  const envContent = fs.readFileSync(envPath, 'utf8');
+  for (const line of envContent.split('\n')) {
+    const match = line.match(/^\s*([\w.-]+)\s*=\s*(.*)?\s*$/);
+    if (match && !process.env[match[1]]) {
+      process.env[match[1]] = (match[2] || '').replace(/^["']|["']$/g, '');
+    }
+  }
+} catch {}
 
 /**
  * Playwright configuration for clerkyai.health testing
@@ -46,6 +60,26 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      testIgnore: /agentic|auth-setup/,  // skip slow tests by default
+    },
+    {
+      name: 'agentic',
+      use: {
+        ...devices['Desktop Chrome'],
+        // Record video for agentic tests so we can review the "doctor" session
+        video: 'retain-on-failure',
+      },
+      testMatch: /agentic.*\.spec/,
+      timeout: 300_000,  // 5 minutes per test
+    },
+    {
+      name: 'auth-setup',
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',  // use real Chrome — Google blocks Playwright's Chromium for OAuth
+      },
+      testMatch: /auth-setup/,
+      timeout: 180_000,
     },
   ],
 
