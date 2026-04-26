@@ -10316,8 +10316,57 @@ window.showFeedbackDetail = function (feedbackId) {
     document.body.appendChild(overlay);
 };
 
-// Wire up filter change and refresh button
+window.exportFeedbackJSON = function () {
+    if (!_feedbackCache || _feedbackCache.length === 0) {
+        alert('No feedback to export. Load feedback first.');
+        return;
+    }
+
+    // Build comprehensive feedback export with all details
+    const exportData = _feedbackCache.map(fb => ({
+        id: fb.id,
+        date: fb.submittedAt,
+        userEmail: fb.userEmail,
+        explanation: fb.userExplanation,
+        suggestion: {
+            text: fb.wizardState?.currentSuggestion?.suggestion || fb.wizardState?.currentSuggestion?.text || 'N/A',
+            why: fb.wizardState?.currentSuggestion?.why || '',
+            type: fb.wizardState?.currentSuggestion?.type || 'unknown'
+        },
+        phase: fb.lastAiContext?.source || 'unknown',
+        lastAction: fb.lastInteraction?.buttonLabel || 'N/A',
+        status: fb.actioned ? 'actioned' : 'open',
+        actionedAt: fb.actionedAt || null
+    }));
+
+    // Copy to clipboard and download
+    const json = JSON.stringify(exportData, null, 2);
+
+    // Copy to clipboard
+    navigator.clipboard.writeText(json).then(() => {
+        console.log('[FEEDBACK] JSON copied to clipboard');
+    }).catch(err => {
+        console.error('[FEEDBACK] Failed to copy to clipboard:', err);
+    });
+
+    // Also download as file
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `feedback-export-${new Date().toISOString().split('T')[0]}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    console.log('[FEEDBACK] Exported', exportData.length, 'feedback items');
+    alert(`Exported ${exportData.length} feedback items. JSON copied to clipboard and downloaded.`);
+};
+
+// Wire up filter change, refresh button, and export button
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('feedbackFilter')?.addEventListener('change', renderFeedbackTable);
     document.getElementById('feedbackRefreshBtn')?.addEventListener('click', fetchFeedback);
+    document.getElementById('feedbackExportBtn')?.addEventListener('click', exportFeedbackJSON);
 });
