@@ -4293,6 +4293,49 @@ body {
     box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
 }
 
+/* Floating Feedback Button — always accessible, bottom-right corner */
+.floating-feedback-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+    z-index: 9999;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.floating-feedback-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(108, 117, 125, 0.6);
+    background: linear-gradient(135deg, #5a6268 0%, #4a5258 100%);
+}
+
+.floating-feedback-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(108, 117, 125, 0.4);
+}
+
+.floating-feedback-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    line-height: 1;
+}
+
 /* Feedback Modal */
 .feedback-modal {
     position: fixed;

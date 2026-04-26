@@ -22,6 +22,7 @@ import {
   decideScope,
   decideGuideline,
   evaluateFinalNote,
+  generateProcessFeedback,
 } from './helpers/doctor-brain.js';
 
 // ── Config ──────────────────────────────────────────────────────────────
@@ -402,5 +403,36 @@ test.describe('Agentic Doctor Simulation', () => {
     log(`Phase 2: ${phase2Accepted} accepted, ${phase2Skipped} skipped`);
     log(`Note grew from ${clinicalNote.length} to ${finalNote.length} chars`);
     log(`Quality: ${evaluation.score}/10 — ${evaluation.assessment}`);
+
+    // ── Step 9: Generate comprehensive feedback ──────────────────────
+    log('\n=== GENERATING FEEDBACK ===');
+    const workflowMetrics = {
+      clinicalNote,
+      finalNote,
+      phase1Accepted,
+      phase1Skipped,
+      phase2Accepted,
+      phase2Skipped,
+      qualityScore: evaluation.score,
+    };
+
+    const feedback = await generateProcessFeedback(scenario, workflowMetrics);
+    log(`Process Effectiveness: ${feedback.workflowEffectiveness}`);
+    log(`Guideline Strengths: ${feedback.guidelineQuality?.strengths?.join(', ') || 'None'}`);
+    log(`Guideline Weaknesses: ${feedback.guidelineQuality?.weaknesses?.join(', ') || 'None'}`);
+    log(`Acceptance Patterns: ${feedback.acceptancePatterns}`);
+    log(`Safety Assessment: ${feedback.safetyAssessment}`);
+
+    if (feedback.improvements?.length) {
+      log(`\nRecommended Improvements (${feedback.improvements.length}):`);
+      feedback.improvements.forEach((imp, idx) => {
+        log(`  ${idx + 1}. [${imp.priority.toUpperCase()}] ${imp.category}: ${imp.issue}`);
+        log(`     Recommendation: ${imp.recommendation}`);
+      });
+    }
+
+    log(`\nFeedback Summary: ${feedback.summary}`);
+    log('\n=== FEEDBACK READY FOR SUBMISSION ===');
+    log('This feedback can be submitted via the feedback button in the UI');
   });
 });

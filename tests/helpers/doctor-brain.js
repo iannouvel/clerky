@@ -150,3 +150,69 @@ Respond in JSON:
 
   return parseJSON(text) || { score: 5, assessment: 'Could not parse', issues: [] };
 }
+
+/**
+ * Analyze the entire workflow and generate comprehensive feedback about
+ * what worked well, what could be improved, and specific guideline issues.
+ */
+export async function generateProcessFeedback(scenario, workflowMetrics) {
+  // workflowMetrics should contain: clinicalNote, finalNote, phase1Suggestions, phase2Suggestions,
+  // phase1Accepted, phase1Skipped, phase2Accepted, phase2Skipped, qualityScore
+
+  const text = await callClaude([{
+    role: 'user',
+    content: `As an obstetric quality improvement specialist, analyze this clinical workflow and provide actionable feedback.
+
+Scenario: ${scenario}
+
+Initial note length: ${workflowMetrics.clinicalNote?.length || 0} chars
+Final note length: ${workflowMetrics.finalNote?.length || 0} chars
+Phase 1 (Completeness): ${workflowMetrics.phase1Accepted} accepted, ${workflowMetrics.phase1Skipped} skipped
+Phase 2 (Guidelines): ${workflowMetrics.phase2Accepted} accepted, ${workflowMetrics.phase2Skipped} skipped
+Final quality score: ${workflowMetrics.qualityScore}/10
+
+What worked well? What could be improved? Any safety concerns?
+
+Start your response with JSON (no preamble):
+{
+  "effectiveness": "brief assessment of workflow",
+  "strengths": ["strength1", "strength2"],
+  "weaknesses": ["issue1", "issue2"],
+  "improvements": [
+    {"area": "area-name", "issue": "description", "recommendation": "actionable step", "priority": "high|medium|low"}
+  ],
+  "safetyNote": "any critical safety issues or gaps",
+  "summary": "overall assessment"
+}`
+  }], 1024);
+
+  try {
+    // Try to extract JSON from the response
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      const parsed = JSON.parse(jsonMatch[0]);
+      return {
+        workflowEffectiveness: parsed.effectiveness || parsed.summary,
+        guidelineQuality: {
+          strengths: parsed.strengths || [],
+          weaknesses: parsed.weaknesses || []
+        },
+        acceptancePatterns: `${workflowMetrics.phase2Accepted} guidelines accepted out of ${workflowMetrics.phase2Accepted + workflowMetrics.phase2Skipped} suggestions`,
+        safetyAssessment: parsed.safetyNote || 'No critical safety concerns noted',
+        improvements: parsed.improvements || [],
+        summary: parsed.summary || 'Feedback generated'
+      };
+    }
+  } catch (e) {
+    console.error('JSON parse error:', e);
+  }
+
+  return {
+    workflowEffectiveness: 'Feedback analysis complete',
+    guidelineQuality: { strengths: [], weaknesses: [] },
+    acceptancePatterns: `${workflowMetrics.phase2Accepted} / ${workflowMetrics.phase2Accepted + workflowMetrics.phase2Skipped}`,
+    safetyAssessment: 'See detailed feedback',
+    improvements: [],
+    summary: text.slice(0, 300)
+  };
+}
