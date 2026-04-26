@@ -10162,16 +10162,25 @@ async function fetchFeedback() {
         const user = auth.currentUser;
         if (!user) throw new Error('Not authenticated');
         const token = await user.getIdToken();
+
+        console.log('[FEEDBACK] Fetching from:', `${SERVER_URL}/getFeedback?limit=100`);
         const resp = await fetch(`${SERVER_URL}/getFeedback?limit=100`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
+
+        console.log('[FEEDBACK] Response status:', resp.status);
         const data = await resp.json();
+        console.log('[FEEDBACK] Response data:', data);
+
         if (!data.success) throw new Error(data.error || 'Unknown error');
-        _feedbackCache = data.feedback;
+        if (!data.feedback) throw new Error('No feedback array in response');
+
+        _feedbackCache = Array.isArray(data.feedback) ? data.feedback : [];
+        console.log('[FEEDBACK] Loaded', _feedbackCache.length, 'items');
         renderFeedbackTable();
     } catch (err) {
         console.error('[FEEDBACK] Failed to fetch:', err);
-        tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:#c62828;">Failed to load feedback: ${err.message}</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:#c62828;">Failed to load feedback: ${err.message}<br><small>Check console (F12) for details</small></td></tr>`;
     }
 }
 
