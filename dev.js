@@ -10188,13 +10188,21 @@ function renderFeedbackTable() {
     const tbody = document.getElementById('feedbackTableBody');
     const countEl = document.getElementById('feedbackCount');
     const filter = document.getElementById('feedbackFilter')?.value || 'unactioned';
-    if (!tbody || !_feedbackCache) return;
+
+    console.log('[FEEDBACK] renderFeedbackTable called', { tbody: !!tbody, cache: !!_feedbackCache, filter });
+
+    if (!tbody || !_feedbackCache) {
+        console.error('[FEEDBACK] Missing tbody or cache');
+        return;
+    }
 
     const filtered = _feedbackCache.filter(fb => {
         if (filter === 'unactioned') return !fb.actioned;
         if (filter === 'actioned') return !!fb.actioned;
         return true;
     });
+
+    console.log('[FEEDBACK] Filtered results:', { total: _feedbackCache.length, filtered: filtered.length, filter });
 
     if (countEl) countEl.textContent = `${filtered.length} of ${_feedbackCache.length} total`;
 
@@ -10203,7 +10211,8 @@ function renderFeedbackTable() {
         return;
     }
 
-    tbody.innerHTML = filtered.map(fb => {
+    try {
+        const html = filtered.map(fb => {
         const ts = fb.submittedAt ? new Date(fb.submittedAt) : null;
         const dateStr = ts ? ts.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + ts.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '—';
         const email = fb.userEmail || 'anonymous';
@@ -10240,7 +10249,14 @@ function renderFeedbackTable() {
             <td style="padding:8px 6px;text-align:center;">${statusBadge}</td>
             <td style="padding:8px 6px;text-align:center;">${actionBtn}<br><button class="action-btn" style="font-size:11px;padding:3px 8px;margin-top:4px;" onclick="showFeedbackDetail('${fb.id}')">Detail</button></td>
         </tr>`;
-    }).join('');
+        }).join('');
+        console.log('[FEEDBACK] HTML generated, setting innerHTML on tbody');
+        tbody.innerHTML = html;
+        console.log('[FEEDBACK] Table rendered successfully');
+    } catch (err) {
+        console.error('[FEEDBACK] Error rendering table:', err);
+        tbody.innerHTML = `<tr><td colspan="6" style="padding:20px;text-align:center;color:#c62828;">Error rendering table: ${err.message}<br><small>Check console for details</small></td></tr>`;
+    }
 }
 
 window.markFeedback = async function (feedbackId, actioned) {
