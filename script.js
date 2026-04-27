@@ -7584,7 +7584,39 @@ async function runPhase1CompletenessCheck() {
             body: JSON.stringify({ transcript: anonymisedText || transcript })
         });
         const data = await resp.json();
-        const rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
+        let rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
+
+        // FILTER: Remove suggestions for info already documented in the note
+        rawItems = rawItems.filter(item => {
+            const suggestion = item.missing_info?.toLowerCase() || '';
+            const noteText = (transcript || '').toLowerCase();
+
+            // Keywords to check for - if found, don't suggest the item
+            const dataAwareChecks = [
+                // Age
+                { suggestion: 'patient.*age', keywords: /\b(\d{2,3})\s*(?:years?|yo|year\s*old|years\s*old)\b/ },
+                // Gestation
+                { suggestion: 'gestational.*age|weeks.*gestation', keywords: /\b(\d{1,2})\+?(\d{1,2})?\s*(?:weeks?|wk|w)\b/ },
+                // Vital signs / Blood pressure
+                { suggestion: 'blood.*pressure|BP[^a-z]', keywords: /(?:vital\s*signs|BP|blood\s*pressure|normotensive|hypertensive|normal\s*limits)\b/ },
+                // FHR
+                { suggestion: 'fetal.*heart.*rate|FHR', keywords: /\b(?:FHR|fetal.*heart|heart.*rate)\b/ },
+                // Anti-D
+                { suggestion: 'anti-?D', keywords: /\banti-?D\b/ },
+            ];
+
+            // Check if any keyword pattern matches
+            for (const check of dataAwareChecks) {
+                if (new RegExp(check.suggestion).test(suggestion)) {
+                  if (check.keywords.test(noteText)) {
+                        console.log(`[FILTER] Skipping "${item.missing_info}" - already in note`);
+                        return false;  // Filter it out
+                    }
+                }
+            }
+
+            return true;  // Keep this item
+        });
 
         // Store for feedback context
         window._lastAiContext = {
