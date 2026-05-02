@@ -25,6 +25,7 @@ export let currentSuggestions = [];
 export let userDecisions = {};
 export let currentAdviceSession = null;
 export let currentSuggestionReview = null; // Wizard state
+export let pendingInsertions = new Map(); // Track pending insertions (suggestion ID -> preview state)
 
 // Helper to set session state
 export function setSuggestionSession(sessionId, suggestions) {
@@ -219,6 +220,57 @@ export function insertTextAtPoint(currentContent, newText, insertionPoint) {
     return currentContent + '\n\n' + cleanedNewText;
 }
 
+export function showSuggestionPreview(suggestion, currentContent) {
+    // Create a preview of the suggestion in the note with green highlighting
+    let previewContent;
+
+    if (suggestion.category === 'addition' || !suggestion.originalText) {
+        // For additions, append with green highlight wrapper
+        previewContent = currentContent + '\n\n' +
+            '<div style="background-color: #dcfce7; border-left: 4px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 4px;">' +
+            '<span style="color: #047857; font-weight: 600;">📋 Pending Insertion (not yet confirmed)</span>\n' +
+            escapeHtml(suggestion.suggestedText) +
+            '</div>';
+    } else {
+        // For replacements, highlight the replacement
+        previewContent = currentContent.replace(
+            suggestion.originalText,
+            '<div style="background-color: #dcfce7; border-left: 4px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 4px;">' +
+            '<span style="color: #047857; font-weight: 600;">📋 Pending Replacement (not yet confirmed)</span>\n' +
+            escapeHtml(suggestion.suggestedText) +
+            '</div>'
+        );
+    }
+
+    setUserInputContent(previewContent, true, 'Suggestion Preview');
+    pendingInsertions.set(`preview_${suggestion.id || Date.now()}`, {
+        suggestion,
+        content: currentContent,
+        previewContent
+    });
+}
+
+export function confirmPendingInsertion(suggestion, currentContent) {
+    // Permanently add the suggestion to the note
+    let finalContent;
+
+    if (suggestion.category === 'addition' || !suggestion.originalText) {
+        finalContent = currentContent + '\n' + suggestion.suggestedText;
+    } else {
+        const res = applySuggestionTextReplacement(currentContent, suggestion.originalText, suggestion.suggestedText);
+        finalContent = res.newContent;
+    }
+
+    setUserInputContent(finalContent, true, 'Wizard Accept');
+    pendingInsertions.delete(`preview_${suggestion.id || Date.now()}`);
+}
+
+export function removePendingInsertion(suggestion, originalContent) {
+    // Revert to original content, removing the pending insertion preview
+    setUserInputContent(originalContent, true, 'Suggestion Rejected');
+    pendingInsertions.delete(`preview_${suggestion.id || Date.now()}`);
+}
+
 // --- Wizard Logic (One-At-A-Time) ---
 
 export async function displayInteractiveSuggestions(suggestions, guidelineTitle, guidelineId, guidelineFilename) {
@@ -275,6 +327,9 @@ export async function showCurrentSuggestion() {
                 <div style="margin: 0 0 15px 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
                 <div style="margin: 0; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;"><strong>Link:</strong> ${guidelineLink}</div>
             </div>
+            <div id="preview-message-current" style="display: none; background: #dcfce7; border: 2px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 6px; color: #047857;">
+                ✅ Preview shown in your note (green highlight) — click <strong>Confirm</strong> to accept or <strong>Reject</strong> to dismiss
+            </div>
             <div class="modify-section" id="modify-section-current" style="display: none; background: #fef3c7; border: 2px solid #eab308; padding: 15px; margin: 10px 0; border-radius: 6px;">
                 <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold;">Your modified text:</label>
                 <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; box-sizing: border-box;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
@@ -319,17 +374,91 @@ export function updateSuggestionActionButtons() {
     }
 
     const acceptBtn = document.getElementById('suggestionAcceptBtn');
-    if (acceptBtn) acceptBtn.onclick = () => handleCurrentSuggestionAction('accept');
+    if (acceptBtn) {
+        acceptBtn.textContent = '👁️ Preview';
+        acceptBtn.onclick = () => previewCurrentSuggestion();
+    }
     const rejectBtn = document.getElementById('suggestionRejectBtn');
-    if (rejectBtn) rejectBtn.onclick = () => handleCurrentSuggestionAction('reject');
+    if (rejectBtn) {
+        rejectBtn.textContent = '❌ Reject';
+        rejectBtn.onclick = () => handleCurrentSuggestionAction('reject');
+    }
     const modifyBtn = document.getElementById('suggestionModifyBtn');
-    if (modifyBtn) modifyBtn.onclick = () => showModifySection();
+    if (modifyBtn) {
+        modifyBtn.textContent = '✏️ Modify';
+        modifyBtn.onclick = () => showModifySection();
+    }
     const skipBtn = document.getElementById('suggestionSkipBtn');
-    if (skipBtn) skipBtn.onclick = () => handleCurrentSuggestionAction('skip');
+    if (skipBtn) {
+        skipBtn.textContent = '⏭️ Skip';
+        skipBtn.onclick = () => handleCurrentSuggestionAction('skip');
+    }
     const cancelBtn = document.getElementById('suggestionCancelBtn');
-    if (cancelBtn) cancelBtn.onclick = () => cancelSuggestionReview();
+    if (cancelBtn) {
+        cancelBtn.textContent = '🚫 Cancel';
+        cancelBtn.onclick = () => cancelSuggestionReview();
+    }
 
     setAllSuggestionButtonsApplying(false);
+}
+
+export function previewCurrentSuggestion() {
+    const review = currentSuggestionReview;
+    if (!review) return;
+    const suggestion = review.suggestions[review.currentIndex];
+
+    // Show preview in the note
+    const currentContent = getUserInputContent();
+    showSuggestionPreview(suggestion, currentContent);
+
+    // Show message and update buttons for confirmation
+    const previewMsg = document.getElementById('preview-message-current');
+    if (previewMsg) previewMsg.style.display = 'block';
+
+    // Update buttons for confirm/cancel flow
+    const acceptBtn = document.getElementById('suggestionAcceptBtn');
+    if (acceptBtn) {
+        acceptBtn.textContent = '✅ Confirm';
+        acceptBtn.onclick = () => confirmAndAcceptSuggestion();
+    }
+
+    const rejectBtn = document.getElementById('suggestionRejectBtn');
+    if (rejectBtn) {
+        rejectBtn.textContent = '❌ Dismiss Preview';
+        rejectBtn.onclick = () => dismissPreviewAndReject();
+    }
+}
+
+export function confirmAndAcceptSuggestion() {
+    const review = currentSuggestionReview;
+    if (!review) return;
+    const suggestion = review.suggestions[review.currentIndex];
+    const currentContent = getUserInputContent();
+
+    // The content already has the preview, so we just need to remove the preview markers
+    // and clean up the pending insertion
+    let finalContent = currentContent
+        .replace(/<div style="background-color: #dcfce7;[^>]*>[^<]*<span[^>]*>📋 Pending Insertion[^<]*<\/span>\n/g, '')
+        .replace(/<\/div>\n?$/g, '');
+
+    review.decisions.push({ suggestion, action: 'accept' });
+    setUserInputContent(finalContent, true, 'Wizard Accept - Confirmed');
+    clearHighlightInEditor();
+    review.currentIndex++;
+    showCurrentSuggestion();
+}
+
+export function dismissPreviewAndReject() {
+    const review = currentSuggestionReview;
+    if (!review) return;
+    const suggestion = review.suggestions[review.currentIndex];
+
+    showFeedbackModal(`current-review-${review.currentIndex}`, suggestion, (reason) => {
+        review.decisions.push({ suggestion, action: 'reject', feedbackReason: reason });
+        clearHighlightInEditor();
+        review.currentIndex++;
+        showCurrentSuggestion();
+    });
 }
 
 function setSuggestionButtonApplying(buttonId, isApplying) {
@@ -778,4 +907,7 @@ window.cancelSuggestionReview = cancelSuggestionReview;
 window.confirmModification = confirmModification;
 window.bulkAcceptSuggestions = bulkAcceptSuggestions;
 window.bulkRejectSuggestions = bulkRejectSuggestions;
+window.previewCurrentSuggestion = previewCurrentSuggestion;
+window.confirmAndAcceptSuggestion = confirmAndAcceptSuggestion;
+window.dismissPreviewAndReject = dismissPreviewAndReject;
 
