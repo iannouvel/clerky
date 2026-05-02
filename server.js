@@ -16867,6 +16867,119 @@ async function getAllGuidelines() {
         return [];
     }
 }
+
+// Helper function to detect if suggested information is already documented in the transcript
+function filterOutDuplicateSuggestions(suggestions, transcript) {
+    const normalizeText = (text) => text.toLowerCase().replace(/\s+/g, ' ').trim();
+    const transcriptNormalized = normalizeText(transcript);
+
+    return suggestions.filter(suggestion => {
+        if (!suggestion.suggestedText) return true;
+
+        const suggestedNormalized = normalizeText(suggestion.suggestedText);
+
+        // Check 1: Direct text match (already in transcript)
+        if (transcriptNormalized.includes(suggestedNormalized)) {
+            console.log(`[FILTER] Duplicate detected - exact match: "${suggestion.suggestedText.substring(0, 50)}..."`);
+            return false;
+        }
+
+        // Check 2: Key phrase detection for common information types
+        const keyPhrases = [
+            // Age-related
+            { pattern: /(?:age|years?|yo|year\s+old)/i, searchIn: 'suggestedText' },
+            // Gestation-related
+            { pattern: /(?:week|gestation|gestational\s+age|G\+\d|\d+\+\d)/i, searchIn: 'suggestedText' },
+            // Blood pressure
+            { pattern: /blood\s+pressure|BP|systolic|diastolic|mmHg/i, searchIn: 'suggestedText' },
+            // Vital signs
+            { pattern: /vital\s+signs/i, searchIn: 'suggestedText' },
+            // Anti-D
+            { pattern: /anti[\-\s]?D|immunoglobulin/i, searchIn: 'suggestedText' },
+            // CTG/FHR
+            { pattern: /CTG|fetal\s+heart\s+rate|FHR/i, searchIn: 'suggestedText' },
+            // Misoprostol/uterotonic
+            { pattern: /misoprostol|uterotonic|oxytocin/i, searchIn: 'suggestedText' },
+            // Consent/discussion
+            { pattern: /consent|discuss|communicated?|explained?/i, searchIn: 'suggestedText' }
+        ];
+
+        for (const phrase of keyPhrases) {
+            if (phrase.pattern.test(suggestion.suggestedText)) {
+                // Extract key terms to search for in transcript
+                const keyTerms = suggestion.suggestedText.match(/\b\w+\b/gi) || [];
+
+                // For age: look for "28yo", "28 year old", "aged 28", etc.
+                if (phrase.pattern.source.includes('age') || phrase.pattern.source.includes('years?')) {
+                    if (/\d+\s*yo|age[d]?\s*\d+|\d+\s*year[s]?\s*old|aged\s*\d+/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - age already documented`);
+                        return false;
+                    }
+                }
+
+                // For gestation: look for "32+4", "32 weeks", "32w2d", etc.
+                if (phrase.pattern.source.includes('week') || phrase.pattern.source.includes('gestation')) {
+                    if (/\d+\+\d|\d+\s*weeks?|\d+w\d+d|\d+\s*[gG]|\d+\/\d+/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - gestation already documented`);
+                        return false;
+                    }
+                }
+
+                // For BP: look for "vital signs", "BP", "120/80", etc.
+                if (phrase.pattern.source.includes('blood') || phrase.pattern.source.includes('BP')) {
+                    if (/\d+\/\d+\s*mmhg|BP|blood\s+pressure|vital\s+signs.*normal/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - BP already documented`);
+                        return false;
+                    }
+                }
+
+                // For vital signs: look for "vital signs within normal limits" or similar
+                if (phrase.pattern.source.includes('vital')) {
+                    if (/vital\s+signs.*normal|VSN|WFNL/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - vital signs already documented`);
+                        return false;
+                    }
+                }
+
+                // For anti-D: look for "anti-D", "immunoglobulin", "Rh negative", etc.
+                if (phrase.pattern.source.includes('anti') || phrase.pattern.source.includes('immuno')) {
+                    if (/anti[\-\s]?D|immunoglobulin|Rh[-\s]negative|Rh\-ve/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - anti-D already documented`);
+                        return false;
+                    }
+                }
+
+                // For CTG/FHR: look for "CTG", "fetal heart", "FHR", "fetal movement", etc.
+                if (phrase.pattern.source.includes('CTG') || phrase.pattern.source.includes('fetal')) {
+                    if (/CTG|fetal\s+heart|FHR|fetal\s+movement|fetal\s+assessment/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - CTG/FHR already documented`);
+                        return false;
+                    }
+                }
+
+                // For medications: look for specific drug names already mentioned
+                if (phrase.pattern.source.includes('misoprostol') || phrase.pattern.source.includes('uterotonic') || phrase.pattern.source.includes('oxytocin')) {
+                    if (/misoprostol|oxytocin|ergot|methylergonovine/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - medication already documented`);
+                        return false;
+                    }
+                }
+
+                // For consent/discussion: look for "discussed", "explained", "counselled", etc.
+                if (phrase.pattern.source.includes('consent') || phrase.pattern.source.includes('discuss')) {
+                    if (/discussed|explained|counselled?|understood|agreed|informed.*consent/i.test(transcriptNormalized)) {
+                        console.log(`[FILTER] Duplicate detected - consent/discussion already documented`);
+                        return false;
+                    }
+                }
+            }
+        }
+
+        // Passed all duplicate checks
+        return true;
+    });
+}
+
 // Dynamic Advice API endpoint - converts analysis into interactive suggestions
 app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
     // Initialize step timer for profiling
@@ -17217,6 +17330,21 @@ IMPORTANT:
         }
 
         timer.step('Parse response');
+
+        // Filter out suggestions where information is already documented in the transcript
+        const originalSuggestionCount = suggestions.length;
+        suggestions = filterOutDuplicateSuggestions(suggestions, transcript);
+        const filteredSuggestionCount = suggestions.length;
+
+        if (filteredSuggestionCount < originalSuggestionCount) {
+            const removed = originalSuggestionCount - filteredSuggestionCount;
+            debugLog('[DEBUG] dynamicAdvice: Duplicate detection removed suggestions', {
+                original: originalSuggestionCount,
+                after_filtering: filteredSuggestionCount,
+                removed: removed
+            });
+            console.log(`[DUPLICATE_FILTER] Removed ${removed} duplicate suggestion(s) - kept ${filteredSuggestionCount}/${originalSuggestionCount}`);
+        }
 
         // Add unique session ID for tracking user decisions
         const sessionId = `advice_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
