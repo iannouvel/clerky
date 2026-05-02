@@ -17094,6 +17094,57 @@ function validateSuggestionsForNonsense(suggestions, transcript, analysis) {
             }
         }
 
+        // Check 7: RhD status contradictions
+        // E.g., "RhD positive, anti-D not indicated" contradicts "RhD negative, give anti-D"
+        const rhdPositiveMatch = /rhd\s+positive|rh\s+positive|positive\s+blood\s+group/i.test(suggestedNormalized);
+        const rhdNegativeMatch = /rhd\s+negative|rh\s+negative|negative\s+blood\s+group/i.test(suggestedNormalized);
+        const antiDMatch = /anti[\-\s]?d|immunoglobulin.*prophylaxis|anti.?d\s+prophylaxis/i.test(suggestedNormalized);
+
+        // Check for RhD contradictions within same suggestion
+        if (rhdPositiveMatch && antiDMatch) {
+            if (/anti[\-\s]?d.*given|give.*anti[\-\s]?d|anti[\-\s]?d.*required|anti[\-\s]?d.*necessary/i.test(suggestedNormalized)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting anti-D for RhD positive patient (contradictory)`);
+                return false;
+            }
+        }
+
+        // Check RhD contradictions against context
+        if (rhdPositiveMatch && /anti[\-\s]?d\s+(?:given|administered|provided)/i.test(fullContext)) {
+            console.log(`[VALIDATION] Nonsensical: Suggesting RhD positive status when anti-D already documented as given`);
+            return false;
+        }
+
+        if (rhdNegativeMatch && /rhd\s+positive|rh\s+positive/i.test(fullContext)) {
+            console.log(`[VALIDATION] Nonsensical: Suggesting RhD negative when RhD positive already documented`);
+            return false;
+        }
+
+        // Check 8: Procedurally contraindicated recommendations
+        // E.g., transvaginal ultrasound contraindicated with active bleeding/placenta praevia
+        const transVaginalMatch = /transvaginal|vaginal\s+ultrasound|TV.*scan|TVS/i.test(suggestedNormalized);
+        if (transVaginalMatch) {
+            // Check if contraindicated
+            if (/placenta\s+praevia|active\s+bleeding|antepartum\s+haemorrhage|hemorrhage|bleeding/i.test(fullContext)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting transvaginal ultrasound when contraindicated (active bleeding/placenta praevia)`);
+                return false;
+            }
+        }
+
+        // Digital cervical exam contraindicated with placenta praevia
+        const digitalExamMatch = /digital\s+(?:vaginal\s+)?exam|cervical\s+exam|perform.*VE|assess.*cervix/i.test(suggestedNormalized);
+        if (digitalExamMatch && /placenta\s+praevia/i.test(fullContext)) {
+            console.log(`[VALIDATION] Nonsensical: Suggesting digital cervical exam when contraindicated by placenta praevia`);
+            return false;
+        }
+
+        // Check 9: Tocolysis contraindicated with vaginal bleeding
+        if (/tocolytic|tocolysis|nifedipine|atosiban|terbutaline|magnesium\s+sulphate.*tocolytic/i.test(suggestedNormalized)) {
+            if (/antepartum\s+haemorrhage|hemorrhage|vaginal\s+bleeding|bleeding\s+in\s+pregnancy|placenta\s+praevia/i.test(fullContext)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting tocolysis when contraindicated by antepartum hemorrhage`);
+                return false;
+            }
+        }
+
         // Passed all validation checks
         return true;
     });
