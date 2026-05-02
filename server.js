@@ -17211,6 +17211,80 @@ function filterOutDuplicateSuggestions(suggestions, transcript) {
     });
 }
 
+// Validate suggestions meet quality standards: each must have meaningful guideline quote/context
+function validateSuggestionQuality(suggestions, guidelineContent) {
+    const validSuggestions = [];
+    const removedSuggestions = [];
+
+    for (const suggestion of suggestions) {
+        const issues = [];
+
+        // Check 1: Context exists and is not empty
+        if (!suggestion.context || suggestion.context.trim().length < 20) {
+            issues.push('Context missing or too brief');
+        }
+
+        // Check 2: If hasVerbatimQuote is true, context must actually contain quoted text
+        if (suggestion.hasVerbatimQuote === true) {
+            const hasQuotedText = /'[^']{5,}'/.test(suggestion.context) || /"[^"]{5,}"/.test(suggestion.context);
+            if (!hasQuotedText) {
+                issues.push('Marked as verbatim quote but no quoted text found in context');
+            }
+        }
+
+        // Check 3: Context should reference guideline content meaningfully
+        // Look for natural language indicators that context is specific, not generic
+        const genericPhrases = [
+            'guideline recommends',
+            'standard practice',
+            'best practice',
+            'should be',
+            'could be'
+        ];
+        const isGenericOnly = genericPhrases.every(phrase => {
+            const inContext = suggestion.context.toLowerCase().includes(phrase);
+            return !inContext || !suggestion.context.includes('\'');
+        });
+
+        // If context is generic AND lacks any quoted text, flag as low quality
+        if (isGenericOnly && !/'[^']{5,}'/.test(suggestion.context) && !/"[^"]{5,}"/.test(suggestion.context)) {
+            if (suggestion.context.length < 100) {
+                issues.push('Context too vague - lacks specific guideline quote or detailed reasoning');
+            }
+        }
+
+        // Check 4: suggestedText should not be empty or placeholder
+        if (!suggestion.suggestedText || suggestion.suggestedText.trim().length === 0) {
+            issues.push('suggestedText is empty');
+        }
+
+        // If suggestion has no issues, keep it
+        if (issues.length === 0) {
+            validSuggestions.push(suggestion);
+        } else {
+            removedSuggestions.push({
+                id: suggestion.id,
+                reason: issues.join('; '),
+                suggestedText: (suggestion.suggestedText || '').substring(0, 50)
+            });
+            console.log(`[QUALITY_FILTER] Removed suggestion #${suggestion.id}: ${issues.join('; ')}`);
+        }
+    }
+
+    // Log quality metrics
+    if (removedSuggestions.length > 0) {
+        console.log(`[QUALITY_FILTER] Removed ${removedSuggestions.length} low-quality suggestion(s) - kept ${validSuggestions.length}/${suggestions.length}`);
+        console.log('[QUALITY_FILTER] Details:', removedSuggestions);
+    }
+
+    // Calculate verbatim quote ratio for monitoring
+    const verbatimCount = validSuggestions.filter(s => s.hasVerbatimQuote === true).length;
+    const verbatimRatio = validSuggestions.length > 0 ? (verbatimCount / validSuggestions.length * 100).toFixed(1) : 0;
+    console.log(`[QUALITY_FILTER] Verbatim quote rate: ${verbatimRatio}% (${verbatimCount}/${validSuggestions.length})`);
+
+    return validSuggestions;
+}
+
 // Dynamic Advice API endpoint - converts analysis into interactive suggestions
 app.post('/dynamicAdvice', authenticateUser, async (req, res) => {
     // Initialize step timer for profiling
@@ -17591,11 +17665,26 @@ IMPORTANT:
             console.log(`[NONSENSE_FILTER] Removed ${removed} nonsensical suggestion(s) - kept ${afterValidationCount}/${afterDuplicateFilterCount}`);
         }
 
+        // Validate suggestion quality: ensure each has meaningful guideline quotes/context
+        suggestions = validateSuggestionQuality(suggestions, guidelineContent);
+        const afterQualityFilterCount = suggestions.length;
+
+        if (afterQualityFilterCount < afterValidationCount) {
+            const removed = afterValidationCount - afterQualityFilterCount;
+            debugLog('[DEBUG] dynamicAdvice: Quality validation removed low-quality suggestions', {
+                before_quality_check: afterValidationCount,
+                after_quality_check: afterQualityFilterCount,
+                removed: removed
+            });
+            console.log(`[QUALITY_FILTER] Removed ${removed} low-quality suggestion(s) - kept ${afterQualityFilterCount}/${afterValidationCount}`);
+        }
+
         debugLog('[DEBUG] dynamicAdvice: Suggestion filtering summary', {
             original: originalSuggestionCount,
             after_duplicate_filter: afterDuplicateFilterCount,
             after_nonsense_filter: afterValidationCount,
-            total_removed: originalSuggestionCount - afterValidationCount
+            after_quality_filter: afterQualityFilterCount,
+            total_removed: originalSuggestionCount - afterQualityFilterCount
         });
 
         // Add unique session ID for tracking user decisions
