@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improvements - Clerky</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tools-section {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tools-section h4 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .tools-section p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        #improvementsContainer {
+            display: grid;
+            gap: 15px;
+        }
+
+        .improvement-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            transition: all 0.2s;
+        }
+
+        .improvement-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .improvement-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .version-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .improvement-title {
+            margin: 0;
+            font-size: 15px;
+            color: var(--text-primary);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-left: auto;
+        }
+
+        .status-testing {
+            background-color: #fff3cd;
+            color: #664d03;
+        }
+
+        .status-resolved {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .improvement-description {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin: 8px 0;
+        }
+
+        .improvement-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-color);
+            font-size: 12px;
+        }
+
+        .detail-section h5 {
+            margin: 0 0 8px 0;
+            color: var(--text-primary);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .detail-section ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .detail-section ul li {
+            margin-bottom: 4px;
+        }
+
+        .test-results {
+            background-color: var(--bg-secondary);
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .test-result-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+
+        .test-result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-icon {
+            font-weight: bold;
+        }
+
+        .result-pass {
+            color: #0f5132;
+        }
+
+        .result-fail {
+            color: #664d03;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Improvements & Audit Trail</h1>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+
+        <div class="tools-section">
+            <h4>Improvements & Audit Trail</h4>
+            <p>Track all improvements made in response to user feedback, including implementation, testing, and resolution status.</p>
+            <div id="improvementsContainer">
+                <!-- Improvements will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="dev.js"></script>
+</body>
+
+</html>

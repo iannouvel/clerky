@@ -433,7 +433,31 @@ test.describe('Agentic Doctor Simulation', () => {
 
     log(`\nFeedback Summary: ${feedback.summary}`);
     log('\n=== FEEDBACK READY FOR SUBMISSION ===');
-    log('This feedback can be submitted via the feedback button in the UI');
+    log('Submitting feedback via UI...');
+
+    // Submit feedback through the UI
+    try {
+      // Click the feedback button in the wizard
+      const feedbackBtn = page.locator('.sw-btn-feedback').first();
+      if (await feedbackBtn.isVisible()) {
+        await feedbackBtn.click();
+        await page.waitForSelector('#feedbackText', { timeout: 5000 });
+
+        // Fill in the feedback textarea
+        const feedbackMessage = feedback.summary || 'Feedback from agentic test run';
+        await page.fill('#feedbackText', feedbackMessage);
+
+        // Submit the feedback
+        await page.click('#feedbackSubmitBtn');
+        await page.waitForTimeout(1000);
+
+        log('✅ Feedback submitted successfully');
+      } else {
+        log('⚠️ Feedback button not found, feedback not submitted');
+      }
+    } catch (err) {
+      log(`⚠️ Error submitting feedback: ${err.message}`);
+    }
   });
 
   test('assess v9.0.249 data awareness filter — should not ask for info already in note', async ({ page }) => {

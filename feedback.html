@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Clerky</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: var(--text-primary);
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .tools-section {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .tools-section h4 {
+            margin: 0 0 15px 0;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .controls label {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        .controls select,
+        .controls button {
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .controls button {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .controls button:hover {
+            opacity: 0.9;
+        }
+
+        .export-btn {
+            background-color: #17a2b8 !important;
+            border-color: #17a2b8 !important;
+        }
+
+        .feedback-count {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-left: auto;
+        }
+
+        #feedbackTableContainer {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        thead tr {
+            border-bottom: 2px solid var(--border-color);
+            text-align: left;
+        }
+
+        th {
+            padding: 10px 8px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-unactioned {
+            background-color: #fff3cd;
+            color: #664d03;
+        }
+
+        .status-actioned {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .action-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .action-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>User Feedback</h1>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </div>
+
+        <div class="tools-section">
+            <h4>Feedback Audit Trail</h4>
+            <p style="color:var(--text-secondary);font-size:13px;margin-bottom:15px;">View and manage user feedback submitted through the application.</p>
+
+            <div class="controls">
+                <label>Filter:</label>
+                <select id="feedbackFilter">
+                    <option value="unactioned">Unactioned</option>
+                    <option value="actioned">Actioned</option>
+                    <option value="all">All</option>
+                </select>
+                <button id="feedbackRefreshBtn">Refresh</button>
+                <button id="feedbackExportBtn" class="export-btn">Export JSON</button>
+                <span id="feedbackCount" class="feedback-count"></span>
+            </div>
+
+            <div id="feedbackTableContainer">
+                <table id="feedbackTable">
+                    <thead>
+                        <tr>
+                            <th style="width:140px;">Date</th>
+                            <th style="width:160px;">User</th>
+                            <th>Feedback</th>
+                            <th style="width:180px;">Context</th>
+                            <th style="width:100px;">Status</th>
+                            <th style="width:100px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feedbackTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="dev.js"></script>
+</body>
+
+</html>
