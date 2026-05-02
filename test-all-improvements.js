@@ -65,6 +65,22 @@ async function exportFeedbackFromUI() {
     // Try to trigger feedback loading directly via JavaScript
     console.log('   Triggering feedback load via JavaScript...');
 
+    // First, wait for Firebase auth to be ready
+    await page.evaluate(() => {
+      return new Promise((resolve) => {
+        // Wait for auth to be ready (max 5 seconds)
+        let attempts = 0;
+        const checkAuth = setInterval(() => {
+          if (window.auth || attempts > 25) {
+            clearInterval(checkAuth);
+            resolve();
+          }
+          attempts++;
+        }, 200);
+      });
+    });
+
+    // Now show the feedback content and call loadFeedback
     await page.evaluate(() => {
       // Show the feedback content div
       const feedbackContent = document.getElementById('feedbackContent');
@@ -80,13 +96,16 @@ async function exportFeedbackFromUI() {
 
       // Try to call loadFeedback if it exists
       if (typeof loadFeedback === 'function') {
+        console.log('[Agent] Calling loadFeedback()');
         loadFeedback();
+      } else {
+        console.log('[Agent] loadFeedback not found');
       }
     });
 
     console.log('   Waiting for feedback to load from Firestore...');
-    // Wait longer for Firebase to fetch data
-    await page.waitForTimeout(4000);
+    // Wait longer for Firebase to fetch data (8 seconds)
+    await page.waitForTimeout(8000);
 
     // Extract feedback data from the page
     try {
