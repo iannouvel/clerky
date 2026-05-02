@@ -20830,7 +20830,15 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
     const prompt = promptTemplate.replace('{{transcript}}', transcript.substring(0, 4000));
 
     try {
-        const aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
+        let aiResponse;
+        try {
+            aiResponse = await routeToAI({ messages: [{ role: 'user', content: prompt }] }, userId, null, 4000, 'complex');
+        } catch (aiError) {
+            console.error('[COMPLETENESS-V2] AI call failed:', aiError?.message || aiError);
+            // Return graceful fallback instead of rejecting
+            return res.json({ success: true, missing_information: [] });
+        }
+
         let missing_information = [];
         if (aiResponse?.content) {
             try {
@@ -20838,15 +20846,19 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
                 const parsed = JSON.parse(jsonMatch ? jsonMatch[1].trim() : aiResponse.content.trim());
                 if (parsed && Array.isArray(parsed.missing_information)) {
                     missing_information = parsed.missing_information;
+                    console.log('[COMPLETENESS-V2] Parsed missing_information items:', missing_information.length);
                 }
-            } catch (e) {
-                console.warn('[COMPLETENESS-V2] JSON parse failed:', e.message);
+            } catch (parseError) {
+                console.warn('[COMPLETENESS-V2] JSON parse failed:', parseError?.message || parseError);
             }
+        } else {
+            console.warn('[COMPLETENESS-V2] No content in AI response');
         }
         res.json({ success: true, missing_information });
     } catch (error) {
-        console.error('[COMPLETENESS-V2] Error:', error.message);
-        res.json({ success: true, missing_information: [] });
+        console.error('[COMPLETENESS-V2] Unhandled error:', error?.message || error);
+        // Ensure we always return a response
+        return res.json({ success: true, missing_information: [] });
     }
 });
 
