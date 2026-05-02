@@ -18,24 +18,12 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { chromium } = require('playwright');
 
-// Try to use Firebase Admin SDK if available
-let adminDb = null;
-try {
-  const admin = require('firebase-admin');
-  const serviceAccountPath = path.join(__dirname, '.firebase-service-account.json');
+// Load Firebase credentials from .env
+require('dotenv').config();
+const firebaseProjectId = process.env.FIREBASE_PROJECT_ID || 'clerky-b3be8';
+const firebaseApiKey = process.env.FIREBASE_API_KEY;
 
-  if (fs.existsSync(serviceAccountPath)) {
-    const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf-8'));
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-      databaseURL: 'https://clerky-b3be8.firebaseio.com'
-    });
-    adminDb = admin.firestore();
-    console.log('[Firestore] Using Firebase Admin SDK\n');
-  }
-} catch (err) {
-  console.log('[Firestore] Firebase Admin SDK not available, will use browser method\n');
-}
+console.log(`[Firestore] Using project: ${firebaseProjectId}`);
 
 const improvementsPath = path.join(__dirname, 'improvements.json');
 const skipExport = process.argv.includes('--no-export');
@@ -64,29 +52,51 @@ async function exportFeedbackFromUI() {
     return [];
   }
 
-  console.log('📤 Exporting feedback from Firestore...\n');
+  console.log('📤 Exporting feedback from Firestore REST API...\n');
 
   let feedbackItems = [];
 
-  // Try Firebase Admin SDK first (most reliable)
-  if (adminDb) {
-    try {
-      console.log('   Using Firebase Admin SDK...');
-      const snapshot = await adminDb.collection('feedback').orderBy('timestamp', 'desc').get();
+  // Use Firestore REST API
+  try {
+    console.log('   Querying Firestore via REST API...');
 
-      feedbackItems = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+    const url = `https://firestore.googleapis.com/v1/projects/${firebaseProjectId}/databases/(default)/documents/feedback?key=${firebaseApiKey}`;
 
-      console.log(`✅ Exported ${feedbackItems.length} feedback item(s) via Admin SDK\n`);
-      return feedbackItems;
-    } catch (err) {
-      console.log(`⚠️  Admin SDK error: ${err.message}\n   Falling back to browser method...\n`);
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     }
+
+    const data = await response.json();
+
+    if (data.documents && data.documents.length > 0) {
+      // Parse Firestore REST API response
+      feedbackItems = data.documents.map(doc => {
+        const fields = doc.fields || {};
+        return {
+          id: doc.name.split('/').pop(),
+          timestamp: fields.timestamp?.timestampValue || new Date().toISOString(),
+          user: fields.user?.stringValue || 'unknown',
+          feedback: fields.feedback?.stringValue || '',
+          context: fields.context?.stringValue || '',
+          summary: fields.summary?.stringValue || '',
+          actioned: fields.actioned?.booleanValue || false,
+          userId: fields.userId?.stringValue || ''
+        };
+      }).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+      console.log(`✅ Exported ${feedbackItems.length} feedback item(s) via REST API\n`);
+      return feedbackItems;
+    } else {
+      console.log('⚠️  No feedback items found in Firestore\n');
+      return [];
+    }
+  } catch (err) {
+    console.log(`⚠️  REST API error: ${err.message}\n`);
   }
 
-  // Fallback: use browser method
+  // Fallback: use browser method (deprecated, but kept for compatibility)
   const browser = await chromium.launch();
 
   try {
