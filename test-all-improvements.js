@@ -62,19 +62,31 @@ async function exportFeedbackFromUI() {
     await page.goto(fileUrl, { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(2000);
 
-    // Click the Feedback tab button
-    console.log('   Clicking Feedback tab...');
-    const feedbackBtn = page.locator('button[data-content="feedbackContent"]');
+    // Try to trigger feedback loading directly via JavaScript
+    console.log('   Triggering feedback load via JavaScript...');
 
-    const btnVisible = await feedbackBtn.isVisible({ timeout: 3000 }).catch(() => false);
-    if (btnVisible) {
-      await feedbackBtn.click();
-      console.log('   Waiting for feedback to load from Firestore...');
-      // Wait longer for Firebase to fetch data
-      await page.waitForTimeout(4000);
-    } else {
-      console.log('⚠️  Feedback button not found\n');
-    }
+    await page.evaluate(() => {
+      // Show the feedback content div
+      const feedbackContent = document.getElementById('feedbackContent');
+      if (feedbackContent) {
+        feedbackContent.style.display = 'block';
+      }
+
+      // Mark button as active
+      const feedbackBtn = document.querySelector('button[data-content="feedbackContent"]');
+      if (feedbackBtn) {
+        feedbackBtn.classList.add('active');
+      }
+
+      // Try to call loadFeedback if it exists
+      if (typeof loadFeedback === 'function') {
+        loadFeedback();
+      }
+    });
+
+    console.log('   Waiting for feedback to load from Firestore...');
+    // Wait longer for Firebase to fetch data
+    await page.waitForTimeout(4000);
 
     // Extract feedback data from the page
     try {
