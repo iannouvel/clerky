@@ -314,31 +314,86 @@ export async function showCurrentSuggestion() {
         suggestion.context, suggestion.hasVerbatimQuote, suggestion.suggestedText
     );
 
+    // Determine priority color
+    const priorityColors = {
+        high: '#dc2626',
+        medium: '#f59e0b',
+        low: '#10b981'
+    };
+    const priorityColor = priorityColors[suggestion.priority || 'medium'] || priorityColors.medium;
+    const priorityBg = {
+        high: '#fee2e2',
+        medium: '#fef3c7',
+        low: '#dcfce7'
+    };
+    const priorityBgColor = priorityBg[suggestion.priority || 'medium'] || priorityBg.medium;
+
+    // Calculate progress percentage
+    const progressPercent = ((review.currentIndex + 1) / review.suggestions.length) * 100;
+
     const suggestionHtml = `
         <div class="dynamic-advice-container" id="suggestion-review-current">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin: 0 0 15px 0;">
-                <h3 style="color: #2563eb; margin: 0;">💡 Suggestion ${progressText} (${suggestion.priority || 'medium'} priority)</h3>
-                <p style="margin: 0; font-size: 13px; color: #666; text-align: right;"><em>From: ${review.guidelineTitle || 'Guideline Analysis'}</em></p>
+            <!-- Progress bar -->
+            <div style="width: 100%; height: 4px; background: #e5e7eb; border-radius: 2px; margin-bottom: 15px; overflow: hidden;">
+                <div style="width: ${progressPercent}%; height: 100%; background: #3b82f6; transition: width 0.3s ease;"></div>
             </div>
-            <div class="suggestion-current" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 6px;">
-                <div style="margin: 0 0 15px 0;"><strong style="color: #2563eb;">${categoryIcon} ${suggestion.category || 'Suggestion'}:</strong></div>
-                ${suggestion.originalText ? `<div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #dc2626;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong> <span style="background: #fef3c7; padding: 4px 8px; border-radius: 3px; display: inline;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
-                <div style="margin: 0 0 15px 0; padding: 10px; background: #fff; border-radius: 4px;"><strong style="color: #16a34a;">Suggested:</strong> <span style="background: #dcfce7; padding: 4px 8px; border-radius: 3px; display: inline;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
-                <div style="margin: 0 0 15px 0; padding: 10px; background: #eff6ff; border-radius: 4px; border-left: 3px solid #3b82f6;"><strong>Why:</strong> ${escapeHtml(suggestion.context)}</div>
-                <div style="margin: 0; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9;"><strong>Link:</strong> ${guidelineLink}</div>
+
+            <!-- Header with priority badge -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin: 0 0 15px 0; flex-wrap: wrap; gap: 10px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <h3 style="color: #2563eb; margin: 0;">💡 Suggestion ${progressText}</h3>
+                    <span style="background: ${priorityBgColor}; color: ${priorityColor}; padding: 4px 12px; border-radius: 12px; font-weight: 600; font-size: 12px; text-transform: uppercase;">● ${suggestion.priority || 'medium'}</span>
+                </div>
+                <p style="margin: 0; font-size: 12px; color: #666;"><em>📋 ${review.guidelineTitle || 'Guideline'}</em></p>
             </div>
-            <div id="preview-message-current" style="display: none; background: #dcfce7; border: 2px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 6px; color: #047857;">
-                ✅ Preview shown in your note (green highlight) — click <strong>Confirm</strong> to accept or <strong>Reject</strong> to dismiss
+
+            <!-- Main suggestion box -->
+            <div class="suggestion-current" style="background: #f5f5f5; border: 2px solid #3B82F6; padding: 15px; margin: 10px 0; border-radius: 8px;">
+                <!-- Category -->
+                <div style="margin: 0 0 12px 0; padding-bottom: 12px; border-bottom: 1px solid #e5e7eb;"><strong style="color: #2563eb; font-size: 15px;">${categoryIcon} ${(suggestion.category || 'Suggestion').charAt(0).toUpperCase() + (suggestion.category || 'Suggestion').slice(1)}</strong></div>
+
+                <!-- Original text (if modification) -->
+                ${suggestion.originalText ? `<div style="margin: 0 0 12px 0; padding: 10px; background: #fff; border-radius: 4px; border-left: 3px solid #dc2626;"><strong style="color: #dc2626; font-size: 14px;">${getOriginalTextLabel(suggestion.originalText, suggestion.category)}</strong><br><span style="background: #fef3c7; padding: 6px 10px; border-radius: 3px; display: inline-block; margin-top: 6px; font-size: 13px;">"${escapeHtml(suggestion.originalText)}"</span></div>` : ''}
+
+                <!-- Suggested text -->
+                <div style="margin: 0 0 12px 0; padding: 10px; background: #fff; border-radius: 4px; border-left: 3px solid #16a34a;"><strong style="color: #16a34a; font-size: 14px;">✅ Suggested text:</strong><br><span style="background: #dcfce7; padding: 6px 10px; border-radius: 3px; display: inline-block; margin-top: 6px; font-size: 13px;">"${escapeHtml(suggestion.suggestedText)}"</span></div>
+
+                <!-- Clinical context with quote -->
+                <div style="margin: 0 0 12px 0; padding: 12px; background: #eff6ff; border-radius: 4px; border-left: 4px solid #3b82f6;">
+                    <strong style="color: #1e40af; font-size: 14px; display: block; margin-bottom: 8px;">📖 Evidence & Rationale:</strong>
+                    <p style="margin: 0; color: #1e3a8a; font-size: 13px; line-height: 1.5;">${escapeHtml(suggestion.context)}</p>
+                </div>
+
+                <!-- Guideline reference and link -->
+                <div style="margin: 0; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong style="color: #0369a1; font-size: 14px; display: block;">🔗 Guideline Reference</strong>
+                        <p style="margin: 4px 0 0 0; color: #0c4a6e; font-size: 12px;">${suggestion.guidelineReference || 'Clinical guideline'}</p>
+                    </div>
+                    <div style="text-align: right; font-size: 12px;">${guidelineLink}</div>
+                </div>
             </div>
+
+            <!-- Preview confirmation message -->
+            <div id="preview-message-current" style="display: none; background: #dcfce7; border: 2px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 6px; color: #047857; font-weight: 500;">
+                ✅ Preview shown in your note (green highlight) — click <strong>Confirm</strong> to accept or <strong>Dismiss</strong> to cancel
+            </div>
+
+            <!-- Modify section -->
             <div class="modify-section" id="modify-section-current" style="display: none; background: #fef3c7; border: 2px solid #eab308; padding: 15px; margin: 10px 0; border-radius: 6px;">
-                <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold;">Your modified text:</label>
-                <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; box-sizing: border-box;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
+                <label for="modify-textarea-current" style="display: block; margin-bottom: 8px; font-weight: bold; color: #92400e;">✏️ Edit your text:</label>
+                <textarea id="modify-textarea-current" style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; box-sizing: border-box;" placeholder="Enter your custom text here...">${escapeHtml(suggestion.suggestedText)}</textarea>
                 <div style="margin-top: 10px;">
                     <button onclick="confirmCurrentModification()" style="background: #16a34a; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: bold;">✅ Confirm</button>
                     <button onclick="hideModifySection()" style="background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; margin-left: 10px;">❌ Cancel</button>
                 </div>
             </div>
-            <div style="margin-top: 15px; text-align: center; font-size: 13px; color: #666;">${review.decisions.length} decision${review.decisions.length !== 1 ? 's' : ''} made • ${review.suggestions.length - review.currentIndex - 1} remaining</div>
+
+            <!-- Status footer -->
+            <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #666;">
+                <span>✅ ${review.decisions.length} decision${review.decisions.length !== 1 ? 's' : ''} made</span>
+                <span>${review.suggestions.length - review.currentIndex - 1} more suggestion${review.suggestions.length - review.currentIndex - 1 !== 1 ? 's' : ''}</span>
+            </div>
         </div>
     `;
 
@@ -441,10 +496,20 @@ export function confirmAndAcceptSuggestion() {
         .replace(/<div style="background-color: #dcfce7;[^>]*>[^<]*<span[^>]*>📋 Pending Insertion[^<]*<\/span>\n/g, '')
         .replace(/<\/div>\n?$/g, '');
 
+    // Clean up any dangling HTML markers
+    finalContent = finalContent.replace(/<div style="background-color: #dcfce7;[^>]*>\n?$/gm, '').trim();
+
     review.decisions.push({ suggestion, action: 'accept' });
     setUserInputContent(finalContent, true, 'Wizard Accept - Confirmed');
     clearHighlightInEditor();
     review.currentIndex++;
+
+    // Track accepted suggestions for smarter formatting on final review
+    if (!review.acceptedSuggestions) {
+        review.acceptedSuggestions = [];
+    }
+    review.acceptedSuggestions.push(suggestion);
+
     showCurrentSuggestion();
 }
 
@@ -489,6 +554,34 @@ export function navigateSuggestion(direction) {
     showCurrentSuggestion();
 }
 
+// Consolidate and organize note for better structure and readability
+function consolidateNoteFormat(noteContent) {
+    // Clean up duplicate content and organize into logical sections
+    // Remove obvious duplicate lines (exact matches)
+    const lines = noteContent.split('\n');
+    const seen = new Set();
+    const consolidated = [];
+
+    for (const line of lines) {
+        const trimmed = line.trim();
+        if (trimmed && !seen.has(trimmed)) {
+            consolidated.push(line);
+            seen.add(trimmed);
+        } else if (!trimmed) {
+            // Keep blank lines to preserve structure
+            if (consolidated[consolidated.length - 1]?.trim() !== '') {
+                consolidated.push(line);
+            }
+        }
+    }
+
+    // Join back and clean up multiple consecutive blank lines
+    let result = consolidated.join('\n');
+    result = result.replace(/\n\n\n+/g, '\n\n'); // Max 2 consecutive newlines
+
+    return result;
+}
+
 export function completeSuggestionReview() {
     const review = currentSuggestionReview;
     if (!review) return;
@@ -498,6 +591,13 @@ export function completeSuggestionReview() {
     const rejected = review.decisions.filter(d => d.action === 'reject').length;
     const reviewContainer = document.getElementById('suggestion-review-current');
     if (reviewContainer) reviewContainer.outerHTML = '';
+
+    // Consolidate note formatting to remove duplicates and organize better
+    const currentNoteContent = getUserInputContent();
+    const consolidatedContent = consolidateNoteFormat(currentNoteContent);
+    if (consolidatedContent !== currentNoteContent) {
+        setUserInputContent(consolidatedContent, false, 'Wizard Consolidate');
+    }
 
     updateUser(`Review complete: ${accepted} accepted, ${rejected} rejected.`, false);
     currentSuggestionReview = null;
