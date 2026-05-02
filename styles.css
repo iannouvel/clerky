@@ -4513,10 +4513,10 @@ body {
 
 .guideline-checkpoint-body {
     padding: 20px;
-    overflow-y: auto;
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-height: 0;
 }
 
 .feedback-cancel-btn:hover {
