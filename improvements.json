@@ -1,0 +1,23 @@
+{
+  "v9.0.249": {
+    "title": "Data Awareness Filter",
+    "description": "Stop asking for age/gestation/BP when already documented in the note",
+    "relatedFeedback": [
+      "IVecsVQIPnaPEg2cFyiY: why is it asking for gestational age when it's right there at the top as 32+4",
+      "2WzE4ElzGeHa0P1iZ600: why is it asking for the patient's age, when it says 28yo?",
+      "spE6nFMSxmW4clntuNJ4: when we've said 'vital signs within normal limits' this should cover BP"
+    ],
+    "status": "testing",
+    "implementation": {
+      "commit": "3e7f26c2e",
+      "files": ["script.js"],
+      "description": "Added regex-based data awareness filter that checks if suggested information is already documented before prompting"
+    },
+    "testPlan": [
+      "Manual: Create note with '28yo, 32+4 weeks, vital signs normal' - should NOT ask for age/gestation/BP",
+      "Agentic: Run test with multiple scenarios - track if 'Patient age' or 'Gestational age' suggestions appear",
+      "Console: Look for [FILTER] messages showing items being skipped"
+    ],
+    "testResults": []
+  }
+}
