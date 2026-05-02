@@ -38,14 +38,14 @@ try {
   process.exit(1);
 }
 
-// Function to export feedback from feedback.html
+// Function to export feedback from dev.html Feedback tab
 async function exportFeedbackFromUI() {
   if (skipExport) {
     console.log('⏭️  Skipping feedback export (--no-export flag set)\n');
     return [];
   }
 
-  console.log('📤 Exporting feedback from Firestore...\n');
+  console.log('📤 Exporting feedback from dev.html/Feedback tab...\n');
 
   let feedbackItems = [];
   const browser = await chromium.launch();
@@ -54,33 +54,44 @@ async function exportFeedbackFromUI() {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    // Navigate to feedback.html
-    const feedbackHtmlPath = path.join(__dirname, 'feedback.html');
-    const fileUrl = 'file:///' + feedbackHtmlPath.replace(/\\/g, '/');
+    // Navigate to dev.html
+    const devHtmlPath = path.join(__dirname, 'dev.html');
+    const fileUrl = 'file:///' + devHtmlPath.replace(/\\/g, '/');
 
-    await page.goto(fileUrl, { waitUntil: 'networkidle' });
-    console.log('   Waiting for Firebase to initialize...');
+    console.log('   Opening dev.html...');
+    await page.goto(fileUrl, { waitUntil: 'domcontentloaded' });
+    await page.waitForTimeout(2000);
 
-    // Wait for Firebase and feedback to load
-    await page.waitForTimeout(3000);
+    // Click the Feedback tab button
+    console.log('   Clicking Feedback tab...');
+    const feedbackBtn = page.locator('button[data-content="feedbackContent"]');
 
-    // Try to extract feedback data directly from the page
+    if (await feedbackBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await feedbackBtn.click();
+      console.log('   Waiting for feedback to load...');
+      await page.waitForTimeout(2000);
+    } else {
+      console.log('⚠️  Feedback button not found, trying to access feedback data directly\n');
+    }
+
+    // Extract feedback data from the page
     try {
       const data = await page.evaluate(() => {
         // Try to access the feedback cache that dev.js populates
-        if (window._feedbackCache) {
+        if (window._feedbackCache && window._feedbackCache.length > 0) {
           return window._feedbackCache;
         }
+
         // If that fails, try to find the table data
         const rows = document.querySelectorAll('#feedbackTableBody tr');
         if (rows.length > 0) {
           return Array.from(rows).map(row => ({
-            id: row.cells[0]?.textContent || 'unknown',
-            timestamp: row.cells[0]?.textContent || new Date().toISOString(),
-            user: row.cells[1]?.textContent || 'unknown',
-            feedback: row.cells[2]?.textContent || '',
-            context: row.cells[3]?.textContent || '',
-            status: row.cells[4]?.textContent || 'unactioned'
+            id: row.getAttribute('data-id') || 'unknown',
+            timestamp: row.cells[0]?.textContent.trim() || new Date().toISOString(),
+            user: row.cells[1]?.textContent.trim() || 'unknown',
+            feedback: row.cells[2]?.textContent.trim() || '',
+            context: row.cells[3]?.textContent.trim() || '',
+            status: row.cells[4]?.textContent.trim() || 'unactioned'
           }));
         }
         return [];
@@ -88,9 +99,9 @@ async function exportFeedbackFromUI() {
 
       if (data && data.length > 0) {
         feedbackItems = data;
-        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) from Firestore\n`);
+        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) from dev.html\n`);
       } else {
-        console.log('⚠️  No feedback items found in Firestore\n');
+        console.log('⚠️  No feedback items found\n');
       }
     } catch (evalErr) {
       console.log(`⚠️  Error reading feedback data: ${evalErr.message}\n`);
@@ -98,7 +109,7 @@ async function exportFeedbackFromUI() {
 
     await context.close();
   } catch (err) {
-    console.log(`⚠️  Error accessing feedback page: ${err.message}\n`);
+    console.log(`⚠️  Error accessing dev.html: ${err.message}\n`);
   } finally {
     await browser.close();
   }
