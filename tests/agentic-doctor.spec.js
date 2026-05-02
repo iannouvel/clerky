@@ -435,4 +435,129 @@ test.describe('Agentic Doctor Simulation', () => {
     log('\n=== FEEDBACK READY FOR SUBMISSION ===');
     log('This feedback can be submitted via the feedback button in the UI');
   });
+
+  test('assess v9.0.249 data awareness filter — should not ask for info already in note', async ({ page }) => {
+    /**
+     * v9.0.249 improvement test:
+     * The data awareness filter should prevent suggestions for:
+     * - Patient age (if explicitly stated, e.g., "28yo")
+     * - Gestational age (if explicitly stated, e.g., "32+4 weeks")
+     * - Blood pressure (if vital signs documented, e.g., "vital signs normal")
+     * - FHR (if already stated)
+     * - Anti-D (if documented)
+     */
+    const log = (msg) => console.log(`  [DATA-AWARE] ${msg}`);
+
+    // Create a clinical note with explicit data that should NOT be suggested
+    const testNote = `
+      Patient: 28-year-old woman
+      Gestation: 32+4 weeks
+      Presenting: Regular contractions every 5 minutes
+      Vital signs: All within normal limits (BP 120/75, HR 82, RR 16, Temp 37.1)
+      Fetal heart rate: 145 bpm, regular
+      Membranes: Intact
+      Notes: Discussed anti-D implications given her negative antibody screen
+    `;
+
+    log('Testing data awareness filter with note containing age, gestation, BP, FHR, anti-D');
+    log('Expected behavior: Filter should prevent suggestions for these items');
+
+    await typeIntoEditor(page, testNote);
+    await page.waitForTimeout(1000);
+
+    // Verify note was typed
+    const typedContent = await getNoteContent(page);
+    expect(typedContent.length).toBeGreaterThan(50);
+    log(`Note typed (${typedContent.length} chars)`);
+
+    // Click Analyse Note
+    const analyseBtn = page.locator('#analyseNoteBtn');
+    await expect(analyseBtn).toBeVisible({ timeout: 5000 });
+    await analyseBtn.click();
+    log('Clicked Analyse Note');
+
+    // Collect all suggestions that appear
+    const suggestionsAppeared = [];
+    const suggestionsFiltered = [];
+    const forbiddenSuggestions = [
+      'patient.*age',
+      'patient.*age',
+      'gestational.*age',
+      'gestation',
+      'weeks',
+      'blood.*pressure',
+      'BP[^a-z]',
+      'fetal.*heart',
+      'FHR',
+      'anti-?D',
+    ];
+
+    // Monitor wizard for suggestions (timeout-safe)
+    const maxWizardWaits = 120; // ~4 minutes at 2s per iteration
+    let wizardIterations = 0;
+
+    while (await isWizardVisible(page).catch(() => false) && wizardIterations < maxWizardWaits) {
+      const state = await getWizardState(page).catch(() => null);
+      wizardIterations++;
+
+      if (!state) {
+        await page.waitForTimeout(2000);
+        continue;
+      }
+
+      const suggestionText = state.text.toLowerCase();
+      suggestionsAppeared.push(suggestionText);
+      log(`  Suggestion ${state.index + 1}/${state.total}: ${state.text.slice(0, 50)}`);
+
+      // Check if this is a forbidden suggestion
+      const isForbidden = forbiddenSuggestions.some(pattern =>
+        new RegExp(pattern, 'i').test(suggestionText)
+      );
+
+      if (isForbidden) {
+        suggestionsFiltered.push(`❌ FAILED: "${state.text}" should have been filtered`);
+        log(`    ⚠️  DATA-AWARE FILTER FAILED: Should not suggest "${state.text.slice(0, 40)}"`);
+      } else {
+        suggestionsFiltered.push(`✅ OK: "${state.text.slice(0, 40)}"...`);
+      }
+
+      // Auto-skip all suggestions for this assessment test
+      await clickSkip(page);
+      await page.waitForTimeout(ACTION_DELAY);
+    }
+
+    log(`\n=== DATA AWARENESS FILTER ASSESSMENT ===`);
+    log(`Total suggestions encountered: ${suggestionsAppeared.length}`);
+    log(`Wizard iterations: ${wizardIterations}`);
+
+    // Count failures
+    const failures = suggestionsFiltered.filter(s => s.startsWith('❌')).length;
+    const passed = suggestionsFiltered.filter(s => s.startsWith('✅')).length;
+
+    log(`Filter performance: ${passed} OK, ${failures} FAILED`);
+
+    // Record assessment result to console (test runner can pick this up)
+    const assessmentResult = {
+      version: 'v9.0.249',
+      testName: 'Data Awareness Filter',
+      testedAt: new Date().toISOString().split('T')[0],
+      passed: failures === 0,
+      totalSuggestionsProcessed: suggestionsAppeared.length,
+      forbiddenSuggestionsEncountered: suggestionsFiltered.filter(s => s.startsWith('❌')).length,
+      details: suggestionsFiltered.slice(0, 10), // first 10 for brevity
+      notes: failures === 0
+        ? 'Data awareness filter is working correctly — no suggestions appeared for age, gestation, BP, FHR, or anti-D'
+        : `Filter encountered ${failures} cases where suggestions appeared for data already in the note`
+    };
+
+    log(`\nAssertion Results:`);
+    log(`  Passed: ${assessmentResult.passed}`);
+    log(`  Details: ${assessmentResult.notes}`);
+
+    // Write assessment result somewhere accessible (console for now, will be picked up by test logger)
+    console.log('\n[IMPROVEMENT_ASSESSMENT]', JSON.stringify(assessmentResult, null, 2));
+
+    // Assertion: filter should have prevented all forbidden suggestions
+    expect(failures).toBe(0, 'Data awareness filter should prevent suggestions for data already in the note');
+  });
 });
