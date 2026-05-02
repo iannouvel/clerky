@@ -10,10 +10,12 @@
       "2WzE4ElzGeHa0P1iZ600: why is it asking for the patient's age, when it says 28yo?",
       "spE6nFMSxmW4clntuNJ4: when we've said 'vital signs within normal limits' this should cover BP"
     ],
-    "status": "testing",
+    "status": "resolved",
     "implementation": {
       "commit": "3e7f26c2e",
-      "files": ["script.js"],
+      "files": [
+        "script.js"
+      ],
       "description": "Added regex-based data awareness filter that checks if suggested information is already documented before prompting"
     },
     "testPlan": [
@@ -21,6 +23,17 @@
       "Agentic: Run test 'assess v9.0.249 data awareness filter' - validates filter prevents redundant suggestions",
       "Console: Look for [FILTER] messages showing items being skipped"
     ],
-    "testResults": []
+    "testResults": [
+      {
+        "testedAt": "2026-05-02",
+        "passed": true,
+        "notes": "Data awareness filter is working correctly — no suggestions appeared for age, gestation, BP, FHR, or anti-D"
+      },
+      {
+        "testedAt": "2026-05-02",
+        "passed": true,
+        "notes": "'Data"
+      }
+    ]
   }
 }
