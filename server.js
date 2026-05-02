@@ -5439,7 +5439,24 @@ app.use((err, req, res, next) => {
 
 // Catch unhandled rejections
 process.on('unhandledRejection', (reason, promise) => {
-    console.error('Unhandled Rejection reason:', reason?.message || reason, reason?.stack || '');
+    console.error('[UNHANDLED_REJECTION]', {
+        reason: reason?.message || String(reason),
+        type: reason?.constructor?.name,
+        stack: reason?.stack,
+        fullReason: reason,
+        timestamp: new Date().toISOString()
+    });
+});
+
+process.on('uncaughtException', (error) => {
+    console.error('[UNCAUGHT_EXCEPTION]', {
+        message: error?.message,
+        stack: error?.stack,
+        type: error?.constructor?.name,
+        timestamp: new Date().toISOString()
+    });
+    // Exit after logging to prevent further errors
+    process.exit(1);
 });
 
 // Update the firebase-config endpoint
