@@ -45,7 +45,7 @@ async function exportFeedbackFromUI() {
     return [];
   }
 
-  console.log('📤 Exporting feedback from dev.html...\n');
+  console.log('📤 Exporting feedback from feedback.html...\n');
 
   let feedbackItems = [];
   const browser = await chromium.launch();
@@ -65,28 +65,38 @@ async function exportFeedbackFromUI() {
 
     // Look for the export button
     const exportBtn = page.locator('#feedbackExportBtn');
-    const isVisible = await exportBtn.isVisible({ timeout: 2000 }).catch(() => false);
 
-    if (isVisible) {
-      // Set up download listener before clicking
-      const downloadPromise = page.waitForEvent('download');
-      await exportBtn.click();
+    try {
+      const isVisible = await exportBtn.isVisible({ timeout: 3000 }).catch(() => false);
 
-      try {
-        const download = await downloadPromise;
-        const fileName = download.suggestedFilename();
-        const filePath = path.join(downloadDir, fileName);
-        await download.saveAs(filePath);
+      if (!isVisible) {
+        console.log('⚠️  Feedback export button not found on the page\n');
+        console.log('💡 Tip: Make sure feedback.html is accessible and Firebase has loaded\n');
+      } else {
+        // Set up download listener BEFORE clicking
+        let downloadData = null;
+        const downloadPromise = page.waitForEvent('download', { timeout: 8000 });
 
-        // Read the exported JSON
-        const feedbackJSON = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        feedbackItems = feedbackJSON || [];
-        console.log(`✅ Exported ${feedbackItems.length} feedback item(s)\n`);
-      } catch (downloadErr) {
-        console.log(`⚠️  Download failed: ${downloadErr.message}\n`);
+        await exportBtn.click();
+        console.log('   Clicked export button, waiting for download...');
+
+        try {
+          const download = await downloadPromise;
+          const fileName = download.suggestedFilename();
+          const filePath = path.join(downloadDir, fileName);
+          await download.saveAs(filePath);
+
+          // Read the exported JSON
+          const feedbackJSON = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+          feedbackItems = feedbackJSON || [];
+          console.log(`✅ Exported ${feedbackItems.length} feedback item(s)\n`);
+        } catch (downloadErr) {
+          console.log(`⚠️  Download error: ${downloadErr.message}\n`);
+          console.log('💡 The export button may not be functional in file:// protocol. You can manually export from feedback.html in your browser.\n');
+        }
       }
-    } else {
-      console.log('⚠️  Feedback export button not found on the page\n');
+    } catch (err) {
+      console.log(`⚠️  Error checking export button: ${err.message}\n`);
     }
 
     await context.close();
@@ -94,6 +104,35 @@ async function exportFeedbackFromUI() {
     console.log(`⚠️  Error exporting feedback: ${err.message}\n`);
   } finally {
     await browser.close();
+  }
+
+  // If no items exported via browser, try to find manually exported feedback files
+  if (feedbackItems.length === 0) {
+    console.log('💡 Looking for manually exported feedback files...\n');
+
+    try {
+      // Look for feedback-export-*.json files in the project directory
+      const files = fs.readdirSync(__dirname);
+      const feedbackFiles = files.filter(f => f.match(/^feedback-export-.*\.json$/));
+
+      if (feedbackFiles.length > 0) {
+        // Use the most recent one
+        const mostRecent = feedbackFiles.sort().pop();
+        const filePath = path.join(__dirname, mostRecent);
+        const feedbackJSON = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        feedbackItems = feedbackJSON || [];
+        console.log(`✅ Found and loaded ${mostRecent} (${feedbackItems.length} items)\n`);
+      } else {
+        console.log('⚠️  No exported feedback files found\n');
+        console.log('💡 To use the full loop:\n');
+        console.log('   1. Open feedback.html in your browser\n');
+        console.log('   2. Click "Export JSON"\n');
+        console.log('   3. Save the file as feedback-export-*.json in this directory\n');
+        console.log('   4. Run the agent again\n');
+      }
+    } catch (err) {
+      console.log(`⚠️  Error looking for feedback files: ${err.message}\n`);
+    }
   }
 
   return feedbackItems;
