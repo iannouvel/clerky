@@ -16868,6 +16868,114 @@ async function getAllGuidelines() {
     }
 }
 
+// Helper function to validate suggestions for logical consistency and clinical appropriateness
+function validateSuggestionsForNonsense(suggestions, transcript, analysis) {
+    const transcriptNormalized = transcript.toLowerCase();
+    const analysisNormalized = (analysis || '').toLowerCase();
+    const fullContext = transcriptNormalized + ' ' + analysisNormalized;
+
+    return suggestions.filter(suggestion => {
+        if (!suggestion.suggestedText) return true;
+
+        const suggestedNormalized = suggestion.suggestedText.toLowerCase();
+
+        // Check 1: Contradictory monitoring frequency
+        // E.g., "continuous monitoring every 4 hours" is contradictory
+        if (/continuous.*monitor/i.test(suggestedNormalized)) {
+            const hasPeriodicFrequency = /every\s+\d+\s*hours?|every\s+\d+\s*days?|q\d+h|bd|tds|qid/i.test(suggestedNormalized);
+            if (hasPeriodicFrequency) {
+                console.log(`[VALIDATION] Nonsensical: "${suggestion.suggestedText.substring(0, 50)}..." - contradicts continuous + periodic monitoring`);
+                return false;
+            }
+        }
+
+        // Check 2: Suggesting procedure when already declined
+        // E.g., "amniocentesis declined by patient" → don't suggest amniocentesis
+        const declinedProcedures = suggestedNormalized.match(/amniocentesis|CVS|chorionic|induction|termination|episiotomy|instrumental|forceps|ventouse|IV|central\s+line/gi) || [];
+        for (const procedure of declinedProcedures) {
+            const declinedPattern = new RegExp(`${procedure}.*declined|declined.*${procedure}|patient.*declin.*${procedure}|${procedure}.*not.*wanted`, 'i');
+            if (declinedPattern.test(fullContext)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting "${procedure}" when patient already declined it`);
+                return false;
+            }
+        }
+
+        // Check 3: Gestational age mismatch
+        // Extract gestational age from transcript/analysis
+        const gestationMatch = fullContext.match(/(\d+)\s*(?:\+|weeks?|w|\d+\/\d+)/);
+        if (gestationMatch) {
+            const gestation = parseInt(gestationMatch[1]);
+
+            // Don't suggest interventions before viability (< 24 weeks for most contexts)
+            if (gestation < 24) {
+                const earlyPregnancyOnly = suggestedNormalized.match(/amniocentesis|CVS|induction|delivery|labour|contractions|CTG|fetal\s+monitoring/gi);
+                if (earlyPregnancyOnly && /deliver|labour|birth|contractions/i.test(suggestedNormalized)) {
+                    console.log(`[VALIDATION] Nonsensical: Suggesting delivery/labour at ${gestation} weeks (pre-viability)`);
+                    return false;
+                }
+            }
+
+            // Don't suggest antenatal testing after delivery (> 40 weeks in most contexts, or if labour/delivery already mentioned)
+            if (gestation > 40 || /in\s+labour|delivered|birth|postpartum|postnatal/.test(fullContext)) {
+                const antenatalOnly = /nuchal\s+translucency|triple\s+screen|NIPT|amniocentesis|CVS|detailed\s+scan|anomaly\s+scan/i;
+                if (antenatalOnly.test(suggestedNormalized)) {
+                    console.log(`[VALIDATION] Nonsensical: Suggesting antenatal test at ${gestation} weeks (post-term or in labour)`);
+                    return false;
+                }
+            }
+
+            // Gestational age specific validations
+            if (gestation > 36 && /induction.*before\s+37|elective\s+delivery.*before\s+39/i.test(suggestedNormalized)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting early delivery guideline at ${gestation} weeks (already term)`);
+                return false;
+            }
+        }
+
+        // Check 4: Suggesting investigation when already done
+        // E.g., "USS at 26+2 showed..." → don't suggest "perform USS"
+        const investigationPatterns = [
+            { name: 'ultrasound', regex: /USS|ultrasound|scan|sonograph/i },
+            { name: 'blood test', regex: /FBC|U&E|blood\s+test|full\s+blood|urea|electrolyte|platelets|haemoglobin/i },
+            { name: 'CTG', regex: /CTG|cardiotocograph|fetal\s+heart\s+monitoring/i },
+            { name: 'amniocentesis', regex: /amniocentesis|amniotic\s+fluid/i }
+        ];
+
+        for (const inv of investigationPatterns) {
+            if (inv.regex.test(suggestedNormalized)) {
+                // Check if already performed/documented
+                const alreadyDonePattern = new RegExp(`${inv.name}.*(?:showed|revealed|demonstrated|performed|done|completed|results?|found|identified)`, 'i');
+                if (alreadyDonePattern.test(fullContext)) {
+                    console.log(`[VALIDATION] Nonsensical: Suggesting ${inv.name} when already performed/documented`);
+                    return false;
+                }
+            }
+        }
+
+        // Check 5: Medication/intervention already in plan
+        // E.g., "plan includes oxytocin" → don't suggest "administer oxytocin"
+        const medications = suggestedNormalized.match(/oxytocin|misoprostol|magnesium|antibiotics?|steroids?|antihypertensive|anticoagulant/gi) || [];
+        for (const med of medications) {
+            const alreadyInPlanPattern = new RegExp(`plan.*${med}|${med}.*plan|will.*give|already.*${med}|${med}.*started`, 'i');
+            if (alreadyInPlanPattern.test(fullContext)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting "${med}" when already in plan`);
+                return false;
+            }
+        }
+
+        // Check 6: Contextually inappropriate suggestions
+        // E.g., suggesting contraception discussion immediately postpartum/during labour
+        if (/contraception|future\s+pregnancy|family\s+planning/i.test(suggestedNormalized)) {
+            if (/in\s+labour|delivering|delivery|postpartum|immediately\s+after|third\s+stage/i.test(fullContext)) {
+                console.log(`[VALIDATION] Nonsensical: Suggesting contraception discussion during/immediately after delivery`);
+                return false;
+            }
+        }
+
+        // Passed all validation checks
+        return true;
+    });
+}
+
 // Helper function to detect if suggested information is already documented in the transcript
 function filterOutDuplicateSuggestions(suggestions, transcript) {
     const normalizeText = (text) => text.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -17332,19 +17440,40 @@ IMPORTANT:
         timer.step('Parse response');
 
         // Filter out suggestions where information is already documented in the transcript
-        const originalSuggestionCount = suggestions.length;
+        let originalSuggestionCount = suggestions.length;
         suggestions = filterOutDuplicateSuggestions(suggestions, transcript);
-        const filteredSuggestionCount = suggestions.length;
+        let afterDuplicateFilterCount = suggestions.length;
 
-        if (filteredSuggestionCount < originalSuggestionCount) {
-            const removed = originalSuggestionCount - filteredSuggestionCount;
+        if (afterDuplicateFilterCount < originalSuggestionCount) {
+            const removed = originalSuggestionCount - afterDuplicateFilterCount;
             debugLog('[DEBUG] dynamicAdvice: Duplicate detection removed suggestions', {
                 original: originalSuggestionCount,
-                after_filtering: filteredSuggestionCount,
+                after_filtering: afterDuplicateFilterCount,
                 removed: removed
             });
-            console.log(`[DUPLICATE_FILTER] Removed ${removed} duplicate suggestion(s) - kept ${filteredSuggestionCount}/${originalSuggestionCount}`);
+            console.log(`[DUPLICATE_FILTER] Removed ${removed} duplicate suggestion(s) - kept ${afterDuplicateFilterCount}/${originalSuggestionCount}`);
         }
+
+        // Validate suggestions for logical consistency and clinical appropriateness
+        suggestions = validateSuggestionsForNonsense(suggestions, transcript, analysis);
+        const afterValidationCount = suggestions.length;
+
+        if (afterValidationCount < afterDuplicateFilterCount) {
+            const removed = afterDuplicateFilterCount - afterValidationCount;
+            debugLog('[DEBUG] dynamicAdvice: Nonsensical suggestion validation removed suggestions', {
+                before_validation: afterDuplicateFilterCount,
+                after_validation: afterValidationCount,
+                removed: removed
+            });
+            console.log(`[NONSENSE_FILTER] Removed ${removed} nonsensical suggestion(s) - kept ${afterValidationCount}/${afterDuplicateFilterCount}`);
+        }
+
+        debugLog('[DEBUG] dynamicAdvice: Suggestion filtering summary', {
+            original: originalSuggestionCount,
+            after_duplicate_filter: afterDuplicateFilterCount,
+            after_nonsense_filter: afterValidationCount,
+            total_removed: originalSuggestionCount - afterValidationCount
+        });
 
         // Add unique session ID for tracking user decisions
         const sessionId = `advice_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
