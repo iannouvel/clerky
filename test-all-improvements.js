@@ -38,101 +38,69 @@ try {
   process.exit(1);
 }
 
-// Function to export feedback from dev.html
+// Function to export feedback from feedback.html
 async function exportFeedbackFromUI() {
   if (skipExport) {
     console.log('⏭️  Skipping feedback export (--no-export flag set)\n');
     return [];
   }
 
-  console.log('📤 Exporting feedback from feedback.html...\n');
+  console.log('📤 Exporting feedback from Firestore...\n');
 
   let feedbackItems = [];
   const browser = await chromium.launch();
 
   try {
-    const context = await browser.newContext({
-      acceptDownloads: true,
-    });
+    const context = await browser.newContext();
     const page = await context.newPage();
 
-    // Navigate to feedback.html with file protocol
+    // Navigate to feedback.html
     const feedbackHtmlPath = path.join(__dirname, 'feedback.html');
     const fileUrl = 'file:///' + feedbackHtmlPath.replace(/\\/g, '/');
 
-    await page.goto(fileUrl, { waitUntil: 'domcontentloaded' });
-    await page.waitForTimeout(2000); // Wait for Firebase and JS to initialize
+    await page.goto(fileUrl, { waitUntil: 'networkidle' });
+    console.log('   Waiting for Firebase to initialize...');
 
-    // Look for the export button
-    const exportBtn = page.locator('#feedbackExportBtn');
+    // Wait for Firebase and feedback to load
+    await page.waitForTimeout(3000);
 
+    // Try to extract feedback data directly from the page
     try {
-      const isVisible = await exportBtn.isVisible({ timeout: 3000 }).catch(() => false);
-
-      if (!isVisible) {
-        console.log('⚠️  Feedback export button not found on the page\n');
-        console.log('💡 Tip: Make sure feedback.html is accessible and Firebase has loaded\n');
-      } else {
-        // Set up download listener BEFORE clicking
-        let downloadData = null;
-        const downloadPromise = page.waitForEvent('download', { timeout: 8000 });
-
-        await exportBtn.click();
-        console.log('   Clicked export button, waiting for download...');
-
-        try {
-          const download = await downloadPromise;
-          const fileName = download.suggestedFilename();
-          const filePath = path.join(downloadDir, fileName);
-          await download.saveAs(filePath);
-
-          // Read the exported JSON
-          const feedbackJSON = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-          feedbackItems = feedbackJSON || [];
-          console.log(`✅ Exported ${feedbackItems.length} feedback item(s)\n`);
-        } catch (downloadErr) {
-          console.log(`⚠️  Download error: ${downloadErr.message}\n`);
-          console.log('💡 The export button may not be functional in file:// protocol. You can manually export from feedback.html in your browser.\n');
+      const data = await page.evaluate(() => {
+        // Try to access the feedback cache that dev.js populates
+        if (window._feedbackCache) {
+          return window._feedbackCache;
         }
+        // If that fails, try to find the table data
+        const rows = document.querySelectorAll('#feedbackTableBody tr');
+        if (rows.length > 0) {
+          return Array.from(rows).map(row => ({
+            id: row.cells[0]?.textContent || 'unknown',
+            timestamp: row.cells[0]?.textContent || new Date().toISOString(),
+            user: row.cells[1]?.textContent || 'unknown',
+            feedback: row.cells[2]?.textContent || '',
+            context: row.cells[3]?.textContent || '',
+            status: row.cells[4]?.textContent || 'unactioned'
+          }));
+        }
+        return [];
+      });
+
+      if (data && data.length > 0) {
+        feedbackItems = data;
+        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) from Firestore\n`);
+      } else {
+        console.log('⚠️  No feedback items found in Firestore\n');
       }
-    } catch (err) {
-      console.log(`⚠️  Error checking export button: ${err.message}\n`);
+    } catch (evalErr) {
+      console.log(`⚠️  Error reading feedback data: ${evalErr.message}\n`);
     }
 
     await context.close();
   } catch (err) {
-    console.log(`⚠️  Error exporting feedback: ${err.message}\n`);
+    console.log(`⚠️  Error accessing feedback page: ${err.message}\n`);
   } finally {
     await browser.close();
-  }
-
-  // If no items exported via browser, try to find manually exported feedback files
-  if (feedbackItems.length === 0) {
-    console.log('💡 Looking for manually exported feedback files...\n');
-
-    try {
-      // Look for feedback-export-*.json files in the project directory
-      const files = fs.readdirSync(__dirname);
-      const feedbackFiles = files.filter(f => f.match(/^feedback-export-.*\.json$/));
-
-      if (feedbackFiles.length > 0) {
-        // Use the most recent one
-        const mostRecent = feedbackFiles.sort().pop();
-        const filePath = path.join(__dirname, mostRecent);
-        const feedbackJSON = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-        feedbackItems = feedbackJSON || [];
-        console.log(`✅ Found and loaded ${mostRecent} (${feedbackItems.length} items)\n`);
-      } else {
-        console.log('⚠️  No exported feedback files found\n');
-        console.log('💡 To use the full loop:\n');
-        console.log('   1. Open feedback.html in your browser\n');
-        console.log('   2. Click "Export JSON"\n');
-        console.log('   3. Save the file as feedback-export-*.json in this directory\n');
-        console.log('   4. Run the agent again\n');
-      }
-    } catch (err) {
-      console.log(`⚠️  Error looking for feedback files: ${err.message}\n`);
-    }
   }
 
   return feedbackItems;
