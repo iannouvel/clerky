@@ -122,9 +122,11 @@ service cloud.firestore {
       allow read, write: if true;
     }
 
-    // Feedback collection — authenticated users can submit; read is via Admin SDK only
+    // Feedback collection — authenticated users can submit and read
     match /feedback/{id} {
+      allow read: if isAuthenticated();
       allow create: if isAuthenticated();
+      allow update: if isAuthenticated() && isOwner(resource.data.userId);
     }
 
     // Default deny all other access

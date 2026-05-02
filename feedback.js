@@ -49,11 +49,25 @@ async function loadFeedback() {
 
       console.log(`Loaded ${_feedbackCache.length} feedback items`);
       renderFeedback();
+    }, (error) => {
+      // Handle Firestore errors
+      console.error('Firestore error:', error);
+
+      let errorMessage = error.message;
+      if (error.code === 'permission-denied') {
+        errorMessage = 'Permission denied: Update Firestore security rules to allow reading the feedback collection';
+      }
+
+      document.getElementById('feedbackTableBody').innerHTML =
+        `<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">
+          <strong>Error:</strong> ${errorMessage}<br/>
+          <small style="color:var(--text-secondary);">Check the browser console for details</small>
+        </td></tr>`;
     });
   } catch (error) {
     console.error('Error loading feedback:', error);
     document.getElementById('feedbackTableBody').innerHTML =
-      `<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error loading feedback: ${error.message}</td></tr>`;
+      `<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error: ${error.message}</td></tr>`;
   }
 }
 
