@@ -266,6 +266,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             ? `<div class="sw-input-section">
                 <div class="sw-input-label">Enter the missing information:</div>
                 ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
+                <div id="${uniqueId}-preview-container" class="sw-input-preview-container" style="margin-top: 12px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9; display: none;">
+                  <div style="font-size: 0.85em; color: #0c4a6e; font-weight: 500; margin-bottom: 6px;">📋 Preview of text to insert:</div>
+                  <div id="${uniqueId}-preview-text" style="background: white; padding: 8px; border-radius: 3px; font-size: 0.9em; color: #1e3a8a; line-height: 1.4; border-left: 2px solid #0ea5e9; padding-left: 10px; font-family: 'Courier New', monospace;">
+                    [Select a value above to see preview]
+                  </div>
+                </div>
               </div>`
             : '';
 
@@ -299,6 +305,67 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               </div>
             </div>
         `;
+
+        // Attach live preview listeners for structured inputs
+        if (dataTypeOptions && dataTypeOptions.type) {
+            setTimeout(() => {
+                const mainInput = document.getElementById(`${uniqueId}-structured-input`);
+                const previewContainer = document.getElementById(`${uniqueId}-preview-container`);
+                const previewText = document.getElementById(`${uniqueId}-preview-text`);
+
+                if (mainInput && previewContainer && previewText) {
+                    const updatePreview = () => {
+                        let inputValue = '';
+
+                        if (dataTypeOptions.type === 'multi_select') {
+                            const checkboxes = document.querySelectorAll(`.${uniqueId}-ms-checkbox:checked`);
+                            const otherField = document.getElementById(`${uniqueId}-ms-other`);
+                            const selected = Array.from(checkboxes).map(cb => cb.value);
+                            if (otherField && otherField.value.trim()) selected.push(otherField.value.trim());
+                            inputValue = selected.join(', ');
+                        } else if (dataTypeOptions.type === 'compound') {
+                            const fields = document.querySelectorAll(`.${uniqueId}-compound-field`);
+                            const parts = Array.from(fields).map(f => {
+                                const label = f.dataset.label || '';
+                                return f.value ? `${label}: ${f.value}` : null;
+                            }).filter(Boolean);
+                            inputValue = parts.join(', ');
+                        } else {
+                            inputValue = mainInput.value || '';
+                        }
+
+                        // Build preview text using suggested_content template
+                        if (inputValue.trim()) {
+                            const suggestedContent = dataTypeOptions.suggested_content || '';
+                            const previewHtml = suggestedContent ?
+                                suggestedContent.replace(/\{value\}/g, inputValue) :
+                                `${suggestion.missing_info || 'Missing Info'}: ${inputValue}`;
+                            previewText.textContent = previewHtml;
+                            previewContainer.style.display = 'block';
+                        } else {
+                            previewContainer.style.display = 'none';
+                        }
+                    };
+
+                    // Attach listeners based on input type
+                    if (dataTypeOptions.type === 'multi_select') {
+                        document.querySelectorAll(`.${uniqueId}-ms-checkbox`).forEach(cb => {
+                            cb.addEventListener('change', updatePreview);
+                        });
+                        const otherField = document.getElementById(`${uniqueId}-ms-other`);
+                        if (otherField) otherField.addEventListener('input', updatePreview);
+                    } else if (dataTypeOptions.type === 'compound') {
+                        document.querySelectorAll(`.${uniqueId}-compound-field`).forEach(f => {
+                            f.addEventListener('change', updatePreview);
+                            f.addEventListener('input', updatePreview);
+                        });
+                    } else {
+                        mainInput.addEventListener('change', updatePreview);
+                        mainInput.addEventListener('input', updatePreview);
+                    }
+                }
+            }, 50);
+        }
 
         // Show insertion placeholder in editor (cancel any stale pending timeout first)
         if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
