@@ -8788,6 +8788,66 @@ async function storeGuidelineCheck(sessionId, userId, id, checkResult) {
     });
 }
 
+// Helper function to match guidelines based on clinical keywords
+function getImplicitlyRelevantGuidelines(caseText, filenames, summaries) {
+    const caseNormalized = caseText.toLowerCase();
+    const implicitMatches = new Map();
+
+    // Clinical pattern-based guideline associations
+    const clinicalPatterns = {
+        // Fetal growth restriction
+        'FGR|growth restriction|IUGR|small for gestational|SGA': ['Small for Gestational Age', 'SGA'],
+        // Reduced fetal movements
+        'reduced.*fetal.*movement|reduced fetal kick|RFM': ['Reduced Fetal Movement', 'RFM'],
+        // Placenta praevia
+        'placenta.*praevia|placental praevia|low-lying placenta': ['Placenta Praevia'],
+        // Antenatal haemorrhage
+        'antepartum.*haem|antenatal.*bleed|third.*trimester.*bleed': ['Antepartum Haemorrhage', 'APH'],
+        // Hypertensive disorders
+        'hypertension|pre-eclampsia|gestational.*hypertension|PIH|preeclampsia': ['Hypertensive Disorders', 'Pre-eclampsia'],
+        // Gestational diabetes
+        'gestational.*diabetes|GDM': ['Gestational Diabetes'],
+        // Preterm labour
+        'preterm.*labour|premature.*rupture|PROM|PPROM': ['Preterm Labour', 'PROM'],
+        // Breech presentation
+        'breech|buttocks.*first|transverse.*lie': ['Breech Presentation', 'Breech'],
+        // Multiple pregnancy
+        'twin|triplet|multiple.*pregnancy|multiples': ['Multiple Pregnancy', 'Twin Pregnancy'],
+        // Induction of labour
+        'induction|induce.*labour|augment|oxytocin|misoprostol': ['Induction of Labour'],
+        // Postpartum haemorrhage
+        'postpartum.*haem|PPH|primary.*haem|major.*haem': ['Postpartum Haemorrhage', 'PPH'],
+        // Caesarean section
+        'caesarean|cesarean|c-section|emergency.*section': ['Caesarean Section'],
+        // Pain relief/labour
+        'pain.*relief|analgesia|epidural|labour.*management': ['Care in Labour', 'Pain Relief'],
+    };
+
+    // Check each clinical pattern against the case
+    for (const [pattern, keywords] of Object.entries(clinicalPatterns)) {
+        if (new RegExp(pattern, 'i').test(caseNormalized)) {
+            // Mark these keywords as implicitly relevant
+            for (const keyword of keywords) {
+                implicitMatches.set(keyword, { implicit: true, pattern });
+            }
+        }
+    }
+
+    // Find matching guideline files based on implicit matches
+    const relevantIndices = [];
+    filenames.forEach((filename, index) => {
+        const filenameNormalized = filename.toLowerCase();
+        for (const keyword of implicitMatches.keys()) {
+            if (filenameNormalized.includes(keyword.toLowerCase())) {
+                relevantIndices.push(index);
+                console.log(`[GUIDELINE_MATCH] Implicit match: "${filename}" for pattern: ${implicitMatches.get(keyword).pattern}`);
+            }
+        }
+    });
+
+    return [...new Set(relevantIndices)]; // Return unique indices
+}
+
 // Update the handleGuidelines endpoint
 app.post('/checkGuidelinesCompliance', async (req, res) => {
     try {
@@ -8804,12 +8864,28 @@ app.post('/checkGuidelinesCompliance', async (req, res) => {
         // Create a new session
         const sessionId = await createSession(userId);
 
+        // Get implicitly relevant guidelines based on clinical patterns
+        const implicitGuidelineIndices = getImplicitlyRelevantGuidelines(prompt, filenames, summaries);
+        console.log(`[GUIDELINE_SELECTION] Found ${implicitGuidelineIndices.length} implicitly relevant guidelines`);
+
         // Format guidelines for AI processing
         const guidelinesList = filenames.map((filename, index) => `${filename} - ${summaries[index]}`).join('\n');
 
         // Process with AI
-        const systemPrompt = "You are a medical guidelines analyzer. Your task is to identify which guidelines are most relevant to the given medical case. For each guideline, provide a relevance score from 0-100 and a brief explanation of why it's relevant or not.";
-        const userPrompt = `Medical Case:\n${prompt}\n\nAvailable Guidelines:\n${guidelinesList}`;
+        const systemPrompt = `You are a clinical decision-support AI specializing in obstetric guideline selection. Your task is to identify which guidelines are most relevant to the given medical case based on:
+1. Explicit clinical diagnoses mentioned in the case
+2. Clinical investigations and findings
+3. Planned management and interventions
+4. Patient risk factors and history
+
+For each guideline, determine if it is:
+- "HIGHLY RELEVANT" - Directly applicable to the clinical situation
+- "POTENTIALLY RELEVANT" - May provide useful context or alternative management
+- "LESS RELEVANT" - Tangentially related
+- "NOT RELEVANT" - Not applicable to this case
+
+Be comprehensive - it's better to include a potentially relevant guideline than to miss an applicable one.`;
+        const userPrompt = `Medical Case:\n${prompt}\n\nAvailable Guidelines:\n${guidelinesList}\n\nFormat your response with each guideline on a new line as: "Guideline Name: RELEVANCE LEVEL - explanation"`;
 
         const aiResult = await routeToAI(userPrompt, userId);
         const aiResponse = aiResult && typeof aiResult === 'object' ? aiResult.content : aiResult;
@@ -8823,21 +8899,50 @@ app.post('/checkGuidelinesCompliance', async (req, res) => {
         const potentiallyRelevantGuidelines = [];
         const lessRelevantGuidelines = [];
         const notRelevantGuidelines = [];
+        const processedGuidelineNames = new Set();
 
         // Process each guideline from the AI response
         const lines = aiResponse.split('\n');
         for (const line of lines) {
-            if (line.trim() && !line.startsWith('Guideline')) {
+            if (line.trim() && !line.startsWith('Guideline') && line.includes(':')) {
                 const [name, ...rest] = line.split(':');
                 const content = rest.join(':').trim();
+                const nameNormalized = name.trim();
 
+                // Find matching filename
+                let matchedFilename = null;
+                for (const filename of filenames) {
+                    if (filename.toLowerCase().includes(nameNormalized.toLowerCase()) ||
+                        nameNormalized.toLowerCase().includes(filename.toLowerCase())) {
+                        matchedFilename = filename;
+                        break;
+                    }
+                }
+
+                if (!matchedFilename) continue;
+                processedGuidelineNames.add(matchedFilename);
+
+                // Determine relevance with improved parsing
+                let relevance = 'none';
+                const contentLower = content.toLowerCase();
+
+                if (contentLower.includes('highly relevant') || contentLower.includes('HIGHLY RELEVANT')) {
+                    relevance = 'high';
+                } else if (contentLower.includes('potentially relevant') || contentLower.includes('POTENTIALLY RELEVANT')) {
+                    relevance = 'medium';
+                } else if (contentLower.includes('less relevant') || contentLower.includes('LESS RELEVANT')) {
+                    relevance = 'low';
+                } else if (contentLower.includes('not relevant') || contentLower.includes('NOT RELEVANT')) {
+                    relevance = 'none';
+                }
+
+                const guidelineIndex = filenames.indexOf(matchedFilename);
                 const guideline = {
-                    id: filenames[filenames.indexOf(name.trim())],
-                    name: name.trim(),
+                    id: matchedFilename,
+                    name: matchedFilename,
                     content: content,
-                    relevance: content.includes('highly relevant') ? 'high' :
-                        content.includes('potentially relevant') ? 'medium' :
-                            content.includes('less relevant') ? 'low' : 'none'
+                    relevance,
+                    implicit: implicitGuidelineIndices.includes(guidelineIndex)
                 };
 
                 switch (guideline.relevance) {
@@ -8853,6 +8958,24 @@ app.post('/checkGuidelinesCompliance', async (req, res) => {
                     default:
                         notRelevantGuidelines.push(guideline);
                 }
+            }
+        }
+
+        // Ensure implicitly relevant guidelines are included
+        // If AI didn't rank them high enough, move them to potentiallyRelevant or relevant
+        for (const implicitIndex of implicitGuidelineIndices) {
+            const filename = filenames[implicitIndex];
+            if (!processedGuidelineNames.has(filename)) {
+                // AI didn't process this guideline, add it as implicitly relevant
+                const guideline = {
+                    id: filename,
+                    name: filename,
+                    content: `Implicit match based on clinical keywords`,
+                    relevance: 'medium',
+                    implicit: true
+                };
+                potentiallyRelevantGuidelines.push(guideline);
+                console.log(`[GUIDELINE_FALLBACK] Added implicit guideline that AI missed: ${filename}`);
             }
         }
 
