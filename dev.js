@@ -10364,9 +10364,107 @@ window.exportFeedbackJSON = function () {
     alert(`Exported ${exportData.length} feedback items. JSON copied to clipboard and downloaded.`);
 };
 
+// ═════════════════════════════════════════════════════════════════════════
+// IMPROVEMENTS AUDIT TRAIL
+// ═════════════════════════════════════════════════════════════════════════
+
+let _improvementsCache = null;
+
+async function fetchImprovements() {
+    try {
+        const response = await fetch('improvements.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        _improvementsCache = await response.json();
+        renderImprovements();
+    } catch (err) {
+        console.error('[IMPROVEMENTS] Failed to fetch:', err);
+        document.getElementById('improvementsContainer').innerHTML =
+            `<div style="padding:20px;text-align:center;color:var(--text-secondary);">Failed to load improvements: ${err.message}</div>`;
+    }
+}
+
+function renderImprovements() {
+    const container = document.getElementById('improvementsContainer');
+    if (!_improvementsCache || Object.keys(_improvementsCache).length === 0) {
+        container.innerHTML = '<div style="padding:20px;text-align:center;color:var(--text-secondary);">No improvements tracked yet.</div>';
+        return;
+    }
+
+    let html = '';
+    for (const [version, improvement] of Object.entries(_improvementsCache).sort().reverse()) {
+        const statusBadge = getStatusBadge(improvement.status);
+        const linkedFeedbackHtml = (improvement.relatedFeedback || []).map(fbId =>
+            `<span style="display:inline-block;background:var(--bg-tertiary);padding:4px 8px;border-radius:4px;font-size:11px;margin:2px;color:var(--text-secondary);">${fbId}</span>`
+        ).join('');
+
+        const testResultsHtml = improvement.testResults && improvement.testResults.length > 0
+            ? improvement.testResults.map(result => `
+                <div style="background:var(--bg-secondary);padding:8px;border-radius:4px;margin-top:6px;font-size:12px;">
+                    <div><strong>Date:</strong> ${result.testedAt || 'unknown'}</div>
+                    <div><strong>Result:</strong> ${result.passed ? '✅ Passed' : '❌ Failed'}</div>
+                    ${result.notes ? `<div><strong>Notes:</strong> ${(result.notes || '').substring(0, 200)}${(result.notes || '').length > 200 ? '...' : ''}</div>` : ''}
+                </div>
+            `).join('')
+            : '<div style="color:var(--text-secondary);font-size:12px;">No tests run yet</div>';
+
+        html += `
+            <div style="background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:8px;padding:16px;">
+                <div style="display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:12px;">
+                    <div style="flex:1;">
+                        <div style="font-size:12px;color:var(--text-secondary);margin-bottom:4px;">${version}</div>
+                        <h4 style="margin:0 0 6px 0;font-size:14px;">${improvement.title}</h4>
+                        <div style="font-size:13px;color:var(--text-secondary);">${improvement.description}</div>
+                    </div>
+                    <div style="text-align:right;white-space:nowrap;padding-top:2px;">${statusBadge}</div>
+                </div>
+
+                ${linkedFeedbackHtml ? `<div style="margin:10px 0;padding:8px 0;border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);">
+                    <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;">Linked Feedback</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:4px;">${linkedFeedbackHtml}</div>
+                </div>` : ''}
+
+                <div style="margin:10px 0;">
+                    <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;">Implementation</div>
+                    <div style="background:var(--bg-tertiary);padding:8px;border-radius:4px;font-size:12px;">
+                        <div><strong>Commit:</strong> <code style="background:var(--bg-primary);padding:2px 4px;border-radius:2px;">${improvement.implementation?.commit || 'N/A'}</code></div>
+                        <div><strong>Files:</strong> ${(improvement.implementation?.files || []).join(', ') || 'N/A'}</div>
+                        <div style="margin-top:6px;color:var(--text-secondary);">${improvement.implementation?.description || ''}</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;">Test Results</div>
+                    ${testResultsHtml}
+                </div>
+            </div>
+        `;
+    }
+    container.innerHTML = html;
+}
+
+function getStatusBadge(status) {
+    const badges = {
+        'testing': { emoji: '🟡', text: 'Testing', bg: '#fff3cd', color: '#856404' },
+        'resolved': { emoji: '✅', text: 'Resolved', bg: '#d4edda', color: '#155724' },
+        'failed': { emoji: '❌', text: 'Failed', bg: '#f8d7da', color: '#721c24' }
+    };
+    const badge = badges[status] || { emoji: '⚪', text: status, bg: '#e9ecef', color: '#383d41' };
+    return `<div style="background:${badge.bg};color:${badge.color};padding:6px 12px;border-radius:20px;font-size:12px;font-weight:600;white-space:nowrap;">${badge.emoji} ${badge.text}</div>`;
+}
+
 // Wire up filter change, refresh button, and export button
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('feedbackFilter')?.addEventListener('change', renderFeedbackTable);
     document.getElementById('feedbackRefreshBtn')?.addEventListener('click', fetchFeedback);
     document.getElementById('feedbackExportBtn')?.addEventListener('click', exportFeedbackJSON);
+
+    // Fetch improvements when improvements tab is first viewed
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (btn.getAttribute('data-content') === 'improvementsContent' && !_improvementsCache) {
+                fetchImprovements();
+            }
+        });
+    });
 });

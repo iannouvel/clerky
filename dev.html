@@ -587,6 +587,7 @@
             <button class="nav-btn" data-content="transcriptsContent">Transcripts</button>
             <button class="nav-btn" data-content="calibrationDashboardContent">Calibration</button>
             <button class="nav-btn" data-content="feedbackContent">Feedback</button>
+            <button class="nav-btn" data-content="improvementsContent">Improvements</button>
             <button class="nav-btn" data-content="dangerContent">Danger</button>
         </div>
         <div class="top-bar-right"></div>
@@ -1803,6 +1804,17 @@
                         </thead>
                         <tbody id="feedbackTableBody"></tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ─── Improvements Tab ────────────────────────────────────────────── -->
+        <div class="tab-content" id="improvementsContent" style="display:none;padding:12px">
+            <div class="tools-section">
+                <h4>Improvements & Audit Trail</h4>
+                <p style="color:var(--text-secondary);font-size:13px;margin-bottom:15px;">Track all improvements made in response to user feedback, including implementation, testing, and resolution status.</p>
+                <div id="improvementsContainer" style="display:grid;gap:15px;">
+                    <!-- Improvements will be rendered here -->
                 </div>
             </div>
         </div>
