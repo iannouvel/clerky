@@ -66,42 +66,60 @@ async function exportFeedbackFromUI() {
     console.log('   Clicking Feedback tab...');
     const feedbackBtn = page.locator('button[data-content="feedbackContent"]');
 
-    if (await feedbackBtn.isVisible({ timeout: 3000 }).catch(() => false)) {
+    const btnVisible = await feedbackBtn.isVisible({ timeout: 3000 }).catch(() => false);
+    if (btnVisible) {
       await feedbackBtn.click();
-      console.log('   Waiting for feedback to load...');
-      await page.waitForTimeout(2000);
+      console.log('   Waiting for feedback to load from Firestore...');
+      // Wait longer for Firebase to fetch data
+      await page.waitForTimeout(4000);
     } else {
-      console.log('⚠️  Feedback button not found, trying to access feedback data directly\n');
+      console.log('⚠️  Feedback button not found\n');
     }
 
     // Extract feedback data from the page
     try {
+      const debugInfo = await page.evaluate(() => {
+        return {
+          cacheExists: !!window._feedbackCache,
+          cacheLength: window._feedbackCache?.length || 0,
+          tableRows: document.querySelectorAll('#feedbackTableBody tr').length,
+          feedbackBtnActive: document.querySelector('button[data-content="feedbackContent"]')?.classList.contains('active'),
+          contentVisible: document.getElementById('feedbackContent')?.style.display !== 'none'
+        };
+      });
+
+      console.log(`   Debug: Cache=${debugInfo.cacheLength}, Rows=${debugInfo.tableRows}, Active=${debugInfo.feedbackBtnActive}, Visible=${debugInfo.contentVisible}`);
+
       const data = await page.evaluate(() => {
         // Try to access the feedback cache that dev.js populates
         if (window._feedbackCache && window._feedbackCache.length > 0) {
-          return window._feedbackCache;
+          return { source: 'cache', data: window._feedbackCache };
         }
 
         // If that fails, try to find the table data
         const rows = document.querySelectorAll('#feedbackTableBody tr');
         if (rows.length > 0) {
-          return Array.from(rows).map(row => ({
-            id: row.getAttribute('data-id') || 'unknown',
-            timestamp: row.cells[0]?.textContent.trim() || new Date().toISOString(),
-            user: row.cells[1]?.textContent.trim() || 'unknown',
-            feedback: row.cells[2]?.textContent.trim() || '',
-            context: row.cells[3]?.textContent.trim() || '',
-            status: row.cells[4]?.textContent.trim() || 'unactioned'
-          }));
+          return {
+            source: 'table',
+            data: Array.from(rows).map(row => ({
+              id: row.getAttribute('data-id') || 'unknown',
+              timestamp: row.cells[0]?.textContent.trim() || new Date().toISOString(),
+              user: row.cells[1]?.textContent.trim() || 'unknown',
+              feedback: row.cells[2]?.textContent.trim() || '',
+              context: row.cells[3]?.textContent.trim() || '',
+              status: row.cells[4]?.textContent.trim() || 'unactioned'
+            }))
+          };
         }
-        return [];
+        return { source: 'none', data: [] };
       });
 
-      if (data && data.length > 0) {
-        feedbackItems = data;
-        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) from dev.html\n`);
+      if (data.data && data.data.length > 0) {
+        feedbackItems = data.data;
+        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) from ${data.source}\n`);
       } else {
-        console.log('⚠️  No feedback items found\n');
+        console.log(`⚠️  No feedback items found (${data.source})\n`);
+        console.log('💡 Tip: Make sure dev.html has loaded and the Feedback tab shows data\n');
       }
     } catch (evalErr) {
       console.log(`⚠️  Error reading feedback data: ${evalErr.message}\n`);
