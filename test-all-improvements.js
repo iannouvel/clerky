@@ -17,13 +17,36 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const { chromium } = require('playwright');
+const admin = require('firebase-admin');
 
 // Load Firebase credentials from .env
 require('dotenv').config();
-const firebaseProjectId = process.env.FIREBASE_PROJECT_ID || 'clerky-b3be8';
-const firebaseApiKey = process.env.FIREBASE_API_KEY;
 
-console.log(`[Firestore] Using project: ${firebaseProjectId}`);
+// Initialize Firebase Admin SDK
+let db = null;
+let firebaseProjectId = process.env.FIREBASE_PROJECT_ID || 'clerky-b3be8';
+
+try {
+  const serviceAccountPath = path.join(__dirname, '.firebase-service-account.json');
+  if (fs.existsSync(serviceAccountPath)) {
+    const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf-8'));
+    // Use project_id from service account (takes priority over .env)
+    firebaseProjectId = serviceAccount.project_id;
+
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount)
+    });
+    db = admin.firestore();
+    console.log(`[Firestore] Using project: ${firebaseProjectId}`);
+    console.log('[Firestore] Initialized Admin SDK with service account\n');
+  } else {
+    console.log(`[Firestore] Using project: ${firebaseProjectId}`);
+    console.log('[Firestore] Service account file not found\n');
+  }
+} catch (err) {
+  console.log(`[Firestore] Using project: ${firebaseProjectId}`);
+  console.log(`[Firestore] Warning: Could not initialize Admin SDK: ${err.message}\n`);
+}
 
 const improvementsPath = path.join(__dirname, 'improvements.json');
 const skipExport = process.argv.includes('--no-export');
@@ -52,51 +75,61 @@ async function exportFeedbackFromUI() {
     return [];
   }
 
-  console.log('📤 Exporting feedback from Firestore REST API...\n');
+  console.log('📤 Exporting feedback from Firestore...\n');
 
   let feedbackItems = [];
 
-  // Use Firestore REST API
-  try {
-    console.log('   Querying Firestore via REST API...');
+  // Try Firebase Admin SDK first
+  if (db) {
+    try {
+      console.log('   Querying Firestore via Admin SDK...');
 
-    const url = `https://firestore.googleapis.com/v1/projects/${firebaseProjectId}/databases/(default)/documents/feedback?key=${firebaseApiKey}`;
+      // Try simple query first (no orderBy)
+      let snapshot = await db.collection('feedback').get();
 
-    const response = await fetch(url);
+      console.log(`   Debug: Simple query returned ${snapshot.size} documents`);
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      if (snapshot.empty) {
+        // Try with orderBy if simple query had issues
+        console.log('   Retrying with timestamp ordering...');
+        try {
+          snapshot = await db.collection('feedback')
+            .orderBy('timestamp', 'desc')
+            .get();
+          console.log(`   Debug: Ordered query returned ${snapshot.size} documents`);
+        } catch (orderErr) {
+          console.log(`   Debug: Ordered query failed: ${orderErr.message}`);
+        }
+      }
+
+      if (!snapshot.empty) {
+        feedbackItems = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+
+        console.log(`✅ Exported ${feedbackItems.length} feedback item(s) via Admin SDK\n`);
+        return feedbackItems;
+      } else {
+        console.log('⚠️  Feedback collection is empty');
+        console.log('   Checking available collections...\n');
+
+        const collections = await db.listCollections();
+        const collectionNames = collections.map(c => c.id);
+        console.log(`   Collections: ${collectionNames.join(', ')}\n`);
+      }
+    } catch (err) {
+      console.log(`⚠️  Admin SDK error: ${err.message}\n`);
     }
-
-    const data = await response.json();
-
-    if (data.documents && data.documents.length > 0) {
-      // Parse Firestore REST API response
-      feedbackItems = data.documents.map(doc => {
-        const fields = doc.fields || {};
-        return {
-          id: doc.name.split('/').pop(),
-          timestamp: fields.timestamp?.timestampValue || new Date().toISOString(),
-          user: fields.user?.stringValue || 'unknown',
-          feedback: fields.feedback?.stringValue || '',
-          context: fields.context?.stringValue || '',
-          summary: fields.summary?.stringValue || '',
-          actioned: fields.actioned?.booleanValue || false,
-          userId: fields.userId?.stringValue || ''
-        };
-      }).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
-      console.log(`✅ Exported ${feedbackItems.length} feedback item(s) via REST API\n`);
-      return feedbackItems;
-    } else {
-      console.log('⚠️  No feedback items found in Firestore\n');
-      return [];
-    }
-  } catch (err) {
-    console.log(`⚠️  REST API error: ${err.message}\n`);
   }
 
-  // Fallback: use browser method (deprecated, but kept for compatibility)
+  // Fallback: use browser method (if Admin SDK not available)
+  if (!db) {
+    console.log('   Admin SDK not available, trying browser automation fallback...\n');
+  } else {
+    console.log('   Admin SDK failed, trying browser automation fallback...\n');
+  }
+
   const browser = await chromium.launch();
 
   try {

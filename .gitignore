@@ -87,7 +87,9 @@ tmpclaude-*
 test-results/
 playwright-report/
 playwright/.cache/
+tests/.auth/
 
 # Firebase Admin SDK service account (never commit)
 serviceAccount.json
 scripts/serviceAccount.json
+.firebase-service-account.json
