@@ -18,6 +18,25 @@ const path = require('path');
 const { execSync } = require('child_process');
 const { chromium } = require('playwright');
 
+// Try to use Firebase Admin SDK if available
+let adminDb = null;
+try {
+  const admin = require('firebase-admin');
+  const serviceAccountPath = path.join(__dirname, '.firebase-service-account.json');
+
+  if (fs.existsSync(serviceAccountPath)) {
+    const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, 'utf-8'));
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      databaseURL: 'https://clerky-b3be8.firebaseio.com'
+    });
+    adminDb = admin.firestore();
+    console.log('[Firestore] Using Firebase Admin SDK\n');
+  }
+} catch (err) {
+  console.log('[Firestore] Firebase Admin SDK not available, will use browser method\n');
+}
+
 const improvementsPath = path.join(__dirname, 'improvements.json');
 const skipExport = process.argv.includes('--no-export');
 const downloadDir = path.join(__dirname, '.playwright-downloads');
@@ -38,16 +57,36 @@ try {
   process.exit(1);
 }
 
-// Function to export feedback from dev.html Feedback tab
+// Function to export feedback from Firestore
 async function exportFeedbackFromUI() {
   if (skipExport) {
     console.log('⏭️  Skipping feedback export (--no-export flag set)\n');
     return [];
   }
 
-  console.log('📤 Exporting feedback from dev.html/Feedback tab...\n');
+  console.log('📤 Exporting feedback from Firestore...\n');
 
   let feedbackItems = [];
+
+  // Try Firebase Admin SDK first (most reliable)
+  if (adminDb) {
+    try {
+      console.log('   Using Firebase Admin SDK...');
+      const snapshot = await adminDb.collection('feedback').orderBy('timestamp', 'desc').get();
+
+      feedbackItems = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+
+      console.log(`✅ Exported ${feedbackItems.length} feedback item(s) via Admin SDK\n`);
+      return feedbackItems;
+    } catch (err) {
+      console.log(`⚠️  Admin SDK error: ${err.message}\n   Falling back to browser method...\n`);
+    }
+  }
+
+  // Fallback: use browser method
   const browser = await chromium.launch();
 
   try {
