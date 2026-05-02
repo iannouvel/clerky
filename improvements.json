@@ -1,4 +1,7 @@
 {
+  "_comment": "Improvements Audit Trail - Track user feedback issues, implementations, and testing results. Add new improvements as they're implemented.",
+  "_usage": "To record a test result: node update-improvements.js <version> --passed --notes='description' OR --failed --notes='description'",
+  "_testResults": "Run the agentic test with: npx playwright test tests/agentic-doctor.spec.js --grep 'data awareness filter'",
   "v9.0.249": {
     "title": "Data Awareness Filter",
     "description": "Stop asking for age/gestation/BP when already documented in the note",
@@ -15,7 +18,7 @@
     },
     "testPlan": [
       "Manual: Create note with '28yo, 32+4 weeks, vital signs normal' - should NOT ask for age/gestation/BP",
-      "Agentic: Run test with multiple scenarios - track if 'Patient age' or 'Gestational age' suggestions appear",
+      "Agentic: Run test 'assess v9.0.249 data awareness filter' - validates filter prevents redundant suggestions",
       "Console: Look for [FILTER] messages showing items being skipped"
     ],
     "testResults": []
