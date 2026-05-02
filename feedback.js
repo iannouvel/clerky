@@ -9,8 +9,39 @@ let currentFilter = 'unactioned';
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', async () => {
   try {
+    console.log('[Feedback] Initializing feedback page...');
+
+    // Wait for Firebase to be ready
+    let firebaseReady = false;
+    let attempts = 0;
+    const maxAttempts = 20;
+
+    while (!firebaseReady && attempts < maxAttempts) {
+      try {
+        if (auth && db) {
+          firebaseReady = true;
+          console.log('[Feedback] Firebase ready');
+        }
+      } catch (e) {
+        // Firebase not ready yet
+      }
+      if (!firebaseReady) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        attempts++;
+      }
+    }
+
+    if (!firebaseReady) {
+      console.error('[Feedback] Firebase failed to initialize after waiting');
+      document.getElementById('feedbackTableBody').innerHTML =
+        '<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error: Firebase failed to initialize</td></tr>';
+      return;
+    }
+
     // Check authentication
     onAuthStateChanged(auth, async (user) => {
+      console.log('[Feedback] Auth state changed:', user?.email);
+
       if (!user) {
         console.warn('User not authenticated');
         document.getElementById('feedbackTableBody').innerHTML =
@@ -18,56 +49,83 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
 
+      console.log('[Feedback] User authenticated, loading feedback...');
+
       // Load feedback
       await loadFeedback();
 
       // Set up event listeners
-      document.getElementById('feedbackRefreshBtn')?.addEventListener('click', loadFeedback);
+      document.getElementById('feedbackRefreshBtn')?.addEventListener('click', () => {
+        console.log('[Feedback] Refresh clicked');
+        loadFeedback();
+      });
       document.getElementById('feedbackFilter')?.addEventListener('change', (e) => {
+        console.log('[Feedback] Filter changed to:', e.target.value);
         currentFilter = e.target.value;
         renderFeedback();
       });
-      document.getElementById('feedbackExportBtn')?.addEventListener('click', exportFeedback);
+      document.getElementById('feedbackExportBtn')?.addEventListener('click', () => {
+        console.log('[Feedback] Export clicked');
+        exportFeedback();
+      });
     });
   } catch (error) {
     console.error('Error initializing feedback page:', error);
+    document.getElementById('feedbackTableBody').innerHTML =
+      `<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error: ${error.message}</td></tr>`;
   }
 });
 
 // Load feedback from Firestore
 async function loadFeedback() {
   try {
+    console.log('[Feedback] Starting to load feedback from Firestore...');
+
+    if (!db) {
+      throw new Error('Firestore not initialized');
+    }
+
     const feedbackRef = collection(db, 'feedback');
     const q = query(feedbackRef, orderBy('timestamp', 'desc'));
 
+    console.log('[Feedback] Query created, setting up snapshot listener...');
+
     // Use onSnapshot for real-time updates
-    onSnapshot(q, (snapshot) => {
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       _feedbackCache = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
       }));
 
-      console.log(`Loaded ${_feedbackCache.length} feedback items`);
+      console.log(`[Feedback] Loaded ${_feedbackCache.length} feedback items`);
       renderFeedback();
     }, (error) => {
       // Handle Firestore errors
-      console.error('Firestore error:', error);
+      console.error('[Feedback] Firestore error:', error);
 
       let errorMessage = error.message;
       if (error.code === 'permission-denied') {
-        errorMessage = 'Permission denied: Update Firestore security rules to allow reading the feedback collection';
+        errorMessage = 'Permission denied: Check Firestore security rules';
       }
 
-      document.getElementById('feedbackTableBody').innerHTML =
-        `<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">
-          <strong>Error:</strong> ${errorMessage}<br/>
-          <small style="color:var(--text-secondary);">Check the browser console for details</small>
-        </td></tr>`;
+      const tbody = document.getElementById('feedbackTableBody');
+      if (tbody) {
+        tbody.innerHTML =
+          `<tr><td colspan="6" style="padding:20px;text-align:center;color:var(--text-secondary);">
+            <strong>Error:</strong> ${errorMessage}<br/>
+            <small style="color:var(--text-secondary);">Check the browser console for details</small>
+          </td></tr>`;
+      }
     });
+
+    return unsubscribe;
   } catch (error) {
-    console.error('Error loading feedback:', error);
-    document.getElementById('feedbackTableBody').innerHTML =
-      `<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error: ${error.message}</td></tr>`;
+    console.error('[Feedback] Error loading feedback:', error);
+    const tbody = document.getElementById('feedbackTableBody');
+    if (tbody) {
+      tbody.innerHTML =
+        `<tr><td colspan="6" style="padding:20px;text-align:center;color:red;">Error: ${error.message}</td></tr>`;
+    }
   }
 }
 
