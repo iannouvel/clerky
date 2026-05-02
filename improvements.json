@@ -32,7 +32,7 @@
       {
         "testedAt": "2026-05-02",
         "passed": true,
-        "notes": "'Data"
+        "notes": "Data awareness filter is working correctly — no suggestions appeared for age, gestation, BP, FHR, or anti-D"
       }
     ]
   }
