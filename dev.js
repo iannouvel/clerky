@@ -3882,7 +3882,7 @@ ${responseText}
                     return;
                 }
 
-                if (!confirm(`Regenerate auditable elements for ${selectedIds.length} selected guidelines?\n\nThis will overwrite existing elements.`)) {
+                if (!confirm(`Regenerate practice points for ${selectedIds.length} selected guidelines?\n\nThis will overwrite existing practice points.`)) {
                     return;
                 }
 
@@ -3892,7 +3892,7 @@ ${responseText}
 
         if (regenerateAuditableAllBtn) {
             regenerateAuditableAllBtn.addEventListener('click', async () => {
-                if (!confirm('Regenerate auditable elements for ALL guidelines?\n\nThis will overwrite existing elements.')) {
+                if (!confirm('Regenerate practice points for ALL guidelines?\n\nThis will overwrite existing practice points.')) {
                     return;
                 }
                 await runRegeneration({ processAll: true });
@@ -6912,7 +6912,7 @@ ${responseText}
             document.getElementById('calibrationRunResults').style.display = 'none';
 
             try {
-                // ── Step 1: Regenerate auditable elements (async with progress) ──
+                // ── Step 1: Regenerate practice points (async with progress) ──
                 const token1 = await auth.currentUser.getIdToken();
                 const regenRes = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
                     method: 'POST',
