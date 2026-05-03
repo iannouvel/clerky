@@ -17935,7 +17935,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
         const guidelineData = guidelineDoc.data();
         const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.displayName || guidelineId;
-        const auditableElements = guidelineData.auditableElements || [];
+        const auditableElements = guidelineData.practicePoints || [];
 
         timer.step('Fetch guideline metadata');
 
