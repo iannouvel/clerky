@@ -10217,17 +10217,24 @@ function renderFeedbackTable() {
         const dateStr = ts ? ts.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) + ' ' + ts.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : '—';
         const email = fb.userEmail || 'anonymous';
 
+        // Extract practice point number from multiple locations
+        const ppNum = fb.practicePointNumber || fb.wizardState?.currentSuggestion?.practicePointNumber || fb.suggestion?.practicePointNumber || null;
+        const sourceGlTitle = fb.sourceGuidelineTitle || fb.wizardState?.currentSuggestion?.sourceGuidelineTitle || fb.suggestion?.sourceGuidelineTitle || null;
+
         // Build context summary
         const contextParts = [];
+        if (ppNum) {
+            contextParts.push(`PP #${ppNum}`);
+        }
+        if (sourceGlTitle) {
+            contextParts.push(`${sourceGlTitle.substring(0, 40)}`);
+        }
         if (fb.wizardState?.currentSuggestion) {
             const sug = fb.wizardState.currentSuggestion;
-            contextParts.push(`Suggestion: "${(sug.suggestion || sug.missing_info || '').slice(0, 80)}"`);
+            contextParts.push(`"${(sug.suggestion || sug.missing_info || '').slice(0, 50)}..."`);
         }
         if (fb.lastInteraction?.buttonLabel) {
-            contextParts.push(`After: "${fb.lastInteraction.buttonLabel}"`);
-        }
-        if (fb.lastAiContext?.source) {
-            contextParts.push(`Phase: ${fb.lastAiContext.source}`);
+            contextParts.push(`After: ${fb.lastInteraction.buttonLabel}`);
         }
         const contextStr = contextParts.length > 0 ? contextParts.join('<br>') : '<span style="color:var(--text-secondary)">—</span>';
 
@@ -10295,6 +10302,11 @@ window.showFeedbackDetail = function (feedbackId) {
 
     const safeJson = (obj) => JSON.stringify(obj, null, 2)?.replace(/</g, '&lt;') || '—';
 
+    // Extract practice point number from suggestion or top-level field
+    const ppNum = fb.practicePointNumber || fb.wizardState?.currentSuggestion?.practicePointNumber || fb.suggestion?.practicePointNumber || null;
+    const sourceGlId = fb.sourceGuidelineId || fb.wizardState?.currentSuggestion?.sourceGuidelineId || fb.suggestion?.sourceGuidelineId || null;
+    const sourceGlTitle = fb.sourceGuidelineTitle || fb.wizardState?.currentSuggestion?.sourceGuidelineTitle || fb.suggestion?.sourceGuidelineTitle || null;
+
     overlay.innerHTML = `
         <div style="background:var(--bg-primary);border-radius:12px;max-width:700px;width:90%;max-height:85vh;overflow-y:auto;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
@@ -10304,11 +10316,13 @@ window.showFeedbackDetail = function (feedbackId) {
             <div style="font-size:13px;display:flex;flex-direction:column;gap:12px;">
                 <div><strong>ID:</strong> ${fb.id}</div>
                 <div><strong>User:</strong> ${fb.userEmail || 'anonymous'}</div>
+                ${ppNum ? `<div style="background:var(--bg-secondary);padding:8px;border-radius:4px;"><strong>Practice Point #${ppNum}</strong></div>` : ''}
+                ${sourceGlTitle ? `<div><strong>Source Guideline:</strong> ${sourceGlTitle}${sourceGlId ? ` (${sourceGlId})` : ''}</div>` : ''}
                 <div><strong>Explanation:</strong><br><div style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;white-space:pre-wrap;">${(fb.userExplanation || '').replace(/</g, '&lt;')}</div></div>
                 ${fb.wizardState ? `<div><strong>Wizard State:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.wizardState)}</pre></div>` : ''}
-                ${fb.lastAiContext ? `<div><strong>AI Context:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.lastAiContext)}</pre></div>` : ''}
+                ${fb.aiContext ? `<div><strong>AI Context:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.aiContext)}</pre></div>` : ''}
                 ${fb.lastInteraction ? `<div><strong>Last Interaction:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.lastInteraction)}</pre></div>` : ''}
-                ${fb.currentState ? `<div><strong>UI State:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.currentState)}</pre></div>` : ''}
+                ${fb.uiState ? `<div><strong>UI State:</strong><br><pre style="background:var(--bg-secondary);padding:10px;border-radius:6px;margin-top:4px;overflow-x:auto;font-size:11px;max-height:200px;overflow-y:auto;">${safeJson(fb.uiState)}</pre></div>` : ''}
                 ${fb.actionedAt ? `<div><strong>Actioned:</strong> ${fb.actionedAt}</div>` : ''}
             </div>
         </div>
@@ -10322,22 +10336,43 @@ window.exportFeedbackJSON = function () {
         return;
     }
 
-    // Build comprehensive feedback export with all details
-    const exportData = _feedbackCache.map(fb => ({
-        id: fb.id,
-        date: fb.submittedAt,
-        userEmail: fb.userEmail,
-        explanation: fb.userExplanation,
-        suggestion: {
-            text: fb.wizardState?.currentSuggestion?.suggestion || fb.wizardState?.currentSuggestion?.text || 'N/A',
-            why: fb.wizardState?.currentSuggestion?.why || '',
-            type: fb.wizardState?.currentSuggestion?.type || 'unknown'
-        },
-        phase: fb.lastAiContext?.source || 'unknown',
-        lastAction: fb.lastInteraction?.buttonLabel || 'N/A',
-        status: fb.actioned ? 'actioned' : 'open',
-        actionedAt: fb.actionedAt || null
-    }));
+    // Build comprehensive feedback export with all details including practice point numbers
+    const exportData = _feedbackCache.map(fb => {
+        // Extract practice point number from multiple possible locations
+        const ppNum = fb.practicePointNumber ||
+                     fb.wizardState?.currentSuggestion?.practicePointNumber ||
+                     fb.suggestion?.practicePointNumber ||
+                     null;
+        const sourceGlId = fb.sourceGuidelineId ||
+                          fb.wizardState?.currentSuggestion?.sourceGuidelineId ||
+                          fb.suggestion?.sourceGuidelineId ||
+                          null;
+        const sourceGlTitle = fb.sourceGuidelineTitle ||
+                             fb.wizardState?.currentSuggestion?.sourceGuidelineTitle ||
+                             fb.suggestion?.sourceGuidelineTitle ||
+                             null;
+
+        return {
+            id: fb.id,
+            date: fb.submittedAt,
+            userEmail: fb.userEmail,
+            explanation: fb.userExplanation,
+            suggestion: {
+                text: fb.wizardState?.currentSuggestion?.suggestion || fb.wizardState?.currentSuggestion?.text || fb.suggestion?.text || 'N/A',
+                why: fb.wizardState?.currentSuggestion?.why || fb.suggestion?.why || '',
+                type: fb.wizardState?.currentSuggestion?.type || fb.suggestion?.type || 'unknown'
+            },
+            practicePointNumber: ppNum,
+            sourceGuideline: sourceGlTitle ? {
+                id: sourceGlId,
+                title: sourceGlTitle
+            } : null,
+            phase: fb.phase || fb.lastAiContext?.source || 'unknown',
+            lastAction: fb.lastAction || fb.lastInteraction?.buttonLabel || 'N/A',
+            status: fb.status || (fb.actioned ? 'actioned' : 'open'),
+            actionedAt: fb.actionedAt || null
+        };
+    });
 
     // Copy to clipboard and download
     const json = JSON.stringify(exportData, null, 2);
@@ -10360,7 +10395,7 @@ window.exportFeedbackJSON = function () {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    console.log('[FEEDBACK] Exported', exportData.length, 'feedback items');
+    console.log('[FEEDBACK] Exported', exportData.length, 'feedback items with practice point numbers');
     alert(`Exported ${exportData.length} feedback items. JSON copied to clipboard and downloaded.`);
 };
 
