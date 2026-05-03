@@ -599,7 +599,10 @@ window.openWizardFeedbackModal = function() {
     if (!suggestion) return;
 
     const modalId = `wizard-feedback-${Date.now()}`;
-    const practicePointRef = suggestion.practice_point_reference || suggestion.sourceGuidelineId || '(not specified)';
+    // Use practicePointNumber if available; otherwise use practice_point_reference or sourceGuidelineId
+    const practicePointRef = suggestion.practicePointNumber
+        ? `Practice Point #${suggestion.practicePointNumber}`
+        : suggestion.practice_point_reference || suggestion.sourceGuidelineId || '(not specified)';
     const sourceGuidelineTitle = suggestion.sourceGuidelineTitle || 'Unknown Guideline';
     const priorityColor = suggestion.priority === 'high' ? '#dc2626' : suggestion.priority === 'medium' ? '#f59e0b' : '#6b7280';
     const contextId = `${modalId}-context`;
@@ -726,9 +729,11 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
                 verbatimQuote: suggestion.verbatimQuote || '',
                 significance: suggestion.significance || '',
                 sourceGuidelineId: suggestion.sourceGuidelineId || null,
-                sourceGuidelineTitle: suggestion.sourceGuidelineTitle || null
+                sourceGuidelineTitle: suggestion.sourceGuidelineTitle || null,
+                practicePointNumber: suggestion.practicePointNumber || null
             },
             practice_point_reference: suggestion.practice_point_reference || suggestion.sourceGuidelineId || null,
+            practicePointNumber: suggestion.practicePointNumber || null,
             sourceGuidelineId: suggestion.sourceGuidelineId || null,
             sourceGuidelineTitle: suggestion.sourceGuidelineTitle || null,
             phase: suggestion.phase || 'practice-points',
