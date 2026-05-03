@@ -18055,6 +18055,15 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             return words.join(' ').trim();
         }
 
+        // Helper: extract keywords from text, ignoring common words
+        function extractKeywords(text) {
+            const stopwords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'as', 'if', 'that', 'is', 'are', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'should', 'could', 'would', 'can', 'consider', 'ensure', 'perform', 'document', 'manage', 'review', 'assess', 'check']);
+            return text.toLowerCase()
+                .split(/\s+/)
+                .map(w => w.replace(/[^a-z0-9]/g, ''))
+                .filter(w => w.length > 2 && !stopwords.has(w));
+        }
+
         // Helper: match suggestion to practice point serial number
         function findPracticePointNumber(suggestion) {
             if (!auditableElements || auditableElements.length === 0) {
@@ -18064,7 +18073,6 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
             console.log(`[PRACTICE-POINT-MATCH] Matching against ${auditableElements.length} practice points`);
             console.log(`[PRACTICE-POINT-MATCH] Suggestion: name="${suggestion.name}", issue="${suggestion.issue}", suggestion="${suggestion.suggestion?.substring(0, 60)}..."`);
-            console.log(`[PRACTICE-POINT-MATCH] Practice point names: ${auditableElements.map((e, i) => `${i + 1}: ${e.name}`).join('; ')}`);
 
             // Try matching by verbatimQuote first
             if (suggestion.verbatimQuote) {
@@ -18075,27 +18083,44 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
                     const elementText = ((element.name || '') + ' ' + (element.description || '')).toLowerCase();
                     if (elementText.includes(verbatim) || verbatim.length > 20 && elementText.includes(verbatim.substring(0, Math.min(50, verbatim.length)))) {
                         console.log(`[PRACTICE-POINT-MATCH] ✓ Matched by verbatimQuote to point ${i + 1}`);
-                        return i + 1; // 1-indexed for readability
-                    }
-                }
-            }
-
-            // Try matching suggestion text to practice point names
-            const suggestionText = (suggestion.suggestion || suggestion.name || '').toLowerCase().trim();
-            if (suggestionText) {
-                console.log(`[PRACTICE-POINT-MATCH] Trying suggestion text match: "${suggestionText.substring(0, 50)}..."`);
-                for (let i = 0; i < auditableElements.length; i++) {
-                    const element = auditableElements[i];
-                    const elementName = (element.name || '').toLowerCase().trim();
-                    // Match if suggestion starts with practice point name, or practice point name is a key phrase in suggestion
-                    if (suggestionText.startsWith(elementName) || (elementName.length > 10 && suggestionText.includes(elementName))) {
-                        console.log(`[PRACTICE-POINT-MATCH] ✓ Matched by suggestion text to point ${i + 1}: "${elementName}"`);
                         return i + 1;
                     }
                 }
             }
 
-            // No definitive match found
+            // Try keyword-based matching on suggestion text
+            const suggestionText = (suggestion.suggestion || suggestion.name || '').toLowerCase().trim();
+            if (suggestionText) {
+                const suggestionKeywords = extractKeywords(suggestionText);
+                console.log(`[PRACTICE-POINT-MATCH] Trying keyword match with: ${suggestionKeywords.join(', ')}`);
+                let bestMatch = null;
+                let bestScore = 0;
+
+                for (let i = 0; i < auditableElements.length; i++) {
+                    const element = auditableElements[i];
+                    const elementName = (element.name || '').toLowerCase().trim();
+                    const ppKeywords = new Set(extractKeywords(elementName));
+
+                    // Count matching keywords
+                    const matchCount = suggestionKeywords.filter(kw => ppKeywords.has(kw)).length;
+                    const score = matchCount / Math.max(suggestionKeywords.length, ppKeywords.size);
+
+                    // Match if at least 2 keywords match OR if score is high (>0.4 means 40% overlap)
+                    if (matchCount >= 2 || score > 0.4) {
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMatch = i + 1;
+                        }
+                    }
+                }
+
+                if (bestMatch) {
+                    console.log(`[PRACTICE-POINT-MATCH] ✓ Matched by keywords to point ${bestMatch} (score: ${bestScore.toFixed(2)}): "${auditableElements[bestMatch - 1].name}"`);
+                    return bestMatch;
+                }
+            }
+
+            // No match found
             console.log(`[PRACTICE-POINT-MATCH] ✗ No match found for suggestion`);
             return null;
         }
