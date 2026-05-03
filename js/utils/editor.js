@@ -650,14 +650,16 @@ function _buildHtmlWithPlaceholder(text) {
                 if (line.includes(INSERTION_PLACEHOLDER)) {
                     if (_replacementPreview) {
                         // Replacement mode: show old text strikethrough + new text in green
-                        const oldHtml = `<span style="text-decoration:line-through; color:var(--danger-color, #e53935); opacity:0.7;">${escapeHtml(_replacementPreview.originalText)}</span>`;
-                        const newHtml = `<span class="insertion-placeholder">${escapeHtml(_replacementPreview.suggestionText)}</span>`;
+                        const oldHtml = `<span style="text-decoration:line-through; color:#e53935; opacity:0.7;">${escapeHtml(_replacementPreview.originalText)}</span>`;
+                        // Use inline styles instead of CSS class (TipTap may strip classes)
+                        const newHtml = `<span style="color:#2e7d32; background:rgba(76,175,80,0.12); border:1px dashed #4caf50; border-radius:3px; padding:1px 5px; font-style:italic; font-weight:600; font-size:0.93em;">${escapeHtml(_replacementPreview.suggestionText)}</span>`;
                         return `${oldHtml}<br>${newHtml}`;
                     }
                     // Standard mode: show placeholder text in green
                     const parts = line.split(INSERTION_PLACEHOLDER);
                     const prefix = escapeHtml(parts[0] || '');
-                    return `${prefix}<span class="insertion-placeholder">${escapeHtml(INSERTION_PLACEHOLDER)}</span>`;
+                    // Use inline styles instead of CSS class (TipTap may strip classes)
+                    return `${prefix}<span style="color:#2e7d32; background:rgba(76,175,80,0.12); border:1px dashed #4caf50; border-radius:3px; padding:1px 5px; font-style:italic; font-weight:600; font-size:0.93em;">${escapeHtml(INSERTION_PLACEHOLDER)}</span>`;
                 }
                 return escapeHtml(line);
             });
