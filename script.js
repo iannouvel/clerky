@@ -7594,6 +7594,11 @@ async function runPhase1CompletenessCheck() {
         console.log('[PHASE1] Response status:', resp.status);
         const data = await resp.json();
         console.log('[PHASE1] API returned:', data?.missing_information?.length || 0, 'items');
+        if (data?.missing_information?.length > 0) {
+            console.log('[PHASE1] First item fields:', Object.keys(data.missing_information[0]).join(', '));
+            console.log('[PHASE1] First item practice_point_reference:', data.missing_information[0].practice_point_reference);
+            console.log('[PHASE1] Full first item:', JSON.stringify(data.missing_information[0], null, 2));
+        }
         let rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
 
         // FILTER: Remove suggestions for info already documented in the note
