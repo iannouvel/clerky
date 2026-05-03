@@ -1,4 +1,4 @@
-import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState } from '../utils/editor.js';
+import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText } from '../utils/editor.js';
 
 // Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
 window.clearReplacementPreviewState = clearReplacementState;
@@ -487,7 +487,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
 
         if (!textToInsert) {
-            if (textEl && textEl.dataset.raw) {
+            // First, try to get edited text from the insertion point (user may have modified the suggestion)
+            const editedText = getEditedInsertionText();
+            if (editedText) {
+                textToInsert = editedText;
+                console.log('[WIZARD] Using edited text from insertion point:', textToInsert.substring(0, 50));
+            } else if (textEl && textEl.dataset.raw) {
                 textToInsert = textEl.dataset.raw;
             } else if (textEl) {
                 textToInsert = textEl.textContent.trim();
