@@ -270,8 +270,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 <div class="sw-input-label">Enter the missing information:</div>
                 ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
                 <div id="${uniqueId}-preview-container" class="sw-input-preview-container" style="margin-top: 12px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9; display: none;">
-                  <div style="font-size: 0.85em; color: #0c4a6e; font-weight: 500; margin-bottom: 6px;">📋 Preview of text to insert:</div>
-                  <div id="${uniqueId}-preview-text" style="background: white; padding: 8px; border-radius: 3px; font-size: 0.9em; color: #1e3a8a; line-height: 1.4; border-left: 2px solid #0ea5e9; padding-left: 10px; font-family: 'Courier New', monospace;">
+                  <div style="font-size: 0.85em; color: #0c4a6e; font-weight: 500; margin-bottom: 6px;">📋 Preview of text to insert (click to edit):</div>
+                  <div id="${uniqueId}-preview-text" contenteditable="true" style="background: white; padding: 8px; border-radius: 3px; font-size: 0.9em; color: #1e3a8a; line-height: 1.4; border-left: 3px solid #10b981; padding-left: 10px; font-family: 'Courier New', monospace; cursor: text; outline: none; min-height: 40px; white-space: pre-wrap; word-break: break-word;" onblur="this.style.borderLeftColor = '#10b981';" onfocus="this.style.borderLeftColor = '#059669';">
                     [Select a value above to see preview]
                   </div>
                 </div>
@@ -449,9 +449,15 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const textEl = card ? card.querySelector('.sw-text-content') : null;
 
         const structuredInputEl = document.getElementById(`${id}-structured-input`);
+        const previewEl = document.getElementById(`${id}-preview-text`);
         let textToInsert = '';
 
-        if (structuredInputEl) {
+        // Check if there's an editable preview text that's been modified
+        if (previewEl && previewEl.textContent && previewEl.textContent.trim() && previewEl.textContent.trim() !== '[Select a value above to see preview]') {
+            // Use the preview text (which may have been edited by the user)
+            textToInsert = previewEl.textContent.trim();
+            console.log('[WIZARD] Using edited preview text:', textToInsert.substring(0, 50));
+        } else if (structuredInputEl) {
             const label = structuredInputEl.dataset.missingInfo || '';
             if (structuredInputEl.dataset.type === 'multi_select') {
                 // Collect checked options
