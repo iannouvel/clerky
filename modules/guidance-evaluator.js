@@ -5,9 +5,9 @@
  * Evaluates guidance across multiple dimensions
  * @param {Object} evaluationData - Evaluation context
  * @param {string} evaluationData.guidance - The guidance provided by Clerky
- * @param {Object} evaluationData.expectedGuidance - Expected guidance from auditable element
+ * @param {Object} evaluationData.expectedGuidance - Expected guidance from practice point
  * @param {Object} evaluationData.scenario - Clinical scenario context
- * @param {Object} evaluationData.element - Auditable element being tested
+ * @param {Object} evaluationData.element - Practice point being tested
  * @returns {Promise<Object>} - Multi-dimensional evaluation results
  */
 export async function evaluateGuidance(evaluationData) {
@@ -113,9 +113,9 @@ async function evaluateAccuracy({ guidance, expectedGuidance, element, scenario 
     };
 
     // Use AI to compare guidance with expected guidance
-    const prompt = `You are evaluating the accuracy of clinical guidance. Compare the provided guidance with the expected guidance for this auditable element.
+    const prompt = `You are evaluating the accuracy of clinical guidance. Compare the provided guidance with the expected guidance for this practice point.
 
-AUDITABLE ELEMENT:
+PRACTICE POINT:
 ${JSON.stringify({
     name: element.name,
     derivedAdvice: element.derivedAdvice,

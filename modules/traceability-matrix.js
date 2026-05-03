@@ -170,7 +170,7 @@ export async function validateTraceability(guidelineId) {
     // Check each level
     if (matrix.elements.length === 0) {
         validation.isValid = false;
-        validation.issues.push('No auditable elements found');
+        validation.issues.push('No practice points found');
     }
 
     if (matrix.testScenarios.length === 0) {

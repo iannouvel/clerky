@@ -43,7 +43,13 @@
       "WebFetch(domain:www.google.com)",
       "WebFetch(domain:en.wikipedia.org)",
       "WebSearch",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(npm start *)",
+      "Bash(printenv)",
+      "Bash(export FIREBASE_PROJECT_ID=\"clerky-b3be8\")",
+      "Bash(export FIREBASE_CLIENT_EMAIL=\"firebase-adminsdk-9eosi@clerky-b3be8.iam.gserviceaccount.com\")",
+      "Bash(export FIREBASE_PRIVATE_KEY='-----BEGIN PRIVATE KEY----- *)",
+      "Bash(curl -s http://localhost:3000/index.html)"
     ]
   }
 }

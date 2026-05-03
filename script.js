@@ -3038,7 +3038,7 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
 
 // ===== Practice Point-Based Suggestions (Fast Path) =====
 
-// Function to get practice point suggestions using pre-extracted auditable elements
+// Function to get practice point suggestions using pre-extracted practice points
 async function getPracticePointSuggestions(transcript, guidelineId) {
     console.log('[PRACTICE-POINTS] Getting suggestions for guideline:', guidelineId);
 
@@ -9900,7 +9900,7 @@ async function processSingleGuideline(guidelineId, stepNumber, totalSteps) {
     const analyzeMessage = `Analysing against: ${displayName}`;
     updateUser(analyzeMessage, true);
 
-    // Use practice point-based suggestions (fast path using pre-extracted auditable elements)
+    // Use practice point-based suggestions (fast path using pre-extracted practice points)
     window.latestAnalysis = {
         transcript: transcript,
         analysis: null,

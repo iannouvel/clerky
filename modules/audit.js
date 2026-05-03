@@ -144,8 +144,8 @@ export class AuditPage {
         // Auditable elements click handler
         const auditableElementsSpan = document.getElementById('auditableElements');
         if (auditableElementsSpan) {
-            auditableElementsSpan.addEventListener('click', () => this.displayAuditableElements());
-            auditableElementsSpan.title = 'Click to view auditable elements';
+            auditableElementsSpan.addEventListener('click', () => this.displayPracticePoints());
+            auditableElementsSpan.title = 'Click to view practice points';
         }
     }
 
@@ -203,7 +203,7 @@ export class AuditPage {
         // Check if there are previous audits for this guideline to decide button visibility
         await this.updateRetrieveButtonVisibility(guideline.id);
         
-        // Show auditable elements selection if elements are available
+        // Show practice points selection if elements are available
         const auditableElementsSelection = document.getElementById('auditableElementsSelection');
         if (auditableElementsSelection) {
             if (this.selectedGuidelineFullData && this.selectedGuidelineFullData.auditableElements && 
@@ -290,7 +290,7 @@ export class AuditPage {
                 
                 document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
                 
-                // Count auditable elements from full metadata
+                // Count practice points from full metadata
                 let auditableCount = 0;
                 let auditableElements = fullGuideline.auditableElements || [];
                 
@@ -299,13 +299,13 @@ export class AuditPage {
                     const auditableElementsSpan = document.getElementById('auditableElements');
                     auditableElementsSpan.textContent = auditableCount;
                     auditableElementsSpan.className = 'auditable-elements-clickable';
-                    auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                    auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
                     
                     // Update will audit count and setup listeners
                     this.updateWillAuditCount(fullGuideline.auditableElements || []);
                     this.setupScopeChangeListeners(fullGuideline.auditableElements || []);
                 } else {
-                    // Show loading indicator and extract auditable elements
+                    // Show loading indicator and extract practice points
                     const auditableElementsSpan = document.getElementById('auditableElements');
                     auditableElementsSpan.textContent = 'Loading...';
                     auditableElementsSpan.className = 'auditable-elements-loading';
@@ -337,9 +337,9 @@ export class AuditPage {
                                 // Update display with clickable styling
                                 auditableElementsSpan.textContent = auditableCount;
                                 auditableElementsSpan.className = 'auditable-elements-clickable';
-                                auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                                auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
                                 
-                                // Update the stored data with the new auditable elements
+                                // Update the stored data with the new practice points
                                 if (updatedGuideline.auditableElements) {
                                     // persist on both the working copy and original reference
                                     fullGuideline.auditableElements = updatedGuideline.auditableElements;
@@ -362,7 +362,7 @@ export class AuditPage {
                                 // Update display for no elements
                                 auditableElementsSpan.textContent = auditableCount;
                                 auditableElementsSpan.className = 'auditable-elements-clickable';
-                                auditableElementsSpan.title = 'Click to view auditable elements (none found)';
+                                auditableElementsSpan.title = 'Click to view practice points (none found)';
                             }
                         } else {
                             auditableCount = 0;
@@ -371,14 +371,14 @@ export class AuditPage {
                             // Update display for error
                             auditableElementsSpan.textContent = 'Error';
                             auditableElementsSpan.className = 'auditable-elements-error';
-                            auditableElementsSpan.title = 'Click to view auditable elements (extraction failed)';
+                            auditableElementsSpan.title = 'Click to view practice points (extraction failed)';
                         }
                         
                     } catch (error) {
                         console.error('Error extracting auditable elements:', error);
                         auditableElementsSpan.textContent = 'Error';
                         auditableElementsSpan.className = 'auditable-elements-error';
-                        auditableElementsSpan.title = 'Click to view auditable elements (extraction failed)';
+                        auditableElementsSpan.title = 'Click to view practice points (extraction failed)';
                     }
                 }
                 
@@ -419,16 +419,16 @@ export class AuditPage {
                 
                 document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
                 
-                // Handle auditable elements in fallback case
+                // Handle practice points in fallback case
                 const auditableElementsSpan = document.getElementById('auditableElements');
                 const auditableCount = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
                 auditableElementsSpan.textContent = auditableCount;
                 auditableElementsSpan.className = 'auditable-elements-clickable';
-                auditableElementsSpan.title = `Click to view ${auditableCount} auditable elements`;
+                auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
                 
                 document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
                 
-                // Show auditable elements selection if elements are available
+                // Show practice points selection if elements are available
                 const auditableElementsSelection = document.getElementById('auditableElementsSelection');
                 if (auditableElementsSelection && auditableCount > 0) {
                     auditableElementsSelection.style.display = 'block';
@@ -471,7 +471,7 @@ export class AuditPage {
             return;
         }
 
-        // Check if auditable elements are available
+        // Check if practice points are available
         if (!this.selectedGuidelineFullData || !this.selectedGuidelineFullData.auditableElements || 
             this.selectedGuidelineFullData.auditableElements.length === 0) {
             this.showAuditError('No auditable elements found for this guideline. Please ensure auditable elements have been extracted first.');
@@ -1636,8 +1636,8 @@ export class AuditPage {
         this.displayGuidelineOptions(filtered, dropdown);
     }
 
-    // Display auditable elements in the right column
-    displayAuditableElements() {
+    // Display practice points in the right column
+    displayPracticePoints() {
         if (!this.selectedGuidelineFullData) {
             this.showAuditError('No guideline selected');
             return;

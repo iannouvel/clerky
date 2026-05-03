@@ -4,7 +4,7 @@
 import { generateScenarioVariations, createVariationPrompt } from './variation-engine.js';
 
 /**
- * Generates comprehensive audit scenarios for an auditable element
+ * Generates comprehensive audit scenarios for an practice point
  * @param {Object} element - Auditable element with full metadata
  * @param {Object} guidelineContent - Guideline content for context
  * @param {Object} options - Generation options
@@ -60,9 +60,9 @@ export async function generateAuditScenarios(element, guidelineContent, options 
  * Generates base scenario transcript for an element
  */
 async function generateBaseScenario(element, guidelineContent, aiProvider) {
-    const prompt = `You are a clinical scenario generator for audit testing. Generate a realistic clinical transcript that would trigger this auditable element.
+    const prompt = `You are a clinical scenario generator for audit testing. Generate a realistic clinical transcript that would trigger this practice point.
 
-AUDITABLE ELEMENT:
+PRACTICE POINT:
 - Name: ${element.name}
 - Type: ${element.type}
 - Significance: ${element.significance}
@@ -88,7 +88,7 @@ BACKGROUND: [Relevant history, previous episodes, risk factors, medications]
 ASSESSMENT: [Clinical findings, vital signs, test results, differential diagnosis]
 RECOMMENDATION: [Management plan, monitoring, follow-up, further investigations]
 
-Generate a comprehensive clinical transcript that would test this auditable element.`;
+Generate a comprehensive clinical transcript that would test this practice point.`;
 
     // Import routeToAI function (would need to be available)
     // For now, return structure - actual AI call would be in server.js
@@ -105,7 +105,7 @@ Generate a comprehensive clinical transcript that would test this auditable elem
 async function generateVariationTranscript(element, variation, guidelineContent, aiProvider) {
     const variationPrompt = createVariationPrompt(element, variation);
     
-    const fullPrompt = `You are a clinical scenario generator for audit testing. Generate a realistic clinical transcript that tests a specific variation of an auditable element.
+    const fullPrompt = `You are a clinical scenario generator for audit testing. Generate a realistic clinical transcript that tests a specific variation of an practice point.
 
 ${variationPrompt}
 

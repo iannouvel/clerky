@@ -10,13 +10,13 @@ export async function automatedGuidanceAssessment(assessmentData) {
     const {
         guidance,
         expectedGuidance,
-        auditableElement,
+        practicePoint,
         transcript,
         guidelineContent,
         aiProvider = 'DeepSeek'
     } = assessmentData;
 
-    console.log(`[AUTO-ASSESS] Automated assessment for element: ${auditableElement.name || auditableElement.elementId}`);
+    console.log(`[AUTO-ASSESS] Automated assessment for element: ${practicePoint.name || practicePoint.elementId}`);
 
     // Create comprehensive assessment prompt
     const systemPrompt = `You are an automated clinical guidance assessment system. Your task is to evaluate whether provided guidance matches expected guidance and identify any issues.
@@ -38,16 +38,16 @@ Return ONLY valid JSON matching this interface:
   "mismatches": string[]
 }`;
 
-    const userPrompt = `AUDITABLE ELEMENT:
-Name: ${auditableElement.name || 'Unknown'}
-Derived Advice: ${auditableElement.derivedAdvice || 'N/A'}
-Expected Guidance: ${expectedGuidance || auditableElement.derivedAdvice || 'N/A'}
+    const userPrompt = `PRACTICE POINT:
+Name: ${practicePoint.name || 'Unknown'}
+Derived Advice: ${practicePoint.derivedAdvice || 'N/A'}
+Expected Guidance: ${expectedGuidance || practicePoint.derivedAdvice || 'N/A'}
 
 INPUT VARIABLES:
-${JSON.stringify(auditableElement.inputVariables || [], null, 2)}
+${JSON.stringify(practicePoint.inputVariables || [], null, 2)}
 
 THRESHOLDS:
-${JSON.stringify(auditableElement.thresholds || [], null, 2)}
+${JSON.stringify(practicePoint.thresholds || [], null, 2)}
 
 CLINICAL TRANSCRIPT:
 ${transcript}
@@ -58,14 +58,14 @@ ${guidance}
 GUIDELINE CONTEXT:
 ${guidelineContent ? guidelineContent.substring(0, 2000) : 'N/A'}
 
-Evaluate the provided guidance against the expected guidance for this auditable element. Identify any issues, mismatches, or missing elements. Return JSON only.`;
+Evaluate the provided guidance against the expected guidance for this practice point. Identify any issues, mismatches, or missing elements. Return JSON only.`;
 
     // This would call AI - actual implementation in server.js
     return {
         needsAIAssessment: true,
         systemPrompt,
         userPrompt,
-        elementId: auditableElement.elementId || auditableElement.name
+        elementId: practicePoint.elementId || practicePoint.name
     };
 }
 
@@ -84,7 +84,7 @@ export async function batchAutomatedAssessment(assessments) {
             });
         } catch (error) {
             results.push({
-                elementId: assessment.auditableElement?.elementId,
+                elementId: assessment.practicePoint?.elementId,
                 success: false,
                 error: error.message
             });

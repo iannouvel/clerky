@@ -2,8 +2,8 @@
 // Creates subtle variations to test guidance changes based on input parameter modifications
 
 /**
- * Generates systematic scenario variations for an auditable element
- * @param {Object} element - Auditable element with input variables and thresholds
+ * Generates systematic scenario variations for a practice point
+ * @param {Object} element - Practice point with input variables and thresholds
  * @param {Object} baseScenario - Base clinical scenario transcript
  * @param {Object} options - Generation options
  * @returns {Promise<Array>} - Array of scenario variations

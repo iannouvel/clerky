@@ -33,7 +33,7 @@ function samplingWeight(point) {
 // ─── Phase 1: Sync practice points ───────────────────────────────────────────
 
 /**
- * Reads auditableElements from a guideline document and syncs them into the
+ * Reads practice points from a guideline document and syncs them into the
  * practicePointMetrics subcollection. Existing documents (with accumulated
  * accuracy data) are NOT overwritten — only new points are created.
  *
@@ -48,7 +48,7 @@ async function syncPracticePoints(guidelineId) {
 
     const { auditableElements, title } = guidelineSnap.data();
     if (!Array.isArray(auditableElements) || auditableElements.length === 0) {
-        throw new Error(`Guideline ${guidelineId} has no auditableElements — run practice point extraction first`);
+        throw new Error(`Guideline ${guidelineId} has no practice points — run practice point extraction first`);
     }
 
     const metricsCol = guidelineRef.collection('practicePointMetrics');
@@ -102,7 +102,7 @@ async function syncPracticePoints(guidelineId) {
         }
     }
 
-    // Delete stale points not in the current auditable elements (accuracy history is preserved in calibration runs)
+    // Delete stale points not in the current practice points set (accuracy history is preserved in calibration runs)
     for (const [id, data] of existingDocs) {
         if (!currentIds.has(id)) {
             batch.delete(metricsCol.doc(id));

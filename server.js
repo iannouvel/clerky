@@ -1190,13 +1190,13 @@ async function jobExtractTerms(job, guidelineData) {
 async function jobExtractAuditable(job, guidelineData) {
     // Prefer condensed content for efficiency (no verbatim quotes needed)
     const content = guidelineData.condensed || guidelineData.content;
-    if (!content) throw new Error('No content to extract auditable elements from');
+    if (!content) throw new Error('No content to extract practice points from');
 
     // Use the uploader's AI preference
     const userId = guidelineData.uploadedBy || null;
     // Pass summary for context if available
     const summary = guidelineData.summary || guidelineData.humanFriendlyTitle || null;
-    const elements = await extractAuditableElements(content, userId, summary);
+    const elements = await extractPracticePoints(content, userId, summary);
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
     await guidelineRef.update({
@@ -1266,7 +1266,7 @@ async function jobGenerateDisplayName(job, guidelineData) {
     return { displayName: displayName };
 }
 
-// Regenerate auditable elements for a guideline (used in batch regeneration)
+// Regenerate practice points for a guideline (used in batch regeneration)
 async function jobRegenerateAuditable(job, guidelineData) {
     // Use full content for practice point extraction — condensed loses clinical detail
     let content = guidelineData.content || guidelineData.condensed || job.data?.content;
@@ -1288,7 +1288,7 @@ async function jobRegenerateAuditable(job, guidelineData) {
             bp.failed++;
             bp.results.push({ guidelineId: job.guidelineId, success: false, error: 'No content' });
         }
-        throw new Error('No content to extract auditable elements from');
+        throw new Error('No content to extract practice points from');
     }
 
     const userId = job.data?.userId || guidelineData.uploadedBy || null;
@@ -1298,7 +1298,7 @@ async function jobRegenerateAuditable(job, guidelineData) {
     console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Processing ${job.guidelineId}...`);
 
     try {
-        const elements = await extractAuditableElements(content, userId, summary);
+        const elements = await extractPracticePoints(content, userId, summary);
 
         const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
         await guidelineRef.update({
@@ -9562,7 +9562,7 @@ function buildCompatFields(p) {
 async function deduplicatePracticePoints(points, userId, prefix = 'RULE') {
     if (!points || points.length < 2) return points;
 
-    console.log(`[AUDITABLE-OPT] Dedup: Clustering ${points.length} points for semantic duplicates...`);
+    console.log(`[PRACTICE-POINTS-OPT] Dedup: Clustering ${points.length} points for semantic duplicates...`);
 
     // Build compact rule list for the clustering call
     const ruleList = points.map((p, i) => {
@@ -9614,11 +9614,11 @@ Example output: [[0,3,7],[2,9]]` }
     }
 
     if (clusters.length === 0) {
-        console.log('[AUDITABLE-OPT] Dedup: No duplicate clusters found');
+        console.log('[PRACTICE-POINTS-OPT] Dedup: No duplicate clusters found');
         return points;
     }
 
-    console.log(`[AUDITABLE-OPT] Dedup: Found ${clusters.length} clusters — ${clusters.map(c => c.length).reduce((a, b) => a + b, 0)} points will be consolidated`);
+    console.log(`[PRACTICE-POINTS-OPT] Dedup: Found ${clusters.length} clusters — ${clusters.map(c => c.length).reduce((a, b) => a + b, 0)} points will be consolidated`);
 
     const clusteredIndices = new Set(clusters.flat());
     const result = [];
@@ -9689,23 +9689,23 @@ Return a single JSON object:
             };
             Object.assign(merged, buildCompatFields(merged));
             result.push(merged);
-            console.log(`[AUDITABLE-OPT] Dedup: Merged ${members.length} rules → "${merged.name?.substring(0, 80)}"`);
+            console.log(`[PRACTICE-POINTS-OPT] Dedup: Merged ${members.length} rules → "${merged.name?.substring(0, 80)}"`);
         } else {
-            console.warn(`[AUDITABLE-OPT] Dedup: Synthesis failed for cluster [${cluster.join(',')}], keeping most detailed member`);
+            console.warn(`[PRACTICE-POINTS-OPT] Dedup: Synthesis failed for cluster [${cluster.join(',')}], keeping most detailed member`);
             result.push({ ...base, ...buildCompatFields(base) });
         }
 
         await new Promise(resolve => setTimeout(resolve, 150));
     }
 
-    console.log(`[AUDITABLE-OPT] Dedup: ${points.length} → ${result.length} points after semantic deduplication`);
+    console.log(`[PRACTICE-POINTS-OPT] Dedup: ${points.length} → ${result.length} points after semantic deduplication`);
     return result;
 }
 
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
 async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null, onProgress = null) {
-    console.log('[AUDITABLE-OPT] Step 1: Stepwise structured practice point extraction...');
+    console.log('[PRACTICE-POINTS-OPT] Step 1: Stepwise structured practice point extraction...');
 
     const RULE_TYPES = [
         'hard_contraindication',
@@ -9737,7 +9737,7 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
                 } catch (e2) { /* fall through */ }
             }
         }
-        console.error(`[AUDITABLE-OPT] Failed to parse response (first 500): ${result.content.substring(0, 500).replace(/\n/g, ' ')}`);
+        console.error(`[PRACTICE-POINTS-OPT] Failed to parse response (first 500): ${result.content.substring(0, 500).replace(/\n/g, ' ')}`);
         return null;
     }
 
@@ -9746,7 +9746,7 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
     try {
         // ── Step 1a: Identify guideline sections ──
         const log = (step, msg, extra = null) => {
-            console.log(`[AUDITABLE-OPT] ${step}: ${msg}`);
+            console.log(`[PRACTICE-POINTS-OPT] ${step}: ${msg}`);
             if (onProgress) onProgress(step, msg, extra);
         };
         log('sections', 'Identifying guideline sections…');
@@ -9768,7 +9768,7 @@ ${content}`
 
         let sections = parseJsonArrayFromResponse(sectionResult);
         if (!sections || sections.length === 0) {
-            console.warn('[AUDITABLE-OPT] Step 1a: Could not identify sections, using single-pass fallback');
+            console.warn('[PRACTICE-POINTS-OPT] Step 1a: Could not identify sections, using single-pass fallback');
             sections = ['Full guideline'];
         }
         // Filter to strings only
@@ -9873,7 +9873,7 @@ ${content}`;
         }
 
         if (allPoints.length === 0) {
-            console.error('[AUDITABLE-OPT] Step 1 failed: No practice points extracted from any section');
+            console.error('[PRACTICE-POINTS-OPT] Step 1 failed: No practice points extracted from any section');
             return null;
         }
 
@@ -9913,7 +9913,7 @@ ${content}`;
             };
         });
 
-        console.log(`[AUDITABLE-OPT] Step 1c: ${result.length} structured practice points across ${sections.length} sections`);
+        console.log(`[PRACTICE-POINTS-OPT] Step 1c: ${result.length} structured practice points across ${sections.length} sections`);
 
         // ── Step 1d: Semantic deduplication ──
         const deduplicated = await deduplicatePracticePoints(result, userId, prefix);
@@ -9931,11 +9931,11 @@ ${content}`;
         // Log rule type distribution
         const typeCounts = {};
         finalResult.forEach(r => { typeCounts[r.ruleType] = (typeCounts[r.ruleType] || 0) + 1; });
-        console.log(`[AUDITABLE-OPT] Step 1 complete: ${finalResult.length} points. Rule types: ${JSON.stringify(typeCounts)}`);
+        console.log(`[PRACTICE-POINTS-OPT] Step 1 complete: ${finalResult.length} points. Rule types: ${JSON.stringify(typeCounts)}`);
 
         return finalResult;
     } catch (error) {
-        console.error(`[AUDITABLE-OPT] Step 1 error: ${error.message}`);
+        console.error(`[PRACTICE-POINTS-OPT] Step 1 error: ${error.message}`);
         return null;
     }
 }
@@ -9954,13 +9954,13 @@ async function batchExpandPracticePoints(practicePoints, content, userId = null,
     );
 
     if (!needsExpansion) {
-        console.log('[AUDITABLE-OPT] Step 2: Skipping expansion - points already well-structured');
+        console.log('[PRACTICE-POINTS-OPT] Step 2: Skipping expansion - points already well-structured');
         return practicePoints;
     }
 
-    console.log(`[AUDITABLE-OPT] Step 2: Batch expanding ${practicePoints.length} practice points...`);
+    console.log(`[PRACTICE-POINTS-OPT] Step 2: Batch expanding ${practicePoints.length} practice points...`);
 
-    const expandedElements = [];
+    const expandedPoints = [];
     const batches = [];
 
     // Split into batches
@@ -9968,7 +9968,7 @@ async function batchExpandPracticePoints(practicePoints, content, userId = null,
         batches.push(practicePoints.slice(i, i + batchSize));
     }
 
-    console.log(`[AUDITABLE-OPT] Step 2: Processing ${batches.length} batches of up to ${batchSize} points each`);
+    console.log(`[PRACTICE-POINTS-OPT] Step 2: Processing ${batches.length} batches of up to ${batchSize} points each`);
 
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
@@ -10009,7 +10009,7 @@ Return a JSON array with the same number of objects, each with: name, descriptio
                     try {
                         parsed = JSON.parse(cleanedContent);
                     } catch (e) {
-                        console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse failed, attempting repair...`);
+                        console.warn(`[PRACTICE-POINTS-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Parse failed, attempting repair...`);
                         const repaired = repairJson(cleanedContent);
                         parsed = JSON.parse(repaired);
                     }
@@ -10034,15 +10034,15 @@ Return a JSON array with the same number of objects, each with: name, descriptio
                                 : 'medium'
                         }));
 
-                        expandedElements.push(...validElements);
-                        console.log(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Expanded ${validElements.length} points`);
+                        expandedPoints.push(...validElements);
+                        console.log(`[PRACTICE-POINTS-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Expanded ${validElements.length} points`);
                     } else {
                         throw new Error('Parsed result is not an array');
                     }
                 } catch (parseError) {
-                    console.warn(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Final parse error, using original points`);
-                    console.warn(`[AUDITABLE-OPT] RAW RESPONSE (first 200): ${result.content.substring(0, 200).replace(/\n/g, ' ')}`);
-                    expandedElements.push(...batch);
+                    console.warn(`[PRACTICE-POINTS-OPT] Step 2 [${batchIndex + 1}/${batches.length}]: Final parse error, using original points`);
+                    console.warn(`[PRACTICE-POINTS-OPT] RAW RESPONSE (first 200): ${result.content.substring(0, 200).replace(/\n/g, ' ')}`);
+                    expandedPoints.push(...batch);
                 }
             } else {
                 // If no result, use original batch
@@ -10054,14 +10054,14 @@ Return a JSON array with the same number of objects, each with: name, descriptio
                 await new Promise(resolve => setTimeout(resolve, 200));
             }
         } catch (error) {
-            console.error(`[AUDITABLE-OPT] Step 2 [${batchIndex + 1}/${batches.length}] error:`, error.message);
+            console.error(`[PRACTICE-POINTS-OPT] Step 2 [${batchIndex + 1}/${batches.length}] error:`, error.message);
             // Use original batch on error
             expandedElements.push(...batch);
         }
     }
 
-    console.log(`[AUDITABLE-OPT] Step 2 complete: ${expandedElements.length} expanded elements`);
-    return expandedElements;
+    console.log(`[PRACTICE-POINTS-OPT] Step 2 complete: ${expandedPoints.length} expanded practice points`);
+    return expandedPoints;
 }
 
 // Validation and sharpening function - filters and rewrites vague practice points
@@ -10198,13 +10198,13 @@ Return a JSON array with one entry per rule (same order):
 
 // Main extraction function - optimised 2-step process
 // Uses condensed content and batch processing for ~95% reduction in API calls
-async function extractAuditableElements(content, userId = null, guidelineSummary = null, onProgress = null) {
+async function extractPracticePoints(content, userId = null, guidelineSummary = null, onProgress = null) {
     if (!content || typeof content !== 'string') {
         return [];
     }
 
     const log = (step, msg, extra = null) => {
-        console.log(`[AUDITABLE-OPT] ${step}: ${msg}`);
+        console.log(`[PRACTICE-POINTS-OPT] ${step}: ${msg}`);
         if (onProgress) onProgress(step, msg, extra);
     };
 
@@ -10249,7 +10249,7 @@ async function extractAuditableElements(content, userId = null, guidelineSummary
         return auditableElements;
 
     } catch (error) {
-        console.error('[AUDITABLE-OPT] Error extracting auditable elements:', error);
+        console.error('[PRACTICE-POINTS-OPT] Error extracting practice points:', error);
         return [];
     }
 }
@@ -10671,7 +10671,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
                     scope: metadata.scope || 'national',
                     nation: metadata.nation || null,
                     hospitalTrust: metadata.hospitalTrust || null,
-                    auditableElements: await extractAuditableElements(guidelineContent)
+                    auditableElements: await extractPracticePoints(guidelineContent)
                 });
 
                 // Queue AI displayName generation job (content is already available from sync)
@@ -11116,7 +11116,7 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
                     scope: metadata.scope || 'national',
                     nation: metadata.nation || null,
                     hospitalTrust: metadata.hospitalTrust || null,
-                    auditableElements: [] // Skip auditable elements for now to save time
+                    auditableElements: [] // Skip practice points extraction for now to save time
                 };
 
                 // Add content fields or Storage URLs depending on size
@@ -12662,7 +12662,7 @@ Return a single JSON array only, with at least 5-10 suggestions from various org
     }
 });
 
-// Endpoint to update existing guidelines with auditable elements
+// Endpoint to update existing guidelines with practice points
 app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req, res) => {
     try {
         debugLog('[DEBUG] updateGuidelinesWithAuditableElements endpoint called');
@@ -12676,7 +12676,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
 
         // Get guidelineId from request (AI provider is determined from user preferences)
         const { guidelineId } = req.body;
-        console.log(`[DEBUG] Extracting auditable elements for guideline: ${guidelineId}, user: ${req.user.uid}`);
+        console.log(`[DEBUG] Extracting practice points for guideline: ${guidelineId}, user: ${req.user.uid}`);
 
         // If specific guidelineId is provided, update only that one
         if (guidelineId) {
@@ -12693,14 +12693,14 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
 
                 const guideline = guidelineDoc.data();
 
-                // Skip if already has auditable elements
+                // Skip if already has practice points
                 if (guideline.auditableElements && guideline.auditableElements.length > 0) {
                     return res.json({
                         success: true,
                         results: [{
                             guidelineId,
                             success: true,
-                            message: 'Already has auditable elements',
+                            message: 'Already has practice points',
                             count: guideline.auditableElements.length
                         }]
                     });
@@ -12715,7 +12715,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     });
                 }
 
-                const auditableElements = await extractAuditableElements(content, req.user.uid);
+                const auditableElements = await extractPracticePoints(content, req.user.uid);
 
                 // Update the guideline
                 await guidelineRef.update({
@@ -12723,14 +12723,14 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
 
-                console.log(`[DEBUG] Updated ${guidelineId} with ${auditableElements.length} auditable elements`);
+                console.log(`[DEBUG] Updated ${guidelineId} with ${auditableElements.length} practice points`);
 
                 return res.json({
                     success: true,
                     results: [{
                         guidelineId,
                         success: true,
-                        message: 'Updated with auditable elements',
+                        message: 'Updated with practice points',
                         count: auditableElements.length
                     }]
                 });
@@ -12753,12 +12753,12 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                 const guideline = doc.data();
                 const guidelineId = doc.id;
 
-                // Skip if already has auditable elements
+                // Skip if already has practice points
                 if (guideline.auditableElements && guideline.auditableElements.length > 0) {
                     results.push({
                         guidelineId,
                         success: true,
-                        message: 'Already has auditable elements',
+                        message: 'Already has practice points',
                         count: guideline.auditableElements.length
                     });
                     continue;
@@ -12775,7 +12775,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     continue;
                 }
 
-                const auditableElements = await extractAuditableElements(content, req.user.uid);
+                const auditableElements = await extractPracticePoints(content, req.user.uid);
 
                 // Update the guideline
                 await db.collection('guidelines').doc(guidelineId).update({
@@ -12786,11 +12786,11 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                 results.push({
                     guidelineId,
                     success: true,
-                    message: 'Updated with auditable elements',
+                    message: 'Updated with practice points',
                     count: auditableElements.length
                 });
 
-                console.log(`[DEBUG] Updated ${guidelineId} with ${auditableElements.length} auditable elements`);
+                console.log(`[DEBUG] Updated ${guidelineId} with ${auditableElements.length} practice points`);
 
             } catch (error) {
                 console.error(`[DEBUG] Error updating guideline ${doc.id}:`, error);
@@ -12811,7 +12811,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
         });
 
     } catch (error) {
-        console.error('[ERROR] Failed to update guidelines with auditable elements:', error);
+        console.error('[ERROR] Failed to update guidelines with practice points:', error);
         res.status(500).json({
             success: false,
             error: error.message
@@ -12831,10 +12831,10 @@ app.get('/getExtractionJobStatus', authenticateUser, (req, res) => {
     res.json({ success: true, ...extractionJobs[jobId] });
 });
 
-// Endpoint to REGENERATE auditable elements (forces regeneration even if elements exist)
+// Endpoint to REGENERATE practice points (forces regeneration even if elements exist)
 app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
     try {
-        console.log('[REGEN-AUDITABLE] Regenerate auditable elements endpoint called');
+        console.log('[REGEN-PRACTICE-POINTS] Regenerate practice points endpoint called');
 
         if (!db) {
             return res.status(500).json({
@@ -12846,7 +12846,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
         const { guidelineId, guidelineIds, processAll } = req.body;
         const userId = req.user.uid;
 
-        console.log(`[REGEN-AUDITABLE] User: ${userId}, GuidelineId: ${guidelineId || 'none'}, GuidelineIds: ${guidelineIds?.length || 0}, ProcessAll: ${processAll}`);
+        console.log(`[REGEN-PRACTICE-POINTS] User: ${userId}, GuidelineId: ${guidelineId || 'none'}, GuidelineIds: ${guidelineIds?.length || 0}, ProcessAll: ${processAll}`);
 
         // If specific guidelineId is provided (legacy support)
         if (guidelineId && !processAll && !guidelineIds) {
@@ -12880,7 +12880,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                 res.json({ success: true, jobId, async: true, message: 'Extraction started.' });
 
                 // Fire and forget
-                extractAuditableElements(content, userId, summary, (step, message, extra) => {
+                extractPracticePoints(content, userId, summary, (step, message, extra) => {
                     extractionJobs[jobId] = {
                         ...extractionJobs[jobId],
                         step,
@@ -12889,7 +12889,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                     };
                 }).then(async (auditableElements) => {
                     if (!auditableElements || auditableElements.length === 0) {
-                        console.error(`[REGEN-AUDITABLE] Async job ${jobId}: extraction returned 0 elements`);
+                        console.error(`[REGEN-PRACTICE-POINTS] Async job ${jobId}: extraction returned 0 elements`);
                         extractionJobs[jobId] = { status: 'error', guidelineId, error: 'Extraction returned 0 practice points — check server logs' };
                         return;
                     }
@@ -12908,7 +12908,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                         completedAt: new Date().toISOString()
                     };
                 }).catch(err => {
-                    console.error(`[REGEN-AUDITABLE] Async job ${jobId} failed:`, err.message);
+                    console.error(`[REGEN-PRACTICE-POINTS] Async job ${jobId} failed:`, err.message);
                     extractionJobs[jobId] = { status: 'error', guidelineId, error: err.message };
                 });
 
@@ -12919,8 +12919,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
 
             // Sync mode (legacy) — wait for completion
             try {
-                console.log(`[REGEN-AUDITABLE] Extracting elements for ${guidelineId}, content length: ${content.length}`);
-                const auditableElements = await extractAuditableElements(content, userId, summary);
+                console.log(`[REGEN-PRACTICE-POINTS] Extracting elements for ${guidelineId}, content length: ${content.length}`);
+                const auditableElements = await extractPracticePoints(content, userId, summary);
 
                 await guidelineRef.update({
                     auditableElements,
@@ -12929,21 +12929,21 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
 
-                console.log(`[REGEN-AUDITABLE] Updated ${guidelineId} with ${auditableElements.length} auditable elements`);
+                console.log(`[REGEN-PRACTICE-POINTS] Updated ${guidelineId} with ${auditableElements.length} practice points`);
 
                 return res.json({
                     success: true,
                     results: [{
                         guidelineId,
                         success: true,
-                        message: 'Regenerated auditable elements',
+                        message: 'Regenerated practice points',
                         count: auditableElements.length
                     }],
                     totalElements: auditableElements.length
                 });
 
             } catch (error) {
-                console.error(`[REGEN-AUDITABLE] Error regenerating elements for ${guidelineId}:`, error);
+                console.error(`[REGEN-PRACTICE-POINTS] Error regenerating elements for ${guidelineId}:`, error);
                 return res.status(500).json({ success: false, error: error.message });
             }
         }
@@ -12979,7 +12979,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
             }
         }
 
-        console.log(`[REGEN-AUDITABLE] Queueing ${guidelinesToQueue.length} guidelines (skipped ${skippedNoContentCount} no content)`);
+        console.log(`[REGEN-PRACTICE-POINTS] Queueing ${guidelinesToQueue.length} guidelines (skipped ${skippedNoContentCount} no content)`);
 
         if (guidelinesToQueue.length === 0) {
             return res.json({
@@ -13028,7 +13028,7 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
         });
 
     } catch (error) {
-        console.error('[ERROR] Failed to regenerate auditable elements:', error);
+        console.error('[ERROR] Failed to regenerate practice points:', error);
         res.status(500).json({
             success: false,
             error: error.message
@@ -13663,7 +13663,7 @@ app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
             });
         }
 
-        // Filter auditable elements based on scope
+        // Filter practice points based on scope
         let selectedElements = [];
         switch (auditScope) {
             case 'most_significant':
@@ -13687,7 +13687,7 @@ app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
         if (selectedElements.length === 0) {
             return res.status(400).json({
                 success: false,
-                error: 'No auditable elements found for the selected scope'
+                error: 'No practice points found for the selected scope'
             });
         }
 
@@ -13696,7 +13696,7 @@ app.post('/generateAuditTranscript', authenticateUser, async (req, res) => {
 
 GUIDELINE CONTEXT:
 Guideline ID: ${guidelineId}
-Number of auditable elements to cover: ${selectedElements.length}
+Number of practice points to cover: ${selectedElements.length}
 
 AUDITABLE ELEMENTS TO COVER:
 ${selectedElements.map((element, index) => `
@@ -13710,7 +13710,7 @@ Element ${index + 1}:
 `).join('\n')}
 
 REQUIREMENTS:
-1. Create a realistic clinical scenario that covers ALL the auditable elements above
+1. Create a realistic clinical scenario that covers ALL the practice points above
 2. Include ALL the input variables mentioned in the elements
 3. Ensure the scenario would trigger the derived advice from each element
 4. Use proper medical terminology and British abbreviations
@@ -13725,7 +13725,7 @@ BACKGROUND: [Relevant history, previous episodes, risk factors, medications]
 ASSESSMENT: [Clinical findings, vital signs, test results, differential diagnosis]
 RECOMMENDATION: [Management plan, monitoring, follow-up, further investigations]
 
-Generate a comprehensive clinical transcript that would test all the auditable elements listed above.`;
+Generate a comprehensive clinical transcript that would test all the practice points listed above.`;
 
         console.log('[AUDIT-TRANSCRIPT] Calling AI with audit prompt...');
 

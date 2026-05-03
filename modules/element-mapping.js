@@ -1,9 +1,9 @@
 // Element-to-guideline mapping system
-// Maps auditable elements to specific guideline sections
+// Maps practice points to specific guideline sections
 
 /**
- * Maps auditable elements to guideline sections
- * @param {Array} elements - Auditable elements
+ * Maps practice points to guideline sections
+ * @param {Array} elements - Practice points
  * @param {Object} guideline - Guideline data
  * @returns {Promise<Array>} - Mapped elements with section references
  */
