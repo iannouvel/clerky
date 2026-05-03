@@ -1,6 +1,6 @@
 // Import Firebase modules
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+import { getFirestore, collection, getDocs, addDoc } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { getAuth, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 
 // Firebase configuration for client-side
@@ -41,6 +41,7 @@ window.auth = auth;
 window.db = db;  // Make Firestore available globally
 window.firestoreCollection = collection;  // Make collection function available
 window.firestoreGetDocs = getDocs;  // Make getDocs function available
+window.firestoreAddDoc = addDoc;  // Make addDoc function available
 window.firebase = { 
     auth: () => auth,
     authInstance: auth,
@@ -53,7 +54,7 @@ window.firebase.auth.GoogleAuthProvider = GoogleAuthProvider;
 window.firebase.auth.signInWithPopup = (provider) => signInWithPopup(auth, provider);
 
 // Export initialized instances
-export { app, db, auth, collection, getDocs };
+export { app, db, auth, collection, getDocs, addDoc };
 
 // Constants for retry logic
 const MAX_RETRIES = 3;

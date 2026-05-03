@@ -775,7 +775,8 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
             feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 5000);
         }
 
-        const docRef = await window.db.collection('feedback').add(feedbackData);
+        const feedbackCollection = window.firestoreCollection(window.db, 'feedback');
+        const docRef = await window.firestoreAddDoc(feedbackCollection, feedbackData);
         console.log('[WIZARD-FEEDBACK] Feedback submitted with practice point:', suggestion.practice_point_reference, 'Doc:', docRef.id);
     } catch (error) {
         console.error('[WIZARD-FEEDBACK] Error submitting feedback:', error);
