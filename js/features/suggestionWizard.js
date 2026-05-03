@@ -567,7 +567,45 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 }
             }
 
-            setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
+            // Apply green styling to the newly inserted text by building HTML with highlighting
+            // Helper: Build HTML where a specific text is highlighted in green
+            const escapeHtml = (str) => {
+                const div = document.createElement('div');
+                div.textContent = str;
+                return div.innerHTML;
+            };
+
+            const buildHtmlWithHighlight = (text, highlightText) => {
+                if (!highlightText) {
+                    // Fallback: normal HTML conversion
+                    const normalized = text.replace(/\n{3,}/g, '\n\n');
+                    return normalized.split('\n\n')
+                        .filter(p => p.trim())
+                        .map(p => `<p>${p.split('\n').map(l => escapeHtml(l)).join('<br>')}</p>`)
+                        .join('');
+                }
+
+                const normalized = text.replace(/\n{3,}/g, '\n\n');
+                return normalized.split('\n\n')
+                    .filter(p => p.trim())
+                    .map(p => {
+                        const lines = p.split('\n').map(line => {
+                            if (line.includes(highlightText)) {
+                                const parts = line.split(highlightText);
+                                const before = escapeHtml(parts[0] || '');
+                                const highlighted = `<span class="insertion-placeholder">${escapeHtml(highlightText)}</span>`;
+                                const after = escapeHtml(parts.slice(1).join(highlightText));
+                                return `${before}${highlighted}${after}`;
+                            }
+                            return escapeHtml(line);
+                        });
+                        return `<p>${lines.join('<br>')}</p>`;
+                    })
+                    .join('');
+            };
+
+            const highlightedHtml = buildHtmlWithHighlight(newContent, textToInsert);
+            setUserInputContent(highlightedHtml, true, 'Wizard Suggestion - Accepted', null, true);
 
             // Briefly bold the inserted text so the user can see where it landed
             setTimeout(() => flashBoldInEditor(textToInsert), 150);
