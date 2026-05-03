@@ -7569,21 +7569,31 @@ window.selectedGuidelineScope = null;
 // Comprehensive workflow processing function
 async function runPhase1CompletenessCheck() {
     try {
+        console.log('[PHASE1] Starting completeness check...');
         updateUser('Step 1 of 2 — Reviewing note for missing clinical details...', true);
         const transcript = getUserInputContent();
-        if (!transcript?.trim()) return;
+        if (!transcript?.trim()) {
+            console.log('[PHASE1] No transcript, skipping');
+            return;
+        }
 
         const { anonymisedText } = await ensureAnonymisedForOutbound(transcript);
         const user = auth.currentUser;
-        if (!user) return;
+        if (!user) {
+            console.log('[PHASE1] No user, skipping');
+            return;
+        }
         const idToken = await user.getIdToken();
 
+        console.log('[PHASE1] Calling /assessNoteCompletenessStructured...');
         const resp = await fetch(`${window.SERVER_URL}/assessNoteCompletenessStructured`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
             body: JSON.stringify({ transcript: anonymisedText || transcript })
         });
+        console.log('[PHASE1] Response status:', resp.status);
         const data = await resp.json();
+        console.log('[PHASE1] API returned:', data?.missing_information?.length || 0, 'items');
         let rawItems = Array.isArray(data.missing_information) ? data.missing_information : [];
 
         // FILTER: Remove suggestions for info already documented in the note
@@ -7691,6 +7701,8 @@ async function runPhase1CompletenessCheck() {
             });
         });
     } catch (e) {
+        console.error('[PHASE1] Error:', e);
+        console.error('[PHASE1] Stack:', e.stack);
         console.warn('[COMPLETENESS] Phase 1 failed, skipping:', e.message);
         // Never block Phase 2
     }
