@@ -602,11 +602,31 @@ window.openWizardFeedbackModal = function() {
     const practicePointRef = suggestion.practice_point_reference || suggestion.sourceGuidelineId || '(not specified)';
     const sourceGuidelineTitle = suggestion.sourceGuidelineTitle || 'Unknown Guideline';
     const priorityColor = suggestion.priority === 'high' ? '#dc2626' : suggestion.priority === 'medium' ? '#f59e0b' : '#6b7280';
+    const contextId = `${modalId}-context`;
 
     // Safely escape HTML
     const escapeHtml = (text) => {
         if (!text) return '';
         return String(text).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+
+    // Prepare full context for display and storage
+    const wizardState = window.suggestionWizardState ? {
+        currentIndex: window.suggestionWizardState.currentIndex,
+        total: window.suggestionWizardState.total,
+        currentSuggestion: suggestion,
+        allSuggestions: window.suggestionWizardState.queue || []
+    } : null;
+
+    const fullContext = {
+        wizardState,
+        aiContext: window._lastAiContext || null,
+        lastInteraction: window._lastInteraction || null,
+        uiState: {
+            activeView: document.querySelector('[data-active-view]')?.getAttribute('data-active-view') || 'unknown',
+            editorText: typeof window.getUserInputContent === 'function' ? window.getUserInputContent() : '',
+            summaryText: document.getElementById('summary1')?.textContent || ''
+        }
     };
 
     const modalHtml = `
@@ -635,6 +655,13 @@ window.openWizardFeedbackModal = function() {
 
                 <p style="color: var(--text-primary); margin: 16px 0 8px 0; font-weight: 500;">Tell us why you're rejecting this suggestion:</p>
                 <textarea id="${modalId}-text" placeholder="Enter your feedback (optional)" style="width: 100%; height: 100px; margin: 0 0 16px 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-family: system-ui; font-size: 0.95em; resize: vertical; box-sizing: border-box;"></textarea>
+
+                <details style="margin-bottom: 16px; background: #f9fafb; padding: 12px; border-radius: 4px; border: 1px solid var(--border-color);">
+                    <summary style="cursor: pointer; font-weight: 500; color: #1f2937; margin-bottom: 8px;">📋 View Full Context (${wizardState ? `${wizardState.currentIndex + 1} of ${wizardState.total}` : 'N/A'})</summary>
+                    <div id="${contextId}" style="font-size: 0.85em; color: var(--text-secondary); max-height: 300px; overflow-y: auto; font-family: 'Courier New', monospace; white-space: pre-wrap; word-break: break-word; background: white; padding: 8px; border-radius: 3px; margin-top: 8px;">
+                        ${JSON.stringify(fullContext, null, 2).substring(0, 2000)}...
+                    </div>
+                </details>
 
                 <div style="display: flex; justify-content: flex-end; gap: 10px;">
                     <button id="${modalId}-skip" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Skip</button>
@@ -710,7 +737,7 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
             status: 'open'
         };
 
-        // Add full wizard state for context
+        // Add complete context (matches old feedback detail structure)
         if (window.suggestionWizardState) {
             feedbackData.wizardState = {
                 currentIndex: window.suggestionWizardState.currentIndex,
@@ -725,9 +752,22 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
             feedbackData.aiContext = window._lastAiContext;
         }
 
-        // Add current note state for context
+        // Add last interaction info
+        if (window._lastInteraction) {
+            feedbackData.lastInteraction = window._lastInteraction;
+        }
+
+        // Add full UI state for reconstruction
+        feedbackData.uiState = {
+            activeView: document.querySelector('[data-active-view]')?.getAttribute('data-active-view') || 'unknown',
+            editorText: typeof window.getUserInputContent === 'function' ? window.getUserInputContent() : '',
+            summaryText: document.getElementById('summary1')?.textContent || '',
+            timestamp: new Date().toISOString()
+        };
+
+        // Add full note snapshot
         if (typeof window.getUserInputContent === 'function') {
-            feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 3000);
+            feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 5000);
         }
 
         const docRef = await window.db.collection('feedback').add(feedbackData);
