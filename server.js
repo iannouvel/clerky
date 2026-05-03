@@ -17937,6 +17937,13 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.displayName || guidelineId;
         const auditableElements = guidelineData.practicePoints || [];
 
+        console.log(`[PRACTICE-POINT-LOAD] Loaded ${auditableElements.length} practice points for guideline ${guidelineId}`);
+        if (auditableElements.length > 0) {
+            console.log(`[PRACTICE-POINT-LOAD] Practice points: ${auditableElements.map((p, i) => `${i + 1}: ${p.name}`).join('; ')}`);
+        } else {
+            console.log(`[PRACTICE-POINT-LOAD] WARNING: No practice points found! Guideline fields:`, Object.keys(guidelineData).filter(k => k.includes('auditable') || k.includes('practice')));
+        }
+
         timer.step('Fetch guideline metadata');
 
         // RAG-first content retrieval: query Pinecone for the most relevant chunks of this
@@ -18051,16 +18058,23 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         // Helper: match suggestion to practice point serial number
         function findPracticePointNumber(suggestion) {
             if (!auditableElements || auditableElements.length === 0) {
+                console.log(`[PRACTICE-POINT-MATCH] No practice points available (array empty or undefined)`);
                 return null;
             }
+
+            console.log(`[PRACTICE-POINT-MATCH] Matching against ${auditableElements.length} practice points`);
+            console.log(`[PRACTICE-POINT-MATCH] Suggestion: name="${suggestion.name}", issue="${suggestion.issue}", suggestion="${suggestion.suggestion?.substring(0, 60)}..."`);
+            console.log(`[PRACTICE-POINT-MATCH] Practice point names: ${auditableElements.map((e, i) => `${i + 1}: ${e.name}`).join('; ')}`);
 
             // Try matching by verbatimQuote first
             if (suggestion.verbatimQuote) {
                 const verbatim = suggestion.verbatimQuote.toLowerCase().trim();
+                console.log(`[PRACTICE-POINT-MATCH] Trying verbatimQuote match: "${verbatim.substring(0, 50)}..."`);
                 for (let i = 0; i < auditableElements.length; i++) {
                     const element = auditableElements[i];
                     const elementText = ((element.name || '') + ' ' + (element.description || '')).toLowerCase();
                     if (elementText.includes(verbatim) || verbatim.length > 20 && elementText.includes(verbatim.substring(0, Math.min(50, verbatim.length)))) {
+                        console.log(`[PRACTICE-POINT-MATCH] ✓ Matched by verbatimQuote to point ${i + 1}`);
                         return i + 1; // 1-indexed for readability
                     }
                 }
@@ -18069,17 +18083,20 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             // Try matching suggestion text to practice point names
             const suggestionText = (suggestion.suggestion || suggestion.name || '').toLowerCase().trim();
             if (suggestionText) {
+                console.log(`[PRACTICE-POINT-MATCH] Trying suggestion text match: "${suggestionText.substring(0, 50)}..."`);
                 for (let i = 0; i < auditableElements.length; i++) {
                     const element = auditableElements[i];
                     const elementName = (element.name || '').toLowerCase().trim();
                     // Match if suggestion starts with practice point name, or practice point name is a key phrase in suggestion
                     if (suggestionText.startsWith(elementName) || (elementName.length > 10 && suggestionText.includes(elementName))) {
+                        console.log(`[PRACTICE-POINT-MATCH] ✓ Matched by suggestion text to point ${i + 1}: "${elementName}"`);
                         return i + 1;
                     }
                 }
             }
 
             // No definitive match found
+            console.log(`[PRACTICE-POINT-MATCH] ✗ No match found for suggestion`);
             return null;
         }
 
@@ -18106,6 +18123,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         }));
 
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
+        console.log(`[SEMANTIC-SUGGESTIONS] Formatted suggestions with practicePointNumbers: ${formattedSuggestions.map((s, i) => `${i + 1}: ppNum=${s.practicePointNumber}, name="${s.name?.substring(0, 30)}..."`).join('; ')}`);
         console.log(`[SEMANTIC-SUGGESTIONS] Patient context: ${JSON.stringify(analysisResult.patientContext || {})}`);
 
         // Sense-check: skip when the caller is running parallel analysis and will batch
