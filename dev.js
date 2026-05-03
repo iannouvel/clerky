@@ -10307,11 +10307,16 @@ window.showFeedbackDetail = function (feedbackId) {
     const sourceGlId = fb.sourceGuidelineId || fb.wizardState?.currentSuggestion?.sourceGuidelineId || fb.suggestion?.sourceGuidelineId || null;
     const sourceGlTitle = fb.sourceGuidelineTitle || fb.wizardState?.currentSuggestion?.sourceGuidelineTitle || fb.suggestion?.sourceGuidelineTitle || null;
 
+    const modalId = `feedback-detail-${Date.now()}`;
+
     overlay.innerHTML = `
         <div style="background:var(--bg-primary);border-radius:12px;max-width:700px;width:90%;max-height:85vh;overflow-y:auto;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.3);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
                 <h3 style="margin:0;">Feedback Detail</h3>
-                <button onclick="this.closest('div[style*=fixed]').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-primary);">&times;</button>
+                <div style="display:flex;gap:8px;">
+                    <button id="${modalId}-copy" style="background:#17a2b8;color:white;border:none;border-radius:4px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:500;">Copy to Clipboard</button>
+                    <button onclick="this.closest('div[style*=fixed]').remove()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-primary);">&times;</button>
+                </div>
             </div>
             <div style="font-size:13px;display:flex;flex-direction:column;gap:12px;">
                 <div><strong>ID:</strong> ${fb.id}</div>
@@ -10328,6 +10333,52 @@ window.showFeedbackDetail = function (feedbackId) {
         </div>
     `;
     document.body.appendChild(overlay);
+
+    // Attach copy button handler
+    setTimeout(() => {
+        const copyBtn = document.getElementById(`${modalId}-copy`);
+        if (copyBtn) {
+            copyBtn.addEventListener('click', async () => {
+                // Build comprehensive feedback object
+                const feedbackText = JSON.stringify({
+                    id: fb.id,
+                    date: fb.date || fb.submittedAt,
+                    userEmail: fb.userEmail,
+                    explanation: fb.userExplanation,
+                    suggestion: {
+                        text: fb.suggestion?.text || fb.wizardState?.currentSuggestion?.suggestion || '',
+                        why: fb.suggestion?.why || fb.wizardState?.currentSuggestion?.why || '',
+                        type: fb.suggestion?.type || 'unknown'
+                    },
+                    practicePointNumber: ppNum,
+                    sourceGuideline: sourceGlTitle ? { id: sourceGlId, title: sourceGlTitle } : null,
+                    phase: fb.phase || 'unknown',
+                    status: fb.status || 'open',
+                    actionedAt: fb.actionedAt || null,
+                    wizardState: fb.wizardState || null,
+                    aiContext: fb.aiContext || null,
+                    uiState: fb.uiState || null
+                }, null, 2);
+
+                try {
+                    await navigator.clipboard.writeText(feedbackText);
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = '✓ Copied!';
+                    copyBtn.style.background = '#28a745';
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                        copyBtn.style.background = '#17a2b8';
+                    }, 2000);
+                } catch (err) {
+                    console.error('Failed to copy:', err);
+                    copyBtn.textContent = '✗ Failed';
+                    setTimeout(() => {
+                        copyBtn.textContent = 'Copy to Clipboard';
+                    }, 2000);
+                }
+            });
+        }
+    }, 50);
 };
 
 window.exportFeedbackJSON = function () {
