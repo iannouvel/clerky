@@ -12894,7 +12894,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                         return;
                     }
                     await guidelineRef.update({
-                        auditableElements,
+                        practicePoints: auditableElements,
                         practicePointsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
                         practicePointsRegeneratedBy: userId,
                         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
@@ -12923,7 +12923,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                 const auditableElements = await extractPracticePoints(content, userId, summary);
 
                 await guidelineRef.update({
-                    auditableElements,
+                    practicePoints: auditableElements,
                     practicePointsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
                     practicePointsRegeneratedBy: userId,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
