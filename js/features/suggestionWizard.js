@@ -1,5 +1,8 @@
 import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState } from '../utils/editor.js';
 
+// Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
+window.clearReplacementPreviewState = clearReplacementState;
+
 /**
  * Opens the PDF for a guideline in a new tab.
  * Fetches a fresh auth token at click time so the link never expires.
@@ -567,45 +570,13 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 }
             }
 
-            // Apply green styling to the newly inserted text by building HTML with highlighting
-            // Helper: Build HTML where a specific text is highlighted in green
-            const escapeHtml = (str) => {
-                const div = document.createElement('div');
-                div.textContent = str;
-                return div.innerHTML;
-            };
+            // Set content normally without green styling (provisional text should disappear when accepted)
+            // The newContent already has the inserted text in the right place
+            setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
 
-            const buildHtmlWithHighlight = (text, highlightText) => {
-                if (!highlightText) {
-                    // Fallback: normal HTML conversion
-                    const normalized = text.replace(/\n{3,}/g, '\n\n');
-                    return normalized.split('\n\n')
-                        .filter(p => p.trim())
-                        .map(p => `<p>${p.split('\n').map(l => escapeHtml(l)).join('<br>')}</p>`)
-                        .join('');
-                }
-
-                const normalized = text.replace(/\n{3,}/g, '\n\n');
-                return normalized.split('\n\n')
-                    .filter(p => p.trim())
-                    .map(p => {
-                        const lines = p.split('\n').map(line => {
-                            if (line.includes(highlightText)) {
-                                const parts = line.split(highlightText);
-                                const before = escapeHtml(parts[0] || '');
-                                const highlighted = `<span class="insertion-placeholder">${escapeHtml(highlightText)}</span>`;
-                                const after = escapeHtml(parts.slice(1).join(highlightText));
-                                return `${before}${highlighted}${after}`;
-                            }
-                            return escapeHtml(line);
-                        });
-                        return `<p>${lines.join('<br>')}</p>`;
-                    })
-                    .join('');
-            };
-
-            const highlightedHtml = buildHtmlWithHighlight(newContent, textToInsert);
-            setUserInputContent(highlightedHtml, true, 'Wizard Suggestion - Accepted', null, true);
+            // Clear replacement preview state so red strikethrough doesn't persist after accepting
+            // This ensures only the newly inserted text remains, without red strikethrough styling
+            clearReplacementState();
 
             // Briefly bold the inserted text so the user can see where it landed
             setTimeout(() => flashBoldInEditor(textToInsert), 150);
