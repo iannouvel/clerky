@@ -18063,7 +18063,9 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             priority: suggestion.priority || 'medium',
             applicable: true,
             originalText: suggestion.originalText || null,
-            category: suggestion.category || null
+            category: suggestion.category || null,
+            sourceGuidelineId: guidelineId,
+            sourceGuidelineTitle: guidelineTitle
         }));
 
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);

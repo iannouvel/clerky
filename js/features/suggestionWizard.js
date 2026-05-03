@@ -599,7 +599,8 @@ window.openWizardFeedbackModal = function() {
     if (!suggestion) return;
 
     const modalId = `wizard-feedback-${Date.now()}`;
-    const practicePointRef = suggestion.practice_point_reference || '(not specified)';
+    const practicePointRef = suggestion.practice_point_reference || suggestion.sourceGuidelineId || '(not specified)';
+    const sourceGuidelineTitle = suggestion.sourceGuidelineTitle || 'Unknown Guideline';
     const priorityColor = suggestion.priority === 'high' ? '#dc2626' : suggestion.priority === 'medium' ? '#f59e0b' : '#6b7280';
 
     // Safely escape HTML
@@ -623,8 +624,9 @@ window.openWizardFeedbackModal = function() {
                     </div>
                 </div>
 
-                <div style="background: #f3f4f6; padding: 12px; margin-bottom: 16px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em;">
-                    <strong style="color: #1f2937;">Practice Point:</strong> <code>${escapeHtml(practicePointRef)}</code>
+                <div style="background: #f3f4f6; padding: 12px; margin-bottom: 12px; border-radius: 4px;">
+                    <div style="margin-bottom: 8px;"><strong style="color: #1f2937;">Guideline:</strong> ${escapeHtml(sourceGuidelineTitle)}</div>
+                    <div style="font-family: 'Courier New', monospace; font-size: 0.85em;"><strong style="color: #1f2937;">Reference:</strong> <code>${escapeHtml(practicePointRef)}</code></div>
                 </div>
 
                 <div style="background: #f0fdf4; padding: 12px; margin-bottom: 16px; border-radius: 4px; font-size: 0.9em; color: #166534;">
@@ -695,10 +697,14 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
                 data_type_and_options: suggestion.data_type_and_options || null,
                 category: suggestion.category || null,
                 verbatimQuote: suggestion.verbatimQuote || '',
-                significance: suggestion.significance || ''
+                significance: suggestion.significance || '',
+                sourceGuidelineId: suggestion.sourceGuidelineId || null,
+                sourceGuidelineTitle: suggestion.sourceGuidelineTitle || null
             },
-            practice_point_reference: suggestion.practice_point_reference,
-            phase: 'completeness',
+            practice_point_reference: suggestion.practice_point_reference || suggestion.sourceGuidelineId || null,
+            sourceGuidelineId: suggestion.sourceGuidelineId || null,
+            sourceGuidelineTitle: suggestion.sourceGuidelineTitle || null,
+            phase: suggestion.phase || 'practice-points',
             lastAction: 'Send Feedback',
             submittedAt: new Date(),
             status: 'open'
