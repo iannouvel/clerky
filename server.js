@@ -17935,6 +17935,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
         const guidelineData = guidelineDoc.data();
         const guidelineTitle = guidelineData.humanFriendlyTitle || guidelineData.title || guidelineData.displayName || guidelineId;
+        const auditableElements = guidelineData.auditableElements || [];
 
         timer.step('Fetch guideline metadata');
 
@@ -18047,6 +18048,41 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             return words.join(' ').trim();
         }
 
+        // Helper: match suggestion to practice point serial number
+        function findPracticePointNumber(suggestion) {
+            if (!auditableElements || auditableElements.length === 0) {
+                return null;
+            }
+
+            // Try matching by verbatimQuote first
+            if (suggestion.verbatimQuote) {
+                const verbatim = suggestion.verbatimQuote.toLowerCase().trim();
+                for (let i = 0; i < auditableElements.length; i++) {
+                    const element = auditableElements[i];
+                    const elementText = (element.name || '' + ' ' + element.description || '').toLowerCase();
+                    if (elementText.includes(verbatim) || verbatim.length > 20 && elementText.includes(verbatim.substring(0, Math.min(50, verbatim.length)))) {
+                        return i + 1; // 1-indexed for readability
+                    }
+                }
+            }
+
+            // Try matching suggestion text to practice point names
+            const suggestionText = (suggestion.suggestion || suggestion.name || '').toLowerCase().trim();
+            if (suggestionText) {
+                for (let i = 0; i < auditableElements.length; i++) {
+                    const element = auditableElements[i];
+                    const elementName = (element.name || '').toLowerCase().trim();
+                    // Match if suggestion starts with practice point name, or practice point name is a key phrase in suggestion
+                    if (suggestionText.startsWith(elementName) || (elementName.length > 10 && suggestionText.includes(elementName))) {
+                        return i + 1;
+                    }
+                }
+            }
+
+            // No definitive match found
+            return null;
+        }
+
         // Format suggestions for the frontend
         const formattedSuggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
             id: index + 1,
@@ -18065,7 +18101,8 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             originalText: suggestion.originalText || null,
             category: suggestion.category || null,
             sourceGuidelineId: guidelineId,
-            sourceGuidelineTitle: guidelineTitle
+            sourceGuidelineTitle: guidelineTitle,
+            practicePointNumber: findPracticePointNumber(suggestion)
         }));
 
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);
