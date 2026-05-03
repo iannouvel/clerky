@@ -44,12 +44,8 @@
       "WebFetch(domain:en.wikipedia.org)",
       "WebSearch",
       "Bash(git rm *)",
-      "Bash(npm start *)",
-      "Bash(printenv)",
-      "Bash(export FIREBASE_PROJECT_ID=\"clerky-b3be8\")",
-      "Bash(export FIREBASE_CLIENT_EMAIL=\"firebase-adminsdk-9eosi@clerky-b3be8.iam.gserviceaccount.com\")",
-      "Bash(export FIREBASE_PRIVATE_KEY='-----BEGIN PRIVATE KEY----- *)",
-      "Bash(curl -s http://localhost:3000/index.html)"
+      "Bash(sed -i 's/categorical — one answer chosen from a fixed list/categorical — one answer chosen from a fixed list. CRITICAL: ALWAYS populate the \"options\" array with 3-5 clinically relevant choices specific to the missing information \\(e.g., for \"Breastfeeding status\": [\"Yes exclusively\", \"Yes mixed\", \"No formula\", \"Unknown\"]\\)/g' prompts.json)",
+      "Bash(sed -i 's/binary      — a yes\\\\/no or present\\\\/absent question/binary      — a yes\\\\/no or present\\\\/absent question. CRITICAL: populate options with [\"Yes\", \"No\"] or [\"Present\", \"Absent\"]/g' prompts.json)"
     ]
   }
 }

@@ -46,8 +46,8 @@ async function syncPracticePoints(guidelineId) {
 
     if (!guidelineSnap.exists) throw new Error(`Guideline ${guidelineId} not found`);
 
-    const { auditableElements, title } = guidelineSnap.data();
-    if (!Array.isArray(auditableElements) || auditableElements.length === 0) {
+    const { practicePoints, title } = guidelineSnap.data();
+    if (!Array.isArray(practicePoints) || practicePoints.length === 0) {
         throw new Error(`Guideline ${guidelineId} has no practice points — run practice point extraction first`);
     }
 
@@ -57,9 +57,9 @@ async function syncPracticePoints(guidelineId) {
     const existingSnap = await metricsCol.get();
     const existingDocs = new Map(existingSnap.docs.map(d => [d.id, d.data()]));
 
-    // Compute the canonical IDs for the current auditableElements
+    // Compute the canonical IDs for the current practicePoints
     const currentIds = new Set(
-        auditableElements
+        practicePoints
             .map(e => e.name || e.title || '')
             .filter(Boolean)
             .map(generatePointId)
@@ -71,7 +71,7 @@ async function syncPracticePoints(guidelineId) {
     let pruned = 0;
 
     // Add new points; update name/description on existing ones (preserving accuracy data)
-    for (const element of auditableElements) {
+    for (const element of practicePoints) {
         const name = element.name || element.title || '';
         if (!name) continue;
 
@@ -112,7 +112,7 @@ async function syncPracticePoints(guidelineId) {
 
     await batch.commit();
 
-    return { created, existing, pruned, total: auditableElements.length };
+    return { created, existing, pruned, total: practicePoints.length };
 }
 
 // ─── Weighted sampling ────────────────────────────────────────────────────────
@@ -780,7 +780,7 @@ async function runCalibrationRun(guidelineId, userId, options = {}, onProgress =
  * When stuck points are detected, uses an LLM call to identify semantic
  * duplicates among them. For each cluster of duplicates, keeps the most
  * detailed version and removes the rest from both practicePointMetrics
- * and auditableElements.
+ * and practicePoints.
  *
  * @returns {{ removed: string[], kept: string[] }} IDs removed and kept
  */
@@ -836,18 +836,18 @@ Example: [[0,3,7],[2,9]]` }
             console.log(`[CAL-DEDUP] Removed duplicate "${dup.name}" (keeping "${best.name}")`);
         }
 
-        // Also remove from auditableElements array on the guideline doc
+        // Also remove from practicePoints array on the guideline doc
         const guidelineSnap = await guidelineRef.get();
         const data = guidelineSnap.data();
-        if (Array.isArray(data.auditableElements)) {
+        if (Array.isArray(data.practicePoints)) {
             const removedIds = new Set(toRemove.map(d => d.id));
-            const filtered = data.auditableElements.filter(el => {
+            const filtered = data.practicePoints.filter(el => {
                 const elId = generatePointId(el.name || el.title || '');
                 return !removedIds.has(elId);
             });
-            if (filtered.length < data.auditableElements.length) {
-                await guidelineRef.update({ auditableElements: filtered });
-                console.log(`[CAL-DEDUP] Removed ${data.auditableElements.length - filtered.length} duplicate auditableElements`);
+            if (filtered.length < data.practicePoints.length) {
+                await guidelineRef.update({ practicePoints: filtered });
+                console.log(`[CAL-DEDUP] Removed ${data.practicePoints.length - filtered.length} duplicate practicePoints`);
             }
         }
 
@@ -913,12 +913,12 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
         if (onProgress) onProgress(step, msg, extra);
     };
 
-    // 1. Load practice points, filtered to only those matching current auditableElements
+    // 1. Load practice points, filtered to only those matching current practicePoints
     const { title: guidelineTitle, content: guidelineContent } = await getGuidelineForCalibration(guidelineId);
     const guidelineDoc = await db.collection('guidelines').doc(guidelineId).get();
-    const auditableElements = guidelineDoc.exists ? (guidelineDoc.data().auditableElements || []) : [];
+    const practicePoints = guidelineDoc.exists ? (guidelineDoc.data().practicePoints || []) : [];
     const currentIds = new Set(
-        auditableElements.map(e => generatePointId(e.name || e.title || '')).filter(Boolean)
+        practicePoints.map(e => generatePointId(e.name || e.title || '')).filter(Boolean)
     );
 
     const snap = await db.collection('guidelines').doc(guidelineId).collection('practicePointMetrics').get();
@@ -926,12 +926,12 @@ async function runCalibrationLoop(guidelineId, userId, options = {}, onProgress 
 
     let allPoints = snap.docs
         .map(d => ({ id: d.id, ...d.data() }))
-        .filter(p => currentIds.has(p.id))  // only points matching current auditableElements
+        .filter(p => currentIds.has(p.id))  // only points matching current practicePoints
         .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
-    if (allPoints.length === 0) throw new Error('No practice points match current auditableElements — re-sync first');
+    if (allPoints.length === 0) throw new Error('No practice points match current practicePoints — re-sync first');
     if (allPoints.length < snap.docs.length) {
-        log('filter', `Filtered ${snap.docs.length} metric docs to ${allPoints.length} matching current auditableElements`);
+        log('filter', `Filtered ${snap.docs.length} metric docs to ${allPoints.length} matching current practicePoints`);
     }
 
     if (pointCount > 0) allPoints = allPoints.slice(0, pointCount);

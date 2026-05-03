@@ -3689,7 +3689,7 @@ ${responseText}
 
                 let matchesDate = true;
                 if (dateFilter) {
-                    const extractedAt = g.auditableElementsRegeneratedAt;
+                    const extractedAt = g.practicePointsRegeneratedAt;
                     // Handle Firestore Timestamp or ISO string
                     const date = extractedAt ? (extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt)) : null;
 
@@ -3724,10 +3724,10 @@ ${responseText}
                 const tr = document.createElement('tr');
                 tr.style.borderBottom = '1px solid #eee';
 
-                const elementsCount = g.auditableElementsCount ?? (g.auditableElements?.length || 0);
+                const elementsCount = g.practicePointsCount ?? (g.practicePoints?.length || 0);
                 const statusColor = elementsCount > 0 ? '#28a745' : '#6c757d';
 
-                const extractedAt = g.auditableElementsRegeneratedAt;
+                const extractedAt = g.practicePointsRegeneratedAt;
                 let dateStr = '-';
                 if (extractedAt) {
                     const date = extractedAt._seconds ? new Date(extractedAt._seconds * 1000) : new Date(extractedAt);
@@ -3816,7 +3816,7 @@ ${responseText}
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     const data = await res.json();
-                    const elements = data.auditableElements || [];
+                    const elements = data.practicePoints || [];
 
                     if (elements.length === 0) {
                         detailRow.querySelector('td').innerHTML = '<div style="padding:10px;color:var(--text-secondary);font-size:12px;">No elements found.</div>';
@@ -3978,7 +3978,7 @@ ${responseText}
                 }
 
                 const token = await auth.currentUser.getIdToken();
-                const response = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                const response = await fetch(`${SERVER_URL}/regeneratePracticePoints`, {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${token}`,
@@ -6914,7 +6914,7 @@ ${responseText}
             try {
                 // ── Step 1: Regenerate practice points (async with progress) ──
                 const token1 = await auth.currentUser.getIdToken();
-                const regenRes = await fetch(`${SERVER_URL}/regenerateAuditableElements`, {
+                const regenRes = await fetch(`${SERVER_URL}/regeneratePracticePoints`, {
                     method: 'POST',
                     headers: { Authorization: `Bearer ${token1}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ guidelineId, async: true })

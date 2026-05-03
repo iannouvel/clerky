@@ -142,10 +142,10 @@ export class AuditPage {
         }
         
         // Auditable elements click handler
-        const auditableElementsSpan = document.getElementById('auditableElements');
-        if (auditableElementsSpan) {
-            auditableElementsSpan.addEventListener('click', () => this.displayPracticePoints());
-            auditableElementsSpan.title = 'Click to view practice points';
+        const practicePointsSpan = document.getElementById('practicePoints');
+        if (practicePointsSpan) {
+            practicePointsSpan.addEventListener('click', () => this.displayPracticePoints());
+            practicePointsSpan.title = 'Click to view practice points';
         }
     }
 
@@ -204,13 +204,13 @@ export class AuditPage {
         await this.updateRetrieveButtonVisibility(guideline.id);
         
         // Show practice points selection if elements are available
-        const auditableElementsSelection = document.getElementById('auditableElementsSelection');
-        if (auditableElementsSelection) {
-            if (this.selectedGuidelineFullData && this.selectedGuidelineFullData.auditableElements && 
-                this.selectedGuidelineFullData.auditableElements.length > 0) {
-                auditableElementsSelection.style.display = 'block';
+        const practicePointsSelection = document.getElementById('practicePointsSelection');
+        if (practicePointsSelection) {
+            if (this.selectedGuidelineFullData && this.selectedGuidelineFullData.practicePoints && 
+                this.selectedGuidelineFullData.practicePoints.length > 0) {
+                practicePointsSelection.style.display = 'block';
             } else {
-                auditableElementsSelection.style.display = 'none';
+                practicePointsSelection.style.display = 'none';
             }
         }
         
@@ -292,24 +292,24 @@ export class AuditPage {
                 
                 // Count practice points from full metadata
                 let auditableCount = 0;
-                let auditableElements = fullGuideline.auditableElements || [];
+                let practicePoints = fullGuideline.practicePoints || [];
                 
-                if (auditableElements.length > 0) {
-                    auditableCount = auditableElements.length;
-                    const auditableElementsSpan = document.getElementById('auditableElements');
-                    auditableElementsSpan.textContent = auditableCount;
-                    auditableElementsSpan.className = 'auditable-elements-clickable';
-                    auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
+                if (practicePoints.length > 0) {
+                    auditableCount = practicePoints.length;
+                    const practicePointsSpan = document.getElementById('practicePoints');
+                    practicePointsSpan.textContent = auditableCount;
+                    practicePointsSpan.className = 'auditable-elements-clickable';
+                    practicePointsSpan.title = `Click to view ${auditableCount} practice points`;
                     
                     // Update will audit count and setup listeners
-                    this.updateWillAuditCount(fullGuideline.auditableElements || []);
-                    this.setupScopeChangeListeners(fullGuideline.auditableElements || []);
+                    this.updateWillAuditCount(fullGuideline.practicePoints || []);
+                    this.setupScopeChangeListeners(fullGuideline.practicePoints || []);
                 } else {
                     // Show loading indicator and extract practice points
-                    const auditableElementsSpan = document.getElementById('auditableElements');
-                    auditableElementsSpan.textContent = 'Loading...';
-                    auditableElementsSpan.className = 'auditable-elements-loading';
-                    auditableElementsSpan.title = 'Extracting auditable elements...';
+                    const practicePointsSpan = document.getElementById('practicePoints');
+                    practicePointsSpan.textContent = 'Loading...';
+                    practicePointsSpan.className = 'auditable-elements-loading';
+                    practicePointsSpan.title = 'Extracting auditable elements...';
                     
                     try {
                         console.log('No auditable elements found, extracting via AI...');
@@ -335,50 +335,50 @@ export class AuditPage {
                                 console.log(`Successfully extracted ${auditableCount} auditable elements`);
                                 
                                 // Update display with clickable styling
-                                auditableElementsSpan.textContent = auditableCount;
-                                auditableElementsSpan.className = 'auditable-elements-clickable';
-                                auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
+                                practicePointsSpan.textContent = auditableCount;
+                                practicePointsSpan.className = 'auditable-elements-clickable';
+                                practicePointsSpan.title = `Click to view ${auditableCount} practice points`;
                                 
                                 // Update the stored data with the new practice points
-                                if (updatedGuideline.auditableElements) {
+                                if (updatedGuideline.practicePoints) {
                                     // persist on both the working copy and original reference
-                                    fullGuideline.auditableElements = updatedGuideline.auditableElements;
-                                    this.selectedGuidelineFullData.auditableElements = updatedGuideline.auditableElements;
+                                    fullGuideline.practicePoints = updatedGuideline.practicePoints;
+                                    this.selectedGuidelineFullData.practicePoints = updatedGuideline.practicePoints;
                                 }
                                 
                                 // Show auditable elements selection
-                                const auditableElementsSelection = document.getElementById('auditableElementsSelection');
-                                if (auditableElementsSelection && auditableCount > 0) {
-                                    auditableElementsSelection.style.display = 'block';
+                                const practicePointsSelection = document.getElementById('practicePointsSelection');
+                                if (practicePointsSelection && auditableCount > 0) {
+                                    practicePointsSelection.style.display = 'block';
                                     // Update will audit count
-                                    this.updateWillAuditCount(updatedGuideline.auditableElements || []);
+                                    this.updateWillAuditCount(updatedGuideline.practicePoints || []);
                                     // Setup scope change listeners
-                                    this.setupScopeChangeListeners(updatedGuideline.auditableElements || []);
+                                    this.setupScopeChangeListeners(updatedGuideline.practicePoints || []);
                                 }
                             } else {
                                 auditableCount = 0;
                                 console.log('No auditable elements extracted');
                                 
                                 // Update display for no elements
-                                auditableElementsSpan.textContent = auditableCount;
-                                auditableElementsSpan.className = 'auditable-elements-clickable';
-                                auditableElementsSpan.title = 'Click to view practice points (none found)';
+                                practicePointsSpan.textContent = auditableCount;
+                                practicePointsSpan.className = 'auditable-elements-clickable';
+                                practicePointsSpan.title = 'Click to view practice points (none found)';
                             }
                         } else {
                             auditableCount = 0;
                             console.error('Failed to extract auditable elements:', result.error);
                             
                             // Update display for error
-                            auditableElementsSpan.textContent = 'Error';
-                            auditableElementsSpan.className = 'auditable-elements-error';
-                            auditableElementsSpan.title = 'Click to view practice points (extraction failed)';
+                            practicePointsSpan.textContent = 'Error';
+                            practicePointsSpan.className = 'auditable-elements-error';
+                            practicePointsSpan.title = 'Click to view practice points (extraction failed)';
                         }
                         
                     } catch (error) {
                         console.error('Error extracting auditable elements:', error);
-                        auditableElementsSpan.textContent = 'Error';
-                        auditableElementsSpan.className = 'auditable-elements-error';
-                        auditableElementsSpan.title = 'Click to view practice points (extraction failed)';
+                        practicePointsSpan.textContent = 'Error';
+                        practicePointsSpan.className = 'auditable-elements-error';
+                        practicePointsSpan.title = 'Click to view practice points (extraction failed)';
                     }
                 }
                 
@@ -399,14 +399,14 @@ export class AuditPage {
                 this.populateMetadataContent(fullGuideline);
                 
                 // Update "will be audited" count based on selected scope
-                this.updateWillAuditCount(fullGuideline.auditableElements || []);
+                this.updateWillAuditCount(fullGuideline.practicePoints || []);
                 
                 // Add listeners for scope changes
-                this.setupScopeChangeListeners(fullGuideline.auditableElements || []);
+                this.setupScopeChangeListeners(fullGuideline.practicePoints || []);
                 
                 console.log('Updated guideline info with full metadata:', {
                     completeness: completenessPercent,
-                    auditableElements: auditableCount,
+                    practicePoints: auditableCount,
                     lastUpdated: fullGuideline.lastUpdated
                 });
                 
@@ -420,18 +420,18 @@ export class AuditPage {
                 document.getElementById('metadataPercent').textContent = `${completenessPercent}%`;
                 
                 // Handle practice points in fallback case
-                const auditableElementsSpan = document.getElementById('auditableElements');
+                const practicePointsSpan = document.getElementById('practicePoints');
                 const auditableCount = guideline.significant_terms ? guideline.significant_terms.split(',').length : 0;
-                auditableElementsSpan.textContent = auditableCount;
-                auditableElementsSpan.className = 'auditable-elements-clickable';
-                auditableElementsSpan.title = `Click to view ${auditableCount} practice points`;
+                practicePointsSpan.textContent = auditableCount;
+                practicePointsSpan.className = 'auditable-elements-clickable';
+                practicePointsSpan.title = `Click to view ${auditableCount} practice points`;
                 
                 document.getElementById('lastUpdated').textContent = guideline.lastUpdated || 'Unknown';
                 
                 // Show practice points selection if elements are available
-                const auditableElementsSelection = document.getElementById('auditableElementsSelection');
-                if (auditableElementsSelection && auditableCount > 0) {
-                    auditableElementsSelection.style.display = 'block';
+                const practicePointsSelection = document.getElementById('practicePointsSelection');
+                if (practicePointsSelection && auditableCount > 0) {
+                    practicePointsSelection.style.display = 'block';
                     // Update will audit count (using fallback calculation)
                     const fallbackElements = guideline.significant_terms ? 
                         guideline.significant_terms.split(',').map((term, idx) => ({ 
@@ -472,8 +472,8 @@ export class AuditPage {
         }
 
         // Check if practice points are available
-        if (!this.selectedGuidelineFullData || !this.selectedGuidelineFullData.auditableElements || 
-            this.selectedGuidelineFullData.auditableElements.length === 0) {
+        if (!this.selectedGuidelineFullData || !this.selectedGuidelineFullData.practicePoints || 
+            this.selectedGuidelineFullData.practicePoints.length === 0) {
             this.showAuditError('No auditable elements found for this guideline. Please ensure auditable elements have been extracted first.');
             return;
         }
@@ -510,7 +510,7 @@ export class AuditPage {
                 },
                     body: JSON.stringify({
                         guidelineId: this.selectedGuideline.id,
-                        auditableElements: this.selectedGuidelineFullData.auditableElements,
+                        practicePoints: this.selectedGuidelineFullData.practicePoints,
                         auditScope: auditScope,
                         aiProvider: this.currentAIProvider
                     })
@@ -560,7 +560,7 @@ export class AuditPage {
                     body: JSON.stringify({
                         auditId: transcriptResult.auditId,
                         correctTranscript: transcriptResult.transcript,
-                        auditableElements: transcriptResult.auditableElements,
+                        practicePoints: transcriptResult.practicePoints,
                         aiProvider: this.currentAIProvider
                     })
                 });
@@ -595,7 +595,7 @@ export class AuditPage {
                             body: JSON.stringify({
                                 auditId: transcriptResult.auditId,
                                 correctTranscript: transcriptResult.transcript,
-                                auditableElements: transcriptResult.auditableElements,
+                                practicePoints: transcriptResult.practicePoints,
                                 aiProvider: this.currentAIProvider
                             })
                         });
@@ -631,7 +631,7 @@ export class AuditPage {
                     this.displayAuditResults({
                         auditId: transcriptResult.auditId,
                         correctTranscript: transcriptResult.transcript,
-                        auditableElements: transcriptResult.auditableElements,
+                        practicePoints: transcriptResult.practicePoints,
                         incorrectScripts: retryResult.incorrectScripts,
                         auditScope: auditScope,
                         generated: transcriptResult.generated
@@ -643,7 +643,7 @@ export class AuditPage {
                     await new Promise(resolve => setTimeout(resolve, 500));
                     
                     this.hideAuditProgress();
-                    this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
+                    this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
                     
                     // Ensure the Retrieve Previous Audits button is visible
                     const retrieveBtn = document.getElementById('retrieveAuditsBtn');
@@ -674,7 +674,7 @@ export class AuditPage {
             this.displayAuditResults({
                 auditId: transcriptResult.auditId,
                 correctTranscript: transcriptResult.transcript,
-                auditableElements: transcriptResult.auditableElements,
+                practicePoints: transcriptResult.practicePoints,
                 incorrectScripts: incorrectResult.incorrectScripts,
                 auditScope: auditScope,
                 generated: transcriptResult.generated
@@ -686,7 +686,7 @@ export class AuditPage {
             await new Promise(resolve => setTimeout(resolve, 500));
             
             this.hideAuditProgress();
-            this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.auditableElements.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
+            this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
             
             // Ensure the Retrieve Previous Audits button is visible after a successful audit
             const retrieveBtn = document.getElementById('retrieveAuditsBtn');
@@ -775,7 +775,7 @@ export class AuditPage {
                 </div>
                 <div class="summary-stats">
                     <div class="summary-stat">
-                        <span class="summary-stat-value">${auditData.auditableElements.length}</span>
+                        <span class="summary-stat-value">${auditData.practicePoints.length}</span>
                         <span class="summary-stat-label">Elements</span>
                     </div>
                     <div class="summary-stat">
@@ -796,7 +796,7 @@ export class AuditPage {
             <!-- Tab Navigation -->
             <div class="audit-tabs">
                 <button class="audit-tab active" data-tab="transcripts">Transcripts</button>
-                <button class="audit-tab" data-tab="elements">Elements (${auditData.auditableElements.length})</button>
+                <button class="audit-tab" data-tab="elements">Elements (${auditData.practicePoints.length})</button>
                 ${incorrectCount > 0 ? `<button class="audit-tab" data-tab="issues">Issues (${incorrectCount})</button>` : ''}
             </div>
             
@@ -883,7 +883,7 @@ export class AuditPage {
     renderElementsTab(auditData) {
         let html = '<div style="display: flex; flex-direction: column; gap: 10px;">';
         
-        auditData.auditableElements.forEach((element, index) => {
+        auditData.practicePoints.forEach((element, index) => {
             const significance = element.significance || 'unknown';
             html += `
                 <div class="element-item" onclick="this.classList.toggle('expanded')">
@@ -1152,7 +1152,7 @@ export class AuditPage {
             
             // Test 1: Correct transcript should pass all elements
             console.log('Testing correct transcript...');
-            for (const element of auditData.auditableElements) {
+            for (const element of auditData.practicePoints) {
                 try {
                     const response = await fetch(`${serverUrl}/auditElementCheck`, {
                         method: 'POST',
@@ -1510,33 +1510,33 @@ export class AuditPage {
     }
     
     // Calculate how many elements will be audited based on scope
-    calculateWillAuditCount(auditableElements, scope) {
-        if (!auditableElements || auditableElements.length === 0) {
+    calculateWillAuditCount(practicePoints, scope) {
+        if (!practicePoints || practicePoints.length === 0) {
             return 0;
         }
         
         switch (scope) {
             case 'most_significant':
-                return auditableElements.filter(el => el.significance === 'high').slice(0, 1).length;
+                return practicePoints.filter(el => el.significance === 'high').slice(0, 1).length;
             case 'high_significance':
-                return auditableElements.filter(el => el.significance === 'high').length;
+                return practicePoints.filter(el => el.significance === 'high').length;
             case 'high_medium':
-                return auditableElements.filter(el => 
+                return practicePoints.filter(el => 
                     el.significance === 'high' || el.significance === 'medium'
                 ).length;
             case 'all_elements':
-                return auditableElements.length;
+                return practicePoints.length;
             default:
-                return auditableElements.filter(el => el.significance === 'high').slice(0, 1).length;
+                return practicePoints.filter(el => el.significance === 'high').slice(0, 1).length;
         }
     }
     
     // Update the "will be audited" count display
-    updateWillAuditCount(auditableElements) {
+    updateWillAuditCount(practicePoints) {
         const willAuditCountEl = document.getElementById('willAuditCount');
         const willAuditElementsEl = document.getElementById('willAuditElements');
         
-        if (!willAuditCountEl || !willAuditElementsEl || !auditableElements || auditableElements.length === 0) {
+        if (!willAuditCountEl || !willAuditElementsEl || !practicePoints || practicePoints.length === 0) {
             if (willAuditElementsEl) {
                 willAuditElementsEl.style.display = 'none';
             }
@@ -1544,14 +1544,14 @@ export class AuditPage {
         }
         
         const scope = document.querySelector('input[name="auditScope"]:checked')?.value || 'most_significant';
-        const willAuditCount = this.calculateWillAuditCount(auditableElements, scope);
+        const willAuditCount = this.calculateWillAuditCount(practicePoints, scope);
         
         willAuditCountEl.textContent = willAuditCount;
         willAuditElementsEl.style.display = 'inline';
     }
     
     // Setup listeners for scope changes
-    setupScopeChangeListeners(auditableElements) {
+    setupScopeChangeListeners(practicePoints) {
         const scopeInputs = document.querySelectorAll('input[name="auditScope"]');
         scopeInputs.forEach(input => {
             // Remove existing listeners to avoid duplicates by cloning
@@ -1561,7 +1561,7 @@ export class AuditPage {
             
             // Add new listener
             newInput.addEventListener('change', () => {
-                this.updateWillAuditCount(auditableElements);
+                this.updateWillAuditCount(practicePoints);
             });
         });
     }
@@ -1644,12 +1644,12 @@ export class AuditPage {
         }
         
         // Ensure we use the latest elements from the stored full data
-        const auditableElements = (this.selectedGuidelineFullData && this.selectedGuidelineFullData.auditableElements)
-            ? this.selectedGuidelineFullData.auditableElements
+        const practicePoints = (this.selectedGuidelineFullData && this.selectedGuidelineFullData.practicePoints)
+            ? this.selectedGuidelineFullData.practicePoints
             : [];
         const resultsDiv = document.getElementById('auditResults');
         
-        if (auditableElements.length === 0) {
+        if (practicePoints.length === 0) {
             resultsDiv.innerHTML = `
                 <div class="audit-error">
                     <h3>No Auditable Elements Found</h3>
@@ -1663,12 +1663,12 @@ export class AuditPage {
         let elementsHtml = `
             <div class="audit-success">
                 <h3>📋 Auditable Elements for "${this.selectedGuidelineFullData.title || 'Unknown Guideline'}"</h3>
-                <p><strong>Total Elements:</strong> ${auditableElements.length}</p>
+                <p><strong>Total Elements:</strong> ${practicePoints.length}</p>
                 <p>These are the clinically relevant advice elements that can be audited for accuracy:</p>
             </div>
         `;
         
-        auditableElements.forEach((element, index) => {
+        practicePoints.forEach((element, index) => {
             elementsHtml += `
                 <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin: 10px 0;">
                     <h4 style="margin: 0 0 10px 0; color: #2c3e50;">Element ${index + 1}: ${element.name || 'Unnamed Element'}</h4>

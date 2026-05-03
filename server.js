@@ -1200,8 +1200,8 @@ async function jobExtractAuditable(job, guidelineData) {
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
     await guidelineRef.update({
-        auditableElements: elements,
-        'processingStatus.auditableExtracted': true,
+        practicePoints: elements,
+        'processingStatus.practicePointsExtracted': true,
         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
     });
 
@@ -1302,9 +1302,9 @@ async function jobRegenerateAuditable(job, guidelineData) {
 
         const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
         await guidelineRef.update({
-            auditableElements: elements,
-            auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
-            auditableElementsRegeneratedBy: userId,
+            practicePoints: elements,
+            practicePointsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+            practicePointsRegeneratedBy: userId,
             processing: false,
             lastUpdated: admin.firestore.FieldValue.serverTimestamp()
         });
@@ -1344,7 +1344,7 @@ async function checkAndMarkProcessingComplete(guidelineId) {
             status.condensedGenerated &&
             status.summaryGenerated &&
             status.termsExtracted &&
-            status.auditableExtracted;
+            status.practicePointsExtracted;
 
         if (allComplete && data.processing) {
             console.log(`[PROCESSING_COMPLETE] All processing complete for: ${guidelineId}`);
@@ -1409,7 +1409,7 @@ async function scanAndProcessIncompleteGuidelines() {
                 !data.condensed ||
                 !data.summary ||
                 !data.significantTerms ||
-                !data.auditableElements;
+                !data.practicePoints;
 
             if (needsProcessing && data.filename) {
                 console.log(`[BACKGROUND_SCAN] Found incomplete: ${guidelineId}, queueing jobs...`);
@@ -1427,7 +1427,7 @@ async function scanAndProcessIncompleteGuidelines() {
                 if (!data.significantTerms || !data.processingStatus?.termsExtracted) {
                     queueJob('extract_terms', guidelineId);
                 }
-                if (!data.auditableElements || !data.processingStatus?.auditableExtracted) {
+                if (!data.practicePoints || !data.processingStatus?.practicePointsExtracted) {
                     queueJob('extract_auditable', guidelineId);
                 }
 
@@ -4313,7 +4313,7 @@ app.post('/uploadGuideline', authenticateUser, upload.single('file'), async (req
                         summary: null,
                         keywords: [],
                         condensed: null,
-                        auditableElements: [], // Will be filled by sync process
+                        practicePoints: [], // Will be filled by sync process
                         scope: scope,
                         nation: scope === 'national' ? nation : null,
                         hospitalTrust: scope === 'local' ? hospitalTrust : null
@@ -4464,7 +4464,7 @@ app.post('/uploadGuidelinePDF', authenticateUser, upload.single('file'), async (
                 condensedGenerated: false,
                 summaryGenerated: false,
                 termsExtracted: false,
-                auditableExtracted: false
+                practicePointsExtracted: false
             },
             processingErrors: {},
             scope: scope,
@@ -4529,7 +4529,7 @@ app.get('/getProcessingStatus', authenticateUser, async (req, res) => {
             data.processingStatus.condensedGenerated &&
             data.processingStatus.summaryGenerated &&
             data.processingStatus.termsExtracted &&
-            data.processingStatus.auditableExtracted;
+            data.processingStatus.practicePointsExtracted;
 
         res.json({
             success: true,
@@ -4591,7 +4591,7 @@ app.post('/processGuidelineBackground', authenticateUser, async (req, res) => {
             jobs.push(queueJob('extract_terms', guidelineId));
         }
 
-        if (force || !data.auditableElements || !data.processingStatus?.auditableExtracted) {
+        if (force || !data.practicePoints || !data.processingStatus?.practicePointsExtracted) {
             jobs.push(queueJob('extract_auditable', guidelineId));
         }
 
@@ -10671,7 +10671,7 @@ app.post('/syncGuidelinesWithMetadata', authenticateUser, async (req, res) => {
                     scope: metadata.scope || 'national',
                     nation: metadata.nation || null,
                     hospitalTrust: metadata.hospitalTrust || null,
-                    auditableElements: await extractPracticePoints(guidelineContent)
+                    practicePoints: await extractPracticePoints(guidelineContent)
                 });
 
                 // Queue AI displayName generation job (content is already available from sync)
@@ -11116,7 +11116,7 @@ app.post('/syncGuidelinesBatch', authenticateUser, async (req, res) => {
                     scope: metadata.scope || 'national',
                     nation: metadata.nation || null,
                     hospitalTrust: metadata.hospitalTrust || null,
-                    auditableElements: [] // Skip practice points extraction for now to save time
+                    practicePoints: [] // Skip practice points extraction for now to save time
                 };
 
                 // Add content fields or Storage URLs depending on size
@@ -11892,9 +11892,9 @@ app.get('/getGuidelinesMetadata', authenticateUser, async (req, res) => {
                 yearProduced: data.yearProduced || null,
                 vectorDbIngested: data.vectorDbIngested || false,
                 hasContent: !!(data.content || data.condensed),
-                hasAuditableElements: !!(data.auditableElements && data.auditableElements.length > 0),
-                auditableElementsCount: data.auditableElements?.length || 0,
-                auditableElementsRegeneratedAt: data.auditableElementsRegeneratedAt || null,
+                hasPracticePoints: !!(data.practicePoints && data.practicePoints.length > 0),
+                practicePointsCount: data.practicePoints?.length || 0,
+                practicePointsRegeneratedAt: data.practicePointsRegeneratedAt || null,
                 scope: data.scope || null,
                 hospitalTrust: data.hospitalTrust || null
             });
@@ -12694,14 +12694,14 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                 const guideline = guidelineDoc.data();
 
                 // Skip if already has practice points
-                if (guideline.auditableElements && guideline.auditableElements.length > 0) {
+                if (guideline.practicePoints && guideline.practicePoints.length > 0) {
                     return res.json({
                         success: true,
                         results: [{
                             guidelineId,
                             success: true,
                             message: 'Already has practice points',
-                            count: guideline.auditableElements.length
+                            count: guideline.practicePoints.length
                         }]
                     });
                 }
@@ -12719,7 +12719,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
 
                 // Update the guideline
                 await guidelineRef.update({
-                    auditableElements: auditableElements,
+                    practicePoints: auditableElements,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
 
@@ -12754,12 +12754,12 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                 const guidelineId = doc.id;
 
                 // Skip if already has practice points
-                if (guideline.auditableElements && guideline.auditableElements.length > 0) {
+                if (guideline.practicePoints && guideline.practicePoints.length > 0) {
                     results.push({
                         guidelineId,
                         success: true,
                         message: 'Already has practice points',
-                        count: guideline.auditableElements.length
+                        count: guideline.practicePoints.length
                     });
                     continue;
                 }
@@ -12779,7 +12779,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
 
                 // Update the guideline
                 await db.collection('guidelines').doc(guidelineId).update({
-                    auditableElements: auditableElements,
+                    practicePoints: auditableElements,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
 
@@ -12832,7 +12832,7 @@ app.get('/getExtractionJobStatus', authenticateUser, (req, res) => {
 });
 
 // Endpoint to REGENERATE practice points (forces regeneration even if elements exist)
-app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
+app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
     try {
         console.log('[REGEN-PRACTICE-POINTS] Regenerate practice points endpoint called');
 
@@ -12895,8 +12895,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
                     }
                     await guidelineRef.update({
                         auditableElements,
-                        auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
-                        auditableElementsRegeneratedBy: userId,
+                        practicePointsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+                        practicePointsRegeneratedBy: userId,
                         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                     });
                     extractionJobs[jobId] = {
@@ -12924,8 +12924,8 @@ app.post('/regenerateAuditableElements', authenticateUser, async (req, res) => {
 
                 await guidelineRef.update({
                     auditableElements,
-                    auditableElementsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
-                    auditableElementsRegeneratedBy: userId,
+                    practicePointsRegeneratedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    practicePointsRegeneratedBy: userId,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
 
@@ -13755,7 +13755,7 @@ Generate a comprehensive clinical transcript that would test all the practice po
         const auditData = {
             guidelineId: guidelineId,
             transcript: transcript,
-            auditableElements: selectedElements.map(element => ({
+            practicePoints: selectedElements.map(element => ({
                 ...element,
                 significance: element.significance || 'medium', // Ensure significance is set
                 testType: 'correct_script'
@@ -13791,7 +13791,7 @@ Generate a comprehensive clinical transcript that would test all the practice po
             success: true,
             auditId: auditRef.id,
             transcript: transcript,
-            auditableElements: selectedElements,
+            practicePoints: selectedElements,
             auditScope: auditScope,
             generated: new Date().toISOString()
         });
