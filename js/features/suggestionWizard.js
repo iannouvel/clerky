@@ -680,13 +680,22 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
             return;
         }
 
-        // Save directly to Firestore feedback collection
+        // Save full suggestion context to Firestore feedback collection
         const feedbackData = {
             userExplanation: feedbackReason,
             userEmail: user.email,
+            // Save complete suggestion object with all context
             suggestion: {
                 text: suggestion.suggestion || suggestion.missing_info,
-                why: suggestion.why || ''
+                missing_info: suggestion.missing_info || '',
+                why: suggestion.why || suggestion.importance_and_management_impact || '',
+                importance_and_management_impact: suggestion.importance_and_management_impact || '',
+                priority: suggestion.priority || 'medium',
+                target_section: suggestion.target_section || null,
+                data_type_and_options: suggestion.data_type_and_options || null,
+                category: suggestion.category || null,
+                verbatimQuote: suggestion.verbatimQuote || '',
+                significance: suggestion.significance || ''
             },
             practice_point_reference: suggestion.practice_point_reference,
             phase: 'completeness',
@@ -695,9 +704,24 @@ window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReaso
             status: 'open'
         };
 
+        // Add full wizard state for context
+        if (window.suggestionWizardState) {
+            feedbackData.wizardState = {
+                currentIndex: window.suggestionWizardState.currentIndex,
+                total: window.suggestionWizardState.total,
+                currentSuggestion: suggestion,
+                allSuggestions: window.suggestionWizardState.queue || []
+            };
+        }
+
+        // Add AI context if available
+        if (window._lastAiContext) {
+            feedbackData.aiContext = window._lastAiContext;
+        }
+
         // Add current note state for context
         if (typeof window.getUserInputContent === 'function') {
-            feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 2000);
+            feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 3000);
         }
 
         const docRef = await window.db.collection('feedback').add(feedbackData);
