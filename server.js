@@ -18059,7 +18059,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
                 const verbatim = suggestion.verbatimQuote.toLowerCase().trim();
                 for (let i = 0; i < auditableElements.length; i++) {
                     const element = auditableElements[i];
-                    const elementText = (element.name || '' + ' ' + element.description || '').toLowerCase();
+                    const elementText = ((element.name || '') + ' ' + (element.description || '')).toLowerCase();
                     if (elementText.includes(verbatim) || verbatim.length > 20 && elementText.includes(verbatim.substring(0, Math.min(50, verbatim.length)))) {
                         return i + 1; // 1-indexed for readability
                     }
