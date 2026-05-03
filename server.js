@@ -18055,13 +18055,26 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             return words.join(' ').trim();
         }
 
-        // Helper: extract keywords from text, ignoring common words
+        // Helper: extract keywords from text, ignoring common words and applying stemming
         function extractKeywords(text) {
             const stopwords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'from', 'as', 'if', 'that', 'is', 'are', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'should', 'could', 'would', 'can', 'consider', 'ensure', 'perform', 'document', 'manage', 'review', 'assess', 'check']);
+
+            // Simple stemming: remove common suffixes to get word roots
+            function stem(word) {
+                return word
+                    .replace(/ing$/, '')  // administering → administer
+                    .replace(/ed$/, '')   // discussed → discuss
+                    .replace(/tion$/, '') // administration → administra
+                    .replace(/ness$/, '') // kindness → kind
+                    .replace(/ity$/, '')  // toxicity → toxic
+                    .replace(/s$/, '');   // steroids → steroid, suggestions → suggestion
+            }
+
             return text.toLowerCase()
                 .split(/\s+/)
                 .map(w => w.replace(/[^a-z0-9]/g, ''))
-                .filter(w => w.length > 2 && !stopwords.has(w));
+                .filter(w => w.length > 2 && !stopwords.has(w))
+                .map(w => stem(w));
         }
 
         // Helper: match suggestion to practice point serial number
