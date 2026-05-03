@@ -428,6 +428,8 @@ export function updateChatbotButtonVisibility() {
 let _contentBeforePreview = null;
 // When a suggestion replaces existing text, stores { originalText, suggestionText } for rendering.
 let _replacementPreview = null;
+// Track insertion point line number so we can retrieve edited text later
+let _insertionLineIndex = -1;
 
 /** @returns {{ originalText: string, suggestionText: string } | null} */
 export function getReplacementPreview() { return _replacementPreview; }
@@ -435,6 +437,24 @@ export function getReplacementPreview() { return _replacementPreview; }
 export function getContentBeforePreview() { return _contentBeforePreview; }
 /** Clear replacement state (called after accept or when preview is dismissed) */
 export function clearReplacementState() { _replacementPreview = null; _contentBeforePreview = null; }
+/** @returns {number} The line index where the insertion will occur */
+export function getInsertionLineIndex() { return _insertionLineIndex; }
+/**
+ * Get the actual text at the insertion point from the editor.
+ * This may have been edited by the user from the original suggestion.
+ * @returns {string} The text at the insertion point, or empty string if not found
+ */
+export function getEditedInsertionText() {
+    const editor = window.editors?.userInput;
+    if (!editor || _insertionLineIndex < 0) return '';
+
+    const lines = editor.getText().split('\n');
+    if (_insertionLineIndex >= lines.length) return '';
+
+    const line = lines[_insertionLineIndex];
+    // Extract just the text content, removing the placeholder marker if present
+    return line.replace(INSERTION_PLACEHOLDER, '').trim();
+}
 
 /**
  * Placeholder text inserted into the note to show where a suggestion will land.
@@ -573,11 +593,14 @@ export function showInsertionPreview(suggestion) {
         newLines.splice(insertIdx, 0, placeholder);
     }
 
+    // Store insertion line index for later retrieval of edited text
+    _insertionLineIndex = replaceExisting ? insertIdx : insertIdx;
+
     // Convert to HTML, styling the placeholder line in green
     const html = _buildHtmlWithPlaceholder(newLines.join('\n'));
     editor.commands.setContent(html);
 
-    // Scroll placeholder into view
+    // Scroll placeholder into view and select it to indicate editability
     setTimeout(() => {
         const pm = document.querySelector('#userInput .ProseMirror');
         if (!pm) return;
@@ -586,6 +609,16 @@ export function showInsertionPreview(suggestion) {
         while ((node = walker.nextNode())) {
             if (node.textContent.includes(INSERTION_PLACEHOLDER)) {
                 node.parentElement?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Select the placeholder text to make it obvious it can be edited
+                try {
+                    const range = document.createRange();
+                    range.selectNodeContents(node);
+                    const selection = window.getSelection();
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                } catch (e) {
+                    console.log('[PREVIEW] Could not select placeholder text');
+                }
                 break;
             }
         }
@@ -613,11 +646,13 @@ export function clearInsertionPreview() {
         editor.commands.setContent(html || '<p></p>');
         _replacementPreview = null;
         _contentBeforePreview = null;
+        _insertionLineIndex = -1;
         console.log('[PREVIEW] Replacement preview cleared (restored from snapshot)');
         return;
     }
 
     _contentBeforePreview = null;
+    _insertionLineIndex = -1;
 
     // Standard placeholder: filter out placeholder lines
     const text = editor.getText();
