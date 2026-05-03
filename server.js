@@ -18018,7 +18018,8 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
         // Perform semantic analysis - single LLM call to analyze guideline against clinical note
         // Pass guidelineId to load any interpretation hints from previous attempts
-        const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId, guidelineId);
+        // Also pass practice points so AI can directly reference serial numbers
+        const analysisResult = await analyzeGuidelineForPatient(transcript, guidelineContent, guidelineTitle, userId, guidelineId, null, auditableElements);
         timer.step('Semantic analysis');
 
         // Defensive cleanup: LLMs sometimes repeat "issue"/"suggestion" text verbatim.
@@ -18157,7 +18158,7 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             category: suggestion.category || null,
             sourceGuidelineId: guidelineId,
             sourceGuidelineTitle: guidelineTitle,
-            practicePointNumber: findPracticePointNumber(suggestion)
+            practicePointNumber: suggestion.practicePointSerialNumber || findPracticePointNumber(suggestion)
         }));
 
         console.log(`[SEMANTIC-SUGGESTIONS] Analysis complete: ${formattedSuggestions.length} initial suggestions, ${analysisResult.alreadyCompliant?.length || 0} already compliant`);

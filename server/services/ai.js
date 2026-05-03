@@ -773,11 +773,11 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
     return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
 }
 
-async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null) {
+async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null, practicePointsWithSerials = null) {
     // Per-point path: when practice points are synced, run one focused call per point in parallel.
     // This produces cleaner verdicts and allows calibrated advice to be applied with full attention.
     if (guidelineId) {
-        const allPoints = await loadAllPracticePoints(guidelineId);
+        const allPoints = practicePointsWithSerials || await loadAllPracticePoints(guidelineId);
         if (allPoints.length > 0) {
             return analyzeGuidelineForPatientPerPoint(
                 clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId, targetModel, allPoints
@@ -813,10 +813,23 @@ APPLICABILITY CHECK (you MUST complete this first — populate "guidelineApplica
 
 CRITICAL: verbatimQuote must be copied word-for-word from the "=== GUIDELINE CONTENT ===" section below. Never quote from the clinical note section.
 
-Respond with valid JSON only, using this structure:
-{ "guidelineApplicability": { "targetPopulation": "...", "patientQualifies": true, "reason": "..." }, "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "..." }], "alreadyCompliant": [] }`;
+PRACTICE POINTS: For each suggestion, identify which practice point it corresponds to by its SERIAL NUMBER (if any). If a suggestion maps to a practice point, include "practicePointSerialNumber": N in the suggestion object.
 
-    const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above.`;
+Respond with valid JSON only, using this structure:
+{ "guidelineApplicability": { "targetPopulation": "...", "patientQualifies": true, "reason": "..." }, "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "...", "practicePointSerialNumber": 3 }], "alreadyCompliant": [] }`;
+
+    // Build practice points list with serial numbers
+    let practicePointsList = '';
+    if (practicePointsWithSerials && practicePointsWithSerials.length > 0) {
+        practicePointsList = '\n=== PRACTICE POINTS (by serial number) ===\n';
+        practicePointsWithSerials.forEach((pp, idx) => {
+            const serial = pp.serial || (idx + 1);
+            practicePointsList += `${serial}. ${pp.name}\n`;
+        });
+        practicePointsList += '\nWhen generating suggestions, identify which practice point (by serial number) each suggestion relates to, if any.\n';
+    }
+
+    const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}${practicePointsList}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above. For each suggestion, also identify its practice point serial number (if it maps to one).`;
 
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, targetModel);
 
