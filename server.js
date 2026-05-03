@@ -20864,6 +20864,11 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
                 if (parsed && Array.isArray(parsed.missing_information)) {
                     missing_information = parsed.missing_information;
                     console.log('[COMPLETENESS-V2] Parsed missing_information items:', missing_information.length);
+                    // Log first item structure to debug field presence
+                    if (missing_information.length > 0) {
+                        console.log('[COMPLETENESS-V2] First item fields:', Object.keys(missing_information[0]).join(', '));
+                        console.log('[COMPLETENESS-V2] First item practice_point_reference:', missing_information[0].practice_point_reference);
+                    }
                 }
             } catch (parseError) {
                 console.warn('[COMPLETENESS-V2] JSON parse failed:', parseError?.message || parseError);

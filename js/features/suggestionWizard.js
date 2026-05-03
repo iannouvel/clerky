@@ -600,17 +600,43 @@ window.openWizardFeedbackModal = function() {
 
     const modalId = `wizard-feedback-${Date.now()}`;
     const practicePointRef = suggestion.practice_point_reference || '(not specified)';
+    const priorityColor = suggestion.priority === 'high' ? '#dc2626' : suggestion.priority === 'medium' ? '#f59e0b' : '#6b7280';
+
+    // Safely escape HTML
+    const escapeHtml = (text) => {
+        if (!text) return '';
+        return String(text).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    };
+
     const modalHtml = `
         <div id="${modalId}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 11000; display: flex; justify-content: center; align-items: center;">
-            <div style="background: white; padding: 24px; border-radius: 8px; width: 450px; max-width: 90%; max-height: 80vh; overflow-y: auto;">
-                <h3 style="margin-top: 0; color: var(--text-primary);">Feedback on Missing Information</h3>
-                <p style="color: var(--text-secondary); font-size: 0.9em;"><strong>Item:</strong> ${(suggestion.missing_info || suggestion.suggestion || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
-                <p style="color: var(--text-secondary); font-size: 0.85em;"><strong>Practice Point:</strong> <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 3px;">${practicePointRef}</code></p>
-                <p style="color: var(--text-secondary); margin-bottom: 12px;">Tell us why you're rejecting this suggestion (optional):</p>
-                <textarea id="${modalId}-text" style="width: 100%; height: 100px; margin: 10px 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-family: system-ui; font-size: 0.95em; resize: vertical;"></textarea>
-                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
-                    <button id="${modalId}-skip" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Skip</button>
-                    <button id="${modalId}-submit" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Submit Feedback</button>
+            <div style="background: white; padding: 24px; border-radius: 8px; width: 600px; max-width: 95%; max-height: 85vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                <h3 style="margin: 0 0 16px 0; color: var(--text-primary);">Feedback on Missing Information</h3>
+
+                <div style="background: #f9fafb; border-left: 4px solid ${priorityColor}; padding: 12px; margin-bottom: 16px; border-radius: 4px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; gap: 12px;">
+                        <div style="flex: 1;">
+                            <p style="margin: 0 0 8px 0; color: var(--text-primary); font-weight: 500;">${escapeHtml(suggestion.missing_info || suggestion.suggestion || '')}</p>
+                            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9em;">${escapeHtml(suggestion.importance_and_management_impact || suggestion.why || '')}</p>
+                        </div>
+                        <span style="background: ${priorityColor}; color: white; padding: 4px 8px; border-radius: 3px; font-size: 0.85em; white-space: nowrap; font-weight: 500;">${suggestion.priority || 'medium'}</span>
+                    </div>
+                </div>
+
+                <div style="background: #f3f4f6; padding: 12px; margin-bottom: 16px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em;">
+                    <strong style="color: #1f2937;">Practice Point:</strong> <code>${escapeHtml(practicePointRef)}</code>
+                </div>
+
+                <div style="background: #f0fdf4; padding: 12px; margin-bottom: 16px; border-radius: 4px; font-size: 0.9em; color: #166534;">
+                    <strong>Target Section:</strong> ${escapeHtml(suggestion.target_section || 'Not specified')}
+                </div>
+
+                <p style="color: var(--text-primary); margin: 16px 0 8px 0; font-weight: 500;">Tell us why you're rejecting this suggestion:</p>
+                <textarea id="${modalId}-text" placeholder="Enter your feedback (optional)" style="width: 100%; height: 100px; margin: 0 0 16px 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-family: system-ui; font-size: 0.95em; resize: vertical; box-sizing: border-box;"></textarea>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button id="${modalId}-skip" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Skip</button>
+                    <button id="${modalId}-submit" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Submit Feedback</button>
                 </div>
             </div>
         </div>
