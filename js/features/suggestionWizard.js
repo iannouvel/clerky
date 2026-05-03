@@ -297,7 +297,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-footer" id="${uniqueId}-actions">
                 <button class="sw-btn" onclick="prevWizardSuggestion()" ${backDisabled}>&#x25C4; Back</button>
                 <button class="sw-btn" onclick="skipWizardSuggestion()">Skip</button>
-                <button class="sw-btn sw-btn-feedback" onclick="openFeedbackModal()">Feedback</button>
+                <button class="sw-btn sw-btn-feedback" onclick="openWizardFeedbackModal()">Feedback</button>
                 <button class="sw-btn sw-btn-insert" onclick="acceptWizardSuggestion('${uniqueId}', this)">
                   <span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>
                   ${acceptLabel}
@@ -588,4 +588,95 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
     // Initial render
     renderCurrentSuggestion();
+}
+
+// Open feedback modal for wizard suggestion, including practice point reference
+window.openWizardFeedbackModal = function() {
+    const state = window.suggestionWizardState;
+    if (!state || state.currentIndex >= state.queue.length) return;
+
+    const suggestion = state.queue[state.currentIndex];
+    if (!suggestion) return;
+
+    const modalId = `wizard-feedback-${Date.now()}`;
+    const practicePointRef = suggestion.practice_point_reference || '(not specified)';
+    const modalHtml = `
+        <div id="${modalId}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 11000; display: flex; justify-content: center; align-items: center;">
+            <div style="background: white; padding: 24px; border-radius: 8px; width: 450px; max-width: 90%; max-height: 80vh; overflow-y: auto;">
+                <h3 style="margin-top: 0; color: var(--text-primary);">Feedback on Missing Information</h3>
+                <p style="color: var(--text-secondary); font-size: 0.9em;"><strong>Item:</strong> ${(suggestion.missing_info || suggestion.suggestion || '').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+                <p style="color: var(--text-secondary); font-size: 0.85em;"><strong>Practice Point:</strong> <code style="background: #f3f4f6; padding: 2px 6px; border-radius: 3px;">${practicePointRef}</code></p>
+                <p style="color: var(--text-secondary); margin-bottom: 12px;">Tell us why you're rejecting this suggestion (optional):</p>
+                <textarea id="${modalId}-text" style="width: 100%; height: 100px; margin: 10px 0; padding: 8px; border: 1px solid var(--border-color); border-radius: 4px; font-family: system-ui; font-size: 0.95em; resize: vertical;"></textarea>
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+                    <button id="${modalId}-skip" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Skip</button>
+                    <button id="${modalId}-submit" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer;">Submit Feedback</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    const modal = document.getElementById(modalId);
+    const textArea = document.getElementById(`${modalId}-text`);
+    const submitBtn = document.getElementById(`${modalId}-submit`);
+    const skipBtn = document.getElementById(`${modalId}-skip`);
+
+    const closeModal = () => modal.remove();
+
+    submitBtn.onclick = async () => {
+        const feedback = textArea.value.trim();
+        if (feedback) {
+            await window.submitWizardSuggestionFeedback(suggestion, feedback);
+        }
+        closeModal();
+    };
+
+    skipBtn.onclick = closeModal;
+
+    // Focus textarea for immediate typing
+    setTimeout(() => textArea.focus(), 100);
+};
+
+// Submit feedback for a wizard suggestion, including practice point reference
+window.submitWizardSuggestionFeedback = async function(suggestion, feedbackReason) {
+    if (!feedbackReason || !suggestion) return;
+
+    try {
+        const user = window.auth?.currentUser;
+        if (!user) {
+            console.warn('[WIZARD-FEEDBACK] Not authenticated');
+            return;
+        }
+
+        if (!window.db) {
+            console.warn('[WIZARD-FEEDBACK] Firestore not initialized');
+            return;
+        }
+
+        // Save directly to Firestore feedback collection
+        const feedbackData = {
+            userExplanation: feedbackReason,
+            userEmail: user.email,
+            suggestion: {
+                text: suggestion.suggestion || suggestion.missing_info,
+                why: suggestion.why || ''
+            },
+            practice_point_reference: suggestion.practice_point_reference,
+            phase: 'completeness',
+            lastAction: 'Send Feedback',
+            submittedAt: new Date(),
+            status: 'open'
+        };
+
+        // Add current note state for context
+        if (typeof window.getUserInputContent === 'function') {
+            feedbackData.noteSnapshot = window.getUserInputContent().substring(0, 2000);
+        }
+
+        const docRef = await window.db.collection('feedback').add(feedbackData);
+        console.log('[WIZARD-FEEDBACK] Feedback submitted with practice point:', suggestion.practice_point_reference, 'Doc:', docRef.id);
+    } catch (error) {
+        console.error('[WIZARD-FEEDBACK] Error submitting feedback:', error);
+    }
 }

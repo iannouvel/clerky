@@ -1,6 +1,6 @@
 {
   "name": "clerky-server",
-  "version": "9.0.278",
+  "version": "9.0.279",
   "type": "commonjs",
   "main": "server.js",
   "dependencies": {
