@@ -18139,6 +18139,77 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
             return null;
         }
 
+        // Helper: use LLM to determine practice point serial number for unmatched suggestions
+        async function determinePracticePointViaLLM(suggestion) {
+            if (!auditableElements || auditableElements.length === 0) return null;
+
+            try {
+                // Build practice points reference list
+                const ppList = auditableElements.map((pp, idx) =>
+                    `[${idx + 1}] ${pp.name || 'Unnamed'}`
+                ).join('\n');
+
+                const suggestionText = suggestion.suggestion || suggestion.name || suggestion.issue || '';
+                const verbatimHint = suggestion.verbatimQuote ? `\nKey quote: "${suggestion.verbatimQuote.substring(0, 100)}"` : '';
+
+                const prompt = `Given a suggestion from clinical guideline analysis and a numbered list of practice points, identify which practice point (by serial number) this suggestion best relates to.
+
+SUGGESTION:
+${suggestionText}${verbatimHint}
+
+PRACTICE POINTS:
+${ppList}
+
+Return ONLY the serial number (e.g., "3"). If none match well, return the most likely number. Return only the number, nothing else.`;
+
+                console.log(`[PRACTICE-POINT-LLM] Querying LLM for suggestion: "${suggestionText.substring(0, 50)}..."`);
+
+                const llmResult = await routeToAI({
+                    messages: [{ role: 'user', content: prompt }]
+                }, userId, null, 500, 'simple');
+
+                const serialNum = parseInt(llmResult.trim());
+                if (!isNaN(serialNum) && serialNum >= 1 && serialNum <= auditableElements.length) {
+                    console.log(`[PRACTICE-POINT-LLM] ✓ LLM determined serial number: ${serialNum} for "${ppList.split('\n')[serialNum]?.substring(0, 40)}..."`);
+                    return serialNum;
+                } else {
+                    console.warn(`[PRACTICE-POINT-LLM] LLM returned invalid number: "${llmResult}" for suggestion`);
+                    return null;
+                }
+            } catch (error) {
+                console.error(`[PRACTICE-POINT-LLM] Error querying LLM:`, error.message);
+                return null;
+            }
+        }
+
+        // Fill in missing practice point numbers via LLM for suggestions that couldn't be matched
+        async function fillMissingPracticePointNumbers(suggestions) {
+            const nullSerialCount = suggestions.filter(s => !s.practicePointNumber).length;
+            if (nullSerialCount === 0) {
+                console.log(`[PRACTICE-POINT-FILL] All ${suggestions.length} suggestions have practicePointNumbers`);
+                return suggestions;
+            }
+
+            console.log(`[PRACTICE-POINT-FILL] Filling ${nullSerialCount} missing practicePointNumbers via LLM`);
+
+            for (let i = 0; i < suggestions.length; i++) {
+                if (!suggestions[i].practicePointNumber) {
+                    const serialNum = await determinePracticePointViaLLM({
+                        suggestion: suggestions[i].suggestion,
+                        name: suggestions[i].name,
+                        issue: suggestions[i].issue,
+                        verbatimQuote: suggestions[i].verbatimQuote
+                    });
+                    if (serialNum) {
+                        suggestions[i].practicePointNumber = serialNum;
+                        console.log(`[PRACTICE-POINT-FILL] ✓ Filled suggestion ${i + 1} with practicePointNumber: ${serialNum}`);
+                    }
+                }
+            }
+
+            return suggestions;
+        }
+
         // Format suggestions for the frontend
         const formattedSuggestions = (analysisResult.suggestions || []).map((suggestion, index) => ({
             id: index + 1,
@@ -18165,16 +18236,20 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
         console.log(`[SEMANTIC-SUGGESTIONS] Formatted suggestions with practicePointNumbers: ${formattedSuggestions.map((s, i) => `${i + 1}: ppNum=${s.practicePointNumber}, name="${s.name?.substring(0, 30)}..."`).join('; ')}`);
         console.log(`[SEMANTIC-SUGGESTIONS] Patient context: ${JSON.stringify(analysisResult.patientContext || {})}`);
 
+        // Fill in any missing practice point numbers via LLM
+        const filledSuggestions = await fillMissingPracticePointNumbers(formattedSuggestions);
+        console.log(`[SEMANTIC-SUGGESTIONS] After LLM fill: ${filledSuggestions.map((s, i) => `${i + 1}: ppNum=${s.practicePointNumber}`).join('; ')}`);
+
         // Sense-check: skip when the caller is running parallel analysis and will batch
         // sense-check all guidelines together in one call via /batchSenseCheck.
         let suggestions, filteredOutSuggestions;
         if (skipSenseCheck) {
-            suggestions = formattedSuggestions;
+            suggestions = filledSuggestions;
             filteredOutSuggestions = [];
             console.log(`[SEMANTIC-SUGGESTIONS] Sense-check skipped (batch mode) — ${suggestions.length} suggestions returned raw`);
         } else {
             const senseCheckResult = await senseCheckSuggestions(
-                formattedSuggestions,
+                filledSuggestions,
                 transcript,
                 analysisResult.patientContext || {},
                 userId
