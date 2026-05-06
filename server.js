@@ -9281,102 +9281,6 @@ app.post('/invalidateGuidelinesCache', authenticateUser, async (req, res) => {
     }
 });
 
-async function getAllGuidelines() {
-    try {
-        // debugLog('[DEBUG] getAllGuidelines function called');
-
-        // Check if database is available
-        if (!db) {
-            debugLog('[DEBUG] Firestore database not available, returning empty guidelines');
-            return [];
-        }
-
-        debugLog('[DEBUG] Fetching guidelines collections from Firestore');
-
-        // Add timeout and better error handling for Firestore queries
-        const timeout = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
-        );
-
-        const fetchCollections = async () => {
-            return await Promise.all([
-                db.collection('guidelines').get(),
-                db.collection('guidelineSummaries').get(),
-                db.collection('guidelineKeywords').get(),
-                db.collection('guidelineCondensed').get()
-            ]);
-        };
-
-        const [guidelines, summaries, keywords, condensed] = await Promise.race([
-            fetchCollections(),
-            timeout
-        ]);
-
-        // debugLog('[DEBUG] Collection sizes:', {
-        //   guidelines: guidelines.size,
-        //   summaries: summaries.size,
-        //   keywords: keywords.size,
-        //   condensed: condensed.size
-        // });
-
-        const guidelineMap = new Map();
-
-        // Process main guidelines
-        guidelines.forEach(doc => {
-            const data = doc.data();
-            console.log(`[DEBUG] Processing guideline: ${doc.id}`);
-
-            guidelineMap.set(doc.id, {
-                ...data,
-                id: doc.id
-            });
-        });
-
-        // Add summaries
-        summaries.forEach(doc => {
-            const guideline = guidelineMap.get(doc.id);
-            if (guideline) {
-                guideline.summary = doc.data().summary;
-            }
-        });
-
-        // Add keywords
-        keywords.forEach(doc => {
-            const guideline = guidelineMap.get(doc.id);
-            if (guideline) {
-                guideline.keywords = doc.data().keywords;
-            }
-        });
-
-        // Add condensed versions
-        condensed.forEach(doc => {
-            const guideline = guidelineMap.get(doc.id);
-            if (guideline) {
-                guideline.condensed = doc.data().condensed;
-            }
-        });
-
-        const result = Array.from(guidelineMap.values());
-        debugLog('[DEBUG] Returning', result.length, 'guidelines');
-        return result;
-    } catch (error) {
-        console.error('[ERROR] Error in getAllGuidelines function:', {
-            message: error.message,
-            stack: error.stack,
-            errorType: error.constructor.name,
-            firestoreAvailable: !!db
-        });
-
-        // If it's a crypto/auth error, return empty array to allow app to function
-        if (error.message.includes('DECODER routines') ||
-            error.message.includes('timeout')) {
-            debugLog('[DEBUG] Returning empty guidelines due to authentication/connectivity issues');
-            return [];
-        }
-
-        throw error;
-    }
-}
 
 // Add endpoint to sync guidelines from GitHub to Firestore
 app.post('/syncGuidelines', authenticateUser, async (req, res) => {
@@ -16918,42 +16822,60 @@ app.post('/_deprecated_clearDisplayNames', authenticateUser, async (req, res) =>
     }
 });
 
-// Update getAllGuidelines to use document IDs
+// Helper function to fetch a collection with timeout
+async function fetchCollectionWithTimeout(collectionName, timeoutMs = 15000) {
+    return Promise.race([
+        db.collection(collectionName).get(),
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error(`Timeout fetching ${collectionName}`)), timeoutMs)
+        )
+    ]);
+}
+
+// Update getAllGuidelines to use sequential fetches with individual timeouts
 async function getAllGuidelines() {
     try {
-        // debugLog('[DEBUG] getAllGuidelines function called');
-
         if (!db) {
             debugLog('[DEBUG] Firestore database not available, returning empty guidelines');
             return [];
         }
 
-        debugLog('[DEBUG] Fetching guidelines collections from Firestore');
+        debugLog('[DEBUG] Fetching guidelines collections sequentially from Firestore');
 
-        const timeout = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Firestore query timeout')), 10000)
-        );
+        let guidelines, summaries, keywords, condensed;
 
-        const fetchCollections = async () => {
-            return await Promise.all([
-                db.collection('guidelines').get(),
-                db.collection('summaries').get(),
-                db.collection('keywords').get(),
-                db.collection('condensed').get()
-            ]);
-        };
+        try {
+            guidelines = await fetchCollectionWithTimeout('guidelines', 15000);
+            debugLog('[DEBUG] Fetched guidelines collection');
+        } catch (error) {
+            console.error('[ERROR] Failed to fetch guidelines collection:', error.message);
+            return [];
+        }
 
-        const [guidelines, summaries, keywords, condensed] = await Promise.race([
-            fetchCollections(),
-            timeout
-        ]);
+        // Fetch optional collections - if they fail, continue without them
+        try {
+            summaries = await fetchCollectionWithTimeout('summaries', 10000);
+            debugLog('[DEBUG] Fetched summaries collection');
+        } catch (error) {
+            console.warn('[WARN] Failed to fetch summaries collection, continuing:', error.message);
+            summaries = { forEach: () => {} };
+        }
 
-        // debugLog('[DEBUG] Collection sizes:', {
-        //     guidelines: guidelines.size,
-        //     summaries: summaries.size,
-        //     keywords: keywords.size,
-        //     condensed: condensed.size
-        // });
+        try {
+            keywords = await fetchCollectionWithTimeout('keywords', 10000);
+            debugLog('[DEBUG] Fetched keywords collection');
+        } catch (error) {
+            console.warn('[WARN] Failed to fetch keywords collection, continuing:', error.message);
+            keywords = { forEach: () => {} };
+        }
+
+        try {
+            condensed = await fetchCollectionWithTimeout('condensed', 10000);
+            debugLog('[DEBUG] Fetched condensed collection');
+        } catch (error) {
+            console.warn('[WARN] Failed to fetch condensed collection, continuing:', error.message);
+            condensed = { forEach: () => {} };
+        }
 
         const guidelineMap = new Map();
 
