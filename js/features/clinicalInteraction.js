@@ -14,7 +14,7 @@ import { SERVER_URL } from '../api/config.js';
 let currentLoadedCondition = null;
 let editorChangeListener = null;
 
-// Show clinical issues dropdown as a block within summary1
+// Show clinical issues dropdown as a modal
 export async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
 
@@ -29,62 +29,63 @@ export async function showClinicalIssuesDropdown() {
 
         console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
 
-        const summarySection = document.getElementById('summarySection');
-        if (summarySection) {
-            summarySection.classList.remove('hidden');
-        }
+        // Get modal and body elements
+        const modal = document.getElementById('clinicalClerkingModal');
+        const modalBody = document.getElementById('clinicalClerkingBody');
 
-        // Always render a single Test panel instance
-        const panelHtml = `
-<div id="clinicalIssuesPanel" class="clinical-issues-selector">
-    <h3>⚡ Load Clinical Clerking</h3>
-    <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
-    
-    <div class="issue-category">
-        <h4>Clinical Issues</h4>
-        <select id="clinical-issues-dropdown" class="clinical-dropdown">
-            <option value="">Select a clinical issue...</option>
-        </select>
-        <div id="add-new-issue-row" style="display:flex; margin-top:8px; gap:8px; align-items:center;">
-            <input id="new-issue-input" type="text" placeholder="Add new clinical issue..." style="flex:1; padding:6px 10px; border:1px solid var(--border-color, #ccc); border-radius:4px; font-size:13px; background:var(--bg-primary, #fff); color:var(--text-primary, #333);" />
-            <button id="add-issue-btn" style="padding:6px 14px; font-size:13px; border-radius:4px; border:1px solid #28a745; background:#28a745; color:#fff; cursor:pointer; white-space:nowrap;">Add</button>
-        </div>
-    </div>
-
-    <div id="generation-status" class="generation-status" style="display: none;"></div>
-</div>`;
-
-        // Replace existing summary content so the Test panel is always visible
-        // using clearExisting=true, isUserInteraction=false
-        appendToSummary1(panelHtml, true, false);
-
-        // Ensure the clinical issues panel exists inside summary1
-        const clinicalPanel = document.getElementById('clinicalIssuesPanel');
-        const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
-
-        // Button references (assumed to be in the DOM from index.html or layout)
-        const generateBtn = document.getElementById('generate-interaction-btn');
-        const randomBtn = document.getElementById('random-issue-btn');
-        const regenerateBtn = document.getElementById('regenerate-clerking-btn');
-        const updateBtn = document.getElementById('update-clerking-btn');
-        const cancelBtn = document.getElementById('cancel-generation-btn');
-
-        if (!clinicalPanel || !clinicalDropdown) {
-            console.error('[DEBUG] Clinical issues panel elements not found after injection');
-            updateUser('Error: Unable to initialise clinical issues panel.', false);
+        if (!modal || !modalBody) {
+            console.error('[DEBUG] Clinical clerking modal elements not found');
+            updateUser('Error: Unable to initialise clinical clerking modal.', false);
             return;
         }
 
-        // Show the buttons in the button container
-        const clerkingButtonsGroup = document.getElementById('clerkingButtonsGroup');
-        if (clerkingButtonsGroup) {
-            clerkingButtonsGroup.style.display = 'flex';
-        }
+        // Clear existing content
+        modalBody.innerHTML = '';
 
-        // Reset dropdown options
+        // Create modal content
+        const container = document.createElement('div');
+        container.className = 'clinical-clerking-container';
+
+        let html = `
+            <h3>⚡ Load Clinical Clerking</h3>
+            <p>Select a clinical issue to instantly load a realistic pre-generated clinical clerking using SBAR format:</p>
+
+            <div class="clinical-issue-section">
+                <label for="clinical-issues-dropdown">Clinical Issues</label>
+                <select id="clinical-issues-dropdown" class="clinical-dropdown">
+                    <option value="">Select a clinical issue...</option>
+                </select>
+            </div>
+
+            <div class="clinical-add-section">
+                <label>Add New Clinical Issue</label>
+                <div class="clinical-add-row">
+                    <input id="new-issue-input" type="text" placeholder="Enter a clinical issue name..." />
+                    <button id="add-issue-btn" class="clinical-add-btn">Add</button>
+                </div>
+            </div>
+
+            <div class="clinical-modal-actions">
+                <button id="modal-load-clerking-btn" class="nav-btn primary" disabled>Load Clerking</button>
+                <button id="modal-random-issue-btn" class="nav-btn secondary">Random Issue</button>
+                <button id="modal-cancel-btn" class="nav-btn secondary">Cancel</button>
+            </div>
+        `;
+
+        container.innerHTML = html;
+        modalBody.appendChild(container);
+
+        // Get elements
+        const clinicalDropdown = document.getElementById('clinical-issues-dropdown');
+        const newIssueInput = document.getElementById('new-issue-input');
+        const addIssueBtn = document.getElementById('add-issue-btn');
+        const loadBtn = document.getElementById('modal-load-clerking-btn');
+        const randomBtn = document.getElementById('modal-random-issue-btn');
+        const cancelBtn = document.getElementById('modal-cancel-btn');
+
+        // Populate dropdown
         clinicalDropdown.innerHTML = '<option value="">Select a clinical issue...</option>';
 
-        // Add options from Firebase data
         const excludedTestCategories = new Set(['gynaecology', 'gynecology']);
         Object.entries(clinicalConditions).forEach(([category, conditions]) => {
             const categoryKey = String(category || '').toLowerCase();
@@ -108,233 +109,151 @@ export async function showClinicalIssuesDropdown() {
             clinicalDropdown.appendChild(optgroup);
         });
 
-
-        // Ensure summary visibility
-        if (window.updateSummaryVisibility) window.updateSummaryVisibility();
-        if (window.updateSummaryCriticalStatus) window.updateSummaryCriticalStatus();
+        // Show modal
+        modal.classList.remove('hidden');
+        document.body.appendChild(modal);
 
         requestAnimationFrame(() => {
-            if (summarySection && typeof summarySection.scrollIntoView === 'function') {
-                summarySection.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            clinicalDropdown.focus();
+        });
+
+        // Update button state
+        function updateLoadButton() {
+            const selectedValue = clinicalDropdown?.value || '';
+            const hasSelection = selectedValue.trim() !== '';
+            if (loadBtn) loadBtn.disabled = !hasSelection;
+        }
+
+        clinicalDropdown.addEventListener('change', updateLoadButton);
+
+        // Add issue button
+        addIssueBtn.onclick = async () => {
+            const issueName = (newIssueInput?.value || '').trim();
+            if (!issueName) {
+                updateUser('Please enter a clinical issue name.', false);
+                return;
             }
-            if (clinicalPanel && typeof clinicalPanel.scrollIntoView === 'function') {
-                clinicalPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            try {
+                addIssueBtn.disabled = true;
+                addIssueBtn.textContent = 'Adding...';
+
+                const user = auth.currentUser;
+                if (!user) throw new Error('User not authenticated');
+                const idToken = await user.getIdToken();
+
+                const resp = await fetch(`${SERVER_URL}/addClinicalCondition`, {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${idToken}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: issueName, category: 'obstetrics' })
+                });
+
+                if (!resp.ok) {
+                    const errText = await resp.text();
+                    throw new Error(errText);
+                }
+
+                const data = await resp.json();
+                if (!data.success) throw new Error(data.error || 'Failed to add condition');
+
+                // Find or create the Obstetrics optgroup
+                let obsGroup = Array.from(clinicalDropdown.querySelectorAll('optgroup'))
+                    .find(g => g.label.toLowerCase() === 'obstetrics');
+                if (!obsGroup) {
+                    obsGroup = document.createElement('optgroup');
+                    obsGroup.label = 'Obstetrics';
+                    clinicalDropdown.appendChild(obsGroup);
+                }
+
+                // Insert alphabetically within the optgroup
+                const newOpt = document.createElement('option');
+                newOpt.value = issueName;
+                newOpt.dataset.conditionId = data.conditionId;
+                newOpt.textContent = issueName;
+
+                const existingOpts = Array.from(obsGroup.querySelectorAll('option'));
+                const insertBefore = existingOpts.find(o => o.textContent.localeCompare(issueName, undefined, { sensitivity: 'base' }) > 0);
+                if (insertBefore) {
+                    obsGroup.insertBefore(newOpt, insertBefore);
+                } else {
+                    obsGroup.appendChild(newOpt);
+                }
+
+                clinicalDropdown.value = issueName;
+                updateLoadButton();
+                newIssueInput.value = '';
+
+                const cache = ClinicalConditionsService.getConditions();
+                if (cache && cache.obstetrics) {
+                    cache.obstetrics[issueName] = {
+                        id: data.conditionId,
+                        name: issueName,
+                        category: 'obstetrics',
+                        transcript: null,
+                        hasTranscript: false
+                    };
+                }
+
+                if (window.cacheManager?.saveClinicalConditions && cache) {
+                    window.cacheManager.saveClinicalConditions(cache).catch(() => {});
+                }
+
+                updateUser(`Added "${issueName}". Click "Load Clerking" to generate a transcript.`, false);
+
+            } catch (err) {
+                console.error('[CLINICAL] Error adding new issue:', err);
+                updateUser(`Error adding issue: ${err.message}`, false);
+            } finally {
+                addIssueBtn.disabled = false;
+                addIssueBtn.textContent = 'Add';
             }
-            if (clinicalDropdown && typeof clinicalDropdown.focus === 'function') {
-                clinicalDropdown.focus();
+        };
+
+        // Enter key in input triggers Add
+        newIssueInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                addIssueBtn?.click();
             }
         });
 
-        const addNewRow = document.getElementById('add-new-issue-row');
-        const newIssueInput = document.getElementById('new-issue-input');
-        const addIssueBtn = document.getElementById('add-issue-btn');
-        function updateGenerateButton() {
-            const selectedValue = clinicalDropdown?.value || '';
-            const hasSelection = selectedValue.trim() !== '';
+        // Load button
+        loadBtn.onclick = async () => {
+            const selectedIssue = clinicalDropdown?.value || '';
+            if (selectedIssue) {
+                hideClinicalClerkingModal();
+                await generateFakeClinicalInteraction(selectedIssue);
+            }
+        };
 
-            if (generateBtn) generateBtn.disabled = !hasSelection;
-            if (regenerateBtn) regenerateBtn.disabled = !hasSelection;
-        }
+        // Random button
+        randomBtn.onclick = async () => {
+            const options = Array.from(clinicalDropdown.options).filter(option =>
+                option.value && option.value.trim() !== ''
+            );
 
-        if (clinicalDropdown) {
-            clinicalDropdown.addEventListener('change', updateGenerateButton);
-        }
-
-        // "Add" button for new custom issue (always visible below dropdown)
-        if (addIssueBtn) {
-            addIssueBtn.onclick = async () => {
-                const issueName = (newIssueInput?.value || '').trim();
-                if (!issueName) {
-                    updateUser('Please enter a clinical issue name.', false);
-                    return;
-                }
-
-                try {
-                    addIssueBtn.disabled = true;
-                    addIssueBtn.textContent = 'Adding...';
-
-                    const user = auth.currentUser;
-                    if (!user) throw new Error('User not authenticated');
-                    const idToken = await user.getIdToken();
-
-                    // Create the condition in Firestore
-                    const resp = await fetch(`${SERVER_URL}/addClinicalCondition`, {
-                        method: 'POST',
-                        headers: { 'Authorization': `Bearer ${idToken}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name: issueName, category: 'obstetrics' })
-                    });
-
-                    if (!resp.ok) {
-                        const errText = await resp.text();
-                        throw new Error(errText);
-                    }
-
-                    const data = await resp.json();
-                    if (!data.success) throw new Error(data.error || 'Failed to add condition');
-
-                    // Find or create the Obstetrics optgroup
-                    let obsGroup = Array.from(clinicalDropdown.querySelectorAll('optgroup'))
-                        .find(g => g.label.toLowerCase() === 'obstetrics');
-                    if (!obsGroup) {
-                        obsGroup = document.createElement('optgroup');
-                        obsGroup.label = 'Obstetrics';
-                        clinicalDropdown.appendChild(obsGroup);
-                    }
-
-                    // Insert alphabetically within the optgroup
-                    const newOpt = document.createElement('option');
-                    newOpt.value = issueName;
-                    newOpt.dataset.conditionId = data.conditionId;
-                    newOpt.textContent = issueName;
-
-                    const existingOpts = Array.from(obsGroup.querySelectorAll('option'));
-                    const insertBefore = existingOpts.find(o => o.textContent.localeCompare(issueName, undefined, { sensitivity: 'base' }) > 0);
-                    if (insertBefore) {
-                        obsGroup.insertBefore(newOpt, insertBefore);
-                    } else {
-                        obsGroup.appendChild(newOpt);
-                    }
-
-                    // Select the new option
-                    clinicalDropdown.value = issueName;
-                    updateGenerateButton();
-                    newIssueInput.value = '';
-
-                    // Update in-memory cache
-                    const cache = ClinicalConditionsService.getConditions();
-                    if (cache && cache.obstetrics) {
-                        cache.obstetrics[issueName] = {
-                            id: data.conditionId,
-                            name: issueName,
-                            category: 'obstetrics',
-                            transcript: null,
-                            hasTranscript: false
-                        };
-                    }
-
-                    // Update IndexedDB cache so next reload includes the new condition
-                    if (window.cacheManager?.saveClinicalConditions && cache) {
-                        window.cacheManager.saveClinicalConditions(cache).catch(() => {});
-                    }
-
-                    updateUser(`Added "${issueName}". Click "Load Clerking" to generate a transcript.`, false);
-
-                } catch (err) {
-                    console.error('[CLINICAL] Error adding new issue:', err);
-                    updateUser(`Error adding issue: ${err.message}`, false);
-                } finally {
-                    addIssueBtn.disabled = false;
-                    addIssueBtn.textContent = 'Add';
-                }
-            };
-        }
-
-        // Enter key in the new issue input triggers Add
-        if (newIssueInput) {
-            newIssueInput.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    addIssueBtn?.click();
-                }
-            });
-        }
-
-        // Button Event Handlers
-        if (generateBtn) {
-            generateBtn.onclick = async () => {
-                const selectedIssue = clinicalDropdown?.value || '';
-                if (selectedIssue) {
-                    await generateFakeClinicalInteraction(selectedIssue);
-                    hideClinicalIssuesPanel();
-                }
-            };
-        }
-
-        if (randomBtn) {
-            randomBtn.onclick = async () => {
-                if (!clinicalDropdown) return;
-                const options = Array.from(clinicalDropdown.options).filter(option =>
-                    option.value && option.value.trim() !== ''
+            if (options.length > 0) {
+                const optionsWithoutTranscript = options.filter(option =>
+                    !option.textContent.includes(' ✓')
                 );
 
-                if (options.length > 0) {
-                    // Prioritize issues without saved transcripts (no checkmark)
-                    const optionsWithoutTranscript = options.filter(option =>
-                        !option.textContent.includes(' ✓')
-                    );
+                const poolToChooseFrom = optionsWithoutTranscript.length > 0
+                    ? optionsWithoutTranscript
+                    : options;
 
-                    // Pick from options without saved transcripts first, otherwise from all
-                    const poolToChooseFrom = optionsWithoutTranscript.length > 0
-                        ? optionsWithoutTranscript
-                        : options;
+                const randomOption = poolToChooseFrom[Math.floor(Math.random() * poolToChooseFrom.length)];
+                hideClinicalClerkingModal();
+                await generateFakeClinicalInteraction(randomOption.value);
+            } else {
+                updateUser('Error: No clinical issues available for random selection.', false);
+            }
+        };
 
-                    const randomOption = poolToChooseFrom[Math.floor(Math.random() * poolToChooseFrom.length)];
-                    clinicalDropdown.value = randomOption.value;
-                    updateGenerateButton();
-                    await generateFakeClinicalInteraction(randomOption.value);
-                    hideClinicalIssuesPanel();
-                } else {
-                    updateUser('Error: No clinical issues available for random selection.', false);
-                }
-            };
-        }
-
-        if (regenerateBtn) {
-            regenerateBtn.onclick = async () => {
-                const selectedIssue = clinicalDropdown?.value || '';
-                if (selectedIssue) {
-                    await generateFakeClinicalInteraction(selectedIssue, true);
-                    hideClinicalIssuesPanel();
-                }
-            };
-        }
-
-        if (updateBtn) {
-            updateBtn.onclick = async () => {
-                if (!currentLoadedCondition) {
-                    updateUser('Error: No clerking loaded to update.', false);
-                    return;
-                }
-
-                const updateSpinner = document.getElementById('update-spinner');
-                const updateText = document.getElementById('update-text');
-
-                try {
-                    // Show loading state
-                    if (updateBtn) updateBtn.disabled = true;
-                    if (updateSpinner) updateSpinner.style.display = 'inline';
-                    if (updateText) updateText.textContent = 'Updating...';
-
-                    // Get current editor content
-                    const currentContent = getUserInputContent();
-
-                    if (!currentContent || currentContent.trim() === '') {
-                        throw new Error('No content to save');
-                    }
-
-                    // Update the transcript
-                    await ClinicalConditionsService.updateTranscript(currentLoadedCondition.id, currentContent);
-
-                    updateUser(`Updated test clerking: ${currentLoadedCondition.name}`, false);
-
-                } catch (error) {
-                    console.error('[DEBUG] Error updating clerking:', error);
-                    updateUser(`Error updating clerking: ${error.message}`, false);
-                } finally {
-                    // Reset button state
-                    if (updateBtn) updateBtn.disabled = false;
-                    if (updateSpinner) updateSpinner.style.display = 'none';
-                    if (updateText) updateText.textContent = 'Update Saved Version';
-                }
-            };
-        }
-
-        if (cancelBtn) {
-            cancelBtn.onclick = () => {
-                hideClinicalIssuesPanel();
-                updateUser('Clinical interaction generation cancelled.', false);
-            };
-        }
+        // Cancel button
+        cancelBtn.onclick = () => {
+            hideClinicalClerkingModal();
+            updateUser('Clinical interaction generation cancelled.', false);
+        };
 
     } catch (error) {
         console.error('[DEBUG] Error showing clinical issues dropdown:', error);
@@ -481,18 +400,12 @@ function setupUpdateButtonOnChange() {
 }
 
 // Helper to clean up the test UI
-function hideClinicalIssuesPanel() {
-    const panel = document.getElementById('clinicalIssuesPanel');
-    if (panel && panel.parentNode) {
-        panel.parentNode.removeChild(panel);
+function hideClinicalClerkingModal() {
+    const modal = document.getElementById('clinicalClerkingModal');
+    if (modal) {
+        modal.classList.add('hidden');
     }
 
-    const buttonsGroup = document.getElementById('clerkingButtonsGroup');
-    if (buttonsGroup) {
-        buttonsGroup.style.display = 'none';
-    }
-
-    // Hide update button and remove change listener
     const updateBtn = document.getElementById('update-clerking-btn');
     if (updateBtn) {
         updateBtn.style.display = 'none';
@@ -503,6 +416,4 @@ function hideClinicalIssuesPanel() {
         editor.off('update', editorChangeListener);
         editorChangeListener = null;
     }
-
-    if (window.updateSummaryVisibility) window.updateSummaryVisibility();
 }
