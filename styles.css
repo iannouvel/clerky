@@ -4562,17 +4562,19 @@ body {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 80vh;
 }
 
 .clinical-clerking-body h3 {
-    margin: 0 0 8px 0;
+    margin: 0;
     font-size: 1.3em;
     color: var(--text-primary);
 }
 
 .clinical-clerking-body p {
-    margin: 0 0 16px 0;
+    margin: 4px 0 0 0;
     font-size: 0.9em;
     color: var(--text-secondary);
 }
@@ -4661,15 +4663,14 @@ body {
 
 .clinical-modal-actions {
     display: flex;
-    gap: 10px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-color);
+    gap: 12px;
     flex-wrap: wrap;
 }
 
 .clinical-modal-actions button {
     flex: 1;
-    min-width: 100px;
+    min-width: 90px;
+    padding: 10px 12px;
 }
 
 /* Clerking buttons group */
