@@ -27,6 +27,44 @@ export let currentAdviceSession = null;
 export let currentSuggestionReview = null; // Wizard state
 export let pendingInsertions = new Map(); // Track pending insertions (suggestion ID -> preview state)
 
+/**
+ * Unified logic for inserting suggestion text into the note.
+ * Used by both wizard and non-wizard suggestion paths.
+ * Handles:
+ * - Replacing existing text (if replace_pattern matches)
+ * - Section-based placement (using target_section)
+ * - New section creation (if createSection flag set)
+ * - Fallback to end of note
+ * @param {string} textToInsert - The text to insert
+ * @param {Object} suggestion - The suggestion object with optional replace_pattern, target_section, etc.
+ * @param {string} currentContent - The current note content
+ * @returns {string} The updated note content
+ */
+export function applySuggestionInsertion(textToInsert, suggestion, currentContent) {
+    if (!textToInsert) return currentContent;
+
+    // 1. Try to replace existing text (highest priority)
+    if (suggestion?.replace_pattern && currentContent.includes(suggestion.replace_pattern)) {
+        return currentContent.replace(suggestion.replace_pattern, textToInsert);
+    }
+
+    // 2. Try to place in target section
+    if (suggestion?.target_section) {
+        const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
+        if (sectionInfo) {
+            // Insert at the end of the target section
+            return currentContent.slice(0, sectionInfo.endIndex) + '\n' + textToInsert + currentContent.slice(sectionInfo.endIndex);
+        }
+        // If section not found but should create new section
+        if (suggestion?.createSection && suggestion?.newSectionTitle) {
+            return currentContent + '\n\n' + suggestion.newSectionTitle + ':\n' + textToInsert;
+        }
+    }
+
+    // 3. Fallback: append to end of note
+    return currentContent + '\n' + textToInsert;
+}
+
 // Helper to set session state
 export function setSuggestionSession(sessionId, suggestions) {
     currentAdviceSession = sessionId;
@@ -229,22 +267,8 @@ export function showSuggestionPreview(suggestion, currentContent) {
         '</div>';
 
     if (suggestion.category === 'addition' || !suggestion.originalText) {
-        // Use target_section if available to place preview in the right section
-        if (suggestion.target_section) {
-            const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
-            if (sectionInfo) {
-                // Insert preview at the end of the target section
-                previewContent = currentContent.slice(0, sectionInfo.endIndex) + '\n' + greenBox + currentContent.slice(sectionInfo.endIndex);
-            } else if (suggestion.createSection && suggestion.newSectionTitle) {
-                // Create new section if needed
-                previewContent = currentContent + '\n\n' + suggestion.newSectionTitle + ':\n' + greenBox;
-            } else {
-                // Fall back to appending at end
-                previewContent = currentContent + '\n\n' + greenBox;
-            }
-        } else {
-            previewContent = currentContent + '\n\n' + greenBox;
-        }
+        // Use unified insertion logic with green preview box
+        previewContent = applySuggestionInsertion(greenBox, suggestion, currentContent);
     } else {
         // For replacements, highlight the replacement
         previewContent = currentContent.replace(
@@ -269,22 +293,8 @@ export function confirmPendingInsertion(suggestion, currentContent) {
     let finalContent;
 
     if (suggestion.category === 'addition' || !suggestion.originalText) {
-        // Use target_section if available to place content in the right section
-        if (suggestion.target_section) {
-            const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
-            if (sectionInfo) {
-                // Insert at the end of the target section
-                finalContent = currentContent.slice(0, sectionInfo.endIndex) + '\n' + suggestion.suggestedText + currentContent.slice(sectionInfo.endIndex);
-            } else if (suggestion.createSection && suggestion.newSectionTitle) {
-                // Create new section if needed
-                finalContent = currentContent + '\n\n' + suggestion.newSectionTitle + ':\n' + suggestion.suggestedText;
-            } else {
-                // Fall back to appending at end
-                finalContent = currentContent + '\n' + suggestion.suggestedText;
-            }
-        } else {
-            finalContent = currentContent + '\n' + suggestion.suggestedText;
-        }
+        // Use unified insertion logic
+        finalContent = applySuggestionInsertion(suggestion.suggestedText, suggestion, currentContent);
     } else {
         const res = applySuggestionTextReplacement(currentContent, suggestion.originalText, suggestion.suggestedText);
         finalContent = res.newContent;
