@@ -4568,6 +4568,13 @@ body {
     overflow-y: auto;
     flex: 1;
     min-height: 0;
+}
+
+.clinical-clerking-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 .clinical-clerking-body h3 {
     margin: 0;
