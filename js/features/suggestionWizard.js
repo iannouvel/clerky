@@ -1,4 +1,5 @@
 import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText } from '../utils/editor.js';
+import { extractSectionContent } from './suggestions.js';
 
 // Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
 window.clearReplacementPreviewState = clearReplacementState;
@@ -556,10 +557,27 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
                 const replacePattern = currentSuggestion?.replace_pattern;
                 const missingInfo = currentSuggestion?.missing_info || '';
+                const targetSection = currentSuggestion?.target_section;
 
                 if (replacePattern && currentContent.includes(replacePattern)) {
                     newContent = currentContent.replace(replacePattern, textToInsert);
                     console.log('[WIZARD] Fallback: replaced replace_pattern');
+                } else if (targetSection) {
+                    // Use target_section if available to place content in the right section
+                    const sectionInfo = extractSectionContent(currentContent, targetSection);
+                    if (sectionInfo) {
+                        // Insert at the end of the target section
+                        newContent = currentContent.slice(0, sectionInfo.endIndex) + '\n' + textToInsert + currentContent.slice(sectionInfo.endIndex);
+                        console.log('[WIZARD] Fallback: inserted using target_section:', targetSection);
+                    } else if (currentSuggestion?.createSection && currentSuggestion?.newSectionTitle) {
+                        // Create new section if needed
+                        newContent = currentContent + '\n\n' + currentSuggestion.newSectionTitle + ':\n' + textToInsert;
+                        console.log('[WIZARD] Fallback: created new section:', currentSuggestion.newSectionTitle);
+                    } else {
+                        // Fall back to appending at end
+                        newContent = currentContent + '\n' + textToInsert;
+                        console.log('[WIZARD] Fallback: appended to end');
+                    }
                 } else {
                     const lines = currentContent.split('\n');
                     const matchIdx = lines.findIndex(l => l.trim().toLowerCase() === missingInfo.trim().toLowerCase());
