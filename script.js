@@ -477,14 +477,14 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         return '50%';
     }
 
-    // Create the new guideline selection interface - flat list sorted by similarity score
-    const headerTitle = isParallelMode
-        ? '📋 Guidelines Identified for Analysis'
-        : '📋 Select Guidelines for Guideline Suggestions';
+    // Skip rendering guideline list in parallel mode (modal handles selection)
+    if (isParallelMode) {
+        return '';
+    }
 
-    const headerDesc = isParallelMode
-        ? 'The following guidelines have been identified and will be analyzed automatically.'
-        : 'Select guidelines to check against. Only likely relevant guidelines are pre-selected.';
+    // Create the new guideline selection interface - flat list sorted by similarity score
+    const headerTitle = '📋 Select Guidelines for Guideline Suggestions';
+    const headerDesc = 'Select guidelines to check against. Only likely relevant guidelines are pre-selected.';
 
     let htmlContent = `
         <div class="guideline-selection-interface">
