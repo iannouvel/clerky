@@ -44,5 +44,11 @@ When feedback is addressed:
 
 ## Related Issues
 
-- **Category 1: Duplicate Detection** — System now scans existing note content before suggesting additions to prevent redundant suggestions
-- **Category 2: Provisional Text Visibility** — Pending insertions are now highlighted in green to clearly distinguish them from confirmed text
+- **Category 1: Duplicate Detection** — System now scans existing note content before suggesting additions to prevent redundant suggestions (CLOSED)
+- **Category 2: Provisional Text Visibility** — Pending insertions are now highlighted in green to clearly distinguish them from confirmed text (CLOSED)
+- **Category 3: Wrong Placement** — Suggestions now include intelligent placement information determined by the LLM:
+  - `analyzeNoteStructure()` analyzes existing sections in the clinical note
+  - Each suggestion includes placement context: which section it belongs in, whether to create a new section, etc.
+  - LLM reasons about placement rather than using programmatic section parsing
+  - Suggestions can specify creating new sections with semantically appropriate titles
+  - Never defaults to appending at the end (IN PROGRESS)
