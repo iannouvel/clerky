@@ -4553,18 +4553,18 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 500px;
-    max-height: 85vh;
+    max-width: 550px;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
 .clinical-clerking-body {
-    padding: 24px;
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     overflow-y: auto;
     flex: 1;
     min-height: 0;
@@ -4573,19 +4573,21 @@ body {
 .clinical-clerking-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .clinical-clerking-body h3 {
     margin: 0;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: var(--text-primary);
+    line-height: 1.2;
 }
 
 .clinical-clerking-body p {
-    margin: 4px 0 0 0;
-    font-size: 0.9em;
+    margin: 2px 0 0 0;
+    font-size: 0.85em;
     color: var(--text-secondary);
+    line-height: 1.3;
 }
 
 .clinical-issue-section {
