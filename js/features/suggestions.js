@@ -223,14 +223,28 @@ export function insertTextAtPoint(currentContent, newText, insertionPoint) {
 export function showSuggestionPreview(suggestion, currentContent) {
     // Create a preview of the suggestion in the note with green highlighting
     let previewContent;
+    const greenBox = '<div style="background-color: #dcfce7; border-left: 4px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 4px;">' +
+        '<span style="color: #047857; font-weight: 600;">📋 Pending Insertion (not yet confirmed)</span>\n' +
+        escapeHtml(suggestion.suggestedText) +
+        '</div>';
 
     if (suggestion.category === 'addition' || !suggestion.originalText) {
-        // For additions, append with green highlight wrapper
-        previewContent = currentContent + '\n\n' +
-            '<div style="background-color: #dcfce7; border-left: 4px solid #10b981; padding: 12px; margin: 10px 0; border-radius: 4px;">' +
-            '<span style="color: #047857; font-weight: 600;">📋 Pending Insertion (not yet confirmed)</span>\n' +
-            escapeHtml(suggestion.suggestedText) +
-            '</div>';
+        // Use target_section if available to place preview in the right section
+        if (suggestion.target_section) {
+            const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
+            if (sectionInfo) {
+                // Insert preview at the end of the target section
+                previewContent = currentContent.slice(0, sectionInfo.endIndex) + '\n' + greenBox + currentContent.slice(sectionInfo.endIndex);
+            } else if (suggestion.createSection && suggestion.newSectionTitle) {
+                // Create new section if needed
+                previewContent = currentContent + '\n\n' + suggestion.newSectionTitle + ':\n' + greenBox;
+            } else {
+                // Fall back to appending at end
+                previewContent = currentContent + '\n\n' + greenBox;
+            }
+        } else {
+            previewContent = currentContent + '\n\n' + greenBox;
+        }
     } else {
         // For replacements, highlight the replacement
         previewContent = currentContent.replace(
@@ -255,7 +269,22 @@ export function confirmPendingInsertion(suggestion, currentContent) {
     let finalContent;
 
     if (suggestion.category === 'addition' || !suggestion.originalText) {
-        finalContent = currentContent + '\n' + suggestion.suggestedText;
+        // Use target_section if available to place content in the right section
+        if (suggestion.target_section) {
+            const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
+            if (sectionInfo) {
+                // Insert at the end of the target section
+                finalContent = currentContent.slice(0, sectionInfo.endIndex) + '\n' + suggestion.suggestedText + currentContent.slice(sectionInfo.endIndex);
+            } else if (suggestion.createSection && suggestion.newSectionTitle) {
+                // Create new section if needed
+                finalContent = currentContent + '\n\n' + suggestion.newSectionTitle + ':\n' + suggestion.suggestedText;
+            } else {
+                // Fall back to appending at end
+                finalContent = currentContent + '\n' + suggestion.suggestedText;
+            }
+        } else {
+            finalContent = currentContent + '\n' + suggestion.suggestedText;
+        }
     } else {
         const res = applySuggestionTextReplacement(currentContent, suggestion.originalText, suggestion.suggestedText);
         finalContent = res.newContent;

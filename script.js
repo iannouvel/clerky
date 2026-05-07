@@ -11194,7 +11194,6 @@ async function submitFeedback() {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('feedbackBtn')?.addEventListener('click', openFeedbackModal);
-    document.getElementById('floatingFeedbackBtn')?.addEventListener('click', openFeedbackModal);
     document.getElementById('closeFeedbackModal')?.addEventListener('click', () => {
         document.getElementById('feedbackModal').classList.add('hidden');
     });
