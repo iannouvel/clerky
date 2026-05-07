@@ -773,6 +773,31 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
     return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
 }
 
+// Helper: analyze note structure to identify existing sections and their order
+async function analyzeNoteStructure(clinicalNote, userId) {
+    const structurePrompt = `Analyze this clinical note and identify its main sections. List only the sections that actually exist in the note.
+
+Possible section types: History/Background, Examination/Physical Findings, Investigations/Results, Assessment/Impression, Plan/Management, Other
+
+For each section found, note:
+1. Its title/heading (as it appears in the note)
+2. What type it is (from the list above)
+3. Its approximate position in the note (beginning/middle/end)
+
+Respond with valid JSON only:
+{ "sections": [{ "title": "...", "type": "...", "position": "..." }] }`;
+
+    const result = await routeToAI({ messages: [{ role: 'user', content: `Clinical note:\n\n${clinicalNote}\n\n${structurePrompt}` }] }, userId);
+
+    if (!result?.content) return { sections: [] };
+
+    try {
+        return JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+    } catch (e) {
+        return { sections: [] };
+    }
+}
+
 async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidelineTitle, userId, guidelineId = null, targetModel = null, practicePointsWithSerials = null) {
     // Per-point path: when practice points are synced, run one focused call per point in parallel.
     // This produces cleaner verdicts and allows calibrated advice to be applied with full attention.
@@ -784,6 +809,12 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
             );
         }
     }
+
+    // Analyze note structure upfront to enable smart placement
+    const noteStructure = await analyzeNoteStructure(clinicalNote, userId);
+    const sectionsContext = noteStructure.sections.length > 0
+        ? `\nCurrent sections in note (in order): ${noteStructure.sections.map(s => s.title).join(', ')}`
+        : '\nNote has minimal section structure — suggestions may need to create new sections';
 
     // Fallback single-pass: for guidelines without synced practice points.
     let hintsText = '';
@@ -797,12 +828,16 @@ async function analyzeGuidelineForPatient(clinicalNote, guidelineContent, guidel
     }
 
     // Single-pass prompt: identify gaps, enrich with patient-specific reasoning and verbatim
-    // quotes, extract patient context, and identify already-compliant items — all in one call.
+    // quotes, extract patient context, identify already-compliant items, AND provide smart placement
     const systemPrompt = `You are a clinical advisor reviewing a clinical note against a guideline. In a single pass:
 1. Identify care gaps — recommendations from the guideline not addressed in the clinical note.
 2. For each gap: write a concise actionable suggestion, indicate priority (high/medium/low), briefly explain your reasoning, explain why it matters for THIS specific patient ("why"), provide an EXACT verbatim copy-paste from the GUIDELINE TEXT ONLY as "verbatimQuote" (do not paraphrase, and do NOT quote from the clinical note — the quote must be a sentence or phrase that physically appears in the guideline content), and set "sourceGuidelineId" to the guideline ID supplied.
-3. Extract key patient context from the clinical note.
-4. Identify guideline recommendations that ARE already addressed in the note.
+3. Determine PLACEMENT for each suggestion:
+   - If an appropriate existing section exists in the note, specify which section
+   - If no suitable section exists, create a new section with a clear, clinically relevant title
+   - NEVER default to appending at the end — always be intentional about placement
+4. Extract key patient context from the clinical note.
+5. Identify guideline recommendations that ARE already addressed in the note.
 
 APPLICABILITY CHECK (you MUST complete this first — populate "guidelineApplicability" before generating any suggestions):
 1. Identify the target population this guideline is written for (e.g. "patients with a previous caesarean section", "patients with BMI ≥30", "patients with COVID-19").
@@ -815,8 +850,15 @@ CRITICAL: verbatimQuote must be copied word-for-word from the "=== GUIDELINE CON
 
 PRACTICE POINTS: For each suggestion, identify which practice point it corresponds to by its SERIAL NUMBER (if any). If a suggestion maps to a practice point, include "practicePointSerialNumber": N in the suggestion object.
 
+PLACEMENT GUIDANCE: For each suggestion, output:
+- "section": name of existing section OR new section to create (e.g. "Examination", "Investigations", "Plan")
+- "createSection": true/false — whether to create this section if it doesn't exist
+- "newSectionTitle": only if createSection is true — the section title to create
+- "sectionReason": brief explanation of why it belongs in this section
+- "placementLogic": optional — any specific context or anchor text (e.g. "place after vital signs", "at the beginning of plan")
+
 Respond with valid JSON only, using this structure:
-{ "guidelineApplicability": { "targetPopulation": "...", "patientQualifies": true, "reason": "..." }, "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "...", "practicePointSerialNumber": 3 }], "alreadyCompliant": [] }`;
+{ "guidelineApplicability": { "targetPopulation": "...", "patientQualifies": true, "reason": "..." }, "patientContext": {}, "suggestions": [{ "suggestion": "...", "priority": "high|medium|low", "reasoning": "...", "why": "...", "verbatimQuote": "...", "sourceGuidelineId": "...", "practicePointSerialNumber": 3, "section": "Investigations", "createSection": false, "sectionReason": "Blood tests document investigative results", "placementLogic": "after imaging" }], "alreadyCompliant": [] }`;
 
     // Build practice points list with serial numbers
     let practicePointsList = '';
@@ -829,7 +871,7 @@ Respond with valid JSON only, using this structure:
         practicePointsList += '\nWhen generating suggestions, identify which practice point (by serial number) each suggestion relates to, if any.\n';
     }
 
-    const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}${practicePointsList}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above. For each suggestion, also identify its practice point serial number (if it maps to one).`;
+    const userPrompt = `=== CLINICAL NOTE (do NOT quote from this section) ===\n${clinicalNote}${sectionsContext}\n\n=== GUIDELINE CONTENT (verbatimQuote must come from here only) ===\nGuideline ID: ${guidelineId || 'unknown'}\nGuideline title: ${guidelineTitle}\n\n${guidelineContent}${practicePointsList}\n\n${hintsText ? `Previous notes on this guideline:\n${hintsText}\n` : ''}Identify care gaps and for each include an exact verbatim quote from the guideline content above. Set sourceGuidelineId to the guideline ID provided above. For each suggestion, determine intelligent placement within existing sections or propose creating a new section. Also identify its practice point serial number (if it maps to one).`;
 
     const result = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }] }, userId, targetModel);
 
