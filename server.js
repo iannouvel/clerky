@@ -58,6 +58,7 @@ const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guid
 const { processBatchGeneration } = require('./server/services/analysis/parallel');
 const { logAIInteraction } = require('./server/utils/aiLogger');
 const { getPromptText, getAllPrompts, updatePromptsCache } = require('./server/utils/promptManager');
+const { determineSuggestionPlacement } = require('./server/utils/suggestionPlacement');
 
 const { ORGANIZATION_DOMAINS, AI_MODEL_REGISTRY, AI_PROVIDER_PREFERENCE } = require('./server/config/constants');
 const { validateGuidelineUrl, getNextAvailableProvider } = require('./server/utils/helpers');
@@ -17669,6 +17670,13 @@ IMPORTANT:
             console.log(`[QUALITY_FILTER] Removed ${removed} low-quality suggestion(s) - kept ${afterQualityFilterCount}/${afterValidationCount}`);
         }
 
+        // Add unified placement info to each suggestion
+        suggestions = suggestions.map(suggestion => ({
+            ...suggestion,
+            placement: determineSuggestionPlacement(suggestion, transcript)
+        }));
+        console.log('[DYNAMIC_ADVICE] Added placement info to all suggestions');
+
         debugLog('[DEBUG] dynamicAdvice: Suggestion filtering summary', {
             original: originalSuggestionCount,
             after_duplicate_filter: afterDuplicateFilterCount,
@@ -20962,6 +20970,13 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
                         console.log('[COMPLETENESS-V2] First item fields:', Object.keys(missing_information[0]).join(', '));
                         console.log('[COMPLETENESS-V2] First item practice_point_reference:', missing_information[0].practice_point_reference);
                     }
+
+                    // Add unified placement info to each item
+                    missing_information = missing_information.map(item => ({
+                        ...item,
+                        placement: determineSuggestionPlacement(item, transcript)
+                    }));
+                    console.log('[COMPLETENESS-V2] Added placement info to all items');
                 }
             } catch (parseError) {
                 console.warn('[COMPLETENESS-V2] JSON parse failed:', parseError?.message || parseError);
