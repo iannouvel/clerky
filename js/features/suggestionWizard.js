@@ -561,17 +561,63 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 console.log('[WIZARD] Replaced insertion placeholder with accepted text');
             } else {
                 // Fallback: placeholder wasn't found (e.g. user edited note while wizard open)
+                console.log('[WIZARD] Placeholder not found in current content; entering fallback logic');
                 const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
                 const replacePattern = currentSuggestion?.replace_pattern;
                 const missingInfo = currentSuggestion?.missing_info || '';
 
                 if (replacePattern && currentContent.includes(replacePattern)) {
                     newContent = currentContent.replace(replacePattern, textToInsert);
-                    console.log('[WIZARD] Fallback: replaced replace_pattern');
+                    console.log('[WIZARD] Fallback: replaced replace_pattern for amendment');
                 } else {
-                    // Use unified insertion logic (handles target_section, new section creation, etc.)
-                    newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
-                    console.log('[WIZARD] Fallback: used unified insertion logic');
+                    // For wizard suggestions without target_section, call LLM to determine placement
+                    if (currentSuggestion && !currentSuggestion.target_section) {
+                        console.log('[WIZARD] Suggestion lacks target_section; calling LLM for intelligent placement', {
+                            suggestionId: currentSuggestion.id,
+                            practicePointNumber: currentSuggestion.practicePointNumber,
+                            sourceGuidelineId: currentSuggestion.sourceGuidelineId,
+                            textToInsert: textToInsert.substring(0, 60) + '...'
+                        });
+                        try {
+                            const user = window.auth?.currentUser;
+                            if (user) {
+                                const idToken = await user.getIdToken();
+                                const enrichedSuggestion = { ...currentSuggestion, suggestion: textToInsert };
+                                const response = await fetch(`${window.SERVER_URL}/determineInsertionPoint`, {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                                    body: JSON.stringify({ suggestion: enrichedSuggestion, clinicalNote: currentContent })
+                                });
+                                if (response.ok) {
+                                    const result = await response.json();
+                                    const contentChanged = result.updatedNote && result.updatedNote !== currentContent;
+                                    newContent = result.updatedNote || currentContent;
+                                    console.log('[WIZARD] LLM placement succeeded', {
+                                        contentChanged,
+                                        resultLength: result.updatedNote?.length
+                                    });
+                                } else {
+                                    console.warn('[WIZARD] LLM placement endpoint returned status', response.status);
+                                    newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
+                                    console.log('[WIZARD] Fallback: used unified insertion logic after LLM failure');
+                                }
+                            } else {
+                                console.warn('[WIZARD] User not authenticated for LLM placement');
+                                newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
+                                console.log('[WIZARD] Fallback: used unified insertion logic (not authenticated)');
+                            }
+                        } catch (err) {
+                            console.warn('[WIZARD] Exception calling LLM for placement:', err.message);
+                            newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
+                            console.log('[WIZARD] Fallback: used unified insertion logic after exception');
+                        }
+                    } else {
+                        // Use unified insertion logic for completeness suggestions (which have target_section)
+                        console.log('[WIZARD] Suggestion has target_section; using unified insertion logic', {
+                            targetSection: currentSuggestion?.target_section
+                        });
+                        newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
+                    }
                 }
             }
 
