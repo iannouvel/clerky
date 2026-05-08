@@ -19,17 +19,43 @@ function determineSuggestionPlacement(suggestion, noteContent) {
     const targetSection = suggestion.target_section;
     const suggestedText = suggestion.suggested_content || suggestion.suggestion || suggestion.suggestedText;
 
-    // STEP 1: Check if suggestion should replace existing text
+    // STEP 1: Check if suggestion should replace existing text or append to an item
     if (replacePattern && noteContent.includes(replacePattern)) {
-        action = 'replace';
-        changes.push({
-            type: 'replacement',
-            location: 'inline',
-            find_text: replacePattern,
-            replace_with: suggestedText,
-            reason: 'Replacing vague/incomplete text with more specific guidance',
-            section: targetSection
-        });
+        // Check if this is supplementary detail (dosing, monitoring, etc.) for an existing item
+        // vs a genuine correction of vague text
+        const isSupplementaryDetail = (pattern, info) => {
+            // If pattern looks like a numbered/bulleted list item (e.g. "1. Start IV abx...")
+            const isListItem = /^\d+\.|^[-*]\s/.test(pattern);
+            // If missing_info contains keywords suggesting this is detail for the item
+            const detailKeywords = ['dosing', 'dose', 'interval', 'monitoring', 'duration', 'frequency', 'threshold', 'rate', 'speed'];
+            const hasDetailKeyword = detailKeywords.some(kw => info.toLowerCase().includes(kw));
+            return isListItem && hasDetailKeyword;
+        };
+
+        if (isSupplementaryDetail(replacePattern, suggestion.missing_info || suggestedText)) {
+            // This is supplementary detail — append after the item rather than replace it
+            action = 'add';
+            changes.push({
+                type: 'addition',
+                location: 'after_item',
+                target_pattern: replacePattern,
+                suggested_text: suggestedText,
+                position: 'after_item',
+                reason: 'Appending supplementary detail (dosing/monitoring) to existing item',
+                section: targetSection
+            });
+        } else {
+            // This is a genuine correction/replacement of vague text
+            action = 'replace';
+            changes.push({
+                type: 'replacement',
+                location: 'inline',
+                find_text: replacePattern,
+                replace_with: suggestedText,
+                reason: 'Replacing vague/incomplete text with more specific guidance',
+                section: targetSection
+            });
+        }
     }
 
     // STEP 2: Check if suggestion should be added in a specific section
@@ -156,7 +182,20 @@ function applyPlacementChanges(noteContent, placement) {
         if (change.type === 'replacement') {
             updatedContent = updatedContent.replace(change.find_text, change.replace_with);
         } else if (change.type === 'addition') {
-            if (change.position === 'new_section') {
+            if (change.position === 'after_item') {
+                // Find the line with target_pattern and insert after it
+                const lines = updatedContent.split('\n');
+                const idx = lines.findIndex(l => l.includes(change.target_pattern));
+                if (idx !== -1) {
+                    // Insert formatted detail as indented sub-items after the matched line
+                    const indentedText = change.suggested_text
+                        .split('\n')
+                        .map((line, i) => i === 0 ? `  - ${line}` : `    ${line}`)
+                        .join('\n');
+                    lines.splice(idx + 1, 0, indentedText);
+                    updatedContent = lines.join('\n');
+                }
+            } else if (change.position === 'new_section') {
                 updatedContent += `\n\n${change.target_section}:\n${change.suggested_text}`;
             } else if (change.position === 'end_of_section') {
                 const sectionInfo = extractSectionContent(updatedContent, change.target_section);
