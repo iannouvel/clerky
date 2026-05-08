@@ -517,20 +517,38 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         let lastError;
 
         // Try primary provider first, then fallback to others if it fails
-        const tryProviders = [provider];
+        let tryProviders = [provider];
         if (!preferredProvider) {
-            // Add other providers as fallback (exclude current one)
+            // Add other providers as fallback (exclude current one), sorted by health status and priority
             const otherProviders = AI_PROVIDER_PREFERENCE
                 .filter(p => p.name !== provider)
-                .sort((a, b) => a.priority - b.priority)
+                .sort((a, b) => {
+                    // Prioritize WORKING providers, then UNKNOWN, then others
+                    const aHealth = global.PROVIDER_HEALTH[a.name]?.status || 'UNKNOWN';
+                    const bHealth = global.PROVIDER_HEALTH[b.name]?.status || 'UNKNOWN';
+                    const healthPriority = { 'WORKING': 0, 'UNKNOWN': 1, 'NOT_CONFIGURED': 2, 'ERROR': 3, 'HTTP_ERROR': 3 };
+                    const aPriority = healthPriority[aHealth] !== undefined ? healthPriority[aHealth] : 3;
+                    const bPriority = healthPriority[bHealth] !== undefined ? healthPriority[bHealth] : 3;
+                    if (aPriority !== bPriority) return aPriority - bPriority;
+                    // If health status is equal, use model priority
+                    return a.priority - b.priority;
+                })
                 .map(p => p.name);
-            tryProviders.push(...otherProviders);
+            tryProviders = [provider, ...otherProviders];
         }
 
         for (const tryProvider of tryProviders) {
+            const providerHealth = global.PROVIDER_HEALTH[tryProvider]?.status || 'UNKNOWN';
+
+            // Skip providers known to be in ERROR state on second+ attempt
+            if (tryProvider !== provider && providerHealth === 'ERROR') {
+                console.log(`[ROUTE-AI-FALLBACK] Skipping ${tryProvider} (known ERROR state)`);
+                continue;
+            }
+
             try {
                 const tryModel = AI_PROVIDER_PREFERENCE.find(p => p.name === tryProvider)?.model || model;
-                console.log(`[ROUTE-AI-FALLBACK] Trying provider: ${tryProvider}/${tryModel}`);
+                console.log(`[ROUTE-AI-FALLBACK] Trying provider: ${tryProvider}/${tryModel} (health: ${providerHealth})`);
 
                 if (typeof prompt === 'object' && prompt.messages) {
                     const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;

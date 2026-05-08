@@ -92,6 +92,17 @@ app.use('/', systemRouter);
 const endpointTimings = [];
 const MAX_TIMING_ENTRIES = 500; // Increased from 100 to capture more history
 
+// AI Provider health status — populated by checkAPIHealth() and consulted by routeToAI for fallbacks
+global.PROVIDER_HEALTH = {
+    'DeepSeek': { status: 'UNKNOWN', lastCheck: null },
+    'Gemini': { status: 'UNKNOWN', lastCheck: null },
+    'OpenAI': { status: 'UNKNOWN', lastCheck: null },
+    'Anthropic': { status: 'UNKNOWN', lastCheck: null },
+    'Mistral': { status: 'UNKNOWN', lastCheck: null },
+    'Groq': { status: 'UNKNOWN', lastCheck: null },
+    'Grok': { status: 'UNKNOWN', lastCheck: null }
+};
+
 const StepTimer = require('./server/utils/stepTimer');
 
 
@@ -7590,6 +7601,17 @@ async function checkAPIHealth() {
     const working = results.filter(r => r.status === 'WORKING').length;
     const configured = results.filter(r => r.status !== 'NOT_CONFIGURED').length;
     console.log(`[API-HEALTH] ${working}/${configured} configured APIs are operational\n`);
+
+    // Populate global.PROVIDER_HEALTH with results for runtime fallback decisions
+    for (const result of results) {
+        if (global.PROVIDER_HEALTH[result.name]) {
+            global.PROVIDER_HEALTH[result.name] = {
+                status: result.status,
+                lastCheck: new Date().toISOString(),
+                error: result.error || null
+            };
+        }
+    }
 
     return results;
 }
