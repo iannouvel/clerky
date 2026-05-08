@@ -17670,12 +17670,7 @@ IMPORTANT:
             console.log(`[QUALITY_FILTER] Removed ${removed} low-quality suggestion(s) - kept ${afterQualityFilterCount}/${afterValidationCount}`);
         }
 
-        // Add unified placement info to each suggestion
-        suggestions = suggestions.map(suggestion => ({
-            ...suggestion,
-            placement: determineSuggestionPlacement(suggestion, transcript)
-        }));
-        console.log('[DYNAMIC_ADVICE] Added placement info to all suggestions');
+        console.log('[DYNAMIC_ADVICE] Placement will be calculated on-demand by wizard via /determinePlacement');
 
         debugLog('[DEBUG] dynamicAdvice: Suggestion filtering summary', {
             original: originalSuggestionCount,
@@ -20970,13 +20965,7 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
                         console.log('[COMPLETENESS-V2] First item fields:', Object.keys(missing_information[0]).join(', '));
                         console.log('[COMPLETENESS-V2] First item practice_point_reference:', missing_information[0].practice_point_reference);
                     }
-
-                    // Add unified placement info to each item
-                    missing_information = missing_information.map(item => ({
-                        ...item,
-                        placement: determineSuggestionPlacement(item, transcript)
-                    }));
-                    console.log('[COMPLETENESS-V2] Added placement info to all items');
+                    console.log('[COMPLETENESS-V2] Placement will be calculated on-demand by wizard via /determinePlacement');
                 }
             } catch (parseError) {
                 console.warn('[COMPLETENESS-V2] JSON parse failed:', parseError?.message || parseError);
@@ -20989,6 +20978,92 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
         console.error('[COMPLETENESS-V2] Unhandled error:', error?.message || error);
         // Ensure we always return a response
         return res.json({ success: true, missing_information: [] });
+    }
+});
+
+// Determine suggestion placement in note
+// POST /determinePlacement
+//   body: { suggestion: {...}, noteContent: "..." }
+//   returns: { success: true, placement: {...}, action: "replace|add|mixed" }
+app.post('/determinePlacement', authenticateUser, async (req, res) => {
+    const { suggestion, noteContent } = req.body;
+    const userId = req.user.uid;
+
+    if (!suggestion || !noteContent) {
+        console.warn('[PLACEMENT] Missing required parameters', {
+            userId,
+            hasSuggestion: !!suggestion,
+            hasNoteContent: !!noteContent
+        });
+        return res.status(400).json({
+            success: false,
+            error: 'Missing suggestion or noteContent'
+        });
+    }
+
+    try {
+        console.log('[PLACEMENT] Calculating placement', {
+            userId,
+            suggestionType: suggestion.missing_info || suggestion.suggestion || 'unknown',
+            targetSection: suggestion.target_section || 'not specified',
+            hasReplacePattern: !!suggestion.replace_pattern,
+            noteContentLength: noteContent.length
+        });
+
+        // Call unified placement logic
+        const placement = determineSuggestionPlacement(suggestion, noteContent);
+
+        console.log('[PLACEMENT] Placement calculated successfully', {
+            userId,
+            action: placement.action,
+            changeCount: placement.changes.length,
+            changes: placement.changes.map(c => ({
+                type: c.type,
+                location: c.location || c.target_section,
+                position: c.position,
+                reason: c.reason
+            }))
+        });
+
+        // Log change details for debugging
+        placement.changes.forEach((change, idx) => {
+            if (change.type === 'replacement') {
+                console.log(`[PLACEMENT] Change ${idx + 1}: REPLACE`, {
+                    findTextLength: change.find_text?.length,
+                    replaceWithLength: change.replace_with?.length,
+                    reason: change.reason
+                });
+            } else if (change.type === 'addition') {
+                console.log(`[PLACEMENT] Change ${idx + 1}: ADD`, {
+                    targetSection: change.target_section,
+                    textLength: change.suggested_text?.length,
+                    position: change.position,
+                    reason: change.reason
+                });
+            }
+        });
+
+        res.json({
+            success: true,
+            placement,
+            action: placement.action,
+            changeCount: placement.changes.length
+        });
+
+    } catch (error) {
+        console.error('[PLACEMENT] Error calculating placement', {
+            userId,
+            errorMessage: error.message,
+            errorStack: error.stack,
+            suggestionType: suggestion.missing_info || suggestion.suggestion || 'unknown',
+            noteContentLength: noteContent.length
+        });
+
+        res.status(500).json({
+            success: false,
+            error: 'Failed to calculate placement',
+            details: error.message
+        });
     }
 });
 
