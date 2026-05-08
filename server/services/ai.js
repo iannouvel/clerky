@@ -514,14 +514,44 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
 
         const skipUserPreference = !!preferredProvider;
         let result;
-        if (typeof prompt === 'object' && prompt.messages) {
-            const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
-            result = await sendToAI(prompt.messages, model, null, userId, temperature, 120000, skipUserPreference, maxTokens);
-        } else {
-            result = await sendToAI(prompt, model, null, userId, 0.7, 120000, skipUserPreference, maxTokens);
+        let lastError;
+
+        // Try primary provider first, then fallback to others if it fails
+        const tryProviders = [provider];
+        if (!preferredProvider) {
+            // Add other providers as fallback (exclude current one)
+            const otherProviders = AI_PROVIDER_PREFERENCE
+                .filter(p => p.name !== provider)
+                .sort((a, b) => a.priority - b.priority)
+                .map(p => p.name);
+            tryProviders.push(...otherProviders);
         }
 
-        return result;
+        for (const tryProvider of tryProviders) {
+            try {
+                const tryModel = AI_PROVIDER_PREFERENCE.find(p => p.name === tryProvider)?.model || model;
+                console.log(`[ROUTE-AI-FALLBACK] Trying provider: ${tryProvider}/${tryModel}`);
+
+                if (typeof prompt === 'object' && prompt.messages) {
+                    const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
+                    result = await sendToAI(prompt.messages, tryModel, null, userId, temperature, 120000, skipUserPreference, maxTokens);
+                } else {
+                    result = await sendToAI(prompt, tryModel, null, userId, 0.7, 120000, skipUserPreference, maxTokens);
+                }
+                console.log(`[ROUTE-AI-FALLBACK] ✓ Success with ${tryProvider}`);
+                return result;
+            } catch (error) {
+                lastError = error;
+                console.warn(`[ROUTE-AI-FALLBACK] ✗ ${tryProvider} failed:`, error.message);
+                if (tryProvider === tryProviders[tryProviders.length - 1]) {
+                    // Last provider in list - throw the error
+                    throw lastError;
+                }
+                // Otherwise continue to next provider
+            }
+        }
+
+        throw lastError || new Error('All AI providers failed');
     } catch (error) {
         console.error('[DEBUG] Error in routeToAI:', error.message);
         throw error;
