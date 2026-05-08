@@ -542,7 +542,22 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const lines = contentSnapshot.split('\n');
                 const idx = lines.findIndex(l => l.includes(replacementPreview.originalText));
                 if (idx !== -1) {
-                    lines[idx] = lines[idx].replace(replacementPreview.originalText, textToInsert);
+                    // Check if the original line had a list number prefix (e.g., "1. ")
+                    const originalLine = lines[idx];
+                    const numberedMatch = originalLine.match(/^(\d+)\.\s/);
+                    let replacementText = textToInsert;
+
+                    // If original had a number, preserve it in the replacement
+                    if (numberedMatch) {
+                        const listNumber = numberedMatch[1];
+                        // Only add number if textToInsert doesn't already start with a number
+                        if (!replacementText.match(/^\d+\.\s/)) {
+                            replacementText = `${listNumber}. ${replacementText}`;
+                            console.log('[WIZARD] Preserved list number', listNumber, 'in replacement');
+                        }
+                    }
+
+                    lines[idx] = lines[idx].replace(replacementPreview.originalText, replacementText);
                     newContent = lines.join('\n');
                     console.log('[WIZARD] Replaced original text with accepted suggestion');
                 } else {
@@ -567,7 +582,27 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 const missingInfo = currentSuggestion?.missing_info || '';
 
                 if (replacePattern && currentContent.includes(replacePattern)) {
-                    newContent = currentContent.replace(replacePattern, textToInsert);
+                    // Check if the line with replacePattern has a list number prefix
+                    const lines = currentContent.split('\n');
+                    const idx = lines.findIndex(l => l.includes(replacePattern));
+                    let replacementText = textToInsert;
+
+                    if (idx !== -1) {
+                        const originalLine = lines[idx];
+                        const numberedMatch = originalLine.match(/^(\d+)\.\s/);
+
+                        // If original had a number, preserve it in the replacement
+                        if (numberedMatch) {
+                            const listNumber = numberedMatch[1];
+                            // Only add number if textToInsert doesn't already start with a number
+                            if (!replacementText.match(/^\d+\.\s/)) {
+                                replacementText = `${listNumber}. ${replacementText}`;
+                                console.log('[WIZARD] Preserved list number', listNumber, 'in fallback replacement');
+                            }
+                        }
+                    }
+
+                    newContent = currentContent.replace(replacePattern, replacementText);
                     console.log('[WIZARD] Fallback: replaced replace_pattern for amendment');
                 } else {
                     // For wizard suggestions without target_section, call LLM to determine placement
