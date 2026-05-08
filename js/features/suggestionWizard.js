@@ -153,6 +153,52 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     }
 
+    // Calculate placement for a suggestion on-demand
+    // Calls server endpoint to get structured placement instructions based on current note content
+    const calculateSuggestionPlacement = async (suggestion) => {
+        if (!suggestion) return null;
+
+        try {
+            const user = window.auth?.currentUser;
+            if (!user) {
+                console.warn('[WIZARD] User not authenticated for placement calculation');
+                return null;
+            }
+
+            const currentContent = getUserInputContent();
+            const idToken = await user.getIdToken();
+
+            console.log('[WIZARD] Calculating suggestion placement', {
+                suggestionId: suggestion.id,
+                practicePointNumber: suggestion.practicePointNumber,
+                noteLength: currentContent.length
+            });
+
+            const response = await fetch(`${window.SERVER_URL}/determinePlacement`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                body: JSON.stringify({ suggestion, clinicalNote: currentContent })
+            });
+
+            if (!response.ok) {
+                console.warn('[WIZARD] Placement calculation endpoint returned status', response.status);
+                return null;
+            }
+
+            const result = await response.json();
+            console.log('[WIZARD] Placement calculation result', {
+                action: result.action,
+                changeCount: result.changes?.length || 0,
+                metadata: result.metadata
+            });
+
+            return result;
+        } catch (err) {
+            console.error('[WIZARD] Error calculating placement:', err.message);
+            return null;
+        }
+    };
+
     // Returns true if the suggestion is no longer needed given the current note content
     const isSuggestionStale = (suggestion) => {
         const noteContent = getUserInputContent() || '';
@@ -178,7 +224,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     };
 
     // Define Renderer
-    const renderCurrentSuggestion = () => {
+    const renderCurrentSuggestion = async () => {
         const state = window.suggestionWizardState;
 
         if (!container) return;
@@ -215,6 +261,14 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const suggestion = state.queue[state.currentIndex];
         const currentNumber = state.currentIndex + 1;
         const total = state.total;
+
+        // Calculate placement for this suggestion on-demand based on current note content
+        console.log('[WIZARD] Calculating placement for suggestion', currentNumber);
+        const placement = await calculateSuggestionPlacement(suggestion);
+        if (placement) {
+            suggestion._calculatedPlacement = placement;
+            console.log('[WIZARD] Placement cached on suggestion object for use during acceptance');
+        }
 
         // Safely access properties
         const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
@@ -397,13 +451,13 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
     window.nextWizardSuggestion = function () {
         window.suggestionWizardState.currentIndex++;
-        renderCurrentSuggestion();
+        renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering next suggestion:', err));
     };
 
     window.prevWizardSuggestion = function () {
         if (window.suggestionWizardState.currentIndex > 0) {
             window.suggestionWizardState.currentIndex--;
-            renderCurrentSuggestion();
+            renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering previous suggestion:', err));
         }
     };
 
@@ -534,6 +588,21 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         try {
             const currentContent = getUserInputContent();
             let newContent;
+
+            // Check if we have pre-calculated placement info for this suggestion
+            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
+            const calculatedPlacement = currentSuggestion?._calculatedPlacement;
+            if (calculatedPlacement) {
+                console.log('[WIZARD] Using pre-calculated placement', {
+                    action: calculatedPlacement.action,
+                    changeCount: calculatedPlacement.changes?.length || 0,
+                    changes: calculatedPlacement.changes?.map(c => ({
+                        type: c.type,
+                        location: c.location || c.position,
+                        section: c.section || c.target_section
+                    }))
+                });
+            }
 
             // Replacement preview path: suggestion replaces existing text in the note
             const replacementPreview = getReplacementPreview();
@@ -685,7 +754,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     };
 
     // Initial render
-    renderCurrentSuggestion();
+    renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
 }
 
 // Open feedback modal for wizard suggestion, including practice point reference
