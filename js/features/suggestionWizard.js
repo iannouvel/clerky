@@ -629,6 +629,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             // This ensures only the newly inserted text remains, without red strikethrough styling
             clearReplacementState();
 
+            // Also clear insertion preview to ensure clean state for next suggestion
+            clearInsertionPreview();
+
             // Briefly bold the inserted text so the user can see where it landed
             setTimeout(() => flashBoldInEditor(textToInsert), 150);
 
