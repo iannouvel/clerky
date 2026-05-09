@@ -158,6 +158,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     const calculateSuggestionPlacement = async (suggestion) => {
         if (!suggestion) return null;
 
+        // Skip placement calculation if server already provided placement info
+        if (suggestion.target_section && suggestion.replace_pattern !== undefined) {
+            console.log('[WIZARD] Placement already provided by server, skipping API call');
+            return null; // Existing deterministic logic in acceptWizardSuggestion will handle placement
+        }
+
         try {
             const user = window.auth?.currentUser;
             if (!user) {
@@ -177,7 +183,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             const response = await fetch(`${window.SERVER_URL}/determinePlacement`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                body: JSON.stringify({ suggestion, clinicalNote: currentContent })
+                body: JSON.stringify({ suggestion, noteContent: currentContent })
             });
 
             if (!response.ok) {
