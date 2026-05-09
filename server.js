@@ -18209,6 +18209,48 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
         }
 
         timer.step('Sense-check validation');
+
+        // CALL 2: Determine placement for guideline suggestions
+        if (suggestions && suggestions.length > 0) {
+            try {
+                const placementConfig = global.prompts?.['determineSuggestionPlacement'] || require('./prompts.json')['determineSuggestionPlacement'];
+                const placementPromptTemplate = placementConfig?.prompt || '';
+                const suggestionsForPlacement = suggestions.map(s => ({ id: s.id, missing_info: s.name || s.suggestion }));
+                const placementPrompt = placementPromptTemplate
+                    .replace('{{noteContent}}', transcript.substring(0, 4000))
+                    .replace('{{suggestions}}', JSON.stringify(suggestionsForPlacement));
+
+                console.log('[SEMANTIC-SUGGESTIONS] Calling placement AI for guideline suggestions...');
+                const placementResponse = await routeToAI({ messages: [{ role: 'user', content: placementPrompt }] }, userId, null, 1000, 'simple');
+
+                if (placementResponse?.content) {
+                    try {
+                        const placementJsonMatch = placementResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
+                        const placementParsed = JSON.parse(placementJsonMatch ? placementJsonMatch[1].trim() : placementResponse.content.trim());
+
+                        if (placementParsed?.placements && Array.isArray(placementParsed.placements)) {
+                            // Merge placement info into suggestions
+                            for (const suggestion of suggestions) {
+                                const placement = placementParsed.placements.find(p => p.id === suggestion.id);
+                                if (placement) {
+                                    suggestion.target_section = placement.target_section;
+                                    suggestion.replace_pattern = placement.replace_pattern;
+                                }
+                            }
+                            console.log('[SEMANTIC-SUGGESTIONS] Placement determination complete for guideline suggestions');
+                        }
+                    } catch (placementParseError) {
+                        console.warn('[SEMANTIC-SUGGESTIONS] Placement parse failed:', placementParseError?.message);
+                        // Continue — suggestions are still valid without placement info
+                    }
+                }
+            } catch (placementError) {
+                console.warn('[SEMANTIC-SUGGESTIONS] Placement AI call failed:', placementError?.message);
+                // Continue — suggestions are still valid even if placement determination fails
+            }
+        }
+
+        timer.step('Placement determination');
         timer.step('Format response');
         console.log('[SEMANTIC-SUGGESTIONS] Timing:', JSON.stringify(timer.getSummary()));
 
@@ -20987,7 +21029,46 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
                         console.log('[COMPLETENESS-V2] First item fields:', Object.keys(missing_information[0]).join(', '));
                         console.log('[COMPLETENESS-V2] First item practice_point_reference:', missing_information[0].practice_point_reference);
                     }
-                    console.log('[COMPLETENESS-V2] Placement will be calculated on-demand by wizard via /determinePlacement');
+
+                    // CALL 2: Determine placement for each suggestion
+                    if (missing_information.length > 0) {
+                        try {
+                            const placementConfig = global.prompts?.['determineSuggestionPlacement'] || require('./prompts.json')['determineSuggestionPlacement'];
+                            const placementPromptTemplate = placementConfig?.prompt || '';
+                            const suggestionsForPlacement = missing_information.map(s => ({ id: s.rank, missing_info: s.missing_info }));
+                            const placementPrompt = placementPromptTemplate
+                                .replace('{{noteContent}}', transcript.substring(0, 4000))
+                                .replace('{{suggestions}}', JSON.stringify(suggestionsForPlacement));
+
+                            console.log('[COMPLETENESS-V2] Calling placement AI...');
+                            const placementResponse = await routeToAI({ messages: [{ role: 'user', content: placementPrompt }] }, userId, null, 1000, 'simple');
+
+                            if (placementResponse?.content) {
+                                try {
+                                    const placementJsonMatch = placementResponse.content.match(/```(?:json)?\s*([\s\S]*?)```/);
+                                    const placementParsed = JSON.parse(placementJsonMatch ? placementJsonMatch[1].trim() : placementResponse.content.trim());
+
+                                    if (placementParsed?.placements && Array.isArray(placementParsed.placements)) {
+                                        // Merge placement info back into suggestions
+                                        for (const suggestion of missing_information) {
+                                            const placement = placementParsed.placements.find(p => p.id === suggestion.rank);
+                                            if (placement) {
+                                                suggestion.target_section = placement.target_section;
+                                                suggestion.replace_pattern = placement.replace_pattern;
+                                            }
+                                        }
+                                        console.log('[COMPLETENESS-V2] Placement determination complete');
+                                    }
+                                } catch (placementParseError) {
+                                    console.warn('[COMPLETENESS-V2] Placement parse failed:', placementParseError?.message);
+                                    // Continue without placement info — suggestions are still valid, just without placement hints
+                                }
+                            }
+                        } catch (placementError) {
+                            console.warn('[COMPLETENESS-V2] Placement AI call failed:', placementError?.message);
+                            // Continue — suggestions are still valid even if placement determination fails
+                        }
+                    }
                 }
             } catch (parseError) {
                 console.warn('[COMPLETENESS-V2] JSON parse failed:', parseError?.message || parseError);
