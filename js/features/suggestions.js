@@ -45,6 +45,35 @@ export function applySuggestionInsertion(textToInsert, suggestion, currentConten
 
     // 1. Try to replace existing text (highest priority)
     if (suggestion?.replace_pattern && currentContent.includes(suggestion.replace_pattern)) {
+        const lines = currentContent.split('\n');
+        const patternLines = suggestion.replace_pattern.split('\n');
+
+        // Find the starting line that contains the beginning of the pattern
+        const startLineIdx = lines.findIndex(l => patternLines.length > 0 && l.includes(patternLines[0]));
+
+        if (startLineIdx !== -1) {
+            // Check if original line had a list number prefix (e.g., "1. ")
+            const originalLine = lines[startLineIdx];
+            const numberedMatch = originalLine.match(/^(\d+)\.\s/);
+            let replacementText = textToInsert;
+
+            // If original had a number and replacement doesn't, preserve the number
+            if (numberedMatch && !replacementText.match(/^\d+\.\s/)) {
+                const listNumber = numberedMatch[1];
+                replacementText = `${listNumber}. ${replacementText}`;
+            }
+
+            // For single-line replacements, just replace that line
+            if (patternLines.length === 1) {
+                lines[startLineIdx] = lines[startLineIdx].replace(suggestion.replace_pattern, replacementText);
+                return lines.join('\n');
+            }
+
+            // For multi-line replacements, replace the whole pattern block
+            return currentContent.replace(suggestion.replace_pattern, replacementText);
+        }
+
+        // Fallback to simple replace if line-based logic doesn't find it
         return currentContent.replace(suggestion.replace_pattern, textToInsert);
     }
 
