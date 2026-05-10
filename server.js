@@ -88,6 +88,25 @@ const app = express();
 // Mount system routes
 app.use('/', systemRouter);
 
+// Log buffer for persistent in-memory logging (accessible via /logs)
+const logBuffer = [];
+const MAX_LOG_ENTRIES = 500;
+
+// Monkey-patch console methods to capture logs
+const originalLog = console.log;
+const originalWarn = console.warn;
+const originalError = console.error;
+
+function captureLog(level, args) {
+  const msg = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
+  logBuffer.push({ timestamp: new Date().toISOString(), level, message: msg });
+  if (logBuffer.length > MAX_LOG_ENTRIES) logBuffer.shift();
+}
+
+console.log = function(...args) { captureLog('info', args); originalLog.apply(console, args); };
+console.warn = function(...args) { captureLog('warn', args); originalWarn.apply(console, args); };
+console.error = function(...args) { captureLog('error', args); originalError.apply(console, args); };
+
 // Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
 const endpointTimings = [];
 const MAX_TIMING_ENTRIES = 500; // Increased from 100 to capture more history
@@ -7714,6 +7733,25 @@ app.get('/serverStatus', (req, res) => {
         cachePopulated: guidelinesCache.data !== null,
         guidelinesCount: guidelinesCache.data?.length || 0,
         timestamp: new Date().toISOString()
+    });
+});
+
+// Logs endpoint - returns recent server logs from in-memory buffer
+app.get('/logs', authenticateUser, (req, res) => {
+    const limit = parseInt(req.query.limit) || 100;
+    const level = req.query.level; // Optional filter: 'info', 'warn', 'error'
+
+    let logs = logBuffer;
+    if (level) {
+        logs = logs.filter(log => log.level === level);
+    }
+
+    const recentLogs = logs.slice(-limit);
+    res.json({
+        count: recentLogs.length,
+        total: logBuffer.length,
+        maxBufferSize: MAX_LOG_ENTRIES,
+        logs: recentLogs
     });
 });
 
