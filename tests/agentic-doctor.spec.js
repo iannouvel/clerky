@@ -23,6 +23,7 @@ import {
   decideGuideline,
   evaluateFinalNote,
   generateProcessFeedback,
+  evaluateSuggestionPlacement,
 } from './helpers/doctor-brain.js';
 
 // ── Config ──────────────────────────────────────────────────────────────
@@ -125,6 +126,32 @@ async function clickSkip(page) {
   if (await skipBtn.isVisible()) {
     await skipBtn.click();
   }
+}
+
+/** Open feedback modal and submit placement issue feedback */
+async function submitPlacementFeedback(page, placementIssue, suggestion) {
+  const feedbackBtn = page.locator('.sw-btn-feedback').first();
+  if (!await feedbackBtn.isVisible()) {
+    return false;
+  }
+
+  await feedbackBtn.click();
+  await page.waitForSelector('#wizard-feedback', { timeout: 5000 }).catch(() => {});
+
+  const feedbackTextarea = page.locator('[id*="feedback"][id*="text"]').first();
+  if (await feedbackTextarea.isVisible()) {
+    const message = `Placement Issue: ${placementIssue.issue}\n\nSuggestion: ${suggestion.text.slice(0, 80)}\n\nRecommended: ${placementIssue.recommendedAction}`;
+    await feedbackTextarea.fill(message);
+
+    const submitBtn = page.locator('[id*="feedback"][id*="submit"]').first();
+    if (await submitBtn.isVisible()) {
+      await submitBtn.click();
+      await page.waitForTimeout(500);
+      return true;
+    }
+  }
+
+  return false;
 }
 
 /** Fill in a wizard input field if present */
@@ -248,6 +275,30 @@ test.describe('Agentic Doctor Simulation', () => {
         // Ask Claude what a doctor would do
         const decision = await decideCompleteness(state.text, typedContent, state.inputType);
         log(`  Decision: ${decision.action} — ${decision.reason}`);
+
+        // Evaluate the placement (target_section) if visible
+        if (decision.action === 'accept' && state.index >= 0) {
+          try {
+            const placementEval = await evaluateSuggestionPlacement(
+              state.text,
+              'Exam', // this would ideally come from the wizard UI, but using default for now
+              typedContent,
+              state.why || 'Completeness check'
+            );
+
+            if (!placementEval.isCorrect && placementEval.issue) {
+              log(`  ⚠️ Placement Issue Detected: ${placementEval.issue}`);
+              const feedbackSubmitted = await submitPlacementFeedback(page, placementEval, state);
+              if (feedbackSubmitted) {
+                log(`  ✅ Feedback submitted via modal`);
+              }
+              // Continue with the suggestion after feedback
+              await page.waitForTimeout(500);
+            }
+          } catch (e) {
+            log(`  Error evaluating placement: ${e.message}`);
+          }
+        }
 
         if (decision.action === 'accept') {
           // Fill in the value if there's an input field

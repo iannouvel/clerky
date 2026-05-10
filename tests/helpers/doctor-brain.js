@@ -152,6 +152,40 @@ Respond in JSON:
 }
 
 /**
+ * Evaluate suggestion placement for correctness.
+ * Returns { isCorrect: boolean, issue?: string, recommendedAction?: string }
+ */
+export async function evaluateSuggestionPlacement(suggestionText, targetSection, noteContext, suggestionWhy) {
+  const text = await callClaude([{
+    role: 'user',
+    content: `You are a clinical documentation expert reviewing AI-generated suggestion placements.
+
+SUGGESTION: ${suggestionText}
+TARGET SECTION: ${targetSection}
+SUGGESTION RATIONALE: ${suggestionWhy}
+CURRENT NOTE: ${noteContext}
+
+Assess if this suggestion is placed in the CORRECT section:
+- Assessment section should contain diagnosis/clinical findings only
+- Plan section should contain treatments, referrals, medications, investigations
+- Exam/Objective should contain measurements, vital signs, test results
+- Subjective/History should contain patient-reported symptoms and history
+
+Is the placement correct? If not, where should it go?
+
+Respond in JSON only:
+{
+  "isCorrect": true/false,
+  "issue": "if incorrect, describe the problem (e.g., 'should be in Exam, not Plan')",
+  "recommendedAction": "if incorrect, suggest the right placement",
+  "reason": "brief explanation"
+}`
+  }]);
+
+  return parseJSON(text) || { isCorrect: true, reason: 'Could not parse evaluation' };
+}
+
+/**
  * Analyze the entire workflow and generate comprehensive feedback about
  * what worked well, what could be improved, and specific guideline issues.
  */
