@@ -7755,6 +7755,32 @@ app.get('/logs', authenticateUser, (req, res) => {
     });
 });
 
+// Debug logs endpoint - accessible via query parameter token (for external monitoring)
+app.get('/logs-debug', (req, res) => {
+    const token = req.query.token;
+    const debugToken = process.env.DEBUG_LOGS_TOKEN;
+
+    if (!token || token !== debugToken) {
+        return res.status(401).json({ error: 'Invalid or missing debug token' });
+    }
+
+    const limit = parseInt(req.query.limit) || 100;
+    const level = req.query.level; // Optional filter: 'info', 'warn', 'error'
+
+    let logs = logBuffer;
+    if (level) {
+        logs = logs.filter(log => log.level === level);
+    }
+
+    const recentLogs = logs.slice(-limit);
+    res.json({
+        count: recentLogs.length,
+        total: logBuffer.length,
+        maxBufferSize: MAX_LOG_ENTRIES,
+        logs: recentLogs
+    });
+});
+
 // Test all 5 AI models with minimal tokens (health check)
 // Cost: < $0.0001 total (fraction of a cent)
 app.get('/testModelHealth', authenticateUser, async (req, res) => {
