@@ -18215,7 +18215,11 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
             try {
                 const placementConfig = global.prompts?.['determineSuggestionPlacement'] || require('./prompts.json')['determineSuggestionPlacement'];
                 const placementPromptTemplate = placementConfig?.prompt || '';
-                const suggestionsForPlacement = suggestions.map(s => ({ id: s.id, missing_info: s.name || s.suggestion }));
+                // Assign sequential IDs for placement matching
+                const suggestionsForPlacement = suggestions.map((s, idx) => ({
+                    id: s.id || (idx + 1),
+                    missing_info: s.name || s.suggestion
+                }));
                 const placementPrompt = placementPromptTemplate
                     .replace('{{noteContent}}', transcript.substring(0, 4000))
                     .replace('{{suggestions}}', JSON.stringify(suggestionsForPlacement));
@@ -18229,9 +18233,11 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
                         const placementParsed = JSON.parse(placementJsonMatch ? placementJsonMatch[1].trim() : placementResponse.content.trim());
 
                         if (placementParsed?.placements && Array.isArray(placementParsed.placements)) {
-                            // Merge placement info into suggestions
-                            for (const suggestion of suggestions) {
-                                const placement = placementParsed.placements.find(p => p.id === suggestion.id);
+                            // Merge placement info into suggestions by matching ID or index
+                            for (let idx = 0; idx < suggestions.length; idx++) {
+                                const suggestion = suggestions[idx];
+                                const suggestId = suggestion.id || (idx + 1);
+                                const placement = placementParsed.placements.find(p => p.id === suggestId || p.id === (idx + 1));
                                 if (placement) {
                                     suggestion.target_section = placement.target_section;
                                     suggestion.replace_pattern = placement.replace_pattern;
