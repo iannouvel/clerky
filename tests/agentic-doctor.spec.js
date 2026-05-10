@@ -107,6 +107,8 @@ async function getWizardState(page) {
       type: current?.type || 'free-text',
       inputType: current?.inputType || current?.dataType || 'free-text',
       countLabel: countEl ? countEl.textContent : '',
+      target_section: current?.target_section || null,
+      missing_info: current?.missing_info || '',
     };
   });
 }
@@ -281,7 +283,7 @@ test.describe('Agentic Doctor Simulation', () => {
           try {
             const placementEval = await evaluateSuggestionPlacement(
               state.text,
-              'Exam', // this would ideally come from the wizard UI, but using default for now
+              state.target_section || 'Unknown', // use actual target_section from suggestion
               typedContent,
               state.why || 'Completeness check'
             );
@@ -358,7 +360,12 @@ test.describe('Agentic Doctor Simulation', () => {
         await selectAll.check();
       }
 
-      await checkpointBtn.click();
+      // Use page.evaluate() to click via JavaScript instead of locator.click()
+      // This avoids Playwright viewport visibility issues with fixed-position modals
+      await page.evaluate(() => {
+        const btn = document.getElementById('checkpoint-analyse-btn');
+        if (btn) btn.click();
+      });
       log('Selected all guidelines, clicked Analyse');
 
       // Wait for the modal to close
