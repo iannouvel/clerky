@@ -19514,30 +19514,9 @@ app.post('/applyDynamicAdvice', authenticateUser, async (req, res) => {
         }
 
         const { transcript, suggestions, guidelineTitle, guidelineId } = storedData;
+        const { determineSuggestionPlacement, applyPlacementChanges, renumberListInSection } = require('./server/utils/suggestionPlacement');
 
-        // Create AI prompt to apply user decisions to transcript
-        const systemPrompt = `You are a medical AI assistant that applies user decisions to clinical transcripts based on guideline suggestions.
-
-You will receive:
-1. An original transcript
-2. A list of suggestions with user decisions (accept, reject, or modify)
-3. For modifications, the user's custom text
-
-Your task is to apply only the ACCEPTED and MODIFIED suggestions to create an updated transcript. For each change:
-- ACCEPTED suggestions: Apply the suggested text exactly as provided
-- MODIFIED suggestions: Apply the user's modified text instead of the original suggestion
-- REJECTED suggestions: Leave the original text unchanged
-
-Return the updated transcript as clean, properly formatted medical text. Maintain the original structure and formatting as much as possible while incorporating the accepted changes.
-
-Important guidelines:
-- Only apply changes that the user has accepted or modified
-- Preserve the medical accuracy and professional tone
-- Maintain logical flow and readability
-- Do not add any explanatory text or comments
-- Return only the updated transcript`;
-
-        // Process decisions and create change instructions
+        // Process decisions and apply changes using shared placement logic
         const acceptedChanges = [];
         const modifiedChanges = [];
         const rejectedChanges = [];
@@ -19553,7 +19532,8 @@ Important guidelines:
                 suggestionId: suggestion.id,
                 action: decision.action,
                 originalText: suggestion.originalText?.substring(0, 50),
-                suggestedText: suggestion.suggestedText?.substring(0, 50)
+                suggestedText: suggestion.suggestedText?.substring(0, 50),
+                targetSection: suggestion.target_section
             });
 
             switch (decision.action) {
@@ -19563,7 +19543,8 @@ Important guidelines:
                 case 'modify':
                     modifiedChanges.push({
                         ...suggestion,
-                        modifiedText: decision.modifiedText
+                        suggested_content: decision.modifiedText,
+                        suggestedText: decision.modifiedText
                     });
                     break;
                 case 'reject':
@@ -19580,55 +19561,43 @@ Important guidelines:
             rejected: rejectedChanges.length
         });
 
-        // Create detailed instructions for AI
-        const changeInstructions = [
-            ...acceptedChanges.map(change =>
-                `ACCEPT: Replace "${change.originalText}" with "${change.suggestedText}" (Reason: ${change.context})`
-            ),
-            ...modifiedChanges.map(change =>
-                `MODIFY: Replace "${change.originalText}" with "${change.modifiedText}" (User's custom modification)`
-            )
-        ].join('\n');
+        // Apply all accepted and modified changes using shared placement logic
+        let updatedTranscript = transcript;
+        const allChanges = [...acceptedChanges, ...modifiedChanges];
 
-        const userPrompt = `Original Transcript:
-${transcript}
-Apply these changes:
-${changeInstructions}
-
-Return the updated transcript with these changes applied.`;
-
-        debugLog('[DEBUG] applyDynamicAdvice: Sending to AI', {
-            systemPromptLength: systemPrompt.length,
-            userPromptLength: userPrompt.length,
-            changesCount: acceptedChanges.length + modifiedChanges.length
-        });
-
-        // Send to AI
-        const messages = [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userPrompt }
-        ];
-
-        const aiResponse = await routeToAI({ messages }, userId);
-
-        debugLog('[DEBUG] applyDynamicAdvice: AI response received', {
-            success: !!aiResponse,
-            hasContent: !!aiResponse?.content,
-            contentLength: aiResponse?.content?.length,
-            aiProvider: aiResponse?.ai_provider
-        });
-
-        if (!aiResponse || !aiResponse.content) {
-            console.error('[DEBUG] applyDynamicAdvice: Invalid AI response:', aiResponse);
-            return res.status(500).json({ success: false, error: 'Invalid AI response from transcript update' });
+        for (const suggestion of allChanges) {
+            try {
+                const placement = determineSuggestionPlacement(suggestion, updatedTranscript);
+                updatedTranscript = applyPlacementChanges(updatedTranscript, placement);
+                debugLog('[DEBUG] applyDynamicAdvice: Applied suggestion', {
+                    suggestionId: suggestion.id,
+                    action: placement.action,
+                    changesCount: placement.changes.length
+                });
+            } catch (err) {
+                console.error('[DEBUG] applyDynamicAdvice: Error applying suggestion:', err.message);
+                debugLog('[DEBUG] applyDynamicAdvice: Skipped suggestion due to error:', {
+                    suggestionId: suggestion.id,
+                    error: err.message
+                });
+            }
         }
+
+        // Renumber lists in Plan section to fix duplicated numbers (6. 6., 7. 7., etc.)
+        updatedTranscript = renumberListInSection(updatedTranscript, 'Plan');
+
+        debugLog('[DEBUG] applyDynamicAdvice: Final transcript prepared', {
+            originalLength: transcript.length,
+            updatedLength: updatedTranscript.length,
+            changesApplied: allChanges.length
+        });
 
         // Update database with user decisions and final result
         try {
             const docRef = db.collection('dynamicAdvice').doc(sessionId);
             await docRef.update({
                 decisions,
-                updatedTranscript: aiResponse.content,
+                updatedTranscript,
                 status: 'completed',
                 completedAt: admin.firestore.FieldValue.serverTimestamp(),
                 changesSummary: {
@@ -19642,40 +19611,37 @@ Return the updated transcript with these changes applied.`;
             console.error('[DEBUG] applyDynamicAdvice: Database update error:', dbError.message);
         }
 
-        // Log the AI interaction
+        // Log the placement-based application
         try {
             await logAIInteraction(
                 {
-                    prompt: userPrompt,
-                    system_prompt: systemPrompt,
                     session_id: sessionId,
                     original_transcript_length: transcript.length,
+                    updated_transcript_length: updatedTranscript.length,
                     changes_applied: acceptedChanges.length + modifiedChanges.length,
                     decisions_summary: {
                         accepted: acceptedChanges.length,
                         modified: modifiedChanges.length,
                         rejected: rejectedChanges.length
-                    }
+                    },
+                    method: 'shared_placement_logic'
                 },
                 {
                     success: true,
-                    response: aiResponse.content,
-                    updated_transcript_length: aiResponse.content.length,
-                    ai_provider: aiResponse.ai_provider,
-                    ai_model: aiResponse.ai_model,
-                    token_usage: aiResponse.token_usage
+                    updated_transcript_length: updatedTranscript.length,
+                    method: 'determineSuggestionPlacement + applyPlacementChanges + renumberListInSection'
                 },
                 'applyDynamicAdvice'
             );
-            debugLog('[DEBUG] applyDynamicAdvice: AI interaction logged successfully');
+            debugLog('[DEBUG] applyDynamicAdvice: Placement-based changes logged successfully');
         } catch (logError) {
-            console.error('[DEBUG] applyDynamicAdvice: Error logging AI interaction:', logError.message);
+            console.error('[DEBUG] applyDynamicAdvice: Error logging interaction:', logError.message);
         }
 
         debugLog('[DEBUG] applyDynamicAdvice: Returning response', {
             sessionId,
             originalLength: transcript.length,
-            updatedLength: aiResponse.content.length,
+            updatedLength: updatedTranscript.length,
             changesApplied: acceptedChanges.length + modifiedChanges.length
         });
 
@@ -19683,7 +19649,7 @@ Return the updated transcript with these changes applied.`;
             success: true,
             sessionId,
             originalTranscript: transcript,
-            updatedTranscript: aiResponse.content,
+            updatedTranscript,
             changesSummary: {
                 accepted: acceptedChanges.length,
                 modified: modifiedChanges.length,

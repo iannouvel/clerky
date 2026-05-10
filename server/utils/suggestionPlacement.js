@@ -212,8 +212,45 @@ function applyPlacementChanges(noteContent, placement) {
     return updatedContent;
 }
 
+/**
+ * Renumber a list section after items have been added or removed
+ * @param {string} content - Note content
+ * @param {string} sectionName - Section name (e.g., "Plan")
+ * @returns {string} Content with renumbered list items
+ */
+function renumberListInSection(content, sectionName) {
+    const sectionInfo = extractSectionContent(content, sectionName);
+    if (!sectionInfo) return content;
+
+    const beforeSection = content.slice(0, sectionInfo.startIndex);
+    const sectionContent = content.slice(sectionInfo.startIndex, sectionInfo.endIndex);
+    const afterSection = content.slice(sectionInfo.endIndex);
+
+    // Split section into lines and renumber
+    const lines = sectionContent.split('\n');
+    let itemNumber = 1;
+    const renumberedLines = lines.map(line => {
+        const match = line.match(/^\d+\.\s+(.+)/);
+        if (match) {
+            return `${itemNumber}. ${match[1]}`;
+        } else if (/^\s{2,}[-*]/.test(line)) {
+            // Sub-item (indented bullet/dash) - leave as is
+            return line;
+        } else if (line.trim() === '') {
+            // Blank line
+            return line;
+        } else {
+            // Non-numbered content (section header, etc)
+            return line;
+        }
+    });
+
+    return beforeSection + renumberedLines.join('\n') + afterSection;
+}
+
 module.exports = {
     determineSuggestionPlacement,
     extractSectionContent,
-    applyPlacementChanges
+    applyPlacementChanges,
+    renumberListInSection
 };
