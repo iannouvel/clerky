@@ -18268,6 +18268,16 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
         }
 
         timer.step('Placement determination');
+
+        // CRITICAL: Sort suggestions by priority (high > medium > low) before returning
+        const priorityOrder = { 'high': 0, 'medium': 1, 'low': 2 };
+        suggestions.sort((a, b) => {
+            const aPriority = priorityOrder[a.priority?.toLowerCase()] ?? 3;
+            const bPriority = priorityOrder[b.priority?.toLowerCase()] ?? 3;
+            return aPriority - bPriority;
+        });
+        console.log('[SEMANTIC-SUGGESTIONS] Returning', suggestions.length, 'suggestions sorted by priority');
+
         timer.step('Format response');
         console.log('[SEMANTIC-SUGGESTIONS] Timing:', JSON.stringify(timer.getSummary()));
 
@@ -21113,6 +21123,11 @@ app.post('/assessNoteCompletenessStructured', authenticateUser, async (req, res)
         } else {
             console.warn('[COMPLETENESS-V2] No content in AI response');
         }
+
+        // CRITICAL: Sort suggestions by rank (1 = most important) before returning
+        missing_information.sort((a, b) => (a.rank || 999) - (b.rank || 999));
+        console.log('[COMPLETENESS-V2] Returning', missing_information.length, 'suggestions sorted by importance');
+
         res.json({ success: true, missing_information });
     } catch (error) {
         console.error('[COMPLETENESS-V2] Unhandled error:', error?.message || error);
