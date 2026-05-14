@@ -1204,6 +1204,60 @@ async function loadAllPracticePoints(guidelineId) {
 }
 
 /**
+ * Verify a model-produced quote against its source text, repairing it when the model
+ * paraphrased instead of copying. A genuine quote is a (normalised) substring of the
+ * source; otherwise the closest source sentence by significant-token overlap is
+ * substituted, or the quote is blanked when nothing is a confident match — better no
+ * quote than a fabricated one.
+ * @param {string} quote - The model-produced quote
+ * @param {string} sourceText - The text the quote should have been copied from
+ * @returns {{ quote: string, status: 'genuine'|'repaired'|'unverified' }}
+ */
+function repairVerbatimQuote(quote, sourceText) {
+    if (!quote) return { quote: '', status: 'genuine' };
+    if (!sourceText) return { quote, status: 'unverified' };
+
+    const norm = (s) => String(s)
+        .toLowerCase()
+        .replace(/[‘’“”]/g, "'")
+        .replace(/[–—]/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+    const normSource = norm(sourceText);
+    const normQuote = norm(quote);
+
+    // Already genuine — the model copied it (modulo punctuation/whitespace).
+    if (normQuote.length > 0 && normSource.includes(normQuote)) {
+        return { quote: quote.trim(), status: 'genuine' };
+    }
+
+    // Repair: find the source sentence/line with the best significant-token overlap.
+    const sigTokens = (s) => norm(s).split(/[^a-z0-9]+/).filter(t => t.length >= 4 || /^\d+$/.test(t));
+    const quoteTokens = new Set(sigTokens(quote));
+    if (quoteTokens.size === 0) return { quote: '', status: 'unverified' };
+
+    const candidates = sourceText
+        .split(/(?<=[.;:])\s+|\n+|(?=•)/)
+        .map(s => s.replace(/^[•\-\s]+/, '').trim())
+        .filter(s => s.length >= 15 && s.length <= 600);
+
+    let best = '';
+    let bestScore = 0;
+    for (const cand of candidates) {
+        const candTokens = new Set(sigTokens(cand));
+        if (candTokens.size === 0) continue;
+        let hits = 0;
+        for (const t of quoteTokens) if (candTokens.has(t)) hits++;
+        const score = hits / quoteTokens.size;
+        if (score > bestScore) { bestScore = score; best = cand; }
+    }
+
+    if (best && bestScore >= 0.6) return { quote: best, status: 'repaired' };
+    return { quote: '', status: 'unverified' };
+}
+
+/**
  * Evaluates whether a single practice point applies to a patient and, if so,
  * generates one actionable suggestion. Designed to be called in parallel across
  * all practice points for a guideline — one focused LLM call per point.
@@ -1325,6 +1379,22 @@ If it does not apply:
     }
 
     const applies = !!parsed.applies;
+
+    // The model is told to copy quotes verbatim but often paraphrases — verify each quote
+    // against its source and repair (or blank) it so the wizard never shows a fabricated quote.
+    let verbatimQuote = applies ? (parsed.verbatimQuote || null) : null;
+    let evidence = applies ? (parsed.evidence || null) : null;
+    if (applies && verbatimQuote) {
+        const r = repairVerbatimQuote(verbatimQuote, (guidelineContent || '').substring(0, 4000));
+        if (r.status !== 'genuine') console.log(`[VERBATIM-REPAIR] ${guidelineId} "${(point.name || '').substring(0, 50)}": verbatimQuote ${r.status}`);
+        verbatimQuote = r.quote || null;
+    }
+    if (applies && evidence) {
+        const r = repairVerbatimQuote(evidence, transcript);
+        if (r.status !== 'genuine') console.log(`[VERBATIM-REPAIR] ${guidelineId} "${(point.name || '').substring(0, 50)}": evidence ${r.status}`);
+        evidence = r.quote || null;
+    }
+
     return {
         pointId: point.id,
         pointName: point.name,
@@ -1333,8 +1403,8 @@ If it does not apply:
         suggestion: applies ? (parsed.suggestion || null) : null,
         priority: applies ? (parsed.priority || 'low') : null,
         why: applies ? (parsed.why || null) : null,
-        verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
-        evidence: applies ? (parsed.evidence || null) : null,
+        verbatimQuote,
+        evidence,
         originalText: applies ? (parsed.originalText || null) : null,
         sourceGuidelineId: guidelineId || null
     };
