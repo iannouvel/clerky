@@ -9983,7 +9983,7 @@ Return a JSON array with the same number of objects, each with: name, descriptio
                 messages: [
                     {
                         role: 'system',
-                        content: 'You are a clinical guideline analyst. Expand the given practice points with detailed applicability criteria. Return ONLY a valid JSON array. Each object must have: name, description (with APPLIES TO/NOT APPLICABLE/ACTION/THRESHOLDS sections), significance.'
+                        content: 'You are a clinical guideline analyst. You rewrite practice points as clear, plain-English clinical rules a clinician can act on directly — not as labelled criteria or templates. Return ONLY a valid JSON array. Each object must have: name, description, significance.'
                     },
                     {
                         role: 'user',
