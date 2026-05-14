@@ -1564,6 +1564,86 @@ Remove only suggestions that are biologically or demographically impossible for 
 }
 
 /**
+ * Collapse near-duplicate suggestions pooled from multiple guidelines/practice points.
+ * One AI call groups suggestions that call for the same action (even if worded
+ * differently or sourced differently) and keeps the strongest representative of each
+ * group. Conservative: only suggestions explicitly flagged as duplicates are dropped,
+ * and any failure keeps everything.
+ * @param {Array} suggestions - Array of suggestion objects (post impossible-filter)
+ * @param {string} clinicalNote - The clinical note text
+ * @param {string} userId - User ID for AI routing
+ * @returns {Promise<Object>} - { dedupedSuggestions, duplicatesRemoved }
+ */
+async function dedupeSuggestions(suggestions, clinicalNote, userId) {
+    if (!suggestions || suggestions.length <= 1) {
+        return { dedupedSuggestions: suggestions || [], duplicatesRemoved: [] };
+    }
+
+    console.log('[DEDUPE] Checking', suggestions.length, 'suggestions for near-duplicates');
+
+    const systemPrompt = `You are reviewing a pooled list of clinical suggestions gathered for one patient from several guidelines and practice points. Because each guideline and each practice point was analysed on its own, the same recommendation often appears more than once — sometimes worded differently, sometimes from a different source. Find those repeats so only one of each is kept.
+
+Two suggestions are duplicates when they ask the clinician to do the same thing — the same investigation, referral, medication, monitoring, or counselling — even if the wording, the cited guideline, or the practice point differs. They are not duplicates simply because they are clinically related: distinct actions stay distinct — a prerequisite assessment and the action it enables, two different investigations, gathering a result and acting on it. Only collapse suggestions that genuinely call for the same action.
+
+For each group of genuine duplicates, choose the single suggestion that is most specific, complete, and actionable to keep, and list the others as duplicates of it. Be conservative: if you are not sure two suggestions are the same recommendation, do not list them — keep both. A minor repeat is a small annoyance; silently dropping a real care gap is dangerous.
+
+Return only valid JSON. List only the suggestions to drop; anything not listed is kept:
+{
+  "duplicates": [
+    { "id": <ID of the suggestion to drop>, "duplicateOf": <ID of the equivalent suggestion being kept>, "reason": "<why these are the same recommendation>" }
+  ]
+}`;
+
+    const userPrompt = `CLINICAL NOTE:
+${clinicalNote}
+
+SUGGESTIONS:
+${suggestions.map((s, idx) => `[ID: ${idx}] ${s.suggestion || s.name || s.text || ''}${s.sourceGuidelineTitle ? ` (source: ${s.sourceGuidelineTitle})` : ''}`).join('\n')}
+
+Identify the genuine duplicates and return the JSON.`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, null, 2000);
+
+        if (!result || !result.content) {
+            console.warn('[DEDUPE] No response from AI, keeping all suggestions');
+            return { dedupedSuggestions: suggestions, duplicatesRemoved: [] };
+        }
+
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const dropIds = new Set((parsed.duplicates || [])
+            .map(d => d.id)
+            .filter(id => Number.isInteger(id) && id >= 0 && id < suggestions.length));
+
+        const dedupedSuggestions = suggestions.filter((_, idx) => !dropIds.has(idx));
+        const duplicatesRemoved = (parsed.duplicates || [])
+            .filter(d => dropIds.has(d.id))
+            .map(d => ({ ...suggestions[d.id], duplicateOf: d.duplicateOf, reason: d.reason }));
+
+        // Guard: a model that flags every suggestion as a duplicate has failed — keep everything.
+        if (dedupedSuggestions.length === 0 && suggestions.length > 0) {
+            console.warn(`[DEDUPE] Model flagged all ${suggestions.length} suggestions as duplicates — treating as failure, keeping all`);
+            return { dedupedSuggestions: suggestions, duplicatesRemoved: [] };
+        }
+
+        console.log(`[DEDUPE] ${dedupedSuggestions.length} kept, ${duplicatesRemoved.length} near-duplicates removed`);
+        if (duplicatesRemoved.length > 0) {
+            console.log('[DEDUPE] Removed:', duplicatesRemoved.map(d => `"${(d.suggestion || '').substring(0, 50)}..." (dup of ${d.duplicateOf})`));
+        }
+
+        return { dedupedSuggestions, duplicatesRemoved };
+    } catch (error) {
+        console.error('[DEDUPE] Error during dedup, keeping all suggestions:', error);
+        return { dedupedSuggestions: suggestions, duplicatesRemoved: [] };
+    }
+}
+
+/**
  * Sense-check retrieved guidelines to filter out irrelevant ones
  * @param {Object} categories - Categorized guidelines { mostRelevant: [], potentiallyRelevant: [], ... }
  * @param {string} clinicalNote - The clinical note text
@@ -2092,6 +2172,7 @@ module.exports = {
     analyzePointForPatient,
     refineSuggestions,
     senseCheckSuggestions,
+    dedupeSuggestions,
     senseCheckGuidelines,
     firstPassReasoning,
     mergeFirstPassWithSuggestions,

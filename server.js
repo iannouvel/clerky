@@ -49,6 +49,7 @@ const {
     filterRelevantPracticePoints,
     formatMessagesForProvider,
     senseCheckSuggestions,
+    dedupeSuggestions,
     senseCheckGuidelines,
     firstPassReasoning,
     mergeFirstPassWithSuggestions
@@ -18489,7 +18490,16 @@ app.post('/batchSenseCheck', authenticateUser, async (req, res) => {
 
         console.log(`[BATCH-SENSE-CHECK] ${result.validSuggestions.length} valid, ${result.filteredOut.length} filtered out`);
 
-        res.json({ success: true, validSuggestions: result.validSuggestions, filteredOut: result.filteredOut });
+        // Second pass: collapse near-duplicate suggestions pooled across guidelines/practice points.
+        const dedup = await dedupeSuggestions(result.validSuggestions, clinicalNote, userId);
+        console.log(`[BATCH-SENSE-CHECK] ${dedup.dedupedSuggestions.length} after dedup, ${dedup.duplicatesRemoved.length} near-duplicates removed`);
+
+        res.json({
+            success: true,
+            validSuggestions: dedup.dedupedSuggestions,
+            filteredOut: result.filteredOut,
+            duplicatesRemoved: dedup.duplicatesRemoved
+        });
     } catch (error) {
         console.error('[BATCH-SENSE-CHECK] Error:', error);
         res.status(500).json({ success: false, error: error.message });
