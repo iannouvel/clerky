@@ -569,34 +569,105 @@ async function fetchCondensedFile(guidelineFilename) {
 
 
 // Function to generate condensed text from content using AI
+// Max characters of guideline text to condense in a single AI request. Large
+// guidelines (e.g. 600k+ chars) overflow the model context if sent whole, so
+// anything bigger is split and condensed chunk-by-chunk. ~24k chars (~6k tokens)
+// leaves ample context headroom and keeps the condensed output within maxTokens.
+const CONDENSE_CHUNK_SIZE = 24000;
+
+// Split text into chunks no larger than maxChars, preferring to break on
+// paragraph, then sentence boundaries so each chunk is coherent for the AI.
+function chunkTextOnBoundaries(text, maxChars) {
+    const chunks = [];
+    let current = '';
+    const flush = () => { if (current.trim()) chunks.push(current); current = ''; };
+    const addUnit = (unit, sep) => {
+        if (current && current.length + unit.length + sep.length > maxChars) flush();
+        current += (current ? sep : '') + unit;
+    };
+
+    for (const para of text.split(/\n\n+/)) {
+        if (para.length <= maxChars) {
+            addUnit(para, '\n\n');
+            continue;
+        }
+        // Oversized paragraph: break it on sentence boundaries instead.
+        flush();
+        for (const sentence of para.split(/(?<=[.!?])\s+/)) {
+            if (sentence.length <= maxChars) {
+                addUnit(sentence, ' ');
+            } else {
+                // Pathological single "sentence" — hard split as a last resort.
+                flush();
+                for (let i = 0; i < sentence.length; i += maxChars) {
+                    chunks.push(sentence.slice(i, i + maxChars));
+                }
+            }
+        }
+        flush();
+    }
+    flush();
+    return chunks;
+}
+
+// Condense a single chunk of guideline text. maxTokens is raised to 8000 so a
+// full chunk's condensed output is not truncated.
+async function condenseChunk(text, userId = null) {
+    const prompt = `With the attached text from a clinical guideline, please return a condensed version of the text which removes clinically insignificant text, please remove all the scientific references, if there are any, at the end of the text as they do not need to be in the condensed output, please do not change the clinically significant text at all.
+
+Text to condense:
+${text}`;
+
+    const messages = [
+        {
+            role: 'system',
+            content: 'You are a medical text processing assistant. Condense clinical guidelines by removing insignificant content and references while preserving all clinically important information.'
+        },
+        { role: 'user', content: prompt }
+    ];
+
+    // Force DeepSeek for content generation to avoid OpenAI quota issues
+    const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId, 0.7, 120000, false, 8000);
+
+    if (aiResult && aiResult.content) {
+        return aiResult.content.trim();
+    }
+    console.warn(`[CONDENSE] AI did not return condensed text for chunk`);
+    return null;
+}
+
 async function generateCondensedText(fullText, userId = null) {
     try {
         console.log(`[CONDENSE] Starting text condensation, input length: ${fullText.length}`);
 
-        const prompt = `With the attached text from a clinical guideline, please return a condensed version of the text which removes clinically insignificant text, please remove all the scientific references, if there are any, at the end of the text as they do not need to be in the condensed output, please do not change the clinically significant text at all.
-
-Text to condense:
-${fullText}`;
-
-        const messages = [
-            {
-                role: 'system',
-                content: 'You are a medical text processing assistant. Condense clinical guidelines by removing insignificant content and references while preserving all clinically important information.'
-            },
-            { role: 'user', content: prompt }
-        ];
-
-        // Force DeepSeek for content generation to avoid OpenAI quota issues
-        const aiResult = await sendToAI(messages, 'deepseek-chat', null, userId);
-
-        if (aiResult && aiResult.content) {
-            const condensedText = aiResult.content.trim();
-            debugLog(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters`);
+        if (fullText.length <= CONDENSE_CHUNK_SIZE) {
+            const condensedText = await condenseChunk(fullText, userId);
+            if (condensedText) {
+                debugLog(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters`);
+            }
             return condensedText;
-        } else {
-            console.warn(`[CONDENSE] AI did not return condensed text`);
-            return null;
         }
+
+        // Too large for a single request — condense in chunks and recombine.
+        const chunks = chunkTextOnBoundaries(fullText, CONDENSE_CHUNK_SIZE);
+        console.log(`[CONDENSE] Input too large for one request — condensing in ${chunks.length} chunks`);
+
+        const condensedParts = [];
+        for (let i = 0; i < chunks.length; i++) {
+            const part = await condenseChunk(chunks[i], userId);
+            if (part) {
+                condensedParts.push(part);
+                console.log(`[CONDENSE] Chunk ${i + 1}/${chunks.length}: ${chunks[i].length} -> ${part.length} chars`);
+            } else {
+                // Keep the original text for this chunk rather than losing content.
+                condensedParts.push(chunks[i]);
+                console.warn(`[CONDENSE] Chunk ${i + 1}/${chunks.length} failed — keeping original text`);
+            }
+        }
+
+        const condensedText = condensedParts.join('\n\n');
+        debugLog(`[CONDENSE] Successfully condensed text: ${fullText.length} -> ${condensedText.length} characters (${chunks.length} chunks)`);
+        return condensedText;
 
     } catch (error) {
         console.error(`[CONDENSE] Error generating condensed text:`, error);
