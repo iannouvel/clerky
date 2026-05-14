@@ -3498,6 +3498,25 @@ body {
     line-height: 1.5;
 }
 
+.sw-quote-label {
+    display: block;
+    font-size: 0.7em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+}
+
+.sw-quote-evidence {
+    border-left-color: #14b8a6;
+}
+
+.sw-quote-guideline {
+    border-left-color: var(--accent-color);
+}
+
 .sw-input-section {
     flex: 1;
     display: flex;
