@@ -1222,7 +1222,7 @@ async function analyzePointForPatient(transcript, guidelineContent, guidelineTit
         ? `\n=== APPLICATION GUIDANCE (calibrated from training) ===\n${point.advice}\n`
         : '';
 
-    const systemPrompt = `You are a clinical decision support AI. For a given clinical note and a single practice point from a clinical guideline, decide whether that practice point applies to this patient right now — considering the clinical context, the temporal stage of care described in the note, and any calibrated guidance provided. If it applies, generate one precise actionable suggestion.`;
+    const systemPrompt = `You are a clinical decision support assistant. Given a clinical note, a single practice point from a clinical guideline, and any calibrated guidance on applying it, you decide whether that practice point applies to this patient right now — and if it does, you write one precise, actionable suggestion. You reason only from what the note actually documents, and you never invent patient facts to make a practice point fit.`;
 
     const userPrompt = `=== CLINICAL NOTE ===
 ${transcript}
@@ -1234,42 +1234,30 @@ ${guidelineContent.substring(0, 4000)}${guidelineContent.length > 4000 ? '\n...[
 Name: ${point.name}
 Description: ${point.description || point.name}
 ${adviceSection}
-Does this practice point apply to this patient right now?
-- "applies: true" — the action is clinically indicated for this patient AND is genuinely outstanding (not yet done, arranged, or implied by what is documented)
-- "applies: false" — for any of these reasons:
+Decide whether this practice point applies to this patient right now, then return JSON.
 
-ALREADY DONE (most common reason to return false):
-- The note explicitly documents the action as taken, planned, scheduled, or in progress
-- The note describes a management plan that necessarily implies this rule is already being followed — e.g. if an emergency caesarean is planned, tocolysis contraindication is already implicit; if a speculum examination is documented, avoiding digital examination is already satisfied; if the MDT is documented as assembled, MDT involvement is already met; if the patient is documented as admitted to a maternity unit, transfer to a maternity unit has already occurred
-- The note documents equivalent care under a different name — "senior fetal medicine consultant" satisfies "skilled operator"; "extensive counselling" satisfies a counselling requirement even if the exact figure is not quoted
+Two things both have to be true for it to apply. First, the patient genuinely meets the conditions the practice point is written for — check its preconditions against what the note documents, and don't reshape the patient to fit. A point written for an uncomplicated case does not apply to a complicated one; a postnatal point does not apply to an antenatal note; a point for one patient subtype does not apply to a different one; a point for one stage or acuity of care does not apply at another. Second, the action is still genuinely outstanding — not already done, arranged, in progress, or implied by the documented plan. Recognise clinical equivalence: a documented plan can satisfy a rule in different words, and a planned course of management can make a rule implicitly met. If the action is already covered, or the patient does not match, the practice point does not apply.
 
-WRONG CLINICAL CONTEXT:
-- The action belongs to a different stage of the patient's journey than the note describes — a postnatal recommendation does not apply to an antenatal note; a triage action (e.g. transfer, initial assessment) does not apply once the patient is already in the appropriate care setting; a pre-procedure preparation step does not apply after the procedure is documented as complete
-- The action is indicated only for a specific patient subtype and this patient does not match — e.g. a rule about unexplained APH does not apply when the cause is known; a twin-specific rule does not apply to a singleton
-- The action is clinically inappropriate given the current acuity — e.g. corticosteroids for lung maturation are not indicated when immediate emergency delivery is already underway; long-term antenatal care planning is not appropriate during acute resuscitation
+Anchor everything in what the note actually says. A practice point only applies if you can point to specific text in the clinical note that triggers it — the documented finding, history, or plan item that brings this patient within its scope. If no such text exists, it does not apply: return applies: false rather than reaching for an assumption. And never state or assume a patient fact the note does not document — a blood group, a weight, a measurement, a test result, a history. Where a recommendation depends on a value the note does not give, the suggestion is to obtain or check that value — never to assert it, and never to act on an assumed one.
 
-NOT INDICATED:
-- The clinical situation described in the note does not meet the condition that triggers this rule
-- The action has already been rendered irrelevant by events documented in the note (e.g. the patient has delivered, the procedure is complete)
+If it applies, write one concise suggestion a clinician can act on, specific to this patient. Keep it safe: do not offer an option that is contraindicated for this patient, even as an alternative.
 
-CRITICAL: If the clinical note already documents the action (e.g., referral already made, medication already started, test already sent), return applies: false. Suggesting something already done is always wrong.
-
-Return valid JSON only — no surrounding text or markdown:
-If applies:
+Return valid JSON only — no surrounding text or markdown.
+If it applies:
 {
   "applies": true,
-  "reason": "one sentence why",
+  "reason": "one sentence on why it applies",
   "suggestion": "concise actionable clinical suggestion written for a clinician",
   "priority": "high|medium|low",
   "why": "why this matters for THIS specific patient",
-  "verbatimQuote": "exact verbatim phrase copied from the guideline text above",
-  "evidence": "exact verbatim phrase from the CLINICAL NOTE showing this practice point applies to this patient — the documented finding, history, or plan item that triggers it",
-  "originalText": "exact text from the clinical note that this suggestion refines or replaces, or null if this is new information not replacing existing text"
+  "verbatimQuote": "the exact phrase from the guideline text above that states this recommendation — the line the suggestion is based on, not just a nearby sentence",
+  "evidence": "the exact phrase from the CLINICAL NOTE that triggers this practice point for this patient; if you cannot quote one, the practice point does not apply",
+  "originalText": "exact text from the clinical note that this suggestion refines or replaces, or null if it is new information not replacing existing text"
 }
-If does not apply:
+If it does not apply:
 {
   "applies": false,
-  "reason": "one sentence why not"
+  "reason": "one sentence on why not"
 }`;
 
     const result = await routeToAI({
