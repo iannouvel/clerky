@@ -23,6 +23,16 @@ window.openGuidelinePdf = async function(guidelineId, searchText) {
     }
 };
 
+/** Escape a string for safe interpolation into wizard HTML. */
+function swEscapeHtml(text) {
+    if (text == null) return '';
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
 // Tracks the pending showInsertionPreview timeout so stale timeouts can be cancelled
 let _previewTimeout = null;
 
@@ -315,14 +325,19 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             sourceBadgeHtml = `<span style="display:inline-block; font-size:0.7em; padding:2px 8px; border-radius:10px; background:${badge.bg}; border:1px solid ${badge.border}; color:${badge.text}; margin-left:8px; vertical-align:middle;">${badge.label}</span><span style="display:inline-block; font-size:0.7em; padding:2px 8px; border-radius:10px; background:var(--bg-tertiary); border:1px solid var(--border-color); color:var(--text-secondary); margin-left:4px; vertical-align:middle;">${elementLabel}</span>`;
         }
 
-        // Source link
+        // Source link — opens the guideline PDF at the quoted passage
         const sourceLinkHtml = sourceGuidelineId
-            ? `<div class="sw-source-link">Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" title="Open guideline PDF">${sourceName}</a></div>`
+            ? `<div class="sw-source-link">Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" title="Open the guideline PDF at this passage">${swEscapeHtml(sourceName)} &#x2197;</a></div>`
             : '';
 
-        // Verbatim quote block
+        // Evidence block — verbatim text from THIS patient's note that triggered the suggestion
+        const evidenceHtml = contextText
+            ? `<div class="sw-quote sw-quote-evidence"><span class="sw-quote-label">From this note</span>&ldquo;${swEscapeHtml(contextText)}&rdquo;</div>`
+            : '';
+
+        // Verbatim quote block — the guideline text the suggestion is based on
         const quoteHtml = verbatimQuote
-            ? `<div class="sw-quote">&ldquo;${verbatimQuote}&rdquo;</div>`
+            ? `<div class="sw-quote sw-quote-guideline"><span class="sw-quote-label">Guideline</span>&ldquo;${swEscapeHtml(verbatimQuote)}&rdquo;</div>`
             : '';
 
         // Structured input section
@@ -354,8 +369,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-body">
                 <div class="sw-suggestion-why">
                   <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
-                  <div class="sw-why-sentence">${suggestionReasoning}${sourceLinkHtml}</div>
+                  <div class="sw-why-sentence">${suggestionReasoning}</div>
                 </div>
+                ${evidenceHtml}
+                ${quoteHtml}
+                ${sourceLinkHtml}
                 ${inputSectionHtml}
               </div>
               <div class="sw-footer" id="${uniqueId}-actions">
