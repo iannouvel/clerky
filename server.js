@@ -1032,7 +1032,10 @@ ${sourceText}
 }
 
 // Function to generate summary from content using AI
-async function generateSummary(text, userId = null) {
+// NOTE: named generateSummaryFromText (not generateSummary) because a second
+// generateSummary(currentData, userId) is declared later in this file; as hoisted
+// function declarations the later one wins, so sharing the name silently broke this.
+async function generateSummaryFromText(text, userId = null) {
     try {
         console.log(`[SUMMARY] Starting summary generation, input length: ${text.length}`);
 
@@ -1190,7 +1193,7 @@ async function jobGenerateSummary(job, guidelineData) {
     const content = guidelineData.condensed || guidelineData.content;
     if (!content) throw new Error('No content to summarize');
 
-    const summary = await generateSummary(content, 'system');
+    const summary = await generateSummaryFromText(content, 'system');
     if (!summary) throw new Error('Failed to generate summary');
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
