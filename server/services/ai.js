@@ -1204,57 +1204,67 @@ async function loadAllPracticePoints(guidelineId) {
 }
 
 /**
- * Verify a model-produced quote against its source text, repairing it when the model
- * paraphrased instead of copying. A genuine quote is a (normalised) substring of the
- * source; otherwise the closest source sentence by significant-token overlap is
- * substituted, or the quote is blanked when nothing is a confident match — better no
- * quote than a fabricated one.
- * @param {string} quote - The model-produced quote
- * @param {string} sourceText - The text the quote should have been copied from
- * @returns {{ quote: string, status: 'genuine'|'repaired'|'unverified' }}
+ * Strict check: does `quote` appear verbatim in `sourceText`? Normalises only whitespace,
+ * curly quotes and dashes so trivial formatting differences still count — it does NOT
+ * paraphrase, fuzzy-match or substitute. A quote is genuine or it is not.
+ * @param {string} quote
+ * @param {string} sourceText
+ * @returns {boolean}
  */
-function repairVerbatimQuote(quote, sourceText) {
-    if (!quote) return { quote: '', status: 'genuine' };
-    if (!sourceText) return { quote, status: 'unverified' };
-
+function quoteAppearsInSource(quote, sourceText) {
+    if (!quote || !sourceText) return false;
     const norm = (s) => String(s)
         .toLowerCase()
         .replace(/[‘’“”]/g, "'")
         .replace(/[–—]/g, '-')
         .replace(/\s+/g, ' ')
         .trim();
+    const nq = norm(quote);
+    return nq.length > 0 && norm(sourceText).includes(nq);
+}
 
-    const normSource = norm(sourceText);
-    const normQuote = norm(quote);
+/**
+ * Focused re-extraction: when the per-point call paraphrased instead of copying, ask the
+ * model once more with the single job of copying exact wording out of the sources. The
+ * caller still re-verifies the result with quoteAppearsInSource — this only improves the
+ * chance of recovering a genuine quote rather than blanking it.
+ * @returns {Promise<{ verbatimQuote: string, evidence: string }>}
+ */
+async function reExtractQuotes(suggestionText, guidelineContent, transcript, userId, model) {
+    const systemPrompt = `You extract exact quotes. Given a clinical recommendation, the guideline text it came from, and a clinical note, you return wording that already exists in those sources, copied character-for-character. You never paraphrase, summarise, shorten, or compose. If the exact words are not present in a source, you return an empty string for that field.`;
 
-    // Already genuine — the model copied it (modulo punctuation/whitespace).
-    if (normQuote.length > 0 && normSource.includes(normQuote)) {
-        return { quote: quote.trim(), status: 'genuine' };
+    const userPrompt = `RECOMMENDATION:
+${suggestionText}
+
+=== GUIDELINE TEXT ===
+${(guidelineContent || '').substring(0, 4000)}
+
+=== CLINICAL NOTE ===
+${transcript || ''}
+
+Return JSON only:
+{
+  "verbatimQuote": "the exact sentence or phrase from the GUIDELINE TEXT that states this recommendation, copied word-for-word; empty string if no exact wording in the guideline text covers it",
+  "evidence": "the exact phrase from the CLINICAL NOTE showing this recommendation applies to this patient, copied word-for-word; empty string if the note contains no such phrase"
+}`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, model, 800, 'evaluation');
+        if (!result?.content) return { verbatimQuote: '', evidence: '' };
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        return {
+            verbatimQuote: typeof parsed.verbatimQuote === 'string' ? parsed.verbatimQuote : '',
+            evidence: typeof parsed.evidence === 'string' ? parsed.evidence : ''
+        };
+    } catch (e) {
+        console.warn('[VERBATIM-VERIFY] re-extraction failed:', e.message);
+        return { verbatimQuote: '', evidence: '' };
     }
-
-    // Repair: find the source sentence/line with the best significant-token overlap.
-    const sigTokens = (s) => norm(s).split(/[^a-z0-9]+/).filter(t => t.length >= 4 || /^\d+$/.test(t));
-    const quoteTokens = new Set(sigTokens(quote));
-    if (quoteTokens.size === 0) return { quote: '', status: 'unverified' };
-
-    const candidates = sourceText
-        .split(/(?<=[.;:])\s+|\n+|(?=•)/)
-        .map(s => s.replace(/^[•\-\s]+/, '').trim())
-        .filter(s => s.length >= 15 && s.length <= 600);
-
-    let best = '';
-    let bestScore = 0;
-    for (const cand of candidates) {
-        const candTokens = new Set(sigTokens(cand));
-        if (candTokens.size === 0) continue;
-        let hits = 0;
-        for (const t of quoteTokens) if (candTokens.has(t)) hits++;
-        const score = hits / quoteTokens.size;
-        if (score > bestScore) { bestScore = score; best = cand; }
-    }
-
-    if (best && bestScore >= 0.6) return { quote: best, status: 'repaired' };
-    return { quote: '', status: 'unverified' };
 }
 
 /**
@@ -1380,19 +1390,39 @@ If it does not apply:
 
     const applies = !!parsed.applies;
 
-    // The model is told to copy quotes verbatim but often paraphrases — verify each quote
-    // against its source and repair (or blank) it so the wizard never shows a fabricated quote.
+    // "Verbatim" must mean verbatim. Verify each quote is a genuine substring of its source;
+    // if the model paraphrased, give it one focused re-extraction attempt, then verify again.
+    // A quote that still can't be verified is blanked — never substituted, fuzzy-matched or guessed.
     let verbatimQuote = applies ? (parsed.verbatimQuote || null) : null;
     let evidence = applies ? (parsed.evidence || null) : null;
-    if (applies && verbatimQuote) {
-        const r = repairVerbatimQuote(verbatimQuote, (guidelineContent || '').substring(0, 4000));
-        if (r.status !== 'genuine') console.log(`[VERBATIM-REPAIR] ${guidelineId} "${(point.name || '').substring(0, 50)}": verbatimQuote ${r.status}`);
-        verbatimQuote = r.quote || null;
-    }
-    if (applies && evidence) {
-        const r = repairVerbatimQuote(evidence, transcript);
-        if (r.status !== 'genuine') console.log(`[VERBATIM-REPAIR] ${guidelineId} "${(point.name || '').substring(0, 50)}": evidence ${r.status}`);
-        evidence = r.quote || null;
+    if (applies) {
+        const guidelineSource = (guidelineContent || '').substring(0, 4000);
+        const vqOk = !!verbatimQuote && quoteAppearsInSource(verbatimQuote, guidelineSource);
+        const evOk = !!evidence && quoteAppearsInSource(evidence, transcript);
+
+        if ((verbatimQuote && !vqOk) || (evidence && !evOk)) {
+            const tag = `${guidelineId} "${(point.name || '').substring(0, 50)}"`;
+            const re = await reExtractQuotes(parsed.suggestion || point.name, guidelineContent, transcript, userId, model);
+
+            if (verbatimQuote && !vqOk) {
+                if (re.verbatimQuote && quoteAppearsInSource(re.verbatimQuote, guidelineSource)) {
+                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote recovered by re-extraction`);
+                    verbatimQuote = re.verbatimQuote.trim();
+                } else {
+                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote not verifiable — blanked`);
+                    verbatimQuote = null;
+                }
+            }
+            if (evidence && !evOk) {
+                if (re.evidence && quoteAppearsInSource(re.evidence, transcript)) {
+                    console.log(`[VERBATIM-VERIFY] ${tag}: evidence recovered by re-extraction`);
+                    evidence = re.evidence.trim();
+                } else {
+                    console.log(`[VERBATIM-VERIFY] ${tag}: evidence not verifiable — blanked`);
+                    evidence = null;
+                }
+            }
+        }
     }
 
     return {
