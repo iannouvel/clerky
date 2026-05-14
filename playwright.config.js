@@ -33,8 +33,11 @@ export default defineConfig({
   // No retries locally
   retries: 0,
 
-  // Limit concurrent workers to reduce resource usage
-  workers: 2,
+  // Single worker: these probes run full note-analysis workflows against a
+  // shared live backend. With workers > 1, separate spec files run concurrently
+  // (fullyParallel:false only serialises tests *within* a file), stacking two
+  // full workflows and risking the backend's memory limit.
+  workers: 1,
 
   // Lightweight reporter - no HTML (creates large asset folders)
   reporter: [
