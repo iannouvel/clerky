@@ -805,6 +805,7 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
                 reasoning: r.reason || '',
                 why: r.why || '',
                 verbatimQuote: r.verbatimQuote || '',
+                evidence: r.evidence || '',
                 sourceGuidelineId: r.sourceGuidelineId || guidelineId
             };
             // Only include originalText if it's a verbatim match in the clinical note
@@ -1262,6 +1263,7 @@ If applies:
   "priority": "high|medium|low",
   "why": "why this matters for THIS specific patient",
   "verbatimQuote": "exact verbatim phrase copied from the guideline text above",
+  "evidence": "exact verbatim phrase from the CLINICAL NOTE showing this practice point applies to this patient — the documented finding, history, or plan item that triggers it",
   "originalText": "exact text from the clinical note that this suggestion refines or replaces, or null if this is new information not replacing existing text"
 }
 If does not apply:
@@ -1313,11 +1315,13 @@ If does not apply:
                         const prioMatch = block.match(/"priority"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         const whyMatch = block.match(/"why"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         const quoteMatch = block.match(/"verbatimQuote"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+                        const evidMatch = block.match(/"evidence"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         const origMatch = block.match(/"originalText"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
                         if (suggMatch) parsed.suggestion = suggMatch[1];
                         if (prioMatch) parsed.priority = prioMatch[1];
                         if (whyMatch) parsed.why = whyMatch[1];
                         if (quoteMatch) parsed.verbatimQuote = quoteMatch[1];
+                        if (evidMatch) parsed.evidence = evidMatch[1];
                         if (origMatch) parsed.originalText = origMatch[1];
                     }
                     console.warn(`[PER-POINT] Recovered malformed JSON via regex for point ${point.id}: applies=${parsed.applies}`);
@@ -1342,6 +1346,7 @@ If does not apply:
         priority: applies ? (parsed.priority || 'low') : null,
         why: applies ? (parsed.why || null) : null,
         verbatimQuote: applies ? (parsed.verbatimQuote || null) : null,
+        evidence: applies ? (parsed.evidence || null) : null,
         originalText: applies ? (parsed.originalText || null) : null,
         sourceGuidelineId: guidelineId || null
     };
