@@ -18232,6 +18232,9 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
             significance: suggestion.priority || 'medium',
             issue: dedupeAdjacentRepeatText(suggestion.issue || ''),
             suggestion: dedupeAdjacentRepeatText(suggestion.suggestion || ''),
+            // Verbatim quote from the clinical note that triggered this recommendation.
+            // The wizard reads `evidence` (suggestionWizard.js) to anchor the suggestion to the note.
+            evidence: suggestion.evidence || '',
             why: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
             context: dedupeAdjacentRepeatText(suggestion.why || suggestion.reasoning || suggestion.rationale || ''),
             priority: suggestion.priority || 'medium',

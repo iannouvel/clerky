@@ -88,8 +88,10 @@ test-results/
 playwright-report/
 playwright/.cache/
 tests/.auth/
+tests/.last-*.json
 
 # Firebase Admin SDK service account (never commit)
 serviceAccount.json
 scripts/serviceAccount.json
 .firebase-service-account.json
+server/config/serviceAccountKey.json
