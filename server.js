@@ -1122,7 +1122,8 @@ const batchProgressMap = new Map();
 const {
     queueJob,
     clearJobQueue,
-    registerJobHandler
+    registerJobHandler,
+    getActiveGuidelineIds
 } = require('./server/services/job-queue');
 
 // Register job handlers (using setTimeout to ensure all functions are loaded if using declared functions)
@@ -1423,15 +1424,37 @@ async function scanAndProcessIncompleteGuidelines() {
         const snapshot = await db.collection('guidelines').get();
         let incomplete_count = 0;
         let already_processing = 0;
+        let recovered_count = 0;
+
+        // Guideline IDs with jobs actually queued/running in this server process.
+        // The job queue is in-memory, so a `processing: true` flag with no matching
+        // in-process job is orphaned — e.g. the server restarted mid-job. Without
+        // this check such guidelines are skipped forever and never finish.
+        const activeGuidelineIds = getActiveGuidelineIds();
+        const STALE_PROCESSING_MS = 15 * 60 * 1000; // 15 min grace before treating as orphaned
 
         for (const doc of snapshot.docs) {
             const guidelineId = doc.id;
             const data = doc.data();
 
-            // Skip if already processing
             if (data.processing) {
-                already_processing++;
-                continue;
+                // Genuinely being processed by this server process — leave it alone.
+                if (activeGuidelineIds.has(guidelineId)) {
+                    already_processing++;
+                    continue;
+                }
+                // Orphaned flag. Give recently-touched docs a grace window in case a
+                // job is mid-flight elsewhere, otherwise fall through and recover by
+                // re-queueing whatever steps are still missing.
+                const lastUpdatedMs = data.lastUpdated && typeof data.lastUpdated.toMillis === 'function'
+                    ? data.lastUpdated.toMillis()
+                    : 0;
+                if (Date.now() - lastUpdatedMs < STALE_PROCESSING_MS) {
+                    already_processing++;
+                    continue;
+                }
+                console.log(`[BACKGROUND_SCAN] Orphaned processing flag on ${guidelineId} (no in-process job, stale ${Math.round((Date.now() - lastUpdatedMs) / 60000)}min) — recovering`);
+                recovered_count++;
             }
 
             // Check for missing content
@@ -1478,7 +1501,7 @@ async function scanAndProcessIncompleteGuidelines() {
             }
         }
 
-        console.log(`[BACKGROUND_SCAN] Scan complete: ${incomplete_count} queued, ${already_processing} already processing`);
+        console.log(`[BACKGROUND_SCAN] Scan complete: ${incomplete_count} queued (${recovered_count} recovered from orphaned flags), ${already_processing} already processing`);
 
         // Also scan for processed guidelines that need vector DB ingestion
         await scanForMissingVectorDbIngestion();

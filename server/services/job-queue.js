@@ -7,6 +7,10 @@ const { debugLog } = require('../config/logger');
 
 const jobQueue = [];
 const processingJobs = new Set();
+// guidelineId -> count of jobs currently queued or processing for that guideline.
+// Used so the background scanner can tell a genuinely-in-progress guideline apart
+// from one whose `processing` flag was orphaned by a server restart.
+const activeGuidelineJobs = new Map();
 const MAX_CONCURRENT_JOBS = 3;
 let isProcessingQueue = false;
 let cancelJobQueue = false; // Flag to stop processing
@@ -22,6 +26,39 @@ const jobHandlers = {};
 function registerJobHandler(type, handler) {
     jobHandlers[type] = handler;
     debugLog(`[JOB_QUEUE] Registered handler for job type: ${type}`);
+}
+
+/**
+ * Increment the in-flight job count for a guideline.
+ * @param {string} guidelineId
+ */
+function incrementActive(guidelineId) {
+    activeGuidelineJobs.set(guidelineId, (activeGuidelineJobs.get(guidelineId) || 0) + 1);
+}
+
+/**
+ * Decrement the in-flight job count for a guideline, removing it at zero.
+ * @param {string} guidelineId
+ */
+function decrementActive(guidelineId) {
+    const remaining = (activeGuidelineJobs.get(guidelineId) || 0) - 1;
+    if (remaining > 0) {
+        activeGuidelineJobs.set(guidelineId, remaining);
+    } else {
+        activeGuidelineJobs.delete(guidelineId);
+    }
+}
+
+/**
+ * Get the set of guideline IDs that currently have jobs either queued or
+ * actively processing in THIS server process. Anything with `processing: true`
+ * in Firestore but not in this set has an orphaned flag (e.g. from a restart).
+ * @returns {Set<string>}
+ */
+function getActiveGuidelineIds() {
+    const ids = new Set(activeGuidelineJobs.keys());
+    for (const job of jobQueue) ids.add(job.guidelineId);
+    return ids;
 }
 
 /**
@@ -92,13 +129,16 @@ async function processJobQueue() {
         if (!job) continue;
 
         processingJobs.add(job.id);
+        incrementActive(job.guidelineId);
 
         // Process job asynchronously
         processJob(job).then(() => {
             processingJobs.delete(job.id);
+            decrementActive(job.guidelineId);
         }).catch((error) => {
             console.error(`[JOB_QUEUE] Job ${job.id} failed:`, error);
             processingJobs.delete(job.id);
+            decrementActive(job.guidelineId);
         });
 
         // Small delay between job starts
@@ -181,5 +221,6 @@ async function processJob(job) {
 module.exports = {
     queueJob,
     clearJobQueue,
-    registerJobHandler
+    registerJobHandler,
+    getActiveGuidelineIds
 };
