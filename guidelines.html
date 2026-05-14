@@ -1054,7 +1054,10 @@
             function showProcessingModal(fileName) {
                 resetProcessingSteps();
                 document.getElementById('processingFileName').textContent = fileName;
-                document.getElementById('processingModal').style.display = 'flex';
+                // Use 'block' (not 'flex') to match the preferences modal: a flex
+                // .modal stretches .modal-content to max-height via align-items:stretch,
+                // leaving dead space and breaking the internal layout.
+                document.getElementById('processingModal').style.display = 'block';
                 updateProcessingStep('step-upload', 'in-progress');
             }
             
