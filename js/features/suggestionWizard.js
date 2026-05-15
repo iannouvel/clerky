@@ -288,11 +288,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Safely access properties
         const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name || suggestion.issue || suggestion.text || suggestion.title || suggestion.description || suggestion.content || suggestion.advice || 'No text available';
-        const suggestionReasoning = suggestion.why || suggestion.notCoveredBy || suggestion.reasoning || suggestion.rationale || suggestion.source || 'Based on guideline recommendations';
         const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || '';
         const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
-        const contextText = suggestion.evidence || '';
         const dataTypeOptions = suggestion.data_type_and_options || null;
 
         const escapedText = suggestionText.replace(/"/g, '&quot;');
@@ -330,11 +328,6 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             ? `<div class="sw-source-link">Source: <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}', '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'); return false;" title="Open the guideline PDF at this passage">${swEscapeHtml(sourceName)} &#x2197;</a></div>`
             : '';
 
-        // Evidence block — verbatim text from THIS patient's note that triggered the suggestion
-        const evidenceHtml = contextText
-            ? `<div class="sw-quote sw-quote-evidence"><span class="sw-quote-label">From this note</span>&ldquo;${swEscapeHtml(contextText)}&rdquo;</div>`
-            : '';
-
         // Verbatim quote block — the guideline text the suggestion is based on
         const quoteHtml = verbatimQuote
             ? `<div class="sw-quote sw-quote-guideline"><span class="sw-quote-label">Guideline</span>&ldquo;${swEscapeHtml(verbatimQuote)}&rdquo;</div>`
@@ -369,9 +362,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-body">
                 <div class="sw-suggestion-why">
                   <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
-                  <div class="sw-why-sentence">${suggestionReasoning}</div>
                 </div>
-                ${evidenceHtml}
                 ${quoteHtml}
                 ${sourceLinkHtml}
                 ${inputSectionHtml}
