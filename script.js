@@ -7806,7 +7806,7 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 
         const container = document.createElement('div');
         container.className = 'guideline-selection-checkpoint';
-        container.style.cssText = 'display: flex; flex-direction: column; gap: 16px;';
+        container.style.cssText = 'display: flex; flex-direction: column; gap: 16px; flex: 1 1 auto; min-height: 0; overflow: hidden;';
 
         // Count pre-selected (score >= 0.6)
         const preSelected = guidelines.filter(g => (g.relevance || 0) >= 0.6);
