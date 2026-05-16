@@ -13,22 +13,6 @@ const path = require('path');
  */
 async function logAIInteraction(prompt, response, endpoint, userId = null) {
     try {
-        // OPTIMISATION: Only log important interactions to reduce noise
-        const importantEndpoints = [
-            'submit', 'reply', 'findRelevantGuidelines', 'checkAgainstGuidelines',
-            'generateClinicalNote', 'error', 'failure', 'handleAction', 'handleIssues',
-            'analyzeNoteAgainstGuideline'
-        ];
-
-        const shouldLog = importantEndpoints.some(important => endpoint.includes(important)) ||
-            (response && response.error) ||
-            (response && response.critical);
-
-        if (!shouldLog) {
-            // Skipping non-critical endpoint logging to reduce noise
-            return true;
-        }
-
         // Get current timestamp
         const timestamp = new Date().toISOString();
 
