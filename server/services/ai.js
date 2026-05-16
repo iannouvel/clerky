@@ -22,6 +22,7 @@ const stringSimilarity = require('string-similarity');
 const { db, admin } = require('../config/firebase');
 const { debugLog } = require('../config/logger');
 const { AI_PROVIDER_PREFERENCE, AI_MODEL_REGISTRY } = require('../config/constants');
+const { logAIInteraction } = require('../utils/aiLogger');
 const {
     getUserAIPreference,
     getProviderFromModel,
@@ -557,6 +558,9 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
                     result = await sendToAI(prompt, tryModel, null, userId, 0.7, 120000, skipUserPreference, maxTokens);
                 }
                 console.log(`[ROUTE-AI-FALLBACK] ✓ Success with ${tryProvider}`);
+                // Fire-and-forget log so every AI call leaves a trace without adding latency
+                logAIInteraction(prompt, result, `routeToAI:${tryProvider}:${taskComplexity || 'default'}`, userId)
+                    .catch(err => console.warn('[ROUTE-AI] logAIInteraction failed:', err?.message));
                 return result;
             } catch (error) {
                 lastError = error;
@@ -572,6 +576,9 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         throw lastError || new Error('All AI providers failed');
     } catch (error) {
         console.error('[DEBUG] Error in routeToAI:', error.message);
+        // Log the failure so it's visible in dev.html alongside successful calls
+        logAIInteraction(prompt, { error: true, content: error?.message || String(error) }, `routeToAI:error:${taskComplexity || 'default'}`, userId)
+            .catch(err => console.warn('[ROUTE-AI] error log failed:', err?.message));
         throw error;
     }
 }
