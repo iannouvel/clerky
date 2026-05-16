@@ -291,6 +291,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const sourceName = suggestion.sourceGuidelineName || suggestion.guidelineTitle || '';
         const sourceGuidelineId = suggestion.sourceGuidelineId || suggestion.guidelineId || '';
         const verbatimQuote = suggestion.verbatimQuote || '';
+        const contextText = suggestion.evidence || '';
         const dataTypeOptions = suggestion.data_type_and_options || null;
 
         const escapedText = suggestionText.replace(/"/g, '&quot;');
@@ -333,6 +334,12 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             ? `<div class="sw-quote sw-quote-guideline"><span class="sw-quote-label">Guideline</span>&ldquo;${swEscapeHtml(verbatimQuote)}&rdquo;</div>`
             : '';
 
+        // Details link — opens a popup with the note-side evidence and a feedback path,
+        // for cases where the user wants to verify how the suggestion applies to this patient
+        const detailsLinkHtml = contextText
+            ? `<div class="sw-details-link"><a href="#" onclick="openSuggestionEvidenceModal(); return false;">&#9432; Why this applies to this patient</a></div>`
+            : '';
+
         // Structured input section
         const inputSectionHtml = dataTypeOptions
             ? `<div class="sw-input-section">
@@ -364,6 +371,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                   <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
                 </div>
                 ${quoteHtml}
+                ${detailsLinkHtml}
                 ${sourceLinkHtml}
                 ${inputSectionHtml}
               </div>
@@ -771,6 +779,47 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
     // Initial render
     renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
 }
+
+// Open a popup showing the note-side evidence that triggered this suggestion,
+// with a route through to the feedback modal for controversial-looking suggestions.
+window.openSuggestionEvidenceModal = function() {
+    const state = window.suggestionWizardState;
+    if (!state || state.currentIndex >= state.queue.length) return;
+
+    const suggestion = state.queue[state.currentIndex];
+    if (!suggestion) return;
+
+    const evidence = suggestion.evidence || '';
+    if (!evidence) return;
+
+    const modalId = `wizard-evidence-${Date.now()}`;
+    const escapeHtml = (text) => String(text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+    const modalHtml = `
+        <div id="${modalId}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 11000; display: flex; justify-content: center; align-items: center;">
+            <div style="background: var(--bg-primary, #fff); padding: 24px; border-radius: 8px; width: 540px; max-width: 95%; max-height: 85vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                <h3 style="margin: 0 0 12px 0; color: var(--text-primary);">Why this applies to this patient</h3>
+                <p style="margin: 0 0 12px 0; color: var(--text-secondary); font-size: 0.9em;">This suggestion was triggered by the following line in the note:</p>
+                <div class="sw-quote sw-quote-evidence" style="margin-bottom: 8px;">
+                    <span class="sw-quote-label">From this note</span>&ldquo;${escapeHtml(evidence)}&rdquo;
+                </div>
+                <p style="margin: 20px 0 12px 0; color: var(--text-secondary); font-size: 0.9em;">If the suggestion doesn't fit this case, tell us why:</p>
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button id="${modalId}-close" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Close</button>
+                    <button id="${modalId}-feedback" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Send feedback</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+    const modal = document.getElementById(modalId);
+    document.getElementById(`${modalId}-close`).onclick = () => modal.remove();
+    document.getElementById(`${modalId}-feedback`).onclick = () => {
+        modal.remove();
+        window.openWizardFeedbackModal();
+    };
+};
 
 // Open feedback modal for wizard suggestion, including practice point reference
 window.openWizardFeedbackModal = function() {
