@@ -3486,6 +3486,21 @@ body {
     text-decoration: none;
 }
 
+.sw-details-link {
+    margin-top: 8px;
+    font-size: 0.85em;
+}
+
+.sw-details-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sw-details-link a:hover {
+    text-decoration: underline;
+}
+
 .sw-quote {
     background: rgba(0, 0, 0, 0.03);
     border-left: 3px solid var(--border-color);
