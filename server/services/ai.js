@@ -272,7 +272,7 @@ function formatMessagesForProvider(messages, provider) {
  * @returns {Object} returns.token_usage - Token usage statistics
  * @throws {Error} If no AI provider API keys are configured or request fails
  */
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false, maxTokens = 4000) {
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false, maxTokens = 4000, taskComplexity = null) {
     let preferredProvider = 'DeepSeek';
     const sendToAIStartTime = Date.now();
 
@@ -403,7 +403,7 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
                 userId: userId || 'anonymous',
                 provider: preferredProvider,
                 model,
-                endpoint: 'sendToAI',
+                endpoint: taskComplexity ? `sendToAI:${taskComplexity}` : 'sendToAI',
                 promptTokens: tokenUsage.prompt_tokens || 0,
                 completionTokens: tokenUsage.completion_tokens || 0,
                 totalTokens: tokenUsage.total_tokens || 0,
@@ -513,7 +513,10 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
             }
         }
 
-        const skipUserPreference = !!preferredProvider;
+        // routeToAI has already resolved user preferences (via task complexity or
+        // direct user pref above), so sendToAI must not re-apply them and silently
+        // swap providers — that previously caused log entries where the endpoint
+        // label said one provider but the actual call went to another.
         let result;
         let lastError;
 
@@ -553,14 +556,11 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
 
                 if (typeof prompt === 'object' && prompt.messages) {
                     const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
-                    result = await sendToAI(prompt.messages, tryModel, null, userId, temperature, 120000, skipUserPreference, maxTokens);
+                    result = await sendToAI(prompt.messages, tryModel, null, userId, temperature, 120000, true, maxTokens, taskComplexity);
                 } else {
-                    result = await sendToAI(prompt, tryModel, null, userId, 0.7, 120000, skipUserPreference, maxTokens);
+                    result = await sendToAI(prompt, tryModel, null, userId, 0.7, 120000, true, maxTokens, taskComplexity);
                 }
                 console.log(`[ROUTE-AI-FALLBACK] ✓ Success with ${tryProvider}`);
-                // Fire-and-forget log so every AI call leaves a trace without adding latency
-                logAIInteraction(prompt, result, `routeToAI:${tryProvider}:${taskComplexity || 'default'}`, userId)
-                    .catch(err => console.warn('[ROUTE-AI] logAIInteraction failed:', err?.message));
                 return result;
             } catch (error) {
                 lastError = error;
