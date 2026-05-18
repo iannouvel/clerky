@@ -5,34 +5,81 @@
  * Uses fetch directly to avoid CJS/ESM module conflicts with the SDK.
  */
 
-const API_URL = 'https://api.anthropic.com/v1/messages';
-const MODEL = 'claude-haiku-4-5-20251001'; // fast + cheap for test decisions
+const ANTHROPIC_URL = 'https://api.anthropic.com/v1/messages';
+const ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001';
+const GEMINI_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
 
-async function callClaude(messages, maxTokens = 512) {
+async function callAnthropic(messages, maxTokens) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error('ANTHROPIC_API_KEY environment variable is required');
+  if (!apiKey) {
+    const e = new Error('ANTHROPIC_API_KEY not set');
+    e.noKey = true;
+    throw e;
+  }
 
-  const resp = await fetch(API_URL, {
+  const resp = await fetch(ANTHROPIC_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': apiKey,
       'anthropic-version': '2023-06-01',
     },
+    body: JSON.stringify({ model: ANTHROPIC_MODEL, max_tokens: maxTokens, messages }),
+  });
+
+  if (!resp.ok) {
+    const err = await resp.text();
+    const e = new Error(`Anthropic API error ${resp.status}: ${err}`);
+    e.status = resp.status;
+    e.body = err;
+    throw e;
+  }
+
+  const data = await resp.json();
+  return data.content[0].text.trim();
+}
+
+async function callGemini(messages, maxTokens) {
+  const apiKey = process.env.GOOGLE_AI_API_KEY;
+  if (!apiKey) throw new Error('GOOGLE_AI_API_KEY not set');
+
+  const text = messages.map(m => m.content).join('\n\n');
+
+  const resp = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: MODEL,
-      max_tokens: maxTokens,
-      messages,
+      contents: [{ parts: [{ text }] }],
+      generationConfig: { maxOutputTokens: maxTokens },
     }),
   });
 
   if (!resp.ok) {
     const err = await resp.text();
-    throw new Error(`Claude API error ${resp.status}: ${err}`);
+    throw new Error(`Gemini API error ${resp.status}: ${err}`);
   }
 
   const data = await resp.json();
-  return data.content[0].text.trim();
+  return data.candidates[0].content.parts[0].text.trim();
+}
+
+// Auth/billing failures on Anthropic fall back to Gemini. Transient errors (429, 5xx) and
+// genuine request errors bubble up so the test reports them honestly.
+function shouldFallback(err) {
+  if (err.noKey) return true;
+  if (err.status === 401 || err.status === 403) return true;
+  if (err.status === 400 && /credit balance|insufficient|billing|quota|exhausted/i.test(err.body || '')) return true;
+  return false;
+}
+
+async function callClaude(messages, maxTokens = 512) {
+  try {
+    return await callAnthropic(messages, maxTokens);
+  } catch (err) {
+    if (!shouldFallback(err) || !process.env.GOOGLE_AI_API_KEY) throw err;
+    console.log(`  [DOCTOR] Anthropic unavailable (${err.status || 'no-key'}), falling back to Gemini`);
+    return await callGemini(messages, maxTokens);
+  }
 }
 
 function parseJSON(text) {
