@@ -572,6 +572,59 @@ async function updateUserGuidelineScope(userId, scopeSelection) {
 // ============================================================================
 // RAG search is now always on when the vector DB is available — no user preference needed.
 
+/**
+ * Re-point user task-model preferences away from providers that are currently DOWN.
+ * Called after the startup health check so that users whose preferred model lives on a
+ * broken provider don't pay the round-trip-then-fall-back tax on every request.
+ *
+ * @param {Set<string>} downProviders - Provider names known to be in ERROR state
+ * @returns {Promise<{ examined: number, adjusted: number, swaps: Array<{userId, field, from, to}> }>}
+ */
+async function repairUserPrefsForHealth(downProviders) {
+    const result = { examined: 0, adjusted: 0, swaps: [] };
+    if (!db || !downProviders || downProviders.size === 0) return result;
+
+    // Pick the highest-priority model whose provider is currently working.
+    const pickReplacement = () => {
+        for (const p of AI_PROVIDER_PREFERENCE) {
+            if (!downProviders.has(p.name)) return p.model;
+        }
+        return null;
+    };
+
+    try {
+        const usersSnap = await db.collection('userPreferences').get();
+        for (const doc of usersSnap.docs) {
+            result.examined++;
+            const data = doc.data();
+            const updates = {};
+            for (const field of ['complexTaskModel', 'simpleTaskModel', 'evaluationTaskModel']) {
+                const model = data[field];
+                if (!model) continue;
+                const provider = getProviderFromModel(model);
+                if (downProviders.has(provider)) {
+                    const replacement = pickReplacement();
+                    if (replacement && replacement !== model) {
+                        updates[field] = replacement;
+                        result.swaps.push({ userId: doc.id, field, from: model, to: replacement, downProvider: provider });
+                    }
+                }
+            }
+            if (Object.keys(updates).length > 0) {
+                updates.updatedAt = new Date().toISOString();
+                updates.autoRepairedAt = new Date().toISOString();
+                await doc.ref.set(updates, { merge: true });
+                // Invalidate the in-memory cache so the new prefs take effect immediately
+                userTaskModelsCache.delete(doc.id);
+                result.adjusted++;
+            }
+        }
+    } catch (error) {
+        console.error('[PREFS-REPAIR] Error walking userPreferences:', error.message);
+    }
+    return result;
+}
+
 module.exports = {
     getUserAIPreference,
     updateUserAIPreference,
@@ -586,5 +639,6 @@ module.exports = {
     getUserHospitalTrust,
     updateUserHospitalTrust,
     getUserGuidelineScope,
-    updateUserGuidelineScope
+    updateUserGuidelineScope,
+    repairUserPrefsForHealth
 };

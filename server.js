@@ -30,7 +30,8 @@ const {
     getUserHospitalTrust,
     updateUserHospitalTrust,
     getUserGuidelineScope,
-    updateUserGuidelineScope
+    updateUserGuidelineScope,
+    repairUserPrefsForHealth
 } = require('./server/services/preferences');
 
 const {
@@ -7719,7 +7720,13 @@ async function checkAPIHealth() {
     console.log('\n[API-HEALTH] Summary:');
     const working = results.filter(r => r.status === 'WORKING').length;
     const configured = results.filter(r => r.status !== 'NOT_CONFIGURED').length;
-    console.log(`[API-HEALTH] ${working}/${configured} configured APIs are operational\n`);
+    console.log(`[API-HEALTH] ${working}/${configured} configured APIs are operational`);
+
+    const live = results.filter(r => r.status === 'WORKING').map(r => r.name);
+    const down = results.filter(r => r.status !== 'WORKING' && r.status !== 'NOT_CONFIGURED').map(r => r.name);
+    console.log(`[API-HEALTH] ✓ Live LLMs: ${live.length ? live.join(', ') : '(none)'}`);
+    if (down.length) console.log(`[API-HEALTH] ✗ Down LLMs: ${down.join(', ')}`);
+    console.log('');
 
     // Populate global.PROVIDER_HEALTH with results for runtime fallback decisions
     for (const result of results) {
@@ -7730,6 +7737,27 @@ async function checkAPIHealth() {
                 error: result.error || null
             };
         }
+    }
+
+    // Auto-repair user prefs that point to down providers, so callers don't pay the
+    // round-trip-then-fall-back tax on every request.
+    try {
+        const downSet = new Set(down);
+        if (downSet.size > 0) {
+            const repair = await repairUserPrefsForHealth(downSet);
+            if (repair.adjusted > 0) {
+                console.log(`[PREFS-REPAIR] Re-pointed task models for ${repair.adjusted}/${repair.examined} users away from down providers (${[...downSet].join(', ')})`);
+                for (const s of repair.swaps) {
+                    console.log(`[PREFS-REPAIR]   user=${s.userId} ${s.field}: ${s.from} (${s.downProvider}) → ${s.to}`);
+                }
+            } else if (repair.examined > 0) {
+                console.log(`[PREFS-REPAIR] Examined ${repair.examined} user(s); none needed adjustment`);
+            }
+        } else {
+            console.log('[PREFS-REPAIR] All providers healthy — user prefs untouched');
+        }
+    } catch (e) {
+        console.error('[PREFS-REPAIR] Failed:', e.message);
     }
 
     return results;
