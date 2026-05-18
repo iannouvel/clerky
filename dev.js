@@ -2491,6 +2491,94 @@ ${responseText}
         }
 
         // Handle enhance metadata button
+        // Verify all practice points — backfill verbatim quotes
+        const verifyPracticePointsBtn = document.getElementById('verifyPracticePointsBtn');
+        const maintenanceStatus = document.getElementById('maintenanceStatus');
+
+        if (verifyPracticePointsBtn) {
+            verifyPracticePointsBtn.addEventListener('click', async function () {
+                if (!confirm('This will extract and store a verbatim quote for every practice point across all guidelines. May take several minutes. Continue?')) {
+                    return;
+                }
+
+                verifyPracticePointsBtn.disabled = true;
+                const originalText = verifyPracticePointsBtn.textContent;
+                verifyPracticePointsBtn.textContent = 'Verifying...';
+                if (maintenanceStatus) {
+                    maintenanceStatus.style.display = 'block';
+                    maintenanceStatus.style.backgroundColor = '';
+                    maintenanceStatus.style.color = '';
+                    maintenanceStatus.style.border = '';
+                    maintenanceStatus.textContent = 'Starting verification...';
+                }
+
+                try {
+                    const user = auth.currentUser;
+                    if (!user) throw new Error('Please sign in first');
+                    const token = await user.getIdToken();
+
+                    let offset = 0;
+                    const totals = { guidelinesProcessed: 0, already: 0, extracted: 0, missed: 0, noContent: 0, noPoints: 0 };
+                    let totalGuidelines = 0;
+
+                    while (true) {
+                        const response = await fetch(`${SERVER_URL}/backfillPracticePointQuotes`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                            body: JSON.stringify({ offset, limit: 3 })
+                        });
+                        const result = await response.json();
+                        if (!result.success) throw new Error(result.error || 'backfill failed');
+
+                        totalGuidelines = result.totalGuidelines;
+                        for (const p of result.processed) {
+                            totals.guidelinesProcessed++;
+                            if (p.status === 'no-points') totals.noPoints++;
+                            else if (p.status === 'no-content') { totals.noContent++; totals.missed += p.missed || 0; }
+                            else {
+                                totals.already += p.already || 0;
+                                totals.extracted += p.extracted || 0;
+                                totals.missed += p.missed || 0;
+                            }
+                        }
+
+                        if (maintenanceStatus) {
+                            maintenanceStatus.textContent = `Processed ${totals.guidelinesProcessed}/${totalGuidelines} guidelines — extracted ${totals.extracted}, already had ${totals.already}, missed ${totals.missed}...`;
+                        }
+
+                        if (!result.hasMore) break;
+                        offset = result.nextOffset;
+                    }
+
+                    if (maintenanceStatus) {
+                        maintenanceStatus.innerHTML = `
+                            <strong style="color: #28a745;">✓ Verification complete</strong><br>
+                            Guidelines processed: ${totals.guidelinesProcessed}<br>
+                            Quotes newly extracted: ${totals.extracted}<br>
+                            Already had verifiable quotes: ${totals.already}<br>
+                            Missed (no quote could be verified): ${totals.missed}<br>
+                            Guidelines without content: ${totals.noContent}<br>
+                            Guidelines without practice points: ${totals.noPoints}
+                        `;
+                        maintenanceStatus.style.backgroundColor = '#d4edda';
+                        maintenanceStatus.style.border = '1px solid #c3e6cb';
+                        maintenanceStatus.style.color = '#155724';
+                    }
+                } catch (error) {
+                    console.error('Error verifying practice points:', error);
+                    if (maintenanceStatus) {
+                        maintenanceStatus.innerHTML = `<strong style="color: #dc3545;">✗ Error:</strong> ${error.message}`;
+                        maintenanceStatus.style.backgroundColor = '#f8d7da';
+                        maintenanceStatus.style.border = '1px solid #f5c6cb';
+                        maintenanceStatus.style.color = '#721c24';
+                    }
+                } finally {
+                    verifyPracticePointsBtn.disabled = false;
+                    verifyPracticePointsBtn.textContent = originalText;
+                }
+            });
+        }
+
         const enhanceMetadataBtn = document.getElementById('enhanceMetadataBtn');
         const enhancementStatus = document.getElementById('enhancementStatus');
 
