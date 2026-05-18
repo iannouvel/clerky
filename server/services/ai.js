@@ -1236,6 +1236,58 @@ function quoteAppearsInSource(quote, sourceText) {
 }
 
 /**
+ * Extract a verbatim quote from guideline content that grounds a single practice point.
+ * Used by the backfill endpoint to pre-compute and store quotes on every practice point,
+ * so runtime analysis uses the stored quote rather than re-extracting per session.
+ *
+ * @param {{ name: string, description?: string }} point
+ * @param {string} guidelineContent
+ * @param {string} userId
+ * @param {string|null} [model]
+ * @returns {Promise<string>} Verified verbatim quote, or '' if none could be extracted
+ */
+async function extractPracticePointQuote(point, guidelineContent, userId, model = null) {
+    if (!guidelineContent || !point?.name) return '';
+    const source = String(guidelineContent).slice(0, 16000);
+
+    const systemPrompt = `You extract exact quotes. Given a practice point and the source guideline text, return the wording from the guideline that states this practice point's recommendation, copied character-for-character. Never paraphrase, summarise, shorten, or compose. If the exact words are not present in the guideline text, return an empty string.`;
+
+    const userPrompt = `PRACTICE POINT:
+Name: ${point.name}
+${point.description ? `Description: ${point.description}` : ''}
+
+=== GUIDELINE TEXT ===
+${source}
+
+Return JSON only:
+{ "verbatimQuote": "the exact sentence or phrase from the GUIDELINE TEXT that states this practice point's recommendation, copied word-for-word; empty string if no exact wording covers it" }`;
+
+    try {
+        const result = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, model, 800, 'evaluation');
+        if (!result?.content) return '';
+        const raw = result.content.trim().replace(/```json\n?|\n?```/g, '');
+        let parsed;
+        try { parsed = JSON.parse(raw); }
+        catch {
+            const m = raw.match(/"verbatimQuote"\s*:\s*"([^"]*(?:\\.[^"]*)*)"/);
+            if (m) parsed = { verbatimQuote: m[1] };
+        }
+        const quote = typeof parsed?.verbatimQuote === 'string' ? parsed.verbatimQuote.trim() : '';
+        if (!quote) return '';
+        if (!quoteAppearsInSource(quote, source)) return '';
+        return quote;
+    } catch (e) {
+        console.warn('[QUOTE-BACKFILL] extraction failed:', e.message);
+        return '';
+    }
+}
+
+/**
  * Focused re-extraction: when the per-point call paraphrased instead of copying, ask the
  * model once more with the single job of copying exact wording out of the sources. The
  * caller still re-verifies the result with quoteAppearsInSource — this only improves the
@@ -1402,10 +1454,16 @@ If it does not apply:
 
     const applies = !!parsed.applies;
 
+    // Prefer the pre-computed quote stored on the practice point (from backfill) — it's been
+    // verified once against the guideline source and avoids per-session re-extraction.
+    const storedQuote = point.verbatimQuote && quoteAppearsInSource(point.verbatimQuote, guidelineContent)
+        ? point.verbatimQuote
+        : null;
+
     // "Verbatim" must mean verbatim. Verify each quote is a genuine substring of its source;
     // if the model paraphrased or omitted the quote, give it one focused re-extraction attempt
     // then verify again. A practice point cannot ship to the user without a verifiable quote.
-    let verbatimQuote = applies ? (parsed.verbatimQuote || null) : null;
+    let verbatimQuote = applies ? (storedQuote || parsed.verbatimQuote || null) : null;
     let evidence = applies ? (parsed.evidence || null) : null;
     if (applies) {
         const guidelineSource = (guidelineContent || '').substring(0, 4000);
@@ -2295,6 +2353,8 @@ module.exports = {
     rewritePracticePoint,
     loadPracticePointAdvice,
     loadAllPracticePoints,
+    extractPracticePointQuote,
+    quoteAppearsInSource,
     analyzePointForPatient,
     refineSuggestions,
     senseCheckSuggestions,

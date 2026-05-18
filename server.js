@@ -52,7 +52,9 @@ const {
     dedupeSuggestions,
     senseCheckGuidelines,
     firstPassReasoning,
-    mergeFirstPassWithSuggestions
+    mergeFirstPassWithSuggestions,
+    extractPracticePointQuote,
+    quoteAppearsInSource
 } = require('./server/services/ai');
 
 const { analyzeNoteAgainstGuideline } = require('./server/services/analysis/guideline');
@@ -10395,6 +10397,91 @@ app.post('/resetProcessingFlags', authenticateUser, async (req, res) => {
 
     } catch (error) {
         console.error('[ERROR] Failed to reset processing flags:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Backfill verbatim quotes onto every practice point in Firestore.
+// Processed in small guideline-batches so each HTTP request stays well under Render's timeout;
+// the frontend loops until { hasMore: false }.
+app.post('/backfillPracticePointQuotes', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) return res.status(403).json({ error: 'Unauthorized' });
+
+        const { offset = 0, limit = 3, force = false } = req.body || {};
+
+        // Get total once (cheap aggregate)
+        let totalGuidelines = 0;
+        try {
+            const totalSnap = await db.collection('guidelines').count().get();
+            totalGuidelines = totalSnap.data().count;
+        } catch (_) {
+            const all = await db.collection('guidelines').select('__name__').get();
+            totalGuidelines = all.size;
+        }
+
+        const batchSnap = await db.collection('guidelines').orderBy('__name__').limit(limit).offset(offset).get();
+        const processed = [];
+
+        for (const doc of batchSnap.docs) {
+            const guidelineId = doc.id;
+            const data = doc.data();
+            const practicePoints = Array.isArray(data.practicePoints) ? data.practicePoints : [];
+
+            if (practicePoints.length === 0) {
+                processed.push({ guidelineId, status: 'no-points', points: 0 });
+                continue;
+            }
+
+            // Load guideline content: fields on doc first, then subcollections
+            let content = data.condensed || data.content || '';
+            if (!content) {
+                try {
+                    const condensedDoc = await doc.ref.collection('content').doc('condensed').get();
+                    if (condensedDoc.exists) content = condensedDoc.data()?.condensed || '';
+                } catch (_) { /* fall through */ }
+            }
+            if (!content) {
+                try {
+                    const fullDoc = await doc.ref.collection('content').doc('full').get();
+                    if (fullDoc.exists) content = fullDoc.data()?.content || '';
+                } catch (_) { /* fall through */ }
+            }
+
+            if (!content) {
+                console.warn(`[QUOTE-BACKFILL] ${guidelineId}: no content available — skipping ${practicePoints.length} points`);
+                processed.push({ guidelineId, status: 'no-content', points: practicePoints.length, missed: practicePoints.length });
+                continue;
+            }
+
+            // Process points in parallel within this guideline
+            const results = await Promise.all(practicePoints.map(async (pp) => {
+                if (!force && pp.verbatimQuote && quoteAppearsInSource(pp.verbatimQuote, content)) {
+                    return { pp, status: 'already' };
+                }
+                const quote = await extractPracticePointQuote(pp, content, req.user.uid);
+                return quote
+                    ? { pp: { ...pp, verbatimQuote: quote }, status: 'extracted' }
+                    : { pp, status: 'missed' };
+            }));
+
+            const updated = results.map(r => r.pp);
+            await doc.ref.update({ practicePoints: updated });
+
+            const already = results.filter(r => r.status === 'already').length;
+            const extracted = results.filter(r => r.status === 'extracted').length;
+            const missed = results.filter(r => r.status === 'missed').length;
+            console.log(`[QUOTE-BACKFILL] ${guidelineId}: ${practicePoints.length} pts — ${already} already, ${extracted} extracted, ${missed} missed`);
+            processed.push({ guidelineId, points: practicePoints.length, already, extracted, missed });
+        }
+
+        const nextOffset = offset + batchSnap.docs.length;
+        const hasMore = batchSnap.docs.length === limit && nextOffset < totalGuidelines;
+
+        res.json({ success: true, totalGuidelines, processed, nextOffset, hasMore });
+    } catch (error) {
+        console.error('[QUOTE-BACKFILL] Error:', error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
