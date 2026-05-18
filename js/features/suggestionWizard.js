@@ -845,16 +845,16 @@ window.openSuggestionEvidenceModal = function() {
     }
 
     const modalHtml = `
-        <div id="${modalId}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 11000; display: flex; justify-content: center; align-items: center;">
-            <div style="background: var(--bg-primary, #fff); padding: 24px; border-radius: 8px; width: 540px; max-width: 95%; max-height: 85vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
-                <h3 style="margin: 0 0 16px 0; color: var(--text-primary);">Why this applies to this patient</h3>
+        <div id="${modalId}" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 11000; display: flex; justify-content: center; align-items: center; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;">
+            <div style="background: var(--bg-primary, #fff); padding: 24px; border-radius: 8px; width: 540px; max-width: 95%; max-height: 85vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.3); font-family: inherit;">
+                <h3 style="margin: 0 0 16px 0; color: var(--text-primary); font-family: inherit;">Why this applies to this patient</h3>
                 ${whyHtml}
                 ${quoteHtml}
                 ${linkHtml}
                 ${changeHtml}
                 <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
-                    <button id="${modalId}-close" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Close</button>
-                    <button id="${modalId}-feedback" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Send feedback</button>
+                    <button id="${modalId}-close" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; font-family: inherit; font-size: inherit;">Close</button>
+                    <button id="${modalId}-feedback" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; font-family: inherit; font-size: inherit;">Feedback</button>
                 </div>
             </div>
         </div>
