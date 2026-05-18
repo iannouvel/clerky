@@ -7852,6 +7852,29 @@ app.get('/health', (req, res) => {
     });
 });
 
+// Read-only LLM health endpoint. Returns the cached results of the last startup
+// `checkAPIHealth()` run plus a live/down summary. No auth so the frontend can show it
+// in the browser console at startup without an extra round-trip for an ID token.
+app.get('/getProviderHealth', (req, res) => {
+    const health = global.PROVIDER_HEALTH || {};
+    const live = [];
+    const down = [];
+    const unknown = [];
+    for (const [name, info] of Object.entries(health)) {
+        if (info?.status === 'WORKING') live.push(name);
+        else if (info?.status === 'ERROR' || info?.status === 'HTTP_ERROR') down.push(name);
+        else unknown.push(name);
+    }
+    res.status(200).json({
+        live,
+        down,
+        unknown,
+        providers: health,
+        serverUptimeSec: Math.round(process.uptime()),
+        timestamp: new Date().toISOString()
+    });
+});
+
 // Server status endpoint for cold start detection
 // Returns whether the guidelines cache is ready (for client warmup indicators)
 app.get('/serverStatus', (req, res) => {

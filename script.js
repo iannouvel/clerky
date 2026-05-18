@@ -6389,6 +6389,36 @@ async function saveTaskModelPreferences(complexTaskModel, simpleTaskModel, evalu
     }
 }
 
+// Cached provider health from /getProviderHealth — populated once at Preferences load.
+// Re-renders mark options whose provider is in `down` as disabled / dimmed.
+window.providerHealth = window.providerHealth || { live: [], down: [], unknown: [], loaded: false };
+
+async function loadProviderHealth() {
+    try {
+        const baseUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
+        const resp = await fetch(`${baseUrl}/getProviderHealth`);
+        if (!resp.ok) return;
+        const data = await resp.json();
+        window.providerHealth = {
+            live: data.live || [],
+            down: data.down || [],
+            unknown: data.unknown || [],
+            loaded: true
+        };
+        const liveStr = window.providerHealth.live.join(', ') || '(none)';
+        console.log(`[LLM-HEALTH] ✓ Live: ${liveStr}`);
+        if (window.providerHealth.down.length) {
+            console.warn(`[LLM-HEALTH] ✗ Down: ${window.providerHealth.down.join(', ')} — these will be greyed out in Preferences`);
+        }
+    } catch (e) {
+        console.warn('[LLM-HEALTH] Could not fetch provider health:', e.message);
+    }
+}
+
+function isProviderDown(providerName) {
+    return window.providerHealth?.down?.includes(providerName);
+}
+
 function populateTaskModelDropdown(selectId, selectedModel, includeDefault) {
     const select = document.getElementById(selectId);
     if (!select) return;
@@ -6402,7 +6432,11 @@ function populateTaskModelDropdown(selectId, selectedModel, includeDefault) {
     AVAILABLE_MODELS.forEach(m => {
         const opt = document.createElement('option');
         opt.value = m.model;
-        opt.textContent = `${m.displayName} (${m.name})`;
+        const down = isProviderDown(m.name);
+        opt.textContent = down
+            ? `${m.displayName} (${m.name}) — DOWN`
+            : `${m.displayName} (${m.name})`;
+        if (down) opt.disabled = true;
         if (m.model === selectedModel) opt.selected = true;
         select.appendChild(opt);
     });
@@ -6431,9 +6465,19 @@ function renderModelPreferencesList(modelOrder) {
         item.draggable = true;
         item.dataset.modelName = modelId;
 
+        const down = isProviderDown(model.name);
+        if (down) {
+            item.classList.add('model-preference-item--down');
+            item.style.opacity = '0.45';
+            item.title = `${model.name} is currently unavailable — calls will fall back to a working provider`;
+        }
+        const downBadge = down
+            ? `<div style="font-size:0.78em; color:#c0392b; font-weight:600; margin-left:8px;">(${model.name} down)</div>`
+            : '';
+
         item.innerHTML = `
             <div class="model-preference-number">${index + 1}</div>
-            <div class="model-preference-name">${model.displayName}</div>
+            <div class="model-preference-name">${model.displayName}${downBadge}</div>
             <div class="model-preference-model">${model.model}</div>
             <div class="model-preference-drag-handle">⋮⋮</div>
         `;
@@ -6584,6 +6628,9 @@ async function showPreferencesModal() {
     // Disabling these buttons caused confusing "stop" cursor and made it feel broken.
     if (preferencesLocalBtn) preferencesLocalBtn.disabled = false;
     if (preferencesBothBtn) preferencesBothBtn.disabled = false;
+
+    // Refresh LLM health before rendering so down providers can be greyed out
+    await loadProviderHealth();
 
     // Load and display model preferences
     try {
