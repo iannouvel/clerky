@@ -803,44 +803,26 @@ window.openSuggestionEvidenceModal = function() {
 
     const modalId = `wizard-evidence-${Date.now()}`;
     const escapeHtml = (text) => String(text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    const labelStyle = 'font-size: 0.8em; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;';
+    const labelStyle = 'font-weight: 600; color: var(--text-primary);';
 
     const whyHtml = whyText
-        ? `<div style="margin-bottom: 16px;">
-              <p style="margin: 0; color: var(--text-primary); line-height: 1.5;">${escapeHtml(whyText)}</p>
-           </div>`
+        ? `<p style="margin: 0 0 16px 0; color: var(--text-primary); line-height: 1.5;">${escapeHtml(whyText)}</p>`
         : '';
 
     const quoteHtml = verbatimQuote
-        ? `<div style="margin-bottom: 16px;">
-              <div style="${labelStyle}">Guideline Text</div>
-              <div class="sw-quote sw-quote-guideline">&ldquo;${escapeHtml(verbatimQuote)}&rdquo;</div>
-           </div>`
+        ? `<p style="margin: 0 0 16px 0; color: var(--text-primary); line-height: 1.5;"><span style="${labelStyle}">Guideline text:</span> &ldquo;${escapeHtml(verbatimQuote)}&rdquo;</p>`
         : '';
 
     const linkHtml = sourceGuidelineId
-        ? `<div style="margin-bottom: 16px;">
-              <span style="${labelStyle} margin-right: 8px;">Link to Guideline:</span>
-              <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}'${verbatimQuote ? `, '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'` : ''}); return false;" style="color: var(--primary-color, #2563eb); text-decoration: underline;">${escapeHtml(sourceName)} &#x2197;</a>
-           </div>`
+        ? `<p style="margin: 0 0 16px 0; color: var(--text-primary); line-height: 1.5;"><span style="${labelStyle}">Link to guideline:</span> <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}'${verbatimQuote ? `, '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'` : ''}); return false;" style="color: var(--primary-color, #2563eb); text-decoration: underline;">${escapeHtml(sourceName)} &#x2197;</a></p>`
         : '';
 
     let changeHtml = '';
     if (suggestionText) {
         if (replacePattern) {
-            changeHtml = `<div style="margin-bottom: 16px;">
-                  <div style="${labelStyle}">Suggested change</div>
-                  <p style="margin: 0 0 6px 0; color: var(--text-primary);">Modify this text in your note:</p>
-                  <div class="sw-quote sw-quote-evidence" style="margin-bottom: 8px;">&ldquo;${escapeHtml(replacePattern)}&rdquo;</div>
-                  <p style="margin: 0 0 6px 0; color: var(--text-primary);">to this:</p>
-                  <div class="sw-quote sw-quote-guideline">&ldquo;${escapeHtml(suggestionText)}&rdquo;</div>
-               </div>`;
+            changeHtml = `<p style="margin: 0 0 16px 0; color: var(--text-primary); line-height: 1.5;"><span style="${labelStyle}">Suggested change:</span> modify &ldquo;${escapeHtml(replacePattern)}&rdquo; to &ldquo;${escapeHtml(suggestionText)}&rdquo;</p>`;
         } else {
-            changeHtml = `<div style="margin-bottom: 16px;">
-                  <div style="${labelStyle}">Suggested change</div>
-                  <p style="margin: 0 0 6px 0; color: var(--text-primary);">Add the following to <strong>${escapeHtml(targetSection)}</strong>:</p>
-                  <div class="sw-quote sw-quote-guideline">&ldquo;${escapeHtml(suggestionText)}&rdquo;</div>
-               </div>`;
+            changeHtml = `<p style="margin: 0 0 16px 0; color: var(--text-primary); line-height: 1.5;"><span style="${labelStyle}">Suggested change:</span> add the following to <strong>${escapeHtml(targetSection)}</strong> &mdash; &ldquo;${escapeHtml(suggestionText)}&rdquo;</p>`;
         }
     }
 
