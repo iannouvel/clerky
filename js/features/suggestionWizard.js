@@ -807,7 +807,6 @@ window.openSuggestionEvidenceModal = function() {
 
     const whyHtml = whyText
         ? `<div style="margin-bottom: 16px;">
-              <div style="${labelStyle}">Why</div>
               <p style="margin: 0; color: var(--text-primary); line-height: 1.5;">${escapeHtml(whyText)}</p>
            </div>`
         : '';
@@ -821,7 +820,7 @@ window.openSuggestionEvidenceModal = function() {
 
     const linkHtml = sourceGuidelineId
         ? `<div style="margin-bottom: 16px;">
-              <div style="${labelStyle}">Link to Guideline</div>
+              <span style="${labelStyle} margin-right: 8px;">Link to Guideline:</span>
               <a href="#" onclick="openGuidelinePdf('${sourceGuidelineId.replace(/'/g, "\\'")}'${verbatimQuote ? `, '${verbatimQuote.replace(/'/g, "\\'").substring(0, 120)}'` : ''}); return false;" style="color: var(--primary-color, #2563eb); text-decoration: underline;">${escapeHtml(sourceName)} &#x2197;</a>
            </div>`
         : '';
@@ -853,8 +852,7 @@ window.openSuggestionEvidenceModal = function() {
                 ${quoteHtml}
                 ${linkHtml}
                 ${changeHtml}
-                <p style="margin: 20px 0 12px 0; color: var(--text-secondary); font-size: 0.9em;">If the suggestion doesn't fit this case, tell us why:</p>
-                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px;">
                     <button id="${modalId}-close" style="background: #9ca3af; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Close</button>
                     <button id="${modalId}-feedback" style="background: #2563eb; color: white; padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">Send feedback</button>
                 </div>
