@@ -398,12 +398,13 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         if (db) {
             const latencyMs = Date.now() - sendToAIStartTime;
             const promptStr = typeof prompt === 'string' ? prompt : JSON.stringify(prompt);
+            const logEndpoint = taskComplexity ? `sendToAI:${taskComplexity}` : 'sendToAI';
             db.collection('aiInteractions').add({
                 timestamp: admin.firestore.FieldValue.serverTimestamp(),
                 userId: userId || 'anonymous',
                 provider: preferredProvider,
                 model,
-                endpoint: taskComplexity ? `sendToAI:${taskComplexity}` : 'sendToAI',
+                endpoint: logEndpoint,
                 promptTokens: tokenUsage.prompt_tokens || 0,
                 completionTokens: tokenUsage.completion_tokens || 0,
                 totalTokens: tokenUsage.total_tokens || 0,
@@ -413,7 +414,11 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
                 responseLength: content?.length || 0,
                 fullPrompt: promptStr.substring(0, 50000),
                 fullResponse: content ? content.substring(0, 50000) : ''
-            }).catch(err => console.error('Failed to log AI interaction:', err.message));
+            })
+                .then(ref => console.log(`[AI-LOG] wrote ${ref.id} endpoint=${logEndpoint} provider=${preferredProvider}`))
+                .catch(err => console.error(`[AI-LOG] FAILED endpoint=${logEndpoint} provider=${preferredProvider} code=${err.code || 'unknown'} msg=${err.message}`, err.stack));
+        } else {
+            console.warn(`[AI-LOG] db is falsy — no write attempted endpoint=${taskComplexity ? `sendToAI:${taskComplexity}` : 'sendToAI'}`);
         }
 
         return { content: content, ai_provider: preferredProvider, ai_model: model, token_usage: tokenUsage };
