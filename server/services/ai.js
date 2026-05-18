@@ -1403,8 +1403,8 @@ If it does not apply:
     const applies = !!parsed.applies;
 
     // "Verbatim" must mean verbatim. Verify each quote is a genuine substring of its source;
-    // if the model paraphrased, give it one focused re-extraction attempt, then verify again.
-    // A quote that still can't be verified is blanked — never substituted, fuzzy-matched or guessed.
+    // if the model paraphrased or omitted the quote, give it one focused re-extraction attempt
+    // then verify again. A practice point cannot ship to the user without a verifiable quote.
     let verbatimQuote = applies ? (parsed.verbatimQuote || null) : null;
     let evidence = applies ? (parsed.evidence || null) : null;
     if (applies) {
@@ -1412,16 +1412,17 @@ If it does not apply:
         const vqOk = !!verbatimQuote && quoteAppearsInSource(verbatimQuote, guidelineSource);
         const evOk = !!evidence && quoteAppearsInSource(evidence, transcript);
 
-        if ((verbatimQuote && !vqOk) || (evidence && !evOk)) {
+        // Re-extract when verbatimQuote is missing or unverified (was: only when unverified).
+        if (!vqOk || (evidence && !evOk)) {
             const tag = `${guidelineId} "${(point.name || '').substring(0, 50)}"`;
             const re = await reExtractQuotes(parsed.suggestion || point.name, guidelineContent, transcript, userId, model);
 
-            if (verbatimQuote && !vqOk) {
+            if (!vqOk) {
                 if (re.verbatimQuote && quoteAppearsInSource(re.verbatimQuote, guidelineSource)) {
-                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote recovered by re-extraction`);
+                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote ${verbatimQuote ? 'recovered' : 'extracted'} by re-extraction`);
                     verbatimQuote = re.verbatimQuote.trim();
                 } else {
-                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote not verifiable — blanked`);
+                    console.log(`[VERBATIM-VERIFY] ${tag}: verbatimQuote ${verbatimQuote ? 'not verifiable — blanked' : 'still missing after re-extraction'}`);
                     verbatimQuote = null;
                 }
             }
@@ -1434,6 +1435,19 @@ If it does not apply:
                     evidence = null;
                 }
             }
+        }
+
+        // A practice point that applies but has no verifiable verbatim quote can't be grounded
+        // to the source guideline. Dropping it is safer than showing the user an ungrounded
+        // recommendation — the rest of the pipeline expects every shown suggestion to have one.
+        if (!verbatimQuote) {
+            console.log(`[VERBATIM-VERIFY] ${guidelineId} "${(point.name || '').substring(0, 50)}": dropping — applicable point with no verifiable verbatim quote`);
+            return {
+                pointId: point.id,
+                pointName: point.name,
+                applies: false,
+                reason: 'No verifiable verbatim quote could be extracted from guideline'
+            };
         }
     }
 
