@@ -449,10 +449,22 @@ export function getEditedInsertionText() {
     if (!editor || _insertionLineIndex < 0) return '';
 
     const lines = editor.getText().split('\n');
-    if (_insertionLineIndex >= lines.length) return '';
 
-    const line = lines[_insertionLineIndex];
-    // Extract just the text content, removing the placeholder marker if present
+    // In replacement mode, the placeholder line is rendered as
+    //   <strikethrough-original><br><green-new>
+    // which `editor.getText()` splits into two adjacent `\n`-separated lines:
+    // the strikethrough sits at `_insertionLineIndex`, the user-editable green text
+    // at `_insertionLineIndex + 1`. Reading from the strikethrough line would
+    // hand the caller the original text — and a "replace original with original"
+    // becomes a silent no-op when the wizard accepts the suggestion.
+    const targetIndex = _replacementPreview ? _insertionLineIndex + 1 : _insertionLineIndex;
+    if (targetIndex >= lines.length) {
+        // Defensive fallback — the rendered layout has shifted (e.g. user collapsed lines),
+        // so prefer the stored suggestion text over returning nothing.
+        return _replacementPreview?.suggestionText || '';
+    }
+
+    const line = lines[targetIndex];
     return line.replace(INSERTION_PLACEHOLDER, '').trim();
 }
 
