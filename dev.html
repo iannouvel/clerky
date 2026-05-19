@@ -837,6 +837,25 @@
                     <button id="verifyPracticePointsBtn" class="dev-btn"
                         style="background-color:#8e44ad;color:#fff;border-color:#8e44ad;">📝 Verify all practice points</button>
                 </div>
+
+                <div style="margin-top:14px; padding:12px; border:1px solid var(--border-color); border-radius:6px; background:var(--bg-secondary);">
+                    <div style="font-weight:600; margin-bottom:6px;">Edit practice point criteria</div>
+                    <p style="color:var(--text-secondary);font-size:12px;margin:0 0 10px 0;">Tighten the APPLIES TO description of one practice point to fix false-positives. Find the guideline ID and practice point name in the feedback record.</p>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:8px;">
+                        <input id="ppEditGuidelineId" type="text" placeholder="Guideline ID (e.g. cg1103-antenatal-care-patient-info-pdf)"
+                            style="padding:7px 9px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;" />
+                        <input id="ppEditName" type="text" placeholder="Practice point name (e.g. Consent for Blood Products)"
+                            style="padding:7px 9px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;" />
+                    </div>
+                    <div style="display:flex; gap:8px; margin-bottom:8px;">
+                        <button id="ppEditLoadBtn" class="dev-btn" style="background-color:#17a2b8;color:#fff;border-color:#17a2b8;">Load current</button>
+                        <button id="ppEditSaveBtn" class="dev-btn" style="background-color:#28a745;color:#fff;border-color:#28a745;">Save changes</button>
+                    </div>
+                    <textarea id="ppEditDescription" rows="6" placeholder="New description (APPLIES TO / NOT APPLICABLE / ACTION / THRESHOLDS)"
+                        style="width:100%;padding:8px 10px;border:1px solid var(--border-color);border-radius:4px;background:var(--bg-input);color:var(--text-primary);font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+                    <div id="ppEditStatus" style="margin-top:8px;padding:8px;background:var(--bg-tertiary);border-radius:4px;display:none;font-size:12px;color:var(--text-primary);"></div>
+                </div>
+
                 <div id="maintenanceStatus"
                     style="margin-top:10px;padding:10px;background:var(--bg-tertiary);border-radius:4px;display:none;color:var(--text-primary);">
                 </div>

@@ -10537,6 +10537,65 @@ app.post('/backfillPracticePointQuotes', authenticateUser, async (req, res) => {
     }
 });
 
+// Fetch one practice point from a guideline so an admin can review its current description
+// before tightening it. Practice points live as an array on the guideline doc; lookup is by name.
+app.get('/getPracticePoint', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) return res.status(403).json({ error: 'Unauthorized' });
+
+        const { guidelineId, practicePointName } = req.query || {};
+        if (!guidelineId || !practicePointName) {
+            return res.status(400).json({ error: 'guidelineId and practicePointName are required query params' });
+        }
+
+        const doc = await db.collection('guidelines').doc(guidelineId).get();
+        if (!doc.exists) return res.status(404).json({ error: `Guideline not found: ${guidelineId}` });
+
+        const data = doc.data();
+        const practicePoints = Array.isArray(data.practicePoints) ? data.practicePoints : [];
+        const pp = practicePoints.find(p => p.name === practicePointName);
+        if (!pp) return res.status(404).json({ error: `Practice point not found: ${practicePointName}` });
+
+        res.json({ success: true, guidelineId, practicePoint: pp });
+    } catch (error) {
+        console.error('[PRACTICE-POINT-EDIT] Fetch error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Update a single practice point's description (used to tighten APPLIES TO criteria
+// after a false-positive is identified). Other fields on the practice point are preserved.
+app.post('/updatePracticePointDescription', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) return res.status(403).json({ error: 'Unauthorized' });
+
+        const { guidelineId, practicePointName, newDescription } = req.body || {};
+        if (!guidelineId || !practicePointName || typeof newDescription !== 'string') {
+            return res.status(400).json({ error: 'guidelineId, practicePointName, and newDescription are required' });
+        }
+
+        const doc = await db.collection('guidelines').doc(guidelineId).get();
+        if (!doc.exists) return res.status(404).json({ error: `Guideline not found: ${guidelineId}` });
+
+        const data = doc.data();
+        const practicePoints = Array.isArray(data.practicePoints) ? [...data.practicePoints] : [];
+        const idx = practicePoints.findIndex(p => p.name === practicePointName);
+        if (idx === -1) return res.status(404).json({ error: `Practice point not found: ${practicePointName}` });
+
+        const oldDescription = practicePoints[idx].description || '';
+        practicePoints[idx] = { ...practicePoints[idx], description: newDescription };
+        await doc.ref.update({ practicePoints });
+
+        console.log(`[PRACTICE-POINT-EDIT] ${guidelineId} / "${practicePointName}" — description updated by ${req.user.email}`);
+        res.json({ success: true, guidelineId, practicePointName, oldDescription, newDescription });
+    } catch (error) {
+        console.error('[PRACTICE-POINT-EDIT] Update error:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // Endpoint to extract metadata from a guideline using AI
 app.post('/extractGuidelineMetadata', authenticateUser, async (req, res) => {
     try {

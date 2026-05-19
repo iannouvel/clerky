@@ -2491,6 +2491,75 @@ ${responseText}
         }
 
         // Handle enhance metadata button
+        // Edit a single practice point's description (used to tighten over-eager APPLIES TO criteria)
+        const ppEditGuidelineIdInput = document.getElementById('ppEditGuidelineId');
+        const ppEditNameInput = document.getElementById('ppEditName');
+        const ppEditDescriptionInput = document.getElementById('ppEditDescription');
+        const ppEditLoadBtn = document.getElementById('ppEditLoadBtn');
+        const ppEditSaveBtn = document.getElementById('ppEditSaveBtn');
+        const ppEditStatus = document.getElementById('ppEditStatus');
+
+        function ppEditShowStatus(html, isError = false) {
+            if (!ppEditStatus) return;
+            ppEditStatus.style.display = 'block';
+            ppEditStatus.innerHTML = html;
+            ppEditStatus.style.color = isError ? '#721c24' : '#155724';
+            ppEditStatus.style.background = isError ? '#f8d7da' : '#d4edda';
+            ppEditStatus.style.border = isError ? '1px solid #f5c6cb' : '1px solid #c3e6cb';
+        }
+
+        if (ppEditLoadBtn) {
+            ppEditLoadBtn.addEventListener('click', async () => {
+                const guidelineId = ppEditGuidelineIdInput?.value?.trim();
+                const practicePointName = ppEditNameInput?.value?.trim();
+                if (!guidelineId || !practicePointName) {
+                    ppEditShowStatus('Both guideline ID and practice point name are required.', true);
+                    return;
+                }
+                try {
+                    const user = auth.currentUser;
+                    if (!user) throw new Error('Please sign in first');
+                    const token = await user.getIdToken();
+                    const url = `${SERVER_URL}/getPracticePoint?guidelineId=${encodeURIComponent(guidelineId)}&practicePointName=${encodeURIComponent(practicePointName)}`;
+                    const resp = await fetch(url, { headers: { 'Authorization': `Bearer ${token}` } });
+                    const result = await resp.json();
+                    if (!result.success) throw new Error(result.error || 'Lookup failed');
+                    ppEditDescriptionInput.value = result.practicePoint.description || '';
+                    ppEditShowStatus(`Loaded "${result.practicePoint.name}" (serial ${result.practicePoint.serial ?? '?'}). Edit the description and click Save.`);
+                } catch (e) {
+                    ppEditShowStatus(`Load failed: ${e.message}`, true);
+                }
+            });
+        }
+
+        if (ppEditSaveBtn) {
+            ppEditSaveBtn.addEventListener('click', async () => {
+                const guidelineId = ppEditGuidelineIdInput?.value?.trim();
+                const practicePointName = ppEditNameInput?.value?.trim();
+                const newDescription = ppEditDescriptionInput?.value;
+                if (!guidelineId || !practicePointName || !newDescription) {
+                    ppEditShowStatus('Guideline ID, practice point name, and description are all required.', true);
+                    return;
+                }
+                if (!confirm(`Save new description for "${practicePointName}"?`)) return;
+                try {
+                    const user = auth.currentUser;
+                    if (!user) throw new Error('Please sign in first');
+                    const token = await user.getIdToken();
+                    const resp = await fetch(`${SERVER_URL}/updatePracticePointDescription`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                        body: JSON.stringify({ guidelineId, practicePointName, newDescription })
+                    });
+                    const result = await resp.json();
+                    if (!result.success) throw new Error(result.error || 'Save failed');
+                    ppEditShowStatus(`Saved. Previous description archived in this response. Next analysis run will use the new criteria.`);
+                } catch (e) {
+                    ppEditShowStatus(`Save failed: ${e.message}`, true);
+                }
+            });
+        }
+
         // Verify all practice points — backfill verbatim quotes
         const verifyPracticePointsBtn = document.getElementById('verifyPracticePointsBtn');
         const maintenanceStatus = document.getElementById('maintenanceStatus');
