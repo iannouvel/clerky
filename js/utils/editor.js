@@ -465,7 +465,18 @@ export function getEditedInsertionText() {
     }
 
     const line = lines[targetIndex];
-    return line.replace(INSERTION_PLACEHOLDER, '').trim();
+    const edited = line.replace(INSERTION_PLACEHOLDER, '').trim();
+
+    // showInsertionPreview() prepends a list prefix ("5. " or "- ") when inserting after a
+    // numbered or dashed line. That prefix lives OUTSIDE the editable green placeholder span,
+    // so clicking Insert without typing leaves the line as just the bare prefix (e.g. "5.").
+    // Returning that truthy string makes the wizard treat the prefix as user-edited content
+    // and insert it verbatim, producing lines like "5. 5." with no suggestion text.
+    // Treat a bare list prefix as "no edit" so the caller falls back to the suggestion text.
+    const stripped = edited.replace(/^(\d+\.\s*|[-–]\s*)/, '').trim();
+    if (!stripped) return '';
+
+    return edited;
 }
 
 /**
