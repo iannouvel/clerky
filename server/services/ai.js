@@ -1370,6 +1370,8 @@ Anchor everything in what the note actually says. A practice point only applies 
 
 If it applies, write one concise suggestion a clinician can act on, specific to this patient. Keep it safe: do not offer an option that is contraindicated for this patient, even as an alternative.
 
+Then decide whether the suggestion is essentially *refining* something already documented in the note — adding dose, timing, frequency or other specificity to a plan item that is already there, or naming a value the note refers to obliquely — or whether it is a *new action* the clinician hasn't yet recorded. Only set originalText when the new wording is meant to replace a specific existing line in place — same underlying action, expressed more completely. If the suggestion introduces a different action — a different medication, a different investigation, a different referral, additional counselling, a separate piece of advice — it belongs as a new item; leave originalText null. Being on the same clinical topic, addressing a related risk, or appearing in the same section is not on its own a reason to replace; ask whether the clinician, reading both lines, would feel the new one renders the old one redundant.
+
 Return valid JSON only — no surrounding text or markdown.
 If it applies:
 {
@@ -1380,7 +1382,7 @@ If it applies:
   "why": "why this matters for THIS specific patient",
   "verbatimQuote": "the exact phrase from the guideline text above that states this recommendation — the line the suggestion is based on, not just a nearby sentence",
   "evidence": "the exact phrase from the CLINICAL NOTE that triggers this practice point for this patient; if you cannot quote one, the practice point does not apply",
-  "originalText": "exact text from the clinical note that this suggestion refines or replaces, or null if it is new information not replacing existing text"
+  "originalText": "exact text from the clinical note that this suggestion is rewriting in place — same action, more specific. Null if this is a new action the note doesn't already contain."
 }
 If it does not apply:
 {
