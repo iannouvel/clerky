@@ -5,9 +5,9 @@ import { extractSectionContent, applySuggestionInsertion } from './suggestions.j
 window.clearReplacementPreviewState = clearReplacementState;
 
 /**
- * Opens the PDF for a guideline in a new tab.
- * Fetches a fresh auth token at click time so the link never expires.
- * Appends a #search fragment as best-effort text highlight (works in PDF.js-based viewers).
+ * Opens the PDF for a guideline in a new tab via the bundled PDF.js viewer so the
+ * verbatim quote can be located and highlighted. Chrome's native viewer ignores
+ * `#search=...`; PDF.js honours it (with phrase/highlightAll/caseSensitive params).
  */
 window.openGuidelinePdf = async function(guidelineId, searchText) {
     if (!guidelineId) return;
@@ -15,9 +15,12 @@ window.openGuidelinePdf = async function(guidelineId, searchText) {
         const user = window.auth?.currentUser;
         if (!user) { console.warn('[WIZARD] Not authenticated — cannot open guideline PDF'); return; }
         const idToken = await user.getIdToken();
-        const base = `${window.SERVER_URL}/api/pdf/${encodeURIComponent(guidelineId)}?token=${encodeURIComponent(idToken)}`;
-        const url = searchText ? `${base}#search=${encodeURIComponent(searchText)}` : base;
-        window.open(url, '_blank');
+        const pdfUrl = `${window.SERVER_URL}/api/pdf/${encodeURIComponent(guidelineId)}?token=${encodeURIComponent(idToken)}`;
+        let viewerUrl = `/pdfjs/web/viewer.html?file=${encodeURIComponent(pdfUrl)}`;
+        if (searchText) {
+            viewerUrl += `#search=${encodeURIComponent(searchText)}&phrase=true&highlightAll=true&caseSensitive=false`;
+        }
+        window.open(viewerUrl, '_blank', 'noopener,noreferrer');
     } catch (e) {
         console.error('[WIZARD] Failed to open guideline PDF:', e);
     }
