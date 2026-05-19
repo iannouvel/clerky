@@ -1301,7 +1301,7 @@ async function reExtractQuotes(suggestionText, guidelineContent, transcript, use
 ${suggestionText}
 
 === GUIDELINE TEXT ===
-${(guidelineContent || '').substring(0, 4000)}
+${(guidelineContent || '').substring(0, 16000)}
 
 === CLINICAL NOTE ===
 ${transcript || ''}
@@ -1356,7 +1356,7 @@ async function analyzePointForPatient(transcript, guidelineContent, guidelineTit
 ${transcript}
 
 === GUIDELINE: ${guidelineTitle} (ID: ${guidelineId || 'unknown'}) ===
-${guidelineContent.substring(0, 4000)}${guidelineContent.length > 4000 ? '\n...[truncated]' : ''}
+${guidelineContent.substring(0, 16000)}${guidelineContent.length > 16000 ? '\n...[truncated]' : ''}
 
 === PRACTICE POINT ===
 Name: ${point.name}
@@ -1468,7 +1468,7 @@ If it does not apply:
     let verbatimQuote = applies ? (storedQuote || parsed.verbatimQuote || null) : null;
     let evidence = applies ? (parsed.evidence || null) : null;
     if (applies) {
-        const guidelineSource = (guidelineContent || '').substring(0, 4000);
+        const guidelineSource = (guidelineContent || '').substring(0, 16000);
         const vqOk = !!verbatimQuote && quoteAppearsInSource(verbatimQuote, guidelineSource);
         const evOk = !!evidence && quoteAppearsInSource(evidence, transcript);
 
