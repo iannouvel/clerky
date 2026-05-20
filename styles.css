@@ -3482,7 +3482,8 @@ body {
 }
 
 .sw-source-link a {
-    color: var(--accent-color);
+    /* Match .sw-details-link a — the faded mint --accent-color was hard to read on white. */
+    color: #0a7a5e;
     text-decoration: none;
 }
 
@@ -3532,7 +3533,9 @@ body {
 }
 
 .sw-quote-guideline {
-    border-left-color: var(--accent-color);
+    /* Match the dark-green used by .sw-details-link and .sw-source-link so the wizard
+       doesn't have three different mint shades. */
+    border-left-color: #0a7a5e;
 }
 
 .sw-input-section {
