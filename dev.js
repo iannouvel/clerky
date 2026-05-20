@@ -10544,8 +10544,23 @@ window.exportFeedbackJSON = function () {
         return;
     }
 
+    // Export the *currently visible* rows, not the whole cache — the table can be filtered
+    // to "Unactioned" / "Actioned" / "All", and "Export JSON" should match what the user
+    // sees rather than silently dumping all 100 items.
+    const filter = document.getElementById('feedbackFilter')?.value || 'unactioned';
+    const visibleFeedback = _feedbackCache.filter(fb => {
+        if (filter === 'unactioned') return !fb.actioned;
+        if (filter === 'actioned') return !!fb.actioned;
+        return true;
+    });
+
+    if (visibleFeedback.length === 0) {
+        alert(`No ${filter === 'all' ? '' : filter + ' '}feedback to export.`);
+        return;
+    }
+
     // Build comprehensive feedback export with all details including practice point numbers
-    const exportData = _feedbackCache.map(fb => {
+    const exportData = visibleFeedback.map(fb => {
         // Extract practice point number from multiple possible locations
         const ppNum = fb.practicePointNumber ||
                      fb.wizardState?.currentSuggestion?.practicePointNumber ||
@@ -10603,8 +10618,9 @@ window.exportFeedbackJSON = function () {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    console.log('[FEEDBACK] Exported', exportData.length, 'feedback items with practice point numbers');
-    alert(`Exported ${exportData.length} feedback items. JSON copied to clipboard and downloaded.`);
+    console.log('[FEEDBACK] Exported', exportData.length, 'feedback items with practice point numbers (filter:', filter + ')');
+    const filterLabel = filter === 'all' ? '' : ` ${filter}`;
+    alert(`Exported ${exportData.length}${filterLabel} feedback items. JSON copied to clipboard and downloaded.`);
 };
 
 // ═════════════════════════════════════════════════════════════════════════
