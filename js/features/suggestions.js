@@ -81,7 +81,41 @@ export function applySuggestionInsertion(textToInsert, suggestion, currentConten
     if (suggestion?.target_section) {
         const sectionInfo = extractSectionContent(currentContent, suggestion.target_section);
         if (sectionInfo) {
-            // Insert at the end of the target section
+            // If the section ends with a list, splice the new item INTO the list with a
+            // matching prefix instead of dropping it past trailing blank lines as an
+            // orphan paragraph. Without this, "Respiratory rate" arrives below an
+            // observations list of bulleted vitals as a standalone line, when it should
+            // become "- Respiratory rate: 20 bpm" appended to that list.
+            const sectionRaw = currentContent.slice(sectionInfo.startIndex, sectionInfo.endIndex);
+            const sectionLines = sectionRaw.split('\n');
+
+            // Walk backwards to the last non-empty line; only inspect THAT one (we want to
+            // know whether a list immediately precedes the section end, not whether any
+            // list exists somewhere in the section).
+            let lastIdx = -1;
+            for (let i = sectionLines.length - 1; i >= 0; i--) {
+                if (sectionLines[i].trim() !== '') { lastIdx = i; break; }
+            }
+
+            if (lastIdx !== -1) {
+                const lastLine = sectionLines[lastIdx];
+                const numMatch = lastLine.match(/^(\s*)(\d+)\.\s/);
+                const dashMatch = lastLine.match(/^(\s*)([-–•])\s/);
+                const insertHasPrefix = /^(\s*\d+\.\s|\s*[-–•]\s)/.test(textToInsert);
+
+                if ((numMatch || dashMatch) && !insertHasPrefix) {
+                    const prefixed = numMatch
+                        ? `${numMatch[1]}${parseInt(numMatch[2], 10) + 1}. ${textToInsert}`
+                        : `${dashMatch[1]}${dashMatch[2]} ${textToInsert}`;
+                    // Offset of the end of the last list line within sectionRaw =
+                    // length of lines[0..lastIdx] rejoined with '\n' (no trailing newline).
+                    const offsetWithinSection = sectionLines.slice(0, lastIdx + 1).join('\n').length;
+                    const insertOffset = sectionInfo.startIndex + offsetWithinSection;
+                    return currentContent.slice(0, insertOffset) + '\n' + prefixed + currentContent.slice(insertOffset);
+                }
+            }
+
+            // Default: insert at the end of the target section
             return currentContent.slice(0, sectionInfo.endIndex) + '\n' + textToInsert + currentContent.slice(sectionInfo.endIndex);
         }
         // If section not found but should create new section
