@@ -342,14 +342,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         // has a target_section and recommendation worth surfacing.
         const detailsLinkHtml = `<div class="sw-details-link"><a href="#" onclick="openSuggestionEvidenceModal(); return false;">&#9432; Why this applies to this patient</a></div>`;
 
-        // Structured input section
+        // Structured input section. Kept flat: single container, no nested indented boxes.
+        // The previous design wrapped each level (section, preview container, preview text) in
+        // its own border-left stripe + padding, producing three visual indents for a single
+        // logical block. One stripe is enough.
         const inputSectionHtml = dataTypeOptions
             ? `<div class="sw-input-section">
                 <div class="sw-input-label">Enter the missing information:</div>
                 ${renderStructuredInput(uniqueId, suggestion.missing_info || suggestionText, dataTypeOptions)}
-                <div id="${uniqueId}-preview-container" class="sw-input-preview-container" style="margin-top: 12px; padding: 10px; background: #f0f9ff; border-radius: 4px; border-left: 3px solid #0ea5e9; display: none;">
-                  <div style="font-size: 0.85em; color: #0c4a6e; font-weight: 500; margin-bottom: 6px;">📋 Preview of text to insert (click to edit):</div>
-                  <div id="${uniqueId}-preview-text" contenteditable="true" style="background: white; padding: 8px; border-radius: 3px; font-size: 0.9em; color: #1e3a8a; line-height: 1.4; border-left: 3px solid #10b981; padding-left: 10px; font-family: 'Courier New', monospace; cursor: text; outline: none; min-height: 40px; white-space: pre-wrap; word-break: break-word;" onblur="this.style.borderLeftColor = '#10b981';" onfocus="this.style.borderLeftColor = '#059669';">
+                <div id="${uniqueId}-preview-container" class="sw-input-preview-container" style="display: none;">
+                  <div class="sw-input-preview-label">📋 Preview of text to insert (click to edit):</div>
+                  <div id="${uniqueId}-preview-text" class="sw-input-preview-text" contenteditable="true">
                     [Select a value above to see preview]
                   </div>
                 </div>
