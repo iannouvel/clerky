@@ -644,11 +644,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                     const numberedMatch = originalLine.match(/^(\d+)\.\s/);
                     let replacementText = textToInsert;
 
-                    // If original had a number, preserve it in the replacement
+                    // If original had a number, decide whether to prepend it to the replacement.
+                    // The .replace() below is a *partial* substitution within the line, so it only
+                    // strips the prefix when originalText itself starts with it. When originalText
+                    // is just the prose ("Continue current plan..."), the existing "N. " stays in
+                    // the line — prepending another one produces "2. 2. ...". Only re-add the
+                    // prefix when originalText is itself prefixed.
                     if (numberedMatch) {
                         const listNumber = numberedMatch[1];
-                        // Only add number if textToInsert doesn't already start with a number
-                        if (!replacementText.match(/^\d+\.\s/)) {
+                        const originalHasPrefix = /^\d+\.\s/.test(replacementPreview.originalText);
+                        const replacementHasPrefix = /^\d+\.\s/.test(replacementText);
+                        if (originalHasPrefix && !replacementHasPrefix) {
                             replacementText = `${listNumber}. ${replacementText}`;
                             console.log('[WIZARD] Preserved list number', listNumber, 'in replacement');
                         }
@@ -688,11 +694,15 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                         const originalLine = lines[idx];
                         const numberedMatch = originalLine.match(/^(\d+)\.\s/);
 
-                        // If original had a number, preserve it in the replacement
+                        // Only re-add the list prefix when replacePattern itself includes it —
+                        // otherwise the existing "N. " on the line stays via partial replace and
+                        // we'd produce "2. 2. ...". See the replacement-preview path above for
+                        // the same logic.
                         if (numberedMatch) {
                             const listNumber = numberedMatch[1];
-                            // Only add number if textToInsert doesn't already start with a number
-                            if (!replacementText.match(/^\d+\.\s/)) {
+                            const patternHasPrefix = /^\d+\.\s/.test(replacePattern);
+                            const replacementHasPrefix = /^\d+\.\s/.test(replacementText);
+                            if (patternHasPrefix && !replacementHasPrefix) {
                                 replacementText = `${listNumber}. ${replacementText}`;
                                 console.log('[WIZARD] Preserved list number', listNumber, 'in fallback replacement');
                             }
