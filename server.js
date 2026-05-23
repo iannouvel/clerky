@@ -18627,6 +18627,17 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
                 console.warn('[SEMANTIC-SUGGESTIONS] Placement AI call failed:', placementError?.message);
                 // Continue — suggestions are still valid even if placement determination fails
             }
+
+            // Defensive default: per-point guideline suggestions are inherently actionable
+            // (orders, monitoring, counselling — all things still to be done). Without a
+            // target_section the frontend appends them to the end of the note, far from the
+            // Plan section where they belong. Default any unplaced suggestion to "Plan".
+            for (const suggestion of suggestions) {
+                if (!suggestion.target_section) {
+                    suggestion.target_section = 'Plan';
+                    console.log('[SEMANTIC-SUGGESTIONS] Defaulted unplaced suggestion to Plan:', (suggestion.suggestion || suggestion.name || '').substring(0, 60));
+                }
+            }
         }
 
         timer.step('Placement determination');

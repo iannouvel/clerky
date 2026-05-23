@@ -3467,6 +3467,19 @@ body {
     color: var(--text-primary);
     line-height: 1.4;
     margin-bottom: 6px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: text;
+    transition: background-color 0.15s ease;
+}
+
+.sw-suggestion-text[contenteditable="true"]:hover {
+    background-color: rgba(10, 122, 94, 0.06);
+}
+
+.sw-suggestion-text[contenteditable="true"]:focus {
+    outline: 1px solid #0a7a5e;
+    background-color: rgba(10, 122, 94, 0.08);
 }
 
 .sw-why-sentence {

@@ -373,7 +373,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               </div>
               <div class="sw-body">
                 <div class="sw-suggestion-why">
-                  <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}">${suggestionText}</div>
+                  <div class="sw-suggestion-text sw-text-content" data-raw="${escapedText}" contenteditable="true" title="Click to edit before inserting">${suggestionText}</div>
                 </div>
                 ${quoteHtml}
                 ${detailsLinkHtml}
@@ -587,10 +587,16 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 if (editedText) {
                     textToInsert = editedText;
                     console.log('[WIZARD] Using edited text from insertion point:', textToInsert.substring(0, 50));
-                } else if (textEl && textEl.dataset.raw) {
-                    textToInsert = textEl.dataset.raw;
                 } else if (textEl) {
-                    textToInsert = textEl.textContent.trim();
+                    // The suggestion-text element is contenteditable — the user may have edited it
+                    // in place before clicking Insert. Prefer the current textContent over data-raw
+                    // (which holds the original AI-generated text) so user edits are respected.
+                    const currentText = (textEl.textContent || '').trim();
+                    const rawText = (textEl.dataset.raw || '').trim();
+                    textToInsert = currentText || rawText;
+                    if (currentText && rawText && currentText !== rawText) {
+                        console.log('[WIZARD] Using user-edited suggestion text');
+                    }
                 }
             }
         }
