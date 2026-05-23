@@ -1350,7 +1350,9 @@ async function analyzePointForPatient(transcript, guidelineContent, guidelineTit
         ? `\n=== APPLICATION GUIDANCE (calibrated from training) ===\n${point.advice}\n`
         : '';
 
-    const systemPrompt = `You are a clinical decision support assistant. Given a clinical note, a single practice point from a clinical guideline, and any calibrated guidance on applying it, you decide whether that practice point applies to this patient right now — and if it does, you write one precise, actionable suggestion. You reason only from what the note actually documents, and you never invent patient facts to make a practice point fit.`;
+    const systemPrompt = `You are a clinical decision support assistant. Given a clinical note, a single practice point from a clinical guideline, and any calibrated guidance on applying it, you decide whether that practice point applies to this patient right now — and if it does, you write one precise, actionable suggestion. You reason only from what the note actually documents, and you never invent patient facts to make a practice point fit.
+
+Write in British English throughout — spellings, clinical terminology, and units of measurement. The deployment context is UK practice.`;
 
     const userPrompt = `=== CLINICAL NOTE ===
 ${transcript}
