@@ -5281,6 +5281,23 @@ body {
     cursor: text !important;
 }
 
+/* Theme-aware I-beam mouse cursor: black in light mode, white in dark mode.
+   The OS-drawn `cursor: text` does not reliably invert against editor content,
+   so we ship an explicit SVG I-beam and swap the stroke colour by scheme. */
+.tiptap-editor,
+.user-input-col .tiptap-editor,
+.chatbot-input-section .tiptap-editor {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='black' stroke-width='1.5' fill='none'/></svg>") 8 8, text !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    .tiptap-editor,
+    .user-input-col .tiptap-editor,
+    .chatbot-input-section .tiptap-editor {
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='white' stroke-width='1.5' fill='none'/></svg>") 8 8, text !important;
+    }
+}
+
 .chatbot-input-section .tiptap-editor .ProseMirror {
     padding: 0;
     /* Extra right padding for floating buttons */
