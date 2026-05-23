@@ -5282,19 +5282,36 @@ body {
 }
 
 /* Theme-aware I-beam mouse cursor: black in light mode, white in dark mode.
-   The OS-drawn `cursor: text` does not reliably invert against editor content,
-   so we ship an explicit SVG I-beam and swap the stroke colour by scheme. */
-.tiptap-editor,
-.user-input-col .tiptap-editor,
-.chatbot-input-section .tiptap-editor {
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='black' stroke-width='1.5' fill='none'/></svg>") 8 8, text !important;
+   The OS-drawn `cursor: text` does not reliably invert against editor content
+   (especially on Windows with a white system cursor), so we ship an explicit
+   SVG I-beam and swap the stroke colour by `prefers-color-scheme`.
+
+   Applied to: all text inputs, textareas, contenteditable elements (including
+   ProseMirror), and the wizard panel — anywhere the browser would normally
+   show the OS text cursor. Buttons/links inside wizardPanel are excluded so
+   they keep their pointer cursor. The URL-encoded data URI is used in place
+   of `;utf8,` because some browsers silently ignore the latter. */
+input:not([type='button']):not([type='submit']):not([type='reset']):not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='image']),
+textarea,
+[contenteditable=''],
+[contenteditable='true'],
+[contenteditable='plaintext-only'],
+.ProseMirror,
+#wizardPanel,
+#wizardPanel *:not(button):not(a):not([role='button']):not(svg):not(svg *) {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='black' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") 8 8, text !important;
 }
 
 @media (prefers-color-scheme: dark) {
-    .tiptap-editor,
-    .user-input-col .tiptap-editor,
-    .chatbot-input-section .tiptap-editor {
-        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><path d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='white' stroke-width='1.5' fill='none'/></svg>") 8 8, text !important;
+    input:not([type='button']):not([type='submit']):not([type='reset']):not([type='checkbox']):not([type='radio']):not([type='file']):not([type='range']):not([type='color']):not([type='image']),
+    textarea,
+    [contenteditable=''],
+    [contenteditable='true'],
+    [contenteditable='plaintext-only'],
+    .ProseMirror,
+    #wizardPanel,
+    #wizardPanel *:not(button):not(a):not([role='button']):not(svg):not(svg *) {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath d='M5 2 L11 2 M5 14 L11 14 M8 2 L8 14' stroke='white' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") 8 8, text !important;
     }
 }
 
