@@ -52,13 +52,16 @@
 
         .top-bar-center {
             display: flex;
-            gap: 4px;
+            gap: 2px;
             align-items: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            flex: 1;
+            justify-content: center;
+            min-width: 0;
         }
 
         .nav-btn {
-            padding: 5px 8px;
+            padding: 3px 6px;
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
@@ -66,7 +69,8 @@
             cursor: pointer;
             transition: all 0.2s;
             font-family: 'Inter', sans-serif;
-            font-size: 13px;
+            font-size: 11px;
+            white-space: nowrap;
         }
 
         .nav-btn:hover {
