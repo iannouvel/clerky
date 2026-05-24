@@ -387,16 +387,67 @@ function setupUpdateButtonOnChange() {
 
     // Create new listener
     editorChangeListener = () => {
-        // Show button on first edit
         if (updateBtn.style.display === 'none') {
-            updateBtn.style.display = 'inline-block';
+            updateBtn.style.display = 'inline-flex';
         }
     };
 
     // Attach listener
     editor.on('update', editorChangeListener);
 
+    // (Re)bind the click handler each time so it always references the latest loaded condition
+    updateBtn.onclick = handleSaveClerkingEdits;
+
     console.log('[CLINICAL] Change detection enabled for Update button');
+}
+
+async function handleSaveClerkingEdits() {
+    const updateBtn = document.getElementById('update-clerking-btn');
+    const updateSpinner = document.getElementById('update-spinner');
+    const updateText = document.getElementById('update-text');
+
+    if (!currentLoadedCondition) {
+        updateUser('No clinical clerking is currently loaded.', false);
+        return;
+    }
+
+    const newTranscript = getUserInputContent();
+    if (!newTranscript || !newTranscript.trim()) {
+        updateUser('Cannot save an empty clerking.', false);
+        return;
+    }
+
+    try {
+        if (updateBtn) updateBtn.disabled = true;
+        if (updateSpinner) updateSpinner.style.display = 'inline';
+        if (updateText) updateText.textContent = 'Saving...';
+
+        await ClinicalConditionsService.updateTranscript(currentLoadedCondition.id, newTranscript);
+
+        updateUser(`Saved edits to "${currentLoadedCondition.name}". This version will load next time.`, false);
+
+        hideUpdateClerkingButton();
+    } catch (err) {
+        console.error('[CLINICAL] Error saving clerking edits:', err);
+        updateUser(`Error saving edits: ${err.message}`, false);
+    } finally {
+        if (updateBtn) updateBtn.disabled = false;
+        if (updateSpinner) updateSpinner.style.display = 'none';
+        if (updateText) updateText.textContent = 'Save Edits';
+    }
+}
+
+// Hide the Save Edits button and tear down the change listener.
+// Called after a successful save, when Analyse Note starts, or when the modal is closed.
+export function hideUpdateClerkingButton() {
+    const updateBtn = document.getElementById('update-clerking-btn');
+    if (updateBtn) updateBtn.style.display = 'none';
+
+    const editor = window.editors?.userInput;
+    if (editor && editorChangeListener) {
+        editor.off('update', editorChangeListener);
+        editorChangeListener = null;
+    }
 }
 
 // Helper to clean up the test UI
@@ -406,14 +457,5 @@ function hideClinicalClerkingModal() {
         modal.classList.add('hidden');
     }
 
-    const updateBtn = document.getElementById('update-clerking-btn');
-    if (updateBtn) {
-        updateBtn.style.display = 'none';
-    }
-
-    const editor = window.editors?.userInput;
-    if (editor && editorChangeListener) {
-        editor.off('update', editorChangeListener);
-        editorChangeListener = null;
-    }
+    hideUpdateClerkingButton();
 }

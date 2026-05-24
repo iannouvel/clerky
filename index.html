@@ -548,6 +548,12 @@
                         <span class="btn-text">Analyse Note</span>
                     </button>
 
+                    <button id="update-clerking-btn" class="nav-btn secondary" title="Save your edits so this version loads next time you load the same clerking" style="display: none;">
+                        <span id="update-spinner" class="spinner" style="display: none;"></span>
+                        <span class="btn-icon">💾</span>
+                        <span id="update-text">Save Edits</span>
+                    </button>
+
 
                     <!-- Suggestion Actions Group (Hidden by default) -->
                     <div id="suggestionActionsGroup" class="suggestion-actions-group" style="display: none;">
@@ -576,10 +582,6 @@
                         <button id="regenerate-clerking-btn" class="nav-btn secondary" disabled>
                             <span id="regenerate-spinner" class="spinner" style="display: none;"></span>
                             <span id="regenerate-text">Regenerate Clerking</span>
-                        </button>
-                        <button id="update-clerking-btn" class="nav-btn secondary" style="display: none;">
-                            <span id="update-spinner" class="spinner" style="display: none;"></span>
-                            <span id="update-text">Update Saved Version</span>
                         </button>
                         <button id="cancel-generation-btn" class="nav-btn secondary">Cancel</button>
                     </div>
