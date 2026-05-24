@@ -388,7 +388,7 @@ function setupUpdateButtonOnChange() {
     // Create new listener
     editorChangeListener = () => {
         if (updateBtn.style.display === 'none') {
-            updateBtn.style.display = 'inline-flex';
+            updateBtn.style.display = 'flex';
         }
     };
 
@@ -403,8 +403,8 @@ function setupUpdateButtonOnChange() {
 
 async function handleSaveClerkingEdits() {
     const updateBtn = document.getElementById('update-clerking-btn');
-    const updateSpinner = document.getElementById('update-spinner');
-    const updateText = document.getElementById('update-text');
+    const updateSpinner = updateBtn?.querySelector('.spinner-icon');
+    const updateText = updateBtn?.querySelector('.btn-text');
 
     if (!currentLoadedCondition) {
         updateUser('No clinical clerking is currently loaded.', false);
