@@ -26,7 +26,7 @@ import { initializeConnectivityMonitoring } from './js/features/connectivity.js'
 import { autoInitializeVersion } from './js/features/version.js';
 import { checkDisclaimerAcceptance as checkDisclaimer } from './js/features/disclaimer.js';
 import { ClinicalConditionsService, loadClinicalIssues } from './js/features/clinicalData.js';
-import { showClinicalIssuesDropdown, generateFakeClinicalInteraction } from './js/features/clinicalInteraction.js';
+import { showClinicalIssuesDropdown, generateFakeClinicalInteraction, hideUpdateClerkingButton } from './js/features/clinicalInteraction.js';
 import { syncGuidelinesInBatches, repairGuidelineContent, diagnoseAndRepairContent, checkContentStatus, showMetadataProgress, hideMetadataProgress } from './js/features/guidelines.js';
 import {
     handleSuggestionAction,
@@ -5487,6 +5487,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.workflowInProgress = true;
             window.analysisAbortController = new AbortController();
             hideAnalyseButton();
+            hideUpdateClerkingButton();
 
             // Show as stop button
             if (btnIcon) btnIcon.textContent = '⏹';
