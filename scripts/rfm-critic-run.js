@@ -217,7 +217,10 @@ async function askCriticGemini(note, suggestion) {
         systemInstruction: { parts: [{ text: CRITIC_SYSTEM }] },
         contents: [{ role: 'user', parts: [{ text: buildCriticPrompt(note, suggestion) }] }],
         generationConfig: {
-            temperature: 0.2,
+            // Determinism over creativity: lower stochasticity so iteration-to-iteration
+            // comparisons reflect prompt-change signal rather than critic-LLM noise.
+            temperature: 0,
+            topP: 0.1,
             maxOutputTokens: 4000,
         },
     };
@@ -635,6 +638,7 @@ async function processScenario(page, scenario, rawLog) {
     rawLog.push({
         scenarioId: scenario.id,
         scenarioLabel: scenario.label,
+        pass: scenario._pass || 1,
         critiquedCount: critiqued.length,
         submitted,
         critiqued,
@@ -690,9 +694,17 @@ async function main() {
     const toRun = onlyIds.length > 0
         ? SCENARIOS.filter(s => onlyIds.includes(s.id))
         : SCENARIOS;
-    console.log(`Will run ${toRun.length} scenario(s): ${toRun.map(s => s.id).join(', ')}`);
+    // --repeat=N runs the full scenario set N times and aggregates. Used to average
+    // out critic-LLM stochasticity when comparing prompt iterations.
+    const repeatArg = process.argv.find(a => a.startsWith('--repeat='));
+    const REPEAT = repeatArg ? Math.max(1, parseInt(repeatArg.split('=')[1], 10)) : 1;
+    console.log(`Will run ${toRun.length} scenario(s) × ${REPEAT} pass(es): ${toRun.map(s => s.id).join(', ')}`);
 
+    for (let pass = 0; pass < REPEAT; pass++) {
+    if (REPEAT > 1) console.log(`\n========== PASS ${pass + 1} of ${REPEAT} ==========\n`);
     for (const scenario of toRun) {
+        // Tag each rawLog entry with the pass number for later aggregation
+        scenario._pass = pass + 1;
         if (Date.now() - runStart > TOTAL_TIME_CAP_MS) {
             summary.aborted = true;
             summary.abortReason = 'total-time-cap';
@@ -725,6 +737,7 @@ async function main() {
         fs.writeFileSync(RAW_LOG_PATH, JSON.stringify(rawLog, null, 2));
         await page.waitForTimeout(3000);
     }
+    } // end pass loop
 
     await browser.close();
     summary.completedAt = new Date().toISOString();
