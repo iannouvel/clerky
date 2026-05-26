@@ -27,6 +27,7 @@ const path = require('path');
 const fs = require('fs');
 const admin = require('firebase-admin');
 const { chromium } = require('playwright');
+const { renderReport } = require('./compliance-eval-report');
 
 // ----- Config -------------------------------------------------------------
 const REPO_ROOT = path.join(__dirname, '..');
@@ -921,7 +922,16 @@ async function main() {
     }
     if (abortReason) console.log(`Aborted: ${abortReason}`);
     console.log(`Full results: ${outPath}`);
-    console.log('\n[stage 3 — PDF report — not yet implemented]');
+
+    // 7. PDF report
+    const pdfPath = outPath.replace(/\.json$/, '.pdf');
+    console.log(`\nRendering PDF report → ${pdfPath}`);
+    try {
+        await renderReport(result, pdfPath);
+        console.log(`PDF written: ${pdfPath}`);
+    } catch (e) {
+        console.error(`PDF rendering failed: ${e.message}`);
+    }
 
     await admin.app().delete();
     process.exit(0);
