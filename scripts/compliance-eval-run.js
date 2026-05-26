@@ -306,6 +306,34 @@ async function clickSkip(page) {
     return true;
 }
 
+/**
+ * Get the current guideline scope preference (national/local/both).
+ * Returns null if not set, or { scope, hospitalTrust } object.
+ */
+async function getCurrentScope(page) {
+    return await page.evaluate(async () => {
+        if (typeof window.loadGuidelineScopeSelection !== 'function') return { _error: 'no-fn' };
+        try { return await window.loadGuidelineScopeSelection(); }
+        catch (e) { return { _error: e.message }; }
+    });
+}
+
+/**
+ * Set the guideline scope preference. scope = 'national' | 'local' | 'both'.
+ * hospitalTrust required for local/both; ignored for national.
+ */
+async function setScope(page, scope, hospitalTrust) {
+    return await page.evaluate(async ({ scope, hospitalTrust }) => {
+        if (typeof window.saveGuidelineScopeSelection !== 'function') return { _error: 'no-fn' };
+        try {
+            const payload = { scope };
+            if (hospitalTrust && (scope === 'local' || scope === 'both')) payload.hospitalTrust = hospitalTrust;
+            const ok = await window.saveGuidelineScopeSelection(payload);
+            return { ok };
+        } catch (e) { return { _error: e.message }; }
+    }, { scope, hospitalTrust });
+}
+
 async function dismissCookieBanner(page) {
     const banner = page.locator('#cookie-consent-banner button:has-text("Reject Non-Essential")').first();
     if (await banner.isVisible().catch(() => false)) {
@@ -338,13 +366,14 @@ async function selectOnlyGuideline(page, guidelineId, guidelineTitle, log) {
 
     log(`Checkpoint modal visible — selecting "${guidelineTitle}"`);
 
-    const matched = await page.evaluate(({ id, titlePattern }) => {
+    const matchResult = await page.evaluate(({ id, titlePattern }) => {
         const titleRe = new RegExp(titlePattern, 'i');
         const rows = Array.from(document.querySelectorAll('.checkpoint-guidelines-list > div'));
         const matchedTitles = [];
+        const availableRows = [];
         // Token-overlap fallback: compare normalised word sets when neither
         // data-guideline-id nor regex matches (handles getCleanDisplayTitle
-        // transforms that drop "BJOG", years, etc.).
+        // transforms that drop org names, years, etc.).
         const idTokens = new Set(
             String(id || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2)
         );
@@ -354,29 +383,36 @@ async function selectOnlyGuideline(page, guidelineId, guidelineTitle, log) {
             const rowId = row.dataset?.guidelineId || cb.dataset?.guidelineId || '';
             const titleSpan = row.querySelector('span');
             const title = titleSpan?.textContent?.trim() || '';
+            availableRows.push({ rowId, title });
 
             let isMatch = false;
-            if (id && rowId === id) isMatch = true;
-            if (!isMatch && titleRe.test(title)) isMatch = true;
+            let matchVia = '';
+            if (id && rowId === id) { isMatch = true; matchVia = 'data-id'; }
+            if (!isMatch && titleRe.test(title)) { isMatch = true; matchVia = 'title-regex'; }
             if (!isMatch && idTokens.size >= 2) {
                 const titleTokens = new Set(title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2));
                 let overlap = 0;
                 idTokens.forEach(t => { if (titleTokens.has(t)) overlap++; });
-                if (overlap / idTokens.size >= 0.5) isMatch = true;
+                if (overlap / idTokens.size >= 0.4) { isMatch = true; matchVia = `token-overlap(${overlap}/${idTokens.size})`; }
             }
 
             cb.checked = isMatch;
-            if (isMatch) matchedTitles.push(title);
+            if (isMatch) matchedTitles.push(`${title} [via ${matchVia}]`);
         });
         const anyCb = document.querySelector('.checkpoint-cb');
         if (anyCb) anyCb.dispatchEvent(new Event('change', { bubbles: true }));
-        return matchedTitles;
+        return { matchedTitles, availableRows };
     }, { id: guidelineId, titlePattern: escapeRegex(guidelineTitle) });
 
+    const matched = matchResult.matchedTitles;
     log(`Matched ${matched.length} row(s): ${matched.slice(0, 3).join(' | ')}`);
 
     if (matched.length === 0) {
-        log('No matching guideline in checkpoint — clicking Cancel');
+        log(`No matching guideline in checkpoint. Available rows (${matchResult.availableRows.length}):`);
+        matchResult.availableRows.slice(0, 20).forEach(r => {
+            log(`    [${r.rowId || 'no-id'}] ${r.title}`);
+        });
+        log('Clicking Cancel');
         await page.evaluate(() => {
             const btn = document.getElementById('checkpoint-cancel-btn');
             if (btn) btn.click();
@@ -819,9 +855,33 @@ async function main() {
     const page = await context.newPage();
     page.on('pageerror', e => console.log('  [pageerror]', e.message));
 
+    // Force scope to 'both' so national + local guidelines both appear in the
+    // checkpoint. Restore the original scope in finally so we don't leak state
+    // into the user's account.
+    console.log('Loading clerkyai.health to read current scope preference...');
+    await page.goto('https://clerkyai.health/', { waitUntil: 'load' });
+    await page.locator('#userInput .ProseMirror').waitFor({ state: 'visible', timeout: 30_000 }).catch(() => {});
+    let originalScope = null;
+    try {
+        originalScope = await getCurrentScope(page);
+        console.log(`Original scope: ${JSON.stringify(originalScope)}`);
+    } catch (e) {
+        console.log(`Could not read current scope (continuing): ${e.message}`);
+    }
+    if (originalScope && originalScope.scope !== 'both') {
+        const flipResult = await setScope(page, 'both', originalScope.hospitalTrust);
+        console.log(`Set scope to 'both' for run: ${JSON.stringify(flipResult)}`);
+    } else if (!originalScope || originalScope._error) {
+        // No scope preference saved (or load failed) — set to 'both' anyway so
+        // national guidelines surface. Trust will be ignored by 'both' if missing.
+        const flipResult = await setScope(page, 'both', null);
+        console.log(`No prior scope; set to 'both': ${JSON.stringify(flipResult)}`);
+    }
+
     const runStart = Date.now();
     let abortReason = null;
 
+    try {
     for (const [i, scenario] of scenarios.entries()) {
         const log = (m) => console.log(`  [${scenario.guidelineId}] ${m}`);
         console.log(`\n[${i + 1}/${scenarios.length}] ${scenario.guidelineTitle}`);
@@ -904,6 +964,19 @@ async function main() {
 
         // 5d. Save incrementally so a crash doesn't lose progress
         fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
+    }
+    } finally {
+        // Restore the user's original scope preference whether the loop
+        // completed, broke out early, or threw.
+        if (originalScope && !originalScope._error && originalScope.scope) {
+            try {
+                const restored = await setScope(page, originalScope.scope, originalScope.hospitalTrust);
+                console.log(`\nRestored original scope ${JSON.stringify(originalScope)}: ${JSON.stringify(restored)}`);
+            } catch (e) {
+                console.error(`Failed to restore original scope (${JSON.stringify(originalScope)}): ${e.message}`);
+                console.error('Manual restore needed — set scope back in Clerky preferences.');
+            }
+        }
     }
 
     await browser.close();
