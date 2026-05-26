@@ -1,5 +1,4 @@
 import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText } from '../utils/editor.js';
-import { extractSectionContent, applySuggestionInsertion } from './suggestions.js';
 
 // Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
 window.clearReplacementPreviewState = clearReplacementState;
@@ -620,157 +619,76 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (typeof updateUser === 'function') updateUser('Applying change...', true);
 
         try {
-            const currentContent = getUserInputContent();
-            let newContent;
-
-            // Check if we have pre-calculated placement info for this suggestion
-            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
-            const calculatedPlacement = currentSuggestion?._calculatedPlacement;
-            if (calculatedPlacement) {
-                console.log('[WIZARD] Using pre-calculated placement', {
-                    action: calculatedPlacement.action,
-                    changeCount: calculatedPlacement.changes?.length || 0,
-                    changes: calculatedPlacement.changes?.map(c => ({
-                        type: c.type,
-                        location: c.location || c.position,
-                        section: c.section || c.target_section
-                    }))
-                });
-            }
-
-            // Replacement preview path: suggestion replaces existing text in the note
-            const replacementPreview = getReplacementPreview();
+            // Source of truth for the *original* note is the pre-preview snapshot,
+            // not getUserInputContent() — the displayed editor still contains the
+            // green placeholder line that showInsertionPreview spliced in. The new
+            // additive-only preview never destroys content, so the snapshot is
+            // always the clean original note.
             const contentSnapshot = getContentBeforePreview();
-            if (replacementPreview && contentSnapshot) {
-                const lines = contentSnapshot.split('\n');
-                const idx = lines.findIndex(l => l.includes(replacementPreview.originalText));
-                if (idx !== -1) {
-                    // Check if the original line had a list number prefix (e.g., "1. ")
-                    const originalLine = lines[idx];
-                    const numberedMatch = originalLine.match(/^(\d+)\.\s/);
-                    let replacementText = textToInsert;
+            const liveContent = getUserInputContent();
+            // Fall back to stripping the placeholder line from the live editor if
+            // no snapshot is available (shouldn't happen with the new additive
+            // preview, but defensive).
+            const originalNote = (typeof contentSnapshot === 'string' && contentSnapshot.length > 0)
+                ? contentSnapshot
+                : liveContent.split('\n').filter(l => !l.includes(INSERTION_PLACEHOLDER)).join('\n');
 
-                    // If original had a number, decide whether to prepend it to the replacement.
-                    // The .replace() below is a *partial* substitution within the line, so it only
-                    // strips the prefix when originalText itself starts with it. When originalText
-                    // is just the prose ("Continue current plan..."), the existing "N. " stays in
-                    // the line — prepending another one produces "2. 2. ...". Only re-add the
-                    // prefix when originalText is itself prefixed.
-                    if (numberedMatch) {
-                        const listNumber = numberedMatch[1];
-                        const originalHasPrefix = /^\d+\.\s/.test(replacementPreview.originalText);
-                        const replacementHasPrefix = /^\d+\.\s/.test(replacementText);
-                        if (originalHasPrefix && !replacementHasPrefix) {
-                            replacementText = `${listNumber}. ${replacementText}`;
-                            console.log('[WIZARD] Preserved list number', listNumber, 'in replacement');
-                        }
-                    }
+            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
 
-                    lines[idx] = lines[idx].replace(replacementPreview.originalText, replacementText);
-                    newContent = lines.join('\n');
-                    console.log('[WIZARD] Replaced original text with accepted suggestion');
-                } else {
-                    // originalText not found in snapshot — append as fallback
-                    newContent = contentSnapshot + '\n' + textToInsert;
-                    console.log('[WIZARD] Replacement target not found in snapshot, appended');
-                }
-                clearReplacementState();
-            // Standard placeholder path
-            } else if (currentContent.includes(INSERTION_PLACEHOLDER)) {
-                const lines = currentContent.split('\n');
-                const phIdx = lines.findIndex(l => l.includes(INSERTION_PLACEHOLDER));
-                // Preserve any list prefix (e.g. "6. " or "- ") that was added by the preview
-                lines[phIdx] = lines[phIdx].replace(INSERTION_PLACEHOLDER, textToInsert);
-                newContent = lines.join('\n');
-                console.log('[WIZARD] Replaced insertion placeholder with accepted text');
-            } else {
-                // Fallback: placeholder wasn't found (e.g. user edited note while wizard open)
-                console.log('[WIZARD] Placeholder not found in current content; entering fallback logic');
-                const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
-                const replacePattern = currentSuggestion?.replace_pattern;
-                const missingInfo = currentSuggestion?.missing_info || '';
-
-                if (replacePattern && currentContent.includes(replacePattern)) {
-                    // Check if the line with replacePattern has a list number prefix
-                    const lines = currentContent.split('\n');
-                    const idx = lines.findIndex(l => l.includes(replacePattern));
-                    let replacementText = textToInsert;
-
-                    if (idx !== -1) {
-                        const originalLine = lines[idx];
-                        const numberedMatch = originalLine.match(/^(\d+)\.\s/);
-
-                        // Only re-add the list prefix when replacePattern itself includes it —
-                        // otherwise the existing "N. " on the line stays via partial replace and
-                        // we'd produce "2. 2. ...". See the replacement-preview path above for
-                        // the same logic.
-                        if (numberedMatch) {
-                            const listNumber = numberedMatch[1];
-                            const patternHasPrefix = /^\d+\.\s/.test(replacePattern);
-                            const replacementHasPrefix = /^\d+\.\s/.test(replacementText);
-                            if (patternHasPrefix && !replacementHasPrefix) {
-                                replacementText = `${listNumber}. ${replacementText}`;
-                                console.log('[WIZARD] Preserved list number', listNumber, 'in fallback replacement');
+            // Call /determineSingleSuggestionInsertionPoint with the FULL original
+            // note and the suggestion's metadata. The endpoint has a server-side
+            // safety guard that rejects responses which have lost more than 30%
+            // of the original character count.
+            let newContent = null;
+            let llmSucceeded = false;
+            try {
+                const user = window.auth?.currentUser;
+                if (user) {
+                    const idToken = await user.getIdToken();
+                    const response = await fetch(`${window.SERVER_URL}/determineSingleSuggestionInsertionPoint`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                        body: JSON.stringify({
+                            clinicalNote: originalNote,
+                            suggestion: {
+                                suggestion: textToInsert,
+                                target_section: currentSuggestion?.target_section,
+                                originalText: currentSuggestion?.originalText,
+                                verbatimQuote: currentSuggestion?.verbatimQuote,
+                                why: currentSuggestion?.why,
+                                category: currentSuggestion?.category,
                             }
-                        }
-                    }
-
-                    newContent = currentContent.replace(replacePattern, replacementText);
-                    console.log('[WIZARD] Fallback: replaced replace_pattern for amendment');
-                } else {
-                    // For wizard suggestions without target_section, call LLM to determine placement
-                    if (currentSuggestion && !currentSuggestion.target_section) {
-                        console.log('[WIZARD] Suggestion lacks target_section; calling LLM for intelligent placement', {
-                            suggestionId: currentSuggestion.id,
-                            practicePointNumber: currentSuggestion.practicePointNumber,
-                            sourceGuidelineId: currentSuggestion.sourceGuidelineId,
-                            textToInsert: textToInsert.substring(0, 60) + '...'
-                        });
-                        try {
-                            const user = window.auth?.currentUser;
-                            if (user) {
-                                const idToken = await user.getIdToken();
-                                const enrichedSuggestion = { ...currentSuggestion, suggestion: textToInsert };
-                                const response = await fetch(`${window.SERVER_URL}/determineInsertionPoint`, {
-                                    method: 'POST',
-                                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                                    body: JSON.stringify({ suggestion: enrichedSuggestion, clinicalNote: currentContent })
-                                });
-                                if (response.ok) {
-                                    const result = await response.json();
-                                    const contentChanged = result.updatedNote && result.updatedNote !== currentContent;
-                                    newContent = result.updatedNote || currentContent;
-                                    console.log('[WIZARD] LLM placement succeeded', {
-                                        contentChanged,
-                                        resultLength: result.updatedNote?.length
-                                    });
-                                } else {
-                                    console.warn('[WIZARD] LLM placement endpoint returned status', response.status);
-                                    newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
-                                    console.log('[WIZARD] Fallback: used unified insertion logic after LLM failure');
-                                }
-                            } else {
-                                console.warn('[WIZARD] User not authenticated for LLM placement');
-                                newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
-                                console.log('[WIZARD] Fallback: used unified insertion logic (not authenticated)');
-                            }
-                        } catch (err) {
-                            console.warn('[WIZARD] Exception calling LLM for placement:', err.message);
-                            newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
-                            console.log('[WIZARD] Fallback: used unified insertion logic after exception');
+                        })
+                    });
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result.success && typeof result.updatedNote === 'string' && result.updatedNote.trim().length > 0) {
+                            newContent = result.updatedNote;
+                            llmSucceeded = true;
+                            console.log('[WIZARD] LLM placement applied via /determineSingleSuggestionInsertionPoint');
+                        } else {
+                            console.warn('[WIZARD] LLM placement endpoint returned success=false:', result.error || 'unknown', {
+                                retentionRatio: result.retentionRatio,
+                            });
                         }
                     } else {
-                        // Use unified insertion logic for completeness suggestions (which have target_section)
-                        console.log('[WIZARD] Suggestion has target_section; using unified insertion logic', {
-                            targetSection: currentSuggestion?.target_section
-                        });
-                        newContent = applySuggestionInsertion(textToInsert, currentSuggestion, currentContent);
+                        console.warn('[WIZARD] LLM placement endpoint HTTP status', response.status);
                     }
+                } else {
+                    console.warn('[WIZARD] User not authenticated; skipping LLM placement');
                 }
+            } catch (err) {
+                console.warn('[WIZARD] LLM placement exception:', err.message);
+            }
+
+            if (!llmSucceeded) {
+                // Safe fallback: append the suggestion as a new line at the end of
+                // the original note. Never destructive, never loses content.
+                newContent = originalNote.replace(/\n+$/, '') + '\n' + textToInsert;
+                console.log('[WIZARD] Fallback: appended suggestion at end of original note');
             }
 
             // Set content normally without green styling (provisional text should disappear when accepted)
-            // The newContent already has the inserted text in the right place
             setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
 
             // Clear replacement preview state so red strikethrough doesn't persist after accepting
