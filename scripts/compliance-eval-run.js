@@ -342,13 +342,29 @@ async function selectOnlyGuideline(page, guidelineId, guidelineTitle, log) {
         const titleRe = new RegExp(titlePattern, 'i');
         const rows = Array.from(document.querySelectorAll('.checkpoint-guidelines-list > div'));
         const matchedTitles = [];
+        // Token-overlap fallback: compare normalised word sets when neither
+        // data-guideline-id nor regex matches (handles getCleanDisplayTitle
+        // transforms that drop "BJOG", years, etc.).
+        const idTokens = new Set(
+            String(id || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2)
+        );
         rows.forEach(row => {
             const cb = row.querySelector('.checkpoint-cb');
             if (!cb) return;
+            const rowId = row.dataset?.guidelineId || cb.dataset?.guidelineId || '';
             const titleSpan = row.querySelector('span');
             const title = titleSpan?.textContent?.trim() || '';
-            const rowId = row.dataset?.guidelineId || row.dataset?.id || '';
-            const isMatch = (id && rowId === id) || titleRe.test(title);
+
+            let isMatch = false;
+            if (id && rowId === id) isMatch = true;
+            if (!isMatch && titleRe.test(title)) isMatch = true;
+            if (!isMatch && idTokens.size >= 2) {
+                const titleTokens = new Set(title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2));
+                let overlap = 0;
+                idTokens.forEach(t => { if (titleTokens.has(t)) overlap++; });
+                if (overlap / idTokens.size >= 0.5) isMatch = true;
+            }
+
             cb.checked = isMatch;
             if (isMatch) matchedTitles.push(title);
         });

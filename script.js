@@ -7887,8 +7887,8 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             const scoreColor = score >= 0.8 ? '#4caf50' : score >= 0.6 ? '#ff9800' : '#999';
 
             html += `
-                <div style="border-bottom: 1px solid var(--border-color); padding: 10px 15px; display: flex; align-items: center; gap: 10px;">
-                    <input type="checkbox" class="checkpoint-cb" data-idx="${i}" ${isChecked}
+                <div data-guideline-id="${g.id}" style="border-bottom: 1px solid var(--border-color); padding: 10px 15px; display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" class="checkpoint-cb" data-idx="${i}" data-guideline-id="${g.id}" ${isChecked}
                         style="width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;">
                     <div style="flex: 1; min-width: 0;">
                         <span style="font-weight: 500; color: var(--text-primary);">${displayTitle}</span>${orgDisplay}
