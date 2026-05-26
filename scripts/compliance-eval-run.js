@@ -306,32 +306,57 @@ async function clickSkip(page) {
     return true;
 }
 
-/**
- * Get the current guideline scope preference (national/local/both).
- * Returns null if not set, or { scope, hospitalTrust } object.
- */
-async function getCurrentScope(page) {
-    return await page.evaluate(async () => {
-        if (typeof window.loadGuidelineScopeSelection !== 'function') return { _error: 'no-fn' };
-        try { return await window.loadGuidelineScopeSelection(); }
-        catch (e) { return { _error: e.message }; }
-    });
+// Scope is managed via the server's REST API rather than page.evaluate,
+// because script.js is an ES module so its top-level functions don't leak
+// onto window. Going through the server endpoint also invalidates the
+// server-side 30-min cache that would otherwise serve stale scope.
+
+const SERVER_URL = process.env.CLERKY_SERVER_URL || 'https://clerky-uzni.onrender.com';
+
+function getAuthTokenFromState() {
+    try {
+        const state = JSON.parse(fs.readFileSync(AUTH_STATE_PATH, 'utf8'));
+        const lsItem = state.origins?.[0]?.localStorage?.find(x => x.name?.startsWith('firebase:authUser:'));
+        if (!lsItem) return null;
+        const stored = JSON.parse(lsItem.value);
+        return stored?.stsTokenManager?.accessToken || null;
+    } catch (e) {
+        return null;
+    }
 }
 
-/**
- * Set the guideline scope preference. scope = 'national' | 'local' | 'both'.
- * hospitalTrust required for local/both; ignored for national.
- */
-async function setScope(page, scope, hospitalTrust) {
-    return await page.evaluate(async ({ scope, hospitalTrust }) => {
-        if (typeof window.saveGuidelineScopeSelection !== 'function') return { _error: 'no-fn' };
-        try {
-            const payload = { scope };
-            if (hospitalTrust && (scope === 'local' || scope === 'both')) payload.hospitalTrust = hospitalTrust;
-            const ok = await window.saveGuidelineScopeSelection(payload);
-            return { ok };
-        } catch (e) { return { _error: e.message }; }
-    }, { scope, hospitalTrust });
+async function getCurrentScope() {
+    const token = getAuthTokenFromState();
+    if (!token) return { _error: 'no-token' };
+    try {
+        const resp = await fetch(`${SERVER_URL}/getUserGuidelineScope`, {
+            headers: { authorization: `Bearer ${token}` },
+        });
+        const data = await resp.json();
+        if (!resp.ok || !data.success) return { _error: `http-${resp.status}` };
+        return data.guidelineScope || null;
+    } catch (e) {
+        return { _error: e.message };
+    }
+}
+
+async function setScope(scope, hospitalTrust) {
+    const token = getAuthTokenFromState();
+    if (!token) return { _error: 'no-token' };
+    const payload = { scope };
+    if (hospitalTrust && (scope === 'local' || scope === 'both')) payload.hospitalTrust = hospitalTrust;
+    try {
+        const resp = await fetch(`${SERVER_URL}/updateUserGuidelineScope`, {
+            method: 'POST',
+            headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` },
+            body: JSON.stringify({ guidelineScope: payload }),
+        });
+        const data = await resp.json();
+        if (!resp.ok || !data.success) return { _error: `http-${resp.status}`, payload };
+        return { ok: true, payload };
+    } catch (e) {
+        return { _error: e.message };
+    }
 }
 
 async function dismissCookieBanner(page) {
@@ -857,25 +882,17 @@ async function main() {
 
     // Force scope to 'both' so national + local guidelines both appear in the
     // checkpoint. Restore the original scope in finally so we don't leak state
-    // into the user's account.
-    console.log('Loading clerkyai.health to read current scope preference...');
-    await page.goto('https://clerkyai.health/', { waitUntil: 'load' });
-    await page.locator('#userInput .ProseMirror').waitFor({ state: 'visible', timeout: 30_000 }).catch(() => {});
-    let originalScope = null;
-    try {
-        originalScope = await getCurrentScope(page);
-        console.log(`Original scope: ${JSON.stringify(originalScope)}`);
-    } catch (e) {
-        console.log(`Could not read current scope (continuing): ${e.message}`);
-    }
-    if (originalScope && originalScope.scope !== 'both') {
-        const flipResult = await setScope(page, 'both', originalScope.hospitalTrust);
+    // into the user's account. Done via server REST API (script.js is an ES
+    // module so its scope functions don't expose on window).
+    let originalScope = await getCurrentScope();
+    console.log(`Original scope: ${JSON.stringify(originalScope)}`);
+    if (!originalScope || originalScope._error || originalScope.scope !== 'both') {
+        const trust = originalScope?.hospitalTrust || null;
+        const flipResult = await setScope('both', trust);
         console.log(`Set scope to 'both' for run: ${JSON.stringify(flipResult)}`);
-    } else if (!originalScope || originalScope._error) {
-        // No scope preference saved (or load failed) — set to 'both' anyway so
-        // national guidelines surface. Trust will be ignored by 'both' if missing.
-        const flipResult = await setScope(page, 'both', null);
-        console.log(`No prior scope; set to 'both': ${JSON.stringify(flipResult)}`);
+        if (flipResult._error) {
+            console.warn('Scope flip failed — national guidelines may still be filtered out');
+        }
     }
 
     const runStart = Date.now();
@@ -969,12 +986,10 @@ async function main() {
         // Restore the user's original scope preference whether the loop
         // completed, broke out early, or threw.
         if (originalScope && !originalScope._error && originalScope.scope) {
-            try {
-                const restored = await setScope(page, originalScope.scope, originalScope.hospitalTrust);
-                console.log(`\nRestored original scope ${JSON.stringify(originalScope)}: ${JSON.stringify(restored)}`);
-            } catch (e) {
-                console.error(`Failed to restore original scope (${JSON.stringify(originalScope)}): ${e.message}`);
-                console.error('Manual restore needed — set scope back in Clerky preferences.');
+            const restored = await setScope(originalScope.scope, originalScope.hospitalTrust);
+            console.log(`\nRestored original scope ${JSON.stringify(originalScope)}: ${JSON.stringify(restored)}`);
+            if (restored._error) {
+                console.error('Failed to restore original scope — manually set it back in Clerky preferences.');
             }
         }
     }
