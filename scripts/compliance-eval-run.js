@@ -16,9 +16,20 @@
  *   --guidelines=id1,id2 Override the auto-pick with specific guideline IDs
  *   --dry-run            Skip agent + judge; just pick + generate pre-notes
  *   --out=path           Output JSON path (default tests/.compliance-eval-<ts>.json)
+ *   --from-firestore     Load pre-notes from auditTranscripts collection (fixed
+ *                        scenarios, not AI-generated). Removes pre-note
+ *                        stochasticity for A/B prompt testing.
+ *   --variant=correct|incorrect
+ *                        With --from-firestore, choose which transcript variant.
+ *                        "correct" = the deliberately-compliant transcript
+ *                        (good for testing wipe-bug / no-false-positives).
+ *                        "incorrect" = the deliberately-non-compliant variant
+ *                        (good for testing whether Clerky catches gaps).
+ *                        Default: correct.
  *
  * Run:
  *   ANTHROPIC_API_KEY=sk-ant-... node scripts/compliance-eval-run.js --dry-run
+ *   node scripts/compliance-eval-run.js --from-firestore --variant=incorrect
  */
 
 require('dotenv').config();
@@ -52,12 +63,25 @@ const JUDGE_MAX_CONCURRENCY = 4;    // parallel judge calls per note
 
 // ----- CLI args -----------------------------------------------------------
 function parseArgs(argv) {
-    const out = { limit: DEFAULT_LIMIT, guidelines: null, dryRun: false, outPath: null };
+    const out = {
+        limit: DEFAULT_LIMIT,
+        guidelines: null,
+        dryRun: false,
+        outPath: null,
+        fromFirestore: false,
+        variant: 'correct',
+    };
     for (const a of argv.slice(2)) {
         if (a === '--dry-run') out.dryRun = true;
+        else if (a === '--from-firestore') out.fromFirestore = true;
+        else if (a.startsWith('--variant=')) out.variant = a.split('=')[1];
         else if (a.startsWith('--limit=')) out.limit = parseInt(a.split('=')[1], 10);
         else if (a.startsWith('--guidelines=')) out.guidelines = a.split('=')[1].split(',').map(s => s.trim()).filter(Boolean);
         else if (a.startsWith('--out=')) out.outPath = a.split('=')[1];
+    }
+    if (!['correct', 'incorrect'].includes(out.variant)) {
+        console.error(`Invalid --variant=${out.variant}. Use 'correct' or 'incorrect'.`);
+        process.exit(1);
     }
     return out;
 }
@@ -105,6 +129,129 @@ async function pickGuidelines(db, limit, overrideIds) {
         .filter(g => g.ppCount > 0)
         .sort((a, b) => b.ppCount - a.ppCount)
         .slice(0, limit);
+}
+
+// ----- Firestore-scenario loader -----------------------------------------
+
+/**
+ * Strip the audit-meta scaffolding from a transcript so it reads like a real
+ * clinical note. The transcripts in Firestore carry markdown headings
+ * (**SITUATION:**, **BACKGROUND:**, etc.) and a trailing **AUDIT NOTE:**
+ * paragraph that explains the test scenario to a human auditor. The audit
+ * footer in particular would mislead the agent — strip it. Leave the SBAR
+ * structure intact (it's how UK clerkings are written).
+ */
+function cleanTranscript(raw) {
+    if (!raw) return '';
+    let s = String(raw);
+
+    // Drop everything from the first audit-meta block onwards. These blocks
+    // explain to a human auditor why the transcript is/isn't compliant — they
+    // would leak the test answer to the model under test.
+    // Match anywhere on a line: optional ** wrapping, optional emphasis, then
+    // a known audit-meta heading word.
+    const metaHeadingRe = /^\s*\*+\s*(audit\s+(note|verification|trail|flag|rationale|finding[s]?)|key\s+error|compliance\s+rationale|test\s+rationale|expected\s+(finding|outcome)|guideline\s+violation)[^\n]*$/im;
+    const metaMatch = s.match(metaHeadingRe);
+    if (metaMatch) s = s.slice(0, metaMatch.index).trim();
+
+    // Drop title lines that announce the doc as a test transcript:
+    //   **CLINICAL TRANSCRIPT FOR AUDIT - FETAL ...**
+    //   **CLINICAL AUDIT TRANSCRIPT - BREECH ...**
+    //   **INCORRECT Clinical Transcript for Audit Testing**
+    //   *Guideline Compliance: Fetal Abnormality Management*
+    const titleLineRe = /^\s*\*+\s*(incorrect\s+)?(clinical\s+)?(audit\s+)?(transcript|guideline\s+compliance)[^\n]*\*+\s*\n+/i;
+    while (titleLineRe.test(s)) s = s.replace(titleLineRe, '');
+
+    // Drop "Element N — INCORRECT" answer-key annotations that leak which
+    // practice point is being violated. We want the agent to surface the gap
+    // from clinical content alone.
+    s = s.replace(/\s*\(\s*\*?\*?Element\s+\d+[^)]*\)/gi, '');
+    s = s.replace(/\s*[–-]+\s*\*?\*?INCORRECT\*?\*?/gi, '');
+
+    // Trailing meta sentences that talk about "this transcript" / "this scenario"
+    const metaSentenceRe = /^\s*(this\s+(transcript|scenario|note|case)|the\s+(transcript|scenario|error|omission))\b[^\n]*\n?/gim;
+    s = s.replace(metaSentenceRe, '');
+
+    // Drop standalone "---" separator runs at the start, and trim trailing rules.
+    s = s.replace(/^\s*---+\s*\n+/g, '').trim();
+    s = s.replace(/\n\s*---+\s*$/g, '').trim();
+
+    return s.trim();
+}
+
+/**
+ * Load fixed scenarios from the auditTranscripts collection.
+ * Each doc carries a transcript that exercises a specific guidelineId. We
+ * join against the guidelines collection to pick up practicePoints (needed
+ * by the judge).
+ *
+ * @param variant 'correct' uses doc.transcript; 'incorrect' uses doc.incorrectScripts[0].incorrectTranscript
+ */
+async function loadFirestoreScenarios(db, variant, overrideGuidelineIds) {
+    const snap = await db.collection('auditTranscripts').get();
+    const guidelineCache = new Map();
+
+    async function getGuideline(id) {
+        if (guidelineCache.has(id)) return guidelineCache.get(id);
+        const doc = await db.collection('guidelines').doc(id).get();
+        if (!doc.exists) {
+            guidelineCache.set(id, null);
+            return null;
+        }
+        const data = doc.data();
+        const result = {
+            id,
+            title: data.displayName || data.humanFriendlyName || data.title || data.filename || id,
+            organisation: data.organisation || data.organization || '',
+            practicePoints: Array.isArray(data.practicePoints) ? data.practicePoints : [],
+        };
+        guidelineCache.set(id, result);
+        return result;
+    }
+
+    const scenarios = [];
+    for (const doc of snap.docs) {
+        const data = doc.data();
+        const guidelineId = data.guidelineId;
+        if (!guidelineId) continue;
+        if (overrideGuidelineIds && overrideGuidelineIds.length && !overrideGuidelineIds.includes(guidelineId)) continue;
+
+        const guideline = await getGuideline(guidelineId);
+        if (!guideline) {
+            console.warn(`  Skipping ${doc.id}: guideline ${guidelineId} not found in Firestore`);
+            continue;
+        }
+        if (guideline.practicePoints.length === 0) {
+            console.warn(`  Skipping ${doc.id}: guideline ${guidelineId} has no practice points`);
+            continue;
+        }
+
+        let rawTranscript = null;
+        if (variant === 'correct') {
+            rawTranscript = data.transcript;
+        } else {
+            const incorrect = (data.incorrectScripts || [])[0];
+            rawTranscript = incorrect?.incorrectTranscript || incorrect?.transcript || null;
+        }
+        if (!rawTranscript) {
+            console.warn(`  Skipping ${doc.id}: no ${variant} transcript`);
+            continue;
+        }
+
+        scenarios.push({
+            transcriptId: doc.id,
+            variant,
+            guidelineId: guideline.id,
+            guidelineTitle: guideline.title,
+            organisation: guideline.organisation,
+            ppCount: guideline.practicePoints.length,
+            practicePoints: guideline.practicePoints,
+            preNote: cleanTranscript(rawTranscript),
+            postNote: null,
+            scoring: null,
+        });
+    }
+    return scenarios;
 }
 
 // ----- LLM helpers --------------------------------------------------------
@@ -776,57 +923,84 @@ async function main() {
     const db = initFirebase();
 
     console.log('=== Compliance-eval harness ===');
-    console.log(`Mode: ${args.dryRun ? 'DRY-RUN (picker + pre-notes only)' : 'FULL (not yet implemented — coming in stage 2)'}`);
-    console.log('');
-
-    // 1. Pick guidelines
-    console.log(args.guidelines
-        ? `Picking ${args.guidelines.length} guideline(s) by ID override`
-        : `Picking top ${args.limit} guideline(s) by practice-point count`);
-    const guidelines = await pickGuidelines(db, args.limit, args.guidelines);
-
-    if (guidelines.length === 0) {
-        console.error('No guidelines picked — aborting.');
-        process.exit(1);
+    console.log(`Mode: ${args.dryRun ? 'DRY-RUN (picker + pre-notes only)' : 'FULL'}`);
+    if (args.fromFirestore) {
+        console.log(`Pre-note source: Firestore auditTranscripts (variant=${args.variant})`);
+    } else {
+        console.log('Pre-note source: AI-generated');
     }
-
-    console.log('\nPicked:');
-    guidelines.forEach((g, i) => {
-        console.log(`  ${i + 1}. [${g.ppCount} PPs] ${g.title}  (${g.id})`);
-    });
     console.log('');
 
-    // 2. Generate pre-notes
-    console.log('Generating pre-refinement notes...');
-    const scenarios = [];
-    for (const [i, g] of guidelines.entries()) {
-        process.stdout.write(`  [${i + 1}/${guidelines.length}] ${g.id} ... `);
-        try {
-            const preNote = await generatePreNote(g);
-            scenarios.push({
-                guidelineId: g.id,
-                guidelineTitle: g.title,
-                organisation: g.organisation,
-                ppCount: g.ppCount,
-                practicePoints: g.practicePoints,
-                preNote,
-                postNote: null,        // filled by stage 2
-                scoring: null,         // filled by stage 2
-            });
-            console.log(`OK (${preNote.length} chars)`);
-        } catch (e) {
-            console.log(`FAILED: ${e.message.slice(0, 120)}`);
-            scenarios.push({
-                guidelineId: g.id,
-                guidelineTitle: g.title,
-                organisation: g.organisation,
-                ppCount: g.ppCount,
-                practicePoints: g.practicePoints,
-                preNote: null,
-                preNoteError: e.message,
-                postNote: null,
-                scoring: null,
-            });
+    // 1+2. Either load fixed scenarios from Firestore, or pick guidelines and
+    //      AI-generate pre-notes.
+    let scenarios;
+
+    if (args.fromFirestore) {
+        console.log('Loading fixed scenarios from auditTranscripts collection...');
+        scenarios = await loadFirestoreScenarios(db, args.variant, args.guidelines);
+        if (scenarios.length === 0) {
+            console.error('No fixed scenarios loaded — aborting.');
+            await admin.app().delete();
+            process.exit(1);
+        }
+        // Optional --limit truncates the set
+        if (args.limit && scenarios.length > args.limit) {
+            scenarios = scenarios.slice(0, args.limit);
+        }
+        console.log(`\nLoaded ${scenarios.length} fixed scenario(s):`);
+        scenarios.forEach((s, i) => {
+            console.log(`  ${i + 1}. [${s.ppCount} PPs] ${s.guidelineTitle}`);
+            console.log(`     transcript=${s.transcriptId} variant=${s.variant} preNote=${s.preNote.length}ch`);
+        });
+        console.log('');
+    } else {
+        console.log(args.guidelines
+            ? `Picking ${args.guidelines.length} guideline(s) by ID override`
+            : `Picking top ${args.limit} guideline(s) by practice-point count`);
+        const guidelines = await pickGuidelines(db, args.limit, args.guidelines);
+
+        if (guidelines.length === 0) {
+            console.error('No guidelines picked — aborting.');
+            process.exit(1);
+        }
+
+        console.log('\nPicked:');
+        guidelines.forEach((g, i) => {
+            console.log(`  ${i + 1}. [${g.ppCount} PPs] ${g.title}  (${g.id})`);
+        });
+        console.log('');
+
+        console.log('Generating pre-refinement notes...');
+        scenarios = [];
+        for (const [i, g] of guidelines.entries()) {
+            process.stdout.write(`  [${i + 1}/${guidelines.length}] ${g.id} ... `);
+            try {
+                const preNote = await generatePreNote(g);
+                scenarios.push({
+                    guidelineId: g.id,
+                    guidelineTitle: g.title,
+                    organisation: g.organisation,
+                    ppCount: g.ppCount,
+                    practicePoints: g.practicePoints,
+                    preNote,
+                    postNote: null,
+                    scoring: null,
+                });
+                console.log(`OK (${preNote.length} chars)`);
+            } catch (e) {
+                console.log(`FAILED: ${e.message.slice(0, 120)}`);
+                scenarios.push({
+                    guidelineId: g.id,
+                    guidelineTitle: g.title,
+                    organisation: g.organisation,
+                    ppCount: g.ppCount,
+                    practicePoints: g.practicePoints,
+                    preNote: null,
+                    preNoteError: e.message,
+                    postNote: null,
+                    scoring: null,
+                });
+            }
         }
     }
 
@@ -836,6 +1010,7 @@ async function main() {
     const result = {
         startedAt: new Date().toISOString(),
         stage: args.dryRun ? 'dry-run' : 'full',
+        preNoteSource: args.fromFirestore ? `firestore:auditTranscripts:${args.variant}` : 'ai-generated',
         modelUsed: ANTHROPIC_MODEL,
         judgeModel: GEMINI_MODEL,
         scenarioCount: scenarios.length,
