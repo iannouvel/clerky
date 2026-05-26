@@ -505,85 +505,34 @@ export function showInsertionPreview(suggestion) {
     const content = editor.getText();
     if (!content?.trim()) return false;
 
-    // Snapshot content before preview for clean restoration
+    // Snapshot content before preview for clean restoration. This snapshot is
+    // also what the accept handler uses to call the LLM placement endpoint,
+    // so even if a future edit to this function reintroduces a destructive
+    // path, the accept side still sees the original note.
     _contentBeforePreview = content;
 
     const lines = content.split('\n');
-    const replacePattern = suggestion?.replace_pattern;
-    const missingInfo = (suggestion?.missing_info || '').trim();
     const targetSection = suggestion?.target_section || suggestion?.evidence || '';
-
-    let insertIdx = lines.length; // default: append
-    let replaceExisting = false;
-
-    // Guideline suggestion fields (from /dynamicAdvice)
-    const originalText = suggestion?.originalText || '';
     const guidelineRef = suggestion?.guidelineReference || '';
-    const category = suggestion?.category || '';
 
-    // 1. Exact replace_pattern match — placeholder replaces that line in-place
-    if (replacePattern) {
-        const idx = lines.findIndex(l => l.includes(replacePattern));
-        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
-    }
+    // ADDITIVE-ONLY PREVIEW
+    // ─────────────────────
+    // The preview is purely visual hinting. The real insertion logic runs on
+    // accept, via /determineSingleSuggestionInsertionPoint. So we never
+    // replace existing lines here — we only insert a new placeholder line at
+    // a sensible position:
+    //   1. End of target section, if a target section is named and found
+    //   2. End of the note otherwise
+    //
+    // The previous behaviour matched suggestions to existing lines by
+    // replace_pattern / missing_info / originalText / keyword overlap and
+    // marked those whole lines for replacement. For a single-paragraph note,
+    // every keyword-overlap match was "the whole note is one line", which
+    // wiped the note on accept. Removed.
+    let insertIdx = lines.length; // default: append at end of note
 
-    // 2. missing_info as a standalone label line (case-insensitive)
-    if (!replaceExisting && missingInfo) {
-        const idx = lines.findIndex(l => l.trim().toLowerCase() === missingInfo.toLowerCase());
-        if (idx !== -1) { insertIdx = idx; replaceExisting = true; }
-    }
-
-    // 3. For modification suggestions: find originalText in the note and replace it
-    if (!replaceExisting && category === 'modification' && originalText && !originalText.startsWith('Missing:') && !originalText.startsWith('Gap:')) {
-        const snippet = originalText.slice(0, 60).toLowerCase();
-        const idx = lines.findIndex(l => l.toLowerCase().includes(snippet));
-        if (idx !== -1) {
-            insertIdx = idx;
-            replaceExisting = true;
-            // Store replacement preview state for strikethrough rendering
-            const suggestionText = suggestion?.suggestion || '';
-            if (suggestionText) {
-                _replacementPreview = {
-                    originalText: originalText,
-                    suggestionText: suggestionText
-                };
-            }
-        }
-    }
-
-    // 3b. Keyword fallback: if originalText was stale (not found in current note after edits),
-    //     try matching the suggestion text against note lines by keyword overlap.
-    if (!replaceExisting && suggestion?.suggestion) {
-        const suggWords = new Set(
-            suggestion.suggestion.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(w => w.length > 3)
-        );
-        if (suggWords.size >= 3) {
-            let bestIdx = -1, bestScore = 0;
-            for (let i = 0; i < lines.length; i++) {
-                const lineWords = lines[i].toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/);
-                const overlap = lineWords.filter(w => suggWords.has(w)).length;
-                // Score = overlap as fraction of suggestion keywords, but require >=40% and >=3 words
-                const score = overlap / suggWords.size;
-                if (overlap >= 3 && score >= 0.4 && score > bestScore) {
-                    bestScore = score;
-                    bestIdx = i;
-                }
-            }
-            if (bestIdx !== -1) {
-                insertIdx = bestIdx;
-                replaceExisting = true;
-                _replacementPreview = {
-                    originalText: lines[bestIdx].trim(),
-                    suggestionText: suggestion.suggestion
-                };
-                console.log(`[PREVIEW] Keyword fallback matched line ${bestIdx} (score: ${bestScore.toFixed(2)})`);
-            }
-        }
-    }
-
-    // 4. After the target section heading (completeness items) or guideline reference (guideline suggestions)
     const sectionHint = targetSection || guidelineRef;
-    if (!replaceExisting && sectionHint) {
+    if (sectionHint) {
         const lowerTarget = sectionHint.toLowerCase().replace(/[^a-z0-9]/g, '');
         const idx = lines.findIndex(l => l.toLowerCase().replace(/[^a-z0-9]/g, '').includes(lowerTarget));
         if (idx !== -1) {
@@ -597,8 +546,9 @@ export function showInsertionPreview(suggestion) {
         }
     }
 
-    // Detect list context from the line at or before the insertion point
-    const contextLine = (lines[replaceExisting ? insertIdx : insertIdx - 1] || '').trimStart();
+    // Detect list context from the line before the insertion point so the
+    // placeholder picks up "2. " / "- " formatting from a surrounding list.
+    const contextLine = (lines[insertIdx - 1] || '').trimStart();
     let placeholder = INSERTION_PLACEHOLDER;
     const numberedMatch = contextLine.match(/^(\d+)\.\s/);
     const dashedMatch = contextLine.match(/^[-–]\s/);
@@ -608,16 +558,12 @@ export function showInsertionPreview(suggestion) {
         placeholder = `- ${INSERTION_PLACEHOLDER}`;
     }
 
-    // Build new content with placeholder
+    // Always splice a new placeholder line in — never overwrite an existing line.
     const newLines = [...lines];
-    if (replaceExisting) {
-        newLines[insertIdx] = placeholder;
-    } else {
-        newLines.splice(insertIdx, 0, placeholder);
-    }
+    newLines.splice(insertIdx, 0, placeholder);
 
     // Store insertion line index for later retrieval of edited text
-    _insertionLineIndex = replaceExisting ? insertIdx : insertIdx;
+    _insertionLineIndex = insertIdx;
 
     // Convert to HTML, styling the placeholder line in green
     const html = _buildHtmlWithPlaceholder(newLines.join('\n'));
