@@ -18780,6 +18780,118 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
     }
 });
 
+// LLM-driven placement of a single suggestion into a clinical note.
+// Returns the full updated note, with a server-side safety guard that rejects
+// any response that has lost more than 30% of the original character count —
+// catches the failure mode where the LLM paraphrases, truncates, or returns
+// only the suggestion text.
+app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (req, res) => {
+    const timer = new StepTimer('/determineSingleSuggestionInsertionPoint');
+    req.stepTimer = timer;
+
+    try {
+        const { clinicalNote, suggestion } = req.body;
+        const userId = req.user.uid;
+
+        if (!clinicalNote || typeof clinicalNote !== 'string') {
+            return res.status(400).json({ success: false, error: 'clinicalNote is required' });
+        }
+        if (!suggestion || typeof suggestion !== 'object') {
+            return res.status(400).json({ success: false, error: 'suggestion object is required' });
+        }
+        const suggestionText = (suggestion.suggestion || suggestion.suggestedText || '').trim();
+        if (!suggestionText) {
+            return res.status(400).json({ success: false, error: 'suggestion.suggestion (the text to incorporate) is required' });
+        }
+        timer.step('Validation');
+
+        // Build the user prompt with whatever optional context the client provided
+        const promptParts = [
+            `CLINICAL NOTE:\n${clinicalNote.trim()}`,
+            `\nNEW INFORMATION TO INCORPORATE:\n${suggestionText}`,
+        ];
+        if (suggestion.target_section) {
+            promptParts.push(`\nTARGET SECTION: ${suggestion.target_section}`);
+        }
+        if (suggestion.originalText) {
+            promptParts.push(`\nEXISTING TEXT THIS REFINES (if present in the note, refine it in place; if not present, append): ${suggestion.originalText}`);
+        }
+        if (suggestion.verbatimQuote) {
+            promptParts.push(`\nGUIDELINE CONTEXT (for your understanding only, do not insert): ${suggestion.verbatimQuote}`);
+        }
+        if (suggestion.why) {
+            promptParts.push(`\nWHY THIS MATTERS (context only): ${suggestion.why}`);
+        }
+        promptParts.push(`\nReturn ONLY the complete updated clinical note. No commentary, no markdown fences, no quotation marks.`);
+
+        const systemPrompt = `You are a medical scribe revising a UK clinical note. You will receive the current note and ONE new piece of information to incorporate.
+
+RULES:
+1. Never paraphrase, rephrase, summarise, shorten, or delete any existing content. The clinician's wording is exact and intentional — every word in the note must appear in your output, in the same order.
+2. Incorporate the new information by one of:
+   a. Refining an existing line in place — only when that existing line is clearly a less-complete version of the same item (e.g. "BP: ___" → "BP: 120/80").
+   b. Inserting a new sentence or line adjacent to closely-related existing content.
+   c. Appending at the end of the target section, or at the end of the note if no section is named.
+3. Maintain the note's existing format and style (prose vs bullets, abbreviations, British English).
+4. If a target section is named, place the new content at the end of that section.
+5. If you cannot place the new information without paraphrasing existing text, APPEND it at the end of the note as a new line.
+
+Return ONLY the complete updated note text. No commentary, no markdown, no explanation, no quotation marks around the note.`;
+
+        const userPrompt = promptParts.join('\n');
+        timer.step('Build prompts');
+
+        const aiResponse = await routeToAI({
+            messages: [
+                { role: 'system', content: systemPrompt },
+                { role: 'user', content: userPrompt }
+            ]
+        }, userId, null, 4000, 'simple');
+        timer.step('AI API call');
+
+        if (!aiResponse || !aiResponse.content) {
+            console.error('[determineSingleSuggestionInsertionPoint] No AI response');
+            return res.status(500).json({ success: false, error: 'No AI response' });
+        }
+
+        // Strip code fences if the LLM ignored the no-markdown rule
+        let updatedNote = aiResponse.content.trim()
+            .replace(/^```[a-z]*\s*\n?/i, '')
+            .replace(/\n?```\s*$/, '')
+            .trim();
+
+        // Safety guard: refuse responses that have lost too much of the original.
+        // Catches LLM misbehaviour where it paraphrases or truncates the note.
+        // 0.7 threshold means: response must retain at least 70% of the
+        // original character count (we EXPECT growth from the suggestion,
+        // not shrinkage).
+        const originalLen = clinicalNote.trim().length;
+        const updatedLen = updatedNote.length;
+        const retentionRatio = originalLen > 0 ? updatedLen / originalLen : 0;
+        if (retentionRatio < 0.7) {
+            console.warn('[determineSingleSuggestionInsertionPoint] Safety guard rejected response', {
+                originalLen, updatedLen, retentionRatio: retentionRatio.toFixed(2),
+            });
+            return res.status(200).json({
+                success: false,
+                error: 'LLM output failed safety check (lost too much original content)',
+                retentionRatio,
+                originalLen,
+                updatedLen,
+            });
+        }
+        timer.step('Safety check');
+
+        res.json({ success: true, updatedNote });
+    } catch (error) {
+        console.error('[determineSingleSuggestionInsertionPoint] Error:', {
+            error: error.message,
+            stack: error.stack
+        });
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // OPTIONS handler for getGuidelinePDF (CORS preflight)
 app.options('/getGuidelinePDF', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
