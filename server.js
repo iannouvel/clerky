@@ -18824,7 +18824,7 @@ app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (re
 
         const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Your job is to produce the best version of the note that contains the new information — placed in the right section, in the right style, without duplicating what is already there.
 
-You may freely move things around, refine existing lines in place, remove duplicates, restructure sections — whatever produces the cleanest result. The user will review every change visually before applying, so be bold rather than timid.
+Make the smallest possible edit. Add the new information in the right section, and refine an existing line in place only when the new content is a more specific version of what is already there. Do not delete existing content unless it is a literal duplicate of the new information. Do not restructure sections, renumber items, or move text around. The user accepts changes single-click without per-edit review, so any deletion or restructure you perform ships unseen — keep your touch surgical.
 
 OUTPUT FORMAT: Return the rewritten note as plain text with two HTML markers:
 - Wrap any text you are REMOVING in <del>...</del>
