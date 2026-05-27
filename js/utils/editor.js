@@ -641,6 +641,152 @@ export function clearInsertionPreview() {
     console.log('[PREVIEW] Placeholder cleared');
 }
 
+// ----- Diff-preview accept flow -----------------------------------------
+// New flow (replaces the placeholder preview for guideline suggestions):
+//   1. Wizard Accept → server returns marked-up note with <del>/<ins> tags
+//   2. renderDiffMarkup() renders it with red strikethrough + green inserts
+//   3. User reviews (and can edit inline before deciding)
+//   4. Apply → applyDiffMarkup() strips markup, normalises styling
+//      Discard → discardDiffMarkup() restores from snapshot
+
+const DEL_STYLE = 'text-decoration: line-through; color: #dc2626; background: rgba(220, 38, 38, 0.08);';
+const INS_STYLE = 'color: #16a34a; background: rgba(22, 163, 74, 0.08); text-decoration: underline;';
+
+/**
+ * Render the LLM's marked-up note in the editor with visible diff styling.
+ * Converts <del>...</del> to red strikethrough spans and <ins>...</ins> to
+ * green underlined spans. Snapshots the prior note for discardDiffMarkup().
+ *
+ * The pre-preview snapshot may already be set by showInsertionPreview (it
+ * runs when the suggestion first surfaces). We preserve it. If not set,
+ * we capture the current editor text as the baseline for revert.
+ */
+export function renderDiffMarkup(markupText) {
+    const editor = window.editors?.userInput;
+    if (!editor || typeof markupText !== 'string' || !markupText) return false;
+
+    // Capture snapshot if not already taken (so Discard can revert).
+    if (_contentBeforePreview === null) {
+        _contentBeforePreview = editor.getText() || '';
+    }
+
+    const DEL_OPEN = '<del>', DEL_CLOSE = '</del>';
+    const INS_OPEN = '<ins>', INS_CLOSE = '</ins>';
+
+    function transformLine(line) {
+        let result = '';
+        let i = 0;
+        while (i < line.length) {
+            if (line.startsWith(DEL_OPEN, i)) {
+                const end = line.indexOf(DEL_CLOSE, i + DEL_OPEN.length);
+                if (end === -1) { result += escapeHtml(line.slice(i)); break; }
+                const inner = line.slice(i + DEL_OPEN.length, end);
+                result += `<span style="${DEL_STYLE}">${escapeHtml(inner)}</span>`;
+                i = end + DEL_CLOSE.length;
+            } else if (line.startsWith(INS_OPEN, i)) {
+                const end = line.indexOf(INS_CLOSE, i + INS_OPEN.length);
+                if (end === -1) { result += escapeHtml(line.slice(i)); break; }
+                const inner = line.slice(i + INS_OPEN.length, end);
+                result += `<span style="${INS_STYLE}">${escapeHtml(inner)}</span>`;
+                i = end + INS_CLOSE.length;
+            } else {
+                const nextDel = line.indexOf(DEL_OPEN, i);
+                const nextIns = line.indexOf(INS_OPEN, i);
+                let next;
+                if (nextDel === -1) next = nextIns;
+                else if (nextIns === -1) next = nextDel;
+                else next = Math.min(nextDel, nextIns);
+                if (next === -1) { result += escapeHtml(line.slice(i)); break; }
+                result += escapeHtml(line.slice(i, next));
+                i = next;
+            }
+        }
+        return result;
+    }
+
+    const html = markupText.split(/\n\n+/)
+        .filter(p => p.trim())
+        .map(p => `<p>${p.split('\n').map(transformLine).join('<br>')}</p>`)
+        .join('');
+
+    editor.commands.setContent(html || '<p></p>');
+    console.log('[DIFF] Markup rendered');
+    return true;
+}
+
+/**
+ * Apply the diff-preview: strip <del>-styled spans entirely, unwrap
+ * <ins>-styled spans (keep text, drop styling). Returns the clean text.
+ *
+ * Robust to user inline edits: it works on the current editor HTML, so any
+ * text the user added themselves outside the styled spans is preserved.
+ */
+export function applyDiffMarkup() {
+    const editor = window.editors?.userInput;
+    if (!editor) return null;
+
+    const html = editor.getHTML();
+    const doc = new DOMParser().parseFromString(`<div>${html}</div>`, 'text/html');
+    const root = doc.body.firstChild;
+    if (!root) return null;
+
+    // Process spans by style. Order matters: remove deletions first, then
+    // unwrap insertions, so deleted-content isn't accidentally promoted.
+    Array.from(root.querySelectorAll('span')).forEach(span => {
+        const style = span.getAttribute('style') || '';
+        if (/line-through/i.test(style)) {
+            span.remove();
+        } else if (/#16a34a/i.test(style)) {
+            const textNode = doc.createTextNode(span.textContent || '');
+            span.parentNode?.replaceChild(textNode, span);
+        }
+    });
+    // Defensive: also remove native <s>/<del> elements (LLM may emit raw
+    // tags that TipTap parses as native marks rather than styled spans).
+    Array.from(root.querySelectorAll('s, del')).forEach(el => el.remove());
+    // Unwrap native <ins> elements too
+    Array.from(root.querySelectorAll('ins')).forEach(el => {
+        const textNode = doc.createTextNode(el.textContent || '');
+        el.parentNode?.replaceChild(textNode, el);
+    });
+
+    editor.commands.setContent(root.innerHTML || '<p></p>');
+    _contentBeforePreview = null;
+    _insertionLineIndex = -1;
+    _replacementPreview = null;
+    console.log('[DIFF] Markup applied');
+    return editor.getText();
+}
+
+/**
+ * Discard the diff-preview: restore the editor from the pre-preview snapshot.
+ */
+export function discardDiffMarkup() {
+    const editor = window.editors?.userInput;
+    if (!editor) return false;
+    if (_contentBeforePreview === null) return false;
+
+    const text = _contentBeforePreview;
+    const normalised = text.replace(/\n{3,}/g, '\n\n');
+    const html = normalised.split('\n\n')
+        .filter(p => p.trim())
+        .map(p => `<p>${p.split('\n').map(l => escapeHtml(l)).join('<br>')}</p>`)
+        .join('');
+    editor.commands.setContent(html || '<p></p>');
+    _contentBeforePreview = null;
+    _insertionLineIndex = -1;
+    _replacementPreview = null;
+    console.log('[DIFF] Markup discarded (restored from snapshot)');
+    return true;
+}
+
+/**
+ * True when the editor is currently showing a diff preview (snapshot exists).
+ */
+export function isDiffPreviewActive() {
+    return _contentBeforePreview !== null;
+}
+
 /**
  * Build HTML content where lines containing INSERTION_PLACEHOLDER are styled in green.
  * All other content is plain-escaped.

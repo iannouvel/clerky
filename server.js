@@ -18805,38 +18805,39 @@ app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (re
         }
         timer.step('Validation');
 
-        // Build the user prompt with whatever optional context the client provided
+        // Build the user prompt. Pass: suggestion text + clinical why + verbatim
+        // guideline quote. Skip target_section and category — the LLM should
+        // decide placement from the note content itself, and we found previously
+        // that hinting target_section caused the LLM to default to "append at
+        // end" rather than refine in place.
         const promptParts = [
             `CLINICAL NOTE:\n${clinicalNote.trim()}`,
             `\nNEW INFORMATION TO INCORPORATE:\n${suggestionText}`,
         ];
-        if (suggestion.target_section) {
-            promptParts.push(`\nTARGET SECTION: ${suggestion.target_section}`);
-        }
-        if (suggestion.originalText) {
-            promptParts.push(`\nEXISTING TEXT THIS REFINES (if present in the note, refine it in place; if not present, append): ${suggestion.originalText}`);
+        if (suggestion.why) {
+            promptParts.push(`\nWHY THIS MATTERS for this patient: ${suggestion.why}`);
         }
         if (suggestion.verbatimQuote) {
-            promptParts.push(`\nGUIDELINE CONTEXT (for your understanding only, do not insert): ${suggestion.verbatimQuote}`);
+            promptParts.push(`\nGUIDELINE BASIS (for your understanding, do not copy verbatim): ${suggestion.verbatimQuote}`);
         }
-        if (suggestion.why) {
-            promptParts.push(`\nWHY THIS MATTERS (context only): ${suggestion.why}`);
-        }
-        promptParts.push(`\nReturn ONLY the complete updated clinical note. No commentary, no markdown fences, no quotation marks.`);
+        promptParts.push(`\nReturn the rewritten note with <del>...</del> wrapping anything you remove and <ins>...</ins> wrapping anything you add. Everything else verbatim. No commentary, no markdown fences.`);
 
-        const systemPrompt = `You are a medical scribe revising a UK clinical note. You will receive the current note and ONE new piece of information to incorporate.
+        const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Your job is to produce the best version of the note that contains the new information — placed in the right section, in the right style, without duplicating what is already there.
 
-RULES:
-1. Never paraphrase, rephrase, summarise, shorten, or delete any existing content. The clinician's wording is exact and intentional — every word in the note must appear in your output, in the same order.
-2. Incorporate the new information by one of:
-   a. Refining an existing line in place — only when that existing line is clearly a less-complete version of the same item (e.g. "BP: ___" → "BP: 120/80").
-   b. Inserting a new sentence or line adjacent to closely-related existing content.
-   c. Appending at the end of the target section, or at the end of the note if no section is named.
-3. Maintain the note's existing format and style (prose vs bullets, abbreviations, British English).
-4. If a target section is named, place the new content at the end of that section.
-5. If you cannot place the new information without paraphrasing existing text, APPEND it at the end of the note as a new line.
+You may freely move things around, refine existing lines in place, remove duplicates, restructure sections — whatever produces the cleanest result. The user will review every change visually before applying, so be bold rather than timid.
 
-Return ONLY the complete updated note text. No commentary, no markdown, no explanation, no quotation marks around the note.`;
+OUTPUT FORMAT: Return the rewritten note as plain text with two HTML markers:
+- Wrap any text you are REMOVING in <del>...</del>
+- Wrap any text you are ADDING in <ins>...</ins>
+- Leave everything else verbatim, in place.
+
+The marked-up output must read as a complete diff: deleting all <del> spans and unwrapping all <ins> spans should yield the final clean note. Do not include any text that isn't either kept verbatim, marked as deleted, or marked as added.
+
+If the new information is already substantially documented in the note, prefer minimal edits — refine for completeness rather than appending a duplicate. If it adds genuinely new content, place it where a clinician reading the note would expect to find it (e.g. monitoring plans in the Plan section, examination findings in Assessment).
+
+Maintain British English spellings, clinical terminology, and units throughout. Match the note's existing format and style (prose vs bullets, headings, abbreviations).
+
+Return ONLY the marked-up note. No commentary, no markdown code fences, no surrounding quotes.`;
 
         const userPrompt = promptParts.join('\n');
         timer.step('Build prompts');
@@ -18855,34 +18856,17 @@ Return ONLY the complete updated note text. No commentary, no markdown, no expla
         }
 
         // Strip code fences if the LLM ignored the no-markdown rule
-        let updatedNote = aiResponse.content.trim()
+        let markupHtml = aiResponse.content.trim()
             .replace(/^```[a-z]*\s*\n?/i, '')
             .replace(/\n?```\s*$/, '')
             .trim();
+        timer.step('Post-process');
 
-        // Safety guard: refuse responses that have lost too much of the original.
-        // Catches LLM misbehaviour where it paraphrases or truncates the note.
-        // 0.7 threshold means: response must retain at least 70% of the
-        // original character count (we EXPECT growth from the suggestion,
-        // not shrinkage).
-        const originalLen = clinicalNote.trim().length;
-        const updatedLen = updatedNote.length;
-        const retentionRatio = originalLen > 0 ? updatedLen / originalLen : 0;
-        if (retentionRatio < 0.7) {
-            console.warn('[determineSingleSuggestionInsertionPoint] Safety guard rejected response', {
-                originalLen, updatedLen, retentionRatio: retentionRatio.toFixed(2),
-            });
-            return res.status(200).json({
-                success: false,
-                error: 'LLM output failed safety check (lost too much original content)',
-                retentionRatio,
-                originalLen,
-                updatedLen,
-            });
-        }
-        timer.step('Safety check');
+        // The 70% retention safety guard no longer applies: under the new
+        // flow the user reviews the diff visually before it's committed to
+        // the note. Destructive edits are caught by human review.
 
-        res.json({ success: true, updatedNote });
+        res.json({ success: true, markupHtml });
     } catch (error) {
         console.error('[determineSingleSuggestionInsertionPoint] Error:', {
             error: error.message,

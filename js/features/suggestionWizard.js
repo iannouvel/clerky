@@ -1,4 +1,4 @@
-import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText } from '../utils/editor.js';
+import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText, renderDiffMarkup, applyDiffMarkup, discardDiffMarkup, isDiffPreviewActive } from '../utils/editor.js';
 
 // Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
 window.clearReplacementPreviewState = clearReplacementState;
@@ -488,13 +488,56 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     };
 
+    // _diffState tracks the current diff-preview mode for the wizard.
+    //   active=false: normal mode. Accept button fetches markup. Skip = next.
+    //   active=true:  diff shown. Accept = apply. Skip = discard.
+    if (!window._diffState) window._diffState = { active: false, suggestionId: null };
+
     window.skipWizardSuggestion = function () {
+        if (window._diffState.active) {
+            discardDiffMarkup();
+            window._diffState = { active: false, suggestionId: null };
+        }
         window.nextWizardSuggestion();
     };
 
     window.rejectWizardSuggestion = function () {
+        if (window._diffState.active) {
+            discardDiffMarkup();
+            window._diffState = { active: false, suggestionId: null };
+        }
         window.nextWizardSuggestion();
     };
+
+    /**
+     * Update the wizard footer to reflect diff-preview mode. Called whenever
+     * we enter/exit preview state so the button labels match what they'll do.
+     */
+    function setDiffPreviewButtons(uniqueId, previewing) {
+        const footer = document.getElementById(`${uniqueId}-actions`);
+        if (!footer) return;
+        const buttons = footer.querySelectorAll('button');
+        // Indices match the render order: 0=Back, 1=Skip, 2=Feedback, 3=Accept/Insert
+        if (buttons.length >= 4) {
+            const skipBtn = buttons[1];
+            const acceptBtn = buttons[3];
+            if (previewing) {
+                skipBtn.textContent = 'Discard';
+                skipBtn.style.background = '#fee2e2';
+                skipBtn.style.color = '#991b1b';
+                acceptBtn.innerHTML = '<span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>Apply edit &#x2713;';
+                acceptBtn.style.background = '#16a34a';
+            } else {
+                // Restore default labels — re-render is the safest path,
+                // but for now just reset text. renderCurrentSuggestion will
+                // overwrite the whole footer on the next suggestion.
+                skipBtn.textContent = 'Skip';
+                skipBtn.style.background = '';
+                skipBtn.style.color = '';
+                acceptBtn.style.background = '';
+            }
+        }
+    }
 
     // Helper: Format compound field data via LLM for natural language
     async function formatCompoundFieldData(fieldLabel, parts) {
@@ -610,37 +653,52 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             return;
         }
 
+        // Two-mode flow:
+        //   1. First click (no diff preview active): fetch the LLM-rewritten
+        //      note with <del>/<ins> markup, render it as a visible diff,
+        //      switch the wizard footer to "Apply / Discard".
+        //   2. Second click (diff active): apply the diff (strip markup,
+        //      normalise styling), advance to the next suggestion.
+        if (window._diffState && window._diffState.active && window._diffState.suggestionId === id) {
+            // ----- APPLY MODE -----
+            try {
+                const finalText = applyDiffMarkup();
+                window._diffState = { active: false, suggestionId: null };
+                if (finalText !== null) {
+                    // setUserInputContent ensures normal change-tracking / undo entry
+                    setUserInputContent(finalText, true, 'Wizard Suggestion - Diff Applied', null);
+                }
+                console.log('[WIZARD] Diff applied for suggestion', id);
+                window.nextWizardSuggestion();
+            } catch (e) {
+                console.error('[WIZARD] Error applying diff:', e);
+                alert('Error applying edit: ' + e.message);
+            }
+            return;
+        }
+
+        // ----- PREVIEW MODE -----
         // Show spinner on button
         if (btn) {
             btn.disabled = true;
             const spinner = btn.querySelector('.wizard-accept-spinner');
             if (spinner) spinner.style.display = 'inline';
         }
-        if (typeof updateUser === 'function') updateUser('Applying change...', true);
+        if (typeof updateUser === 'function') updateUser('Generating suggested edit...', true);
 
         try {
-            // Source of truth for the *original* note is the pre-preview snapshot,
-            // not getUserInputContent() — the displayed editor still contains the
-            // green placeholder line that showInsertionPreview spliced in. The new
-            // additive-only preview never destroys content, so the snapshot is
-            // always the clean original note.
+            // Source of truth for the *original* note is the pre-preview snapshot
+            // (set by showInsertionPreview earlier), not the live editor — the
+            // displayed editor may still contain the green placeholder line.
             const contentSnapshot = getContentBeforePreview();
             const liveContent = getUserInputContent();
-            // Fall back to stripping the placeholder line from the live editor if
-            // no snapshot is available (shouldn't happen with the new additive
-            // preview, but defensive).
             const originalNote = (typeof contentSnapshot === 'string' && contentSnapshot.length > 0)
                 ? contentSnapshot
                 : liveContent.split('\n').filter(l => !l.includes(INSERTION_PLACEHOLDER)).join('\n');
 
             const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
 
-            // Call /determineSingleSuggestionInsertionPoint with the FULL original
-            // note and the suggestion's metadata. The endpoint has a server-side
-            // safety guard that rejects responses which have lost more than 30%
-            // of the original character count.
-            let newContent = null;
-            let llmSucceeded = false;
+            let markupHtml = null;
             try {
                 const user = window.auth?.currentUser;
                 if (user) {
@@ -652,60 +710,53 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                             clinicalNote: originalNote,
                             suggestion: {
                                 suggestion: textToInsert,
-                                target_section: currentSuggestion?.target_section,
-                                originalText: currentSuggestion?.originalText,
                                 verbatimQuote: currentSuggestion?.verbatimQuote,
                                 why: currentSuggestion?.why,
-                                category: currentSuggestion?.category,
                             }
                         })
                     });
                     if (response.ok) {
                         const result = await response.json();
-                        if (result.success && typeof result.updatedNote === 'string' && result.updatedNote.trim().length > 0) {
-                            newContent = result.updatedNote;
-                            llmSucceeded = true;
-                            console.log('[WIZARD] LLM placement applied via /determineSingleSuggestionInsertionPoint');
+                        if (result.success && typeof result.markupHtml === 'string' && result.markupHtml.trim().length > 0) {
+                            markupHtml = result.markupHtml;
+                            console.log('[WIZARD] LLM markup received via /determineSingleSuggestionInsertionPoint');
                         } else {
-                            console.warn('[WIZARD] LLM placement endpoint returned success=false:', result.error || 'unknown', {
-                                retentionRatio: result.retentionRatio,
-                            });
+                            console.warn('[WIZARD] Markup endpoint returned success=false:', result.error || 'unknown');
                         }
                     } else {
-                        console.warn('[WIZARD] LLM placement endpoint HTTP status', response.status);
+                        console.warn('[WIZARD] Markup endpoint HTTP status', response.status);
                     }
                 } else {
-                    console.warn('[WIZARD] User not authenticated; skipping LLM placement');
+                    console.warn('[WIZARD] User not authenticated; skipping LLM markup');
                 }
             } catch (err) {
-                console.warn('[WIZARD] LLM placement exception:', err.message);
+                console.warn('[WIZARD] Markup exception:', err.message);
             }
 
-            if (!llmSucceeded) {
-                // Safe fallback: append the suggestion as a new line at the end of
-                // the original note. Never destructive, never loses content.
-                newContent = originalNote.replace(/\n+$/, '') + '\n' + textToInsert;
-                console.log('[WIZARD] Fallback: appended suggestion at end of original note');
+            if (markupHtml) {
+                // Clear any prior placeholder preview so the diff renders clean
+                clearReplacementState();
+                clearInsertionPreview();
+                renderDiffMarkup(markupHtml);
+                window._diffState = { active: true, suggestionId: id };
+                setDiffPreviewButtons(id, true);
+                if (typeof updateUser === 'function') updateUser('Review the suggested edit, then click Apply or Discard', false);
+                console.log('[WIZARD] Diff preview shown for suggestion', id);
+                // Don't advance — wait for Apply/Discard
+            } else {
+                // Fallback: LLM failed entirely. Append at end as a last resort
+                // so the suggestion still lands somewhere.
+                const fallback = originalNote.replace(/\n+$/, '') + '\n' + textToInsert;
+                setUserInputContent(fallback, true, 'Wizard Suggestion - Fallback Append', null);
+                clearReplacementState();
+                clearInsertionPreview();
+                setTimeout(() => flashBoldInEditor(textToInsert), 150);
+                console.log('[WIZARD] Fallback: appended suggestion at end');
+                window.nextWizardSuggestion();
             }
-
-            // Set content normally without green styling (provisional text should disappear when accepted)
-            setUserInputContent(newContent, true, 'Wizard Suggestion - Accepted', [{ findText: '', replacementText: textToInsert }]);
-
-            // Clear replacement preview state so red strikethrough doesn't persist after accepting
-            // This ensures only the newly inserted text remains, without red strikethrough styling
-            clearReplacementState();
-
-            // Also clear insertion preview to ensure clean state for next suggestion
-            clearInsertionPreview();
-
-            // Briefly bold the inserted text so the user can see where it landed
-            setTimeout(() => flashBoldInEditor(textToInsert), 150);
-
-            console.log('[WIZARD] Suggestion accepted and inserted:', textToInsert.substring(0, 50) + '...');
-            window.nextWizardSuggestion();
         } catch (error) {
-            console.error('[WIZARD] Error accepting suggestion:', error);
-            alert('Error inserting suggestion: ' + error.message);
+            console.error('[WIZARD] Error in preview mode:', error);
+            alert('Error generating edit: ' + error.message);
         } finally {
             if (btn) {
                 btn.disabled = false;
