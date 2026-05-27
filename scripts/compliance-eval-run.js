@@ -717,43 +717,17 @@ async function runScenarioThroughClerky(page, scenario, log) {
             seen.add(key);
 
             const prevIdx = snap.index;
-            // New diff-preview flow (v9.0.440+):
-            //   First Accept click → server returns marked-up note (~10-30s LLM call),
-            //   editor shows red/green diff, footer's Accept button relabels to
-            //   "Apply edit". A second click applies the edit and advances.
-            //   Old flow had one click → advance. We accommodate both by:
-            //     (a) clicking Accept,
-            //     (b) waiting for either: index advance (old flow / no diff) OR
-            //         the Accept button's text changing to "Apply",
-            //     (c) if Apply state detected, click Accept again to apply.
-            //   Skip on its own = skip; Skip while diff is showing = discard.
+            // Single-click flow (v9.0.441+): the wizard auto-renders the
+            // LLM diff in the background when a suggestion surfaces; Accept
+            // commits whatever the user sees. We just click Accept once and
+            // wait for the wizard to advance. The 60s window covers the
+            // LLM call latency on the per-suggestion preview generation.
             const ACCEPT_TIMEOUT_MS = 60_000;
             const SKIP_TIMEOUT_MS = 8_000;
             const acceptOk = await clickAccept(page);
-            let adv = 'timeout';
-            if (acceptOk) {
-                // Race: either the wizard advances (old-flow or fallback append)
-                // OR the Apply button appears (new-flow diff preview shown).
-                const outcome = await Promise.race([
-                    waitForWizardAdvance(page, prevIdx, ACCEPT_TIMEOUT_MS).then(r => ({ kind: r })),
-                    page.locator('.sw-footer button:has-text("Apply edit")')
-                        .waitFor({ state: 'visible', timeout: ACCEPT_TIMEOUT_MS })
-                        .then(() => ({ kind: 'preview' }))
-                        .catch(() => ({ kind: 'timeout' })),
-                ]).catch(() => ({ kind: 'timeout' }));
-                if (outcome.kind === 'preview') {
-                    // Diff preview rendered — click Apply to commit
-                    await page.waitForTimeout(400);
-                    const applyOk = await clickAccept(page);
-                    if (applyOk) {
-                        adv = await waitForWizardAdvance(page, prevIdx, 8000);
-                    } else {
-                        adv = 'timeout';
-                    }
-                } else {
-                    adv = outcome.kind;
-                }
-            }
+            let adv = acceptOk
+                ? await waitForWizardAdvance(page, prevIdx, ACCEPT_TIMEOUT_MS)
+                : 'timeout';
             if (adv === 'timeout' || !acceptOk) {
                 if (!await clickSkip(page)) break;
                 adv = await waitForWizardAdvance(page, prevIdx, SKIP_TIMEOUT_MS);

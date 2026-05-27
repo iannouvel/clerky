@@ -452,13 +452,105 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             }, 50);
         }
 
-        // Show insertion placeholder in editor (cancel any stale pending timeout first)
+        // Auto-trigger the diff preview for guideline-style suggestions (no
+        // structured input). For structured-input suggestions we keep the old
+        // placeholder behaviour because the user has to enter a value first.
         if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
-        _previewTimeout = setTimeout(() => {
-            _previewTimeout = null;
-            showInsertionPreview(suggestion);
-        }, 200);
+        if (dataTypeOptions) {
+            _previewTimeout = setTimeout(() => {
+                _previewTimeout = null;
+                showInsertionPreview(suggestion);
+            }, 200);
+        } else {
+            // Guideline suggestion: skip the legacy "(TEXT TO BE INSERTED
+            // HERE)" placeholder and immediately fetch the LLM diff. The
+            // diff renders into the editor when ready; the user can edit
+            // inline and then Accept (commits) or Reject (discards).
+            _previewTimeout = setTimeout(() => {
+                _previewTimeout = null;
+                _triggerDiffPreviewForSuggestion(suggestion, uniqueId).catch(err => {
+                    console.error('[WIZARD] Diff trigger failed:', err);
+                });
+            }, 100);
+        }
     };
+
+    /**
+     * Auto-trigger the LLM placement endpoint for a guideline suggestion and
+     * render the rewritten note with del/ins diff markup. Called from
+     * renderCurrentSuggestion when the suggestion has no structured-input
+     * widget. While the call is in flight we update the status bar so the
+     * user knows what's happening. On success we set the wizard's
+     * _diffState so the Accept button commits the diff on click; on
+     * failure we fall back to appending the suggestion at the end of the
+     * note when the user clicks Accept.
+     */
+    async function _triggerDiffPreviewForSuggestion(suggestion, uniqueId) {
+        if (!window.editors || !window.editors.userInput) return;
+
+        const suggestionText = suggestion.suggestion || suggestion.recommendation || suggestion.name
+            || suggestion.text || suggestion.title || suggestion.description || suggestion.content || '';
+        if (!suggestionText) return;
+
+        if (typeof updateUser === 'function') updateUser('Preparing suggested edit…', true);
+
+        // Source of truth for the original note is the live editor — for the
+        // new flow we don't pre-render a placeholder, so the editor already
+        // holds the clean current note.
+        const originalNote = getUserInputContent();
+
+        let markupHtml = null;
+        try {
+            const user = window.auth?.currentUser;
+            if (!user) {
+                console.warn('[WIZARD] Not authenticated; skipping diff preview');
+                return;
+            }
+            const idToken = await user.getIdToken();
+            const response = await fetch(`${window.SERVER_URL}/determineSingleSuggestionInsertionPoint`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                body: JSON.stringify({
+                    clinicalNote: originalNote,
+                    suggestion: {
+                        suggestion: suggestionText,
+                        verbatimQuote: suggestion.verbatimQuote,
+                        why: suggestion.why,
+                    }
+                })
+            });
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success && typeof result.markupHtml === 'string' && result.markupHtml.trim().length > 0) {
+                    markupHtml = result.markupHtml;
+                }
+            } else {
+                console.warn('[WIZARD] Markup endpoint HTTP', response.status);
+            }
+        } catch (err) {
+            console.warn('[WIZARD] Markup endpoint exception:', err.message);
+        }
+
+        // If the wizard moved on while we were waiting, drop this result.
+        const stillCurrent = window.suggestionWizardState?.queue?.[window.suggestionWizardState?.currentIndex] === suggestion;
+        if (!stillCurrent) {
+            console.log('[WIZARD] Diff arrived after wizard advanced — discarding');
+            return;
+        }
+
+        if (markupHtml) {
+            clearReplacementState();
+            clearInsertionPreview();
+            renderDiffMarkup(markupHtml);
+            window._diffState = { active: true, suggestionId: uniqueId, fallbackText: null };
+            if (typeof updateUser === 'function') updateUser('Review the suggested edit, then Accept or Skip', false);
+        } else {
+            // LLM failed. Remember the raw suggestion text so Accept can
+            // still do a safe append-at-end. No diff preview is shown.
+            window._diffState = { active: false, suggestionId: uniqueId, fallbackText: suggestionText };
+            if (typeof updateUser === 'function') updateUser('Could not generate preview — Accept will append at end', false);
+        }
+    }
 
     // _wizardClose: clears preview, empties container, hides panel, calls onComplete
     window._wizardClose = function () {
@@ -488,56 +580,30 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         }
     };
 
-    // _diffState tracks the current diff-preview mode for the wizard.
-    //   active=false: normal mode. Accept button fetches markup. Skip = next.
-    //   active=true:  diff shown. Accept = apply. Skip = discard.
-    if (!window._diffState) window._diffState = { active: false, suggestionId: null };
+    // _diffState tracks the per-suggestion diff preview lifecycle.
+    //   active=true:    LLM markup rendered, Accept will commit it.
+    //   active=false:   either no diff is shown yet (LLM still loading) or
+    //                   the LLM failed (fallbackText set, Accept appends).
+    if (!window._diffState) window._diffState = { active: false, suggestionId: null, fallbackText: null };
 
     window.skipWizardSuggestion = function () {
-        if (window._diffState.active) {
+        // Discard the current diff (if any) and advance. No state to relabel
+        // since the buttons stay as Accept/Skip throughout the new single-
+        // click flow.
+        if (window._diffState && window._diffState.active) {
             discardDiffMarkup();
-            window._diffState = { active: false, suggestionId: null };
         }
+        window._diffState = { active: false, suggestionId: null, fallbackText: null };
         window.nextWizardSuggestion();
     };
 
     window.rejectWizardSuggestion = function () {
-        if (window._diffState.active) {
+        if (window._diffState && window._diffState.active) {
             discardDiffMarkup();
-            window._diffState = { active: false, suggestionId: null };
         }
+        window._diffState = { active: false, suggestionId: null, fallbackText: null };
         window.nextWizardSuggestion();
     };
-
-    /**
-     * Update the wizard footer to reflect diff-preview mode. Called whenever
-     * we enter/exit preview state so the button labels match what they'll do.
-     */
-    function setDiffPreviewButtons(uniqueId, previewing) {
-        const footer = document.getElementById(`${uniqueId}-actions`);
-        if (!footer) return;
-        const buttons = footer.querySelectorAll('button');
-        // Indices match the render order: 0=Back, 1=Skip, 2=Feedback, 3=Accept/Insert
-        if (buttons.length >= 4) {
-            const skipBtn = buttons[1];
-            const acceptBtn = buttons[3];
-            if (previewing) {
-                skipBtn.textContent = 'Discard';
-                skipBtn.style.background = '#fee2e2';
-                skipBtn.style.color = '#991b1b';
-                acceptBtn.innerHTML = '<span class="wizard-accept-spinner" style="display:none; margin-right:4px;">&#x27F3;</span>Apply edit &#x2713;';
-                acceptBtn.style.background = '#16a34a';
-            } else {
-                // Restore default labels — re-render is the safest path,
-                // but for now just reset text. renderCurrentSuggestion will
-                // overwrite the whole footer on the next suggestion.
-                skipBtn.textContent = 'Skip';
-                skipBtn.style.background = '';
-                skipBtn.style.color = '';
-                acceptBtn.style.background = '';
-            }
-        }
-    }
 
     // Helper: Format compound field data via LLM for natural language
     async function formatCompoundFieldData(fieldLabel, parts) {
@@ -653,19 +719,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             return;
         }
 
-        // Two-mode flow:
-        //   1. First click (no diff preview active): fetch the LLM-rewritten
-        //      note with <del>/<ins> markup, render it as a visible diff,
-        //      switch the wizard footer to "Apply / Discard".
-        //   2. Second click (diff active): apply the diff (strip markup,
-        //      normalise styling), advance to the next suggestion.
-        if (window._diffState && window._diffState.active && window._diffState.suggestionId === id) {
-            // ----- APPLY MODE -----
+        // Single-click flow: the diff was rendered into the editor when this
+        // suggestion was surfaced. Accept commits whatever the user sees
+        // (including any inline edits they made). If the LLM call failed
+        // earlier, fallback to appending the raw suggestion at the end.
+        const diff = window._diffState || {};
+
+        if (diff.active && diff.suggestionId === id) {
             try {
                 const finalText = applyDiffMarkup();
-                window._diffState = { active: false, suggestionId: null };
+                window._diffState = { active: false, suggestionId: null, fallbackText: null };
                 if (finalText !== null) {
-                    // setUserInputContent ensures normal change-tracking / undo entry
                     setUserInputContent(finalText, true, 'Wizard Suggestion - Diff Applied', null);
                 }
                 console.log('[WIZARD] Diff applied for suggestion', id);
@@ -677,93 +741,41 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             return;
         }
 
-        // ----- PREVIEW MODE -----
-        // Show spinner on button
+        if (diff.fallbackText && diff.suggestionId === id) {
+            // LLM preview failed earlier; do the safe append.
+            const originalNote = getUserInputContent();
+            const fallback = originalNote.replace(/\n+$/, '') + '\n' + diff.fallbackText;
+            setUserInputContent(fallback, true, 'Wizard Suggestion - Fallback Append', null);
+            clearReplacementState();
+            clearInsertionPreview();
+            setTimeout(() => flashBoldInEditor(diff.fallbackText), 150);
+            window._diffState = { active: false, suggestionId: null, fallbackText: null };
+            console.log('[WIZARD] Fallback append applied for suggestion', id);
+            window.nextWizardSuggestion();
+            return;
+        }
+
+        // Structured-input flow: textToInsert holds the user's entered value.
+        // Append it at the end of the note (the simple, non-LLM path).
+        if (textToInsert) {
+            const originalNote = getUserInputContent();
+            const updated = originalNote.replace(/\n+$/, '') + '\n' + textToInsert;
+            setUserInputContent(updated, true, 'Wizard Suggestion - Structured Input', null);
+            clearReplacementState();
+            clearInsertionPreview();
+            setTimeout(() => flashBoldInEditor(textToInsert), 150);
+            window.nextWizardSuggestion();
+            return;
+        }
+
+        // No diff yet and no fallback yet: the LLM is still in flight.
+        // Disable for a moment so the user knows their click was registered
+        // and let the diff arrive.
         if (btn) {
-            btn.disabled = true;
             const spinner = btn.querySelector('.wizard-accept-spinner');
             if (spinner) spinner.style.display = 'inline';
         }
-        if (typeof updateUser === 'function') updateUser('Generating suggested edit...', true);
-
-        try {
-            // Source of truth for the *original* note is the pre-preview snapshot
-            // (set by showInsertionPreview earlier), not the live editor — the
-            // displayed editor may still contain the green placeholder line.
-            const contentSnapshot = getContentBeforePreview();
-            const liveContent = getUserInputContent();
-            const originalNote = (typeof contentSnapshot === 'string' && contentSnapshot.length > 0)
-                ? contentSnapshot
-                : liveContent.split('\n').filter(l => !l.includes(INSERTION_PLACEHOLDER)).join('\n');
-
-            const currentSuggestion = window.suggestionWizardState?.queue[window.suggestionWizardState?.currentIndex];
-
-            let markupHtml = null;
-            try {
-                const user = window.auth?.currentUser;
-                if (user) {
-                    const idToken = await user.getIdToken();
-                    const response = await fetch(`${window.SERVER_URL}/determineSingleSuggestionInsertionPoint`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                        body: JSON.stringify({
-                            clinicalNote: originalNote,
-                            suggestion: {
-                                suggestion: textToInsert,
-                                verbatimQuote: currentSuggestion?.verbatimQuote,
-                                why: currentSuggestion?.why,
-                            }
-                        })
-                    });
-                    if (response.ok) {
-                        const result = await response.json();
-                        if (result.success && typeof result.markupHtml === 'string' && result.markupHtml.trim().length > 0) {
-                            markupHtml = result.markupHtml;
-                            console.log('[WIZARD] LLM markup received via /determineSingleSuggestionInsertionPoint');
-                        } else {
-                            console.warn('[WIZARD] Markup endpoint returned success=false:', result.error || 'unknown');
-                        }
-                    } else {
-                        console.warn('[WIZARD] Markup endpoint HTTP status', response.status);
-                    }
-                } else {
-                    console.warn('[WIZARD] User not authenticated; skipping LLM markup');
-                }
-            } catch (err) {
-                console.warn('[WIZARD] Markup exception:', err.message);
-            }
-
-            if (markupHtml) {
-                // Clear any prior placeholder preview so the diff renders clean
-                clearReplacementState();
-                clearInsertionPreview();
-                renderDiffMarkup(markupHtml);
-                window._diffState = { active: true, suggestionId: id };
-                setDiffPreviewButtons(id, true);
-                if (typeof updateUser === 'function') updateUser('Review the suggested edit, then click Apply or Discard', false);
-                console.log('[WIZARD] Diff preview shown for suggestion', id);
-                // Don't advance — wait for Apply/Discard
-            } else {
-                // Fallback: LLM failed entirely. Append at end as a last resort
-                // so the suggestion still lands somewhere.
-                const fallback = originalNote.replace(/\n+$/, '') + '\n' + textToInsert;
-                setUserInputContent(fallback, true, 'Wizard Suggestion - Fallback Append', null);
-                clearReplacementState();
-                clearInsertionPreview();
-                setTimeout(() => flashBoldInEditor(textToInsert), 150);
-                console.log('[WIZARD] Fallback: appended suggestion at end');
-                window.nextWizardSuggestion();
-            }
-        } catch (error) {
-            console.error('[WIZARD] Error in preview mode:', error);
-            alert('Error generating edit: ' + error.message);
-        } finally {
-            if (btn) {
-                btn.disabled = false;
-                const spinner = btn.querySelector('.wizard-accept-spinner');
-                if (spinner) spinner.style.display = 'none';
-            }
-        }
+        if (typeof updateUser === 'function') updateUser('Still preparing — please wait a moment…', true);
     };
 
     // Initial render
