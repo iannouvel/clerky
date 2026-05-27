@@ -1785,9 +1785,11 @@ async function dedupeSuggestions(suggestions, clinicalNote, userId) {
 
     const systemPrompt = `You are reviewing a pooled list of clinical suggestions gathered for one patient from several guidelines and practice points. Because each guideline and each practice point was analysed on its own, the same recommendation often appears more than once — sometimes worded differently, sometimes from a different source. Find those repeats so only one of each is kept.
 
-Two suggestions are duplicates when they ask the clinician to do the same thing — the same investigation, referral, medication, monitoring, or counselling — even if the wording, the cited guideline, or the practice point differs. They are not duplicates simply because they are clinically related: distinct actions stay distinct — a prerequisite assessment and the action it enables, two different investigations, gathering a result and acting on it. Only collapse suggestions that genuinely call for the same action.
+Two suggestions are duplicates ONLY if they call for the exact same clinical act — the same specimen sent, the same form filled, the same person informed, the same drug given, the same decision made. Sharing a clinical context — same diagnosis, same patient stage, same care pathway, same form package — does not make two suggestions duplicates if the underlying act differs. Different verbs (send, prescribe, complete, inform, document, refer, arrange) almost always imply different acts; collapse across verbs only when the wording is genuinely synonymous.
 
-For each group of genuine duplicates, choose the single suggestion that is most specific, complete, and actionable to keep, and list the others as duplicates of it. Be conservative: if you are not sure two suggestions are the same recommendation, do not list them — keep both. A minor repeat is a small annoyance; silently dropping a real care gap is dangerous.
+Before listing two suggestions as duplicates, articulate the specific clinical act each one would produce in the world. If those acts are not literally the same act — if you could carry out one without carrying out the other — they are not duplicates. When in doubt, keep both. A minor repeat is a small annoyance; silently dropping a real care gap is dangerous.
+
+For each group of genuine duplicates, choose the single suggestion that is most specific, complete, and actionable to keep, and list the others as duplicates of it.
 
 Return only valid JSON. List only the suggestions to drop; anything not listed is kept:
 {
