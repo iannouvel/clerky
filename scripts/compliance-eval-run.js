@@ -619,11 +619,27 @@ async function dismissSummaryModal(page) {
  * a --phase1=accept|decide flag and reuse doctor-brain's decideCompleteness.
  */
 async function runScenarioThroughClerky(page, scenario, log) {
+    // Capture browser-console messages relevant to Phase 2 suggestion flow.
+    // Targets "[PARALLEL] Completed. N successful... Found M total suggestions"
+    // + "[BATCH-SENSE-CHECK] Filtered N impossible..." + "[WIZARD] LLM
+    // placement applied..." so we can see (a) how many suggestions came out
+    // of the per-PP analyzer, (b) how many the sense-check filtered, and
+    // (c) whether accepts are timing out the placement endpoint.
+    const consoleRelevant = /\[PARALLEL\]|\[BATCH-SENSE-CHECK\]|\[DEBUG\] Error analyzing guideline|\[WIZARD\] (LLM placement|Fallback|Error)/;
+    const consoleHandler = (msg) => {
+        const text = msg.text();
+        if (consoleRelevant.test(text)) log(`[browser ${msg.type()}] ${text}`);
+    };
+    page.on('console', consoleHandler);
+
     await page.goto('https://clerkyai.health/', { waitUntil: 'load' });
     const editorReady = await page.locator('#userInput .ProseMirror')
         .waitFor({ state: 'visible', timeout: 30_000 })
         .then(() => true).catch(() => false);
-    if (!editorReady) return { status: 'auth-expired', postNote: null };
+    if (!editorReady) {
+        page.off('console', consoleHandler);
+        return { status: 'auth-expired', postNote: null };
+    }
 
     await dismissCookieBanner(page);
     await typeIntoEditor(page, scenario.preNote);
@@ -701,14 +717,20 @@ async function runScenarioThroughClerky(page, scenario, log) {
             seen.add(key);
 
             const prevIdx = snap.index;
-            // Try Accept first; if it doesn't advance, fall back to Skip so we don't deadlock
+            // Try Accept first; if it doesn't advance, fall back to Skip so we don't deadlock.
+            // Accept now routes through /determineSingleSuggestionInsertionPoint which makes
+            // an LLM call to compute placement — deliberately slow for accuracy. The user's
+            // preference is "slow and expensive for insertions as long as they're accurate",
+            // so we wait up to 60s before giving up on a single accept.
+            const ACCEPT_TIMEOUT_MS = 60_000;
+            const SKIP_TIMEOUT_MS = 8_000;
             const acceptOk = await clickAccept(page);
             let adv = acceptOk
-                ? await waitForWizardAdvance(page, prevIdx, 8000)
+                ? await waitForWizardAdvance(page, prevIdx, ACCEPT_TIMEOUT_MS)
                 : 'timeout';
             if (adv === 'timeout' || !acceptOk) {
                 if (!await clickSkip(page)) break;
-                adv = await waitForWizardAdvance(page, prevIdx, 8000);
+                adv = await waitForWizardAdvance(page, prevIdx, SKIP_TIMEOUT_MS);
             } else {
                 accepted++;
             }
@@ -726,6 +748,7 @@ async function runScenarioThroughClerky(page, scenario, log) {
         .catch(() => {});
 
     const postNote = await getNoteContent(page);
+    page.off('console', consoleHandler);
     return { status: 'ok', postNote, phase2Accepted: accepted };
 }
 
