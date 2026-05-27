@@ -670,47 +670,92 @@ export function renderDiffMarkup(markupText) {
         _contentBeforePreview = editor.getText() || '';
     }
 
+    // Process del/ins markup GLOBALLY (across newlines), not per-line — the
+    // LLM frequently wraps multi-paragraph blocks in <ins>...</ins>, so a
+    // per-line transform would see an opener with no matching closer and
+    // escape the whole block as raw text. We walk the whole string, then
+    // split into paragraphs/lines afterwards. Newlines inside a del/ins
+    // block are preserved by converting them to <br> tags inline.
     const DEL_OPEN = '<del>', DEL_CLOSE = '</del>';
     const INS_OPEN = '<ins>', INS_CLOSE = '</ins>';
 
-    function transformLine(line) {
-        let result = '';
-        let i = 0;
-        while (i < line.length) {
-            if (line.startsWith(DEL_OPEN, i)) {
-                const end = line.indexOf(DEL_CLOSE, i + DEL_OPEN.length);
-                if (end === -1) { result += escapeHtml(line.slice(i)); break; }
-                const inner = line.slice(i + DEL_OPEN.length, end);
-                result += `<span style="${DEL_STYLE}">${escapeHtml(inner)}</span>`;
-                i = end + DEL_CLOSE.length;
-            } else if (line.startsWith(INS_OPEN, i)) {
-                const end = line.indexOf(INS_CLOSE, i + INS_OPEN.length);
-                if (end === -1) { result += escapeHtml(line.slice(i)); break; }
-                const inner = line.slice(i + INS_OPEN.length, end);
-                result += `<span style="${INS_STYLE}">${escapeHtml(inner)}</span>`;
-                i = end + INS_CLOSE.length;
-            } else {
-                const nextDel = line.indexOf(DEL_OPEN, i);
-                const nextIns = line.indexOf(INS_OPEN, i);
-                let next;
-                if (nextDel === -1) next = nextIns;
-                else if (nextIns === -1) next = nextDel;
-                else next = Math.min(nextDel, nextIns);
-                if (next === -1) { result += escapeHtml(line.slice(i)); break; }
-                result += escapeHtml(line.slice(i, next));
-                i = next;
+    // Step 1: build an array of segments, each tagged as plain | ins | del.
+    const segments = [];
+    let i = 0;
+    while (i < markupText.length) {
+        if (markupText.startsWith(DEL_OPEN, i)) {
+            const end = markupText.indexOf(DEL_CLOSE, i + DEL_OPEN.length);
+            if (end === -1) {
+                segments.push({ kind: 'plain', text: markupText.slice(i) });
+                break;
             }
+            segments.push({ kind: 'del', text: markupText.slice(i + DEL_OPEN.length, end) });
+            i = end + DEL_CLOSE.length;
+        } else if (markupText.startsWith(INS_OPEN, i)) {
+            const end = markupText.indexOf(INS_CLOSE, i + INS_OPEN.length);
+            if (end === -1) {
+                segments.push({ kind: 'plain', text: markupText.slice(i) });
+                break;
+            }
+            segments.push({ kind: 'ins', text: markupText.slice(i + INS_OPEN.length, end) });
+            i = end + INS_CLOSE.length;
+        } else {
+            const nextDel = markupText.indexOf(DEL_OPEN, i);
+            const nextIns = markupText.indexOf(INS_OPEN, i);
+            let next;
+            if (nextDel === -1) next = nextIns;
+            else if (nextIns === -1) next = nextDel;
+            else next = Math.min(nextDel, nextIns);
+            if (next === -1) {
+                segments.push({ kind: 'plain', text: markupText.slice(i) });
+                break;
+            }
+            segments.push({ kind: 'plain', text: markupText.slice(i, next) });
+            i = next;
         }
-        return result;
     }
 
-    const html = markupText.split(/\n\n+/)
+    // Step 2: split each segment by paragraph breaks (blank lines). A
+    // segment may straddle a paragraph boundary if the LLM wrapped a
+    // multi-paragraph block in del/ins — we need to close and reopen the
+    // styled span around the paragraph break so each <p> is well-formed.
+    function renderSegmentInline(seg) {
+        // Inline rendering: newlines (within a single paragraph) become <br>.
+        const escapedLines = seg.text.split('\n').map(l => escapeHtml(l));
+        const inner = escapedLines.join('<br>');
+        if (seg.kind === 'del') return `<span style="${DEL_STYLE}">${inner}</span>`;
+        if (seg.kind === 'ins') return `<span style="${INS_STYLE}">${inner}</span>`;
+        return inner;
+    }
+
+    // Flatten the segments into paragraphs by splitting on \n\n boundaries.
+    // Within a styled segment, paragraph breaks must close the span and
+    // reopen it in the next paragraph.
+    const paragraphs = [''];
+    function pushToCurrent(html) {
+        paragraphs[paragraphs.length - 1] += html;
+    }
+    function startParagraph() {
+        paragraphs.push('');
+    }
+
+    for (const seg of segments) {
+        // Split the segment's text on paragraph breaks (\n\n+).
+        const parts = seg.text.split(/\n\n+/);
+        parts.forEach((part, idx) => {
+            if (idx > 0) startParagraph();
+            if (!part) return;
+            pushToCurrent(renderSegmentInline({ kind: seg.kind, text: part }));
+        });
+    }
+
+    const html = paragraphs
         .filter(p => p.trim())
-        .map(p => `<p>${p.split('\n').map(transformLine).join('<br>')}</p>`)
+        .map(p => `<p>${p}</p>`)
         .join('');
 
     editor.commands.setContent(html || '<p></p>');
-    console.log('[DIFF] Markup rendered');
+    console.log('[DIFF] Markup rendered (' + segments.length + ' segments, ' + paragraphs.length + ' paragraphs)');
     return true;
 }
 
