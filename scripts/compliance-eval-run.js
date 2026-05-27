@@ -538,17 +538,17 @@ async function selectOnlyGuideline(page, guidelineId, guidelineTitle, log) {
 
     log(`Checkpoint modal visible — selecting "${guidelineTitle}"`);
 
-    const matchResult = await page.evaluate(({ id, titlePattern }) => {
-        const titleRe = new RegExp(titlePattern, 'i');
+    // Strict matcher: ONLY data-guideline-id matches. Title-regex and
+    // token-overlap fallbacks have been removed because they grab adjacent
+    // guidelines (e.g. RFM scenario picked up RCOG Green-top No. 57 instead
+    // of the UHSussex RFM) when the intended guideline isn't surfaced at
+    // the checkpoint. Failing clean lets us diagnose surfacing issues
+    // separately from matching issues. data-guideline-id is now always set
+    // on checkpoint rows (script.js change in task #4).
+    const matchResult = await page.evaluate(({ id }) => {
         const rows = Array.from(document.querySelectorAll('.checkpoint-guidelines-list > div'));
         const matchedTitles = [];
         const availableRows = [];
-        // Token-overlap fallback: compare normalised word sets when neither
-        // data-guideline-id nor regex matches (handles getCleanDisplayTitle
-        // transforms that drop org names, years, etc.).
-        const idTokens = new Set(
-            String(id || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2)
-        );
         rows.forEach(row => {
             const cb = row.querySelector('.checkpoint-cb');
             if (!cb) return;
@@ -557,24 +557,14 @@ async function selectOnlyGuideline(page, guidelineId, guidelineTitle, log) {
             const title = titleSpan?.textContent?.trim() || '';
             availableRows.push({ rowId, title });
 
-            let isMatch = false;
-            let matchVia = '';
-            if (id && rowId === id) { isMatch = true; matchVia = 'data-id'; }
-            if (!isMatch && titleRe.test(title)) { isMatch = true; matchVia = 'title-regex'; }
-            if (!isMatch && idTokens.size >= 2) {
-                const titleTokens = new Set(title.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(t => t.length > 2));
-                let overlap = 0;
-                idTokens.forEach(t => { if (titleTokens.has(t)) overlap++; });
-                if (overlap / idTokens.size >= 0.4) { isMatch = true; matchVia = `token-overlap(${overlap}/${idTokens.size})`; }
-            }
-
+            const isMatch = !!id && rowId === id;
             cb.checked = isMatch;
-            if (isMatch) matchedTitles.push(`${title} [via ${matchVia}]`);
+            if (isMatch) matchedTitles.push(`${title} [via data-id]`);
         });
         const anyCb = document.querySelector('.checkpoint-cb');
         if (anyCb) anyCb.dispatchEvent(new Event('change', { bubbles: true }));
         return { matchedTitles, availableRows };
-    }, { id: guidelineId, titlePattern: escapeRegex(guidelineTitle) });
+    }, { id: guidelineId });
 
     const matched = matchResult.matchedTitles;
     log(`Matched ${matched.length} row(s): ${matched.slice(0, 3).join(' | ')}`);
@@ -1055,18 +1045,22 @@ async function main() {
     const page = await context.newPage();
     page.on('pageerror', e => console.log('  [pageerror]', e.message));
 
-    // Force scope to 'both' so national + local guidelines both appear in the
-    // checkpoint. Restore the original scope in finally so we don't leak state
-    // into the user's account. Done via server REST API (script.js is an ES
-    // module so its scope functions don't expose on window).
+    // Force scope to 'local' so each auditTranscript's UHSussex guidelineId
+    // matches strictly at the checkpoint (no national-twin ambiguity). The
+    // single BJOG scenario will be unable to surface its guideline under
+    // scope=local and will skip — acceptable: 8/9 transcripts are UHSussex.
+    // Scope is restored in finally to avoid leaking state into the user's
+    // account. Done via server REST API (script.js is an ES module so its
+    // scope functions don't expose on window).
+    const EVAL_SCOPE = process.env.COMPLIANCE_EVAL_SCOPE || 'local';
     let originalScope = await getCurrentScope();
     console.log(`Original scope: ${JSON.stringify(originalScope)}`);
-    if (!originalScope || originalScope._error || originalScope.scope !== 'both') {
+    if (!originalScope || originalScope._error || originalScope.scope !== EVAL_SCOPE) {
         const trust = originalScope?.hospitalTrust || null;
-        const flipResult = await setScope('both', trust);
-        console.log(`Set scope to 'both' for run: ${JSON.stringify(flipResult)}`);
+        const flipResult = await setScope(EVAL_SCOPE, trust);
+        console.log(`Set scope to '${EVAL_SCOPE}' for run: ${JSON.stringify(flipResult)}`);
         if (flipResult._error) {
-            console.warn('Scope flip failed — national guidelines may still be filtered out');
+            console.warn(`Scope flip to '${EVAL_SCOPE}' failed — checkpoint matching may fail`);
         }
     }
 
