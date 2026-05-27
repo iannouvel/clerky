@@ -593,7 +593,7 @@ export function showInsertionPreview(suggestion) {
         }
     }, 50);
 
-    console.log('[PREVIEW] Placeholder inserted at line', insertIdx, replaceExisting ? '(replacing existing)' : '(new line)');
+    console.log('[PREVIEW] Placeholder inserted at line', insertIdx, '(new line)');
     return true;
 }
 
