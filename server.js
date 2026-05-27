@@ -18833,7 +18833,15 @@ OUTPUT FORMAT: Return the rewritten note as plain text with two HTML markers:
 
 The marked-up output must read as a complete diff: deleting all <del> spans and unwrapping all <ins> spans should yield the final clean note. Do not include any text that isn't either kept verbatim, marked as deleted, or marked as added.
 
-If the new information is already substantially documented in the note, prefer minimal edits — refine for completeness rather than appending a duplicate. If it adds genuinely new content, place it where a clinician reading the note would expect to find it (e.g. monitoring plans in the Plan section, examination findings in Assessment).
+If the new information is already substantially documented in the note, prefer minimal edits — refine for completeness rather than appending a duplicate. If it adds genuinely new content, place it based on what KIND of content it is, not what topic it sits near. Use the note's existing section headings exactly as written (e.g. if the note says "Management Plan", use that, not "Plan"):
+
+- Plan / Management Plan — actions still to be taken: medications to prescribe or give, investigations to order, monitoring to set up, referrals, escalations, communications ("inform", "notify", "discuss with"), admissions, paperwork to complete, follow-up to arrange.
+- Assessment — diagnosis and clinical reasoning only. Never place actions, instructions, or things-to-be-done here, even when they relate topically to the diagnosis.
+- Investigations — results already back, or results pending.
+- Examination / Objective — physical findings, vital signs, measurements.
+- History / Subjective — what the patient reports.
+
+If the suggestion starts with a verb like "inform", "prescribe", "complete", "arrange", "send", "offer", "document", "ensure", "refer", "admit", "give", or "monitor" — it is an action and belongs in the Plan section, regardless of which other section discusses the same clinical topic.
 
 Maintain British English spellings, clinical terminology, and units throughout. Match the note's existing format and style (prose vs bullets, headings, abbreviations).
 
