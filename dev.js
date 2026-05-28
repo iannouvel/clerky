@@ -943,7 +943,12 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         }
 
-        // Format a list of logs for copying, deduplicating identical message content across logs
+        // Format a list of logs for copying, deduplicating identical content across logs.
+        // Dedupes at TWO granularities:
+        //   1. Whole message (system/user prompt or response) — catches static system prompts
+        //   2. Within-message sections delimited by `=== HEADER ===` or `--- HEADER ---` —
+        //      catches the large repeated payloads (clinical note, guideline body) that vary
+        //      slightly between per-point analyzer calls and thus defeat whole-message match.
         function formatLogsForCopy(logs) {
             const MIN_LENGTH_TO_DEDUPLICATE = 100; // don't deduplicate short strings
             const seen = new Map(); // trimmed content -> reference label
@@ -961,6 +966,46 @@ document.addEventListener('DOMContentLoaded', async function () {
                 return String(content || '');
             }
 
+            function dedupeOrRegisterSection(text, label) {
+                const key = text.trim();
+                if (key.length < MIN_LENGTH_TO_DEDUPLICATE) return text;
+                if (seen.has(key)) {
+                    return `[Identical to ${seen.get(key)} — omitted to reduce size]`;
+                }
+                seen.set(key, label);
+                return text;
+            }
+
+            // Split a message into sections at `=== HEADER ===` / `--- HEADER ---`
+            // boundaries. Each section keeps its header line and dedupes its body
+            // independently — so a 16000-char guideline that's identical across 30
+            // per-point calls is included once and back-referenced 29 times, even
+            // though the surrounding prompt text differs.
+            function dedupeSections(text, parentLabel) {
+                if (!text || text.length < MIN_LENGTH_TO_DEDUPLICATE) return text;
+                // Split on newlines that introduce a `=== HEADER ===` style line.
+                // Lookahead keeps the header at the start of the next chunk.
+                const sections = text.split(/\n(?=[=\-]{3,}\s*[A-Z])/);
+                if (sections.length < 2) {
+                    return text; // no section structure to exploit
+                }
+                return sections.map((sec, i) => {
+                    // Match the header on the FIRST line of this section
+                    const headerMatch = sec.match(/^([=\-]{3,}\s*[A-Z][^\n]*[=\-]{3,})\n?/);
+                    if (!headerMatch) {
+                        // First chunk (preamble before any header) — dedupe whole chunk
+                        return dedupeOrRegisterSection(sec, `${parentLabel} §${i + 1}`);
+                    }
+                    const header = headerMatch[1];
+                    const body = sec.slice(headerMatch[0].length);
+                    const headerLabel = header.replace(/[=\-]/g, '').trim().slice(0, 40);
+                    const deduped = dedupeOrRegisterSection(body, `${parentLabel} ${headerLabel}`);
+                    return deduped === body ? sec : `${header}\n${deduped}`;
+                }).join('\n');
+            }
+
+            // Whole-message dedupe wrapped to also try section-level dedupe when the
+            // whole message isn't a duplicate.
             function deduplicateOrRegister(text, label) {
                 const key = text.trim();
                 if (key.length >= MIN_LENGTH_TO_DEDUPLICATE && seen.has(key)) {
@@ -969,7 +1014,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 if (key.length >= MIN_LENGTH_TO_DEDUPLICATE) {
                     seen.set(key, label);
                 }
-                return null; // not a duplicate
+                return null; // not a duplicate at whole-message level
             }
 
             return logs.map((log, idx) => {
@@ -986,8 +1031,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                         formattedPrompt = parsed.map(msg => {
                             const role = (msg.role || 'unknown').toUpperCase();
                             const text = extractText(msg.content);
-                            const ref = deduplicateOrRegister(text, `LOG ${logNum} ${role}`);
-                            return `[${role}]\n${ref ?? text}`;
+                            const label = `LOG ${logNum} ${role}`;
+                            // First try whole-message dedup (catches static system prompts).
+                            // If not a whole-message dup, fall through to section-level dedup
+                            // (catches the 16000-char guideline / clinical note bodies that
+                            // recur across per-point analyzer calls with varying wrapper text).
+                            const ref = deduplicateOrRegister(text, label);
+                            return `[${role}]\n${ref ?? dedupeSections(text, label)}`;
                         }).join('\n\n');
                     } else {
                         formattedPrompt = promptText;
@@ -998,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
                 const rawResponse = log.fullResponse || (log.success ? 'No response content' : (log.errorMessage || 'Error'));
                 const responseRef = deduplicateOrRegister(rawResponse, `LOG ${logNum} RESPONSE`);
-                const responseText = responseRef ?? rawResponse;
+                const responseText = responseRef ?? dedupeSections(rawResponse, `LOG ${logNum} RESPONSE`);
 
                 return `${divider}
 LOG ${logNum} of ${logs.length}
