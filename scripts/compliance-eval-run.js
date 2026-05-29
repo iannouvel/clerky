@@ -756,16 +756,21 @@ async function runScenarioThroughClerky(page, scenario, log) {
 
 const JUDGE_SYSTEM = `You are a senior UK clinician auditing a clinical note for compliance with a single practice point from a clinical guideline. You are precise and you do not invent content that isn't in the note.
 
+A clinical note has two parts: a record of what has been done and discussed, and a plan of what is to be done. Both parts count as documentation of care. The plan does not need to be under a "Plan:" heading — any documented intent to perform the required action counts, whether written as a plan item ("Plan: measure BP and urinalysis"), as a future-tense statement ("will measure BP"), as an imperative ("Measure BP and urinalysis"), as a booked arrangement ("USS booked for tomorrow"), or as an instruction to be carried out before discharge ("Perform urinalysis before discharge"). If the practice point's required action is named anywhere in the note as something to be done — whether in the narrative, in the plan, in a suggestion appended at the end, or in safety-netting advice — the care is compliant. The clinician has documented the intent to perform the action as part of patient management.
+
+CRITICAL: Read the ENTIRE note before deciding. The required action may be named anywhere — the opening narrative, the examination findings, the assessment, the plan, or in lines appended after the main note. Do not stop reading at the first "Plan:" heading. Quote evidence from anywhere in the note.
+
 For the given practice point you must decide:
 
 1. Is the practice point APPLICABLE to this patient? Many practice points are conditional ("If patient is Rh-negative, do X"). If the note does not establish the triggering condition, the point may be not applicable — but be honest about uncertainty.
 
-2. If applicable, is the note COMPLIANT? Compliance means either:
-   - The required action is documented as having been done, OR
+2. If applicable, is the note COMPLIANT? Compliance means any of:
+   - The required action is documented as having been done (e.g. "BP 120/74"), OR
+   - The required action is explicitly named in the documented plan as something to be done (e.g. "Plan: measure BP", "Plan: arrange USS", "Plan: counsel re fetal movement patterns at next contact"), OR
    - The required action was actively considered and reasoned out as not indicated for this patient (e.g. "anti-D not given — Rh positive"). Active reasoned consideration counts as compliance.
-   - Silence is NOT compliance. If the action might have been done but isn't documented, that's "no".
+   - Silence is NOT compliance. If the action might have been done but isn't documented anywhere in the note (neither as done nor as planned), that's "no". A vague gesture (e.g. "routine assessment performed") that does not name the specific action is also not compliance.
 
-3. Cite EVIDENCE — a verbatim quote from the note that supports your verdict, if any. Use the exact words from the note.
+3. Cite EVIDENCE — a verbatim quote from the note that supports your verdict. The quote may be from the record section or the plan section; both count.
 
 Return strict JSON only. No prose around it.`;
 
@@ -791,9 +796,9 @@ Return JSON in this exact shape:
 
 Rules:
 - If applicable is false, set compliant to "na".
-- "yes" = action documented as done, OR actively considered and reasoned out as not indicated.
-- "partial" = action partially documented or hinted at but not unambiguously complete.
-- "no" = action not mentioned at all, despite being applicable.
+- "yes" = action documented as done, OR action explicitly named in the documented plan as something to be done, OR actively considered and reasoned out as not indicated.
+- "partial" = some of the required elements are documented (as done or planned), but not all.
+- "no" = action not mentioned at all in either the record or the plan, despite being applicable. Or only a vague gesture toward it that does not name the specific required action.
 - Set confidence below 0.6 when you genuinely cannot tell — do not guess.`;
 }
 
@@ -808,38 +813,152 @@ function parseJudgeJSON(text) {
     return null;
 }
 
-async function callJudge(systemPrompt, userPrompt) {
-    // Prefer Gemini (cheap, deterministic at temp 0) — falls back to Anthropic if unavailable.
-    if (!looksLikePlaceholder(process.env.GOOGLE_AI_API_KEY)) {
-        const url = `${GEMINI_URL_BASE}/${GEMINI_MODEL}:generateContent?key=${process.env.GOOGLE_AI_API_KEY}`;
-        const generationConfig = {
+// Judge panel: 3 LLMs from different providers vote; majority wins, ties resolve to
+// the median verdict. Single-judge runs were too noisy (~1 PP flip/28 between runs).
+const JUDGE_PANEL = [
+    { id: 'gemini-2.5-flash', kind: 'gemini', model: 'gemini-2.5-flash', requireKey: 'GOOGLE_AI_API_KEY' },
+    { id: 'claude-sonnet-4-6', kind: 'anthropic', model: 'claude-sonnet-4-6', requireKey: 'ANTHROPIC_API_KEY' },
+    { id: 'gpt-4o-mini', kind: 'openai', model: 'gpt-4o-mini', requireKey: 'OPENAI_API_KEY' },
+];
+
+async function callJudgeGemini(model, systemPrompt, userPrompt) {
+    const url = `${GEMINI_URL_BASE}/${model}:generateContent?key=${process.env.GOOGLE_AI_API_KEY}`;
+    const generationConfig = {
+        temperature: 0,
+        topP: 0.1,
+        maxOutputTokens: 4000,
+        responseMimeType: 'application/json',
+    };
+    if (/gemini-2\.5/.test(model)) {
+        generationConfig.thinkingConfig = { thinkingBudget: 0 };
+    }
+    const resp = await fetch(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            systemInstruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+            generationConfig,
+        }),
+    });
+    if (!resp.ok) throw new Error(`Gemini judge ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
+    const json = await resp.json();
+    return json?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+}
+
+async function callJudgeAnthropic(model, systemPrompt, userPrompt) {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+        body: JSON.stringify({ model, max_tokens: 1500, system: systemPrompt, messages: [{ role: 'user', content: userPrompt }] }),
+    });
+    if (!resp.ok) throw new Error(`Anthropic judge ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
+    const json = await resp.json();
+    return json?.content?.[0]?.text || '';
+}
+
+async function callJudgeOpenAI(model, systemPrompt, userPrompt) {
+    const resp = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { authorization: `Bearer ${process.env.OPENAI_API_KEY}`, 'content-type': 'application/json' },
+        body: JSON.stringify({
+            model,
+            messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }],
             temperature: 0,
-            topP: 0.1,
-            maxOutputTokens: 4000,
-            responseMimeType: 'application/json',
+            response_format: { type: 'json_object' },
+            max_tokens: 1500,
+        }),
+    });
+    if (!resp.ok) throw new Error(`OpenAI judge ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
+    const json = await resp.json();
+    return json?.choices?.[0]?.message?.content || '';
+}
+
+async function callOneJudge(judge, systemPrompt, userPrompt) {
+    if (judge.kind === 'gemini') return callJudgeGemini(judge.model, systemPrompt, userPrompt);
+    if (judge.kind === 'anthropic') return callJudgeAnthropic(judge.model, systemPrompt, userPrompt);
+    if (judge.kind === 'openai') return callJudgeOpenAI(judge.model, systemPrompt, userPrompt);
+    throw new Error(`Unknown judge kind: ${judge.kind}`);
+}
+
+// Active judge panel: include judges whose API key is set.
+function activeJudges() {
+    return JUDGE_PANEL.filter(j => !looksLikePlaceholder(process.env[j.requireKey]));
+}
+
+// Plurality vote across N judges with conservative tiebreaking. "na" votes are
+// counted toward applicability, not compliance. For an audit it's safer to lean
+// pessimistic when judges disagree, so ties resolve in the order no > partial > yes.
+function majorityVote(votes) {
+    if (votes.length === 0) {
+        return { compliant: 'no', applicable: null, evidence: '', reason: 'No judges responded', confidence: 0, _error: 'no-judges' };
+    }
+
+    const votesSummary = votes.map(v => ({ judge: v._judge, compliant: v.compliant, confidence: v.confidence }));
+
+    // 1. Applicability: if >= half the judges call this NA, the consensus is NA
+    const naVotes = votes.filter(v => v.compliant === 'na');
+    if (naVotes.length >= Math.ceil(votes.length / 2)) {
+        const best = naVotes.sort((a, b) => (b.confidence || 0) - (a.confidence || 0))[0];
+        return {
+            applicable: false,
+            applicability_reason: best.applicability_reason || '',
+            compliant: 'na',
+            evidence: '',
+            reason: best.reason || 'Majority of judges marked not applicable',
+            confidence: naVotes.length / votes.length,
+            _votes: votesSummary,
         };
-        // Gemini 2.5 models count thinking tokens against maxOutputTokens, truncating
-        // JSON output. Disable thinking for deterministic judge calls.
-        if (/gemini-2\.5/.test(GEMINI_MODEL)) {
-            generationConfig.thinkingConfig = { thinkingBudget: 0 };
+    }
+
+    // 2. Plurality among compliance verdicts (excluding NA).
+    //    Tiebreak order: no > partial > yes (conservative — bias toward not-compliant).
+    const nonNa = votes.filter(v => v.compliant !== 'na');
+    const counts = { no: 0, partial: 0, yes: 0 };
+    for (const v of nonNa) {
+        if (counts[v.compliant] !== undefined) counts[v.compliant]++;
+    }
+
+    const order = ['no', 'partial', 'yes']; // conservative tiebreak: first item wins on ties
+    let consensus = 'no';
+    let maxCount = -1;
+    for (const verdict of order) {
+        if (counts[verdict] > maxCount) {
+            maxCount = counts[verdict];
+            consensus = verdict;
         }
-        const resp = await fetch(url, {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-                contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-                generationConfig,
-            }),
-        });
-        if (!resp.ok) throw new Error(`Gemini judge ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
-        const json = await resp.json();
-        return json?.candidates?.[0]?.content?.parts?.[0]?.text || '';
     }
-    if (!looksLikePlaceholder(process.env.ANTHROPIC_API_KEY)) {
-        return await callAnthropic(systemPrompt, userPrompt, 4000);
+
+    // Pick the response from a judge whose verdict matches the consensus
+    const matching = nonNa.filter(v => v.compliant === consensus).sort((a, b) => (b.confidence || 0) - (a.confidence || 0));
+    const best = matching[0] || nonNa[0] || votes[0];
+
+    return {
+        applicable: true,
+        applicability_reason: best.applicability_reason || '',
+        compliant: consensus,
+        evidence: best.evidence || '',
+        reason: best.reason || '',
+        confidence: matching.length / votes.length, // fraction of all judges agreeing
+        _votes: votesSummary,
+    };
+}
+
+async function judgeOne(judge, note, pp, guidelineTitle) {
+    try {
+        const text = await callOneJudge(judge, JUDGE_SYSTEM, buildJudgePrompt(note, pp, guidelineTitle));
+        const parsed = parseJudgeJSON(text);
+        if (!parsed) {
+            return { _judge: judge.id, applicable: null, compliant: 'no', evidence: '', reason: 'Judge response unparseable', confidence: 0, _error: 'parse-failed' };
+        }
+        parsed._judge = judge.id;
+        parsed.compliant = String(parsed.compliant || 'no').toLowerCase();
+        if (!['yes', 'partial', 'no', 'na'].includes(parsed.compliant)) parsed.compliant = 'no';
+        parsed.confidence = typeof parsed.confidence === 'number' ? parsed.confidence : 0;
+        return parsed;
+    } catch (e) {
+        return { _judge: judge.id, applicable: null, compliant: 'no', evidence: '', reason: `Judge call failed: ${e.message.slice(0, 120)}`, confidence: 0, _error: 'call-failed' };
     }
-    throw new Error('No judge LLM API key available');
 }
 
 async function judgePracticePoint(note, pp, guidelineTitle) {
@@ -854,26 +973,18 @@ async function judgePracticePoint(note, pp, guidelineTitle) {
             _error: 'empty-note',
         };
     }
-    try {
-        const text = await callJudge(JUDGE_SYSTEM, buildJudgePrompt(note, pp, guidelineTitle));
-        const parsed = parseJudgeJSON(text);
-        if (!parsed) {
-            return {
-                applicable: null, compliant: 'no', evidence: '', reason: 'Judge response unparseable',
-                confidence: 0, _error: 'parse-failed', _raw: text.slice(0, 300),
-            };
-        }
-        // Normalise
-        parsed.compliant = String(parsed.compliant || 'no').toLowerCase();
-        if (!['yes', 'partial', 'no', 'na'].includes(parsed.compliant)) parsed.compliant = 'no';
-        parsed.confidence = typeof parsed.confidence === 'number' ? parsed.confidence : 0;
-        return parsed;
-    } catch (e) {
-        return {
-            applicable: null, compliant: 'no', evidence: '', reason: `Judge call failed: ${e.message.slice(0, 120)}`,
-            confidence: 0, _error: 'call-failed',
-        };
+    const judges = activeJudges();
+    if (judges.length === 0) {
+        return { applicable: null, compliant: 'no', evidence: '', reason: 'No judge API keys set', confidence: 0, _error: 'no-judges' };
     }
+    // Fan out to all judges in parallel
+    const votes = await Promise.all(judges.map(j => judgeOne(j, note, pp, guidelineTitle)));
+    // Filter out judges that completely failed (parse + call errors); if all failed, return error
+    const usable = votes.filter(v => !v._error || v.compliant);
+    if (usable.length === 0) {
+        return { applicable: null, compliant: 'no', evidence: '', reason: 'All judges failed', confidence: 0, _error: 'all-failed', _votes: votes };
+    }
+    return majorityVote(usable);
 }
 
 /**
