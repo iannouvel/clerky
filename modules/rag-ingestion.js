@@ -280,6 +280,8 @@ async function reingestGuideline(guidelineId, content, metadata) {
             title: metadata.title || guidelineId,
             organisation: metadata.organisation || 'Unknown',
             year: metadata.year || null,
+            scope: metadata.scope || 'national',
+            hospitalTrust: metadata.hospitalTrust || null,
             chunkIndex: index,
             totalChunks: chunks.length
         }

@@ -15431,7 +15431,9 @@ app.post('/reingestGuideline', authenticateUser, async (req, res) => {
             if (!metadata) {
                 resolvedMetadata = {
                     title: data.humanFriendlyName || data.displayName || data.title || guidelineId,
-                    organisation: data.organisation || 'Unknown'
+                    organisation: data.organisation || 'Unknown',
+                    scope: data.scope || 'national',
+                    hospitalTrust: data.shortHospitalTrust || data.hospitalTrust || null
                 };
             }
 
