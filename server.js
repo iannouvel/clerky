@@ -18254,57 +18254,26 @@ app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
 
         timer.step('Fetch guideline metadata');
 
-        // RAG-first content retrieval: query Pinecone for the most relevant chunks of this
-        // guideline given the clinical note. Fall back to full Firestore content if unavailable.
-        let guidelineContent = null;
-        let contentSource = 'unknown';
-
-        try {
-            const ragResult = await vectorDB.queryDocuments(transcript, {
-                topK: 8,
-                filter: { guidelineId }
-            });
-
-            const chunksWithText = (ragResult.matches || []).filter(m => m.metadata.text);
-
-            if (chunksWithText.length > 0) {
-                // Sort by chunkIndex to preserve reading order
-                chunksWithText.sort((a, b) => (a.metadata.chunkIndex ?? 0) - (b.metadata.chunkIndex ?? 0));
-                guidelineContent = chunksWithText.map(m => m.metadata.text).join('\n\n');
-                contentSource = 'rag';
-                console.log(`[RAG] Retrieved ${chunksWithText.length} chunks for guideline ${guidelineId} (${guidelineContent.length} chars)`);
-            } else {
-                console.warn(`[RAG] No chunks with text returned for guideline ${guidelineId} — RAG unavailable`);
-            }
-        } catch (ragError) {
-            console.warn(`[RAG] Query failed for guideline ${guidelineId}:`, ragError.message);
-        }
+        // Once a guideline has been selected for analysis, pass the WHOLE guideline content to
+        // the per-PP analyzer. RAG belongs in the earlier "which guideline applies" step, not
+        // here — slicing the guideline by semantic similarity to the note systematically hides
+        // PPs (exam, counselling, etc.) whose source text doesn't lexically match the note.
+        let guidelineContent = guidelineData.content || guidelineData.condensed || null;
+        let contentSource = 'firestore-full';
 
         if (!guidelineContent) {
-            if (!allowFallback) {
-                // RAG failed and user hasn't approved fallback — surface to frontend
-                console.warn(`[RAG] No content via RAG for guideline ${guidelineId} — returning ragFailed to prompt user`);
-                return res.json({
-                    success: false,
-                    ragFailed: true,
-                    guidelineTitle,
-                    guidelineId,
-                    message: `Vector search returned no content for "${guidelineTitle}". Use Firestore content as fallback?`
-                });
+            // Final fallback: subcollections (older guidelines may have content split out)
+            const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
+            if (fullContentDoc.exists) {
+                guidelineContent = fullContentDoc.data()?.content;
+                contentSource = 'firestore-subcollection-full';
             }
-
-            // User approved fallback: Firestore condensed → full content → subcollections
-            guidelineContent = guidelineData.condensed || guidelineData.content;
-            contentSource = 'firestore';
-
             if (!guidelineContent) {
                 const condensedDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('condensed').get();
-                if (condensedDoc.exists) guidelineContent = condensedDoc.data()?.condensed;
-            }
-
-            if (!guidelineContent) {
-                const fullContentDoc = await db.collection('guidelines').doc(guidelineId).collection('content').doc('full').get();
-                if (fullContentDoc.exists) guidelineContent = fullContentDoc.data()?.content;
+                if (condensedDoc.exists) {
+                    guidelineContent = condensedDoc.data()?.condensed;
+                    contentSource = 'firestore-subcollection-condensed';
+                }
             }
         }
 
