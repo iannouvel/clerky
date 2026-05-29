@@ -963,7 +963,7 @@ ${sourceText}
             textLength: sourceText.length
         });
 
-        const aiResult = await routeToAI({ messages, temperature: 0.1 }, userId);
+        const aiResult = await routeToAI({ messages, temperature: 0 }, userId);
 
         if (!aiResult || !aiResult.content) {
             console.warn('[QUOTE_FINDER] AI returned no quote', { guidelineId });
@@ -17829,7 +17829,7 @@ IMPORTANT:
         let usedFallback = false;
 
         try {
-            aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+            aiResponse = await routeToAI({ messages, temperature: 0 }, userId);
         } catch (aiError) {
             // Check if error is due to context length exceeded
             const isContextLengthError = aiError.message && (
@@ -17910,7 +17910,7 @@ IMPORTANT:
                     fallbackContentLength: fallbackContent.length
                 });
 
-                aiResponse = await routeToAI({ messages, temperature: 0.3 }, userId);
+                aiResponse = await routeToAI({ messages, temperature: 0 }, userId);
                 usedFallback = true;
             } else {
                 // Re-throw if not a context length error or no fallback available

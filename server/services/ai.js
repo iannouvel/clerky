@@ -261,7 +261,7 @@ function formatMessagesForProvider(messages, provider) {
  * @param {string} [model='deepseek-chat'] - Model identifier (determines provider)
  * @param {string|null} [systemPrompt=null] - System prompt (if prompt is string)
  * @param {string|null} [userId=null] - User ID for preference lookup and logging
- * @param {number} [temperature=0.7] - Sampling temperature (0-1)
+ * @param {number} [temperature=0] - Sampling temperature (0-1). Default 0 for deterministic, reproducible output.
  * @param {number} [timeoutMs=120000] - Request timeout in milliseconds
  * @param {boolean} [skipUserPreference=false] - Skip user's model preferences
  * @param {number} [maxTokens=4000] - Maximum tokens in response
@@ -272,7 +272,7 @@ function formatMessagesForProvider(messages, provider) {
  * @returns {Object} returns.token_usage - Token usage statistics
  * @throws {Error} If no AI provider API keys are configured or request fails
  */
-async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0.7, timeoutMs = 120000, skipUserPreference = false, maxTokens = 4000, taskComplexity = null) {
+async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, userId = null, temperature = 0, timeoutMs = 120000, skipUserPreference = false, maxTokens = 4000, taskComplexity = null) {
     let preferredProvider = 'DeepSeek';
     const sendToAIStartTime = Date.now();
 
@@ -560,10 +560,10 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
                 console.log(`[ROUTE-AI-FALLBACK] Trying provider: ${tryProvider}/${tryModel} (health: ${providerHealth})`);
 
                 if (typeof prompt === 'object' && prompt.messages) {
-                    const temperature = prompt.temperature !== undefined ? prompt.temperature : 0.7;
+                    const temperature = prompt.temperature !== undefined ? prompt.temperature : 0;
                     result = await sendToAI(prompt.messages, tryModel, null, userId, temperature, 120000, true, maxTokens, taskComplexity);
                 } else {
-                    result = await sendToAI(prompt, tryModel, null, userId, 0.7, 120000, true, maxTokens, taskComplexity);
+                    result = await sendToAI(prompt, tryModel, null, userId, 0, 120000, true, maxTokens, taskComplexity);
                 }
                 console.log(`[ROUTE-AI-FALLBACK] ✓ Success with ${tryProvider}`);
                 return result;
@@ -2024,7 +2024,7 @@ Identify the most important deficiencies. Return JSON:
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
             ],
-            temperature: 0.3
+            temperature: 0
         }, userId, targetModel);
 
         if (!result || !result.content) {

@@ -298,7 +298,7 @@ async function callGemini(systemPrompt, userPrompt, maxTokens = 1024) {
         body: JSON.stringify({
             systemInstruction: { parts: [{ text: systemPrompt }] },
             contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-            generationConfig: { temperature: 0.4, maxOutputTokens: maxTokens },
+            generationConfig: { temperature: 0, maxOutputTokens: maxTokens },
         }),
     });
 
@@ -812,13 +812,24 @@ async function callJudge(systemPrompt, userPrompt) {
     // Prefer Gemini (cheap, deterministic at temp 0) — falls back to Anthropic if unavailable.
     if (!looksLikePlaceholder(process.env.GOOGLE_AI_API_KEY)) {
         const url = `${GEMINI_URL_BASE}/${GEMINI_MODEL}:generateContent?key=${process.env.GOOGLE_AI_API_KEY}`;
+        const generationConfig = {
+            temperature: 0,
+            topP: 0.1,
+            maxOutputTokens: 4000,
+            responseMimeType: 'application/json',
+        };
+        // Gemini 2.5 models count thinking tokens against maxOutputTokens, truncating
+        // JSON output. Disable thinking for deterministic judge calls.
+        if (/gemini-2\.5/.test(GEMINI_MODEL)) {
+            generationConfig.thinkingConfig = { thinkingBudget: 0 };
+        }
         const resp = await fetch(url, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
                 systemInstruction: { parts: [{ text: systemPrompt }] },
                 contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-                generationConfig: { temperature: 0, topP: 0.1, maxOutputTokens: 1500 },
+                generationConfig,
             }),
         });
         if (!resp.ok) throw new Error(`Gemini judge ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
@@ -826,7 +837,7 @@ async function callJudge(systemPrompt, userPrompt) {
         return json?.candidates?.[0]?.content?.parts?.[0]?.text || '';
     }
     if (!looksLikePlaceholder(process.env.ANTHROPIC_API_KEY)) {
-        return await callAnthropic(systemPrompt, userPrompt, 1500);
+        return await callAnthropic(systemPrompt, userPrompt, 4000);
     }
     throw new Error('No judge LLM API key available');
 }
