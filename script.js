@@ -5505,16 +5505,19 @@ document.addEventListener('DOMContentLoaded', () => {
             analyseNoteBtn.addEventListener('click', stopHandler, { once: true });
 
             try {
-                // Phase 1: Completeness check
-                updateUser('Step 1 of 2 — Checking note completeness...', true);
-                if (btnText) btnText.textContent = 'Stop (Step 1/2)';
-                await runPhase1CompletenessCheck();
+                // Phase 1 (DEPRECATED — superseded by guideline-aware required-values gather inside processGuidelinesWorkflow)
+                // The old generic completeness check ("Reviewing note for missing clinical details") asked for whatever
+                // an LLM thought was missing, irrespective of which guidelines were relevant. The new required-values
+                // workflow asks specifically for the values the SELECTED guidelines' PPs need to be assessed correctly.
+                // Disabled to avoid duplicate prompting and stale UX.
+                // updateUser('Step 1 of 2 — Checking note completeness...', true);
+                // if (btnText) btnText.textContent = 'Stop (Step 1/2)';
+                // await runPhase1CompletenessCheck();
+                //
+                // if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 
-                if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
-
-                // Phase 2: Guideline analysis
-                updateUser('Step 2 of 2 — Analysing against guidelines...', true);
-                if (btnText) btnText.textContent = 'Stop (Step 2/2)';
+                // Guideline analysis (now the single-step entry; required-values gather runs after guideline selection)
+                if (btnText) btnText.textContent = 'Stop';
                 window.selectedMode = 'guideline-suggestions';
                 await processGuidelinesWorkflow();
             } catch (error) {
@@ -7838,7 +7841,7 @@ async function processGuidelinesWorkflow() {
         }
 
         // Step 4: Run parallel analysis (will show summary dashboard internally)
-        updateUser(`Step 2 of 2 — Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}...`, true);
+        updateUser(`Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}…`, true);
         await runParallelAnalysis(selectedGuidelines);
 
         console.log('[DEBUG] processGuidelinesWorkflow completed');
@@ -8336,10 +8339,12 @@ async function processWorkflow() {
 
         updateUser(scopeMessage, false);
 
-        // Phase 1: Check note completeness
-        await runPhase1CompletenessCheck();
+        // Phase 1 (DEPRECATED — replaced by required-values gather after guideline selection)
+        // The old generic completeness check has been superseded by the per-guideline
+        // required-values workflow. Kept commented to preserve history; see ADR / commit history.
+        // await runPhase1CompletenessCheck();
 
-        // Phase 1 complete — now find relevant guidelines
+        // Find relevant guidelines
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
         updateAnalyseButtonProgress('Finding Guidelines...', true);
         await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
