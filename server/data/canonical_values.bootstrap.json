@@ -1,0 +1,354 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Canonical catalogue of clinical values used across all guidelines. Each value has a stable snake_case id, type information, extraction hints (for pulling from notes), and a prompt (for asking the user if extraction fails). Per-guideline JSONs reference these ids; cross-guideline consistency by construction.",
+  "values": {
+
+    "gestational_age_weeks": {
+      "label": "Gestational age",
+      "type": "number",
+      "unit": "weeks (decimal)",
+      "description": "Current gestational age expressed in decimal weeks. 32+4 weeks = 32.6.",
+      "extractionHint": "Look for patterns like 'X+Y weeks', 'X+Y/40', 'X+Y wks', 'X+Y/52', or just 'X weeks gestation'. Convert X+Y to X + Y/7.",
+      "prompt": "What is the patient's gestational age (weeks)?",
+      "aliases": ["gestational age", "gestational_age", "gestationalAge", "ga", "weeks gestation"]
+    },
+
+    "parity": {
+      "label": "Parity",
+      "type": "string",
+      "description": "Obstetric parity expressed in the standard GxPy format.",
+      "extractionHint": "Look for patterns like 'G2P1', 'gravida 2 para 1', 'G3P0+2'.",
+      "prompt": "What is the patient's parity (e.g. G2P1)?",
+      "aliases": ["parity", "obstetric_history", "gravida_para"]
+    },
+
+    "rfm_present": {
+      "label": "Reduced fetal movements present",
+      "type": "boolean",
+      "description": "Whether the patient is presenting with reduced fetal movements as the reason for assessment.",
+      "extractionHint": "Look for 'RFM', 'reduced fetal movements', 'reduced movements', 'decreased movements', or any presenting-complaint language describing movement reduction.",
+      "prompt": "Is the patient presenting with reduced fetal movements?",
+      "aliases": ["reduced fetal movements", "reduced_fetal_movements", "rfm", "decreased fetal movements"]
+    },
+
+    "rfm_duration_hours": {
+      "label": "Duration of reduced movements",
+      "type": "number",
+      "unit": "hours",
+      "description": "How long the reduction in fetal movements has been present, in hours.",
+      "extractionHint": "Look for 'for X hours', 'since X (timestamp)', 'overnight', 'since yesterday' — convert to hours.",
+      "prompt": "How long has the reduction in movements been present (hours)?",
+      "aliases": ["rfm_duration", "duration of reduced fetal movements", "duration_of_RFM"]
+    },
+
+    "absent_movements_periods": {
+      "label": "Any periods of absent movements?",
+      "type": "boolean",
+      "description": "Whether the patient has experienced any periods of complete absence of fetal movements during this episode.",
+      "extractionHint": "Look for 'no movements felt', 'absent movements', 'no movements since X' (positive) vs 'felt some movements', 'occasional movements' (negative).",
+      "prompt": "Has the patient had any periods of complete absence of fetal movements?",
+      "aliases": ["absent_movements_question_answered", "presence or absence of periods of absent fetal movements", "absent_movement_periods"]
+    },
+
+    "first_or_recurrent_rfm_episode": {
+      "label": "First or recurrent RFM episode?",
+      "type": "enum",
+      "options": ["first", "recurrent_second", "recurrent_three_or_more"],
+      "description": "Whether this is the patient's first RFM presentation in this pregnancy or a recurrent episode.",
+      "extractionHint": "Look for 'first episode', 'no prior episodes', 'first RFM' (first); 'second episode', 'previous RFM', 'recurrent', 'X weeks ago presented with RFM' (recurrent).",
+      "prompt": "Is this the first RFM episode in this pregnancy, or recurrent?",
+      "aliases": ["episode count of reduced fetal movement", "recurrent episodes", "reduced fetal movement episode"]
+    },
+
+    "fetal_heart_auscultated": {
+      "label": "Fetal heart auscultated successfully",
+      "type": "boolean",
+      "description": "Whether the fetal heart has been successfully auscultated by handheld Doppler, CTG, or USS during this assessment.",
+      "extractionHint": "Positive: 'FH heard', 'FH confirmed', 'fetal heart auscultated', 'Doppler — FH 140s'. Negative: 'FH not heard', 'unable to auscultate FH', 'no FH on Doppler'.",
+      "prompt": "Was the fetal heart successfully auscultated?",
+      "aliases": ["fetal heart auscultation result", "fetal viability/heartbeat confirmation"]
+    },
+
+    "ctg_performed": {
+      "label": "CTG performed",
+      "type": "boolean",
+      "description": "Whether a cardiotocograph (CTG) has been performed.",
+      "extractionHint": "Positive: 'CTG performed', 'CTG commenced', 'CTG reactive'. Negative: silence or 'CTG not done'.",
+      "prompt": "Has a CTG been performed?",
+      "aliases": []
+    },
+
+    "ctg_result": {
+      "label": "CTG result",
+      "type": "enum",
+      "options": ["normal_reactive", "non_reassuring", "abnormal", "not_performed"],
+      "description": "Outcome of the CTG. Normal/reactive = baseline 110-160, normal variability, no decels. Non-reassuring = any concerning feature. Abnormal = pathological tracing.",
+      "extractionHint": "Look for 'reactive', 'normal' (positive); 'non-reassuring', 'decels', 'reduced variability' (concerning).",
+      "prompt": "What was the CTG result?",
+      "aliases": ["CTG result", "ctg_outcome"]
+    },
+
+    "uss_performed_this_episode": {
+      "label": "USS performed at this episode",
+      "type": "boolean",
+      "description": "Whether an ultrasound scan was performed as part of this RFM assessment (not just arranged for later).",
+      "extractionHint": "Positive: 'USS performed', 'biometry done today'. Negative: 'USS booked for tomorrow', 'scan arranged'.",
+      "prompt": "Was an ultrasound performed at this assessment (not just arranged)?",
+      "aliases": []
+    },
+
+    "uss_arranged_earliest_opportunity": {
+      "label": "USS arranged at earliest opportunity",
+      "type": "boolean",
+      "description": "Whether an ultrasound scan has been booked or arranged at the earliest available opportunity (when not already performed).",
+      "extractionHint": "Positive: 'USS booked for tomorrow', 'scan arranged at earliest slot', 'growth scan booked'.",
+      "prompt": "Has a USS been booked at the earliest available opportunity?",
+      "aliases": []
+    },
+
+    "uss_in_preceding_2_weeks": {
+      "label": "USS in preceding 2 weeks",
+      "type": "boolean",
+      "description": "Whether the patient has had an ultrasound scan in the preceding 2 weeks.",
+      "extractionHint": "Positive: 'USS 1 week ago', 'recent scan within 2 weeks'. Negative: 'last scan at X weeks' if difference > 2 weeks; 'no scan since booking'.",
+      "prompt": "Has the patient had a USS in the preceding 2 weeks?",
+      "aliases": ["date of last ultrasound"]
+    },
+
+    "uss_biometry_documented": {
+      "label": "USS biometry result documented",
+      "type": "enum",
+      "options": ["normal", "abnormal", "not_done"],
+      "description": "Whether USS biometry (HC, AC, FL) has been documented and its outcome.",
+      "extractionHint": "Look for biometry measurements with centiles, e.g. 'EFW 30th centile', 'AC 25th centile'.",
+      "prompt": "USS biometry: normal, abnormal, or not done?",
+      "aliases": ["ultrasound growth assessment", "ultrasound biometry"]
+    },
+
+    "uss_liquor_volume_documented": {
+      "label": "Liquor volume result",
+      "type": "enum",
+      "options": ["normal", "oligohydramnios", "polyhydramnios", "not_done"],
+      "description": "Liquor volume / AFI / DVP result.",
+      "extractionHint": "Look for AFI value (e.g. 'AFI 12cm'), DVP value, 'liquor normal', 'oligohydramnios'.",
+      "prompt": "Liquor volume result?",
+      "aliases": ["liquor volume"]
+    },
+
+    "uss_umbilical_artery_doppler_documented": {
+      "label": "Umbilical artery Doppler result",
+      "type": "enum",
+      "options": ["normal", "abnormal", "not_done"],
+      "description": "Umbilical artery Doppler PI/RI outcome.",
+      "extractionHint": "Look for 'UA Doppler normal', 'PI X', 'RI X', or 'abnormal Doppler'.",
+      "prompt": "Umbilical artery Doppler result?",
+      "aliases": ["Doppler studies", "umbilical artery Doppler"]
+    },
+
+    "uss_fetal_morphology_documented": {
+      "label": "Fetal morphology assessment documented",
+      "type": "boolean",
+      "description": "Whether a fetal morphology survey is documented (this episode or previously).",
+      "extractionHint": "'Anomaly scan normal', 'morphology survey done', 'no anomalies seen'.",
+      "prompt": "Has fetal morphology been assessed?",
+      "aliases": []
+    },
+
+    "maternal_blood_pressure_measured": {
+      "label": "Maternal blood pressure measured",
+      "type": "boolean",
+      "description": "Whether the patient's BP has been measured at this assessment.",
+      "extractionHint": "Look for 'BP X/Y', specific mmHg values.",
+      "prompt": "Has maternal BP been measured?",
+      "aliases": ["maternal blood pressure"]
+    },
+
+    "urinalysis_performed": {
+      "label": "Urinalysis performed",
+      "type": "boolean",
+      "description": "Whether urinalysis (urine dip for protein) has been performed.",
+      "extractionHint": "'Urinalysis NAD', 'urine dip nil', 'trace protein on dip', 'PCR sent'.",
+      "prompt": "Has urinalysis been performed?",
+      "aliases": ["urinalysis result (protein)"]
+    },
+
+    "symphysis_fundal_height_measured": {
+      "label": "Symphysis-fundal height measured",
+      "type": "boolean",
+      "description": "Whether SFH has been measured and plotted.",
+      "extractionHint": "'SFH X cm', 'fundal height measured', 'plotted on customised chart'.",
+      "prompt": "Has SFH been measured?",
+      "aliases": ["symphysis-fundal height"]
+    },
+
+    "on_serial_growth_scans": {
+      "label": "Patient on serial growth scans",
+      "type": "boolean",
+      "description": "Whether the patient is currently undergoing serial growth scan surveillance (e.g. for FGR risk).",
+      "extractionHint": "'On serial USS', 'fortnightly growth scans', 'on USS surveillance'.",
+      "prompt": "Is the patient on serial growth scans?",
+      "aliases": ["serial growth scans"]
+    },
+
+    "bmi": {
+      "label": "Booking BMI",
+      "type": "number",
+      "unit": "kg/m^2",
+      "description": "The patient's BMI at booking (or current BMI if booking value not available).",
+      "extractionHint": "Look for 'BMI X', 'BMI = X', 'kg/m2'.",
+      "prompt": "What is the patient's BMI?",
+      "aliases": ["BMI"]
+    },
+
+    "smoking_status": {
+      "label": "Smoking status",
+      "type": "enum",
+      "options": ["never_smoker", "ex_smoker", "current_smoker"],
+      "description": "Patient's current smoking status.",
+      "extractionHint": "'Non-smoker', 'never smoker', 'ex-smoker', 'X cigarettes/day', 'smoker'.",
+      "prompt": "What is the patient's smoking status?",
+      "aliases": ["smoking"]
+    },
+
+    "diabetes_status": {
+      "label": "Diabetes status",
+      "type": "enum",
+      "options": ["none", "gestational", "type_1", "type_2"],
+      "description": "Diabetes status — none, gestational, or pre-existing.",
+      "extractionHint": "'GDM', 'gestational diabetes', 'T1DM', 'T2DM', 'no diabetes', 'diet-controlled'.",
+      "prompt": "Diabetes status?",
+      "aliases": ["diabetes"]
+    },
+
+    "hypertension_status": {
+      "label": "Hypertension status",
+      "type": "enum",
+      "options": ["none", "chronic", "gestational", "pre_eclampsia"],
+      "description": "Hypertension status — none, chronic, gestational, or pre-eclampsia.",
+      "extractionHint": "'No HTN', 'chronic hypertension', 'gestational hypertension', 'pre-eclampsia'.",
+      "prompt": "Hypertension status?",
+      "aliases": ["hypertension"]
+    },
+
+    "maternal_age_years": {
+      "label": "Maternal age",
+      "type": "number",
+      "unit": "years",
+      "description": "Patient's age in years.",
+      "extractionHint": "Look for 'X yr', 'X-year-old', or compute from DOB if note shows current date.",
+      "prompt": "What is the patient's age in years?",
+      "aliases": ["maternal age"]
+    },
+
+    "previous_sga_baby": {
+      "label": "Previous SGA baby",
+      "type": "boolean",
+      "description": "Whether the patient has had a previous small-for-gestational-age baby.",
+      "extractionHint": "'Previous SGA', 'prior IUGR', 'previous baby <10th centile'.",
+      "prompt": "Previous SGA baby?",
+      "aliases": ["previous SGA"]
+    },
+
+    "previous_stillbirth": {
+      "label": "Previous stillbirth",
+      "type": "boolean",
+      "description": "Whether the patient has a history of stillbirth.",
+      "extractionHint": "'Previous stillbirth', 'IUFD at X weeks (previous pregnancy)'.",
+      "prompt": "Previous stillbirth?",
+      "aliases": ["stillbirth"]
+    },
+
+    "placental_issues_history": {
+      "label": "Placental issues history",
+      "type": "boolean",
+      "description": "Whether the patient has any history of placental issues (e.g. previous abruption, placenta praevia).",
+      "extractionHint": "'Previous abruption', 'placenta praevia', 'low-lying placenta history'.",
+      "prompt": "Any history of placental issues?",
+      "aliases": ["placental issues"]
+    },
+
+    "multiple_pregnancy": {
+      "label": "Multiple pregnancy",
+      "type": "boolean",
+      "description": "Whether this is a multiple (twin/triplet) pregnancy.",
+      "extractionHint": "'Twins', 'DCDA', 'MCDA', 'MCMA', 'triplets', 'multiple pregnancy'.",
+      "prompt": "Is this a multiple pregnancy?",
+      "aliases": ["multiple pregnancy indicator"]
+    },
+
+    "encounter_type": {
+      "label": "Encounter type",
+      "type": "enum",
+      "options": ["routine_antenatal", "acute_rfm_presentation", "growth_review", "booking", "post_natal", "other"],
+      "description": "The clinical context of this encounter.",
+      "extractionHint": "'Booking visit' (booking); 'attended triage with RFM' (acute_rfm); 'antenatal clinic for growth review' (growth_review); 'routine appointment' (routine_antenatal).",
+      "prompt": "What type of encounter is this?",
+      "aliases": ["encounter type (routine antenatal care)"]
+    },
+
+    "disposition_at_end_of_encounter": {
+      "label": "Disposition at end of encounter",
+      "type": "enum",
+      "options": ["discharged_home", "admitted", "escalated", "transferred", "unclear"],
+      "description": "What happened to the patient at the end of the encounter.",
+      "extractionHint": "'Discharged', 'admitted', 'escalated to registrar', 'transferred'.",
+      "prompt": "What was the patient's disposition?",
+      "aliases": []
+    },
+
+    "fm_advice_documented": {
+      "label": "Fetal movement awareness advice documented",
+      "type": "boolean",
+      "description": "Whether the note documents any fetal-movement awareness advice given to the woman during the encounter.",
+      "extractionHint": "Any explicit reference to advising about fetal movements: 'counselled re FMs', 'safety net re movements', 'advised to report any change'.",
+      "prompt": "Was fetal-movement awareness advice documented?",
+      "aliases": []
+    },
+
+    "fm_advice_uses_subjective_framing": {
+      "label": "FM advice uses subjective framing",
+      "type": "boolean",
+      "description": "When FM advice is given, whether it uses the woman's subjective perception of change/decrease (as opposed to formal counting with specified numbers).",
+      "extractionHint": "Positive (subjective): 'report any change in usual pattern', 'be aware of decrease'. Negative (formal counting): 'count 10 movements/day', 'kick chart issued'.",
+      "prompt": "Is the FM advice framed around subjective perception (not formal counting)?",
+      "aliases": []
+    },
+
+    "fm_advice_uses_formal_counting": {
+      "label": "FM advice uses formal counting",
+      "type": "boolean",
+      "description": "Whether the FM advice recommends formal counting using specified numbers (e.g. count-to-10, kick chart).",
+      "extractionHint": "Positive: 'kick chart', 'count to 10', 'X movements per day'. Negative if advice is subjective only.",
+      "prompt": "Does the FM advice recommend formal counting (count-to-10, kick chart, etc.)?",
+      "aliases": []
+    },
+
+    "iol_or_birth_expedited": {
+      "label": "Birth expedited (IOL, CS)",
+      "type": "boolean",
+      "description": "Whether the plan includes expediting birth (induction of labour or caesarean) on the basis of this RFM episode.",
+      "extractionHint": "'IOL booked', 'plan for induction', 'elective LSCS planned', 'expedited delivery'.",
+      "prompt": "Is birth being expedited?",
+      "aliases": []
+    },
+
+    "reassurance_documented": {
+      "label": "Reassurance documented",
+      "type": "boolean",
+      "description": "Whether explicit reassurance to the patient is documented in the note.",
+      "extractionHint": "'Reassured', 'patient reassured', 'reassurance given'.",
+      "prompt": "Is reassurance documented?",
+      "aliases": []
+    },
+
+    "no_expedite_decision_documented": {
+      "label": "No-expedite decision documented",
+      "type": "boolean",
+      "description": "Whether the note explicitly documents that there is no indication to expedite birth.",
+      "extractionHint": "'No indication to expedite', 'no grounds for early delivery', 'continue with planned date'.",
+      "prompt": "Is the 'no expedite' conclusion explicitly documented?",
+      "aliases": []
+    }
+
+  }
+}
