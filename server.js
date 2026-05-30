@@ -18261,6 +18261,23 @@ app.post('/extractValuesFromNote', authenticateUser, async (req, res) => {
     }
 });
 
+app.post('/augmentNoteWithValues', authenticateUser, async (req, res) => {
+    try {
+        const { note, values } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(values)) {
+            return res.status(400).json({ success: false, error: 'values (array) is required' });
+        }
+        if (values.length === 0) return res.json({ success: true, augmentedNote: note });
+        console.log(`[AUGMENT-NOTE] note ${note.length} chars; ${values.length} values to weave in`);
+        const augmentedNote = await requiredValuesMod.augmentNoteWithValues(note, values);
+        return res.json({ success: true, augmentedNote });
+    } catch (e) {
+        console.error('[AUGMENT-NOTE] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
     const timer = new StepTimer('/getPracticePointSuggestions');
     req.stepTimer = timer;

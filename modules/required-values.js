@@ -389,10 +389,81 @@ async function extractValuesFromNote(note, valuesList) {
     return { extracted: out };
 }
 
+// ----- Note augmentation with user-supplied values ------------------------
+
+const AUGMENT_SYSTEM = `You incorporate user-supplied clinical values into an existing clinical note.
+
+You receive: (a) the original note, and (b) a list of confirmed clinical values the user provided.
+
+Your job: produce a revised note that incorporates the user-supplied values into clinically appropriate places. Rules:
+- Preserve the original note's structure, voice, abbreviations, and existing content. Do not paraphrase or restructure parts of the note that are already there.
+- Insert each supplied value either inline (when it naturally fits in an existing sentence/section), or in a clearly-labelled "Confirmed background:" block if the note has no natural place for it.
+- Keep additions concise and use standard UK obstetric phrasing.
+- Do not invent details beyond what the supplied values give you. Do not contradict the existing note.
+- Do not duplicate values already documented in the note — if a value is already there, leave it alone.
+- Output the full revised note text only. No JSON, no commentary, no markdown fences.`;
+
+function buildAugmentPrompt(note, values) {
+    const valuesStr = values.map(v => {
+        const label = v.label || v.id;
+        const val = (v.value === null || v.value === undefined || v.value === '') ? '(unknown)' : String(v.value);
+        return `  - ${label}: ${val}`;
+    }).join('\n');
+
+    return `ORIGINAL NOTE:
+${note}
+
+CONFIRMED CLINICAL VALUES TO INCORPORATE:
+${valuesStr}
+
+Return the revised note text only.`;
+}
+
+// callGemini-text — same wrapper, but plain-text response (no JSON mode)
+async function callGeminiText(systemPrompt, userPrompt) {
+    const apiKey = process.env.GOOGLE_AI_API_KEY;
+    if (!apiKey) throw new Error('GOOGLE_AI_API_KEY not set');
+    const url = `${GEMINI_URL_BASE}/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+    const generationConfig = {
+        temperature: 0,
+        maxOutputTokens: 4000,
+    };
+    if (/gemini-2\.5/.test(GEMINI_MODEL)) {
+        generationConfig.thinkingConfig = { thinkingBudget: 0 };
+    }
+    const resp = await fetch(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+            systemInstruction: { parts: [{ text: systemPrompt }] },
+            contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+            generationConfig,
+        }),
+    });
+    if (!resp.ok) throw new Error(`Gemini ${resp.status}: ${(await resp.text()).slice(0, 200)}`);
+    const json = await resp.json();
+    return json?.candidates?.[0]?.content?.parts?.[0]?.text || '';
+}
+
+/**
+ * Augment a note with user-supplied clinical values, weaving them into
+ * clinically-appropriate places via an LLM call.
+ *
+ * @param {string} note - original note text
+ * @param {Array<{id:string,label:string,type:string,value:any}>} values - confirmed values to add
+ * @returns {Promise<string>} augmented note
+ */
+async function augmentNoteWithValues(note, values) {
+    if (!note || !Array.isArray(values) || values.length === 0) return note;
+    const augmented = await callGeminiText(AUGMENT_SYSTEM, buildAugmentPrompt(note, values));
+    return (augmented || note).trim();
+}
+
 module.exports = {
     SCHEMA_VERSION,
     getOrGenerateRequiredValues,
     aggregateAcrossGuidelines,
     extractValuesFromNote,
+    augmentNoteWithValues,
     loadCatalogue,
 };

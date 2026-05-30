@@ -8013,60 +8013,114 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const extracted = exData.extracted || [];
     const extractedById = new Map(extracted.map(e => [e.id, e]));
 
-    // Step 3: present the modal — auto-filled values + missing ones to gather
+    // Step 3: present the side panel — needs-value items first, auto-filled below
     const userValues = await showRequiredValuesModal(requiredValues, extractedById);
 
-    return { values: requiredValues, extractedValues: extracted, userValues };
+    let augmentedNote = null;
+    if (userValues) {
+        // Collect only values the user provided (skip unknown/missing)
+        const toAdd = [];
+        for (const rv of requiredValues) {
+            const u = userValues[rv.id];
+            if (u && u.status === 'provided' && u.value !== null && u.value !== '') {
+                toAdd.push({ id: rv.id, label: rv.label, type: rv.type, value: u.value });
+            }
+        }
+        if (toAdd.length > 0) {
+            updateUser(`Incorporating ${toAdd.length} value${toAdd.length === 1 ? '' : 's'} into your note…`, true);
+            try {
+                const augResp = await fetch(`${window.SERVER_URL}/augmentNoteWithValues`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                    body: JSON.stringify({ note, values: toAdd }),
+                });
+                if (augResp.ok) {
+                    const augData = await augResp.json();
+                    if (augData.success && augData.augmentedNote) {
+                        augmentedNote = augData.augmentedNote;
+                        // Update the visible note so the user can see what was added
+                        if (typeof setUserInputContent === 'function') {
+                            setUserInputContent(augmentedNote, true, 'Required Values incorporated');
+                        }
+                    }
+                }
+            } catch (e) {
+                console.warn('[REQUIRED-VALUES] Augment failed; continuing with original note:', e.message);
+            }
+        }
+    }
+
+    return { values: requiredValues, extractedValues: extracted, userValues, augmentedNote };
 }
 
 function showRequiredValuesModal(requiredValues, extractedById) {
     return new Promise((resolve) => {
+        // Side panel (not full-screen overlay) — note stays visible on the left.
         let modal = document.getElementById('requiredValuesModal');
         if (!modal) {
             modal = document.createElement('div');
             modal.id = 'requiredValuesModal';
-            modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10001;display:flex;align-items:center;justify-content:center;padding:20px;';
             document.body.appendChild(modal);
         }
+        modal.style.cssText = 'position:fixed;top:60px;right:16px;bottom:16px;width:min(480px, 38vw);min-width:380px;background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);z-index:10001;display:flex;flex-direction:column;border:1px solid var(--border-color,#ddd);';
         modal.innerHTML = '';
 
-        const box = document.createElement('div');
-        box.style.cssText = 'background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;max-width:760px;width:100%;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,0.3);';
-        modal.appendChild(box);
-
         const header = document.createElement('div');
-        header.style.cssText = 'padding:18px 22px;border-bottom:1px solid var(--border-color,#ddd);';
+        header.style.cssText = 'padding:16px 20px;border-bottom:1px solid var(--border-color,#ddd);background:var(--bg-secondary,#fafafa);border-radius:10px 10px 0 0;';
         header.innerHTML = `
-            <h3 style="margin:0 0 6px;font-size:1.15em;">Confirm required values</h3>
-            <p style="margin:0;color:var(--text-secondary,#666);font-size:0.88em;">
-                Auto-filled from your note where possible. Edit or supply missing values, or mark as "unknown / pending".
-                These will be used to make suggestions more accurate.
+            <h3 style="margin:0 0 4px;font-size:1.05em;">Confirm required values</h3>
+            <p style="margin:0;color:var(--text-secondary,#666);font-size:0.82em;line-height:1.4;">
+                Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.
             </p>`;
-        box.appendChild(header);
+        modal.appendChild(header);
 
         const list = document.createElement('div');
-        list.style.cssText = 'overflow-y:auto;padding:16px 22px;flex:1 1 auto;';
-        box.appendChild(list);
+        list.style.cssText = 'overflow-y:auto;padding:12px 18px;flex:1 1 auto;';
+        modal.appendChild(list);
 
-        // Sort: extracted-with-confidence first, then missing
+        // Sort: needs-value (not auto-filled) FIRST so user attends to them first; auto-filled below for review
         const sorted = [...requiredValues].sort((a, b) => {
             const ea = extractedById.get(a.id);
             const eb = extractedById.get(b.id);
             const af = ea?.found ? 1 : 0;
             const bf = eb?.found ? 1 : 0;
-            return bf - af;
+            return af - bf;
         });
+
+        // Section headers
+        const needsCount = sorted.filter(v => !(extractedById.get(v.id)?.found)).length;
+        const autoCount = sorted.length - needsCount;
+        let renderedAutoHeader = false;
+        let renderedNeedsHeader = false;
 
         const inputs = new Map();
         for (const rv of sorted) {
             const ex = extractedById.get(rv.id);
+            const isAutoFilled = !!ex?.found;
+
+            // Inject section dividers
+            if (!isAutoFilled && !renderedNeedsHeader && needsCount > 0) {
+                const h = document.createElement('div');
+                h.style.cssText = 'font-size:0.78em;font-weight:700;text-transform:uppercase;color:#92400e;margin:6px 0 8px;letter-spacing:0.04em;';
+                h.textContent = `Needs value (${needsCount})`;
+                list.appendChild(h);
+                renderedNeedsHeader = true;
+            }
+            if (isAutoFilled && !renderedAutoHeader && autoCount > 0) {
+                const h = document.createElement('div');
+                h.style.cssText = 'font-size:0.78em;font-weight:700;text-transform:uppercase;color:#15803d;margin:16px 0 8px;letter-spacing:0.04em;';
+                h.textContent = `Auto-filled — review (${autoCount})`;
+                list.appendChild(h);
+                renderedAutoHeader = true;
+            }
+
             const row = document.createElement('div');
-            row.style.cssText = 'margin-bottom:14px;padding:10px;border:1px solid var(--border-color,#e5e5e5);border-radius:6px;background:var(--bg-secondary,#fafafa);';
+            row.style.cssText = 'margin-bottom:10px;padding:9px 10px;border:1px solid var(--border-color,#e5e5e5);border-radius:5px;background:' + (isAutoFilled ? 'var(--bg-secondary,#fafafa)' : 'rgba(254,243,199,0.3)') + ';';
 
             const labelLine = document.createElement('div');
             labelLine.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
             const labelEl = document.createElement('strong');
-            labelEl.style.cssText = 'font-size:0.95em;';
+            labelEl.style.cssText = 'font-size:0.9em;';
             labelEl.textContent = rv.label || rv.id;
             labelLine.appendChild(labelEl);
 
@@ -8138,11 +8192,11 @@ function showRequiredValuesModal(requiredValues, extractedById) {
         }
 
         const footer = document.createElement('div');
-        footer.style.cssText = 'padding:14px 22px;border-top:1px solid var(--border-color,#ddd);display:flex;gap:8px;justify-content:flex-end;';
+        footer.style.cssText = 'padding:12px 18px;border-top:1px solid var(--border-color,#ddd);display:flex;gap:8px;justify-content:flex-end;background:var(--bg-secondary,#fafafa);border-radius:0 0 10px 10px;';
         footer.innerHTML = `
-            <button id="rv-skip" style="padding:8px 14px;border-radius:5px;border:1px solid #ccc;background:transparent;cursor:pointer;">Skip (use note as-is)</button>
-            <button id="rv-continue" style="padding:8px 16px;border-radius:5px;background:#16a34a;color:white;border:none;cursor:pointer;font-weight:600;">Continue to suggestions</button>`;
-        box.appendChild(footer);
+            <button id="rv-skip" style="padding:7px 13px;border-radius:5px;border:1px solid #ccc;background:transparent;cursor:pointer;font-size:0.9em;">Skip (use note as-is)</button>
+            <button id="rv-continue" style="padding:7px 15px;border-radius:5px;background:#16a34a;color:white;border:none;cursor:pointer;font-weight:600;font-size:0.9em;">Continue to suggestions</button>`;
+        modal.appendChild(footer);
 
         const collect = () => {
             const out = {};
