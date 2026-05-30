@@ -8003,7 +8003,12 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const requiredValues = rvData.values;
     if (requiredValues.length === 0) return { values: [], extractedValues: {} };
 
-    // Step 2: extract from the clinical note
+    // Filter to user-facing values for the modal. Derived/process-flag values
+    // (userFacing: false) are computed server-side from atomic values, not asked.
+    const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
+
+    // Step 2: extract from the clinical note (still on the full set — including
+    // derived ones — so the audit pipeline has them available downstream)
     const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
     updateUser(`Extracting documented values from note…`, true);
     const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
@@ -8017,7 +8022,8 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const extractedById = new Map(extracted.map(e => [e.id, e]));
 
     // Step 3: present the side panel — needs-value items first, auto-filled below
-    const userValues = await showRequiredValuesModal(requiredValues, extractedById);
+    // (only user-facing values; derived ones are silently auto-computed)
+    const userValues = await showRequiredValuesModal(userFacingValues, extractedById);
 
     let augmentedNote = null;
     if (userValues) {
