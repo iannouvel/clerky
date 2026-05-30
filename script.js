@@ -7824,6 +7824,19 @@ async function processGuidelinesWorkflow() {
             return;
         }
 
+        // Step 3a: Required-values gather (new). For each selected guideline,
+        // fetch its required-values schema (generate if absent), extract what
+        // the note already documents, and ask the user for the rest.
+        // Augments the existing flow; does NOT block on errors (degrades gracefully).
+        try {
+            const valuesResult = await gatherRequiredValuesForGuidelines(selectedGuidelines);
+            window.gatheredRequiredValues = valuesResult;
+            console.log('[REQUIRED-VALUES] Gathered:', valuesResult);
+        } catch (e) {
+            console.warn('[REQUIRED-VALUES] Skipping (error):', e.message);
+            window.gatheredRequiredValues = null;
+        }
+
         // Step 4: Run parallel analysis (will show summary dashboard internally)
         updateUser(`Step 2 of 2 — Analysing note against ${selectedGuidelines.length} guideline${selectedGuidelines.length === 1 ? '' : 's'}...`, true);
         await runParallelAnalysis(selectedGuidelines);
@@ -7955,6 +7968,202 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 
         // Initialise select-all state to reflect pre-selection
         updateCount();
+    });
+}
+
+// ===========================================================================
+// Required-values gather: for each selected guideline, get its schema (generate
+// if missing), extract what the note already documents, then show a modal so
+// the user can confirm extracted values and supply any that are missing.
+// ===========================================================================
+
+async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
+    const ids = selectedGuidelines.map(g => g.id).filter(Boolean);
+    if (ids.length === 0) return null;
+
+    const user = auth.currentUser;
+    if (!user) throw new Error('Not authenticated');
+    const idToken = await user.getIdToken();
+
+    updateUser('Loading required values for selected guidelines…', true);
+
+    // Step 1: get the union of required values across selected guidelines
+    const rvResp = await fetch(`${window.SERVER_URL}/getOrGenerateRequiredValues`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+        body: JSON.stringify({ guidelineIds: ids }),
+    });
+    if (!rvResp.ok) throw new Error(`getOrGenerateRequiredValues HTTP ${rvResp.status}`);
+    const rvData = await rvResp.json();
+    if (!rvData.success || !Array.isArray(rvData.values)) throw new Error('Bad response from getOrGenerateRequiredValues');
+
+    const requiredValues = rvData.values;
+    if (requiredValues.length === 0) return { values: [], extractedValues: {} };
+
+    // Step 2: extract from the clinical note
+    const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
+    updateUser(`Extracting documented values from note…`, true);
+    const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+        body: JSON.stringify({ note, values: requiredValues }),
+    });
+    if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
+    const exData = await exResp.json();
+    const extracted = exData.extracted || [];
+    const extractedById = new Map(extracted.map(e => [e.id, e]));
+
+    // Step 3: present the modal — auto-filled values + missing ones to gather
+    const userValues = await showRequiredValuesModal(requiredValues, extractedById);
+
+    return { values: requiredValues, extractedValues: extracted, userValues };
+}
+
+function showRequiredValuesModal(requiredValues, extractedById) {
+    return new Promise((resolve) => {
+        let modal = document.getElementById('requiredValuesModal');
+        if (!modal) {
+            modal = document.createElement('div');
+            modal.id = 'requiredValuesModal';
+            modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:10001;display:flex;align-items:center;justify-content:center;padding:20px;';
+            document.body.appendChild(modal);
+        }
+        modal.innerHTML = '';
+
+        const box = document.createElement('div');
+        box.style.cssText = 'background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;max-width:760px;width:100%;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 8px 32px rgba(0,0,0,0.3);';
+        modal.appendChild(box);
+
+        const header = document.createElement('div');
+        header.style.cssText = 'padding:18px 22px;border-bottom:1px solid var(--border-color,#ddd);';
+        header.innerHTML = `
+            <h3 style="margin:0 0 6px;font-size:1.15em;">Confirm required values</h3>
+            <p style="margin:0;color:var(--text-secondary,#666);font-size:0.88em;">
+                Auto-filled from your note where possible. Edit or supply missing values, or mark as "unknown / pending".
+                These will be used to make suggestions more accurate.
+            </p>`;
+        box.appendChild(header);
+
+        const list = document.createElement('div');
+        list.style.cssText = 'overflow-y:auto;padding:16px 22px;flex:1 1 auto;';
+        box.appendChild(list);
+
+        // Sort: extracted-with-confidence first, then missing
+        const sorted = [...requiredValues].sort((a, b) => {
+            const ea = extractedById.get(a.id);
+            const eb = extractedById.get(b.id);
+            const af = ea?.found ? 1 : 0;
+            const bf = eb?.found ? 1 : 0;
+            return bf - af;
+        });
+
+        const inputs = new Map();
+        for (const rv of sorted) {
+            const ex = extractedById.get(rv.id);
+            const row = document.createElement('div');
+            row.style.cssText = 'margin-bottom:14px;padding:10px;border:1px solid var(--border-color,#e5e5e5);border-radius:6px;background:var(--bg-secondary,#fafafa);';
+
+            const labelLine = document.createElement('div');
+            labelLine.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
+            const labelEl = document.createElement('strong');
+            labelEl.style.cssText = 'font-size:0.95em;';
+            labelEl.textContent = rv.label || rv.id;
+            labelLine.appendChild(labelEl);
+
+            if (rv.unit) {
+                const unitEl = document.createElement('span');
+                unitEl.style.cssText = 'font-size:0.8em;color:var(--text-secondary,#666);';
+                unitEl.textContent = `(${rv.unit})`;
+                labelLine.appendChild(unitEl);
+            }
+
+            const badge = document.createElement('span');
+            badge.style.cssText = 'margin-left:auto;font-size:0.78em;padding:2px 8px;border-radius:10px;';
+            if (ex?.found) {
+                badge.textContent = 'auto-filled';
+                badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
+            } else {
+                badge.textContent = 'needs value';
+                badge.style.background = '#fef3c7'; badge.style.color = '#92400e';
+            }
+            labelLine.appendChild(badge);
+            row.appendChild(labelLine);
+
+            // Input row
+            const inputRow = document.createElement('div');
+            inputRow.style.cssText = 'display:flex;gap:6px;align-items:center;';
+
+            let inputEl;
+            if (rv.type === 'enum' && Array.isArray(rv.options)) {
+                inputEl = document.createElement('select');
+                inputEl.innerHTML = '<option value="">(select)</option>' +
+                    rv.options.map(o => `<option value="${o}">${o.replace(/_/g, ' ')}</option>`).join('');
+            } else if (rv.type === 'boolean') {
+                inputEl = document.createElement('select');
+                inputEl.innerHTML = '<option value="">(select)</option><option value="true">Yes</option><option value="false">No</option>';
+            } else if (rv.type === 'number') {
+                inputEl = document.createElement('input');
+                inputEl.type = 'number';
+                inputEl.step = 'any';
+            } else {
+                inputEl = document.createElement('input');
+                inputEl.type = 'text';
+            }
+            inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;';
+            if (ex?.found && ex.value !== null && ex.value !== undefined) inputEl.value = String(ex.value);
+
+            const unknownBtn = document.createElement('label');
+            unknownBtn.style.cssText = 'display:flex;align-items:center;gap:4px;font-size:0.85em;color:var(--text-secondary,#666);cursor:pointer;';
+            const unknownCb = document.createElement('input');
+            unknownCb.type = 'checkbox';
+            unknownBtn.appendChild(unknownCb);
+            const unknownText = document.createElement('span');
+            unknownText.textContent = 'unknown / pending';
+            unknownBtn.appendChild(unknownText);
+            unknownCb.addEventListener('change', () => { inputEl.disabled = unknownCb.checked; });
+
+            inputRow.appendChild(inputEl);
+            inputRow.appendChild(unknownBtn);
+            row.appendChild(inputRow);
+
+            if (ex?.evidence) {
+                const evi = document.createElement('div');
+                evi.style.cssText = 'margin-top:6px;font-size:0.78em;color:var(--text-secondary,#666);font-style:italic;';
+                evi.textContent = `evidence: "${ex.evidence.slice(0, 150)}${ex.evidence.length > 150 ? '…' : ''}"`;
+                row.appendChild(evi);
+            }
+
+            inputs.set(rv.id, { input: inputEl, unknown: unknownCb });
+            list.appendChild(row);
+        }
+
+        const footer = document.createElement('div');
+        footer.style.cssText = 'padding:14px 22px;border-top:1px solid var(--border-color,#ddd);display:flex;gap:8px;justify-content:flex-end;';
+        footer.innerHTML = `
+            <button id="rv-skip" style="padding:8px 14px;border-radius:5px;border:1px solid #ccc;background:transparent;cursor:pointer;">Skip (use note as-is)</button>
+            <button id="rv-continue" style="padding:8px 16px;border-radius:5px;background:#16a34a;color:white;border:none;cursor:pointer;font-weight:600;">Continue to suggestions</button>`;
+        box.appendChild(footer);
+
+        const collect = () => {
+            const out = {};
+            for (const [id, { input, unknown }] of inputs) {
+                if (unknown.checked) { out[id] = { value: null, status: 'unknown' }; continue; }
+                const raw = input.value;
+                if (raw === '' || raw === null) { out[id] = { value: null, status: 'missing' }; continue; }
+                out[id] = { value: raw, status: 'provided' };
+            }
+            return out;
+        };
+
+        document.getElementById('rv-continue').addEventListener('click', () => {
+            const collected = collect();
+            modal.remove();
+            resolve(collected);
+        });
+        document.getElementById('rv-skip').addEventListener('click', () => {
+            modal.remove();
+            resolve(null);
+        });
     });
 }
 

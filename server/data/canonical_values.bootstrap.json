@@ -25,10 +25,19 @@
     "rfm_present": {
       "label": "Reduced fetal movements present",
       "type": "boolean",
-      "description": "Whether the patient is presenting with reduced fetal movements as the reason for assessment.",
-      "extractionHint": "Look for 'RFM', 'reduced fetal movements', 'reduced movements', 'decreased movements', or any presenting-complaint language describing movement reduction.",
+      "description": "Whether the patient is presenting with reduced fetal movements as the reason for assessment. The inverse concept ('fetal movements normal/perceived') maps to the same boolean (negated).",
+      "extractionHint": "Look for 'RFM', 'reduced fetal movements', 'reduced movements', 'decreased movements', or any presenting-complaint language describing movement reduction. Negative: 'movements normal', 'movements as usual'.",
       "prompt": "Is the patient presenting with reduced fetal movements?",
-      "aliases": ["reduced fetal movements", "reduced_fetal_movements", "rfm", "decreased fetal movements"]
+      "aliases": [
+        "reduced fetal movements",
+        "reduced_fetal_movements",
+        "rfm",
+        "decreased fetal movements",
+        "presence_of_rfm",
+        "presents_with_rfm",
+        "reports_reduced_fetal_movements",
+        "fetal_movements_perceived"
+      ]
     },
 
     "rfm_duration_hours": {
@@ -116,13 +125,21 @@
     },
 
     "uss_biometry_documented": {
-      "label": "USS biometry result documented",
+      "label": "USS biometry / EFW result documented",
       "type": "enum",
       "options": ["normal", "abnormal", "not_done"],
-      "description": "Whether USS biometry (HC, AC, FL) has been documented and its outcome.",
-      "extractionHint": "Look for biometry measurements with centiles, e.g. 'EFW 30th centile', 'AC 25th centile'.",
-      "prompt": "USS biometry: normal, abnormal, or not done?",
-      "aliases": ["ultrasound growth assessment", "ultrasound biometry"]
+      "description": "Whether USS biometry (HC, AC, FL) and estimated fetal weight (EFW) have been documented and their outcome. EFW is a derived calculation from biometry, so this single value captures both the raw biometry measurements and the derived EFW.",
+      "extractionHint": "Look for biometry measurements with centiles, e.g. 'EFW 30th centile', 'AC 25th centile', 'biometry on Y centile', 'estimated fetal weight X grams'.",
+      "prompt": "USS biometry / EFW: normal, abnormal, or not done?",
+      "aliases": [
+        "ultrasound growth assessment",
+        "ultrasound biometry",
+        "ultrasound_scan_includes_efw",
+        "ultrasound_scan_components_efw",
+        "ultrasound_includes_estimated_fetal_weight",
+        "estimated fetal weight",
+        "efw"
+      ]
     },
 
     "uss_liquor_volume_documented": {
@@ -283,7 +300,12 @@
       "description": "The clinical context of this encounter.",
       "extractionHint": "'Booking visit' (booking); 'attended triage with RFM' (acute_rfm); 'antenatal clinic for growth review' (growth_review); 'routine appointment' (routine_antenatal).",
       "prompt": "What type of encounter is this?",
-      "aliases": ["encounter type (routine antenatal care)"]
+      "aliases": [
+        "encounter type (routine antenatal care)",
+        "is_routine_antenatal_care",
+        "is_acute_rfm_presentation",
+        "contact_type"
+      ]
     },
 
     "disposition_at_end_of_encounter": {
@@ -329,7 +351,11 @@
       "description": "Whether the plan includes expediting birth (induction of labour or caesarean) on the basis of this RFM episode.",
       "extractionHint": "'IOL booked', 'plan for induction', 'elective LSCS planned', 'expedited delivery'.",
       "prompt": "Is birth being expedited?",
-      "aliases": []
+      "aliases": [
+        "decision_to_expedite_birth_considered",
+        "induction_offered_if_clinically_appropriate",
+        "expedite_birth"
+      ]
     },
 
     "reassurance_documented": {
@@ -348,6 +374,179 @@
       "extractionHint": "'No indication to expedite', 'no grounds for early delivery', 'continue with planned date'.",
       "prompt": "Is the 'no expedite' conclusion explicitly documented?",
       "aliases": []
+    },
+
+    "handheld_doppler_attempted": {
+      "label": "Handheld Doppler auscultation attempted",
+      "type": "boolean",
+      "description": "Whether the note documents that handheld Doppler auscultation of the fetal heart was attempted (regardless of outcome).",
+      "extractionHint": "'Doppler attempted', 'tried Doppler', 'attempted to auscultate FH with Doppler', or any phrasing indicating the clinician used a handheld Doppler.",
+      "prompt": "Was handheld Doppler auscultation attempted?",
+      "aliases": ["doppler_attempt", "handheld_doppler_use"]
+    },
+
+    "previous_rfm_investigations_normal": {
+      "label": "Previous RFM investigations were normal",
+      "type": "boolean",
+      "description": "Whether the patient has had previous RFM episodes investigated and the investigations were documented as normal.",
+      "extractionHint": "'Previous RFM, CTG normal', 'last episode 2 weeks ago, all normal'.",
+      "prompt": "Were any previous RFM investigations documented as normal?",
+      "aliases": ["prior_rfm_normal", "previous_investigations_normal"]
+    },
+
+    "clinical_suspicion_of_fgr": {
+      "label": "Clinical suspicion of FGR",
+      "type": "boolean",
+      "description": "Whether the clinician has documented a clinical suspicion of fetal growth restriction at this encounter (separate from documented risk factors).",
+      "extractionHint": "'Concern re growth', 'suspect FGR', 'SFH below dates', 'clinical concern about growth'.",
+      "prompt": "Is there clinical suspicion of FGR at this encounter?",
+      "aliases": ["fgr_suspected", "concern_re_growth"]
+    },
+
+    "stillbirth_risk_history_taken": {
+      "label": "Detailed stillbirth-risk history taken",
+      "type": "boolean",
+      "description": "Whether a detailed stillbirth-risk history has been documented (as a process step), distinct from the presence/absence of individual risk factors.",
+      "extractionHint": "'Stillbirth risk history taken', 'risk factors reviewed', 'detailed PMH for stillbirth risk'.",
+      "prompt": "Has a detailed stillbirth-risk history been taken?",
+      "aliases": ["risk_history_documented"]
+    },
+
+    "safety_netting_advice_documented": {
+      "label": "Safety-netting advice documented",
+      "type": "boolean",
+      "description": "Whether explicit safety-netting advice (about what to do if symptoms recur or worsen) is documented in the note.",
+      "extractionHint": "'Safety net advice given', 'advised to return if X', 'told to re-attend if Y'.",
+      "prompt": "Is safety-netting advice documented?",
+      "aliases": ["safety_net_documented"]
+    },
+
+    "advice_lie_on_left_side": {
+      "label": "Advised to lie on left side",
+      "type": "boolean",
+      "description": "Whether the woman has been advised to lie on her left side as part of a focused fetal-movement assessment.",
+      "extractionHint": "'Lie on left side', 'left lateral position', 'left side for 2 hours'.",
+      "prompt": "Was the woman advised to lie on her left side?",
+      "aliases": ["left_side_advice"]
+    },
+
+    "advice_focus_on_fetal_movements_for_2_hours": {
+      "label": "Advised to focus on movements for 2 hours",
+      "type": "boolean",
+      "description": "Whether the woman has been advised to focus on fetal movements for 2 hours as a focused assessment.",
+      "extractionHint": "'Focus on movements for 2 hours', '2-hour focused assessment', 'concentrate on movements'.",
+      "prompt": "Was the woman advised to focus on movements for 2 hours?",
+      "aliases": ["focused_assessment_advice"]
+    },
+
+    "advice_contact_if_fewer_than_10_movements_in_2_hours": {
+      "label": "Advised to contact unit if fewer than 10 movements in 2 hours",
+      "type": "boolean",
+      "description": "Whether the woman has been advised to contact the maternity unit immediately if she feels fewer than 10 discrete fetal movements during a 2-hour focused assessment. This is element (c) of PP #15's three-part advice.",
+      "extractionHint": "'Contact if <10 movements', 'if fewer than 10 movements in 2 hours, contact unit', 'call if less than 10'.",
+      "prompt": "Was the woman advised to contact if fewer than 10 movements in 2 hours?",
+      "aliases": ["less_than_10_movements_advice"]
+    },
+
+    "information_provided_no_increased_risk_at_39wk": {
+      "label": "Counselling at >=39wk: no increased risk from expediting",
+      "type": "boolean",
+      "description": "Whether the clinician has documented counselling that after 39+0 weeks, expediting birth does not increase maternal or neonatal risk.",
+      "extractionHint": "'Counselled that IOL at >=39 wks does not increase risk', 'discussed that expediting at term is safe'.",
+      "prompt": "Was the no-increased-risk-at-39wk counselling documented?",
+      "aliases": ["no_increased_risk_after_39_weeks_noted"]
+    },
+
+    "referral_fetal_medicine_specialist_discussed": {
+      "label": "Fetal-medicine specialist referral discussed",
+      "type": "boolean",
+      "description": "Whether referral to (or discussion with) a fetal-medicine specialist is documented.",
+      "extractionHint": "'Discussed with fetal medicine', 'referral to FMU', 'FM consultant input'.",
+      "prompt": "Was fetal-medicine specialist referral discussed?",
+      "aliases": ["fmu_discussed", "fm_referral"]
+    },
+
+    "risks_benefits_of_expediting_discussed": {
+      "label": "Risks and benefits of expediting birth discussed",
+      "type": "boolean",
+      "description": "Whether the risks and benefits of expediting birth have been documented as discussed with the woman (shared decision-making).",
+      "extractionHint": "'Risks and benefits of IOL discussed', 'shared decision re: expediting', 'patient given info on risks/benefits of induction'.",
+      "prompt": "Were risks/benefits of expediting birth documented as discussed?",
+      "aliases": ["shared_discussion_documented", "iol_risks_benefits"]
+    },
+
+    "discussion_with_senior_obstetrician_documented": {
+      "label": "Discussion with senior obstetrician documented",
+      "type": "boolean",
+      "description": "Whether the note documents discussion of the case with a senior obstetrician (registrar or consultant).",
+      "extractionHint": "'Discussed with reg', 'consultant review', 'escalated to senior obs', 'senior decision'.",
+      "prompt": "Was discussion with a senior obstetrician documented?",
+      "aliases": ["senior_escalation", "consultant_discussion"]
+    },
+
+    "womans_response_to_advice_documented": {
+      "label": "Woman's response to advice documented",
+      "type": "boolean",
+      "description": "Whether the woman's response to the advice or management plan is documented (e.g. 'understood', 'agreed', 'questions answered').",
+      "extractionHint": "'Patient understood', 'agreed with plan', 'no questions', 'happy with plan'.",
+      "prompt": "Is the woman's response to advice documented?",
+      "aliases": ["patient_response_documented"]
+    },
+
+    "case_reviewed_for_predisposing_causes": {
+      "label": "Case reviewed for predisposing causes",
+      "type": "boolean",
+      "description": "Whether the case has been documented as reviewed for predisposing maternal, placental, or fetal causes (relevant for recurrent RFM).",
+      "extractionHint": "'Reviewed for predisposing factors', 'case discussion for causes', 'maternal/placental/fetal review'.",
+      "prompt": "Has the case been reviewed for predisposing causes?",
+      "aliases": ["case_reviewed_for_predisposing_factors", "predisposing_review_done"]
+    },
+
+    "biophysical_profile_performed": {
+      "label": "Biophysical profile performed",
+      "type": "boolean",
+      "description": "Whether a fetal biophysical profile has been performed.",
+      "extractionHint": "'BPP performed', 'biophysical profile X/Y', 'BPP done'.",
+      "prompt": "Has a biophysical profile been performed?",
+      "aliases": ["bpp_performed"]
+    },
+
+    "ctg_type": {
+      "label": "Type of CTG performed",
+      "type": "enum",
+      "options": ["computerised", "conventional", "not_performed"],
+      "description": "Whether the CTG performed was a computerised CTG (e.g. Dawes-Redman) or a conventional CTG.",
+      "extractionHint": "'Computerised CTG', 'Dawes-Redman', 'cCTG' (computerised); 'CTG' alone usually conventional.",
+      "prompt": "Computerised or conventional CTG?",
+      "aliases": []
+    },
+
+    "fetal_movement_perception_status": {
+      "label": "Fetal movement perception status",
+      "type": "enum",
+      "options": ["unsure", "definite_reduction", "normal", "absent"],
+      "description": "The woman's reported perception of fetal movements at presentation: unsure (uncertain whether reduced), definite_reduction (clearly fewer than usual), normal (movements as expected), absent (no movements felt).",
+      "extractionHint": "'Not sure if reduced' (unsure); 'usually feels 10+/day, today 3-4' (definite_reduction); 'movements normal' (normal); 'no movements felt for X hours' (absent).",
+      "prompt": "What is the woman's perception of movements?",
+      "aliases": ["fm_perception"]
+    },
+
+    "first_movements_felt": {
+      "label": "First fetal movements felt",
+      "type": "boolean",
+      "description": "Whether the woman has reported feeling first fetal movements yet (relevant in early gestation / primiparous PPs).",
+      "extractionHint": "'Felt movements at X weeks', 'has not yet felt movements', 'feeling movements daily'.",
+      "prompt": "Has the woman felt first fetal movements yet?",
+      "aliases": ["fetal_movements_ever_felt", "first_movements_perceived"]
+    },
+
+    "reduced_fetal_movements_persist": {
+      "label": "RFM persists after assessment",
+      "type": "boolean",
+      "description": "Whether the woman continues to perceive reduced fetal movements after initial assessment (e.g. after CTG monitoring). Distinct from rfm_present which is the initial presentation state.",
+      "extractionHint": "'Movements still reduced', 'persistent RFM despite normal CTG', 'no improvement during monitoring'.",
+      "prompt": "Does the woman still perceive RFM after initial assessment?",
+      "aliases": ["rfm_persistent_post_ctg"]
     }
 
   }

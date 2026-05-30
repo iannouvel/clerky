@@ -18213,6 +18213,54 @@ app.post('/api/mergeFirstPassWithSuggestions', authenticateUser, async (req, res
 // Step 1: Filter practice points by relevance to patient context
 // AI Analysis functions moved to server/services/ai.js
 
+// ----- Required-values endpoints ------------------------------------------
+// Per-guideline list of clinical values its PPs depend on; on first call for
+// a guideline, generated and cached on the guideline doc. See modules/required-values.js.
+const requiredValuesMod = require('./modules/required-values');
+
+app.post('/getOrGenerateRequiredValues', authenticateUser, async (req, res) => {
+    try {
+        const { guidelineIds, forceRegenerate } = req.body || {};
+        if (!Array.isArray(guidelineIds) || guidelineIds.length === 0) {
+            return res.status(400).json({ success: false, error: 'guidelineIds (array) is required' });
+        }
+        console.log(`[REQUIRED-VALUES] Request for ${guidelineIds.length} guideline(s); forceRegenerate=${!!forceRegenerate}`);
+
+        if (forceRegenerate) {
+            // Pre-warm: regenerate each guideline's cache
+            for (const id of guidelineIds) {
+                await requiredValuesMod.getOrGenerateRequiredValues(db, id, { forceRegenerate: true });
+            }
+        }
+
+        const aggregated = await requiredValuesMod.aggregateAcrossGuidelines(db, guidelineIds);
+        return res.json({
+            success: true,
+            guidelinesProcessed: guidelineIds.length,
+            ...aggregated,
+        });
+    } catch (e) {
+        console.error('[REQUIRED-VALUES] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
+app.post('/extractValuesFromNote', authenticateUser, async (req, res) => {
+    try {
+        const { note, values } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(values) || values.length === 0) {
+            return res.status(400).json({ success: false, error: 'values (array of canonical-value entries) is required' });
+        }
+        console.log(`[EXTRACT-VALUES] note ${note.length} chars; ${values.length} values to extract`);
+        const result = await requiredValuesMod.extractValuesFromNote(note, values);
+        return res.json({ success: true, ...result });
+    } catch (e) {
+        console.error('[EXTRACT-VALUES] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/getPracticePointSuggestions', authenticateUser, async (req, res) => {
     const timer = new StepTimer('/getPracticePointSuggestions');
     req.stepTimer = timer;
