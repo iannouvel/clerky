@@ -328,7 +328,36 @@ async function aggregateAcrossGuidelines(db, guidelineIds) {
 
 const EXTRACT_SYSTEM = `You extract specified clinical data values from a clinical note.
 
-For each requested value, look in the note for evidence that the value is documented. If found, return the extracted value plus a verbatim quote from the note as evidence. If the value is not documented or cannot be determined, mark it as "missing".
+For each requested value, decide whether the value can be determined from the note — either by direct documentation OR by clinical reasoning from other documented facts in the note. If yes, return the value with the supporting evidence. If no, mark it as missing.
+
+Clinical reasoning rules (apply when the note documents an upstream fact that determines the requested value):
+
+- If parity is documented as G1P0 (primigravida = first pregnancy), then all "previous obstetric history" values default to false / "none":
+  - previous_sga_baby = false
+  - previous_stillbirth = false
+  - placental_issues_history = false
+  - previous_rfm_investigations_normal = false (no previous episodes to investigate)
+  - first_or_recurrent_rfm_episode = "first"
+  Evidence quote: the parity line (e.g. "G1P0", "primigravida").
+
+- If parity is documented as G2P1+ etc. AND no specific previous-pregnancy complications are mentioned, you may still default the previous-pregnancy values to false IF the note's "previous pregnancy" line says it was uncomplicated (e.g. "previous SVD at term, no complications"). Otherwise mark as missing — multiparous patients can have history that just isn't documented.
+
+- If the note states this is a "first episode of RFM" or "no prior RFM" or similar, then:
+  - first_or_recurrent_rfm_episode = "first"
+  - previous_rfm_investigations_normal = false (no previous investigations to be normal)
+
+- If the note documents "no risk factors", "non-smoker, BMI normal, age 28, no PMH" or equivalent, then the individual risk-factor values default to:
+  - smoking_status = "never_smoker" or "ex_smoker" as documented
+  - hypertension_status = "none"
+  - diabetes_status = "none"
+  - bmi = the documented value
+  - maternal_age_years = the documented age
+
+- If the woman is described as "twins", "MCDA", "DCDA" etc. then multiple_pregnancy = true; otherwise it's false (singleton pregnancies are the default).
+
+- For "encounter_type": "attended triage with RFM" → "acute_rfm_presentation"; "booking visit" → "booking"; "routine antenatal review" → "routine_antenatal"; "growth scan review" → "growth_review".
+
+When you apply clinical reasoning, set the evidence to the documented fact you reasoned FROM (e.g. for primigravida → no previous SGA, the evidence is the parity line). Note in the evidence that you applied clinical reasoning (e.g. "G1P0 — primigravida, so no previous pregnancy history").
 
 Return strict JSON only.`;
 

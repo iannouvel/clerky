@@ -406,10 +406,12 @@
     "stillbirth_risk_history_taken": {
       "label": "Detailed stillbirth-risk history taken",
       "type": "boolean",
-      "description": "Whether a detailed stillbirth-risk history has been documented (as a process step), distinct from the presence/absence of individual risk factors.",
+      "description": "Whether a detailed stillbirth-risk history has been documented. This is a DERIVED value — it is true when the underlying individual risk-factor values are documented (or explicitly absent). Not asked of the user; auto-computed from underlying atomic values.",
       "extractionHint": "'Stillbirth risk history taken', 'risk factors reviewed', 'detailed PMH for stillbirth risk'.",
       "prompt": "Has a detailed stillbirth-risk history been taken?",
-      "aliases": ["risk_history_documented"]
+      "aliases": ["risk_history_documented"],
+      "userFacing": false,
+      "derivedFrom": ["previous_sga_baby", "previous_stillbirth", "hypertension_status", "diabetes_status", "smoking_status", "bmi", "maternal_age_years", "placental_issues_history"]
     },
 
     "safety_netting_advice_documented": {
@@ -496,10 +498,12 @@
     "case_reviewed_for_predisposing_causes": {
       "label": "Case reviewed for predisposing causes",
       "type": "boolean",
-      "description": "Whether the case has been documented as reviewed for predisposing maternal, placental, or fetal causes (relevant for recurrent RFM).",
+      "description": "Whether the case has been documented as reviewed for predisposing maternal, placental, or fetal causes. DERIVED — true when the underlying atomic risk-factor values are documented (or known absent). Not asked of the user.",
       "extractionHint": "'Reviewed for predisposing factors', 'case discussion for causes', 'maternal/placental/fetal review'.",
       "prompt": "Has the case been reviewed for predisposing causes?",
-      "aliases": ["case_reviewed_for_predisposing_factors", "predisposing_review_done"]
+      "aliases": ["case_reviewed_for_predisposing_factors", "predisposing_review_done"],
+      "userFacing": false,
+      "derivedFrom": ["previous_sga_baby", "previous_stillbirth", "hypertension_status", "diabetes_status", "placental_issues_history", "multiple_pregnancy", "smoking_status"]
     },
 
     "biophysical_profile_performed": {
