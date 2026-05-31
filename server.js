@@ -70,7 +70,7 @@ const { scrapeRCOGGuidelines, scrapeNICEGuidelines } = require('./server/service
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const { extractTextFromPDF, fetchAndExtractPDFText } = require('./server/services/pdf');
+const { extractTextFromPDF, extractPDFStructure, deriveSectionAnchors, fetchPDFBuffer, fetchAndExtractPDFText } = require('./server/services/pdf');
 const cheerio = require('cheerio');
 
 // ============================================================================
@@ -1219,23 +1219,103 @@ setTimeout(() => {
 }, 0);
 
 // Job handlers
+/**
+ * Derives the persisted `structure` field for a guideline from its PDF buffer
+ * and canonical text: the embedded outline (or font-based headings) mapped to
+ * character offsets within `fullText`. Returns null if no usable structure.
+ *
+ * @param {Buffer} buffer - raw PDF buffer
+ * @param {string} fullText - canonical content (from extractTextFromPDF)
+ * @returns {Promise<object|null>} structure object or null
+ */
+async function deriveGuidelineStructure(buffer, fullText) {
+    const struct = await extractPDFStructure(buffer);
+    if (!struct) return null;
+    const sectionAnchors = deriveSectionAnchors(fullText, struct.headings);
+    if (!sectionAnchors.length) return null;
+    return {
+        headingSource: struct.headingSource,
+        bodyFontSize: struct.fontSummary && typeof struct.fontSummary.bodySize === 'number' ? struct.fontSummary.bodySize : null,
+        sectionCount: sectionAnchors.length,
+        sectionAnchors,
+        extractedAt: new Date().toISOString()
+    };
+}
+
+/**
+ * Returns section anchors for a guideline, preferring the already-stored
+ * `structure.sectionAnchors`. If absent (legacy guideline, or because the
+ * extract_content job hasn't finished writing structure yet — jobs run
+ * concurrently), derives them on demand from the PDF and persists them so the
+ * work is done once. Returns null when no usable structure can be derived;
+ * callers then fall back to LLM-based section identification.
+ *
+ * @param {object} guidelineData
+ * @param {string} guidelineId
+ * @param {string} fullContent - the canonical full content anchors must index into
+ * @returns {Promise<Array|null>}
+ */
+async function getOrComputeSectionAnchors(guidelineData, guidelineId, fullContent) {
+    const existing = guidelineData.structure && Array.isArray(guidelineData.structure.sectionAnchors)
+        ? guidelineData.structure.sectionAnchors
+        : null;
+    if (existing && existing.length) return existing;
+
+    if (!fullContent) return null;
+    const filename = guidelineData.filename || guidelineData.originalFilename;
+    if (!filename) return null;
+
+    try {
+        const buffer = await fetchPDFBuffer(filename);
+        const structure = await deriveGuidelineStructure(buffer, fullContent);
+        if (!structure) return null;
+        await db.collection('guidelines').doc(guidelineId).update({
+            structure,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        console.log(`[STRUCTURE] Derived on demand for ${guidelineId}: ${structure.sectionCount} sections (source: ${structure.headingSource})`);
+        return structure.sectionAnchors;
+    } catch (e) {
+        console.warn(`[STRUCTURE] On-demand derivation failed for ${guidelineId} (falling back to LLM sections): ${e.message}`);
+        return null;
+    }
+}
+
 async function jobExtractContent(job, guidelineData) {
     const filename = guidelineData.filename || guidelineData.originalFilename;
     if (!filename) throw new Error('No filename found');
 
-    const fullText = await fetchAndExtractPDFText(filename);
+    // Download once, then derive both the canonical text and the structure.
+    const buffer = await fetchPDFBuffer(filename);
+    const fullText = await extractTextFromPDF(buffer);
+    if (!fullText) throw new Error('PDF text extraction returned empty');
+
+    // Derive document structure (embedded outline, or font-based headings) so
+    // practice-point extraction can chunk by real section boundaries. Best-effort:
+    // never block content extraction if structure parsing fails.
+    let structure = null;
+    try {
+        structure = await deriveGuidelineStructure(buffer, fullText);
+        if (structure) {
+            console.log(`[JOB_EXTRACT_CONTENT] Structure for ${job.guidelineId}: ${structure.sectionCount} sections (source: ${structure.headingSource})`);
+        }
+    } catch (e) {
+        console.warn(`[JOB_EXTRACT_CONTENT] Structure extraction failed for ${job.guidelineId} (continuing without it): ${e.message}`);
+    }
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
-    await guidelineRef.update({
+    const update = {
         content: fullText,
         'processingStatus.contentExtracted': true,
         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
-    });
+    };
+    if (structure) update.structure = structure;
+    await guidelineRef.update(update);
 
     // Queue displayName generation now that content is available
     queueJob('generate_display_name', job.guidelineId);
 
-    return { contentLength: fullText.length };
+    return { contentLength: fullText.length, sections: structure ? structure.sectionCount : 0 };
 }
 
 async function jobGenerateCondensed(job, guidelineData) {
@@ -1298,15 +1378,21 @@ async function jobExtractTerms(job, guidelineData) {
 }
 
 async function jobExtractAuditable(job, guidelineData) {
-    // Prefer condensed content for efficiency (no verbatim quotes needed)
-    const content = guidelineData.condensed || guidelineData.content;
+    // When document-structure anchors are available, extract from the FULL
+    // content chunked by real section boundaries (anchors index into full
+    // content, not condensed). Derive structure on demand if not yet stored.
+    const fullContent = guidelineData.content || null;
+    const anchors = await getOrComputeSectionAnchors(guidelineData, job.guidelineId, fullContent);
+    const content = (anchors && fullContent)
+        ? fullContent
+        : (guidelineData.condensed || guidelineData.content);
     if (!content) throw new Error('No content to extract practice points from');
 
     // Use the uploader's AI preference
     const userId = guidelineData.uploadedBy || null;
     // Pass summary for context if available
     const summary = guidelineData.summary || guidelineData.humanFriendlyTitle || null;
-    const elements = await extractPracticePoints(content, userId, summary);
+    const elements = await extractPracticePoints(content, userId, summary, null, anchors ? { sectionAnchors: anchors } : {});
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
 
@@ -1422,8 +1508,15 @@ async function jobRegenerateAuditable(job, guidelineData) {
 
     console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Processing ${job.guidelineId}...`);
 
+    // Use structure anchors only when extracting from the canonical full content
+    // they were derived against (not a condensed fallback). Derive on demand if
+    // not yet stored.
+    const anchors = (content === guidelineData.content)
+        ? await getOrComputeSectionAnchors(guidelineData, job.guidelineId, guidelineData.content)
+        : null;
+
     try {
-        const elements = await extractPracticePoints(content, userId, summary);
+        const elements = await extractPracticePoints(content, userId, summary, null, anchors ? { sectionAnchors: anchors } : {});
 
         const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
         await guidelineRef.update({
@@ -9882,8 +9975,54 @@ Return a single JSON object:
 
 // Step 1: Identify and structure all practice points in a single call
 // Uses condensed content for efficiency - no verbatim quotes needed
-async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null, onProgress = null) {
+/**
+ * Packs fine-grained section anchors into larger contiguous chunks of roughly
+ * `targetSize` characters, never splitting a section. Each chunk carries the
+ * full text of the content it spans plus a human-readable label of the
+ * section(s) it contains. The first chunk starts at offset 0 so any front
+ * matter before the first detected heading is still covered.
+ *
+ * @param {string} fullContent
+ * @param {Array<{title:string, start:number, end:number}>} anchors
+ * @param {number} targetSize
+ * @returns {Array<{label:string, text:string}>}
+ */
+function packAnchorsIntoChunks(fullContent, anchors, targetSize = 8000) {
+    const sorted = [...anchors]
+        .filter(a => a && typeof a.start === 'number' && typeof a.end === 'number')
+        .sort((a, b) => a.start - b.start);
+
+    const chunks = [];
+    let cur = null;
+    for (const a of sorted) {
+        if (!cur) { cur = { start: 0, end: a.end, titles: [a.title] }; continue; }
+        if (a.end - cur.start <= targetSize) {
+            cur.end = a.end;
+            cur.titles.push(a.title);
+        } else {
+            chunks.push(cur);
+            cur = { start: a.start, end: a.end, titles: [a.title] };
+        }
+    }
+    if (cur) chunks.push(cur);
+
+    return chunks.map(c => ({
+        label: summariseSectionTitles(c.titles),
+        text: fullContent.slice(c.start, c.end)
+    }));
+}
+
+/** Builds a short human-readable label for a group of section titles. */
+function summariseSectionTitles(titles) {
+    const clean = (titles || []).map(t => (t || '').replace(/\s+/g, ' ').trim()).filter(Boolean);
+    if (clean.length === 0) return 'Section';
+    if (clean.length <= 3) return clean.join('; ');
+    return `${clean[0]} … ${clean[clean.length - 1]} (${clean.length} subsections)`;
+}
+
+async function identifyAndStructurePracticePoints(content, userId = null, guidelineSummary = null, onProgress = null, options = {}) {
     console.log('[PRACTICE-POINTS-OPT] Step 1: Stepwise structured practice point extraction...');
+    const sectionAnchors = (options && Array.isArray(options.sectionAnchors)) ? options.sectionAnchors : null;
 
     const RULE_TYPES = [
         'hard_contraindication',
@@ -9927,31 +10066,45 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
             console.log(`[PRACTICE-POINTS-OPT] ${step}: ${msg}`);
             if (onProgress) onProgress(step, msg, extra);
         };
-        log('sections', 'Identifying guideline sections…');
-        const sectionResult = await routeToAI({
-            messages: [
-                {
-                    role: 'system',
-                    content: 'You are a clinical guideline analyst. Return ONLY a valid JSON array of strings. No other text.'
-                },
-                {
-                    role: 'user',
-                    content: `List every distinct section or topic area in this clinical guideline. Include introduction/background if it contains actionable recommendations. Return a JSON array of short section names.
+        // Prefer document-structure anchors (from the PDF outline / font
+        // analysis): chunk the FULL content by real section boundaries and
+        // extract from each chunk's own body — instead of re-sending the whole
+        // guideline on every per-section call.
+        let sections;
+        let bodies = null; // parallel per-section body text when chunking by structure
+
+        if (sectionAnchors && sectionAnchors.length > 0) {
+            const chunks = packAnchorsIntoChunks(content, sectionAnchors, 8000);
+            sections = chunks.map(c => c.label);
+            bodies = chunks.map(c => c.text);
+            log('sections_done', `Using document structure: ${sectionAnchors.length} sections → ${chunks.length} content chunks`, { sections, count: sections.length, source: 'structure' });
+        } else {
+            log('sections', 'Identifying guideline sections…');
+            const sectionResult = await routeToAI({
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'You are a clinical guideline analyst. Return ONLY a valid JSON array of strings. No other text.'
+                    },
+                    {
+                        role: 'user',
+                        content: `List every distinct section or topic area in this clinical guideline. Include introduction/background if it contains actionable recommendations. Return a JSON array of short section names.
 ${summaryContext}
 GUIDELINE CONTENT:
 ${content}`
-                }
-            ]
-        }, userId, null, 1024);
+                    }
+                ]
+            }, userId, null, 1024);
 
-        let sections = parseJsonArrayFromResponse(sectionResult);
-        if (!sections || sections.length === 0) {
-            console.warn('[PRACTICE-POINTS-OPT] Step 1a: Could not identify sections, using single-pass fallback');
-            sections = ['Full guideline'];
+            sections = parseJsonArrayFromResponse(sectionResult);
+            if (!sections || sections.length === 0) {
+                console.warn('[PRACTICE-POINTS-OPT] Step 1a: Could not identify sections, using single-pass fallback');
+                sections = ['Full guideline'];
+            }
+            // Filter to strings only
+            sections = sections.filter(s => typeof s === 'string');
+            log('sections_done', `Identified ${sections.length} sections: ${sections.join(', ')}`, { sections, count: sections.length });
         }
-        // Filter to strings only
-        sections = sections.filter(s => typeof s === 'string');
-        log('sections_done', `Identified ${sections.length} sections: ${sections.join(', ')}`, { sections, count: sections.length });
 
         // ── Step 1b: Extract structured practice points per section ──
         const allPoints = [];
@@ -9959,6 +10112,9 @@ ${content}`
 
         for (let i = 0; i < sections.length; i++) {
             const section = sections[i];
+            // When chunking by structure, extract from the chunk's own body;
+            // otherwise the LLM-identified section reads the full content.
+            const body = bodies ? bodies[i] : content;
             log('extract_section', `Extracting from section ${i + 1}/${sections.length}: "${section}"…`, { section, index: i, total: sections.length });
 
             const extractionPrompt = `Extract EVERY actionable recommendation from the "${section}" section of this clinical guideline as structured practice rules.
@@ -10005,10 +10161,10 @@ TESTABILITY RULES — apply these BEFORE extracting each rule:
 - If the condition is inherently indeterminate from a note ('if appropriate', 'if needed', 'if indicated'), DO NOT extract it.
 - DO NOT extract service-level or institutional audit requirements that apply to the healthcare service as a whole rather than to an individual patient encounter. Examples to EXCLUDE: maintaining registers of procedures, performing annual audits, recording aggregate operator statistics, tracking population-level rates. These cannot be evaluated from a single patient's clinical note.
 
-Focus ONLY on the "${section}" section. Do not extract from other sections.
+${bodies ? 'Extract every actionable recommendation from the guideline excerpt below.' : `Focus ONLY on the "${section}" section. Do not extract from other sections.`}
 
 GUIDELINE CONTENT:
-${content}`;
+${body}`;
 
             const sectionResult = await routeToAI({
                 messages: [
@@ -10376,7 +10532,7 @@ Return a JSON array with one entry per rule (same order):
 
 // Main extraction function - optimised 2-step process
 // Uses condensed content and batch processing for ~95% reduction in API calls
-async function extractPracticePoints(content, userId = null, guidelineSummary = null, onProgress = null) {
+async function extractPracticePoints(content, userId = null, guidelineSummary = null, onProgress = null, options = {}) {
     if (!content || typeof content !== 'string') {
         return [];
     }
@@ -10391,7 +10547,7 @@ async function extractPracticePoints(content, userId = null, guidelineSummary = 
         log('init', `Starting extraction${summaryInfo} — ${content.length} chars`);
 
         // Step 1: Identify and structure all practice points in one call
-        const practicePoints = await identifyAndStructurePracticePoints(content, userId, guidelineSummary, onProgress);
+        const practicePoints = await identifyAndStructurePracticePoints(content, userId, guidelineSummary, onProgress, options);
 
         if (!practicePoints || practicePoints.length === 0) {
             log('error', 'Step 1 failed to identify practice points');
@@ -13028,8 +13184,10 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     });
                 }
 
-                // Prefer condensed content for efficiency (no verbatim quotes needed)
-                const content = guideline.condensed || guideline.content;
+                // Prefer full content chunked by document structure; fall back to condensed.
+                const fullContent = guideline.content || null;
+                const anchors = await getOrComputeSectionAnchors(guideline, guidelineId, fullContent);
+                const content = (anchors && fullContent) ? fullContent : (guideline.condensed || guideline.content);
                 if (!content) {
                     return res.status(400).json({
                         success: false,
@@ -13037,7 +13195,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     });
                 }
 
-                const auditableElements = await extractPracticePoints(content, req.user.uid);
+                const auditableElements = await extractPracticePoints(content, req.user.uid, null, null, anchors ? { sectionAnchors: anchors } : {});
 
                 // Update the guideline
                 await guidelineRef.update({
@@ -13086,8 +13244,10 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     continue;
                 }
 
-                // Prefer condensed content for efficiency (no verbatim quotes needed)
-                const content = guideline.condensed || guideline.content;
+                // Prefer full content chunked by document structure; fall back to condensed.
+                const fullContent = guideline.content || null;
+                const anchors = await getOrComputeSectionAnchors(guideline, guidelineId, fullContent);
+                const content = (anchors && fullContent) ? fullContent : (guideline.condensed || guideline.content);
                 if (!content) {
                     results.push({
                         guidelineId,
@@ -13097,7 +13257,7 @@ app.post('/updateGuidelinesWithAuditableElements', authenticateUser, async (req,
                     continue;
                 }
 
-                const auditableElements = await extractPracticePoints(content, req.user.uid);
+                const auditableElements = await extractPracticePoints(content, req.user.uid, null, null, anchors ? { sectionAnchors: anchors } : {});
 
                 // Update the guideline
                 await db.collection('guidelines').doc(guidelineId).update({
@@ -13180,10 +13340,14 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
             }
 
             const guideline = guidelineDoc.data();
-            const content = guideline.condensed || guideline.content;
+            // Prefer full content chunked by document structure; fall back to condensed.
+            const fullContent = guideline.content || null;
+            const anchors = await getOrComputeSectionAnchors(guideline, guidelineId, fullContent);
+            const content = (anchors && fullContent) ? fullContent : (guideline.condensed || guideline.content);
             if (!content) {
                 return res.status(400).json({ success: false, error: 'No content available for extraction' });
             }
+            const ppOptions = anchors ? { sectionAnchors: anchors } : {};
 
             const summary = guideline.summary || guideline.humanFriendlyTitle || null;
             const asyncMode = req.body.async === true;
@@ -13209,7 +13373,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                         stepMessage: message,
                         ...(extra || {})
                     };
-                }).then(async (auditableElements) => {
+                }, ppOptions).then(async (auditableElements) => {
                     if (!auditableElements || auditableElements.length === 0) {
                         console.error(`[REGEN-PRACTICE-POINTS] Async job ${jobId}: extraction returned 0 elements`);
                         extractionJobs[jobId] = { status: 'error', guidelineId, error: 'Extraction returned 0 practice points — check server logs' };
@@ -13242,7 +13406,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
             // Sync mode (legacy) — wait for completion
             try {
                 console.log(`[REGEN-PRACTICE-POINTS] Extracting elements for ${guidelineId}, content length: ${content.length}`);
-                const auditableElements = await extractPracticePoints(content, userId, summary);
+                const auditableElements = await extractPracticePoints(content, userId, summary, null, ppOptions);
 
                 await guidelineRef.update({
                     practicePoints: auditableElements,
