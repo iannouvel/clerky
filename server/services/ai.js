@@ -1153,10 +1153,11 @@ Important distinction: SUGGEST WHEN describes when to RAISE the recommendation, 
 
 Be specific and concrete. Describe clinical situations in terms of clinical facts (e.g., "first primary episode near term", "asymptomatic with known recurrent history"). Total length: 3-5 sentences.`;
 
+    // Route via the user's model preference with fallback (no pinned provider).
     const result = await routeToAI({ messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: userPrompt }
-    ]}, userId, 'gemini-2.5-flash');
+    ]}, userId, null);
 
     return result?.content?.trim() || null;
 }
@@ -2343,12 +2344,13 @@ Return ONLY valid JSON:
   "reasoning": "Brief explanation of why the original was ambiguous and how the split resolves it"
 }`;
 
+    // Route via the user's model preference with fallback (no pinned provider).
     const result = await routeToAI({
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, 'gemini-2.5-flash', 4000);
+    }, userId, null, 4000);
 
     if (!result?.content) throw new Error('No response from practice point rewriter');
 

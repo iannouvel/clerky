@@ -10166,10 +10166,10 @@ ${bodies ? 'Extract every actionable recommendation from the guideline excerpt b
 GUIDELINE CONTENT:
 ${body}`;
 
-            // Resilient per-section call: routeToAI throws when the pinned
-            // provider fails (no fallback for an explicit provider), so retry
-            // with backoff and SKIP a section that still fails — never let one
-            // failed section zero out the whole guideline's extraction.
+            // Route via the user's model preference with provider fallback
+            // (preferredProvider = null enables both). Still retry with backoff
+            // and SKIP a section that exhausts retries — never let one failed
+            // section zero out the whole guideline's extraction.
             let sectionResult = null;
             for (let attempt = 1; attempt <= 3; attempt++) {
                 try {
@@ -10184,7 +10184,7 @@ ${body}`;
                                 content: extractionPrompt
                             }
                         ]
-                    }, userId, 'gemini-2.5-flash', 65536);
+                    }, userId, null, 65536);
                     break;
                 } catch (err) {
                     console.warn(`[PRACTICE-POINTS-OPT] Section ${i + 1}/${sections.length} "${section}" attempt ${attempt}/3 failed: ${err.message}`);
