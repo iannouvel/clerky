@@ -378,10 +378,13 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         } else if (preferredProvider === 'Gemini') {
             const geminiMessages = formattedMessages.map(msg => ({ role: msg.role === 'user' ? 'user' : 'model', parts: msg.parts || [{ text: msg.content || '' }] }));
             const generationConfig = { temperature, maxOutputTokens: maxTokens };
-            // Gemini 2.5 models count "thinking" tokens against maxOutputTokens,
-            // which truncates the visible response and breaks JSON parsing for
-            // anything non-trivial. Disable thinking for deterministic outputs.
-            if (/gemini-2\.5/.test(model)) {
+            // Gemini 2.5 AND 3 models count "thinking" tokens against
+            // maxOutputTokens, which truncates the visible response and breaks
+            // JSON parsing — and, with reasoning enabled on large prompts, can
+            // blow past the request timeout entirely. Disable thinking for
+            // deterministic outputs. (gemini-3-flash-preview is now the default
+            // Gemini, so it must be covered too.)
+            if (/gemini-(2\.5|3)/.test(model)) {
                 generationConfig.thinkingConfig = { thinkingBudget: 0 };
             }
             const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { contents: geminiMessages, generationConfig }, { headers: { 'Content-Type': 'application/json' }, params: { key: process.env.GOOGLE_AI_API_KEY }, timeout: timeoutMs });
