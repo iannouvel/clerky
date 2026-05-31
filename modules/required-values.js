@@ -328,36 +328,73 @@ async function aggregateAcrossGuidelines(db, guidelineIds) {
 
 const EXTRACT_SYSTEM = `You extract specified clinical data values from a clinical note.
 
-For each requested value, decide whether the value can be determined from the note — either by direct documentation OR by clinical reasoning from other documented facts in the note. If yes, return the value with the supporting evidence. If no, mark it as missing.
+For each requested value, decide whether the value can be determined from the note — either by direct documentation OR by clinical reasoning from other documented facts. If yes, return the value with the supporting evidence. If no, mark it as missing. Be conservative: when in genuine doubt, mark missing.
 
-Clinical reasoning rules (apply when the note documents an upstream fact that determines the requested value):
+When you apply clinical reasoning, your "evidence" field MUST:
+  (a) cite the documented fact you reasoned FROM (verbatim quote);
+  (b) name the rule you applied;
+  (c) state the SCOPE of the reasoning explicitly (this pregnancy vs prior pregnancies — these are different).
 
-- If parity is documented as G1P0 (primigravida = first pregnancy), then all "previous obstetric history" values default to false / "none":
-  - previous_sga_baby = false
-  - previous_stillbirth = false
-  - placental_issues_history = false
-  - previous_rfm_investigations_normal = false (no previous episodes to investigate)
+CLINICAL REASONING RULES — apply only where the documented fact UNAMBIGUOUSLY determines the requested value:
+
+==== Parity rules — PRIOR PREGNANCIES ONLY ====
+
+If parity is documented as G1P0 (primigravida = first pregnancy, no previous pregnancies), then the following PRIOR-PREGNANCY values are FALSE by definition (no prior pregnancies = no prior obstetric events):
+  - previous_sga_baby = false  (no previous baby at all)
+  - previous_stillbirth = false  (no previous baby at all)
+  - placental_issues_history = false  (this value is STRICTLY about prior pregnancies; current-pregnancy placental concerns belong on USS values, not here)
+
+Evidence format: "G1P0 / primigravida — first pregnancy, so by definition no [previous SGA / stillbirth / prior-pregnancy placental history]."
+
+DO NOT apply parity reasoning to:
+  - previous_rfm_investigations_normal — this is about PRIOR EPISODES IN THIS PREGNANCY (not prior pregnancies). A primigravida can have had an earlier RFM episode at an earlier gestation in the same pregnancy. Parity does NOT determine this.
+  - current-pregnancy USS findings, current placental position, current placental concerns — these are scoped to this pregnancy, not prior pregnancies.
+
+==== Multiparous patients ====
+
+For G2P1+ patients, default the prior-pregnancy values to false ONLY when the note explicitly characterises the previous pregnancy as uncomplicated (e.g. "previous SVD at term, no complications", "uneventful previous pregnancy"). Otherwise leave missing — multiparous patients can have history that simply isn't recorded in this note.
+
+==== RFM episode rules — THIS PREGNANCY ====
+
+If the note explicitly states this is a first RFM episode in this pregnancy ("first episode of RFM", "no prior RFM in this pregnancy", "first time presenting with reduced movements"):
   - first_or_recurrent_rfm_episode = "first"
-  Evidence quote: the parity line (e.g. "G1P0", "primigravida").
+  - previous_rfm_investigations_normal = false  (no earlier episode in this pregnancy means no prior investigations to have been normal)
 
-- If parity is documented as G2P1+ etc. AND no specific previous-pregnancy complications are mentioned, you may still default the previous-pregnancy values to false IF the note's "previous pregnancy" line says it was uncomplicated (e.g. "previous SVD at term, no complications"). Otherwise mark as missing — multiparous patients can have history that just isn't documented.
+If the note describes a SECOND or recurrent RFM episode IN THIS PREGNANCY AND describes the previous investigation outcome:
+  - first_or_recurrent_rfm_episode = "recurrent_second" or "recurrent_three_or_more" as appropriate
+  - previous_rfm_investigations_normal = true or false based on what the note says about the previous investigations
 
-- If the note states this is a "first episode of RFM" or "no prior RFM" or similar, then:
-  - first_or_recurrent_rfm_episode = "first"
-  - previous_rfm_investigations_normal = false (no previous investigations to be normal)
+If the note describes a recurrent episode but is SILENT on the outcome of previous investigations:
+  - first_or_recurrent_rfm_episode = "recurrent_second" or higher
+  - previous_rfm_investigations_normal = MISSING (don't guess)
 
-- If the note documents "no risk factors", "non-smoker, BMI normal, age 28, no PMH" or equivalent, then the individual risk-factor values default to:
-  - smoking_status = "never_smoker" or "ex_smoker" as documented
-  - hypertension_status = "none"
-  - diabetes_status = "none"
-  - bmi = the documented value
-  - maternal_age_years = the documented age
+==== Explicit "no risk factors" documentation ====
 
-- If the woman is described as "twins", "MCDA", "DCDA" etc. then multiple_pregnancy = true; otherwise it's false (singleton pregnancies are the default).
+If the note documents an explicit risk-factor review with normal findings ("non-smoker, BMI 24, age 28, no PMH"), set the individual risk-factor values per what is documented:
+  - smoking_status = whatever the note says (never_smoker / ex_smoker / current_smoker)
+  - hypertension_status = "none" if explicitly stated as absent
+  - diabetes_status = "none" if explicitly stated as absent
+  - bmi = the documented number
+  - maternal_age_years = the documented number
 
-- For "encounter_type": "attended triage with RFM" → "acute_rfm_presentation"; "booking visit" → "booking"; "routine antenatal review" → "routine_antenatal"; "growth scan review" → "growth_review".
+Only auto-fill these from a risk-review summary if the wording is clear. Vague phrases like "no significant PMH" do NOT cover smoking/BMI/age — those are demographics/lifestyle, not PMH.
 
-When you apply clinical reasoning, set the evidence to the documented fact you reasoned FROM (e.g. for primigravida → no previous SGA, the evidence is the parity line). Note in the evidence that you applied clinical reasoning (e.g. "G1P0 — primigravida, so no previous pregnancy history").
+==== Multiple pregnancy ====
+
+multiple_pregnancy = true if note mentions twins, triplets, MCDA, DCDA, MCMA, "multiple pregnancy". Otherwise default to false (singleton is the standard assumption in UK obstetrics unless stated).
+
+==== Encounter type ====
+
+encounter_type maps from explicit context phrases:
+  - "attended triage with RFM" / "MAU attendance for RFM" / "DAU for RFM" → "acute_rfm_presentation"
+  - "booking visit" → "booking"
+  - "routine antenatal review" / "scheduled appointment" → "routine_antenatal"
+  - "growth scan review" / "growth review" → "growth_review"
+  - "postnatal review" → "post_natal"
+
+==== When to mark missing ====
+
+If a documented fact is ambiguous, if the reasoning rule above doesn't apply cleanly, or if the note simply doesn't cover the topic — mark the value as missing rather than guessing. It is far better to ask the user than to assume.
 
 Return strict JSON only.`;
 

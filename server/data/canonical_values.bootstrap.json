@@ -276,11 +276,11 @@
     },
 
     "placental_issues_history": {
-      "label": "Placental issues history",
+      "label": "Placental issues in a PRIOR pregnancy",
       "type": "boolean",
-      "description": "Whether the patient has any history of placental issues (e.g. previous abruption, placenta praevia).",
-      "extractionHint": "'Previous abruption', 'placenta praevia', 'low-lying placenta history'.",
-      "prompt": "Any history of placental issues?",
+      "description": "Whether the patient has, in a PREVIOUS PREGNANCY, had a documented placental issue (e.g. abruption, praevia, accreta). STRICTLY PRIOR PREGNANCIES — placental concerns identified in THIS pregnancy (low-lying placenta on anomaly scan, suspected accreta, etc.) belong on the USS / current-pregnancy values, not here. Auto-false for G1P0 (primigravida) by definition — no prior pregnancies = no prior placental history.",
+      "extractionHint": "'Previous abruption', 'placenta praevia in last pregnancy', 'history of placental issues'. NOT 'low-lying placenta on anomaly scan this pregnancy' — that goes on uss_fetal_morphology_documented.",
+      "prompt": "Any PRIOR-pregnancy history of placental issues (abruption, praevia, accreta)?",
       "aliases": ["placental issues"]
     },
 
@@ -386,11 +386,11 @@
     },
 
     "previous_rfm_investigations_normal": {
-      "label": "Previous RFM investigations were normal",
+      "label": "Earlier RFM episode in THIS pregnancy — investigations normal?",
       "type": "boolean",
-      "description": "Whether the patient has had previous RFM episodes investigated and the investigations were documented as normal.",
-      "extractionHint": "'Previous RFM, CTG normal', 'last episode 2 weeks ago, all normal'.",
-      "prompt": "Were any previous RFM investigations documented as normal?",
+      "description": "Whether the patient has had an EARLIER RFM episode IN THIS PREGNANCY for which investigations (CTG +/- USS) were documented as normal. SCOPE: this pregnancy only — relevant to the recurrent-RFM pathway. Auto-false ONLY when the note explicitly states this is the first RFM episode in this pregnancy (or 'no prior RFM'). Otherwise leave as missing — unclear without explicit documentation. NOT determined by parity (G1P0 does not auto-false this value — a primigravida can have had a previous RFM episode at an earlier gestation in the same pregnancy).",
+      "extractionHint": "Positive: 'previous RFM 2 weeks ago, CTG normal', 'last episode at 32 weeks, all investigations normal'. Auto-false trigger: 'first RFM episode', 'no prior RFM in this pregnancy'.",
+      "prompt": "Was a previous RFM episode IN THIS PREGNANCY investigated and the investigations documented as normal?",
       "aliases": ["prior_rfm_normal", "previous_investigations_normal"]
     },
 
