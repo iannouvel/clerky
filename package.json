@@ -1,6 +1,6 @@
 {
   "name": "clerky-server",
-  "version": "9.0.458",
+  "version": "9.0.459",
   "type": "commonjs",
   "main": "server.js",
   "dependencies": {
@@ -22,6 +22,7 @@
     "node-fetch": "^2.7.0",
     "openai": "^4.28.0",
     "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^3.11.174",
     "punycode": "^2.3.1",
     "string-similarity": "^4.0.4",
     "winston": "^3.8.1"
