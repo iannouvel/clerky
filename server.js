@@ -1471,7 +1471,12 @@ async function checkAndMarkProcessingComplete(guidelineId) {
                     console.log(`[PROCESSING_COMPLETE] Triggering vector DB ingestion for: ${guidelineId}`);
                     const ingestionResult = await ragIngestion.reingestGuideline(guidelineId, data.content, {
                         title: data.title || data.displayName || guidelineId,
-                        organisation: data.organisation || 'Unknown'
+                        organisation: data.organisation || 'Unknown',
+                        // Include scope + hospitalTrust so chunks get the metadata that
+                        // /findRelevantGuidelines filters on (otherwise scope-filtered
+                        // queries can't find this new guideline — same bug as /reingestGuideline).
+                        scope: data.scope || 'national',
+                        hospitalTrust: data.shortHospitalTrust || data.hospitalTrust || null
                     });
                     if (ingestionResult.success) {
                         console.log(`[PROCESSING_COMPLETE] Vector DB ingestion successful: ${ingestionResult.chunksUpserted} chunks`);
@@ -1487,6 +1492,22 @@ async function checkAndMarkProcessingComplete(guidelineId) {
                 }
             } else {
                 console.warn(`[PROCESSING_COMPLETE] No content available for vector DB ingestion: ${guidelineId}`);
+            }
+
+            // Automatically generate the required-values JSON for this guideline so it's
+            // ready when a clinician opens it. Per-PP LLM extraction + canonical mapping;
+            // cached on guideline.requiredValues. Non-fatal on failure.
+            if (Array.isArray(data.practicePoints) && data.practicePoints.length > 0) {
+                try {
+                    console.log(`[PROCESSING_COMPLETE] Generating requiredValues for: ${guidelineId} (${data.practicePoints.length} PPs)`);
+                    const requiredValuesMod = require('./modules/required-values');
+                    const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true });
+                    console.log(`[PROCESSING_COMPLETE] requiredValues generated: ${rv.values?.length || 0} canonical values, ${rv.proposedNewValues?.length || 0} proposed-new`);
+                } catch (rvError) {
+                    console.error(`[PROCESSING_COMPLETE] requiredValues generation error:`, rvError.message);
+                }
+            } else {
+                console.warn(`[PROCESSING_COMPLETE] No practice points — skipping requiredValues generation: ${guidelineId}`);
             }
         }
     } catch (error) {
