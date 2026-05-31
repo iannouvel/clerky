@@ -1309,6 +1309,21 @@ async function jobExtractAuditable(job, guidelineData) {
     const elements = await extractPracticePoints(content, userId, summary);
 
     const guidelineRef = db.collection('guidelines').doc(job.guidelineId);
+
+    // Don't mark practicePointsExtracted=true when extraction silently returned
+    // zero results — that misleads downstream (vector DB ingest, requiredValues)
+    // into thinking everything's ready. Throw so the job retries; if it still
+    // fails after max attempts, processingErrors will record it.
+    if (!Array.isArray(elements) || elements.length === 0) {
+        await guidelineRef.update({
+            practicePoints: [],
+            'processingStatus.practicePointsExtracted': false,
+            'processingErrors.practicePoints': 'No practice points extracted (extractor returned empty)',
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        });
+        throw new Error('extractPracticePoints returned zero results');
+    }
+
     await guidelineRef.update({
         practicePoints: elements,
         'processingStatus.practicePointsExtracted': true,
