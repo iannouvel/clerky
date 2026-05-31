@@ -4724,8 +4724,8 @@ app.post('/processGuidelineBackground', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'guidelineId is required' });
         }
 
-        // Check if user is admin
-        const isAdmin = req.user.admin;
+        // Check if user is admin — match the email-fallback used by other admin endpoints
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
         if (!isAdmin) {
             return res.status(403).json({ success: false, error: 'Admin access required' });
         }
