@@ -8056,6 +8056,44 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
         console.warn('[REQUIRED-VALUES] Relevance filter failed; showing all values:', e.message);
     }
 
+    // Step 2c: best-effort LLM fill of values the conservative extraction left
+    // blank. Documentation/process flags are answerable from the note (absence ⇒
+    // the negative answer); genuine measurements/history are only filled when the
+    // note supports them, never fabricated. Determined values pre-fill the modal
+    // (badged "AI-filled · review") so the clinician confirms rather than types.
+    // Fails open: on error, blanks are left for the user as before.
+    const inferredIds = new Set();
+    try {
+        const missing = relevantValues.filter(v => !(extractedById.get(v.id)?.found));
+        if (missing.length > 0) {
+            updateUser('Filling in values from your note…', true);
+            const infResp = await fetch(`${window.SERVER_URL}/inferMissingValues`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                body: JSON.stringify({ note, values: missing }),
+            });
+            if (infResp.ok) {
+                const infData = await infResp.json();
+                let filledCount = 0;
+                for (const f of (infData.filled || [])) {
+                    if (f.determinable && f.value !== null && f.value !== undefined && f.value !== '') {
+                        extractedById.set(f.id, {
+                            id: f.id, found: true, inferred: true,
+                            value: f.value, evidence: f.reason || '', confidence: f.confidence,
+                        });
+                        inferredIds.add(f.id);
+                        filledCount++;
+                    }
+                }
+                console.log(`[REQUIRED-VALUES] LLM filled ${filledCount}/${missing.length} previously-blank value(s); ${missing.length - filledCount} left for clinician`);
+            } else {
+                console.warn(`[REQUIRED-VALUES] inferMissingValues HTTP ${infResp.status}; leaving blanks for user`);
+            }
+        }
+    } catch (e) {
+        console.warn('[REQUIRED-VALUES] Infer pass failed; leaving blanks for user:', e.message);
+    }
+
     // Step 3: present the side panel — needs-value items first, auto-filled below
     // (only user-facing values still relevant to this scenario; derived ones are
     // silently auto-computed). filteredOut is surfaced in the modal so the user
@@ -8069,6 +8107,12 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
         for (const rv of requiredValues) {
             const u = userValues[rv.id];
             if (u && u.status === 'provided' && u.value !== null && u.value !== '') {
+                // Don't weave an LLM-inferred value the user left unchanged into the
+                // visible note — those are for review/audit only (e.g. a "not
+                // documented" flag would read as noise). Only weave in values the
+                // user actually entered or corrected.
+                const ex = extractedById.get(rv.id);
+                if (ex?.inferred && String(ex.value) === String(u.value)) continue;
                 toAdd.push({ id: rv.id, label: rv.label, type: rv.type, value: u.value });
             }
         }
@@ -8171,6 +8215,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         // Section headers
         const needsCount = sorted.filter(v => !(extractedById.get(v.id)?.found)).length;
         const autoCount = sorted.length - needsCount;
+        const inferredCount = sorted.filter(v => extractedById.get(v.id)?.inferred).length;
         let renderedAutoHeader = false;
         let renderedNeedsHeader = false;
 
@@ -8190,7 +8235,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             if (isAutoFilled && !renderedAutoHeader && autoCount > 0) {
                 const h = document.createElement('div');
                 h.style.cssText = 'font-size:0.78em;font-weight:700;text-transform:uppercase;color:#15803d;margin:16px 0 8px;letter-spacing:0.04em;';
-                h.textContent = `Auto-filled — review (${autoCount})`;
+                h.textContent = inferredCount > 0
+                    ? `Filled in for you — review (${autoCount})`
+                    : `Auto-filled — review (${autoCount})`;
                 list.appendChild(h);
                 renderedAutoHeader = true;
             }
@@ -8220,7 +8267,10 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
 
             const badge = document.createElement('span');
             badge.style.cssText = 'margin-left:auto;font-size:0.78em;padding:2px 8px;border-radius:10px;';
-            if (ex?.found) {
+            if (ex?.inferred) {
+                badge.textContent = 'AI-filled · review';
+                badge.style.background = '#dbeafe'; badge.style.color = '#1d4ed8';
+            } else if (ex?.found) {
                 badge.textContent = 'auto-filled';
                 badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
             } else {
@@ -8270,7 +8320,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             if (ex?.evidence) {
                 const evi = document.createElement('div');
                 evi.style.cssText = 'margin-top:6px;font-size:0.78em;color:var(--text-secondary,#666);font-style:italic;';
-                evi.textContent = `evidence: "${ex.evidence.slice(0, 150)}${ex.evidence.length > 150 ? '…' : ''}"`;
+                const txt = ex.evidence.slice(0, 150) + (ex.evidence.length > 150 ? '…' : '');
+                // Inferred reason is the model's reasoning, not a verbatim note quote.
+                evi.textContent = ex.inferred ? `AI reasoning: ${txt}` : `evidence: "${txt}"`;
                 row.appendChild(evi);
             }
 
