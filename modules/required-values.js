@@ -354,7 +354,19 @@ async function getCachedRequiredValues(db, guidelineId) {
  */
 async function aggregateAcrossGuidelines(db, guidelineIds, opts = {}) {
     const catalogue = await loadCatalogue(db);
-    const seen = new Map(); // canonicalId → { value, using: [{guidelineId, pps}] }
+    // Per-PP values that map to the canonical catalogue, AND per-PP values that
+    // didn't (proposedNewValues). The latter carry genuinely-required values the
+    // catalogue simply lacks — e.g. a GDM-screening / OGTT result — so discarding
+    // them means the gather can never seek them out. But proposedNewValues are a
+    // huge, noisy long tail (~162/guideline, mostly single-PP granular duplicates),
+    // so we include only those corroborated by ≥ MIN_PROPOSED_PPS practice points
+    // and cap the total to keep the modal and the extract/filter/infer passes
+    // bounded.
+    const MIN_PROPOSED_PPS = opts.minProposedPPs != null ? opts.minProposedPPs : 2;
+    const MAX_PROPOSED = opts.maxProposed != null ? opts.maxProposed : 25;
+
+    const seen = new Map();     // canonicalId → { value, using: [{guidelineId, pps}] }
+    const proposed = new Map(); // proposedId → { id, label, type, ppCount, using }
     const missing = [];
 
     for (const gId of guidelineIds) {
@@ -366,14 +378,33 @@ async function aggregateAcrossGuidelines(db, guidelineIds, opts = {}) {
             if (!seen.has(v.id)) seen.set(v.id, { value: catalogue[v.id], using: [] });
             seen.get(v.id).using.push({ guidelineId: gId, pps: v.usedByPPs });
         }
+        for (const p of (rv.proposedNewValues || [])) {
+            const id = p.proposedId || p.id;
+            if (!id) continue;
+            if (!proposed.has(id)) proposed.set(id, { id, label: p.label || id, type: p.type || 'string', ppCount: 0, using: [] });
+            const e = proposed.get(id);
+            e.ppCount += (p.usedByPPs || []).length;
+            e.using.push({ guidelineId: gId, pps: p.usedByPPs || [] });
+        }
     }
 
-    const values = [...seen.entries()]
+    const canonicalValues = [...seen.entries()]
         .map(([id, { value, using }]) => ({ id, ...(value || {}), usingGuidelines: using }))
         .filter(v => v.label) // skip canonical ids we couldn't resolve
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
-    return { values, catalogueSize: Object.keys(catalogue).length, missing };
+    const proposedValues = [...proposed.values()]
+        .filter(p => p.ppCount >= MIN_PROPOSED_PPS) // drop single-PP noise
+        .sort((a, b) => b.ppCount - a.ppCount)
+        .slice(0, MAX_PROPOSED)                     // bound volume
+        .map(p => ({ id: p.id, label: p.label, type: p.type, proposed: true, usingGuidelines: p.using }));
+
+    return {
+        values: [...canonicalValues, ...proposedValues],
+        catalogueSize: Object.keys(catalogue).length,
+        missing,
+        proposedIncluded: proposedValues.length,
+    };
 }
 
 // ----- Value extraction from note -----------------------------------------
