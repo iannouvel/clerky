@@ -330,6 +330,8 @@ const EXTRACT_SYSTEM = `You extract specified clinical data values from a clinic
 
 For each requested value, decide whether the value can be determined from the note — either by direct documentation OR by clinical reasoning from other documented facts. If yes, return the value with the supporting evidence. If no, mark it as missing. Be conservative: when in genuine doubt, mark missing.
 
+Express each value as a faithful, concise natural-language answer that reflects the real clinical picture — including temporal scope (this pregnancy versus a previous one), qualifiers, and any uncertainty — rather than forcing it into a fixed category. Where a value lists options, treat them only as a guide to the kind of answer expected, not a constraint: when the documented situation does not fit a clean option, describe it accurately in your own words. In particular, a condition documented only as history or as occurring in a previous pregnancy must not be reported as the patient's current status — say so explicitly instead.
+
 When you apply clinical reasoning, your "evidence" field MUST:
   (a) cite the documented fact you reasoned FROM (verbatim quote);
   (b) name the rule you applied;
@@ -427,9 +429,8 @@ For each value, return JSON only:
 }
 
 Rules:
-- Only set found=true if the value is genuinely documented. If the note is silent, found=false.
-- value type must match the declared type (number/boolean/enum/string).
-- For enum, value must be one of the listed options.
+- Only set found=true if the value is genuinely documented (or follows unambiguously from the note). If the note is silent, found=false.
+- Express the value in natural language that faithfully reflects what the note documents, carrying any temporal scope, qualifier, or uncertainty. Listed options are a guide to the kind of answer, not a straitjacket — a faithful phrase is better than a clean but misleading label.
 - Be conservative — if uncertain, set found=false and explain in evidence.`;
 }
 
@@ -545,7 +546,7 @@ Two kinds of value must be handled very differently:
 
 The deciding question for each value is whether it asks about THIS encounter's record — what was written, advised, discussed, or done at this visit (kind 1) — or about a fact, measurement, or past event that exists whether or not anyone wrote it down (kind 2). Answer kind 1 from the note, taking the negative value when the note is silent; leave kind 2 blank unless the note supplies it.
 
-When a value's type or options are given, your answer must conform to them.
+Express every answer as a faithful, concise natural-language value that carries any needed context, scope, or qualifier. Where a value's type or options are given, treat them as a guide to the kind of answer expected, not a rigid constraint — prefer an accurate phrase over a clean but misleading category.
 
 Return strict JSON only.`;
 
@@ -580,7 +581,7 @@ For each value, return JSON only:
 Rules:
 - determinable=true only when the note (or the documented absence, for a documentation/process check) settles the answer.
 - For measurements and past history with no basis in the note, set determinable=false and value=null.
-- value type must match the declared type; for enum, value must be one of the listed options.`;
+- Express value as a faithful natural-language answer carrying any needed context or scope; listed options are a guide, not a constraint.`;
 }
 
 /**

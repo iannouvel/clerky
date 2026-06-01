@@ -8249,13 +8249,10 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             labelLine.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
             const labelEl = document.createElement('strong');
             labelEl.style.cssText = 'font-size:0.9em;';
-            // For Yes/No and dropdown (boolean/enum) fields, show the catalogue's
-            // natural-language question so a Yes/No control reads as a real
-            // question (e.g. "Is the woman's response to advice documented?")
-            // rather than an ambiguous noun phrase. Number/text fields keep the
-            // compact label so unit-bearing labels stay terse.
-            const isSelectType = rv.type === 'boolean' || rv.type === 'enum';
-            labelEl.textContent = (isSelectType && rv.prompt) ? rv.prompt : (rv.label || rv.id);
+            // Show the catalogue's natural-language question as the caption so each
+            // free-text answer reads against a real question rather than an
+            // ambiguous noun phrase. Falls back to the label.
+            labelEl.textContent = rv.prompt || rv.label || rv.id;
             labelLine.appendChild(labelEl);
 
             if (rv.unit) {
@@ -8284,21 +8281,17 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             const inputRow = document.createElement('div');
             inputRow.style.cssText = 'display:flex;gap:6px;align-items:center;';
 
-            let inputEl;
-            if (rv.type === 'enum' && Array.isArray(rv.options)) {
-                inputEl = document.createElement('select');
-                inputEl.innerHTML = '<option value="">(select)</option>' +
-                    rv.options.map(o => `<option value="${o}">${o.replace(/_/g, ' ')}</option>`).join('');
-            } else if (rv.type === 'boolean') {
-                inputEl = document.createElement('select');
-                inputEl.innerHTML = '<option value="">(select)</option><option value="true">Yes</option><option value="false">No</option>';
+            // Free-text for every value: the LLM fills a faithful natural-language
+            // answer (carrying scope/qualifiers), which the clinician reviews and
+            // edits. No forced enum/Yes-No widgets — a rigid category is what caused
+            // prior-history to be mis-recorded as current status. The catalogue
+            // `prompt`/`options` (if any) become an editable placeholder hint.
+            const inputEl = document.createElement('input');
+            inputEl.type = 'text';
+            if (Array.isArray(rv.options) && rv.options.length) {
+                inputEl.placeholder = `e.g. ${rv.options.map(o => o.replace(/_/g, ' ')).join(' / ')}`;
             } else if (rv.type === 'number') {
-                inputEl = document.createElement('input');
-                inputEl.type = 'number';
-                inputEl.step = 'any';
-            } else {
-                inputEl = document.createElement('input');
-                inputEl.type = 'text';
+                inputEl.placeholder = rv.unit ? `value in ${rv.unit}` : 'value';
             }
             inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;';
             if (ex?.found && ex.value !== null && ex.value !== undefined) inputEl.value = String(ex.value);
