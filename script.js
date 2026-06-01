@@ -8202,7 +8202,13 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             labelLine.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
             const labelEl = document.createElement('strong');
             labelEl.style.cssText = 'font-size:0.9em;';
-            labelEl.textContent = rv.label || rv.id;
+            // For Yes/No and dropdown (boolean/enum) fields, show the catalogue's
+            // natural-language question so a Yes/No control reads as a real
+            // question (e.g. "Is the woman's response to advice documented?")
+            // rather than an ambiguous noun phrase. Number/text fields keep the
+            // compact label so unit-bearing labels stay terse.
+            const isSelectType = rv.type === 'boolean' || rv.type === 'enum';
+            labelEl.textContent = (isSelectType && rv.prompt) ? rv.prompt : (rv.label || rv.id);
             labelLine.appendChild(labelEl);
 
             if (rv.unit) {
