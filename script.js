@@ -8021,9 +8021,46 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const extracted = exData.extracted || [];
     const extractedById = new Map(extracted.map(e => [e.id, e]));
 
+    // Step 2b: relevance filter — drop candidate values that don't pertain to
+    // THIS patient's scenario (e.g. antenatal fetal-surveillance values pooled
+    // from a triage guideline onto a postnatal note). Separate LLM pass from
+    // extraction, which only judges whether a value is documented. Fails open:
+    // on any error, no filtering is applied. A value the note actually documents
+    // is never filtered out.
+    let relevantValues = userFacingValues;
+    const filteredOut = []; // { label, reason } for values dropped as not applicable
+    try {
+        const filtResp = await fetch(`${window.SERVER_URL}/filterRelevantValues`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+            body: JSON.stringify({ note, values: userFacingValues }),
+        });
+        if (filtResp.ok) {
+            const filtData = await filtResp.json();
+            if (filtData.success && Array.isArray(filtData.results)) {
+                const verdict = new Map(filtData.results.map(r => [r.id, r]));
+                relevantValues = userFacingValues.filter(v => {
+                    const r = verdict.get(v.id);
+                    if (!r || r.relevant !== false) return true; // keep unless explicitly irrelevant
+                    const ex = extractedById.get(v.id);
+                    if (ex && ex.found) return true; // never drop a value the note documents
+                    filteredOut.push({ label: v.label || v.id, reason: r.reason || '' });
+                    return false;
+                });
+                console.log(`[REQUIRED-VALUES] Relevance filter dropped ${filteredOut.length}/${userFacingValues.length} value(s) as not applicable to this scenario`);
+            }
+        } else {
+            console.warn(`[REQUIRED-VALUES] filterRelevantValues HTTP ${filtResp.status}; showing all values`);
+        }
+    } catch (e) {
+        console.warn('[REQUIRED-VALUES] Relevance filter failed; showing all values:', e.message);
+    }
+
     // Step 3: present the side panel — needs-value items first, auto-filled below
-    // (only user-facing values; derived ones are silently auto-computed)
-    const userValues = await showRequiredValuesModal(userFacingValues, extractedById);
+    // (only user-facing values still relevant to this scenario; derived ones are
+    // silently auto-computed). filteredOut is surfaced in the modal so the user
+    // can see what was hidden and why.
+    const userValues = await showRequiredValuesModal(relevantValues, extractedById, filteredOut);
 
     let augmentedNote = null;
     if (userValues) {
@@ -8062,7 +8099,7 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     return { values: requiredValues, extractedValues: extracted, userValues, augmentedNote };
 }
 
-function showRequiredValuesModal(requiredValues, extractedById) {
+function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []) {
     return new Promise((resolve) => {
         // Side panel (not full-screen overlay) — note stays visible on the left.
         let modal = document.getElementById('requiredValuesModal');
@@ -8082,6 +8119,41 @@ function showRequiredValuesModal(requiredValues, extractedById) {
                 Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.
             </p>`;
         modal.appendChild(header);
+
+        // Relevance-filter notice — explain which candidate values were hidden
+        // because they don't apply to THIS patient's scenario, and why.
+        if (Array.isArray(filteredOut) && filteredOut.length > 0) {
+            const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+            const notice = document.createElement('div');
+            notice.style.cssText = 'margin:12px 18px 0;padding:10px 12px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:6px;color:#1e3a5f;';
+            const n = filteredOut.length;
+            const items = filteredOut.map(f => {
+                const reason = f.reason ? ` <span style="color:#3b5573;">— ${esc(f.reason)}</span>` : '';
+                return `<li style="margin:3px 0;"><strong>${esc(f.label)}</strong>${reason}</li>`;
+            }).join('');
+            notice.innerHTML = `
+                <div style="display:flex;align-items:flex-start;gap:8px;">
+                    <span aria-hidden="true" style="font-size:1.05em;line-height:1;">🔎</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-size:0.86em;font-weight:600;margin-bottom:2px;">
+                            ${n} value${n === 1 ? '' : 's'} hidden as not relevant to this patient
+                        </div>
+                        <p style="margin:0 0 6px;font-size:0.8em;line-height:1.45;color:#33506e;">
+                            These were requested by a matched guideline but don't apply to this patient's presentation or stage of care, so you don't need to fill them in.
+                        </p>
+                        <button type="button" id="rvFilteredToggle" style="background:none;border:none;padding:0;color:#1d4ed8;font-size:0.8em;cursor:pointer;text-decoration:underline;">Show what was hidden</button>
+                        <ul id="rvFilteredList" style="display:none;margin:6px 0 0;padding-left:18px;font-size:0.8em;line-height:1.45;">${items}</ul>
+                    </div>
+                </div>`;
+            modal.appendChild(notice);
+            const toggle = notice.querySelector('#rvFilteredToggle');
+            const ul = notice.querySelector('#rvFilteredList');
+            toggle.addEventListener('click', () => {
+                const open = ul.style.display !== 'none';
+                ul.style.display = open ? 'none' : 'block';
+                toggle.textContent = open ? 'Show what was hidden' : 'Hide';
+            });
+        }
 
         const list = document.createElement('div');
         list.style.cssText = 'overflow-y:auto;padding:12px 18px;flex:1 1 auto;';
