@@ -10166,8 +10166,11 @@ ${bodies ? 'Extract every actionable recommendation from the guideline excerpt b
 GUIDELINE CONTENT:
 ${body}`;
 
-            // Route via the user's model preference with provider fallback
-            // (preferredProvider = null enables both). Still retry with backoff
+            // Route via the user's 'simple' task-tier model with provider
+            // fallback (preferredProvider = null enables fallback). maxTokens is
+            // bounded to 16384 — far above the ~3-5k tokens a section actually
+            // emits — so the router doesn't over-estimate context and force an
+            // upgrade away from the configured model. Still retry with backoff
             // and SKIP a section that exhausts retries — never let one failed
             // section zero out the whole guideline's extraction.
             let sectionResult = null;
@@ -10184,7 +10187,7 @@ ${body}`;
                                 content: extractionPrompt
                             }
                         ]
-                    }, userId, null, 65536);
+                    }, userId, null, 16384, 'simple');
                     break;
                 } catch (err) {
                     console.warn(`[PRACTICE-POINTS-OPT] Section ${i + 1}/${sections.length} "${section}" attempt ${attempt}/3 failed: ${err.message}`);
