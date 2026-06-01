@@ -12,6 +12,35 @@
  * Also exposes extractValuesFromNote(): given a clinical note and the union
  * of required values, returns which are documented in the note (with confidence).
  */
+// --- cache freshness ------------------------------------------------------
+
+// Millis of the guideline's last practice-point regeneration (Firestore
+// Timestamp, or admin export shape), or null if never recorded.
+function ppRegenMillis(g) {
+    const t = g && g.practicePointsRegeneratedAt;
+    if (!t) return null;
+    if (typeof t.toMillis === 'function') return t.toMillis();
+    if (typeof t._seconds === 'number') return t._seconds * 1000;
+    if (typeof t.seconds === 'number') return t.seconds * 1000;
+    return null;
+}
+
+// A cached requiredValues is valid only if its schema matches AND it was
+// generated AFTER the last practice-point regeneration. requiredValues are
+// derived from practicePoints, so a PP rebuild (e.g. the backfill) makes any
+// older requiredValues stale. Returning false here makes the cache-only path
+// treat it as a miss → background-warm regenerates it from the current PPs.
+// This auto-heals drift without coupling to the PP-regeneration code path.
+function isRequiredValuesFresh(g) {
+    const rv = g && g.requiredValues;
+    if (!rv || rv.schemaVersion !== SCHEMA_VERSION) return false;
+    const ppAt = ppRegenMillis(g);
+    if (ppAt == null) return true; // no PP-regen timestamp to compare → accept cache
+    const rvAt = rv.generatedAt ? Date.parse(rv.generatedAt) : NaN;
+    if (!Number.isFinite(rvAt)) return false; // can't prove fresh → treat as stale
+    return rvAt >= ppAt;
+}
+
 const GEMINI_URL_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const GEMINI_MODEL = process.env.REQUIRED_VALUES_GEMINI_MODEL || 'gemini-2.5-flash';
 const SCHEMA_VERSION = '1.0';
@@ -242,7 +271,7 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
     if (!doc.exists) throw new Error(`Guideline not found: ${guidelineId}`);
     const g = doc.data();
 
-    if (!opts.forceRegenerate && g.requiredValues && g.requiredValues.schemaVersion === SCHEMA_VERSION) {
+    if (!opts.forceRegenerate && isRequiredValuesFresh(g)) {
         return { ...g.requiredValues, _source: 'cache' };
     }
 
@@ -305,10 +334,10 @@ async function getCachedRequiredValues(db, guidelineId) {
     const doc = await db.collection('guidelines').doc(guidelineId).get();
     if (!doc.exists) return null;
     const g = doc.data();
-    if (g.requiredValues && g.requiredValues.schemaVersion === SCHEMA_VERSION) {
+    if (isRequiredValuesFresh(g)) {
         return { ...g.requiredValues, _source: 'cache' };
     }
-    return null;
+    return null; // missing or stale (older than last PP regen) → caller warms it
 }
 
 /**
