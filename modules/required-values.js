@@ -297,19 +297,42 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
 }
 
 /**
+ * Read a guideline's cached requiredValues WITHOUT generating. Returns null if
+ * not cached (or stale schema). Generation is expensive (one LLM call per PP)
+ * and must never run inside a user request — use this on the live path.
+ */
+async function getCachedRequiredValues(db, guidelineId) {
+    const doc = await db.collection('guidelines').doc(guidelineId).get();
+    if (!doc.exists) return null;
+    const g = doc.data();
+    if (g.requiredValues && g.requiredValues.schemaVersion === SCHEMA_VERSION) {
+        return { ...g.requiredValues, _source: 'cache' };
+    }
+    return null;
+}
+
+/**
  * Compute the union of requiredValues across multiple guidelines, joined
  * with the canonical catalogue for label, type, extractionHint, prompt etc.
  *
  * @param {Object} db
  * @param {string[]} guidelineIds
- * @returns {Promise<Object>} { values: [{id, label, type, ..., usingGuidelines:[{id, pps}]}], catalogueSize }
+ * @param {Object} [opts]
+ * @param {boolean} [opts.cacheOnly=false] - read cached values only; never
+ *   generate (generation = one LLM call per PP × many guidelines = minutes).
+ *   Guidelines without a cache are collected in the returned `missing` array.
+ * @returns {Promise<Object>} { values:[...], catalogueSize, missing:[guidelineId] }
  */
-async function aggregateAcrossGuidelines(db, guidelineIds) {
+async function aggregateAcrossGuidelines(db, guidelineIds, opts = {}) {
     const catalogue = await loadCatalogue(db);
     const seen = new Map(); // canonicalId → { value, using: [{guidelineId, pps}] }
+    const missing = [];
 
     for (const gId of guidelineIds) {
-        const rv = await getOrGenerateRequiredValues(db, gId);
+        const rv = opts.cacheOnly
+            ? await getCachedRequiredValues(db, gId)
+            : await getOrGenerateRequiredValues(db, gId);
+        if (!rv) { missing.push(gId); continue; }
         for (const v of (rv.values || [])) {
             if (!seen.has(v.id)) seen.set(v.id, { value: catalogue[v.id], using: [] });
             seen.get(v.id).using.push({ guidelineId: gId, pps: v.usedByPPs });
@@ -321,7 +344,7 @@ async function aggregateAcrossGuidelines(db, guidelineIds) {
         .filter(v => v.label) // skip canonical ids we couldn't resolve
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
-    return { values, catalogueSize: Object.keys(catalogue).length };
+    return { values, catalogueSize: Object.keys(catalogue).length, missing };
 }
 
 // ----- Value extraction from note -----------------------------------------
@@ -694,6 +717,7 @@ async function augmentNoteWithValues(note, values) {
 module.exports = {
     SCHEMA_VERSION,
     getOrGenerateRequiredValues,
+    getCachedRequiredValues,
     aggregateAcrossGuidelines,
     extractValuesFromNote,
     filterValuesByRelevance,

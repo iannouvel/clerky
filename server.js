@@ -18439,6 +18439,32 @@ app.post('/api/mergeFirstPassWithSuggestions', authenticateUser, async (req, res
 // a guideline, generated and cached on the guideline doc. See modules/required-values.js.
 const requiredValuesMod = require('./modules/required-values');
 
+// Tracks guidelines currently being generated in the background so we don't
+// kick off duplicate generation for the same id across concurrent requests.
+const _warmingRequiredValues = new Set();
+
+// Fire-and-forget: generate requiredValues for uncached guidelines AFTER the
+// response is sent, sequentially (low load), so the next analysis is a fast
+// cache hit. Generation is one LLM call per practice point — far too slow to
+// run inside the request path, which is what caused the 5-minute hang.
+function warmRequiredValuesInBackground(guidelineIds) {
+    (async () => {
+        for (const id of guidelineIds) {
+            if (_warmingRequiredValues.has(id)) continue;
+            _warmingRequiredValues.add(id);
+            try {
+                console.log(`[REQUIRED-VALUES] Background warm start: ${id}`);
+                const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, id);
+                console.log(`[REQUIRED-VALUES] Background warm done: ${id} (${rv.values?.length || 0} values)`);
+            } catch (e) {
+                console.warn(`[REQUIRED-VALUES] Background warm failed ${id}: ${e.message}`);
+            } finally {
+                _warmingRequiredValues.delete(id);
+            }
+        }
+    })().catch(() => {});
+}
+
 app.post('/getOrGenerateRequiredValues', authenticateUser, async (req, res) => {
     try {
         const { guidelineIds, forceRegenerate } = req.body || {};
@@ -18448,21 +18474,29 @@ app.post('/getOrGenerateRequiredValues', authenticateUser, async (req, res) => {
         console.log(`[REQUIRED-VALUES] Request for ${guidelineIds.length} guideline(s); forceRegenerate=${!!forceRegenerate}`);
 
         if (forceRegenerate) {
-            // Pre-warm: regenerate each guideline's cache
+            // Explicit pre-warm/regenerate (admin/batch path) — generate inline.
             for (const id of guidelineIds) {
                 await requiredValuesMod.getOrGenerateRequiredValues(db, id, { forceRegenerate: true });
             }
+            const aggregated = await requiredValuesMod.aggregateAcrossGuidelines(db, guidelineIds);
+            return res.json({ success: true, guidelinesProcessed: guidelineIds.length, ...aggregated });
         }
 
-        const aggregated = await requiredValuesMod.aggregateAcrossGuidelines(db, guidelineIds);
-        return res.json({
-            success: true,
-            guidelinesProcessed: guidelineIds.length,
-            ...aggregated,
-        });
+        // Live path: cache-only — NEVER generate inside the request (generation is
+        // one LLM call per PP across many guidelines = minutes of blocking).
+        const aggregated = await requiredValuesMod.aggregateAcrossGuidelines(db, guidelineIds, { cacheOnly: true });
+        if (aggregated.missing && aggregated.missing.length) {
+            console.log(`[REQUIRED-VALUES] ${aggregated.missing.length}/${guidelineIds.length} not cached — warming in background`);
+        }
+        res.json({ success: true, guidelinesProcessed: guidelineIds.length, ...aggregated });
+
+        // After responding, warm the uncached ones so the next run is fast + complete.
+        if (aggregated.missing && aggregated.missing.length) {
+            warmRequiredValuesInBackground(aggregated.missing);
+        }
     } catch (e) {
         console.error('[REQUIRED-VALUES] error:', e.message);
-        return res.status(500).json({ success: false, error: e.message });
+        if (!res.headersSent) return res.status(500).json({ success: false, error: e.message });
     }
 });
 
