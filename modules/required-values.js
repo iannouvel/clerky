@@ -529,6 +529,97 @@ async function filterValuesByRelevance(note, valuesList) {
     return { results: out };
 }
 
+// ----- Best-effort inference of values the note didn't document ------------
+
+const INFER_SYSTEM = `You complete a structured set of clinical data values for a clinical note, on behalf of a clinician who will review every answer you give.
+
+You receive the clinical note and a list of values that an earlier, deliberately conservative pass did not capture. For each, make your best determination and say whether you could determine it at all.
+
+"Determinable" means you can settle the answer — and a negative or absent answer still counts as settling it. It does NOT mean you can confirm the answer is positive.
+
+Two kinds of value must be handled very differently:
+
+1. Documentation and process checks — whether something was documented, recorded, noted, advised, discussed, done, or measured DURING THIS ENCOUNTER. The note IS the record of the encounter, so you can ALWAYS settle these from the note: if the note contains it, the answer is the positive value; if the note does not, the answer is the negative value (e.g. false / not documented). Absence from the note is itself the answer. These are ALWAYS determinable — never mark a documentation or process check as not determinable, and never leave it for the clinician just because the note is silent; silence is the answer.
+
+2. Patient measurements, observations, and past history — values that exist independently of this note, such as a measured number, a lifestyle factor, or an event in a previous pregnancy. The note may simply have omitted these. Provide a value ONLY when the note states it or it follows unambiguously from what the note states. If the note gives you no basis, mark it not determinable and leave it for the clinician. Never infer, estimate, or guess a measurement or a history detail the note does not support — absence of mention is NOT evidence of absence for this kind of value, and an unfilled value is far safer than a fabricated one.
+
+The deciding question for each value is whether it asks about THIS encounter's record — what was written, advised, discussed, or done at this visit (kind 1) — or about a fact, measurement, or past event that exists whether or not anyone wrote it down (kind 2). Answer kind 1 from the note, taking the negative value when the note is silent; leave kind 2 blank unless the note supplies it.
+
+When a value's type or options are given, your answer must conform to them.
+
+Return strict JSON only.`;
+
+function buildInferPrompt(note, valuesList) {
+    const valuesStr = valuesList.map(v => {
+        const opts = v.options ? ` (options: ${v.options.join(', ')})` : '';
+        const unit = v.unit ? ` (unit: ${v.unit})` : '';
+        const q = v.prompt ? `\n      question: ${v.prompt}` : '';
+        return `  - ${v.id}: ${v.label}${unit}${opts}
+      type: ${v.type}${q}`;
+    }).join('\n');
+
+    return `CLINICAL NOTE:
+${note}
+
+VALUES TO DETERMINE:
+${valuesStr}
+
+For each value, return JSON only:
+{
+  "filled": [
+    {
+      "id": "<value id>",
+      "determinable": true | false,
+      "value": <typed value if determinable, else null>,
+      "confidence": 0.0-1.0,
+      "reason": "<one line: what in the note — or its absence — led to this answer>"
+    }
+  ]
+}
+
+Rules:
+- determinable=true only when the note (or the documented absence, for a documentation/process check) settles the answer.
+- For measurements and past history with no basis in the note, set determinable=false and value=null.
+- value type must match the declared type; for enum, value must be one of the listed options.`;
+}
+
+/**
+ * Best-effort fill of values the conservative extraction left blank. Documentation
+ * /process flags are answered from the note (absence ⇒ the negative answer);
+ * measurements and history are filled only when the note supports them, never
+ * fabricated. Each result is reviewable by the clinician downstream.
+ *
+ * Fails open: on any error, values are returned as not determinable.
+ *
+ * @param {string} note
+ * @param {Array<{id,label,type,prompt?,options?,unit?}>} valuesList
+ * @returns {Promise<{filled: Array<{id,determinable,value,confidence,reason}>}>}
+ */
+async function inferMissingValues(note, valuesList) {
+    if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
+        return { filled: [] };
+    }
+    const BATCH = 15;
+    const out = [];
+    for (let i = 0; i < valuesList.length; i += BATCH) {
+        const batch = valuesList.slice(i, i + BATCH);
+        try {
+            const text = await callGemini(INFER_SYSTEM, buildInferPrompt(note, batch));
+            const parsed = parseJSON(text);
+            const byId = new Map((parsed?.filled || []).map(r => [r.id, r]));
+            for (const v of batch) {
+                const r = byId.get(v.id);
+                out.push(r && r.determinable === true
+                    ? { id: v.id, determinable: true, value: r.value, confidence: r.confidence ?? null, reason: r.reason || '' }
+                    : { id: v.id, determinable: false, value: null, confidence: null, reason: r?.reason || '' });
+            }
+        } catch (e) {
+            for (const v of batch) out.push({ id: v.id, determinable: false, value: null, confidence: null, reason: '' });
+        }
+    }
+    return { filled: out };
+}
+
 // ----- Note augmentation with user-supplied values ------------------------
 
 const AUGMENT_SYSTEM = `You incorporate user-supplied clinical values into an existing clinical note.
@@ -605,6 +696,7 @@ module.exports = {
     aggregateAcrossGuidelines,
     extractValuesFromNote,
     filterValuesByRelevance,
+    inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,
 };

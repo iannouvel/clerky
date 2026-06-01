@@ -18500,6 +18500,24 @@ app.post('/filterRelevantValues', authenticateUser, async (req, res) => {
     }
 });
 
+app.post('/inferMissingValues', authenticateUser, async (req, res) => {
+    try {
+        const { note, values } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(values) || values.length === 0) {
+            return res.status(400).json({ success: false, error: 'values (array) is required' });
+        }
+        console.log(`[INFER-VALUES] note ${note.length} chars; ${values.length} blank values to attempt`);
+        const result = await requiredValuesMod.inferMissingValues(note, values);
+        const filled = (result.filled || []).filter(r => r.determinable).length;
+        console.log(`[INFER-VALUES] ${filled}/${values.length} determined from note (rest left for clinician)`);
+        return res.json({ success: true, ...result });
+    } catch (e) {
+        console.error('[INFER-VALUES] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/augmentNoteWithValues', authenticateUser, async (req, res) => {
     try {
         const { note, values } = req.body || {};
