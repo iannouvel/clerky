@@ -18482,6 +18482,24 @@ app.post('/extractValuesFromNote', authenticateUser, async (req, res) => {
     }
 });
 
+app.post('/filterRelevantValues', authenticateUser, async (req, res) => {
+    try {
+        const { note, values } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(values) || values.length === 0) {
+            return res.status(400).json({ success: false, error: 'values (array) is required' });
+        }
+        console.log(`[FILTER-VALUES] note ${note.length} chars; ${values.length} candidate values`);
+        const result = await requiredValuesMod.filterValuesByRelevance(note, values);
+        const dropped = (result.results || []).filter(r => r.relevant === false).length;
+        console.log(`[FILTER-VALUES] ${dropped}/${values.length} filtered out as not relevant`);
+        return res.json({ success: true, ...result });
+    } catch (e) {
+        console.error('[FILTER-VALUES] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/augmentNoteWithValues', authenticateUser, async (req, res) => {
     try {
         const { note, values } = req.body || {};

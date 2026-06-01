@@ -455,6 +455,80 @@ async function extractValuesFromNote(note, valuesList) {
     return { extracted: out };
 }
 
+// ----- Relevance filter ----------------------------------------------------
+
+const RELEVANCE_SYSTEM = `You decide which candidate clinical data values are actually relevant to gather for a specific patient, given their clinical note.
+
+The candidate values are pooled from several guidelines that were matched to this note. Because a matched guideline may only partly apply, some candidates belong to a different stage of the patient's care or to an unrelated clinical problem, and are not relevant to this particular encounter.
+
+For each candidate, judge whether a competent clinician reviewing THIS note would consider that value pertinent to the patient's current presentation and stage of care. Reason from the note: why the patient is being seen, where they are in their clinical journey (for example whether the pregnancy is ongoing or already concluded, or whether the problem is obstetric, gynaecological, or neonatal), and whether the value could plausibly bear on this patient's assessment, management, or safety.
+
+A value that belongs to a stage of care the patient has already passed, or to a clinical problem this patient does not have, is not relevant — even though a matched guideline lists it.
+
+Be inclusive at the margin: if a value could reasonably matter to this patient, keep it. Only exclude values that are clearly inapplicable to this scenario. When genuinely unsure, keep it.
+
+Return strict JSON only.`;
+
+function buildRelevancePrompt(note, valuesList) {
+    const valuesStr = valuesList.map(v => {
+        const desc = v.prompt || v.description || '';
+        return `  - ${v.id}: ${v.label}${desc ? ` — ${desc.slice(0, 160)}` : ''}`;
+    }).join('\n');
+
+    return `CLINICAL NOTE:
+${note}
+
+CANDIDATE VALUES:
+${valuesStr}
+
+For each candidate value, decide whether it is clinically relevant to gather for THIS patient. Return JSON only:
+{
+  "results": [
+    { "id": "<value id>", "relevant": true | false, "reason": "<short clinical reason>" }
+  ]
+}`;
+}
+
+/**
+ * Given a clinical note and a list of candidate required values, return which
+ * are clinically relevant to gather for THIS patient. Values pooled from
+ * partially-applicable guidelines (e.g. antenatal fetal-surveillance values on
+ * a postnatal note) are filtered out. Runs as its own LLM pass — separate from
+ * extraction, which only judges whether a value is documented.
+ *
+ * Fails open: on any error, every value is treated as relevant (no filtering).
+ *
+ * @param {string} note
+ * @param {Array<{id:string,label:string,prompt?:string,description?:string}>} valuesList
+ * @returns {Promise<{results: Array<{id:string,relevant:boolean,reason:string}>}>}
+ */
+async function filterValuesByRelevance(note, valuesList) {
+    if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
+        return { results: (valuesList || []).map(v => ({ id: v.id, relevant: true, reason: '' })) };
+    }
+
+    const BATCH = 25;
+    const out = [];
+    for (let i = 0; i < valuesList.length; i += BATCH) {
+        const batch = valuesList.slice(i, i + BATCH);
+        try {
+            const text = await callGemini(RELEVANCE_SYSTEM, buildRelevancePrompt(note, batch));
+            const parsed = parseJSON(text);
+            const byId = new Map((parsed?.results || []).map(r => [r.id, r]));
+            for (const v of batch) {
+                const r = byId.get(v.id);
+                // Fail open: if the model didn't return a verdict for this value, keep it.
+                out.push(r && typeof r.relevant === 'boolean'
+                    ? { id: v.id, relevant: r.relevant, reason: r.reason || '' }
+                    : { id: v.id, relevant: true, reason: '' });
+            }
+        } catch (e) {
+            for (const v of batch) out.push({ id: v.id, relevant: true, reason: '' });
+        }
+    }
+    return { results: out };
+}
+
 // ----- Note augmentation with user-supplied values ------------------------
 
 const AUGMENT_SYSTEM = `You incorporate user-supplied clinical values into an existing clinical note.
@@ -530,6 +604,7 @@ module.exports = {
     getOrGenerateRequiredValues,
     aggregateAcrossGuidelines,
     extractValuesFromNote,
+    filterValuesByRelevance,
     augmentNoteWithValues,
     loadCatalogue,
 };
