@@ -17428,14 +17428,29 @@ app.post('/_deprecated_clearDisplayNames', authenticateUser, async (req, res) =>
 });
 
 // Helper function to fetch a collection with timeout
-async function fetchCollectionWithTimeout(collectionName, timeoutMs = 15000) {
+async function fetchCollectionWithTimeout(collectionName, timeoutMs = 15000, selectFields = null) {
+    const ref = db.collection(collectionName);
+    // .select(...) fetches ONLY the named fields from Firestore — used to skip the
+    // heavy per-doc fields (content, practicePoints, requiredValues, structure) that
+    // the guidelines LIST does not need. This is what makes /getAllGuidelines fast.
+    const query = (Array.isArray(selectFields) && selectFields.length) ? ref.select(...selectFields) : ref;
     return Promise.race([
-        db.collection(collectionName).get(),
+        query.get(),
         new Promise((_, reject) =>
             setTimeout(() => reject(new Error(`Timeout fetching ${collectionName}`)), timeoutMs)
         )
     ]);
 }
+
+// Lightweight metadata fields the guidelines LIST/selection actually needs. The
+// giants (content ~20MB, practicePoints ~31MB, requiredValues, structure, chunks)
+// are deliberately excluded — deep analysis loads those per-guideline by id.
+const GUIDELINE_LIST_FIELDS = [
+    'title', 'displayName', 'human_friendly_name', 'humanFriendlyName',
+    'summary', 'keywords', 'organisation', 'downloadUrl', 'originalFilename',
+    'hospitalTrust', 'shortHospitalTrust', 'scope', 'canonicalId',
+    'contentStorageUrl', 'contentInStorage', 'condensedStorageUrl', 'summaryStorageUrl',
+];
 
 // Update getAllGuidelines to use sequential fetches with individual timeouts
 async function getAllGuidelines() {
@@ -17450,8 +17465,10 @@ async function getAllGuidelines() {
         let guidelines, summaries, keywords, condensed;
 
         try {
-            guidelines = await fetchCollectionWithTimeout('guidelines', 15000);
-            debugLog('[DEBUG] Fetched guidelines collection');
+            // Metadata-only read (skips content/practicePoints/etc.) — the list
+            // doesn't need them and reading them was the ~10s cost.
+            guidelines = await fetchCollectionWithTimeout('guidelines', 15000, GUIDELINE_LIST_FIELDS);
+            debugLog('[DEBUG] Fetched guidelines collection (metadata-only)');
         } catch (error) {
             console.error('[ERROR] Failed to fetch guidelines collection:', error.message);
             return [];
