@@ -365,31 +365,56 @@ async function aggregateAcrossGuidelines(db, guidelineIds, opts = {}) {
     const MIN_PROPOSED_PPS = opts.minProposedPPs != null ? opts.minProposedPPs : 2;
     const MAX_PROPOSED = opts.maxProposed != null ? opts.maxProposed : 25;
 
-    const seen = new Map();     // canonicalId → { value, using: [{guidelineId, pps}] }
-    const proposed = new Map(); // proposedId → { id, label, type, ppCount, using }
+    const seen = new Map();     // canonicalId → { value, using, conds:Set }
+    const proposed = new Map(); // proposedId → { id, label, type, ppCount, using, conds:Set }
     const missing = [];
 
+    // Collect the triggering conditions of the PPs that require a value, so the
+    // relevance/applicability filter can decide whether the value applies to THIS
+    // patient (a value whose PPs only fire under conditions the patient doesn't
+    // meet should not be asked).
+    const addConds = (set, pps, condOf) => {
+        for (const serial of (pps || [])) {
+            const c = condOf(serial);
+            if (c && set.size < 6) set.add(c);
+        }
+    };
+
     for (const gId of guidelineIds) {
-        const rv = opts.cacheOnly
-            ? await getCachedRequiredValues(db, gId)
-            : await getOrGenerateRequiredValues(db, gId);
-        if (!rv) { missing.push(gId); continue; }
+        let rv, condOf = () => '';
+        if (opts.cacheOnly) {
+            const doc = await db.collection('guidelines').doc(gId).get();
+            if (!doc.exists) { missing.push(gId); continue; }
+            const g = doc.data();
+            if (!isRequiredValuesFresh(g)) { missing.push(gId); continue; }
+            rv = g.requiredValues;
+            const pps = g.practicePoints || [];
+            condOf = (serial) => (pps[serial - 1]?.condition || '').trim();
+        } else {
+            rv = await getOrGenerateRequiredValues(db, gId);
+            if (!rv) { missing.push(gId); continue; }
+        }
         for (const v of (rv.values || [])) {
-            if (!seen.has(v.id)) seen.set(v.id, { value: catalogue[v.id], using: [] });
-            seen.get(v.id).using.push({ guidelineId: gId, pps: v.usedByPPs });
+            if (!seen.has(v.id)) seen.set(v.id, { value: catalogue[v.id], using: [], conds: new Set() });
+            const e = seen.get(v.id);
+            e.using.push({ guidelineId: gId, pps: v.usedByPPs });
+            addConds(e.conds, v.usedByPPs, condOf);
         }
         for (const p of (rv.proposedNewValues || [])) {
             const id = p.proposedId || p.id;
             if (!id) continue;
-            if (!proposed.has(id)) proposed.set(id, { id, label: p.label || id, type: p.type || 'string', ppCount: 0, using: [] });
+            if (!proposed.has(id)) proposed.set(id, { id, label: p.label || id, type: p.type || 'string', ppCount: 0, using: [], conds: new Set() });
             const e = proposed.get(id);
             e.ppCount += (p.usedByPPs || []).length;
             e.using.push({ guidelineId: gId, pps: p.usedByPPs || [] });
+            addConds(e.conds, p.usedByPPs, condOf);
         }
     }
 
+    const condList = (set) => [...set].filter(c => c && !/^\(?none\)?$/i.test(c)).slice(0, 3);
+
     const canonicalValues = [...seen.entries()]
-        .map(([id, { value, using }]) => ({ id, ...(value || {}), usingGuidelines: using }))
+        .map(([id, { value, using, conds }]) => ({ id, ...(value || {}), usingGuidelines: using, conditions: condList(conds) }))
         .filter(v => v.label) // skip canonical ids we couldn't resolve
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
@@ -397,7 +422,7 @@ async function aggregateAcrossGuidelines(db, guidelineIds, opts = {}) {
         .filter(p => p.ppCount >= MIN_PROPOSED_PPS) // drop single-PP noise
         .sort((a, b) => b.ppCount - a.ppCount)
         .slice(0, MAX_PROPOSED)                     // bound volume
-        .map(p => ({ id: p.id, label: p.label, type: p.type, proposed: true, usingGuidelines: p.using }));
+        .map(p => ({ id: p.id, label: p.label, type: p.type, proposed: true, usingGuidelines: p.using, conditions: condList(p.conds) }));
 
     return {
         values: [...canonicalValues, ...proposedValues],
@@ -541,22 +566,28 @@ async function extractValuesFromNote(note, valuesList) {
 
 // ----- Relevance filter ----------------------------------------------------
 
-const RELEVANCE_SYSTEM = `You decide which candidate clinical data values are actually relevant to gather for a specific patient, given their clinical note.
+const RELEVANCE_SYSTEM = `You decide which candidate clinical data values are actually worth gathering for a specific patient, given their clinical note.
 
-The candidate values are pooled from several guidelines that were matched to this note. Because a matched guideline may only partly apply, some candidates belong to a different stage of the patient's care or to an unrelated clinical problem, and are not relevant to this particular encounter.
+The candidate values are pooled from several guidelines that were matched to this note. Because a matched guideline only partly applies, many candidates are required only in situations this patient is not in.
 
-For each candidate, judge whether a competent clinician reviewing THIS note would consider that value pertinent to the patient's current presentation and stage of care. Reason from the note: why the patient is being seen, where they are in their clinical journey (for example whether the pregnancy is ongoing or already concluded, or whether the problem is obstetric, gynaecological, or neonatal), and whether the value could plausibly bear on this patient's assessment, management, or safety.
+Each candidate may list the CONDITION(S) under which a guideline practice point requires it — the clinical situation that makes the value necessary. Use these as your primary test of applicability:
+- If the value's triggering conditions are clearly NOT met for this patient (the situation that would require it does not apply), the value is not needed — drop it.
+- If at least one triggering condition is met, or you cannot tell from the note whether it is met, keep the value.
+- A candidate with no listed condition: fall back to judging whether it is pertinent to the patient's current presentation and stage of care.
 
-A value that belongs to a stage of care the patient has already passed, or to a clinical problem this patient does not have, is not relevant — even though a matched guideline lists it.
+Reason from the note: why the patient is being seen, where they are in their clinical journey (pregnancy ongoing vs concluded; the specific problem), and which guideline situations they actually fall into. A value required only for a treatment the patient is not having, a complication they do not have, or a stage of care they are not in, should be dropped even though a matched guideline lists it.
 
-Be inclusive at the margin: if a value could reasonably matter to this patient, keep it. Only exclude values that are clearly inapplicable to this scenario. When genuinely unsure, keep it.
+Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies, keep the value. Only drop values whose triggering situation is clearly absent.
 
 Return strict JSON only.`;
 
 function buildRelevancePrompt(note, valuesList) {
     const valuesStr = valuesList.map(v => {
         const desc = v.prompt || v.description || '';
-        return `  - ${v.id}: ${v.label}${desc ? ` — ${desc.slice(0, 160)}` : ''}`;
+        const conds = Array.isArray(v.conditions) && v.conditions.length
+            ? `\n      required when: ${v.conditions.map(c => c.slice(0, 120)).join(' | ')}`
+            : '';
+        return `  - ${v.id}: ${v.label}${desc ? ` — ${desc.slice(0, 140)}` : ''}${conds}`;
     }).join('\n');
 
     return `CLINICAL NOTE:
