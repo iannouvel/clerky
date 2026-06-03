@@ -577,7 +577,9 @@ Each candidate may list the CONDITION(S) under which a guideline practice point 
 
 Reason from the note: why the patient is being seen, where they are in their clinical journey (pregnancy ongoing vs concluded; the specific problem), and which guideline situations they actually fall into. A value required only for a treatment the patient is not having, a complication they do not have, or a stage of care they are not in, should be dropped even though a matched guideline lists it.
 
-Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies, keep the value. Only drop values whose triggering situation is clearly absent.
+Also weigh WHERE the patient is in their clinical pathway right now. Some values record a step, event, measurement, or decision that only arises once care has advanced to a later point — a subsequent phase of a procedure, a later visit, or an event that follows the present one. If the note shows the patient has not yet reached the point at which such a value would be recorded (the step has not happened and is not due at this encounter), drop it: it cannot be answered yet and is not a documentation gap now. Keep values for steps that have already occurred, are happening now, or are genuinely due at this encounter.
+
+Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies or whether a step is yet due, keep the value. Only drop values whose triggering situation is clearly absent, or whose step clearly lies in the future relative to this encounter.
 
 Return strict JSON only.`;
 
