@@ -120,6 +120,8 @@ A data value is a specific, atomic piece of clinical information that must be kn
 Rules:
 - Each value is ATOMIC — one fact. "BMI" is one value; "BMI > 30" is not a value (it's a condition derived from BMI).
 - A value should be needed for either (a) determining applicability (the condition) or (b) assessing compliance (the action).
+- A value must be PATIENT-SPECIFIC — something that varies from patient to patient (their state, history, measurements, or the care they received). Do NOT propose fixed guideline reference values (target ranges, diagnostic thresholds, dosing constants — these are identical for every patient), nor documentation-system / administrative / process-tracking fields (e.g. whether an entry was made in a particular IT system, or the name of a protocol step).
+- Represent a clinical test, investigation, or intervention as a SINGLE value capturing its result, or its status if there is no result yet. Do NOT split one test or event into separate values for "offered", "arranged", "performed", the "result", and each numeric component — capture the single most informative value.
 - Use snake_case ids.
 - Output a JSON array; no prose.`;
 
