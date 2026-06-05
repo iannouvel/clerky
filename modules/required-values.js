@@ -671,16 +671,20 @@ Return strict JSON only: { "verdicts": [ { "i": <id>, "verdict": "applies" | "no
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
 async function evaluatePPApplicability(note, pps) {
-    const notApplicable = new Set();
     const BATCH = 25;
-    for (let s = 0; s < pps.length; s += BATCH) {
-        const batch = pps.slice(s, s + BATCH);
+    const batches = [];
+    for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
+    // Batches run concurrently — each returns the serials it explicitly ruled out.
+    const ruledOut = await Promise.all(batches.map(async batch => {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
+        const out = [];
         try {
             const parsed = parseJSON(await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`));
-            for (const v of (parsed?.verdicts || [])) if (typeof v.i === 'number' && v.verdict === 'not_applicable') notApplicable.add(v.i);
+            for (const v of (parsed?.verdicts || [])) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
         } catch (e) { /* fail open: whole batch stays applicable */ }
-    }
+        return out;
+    }));
+    const notApplicable = new Set(ruledOut.flat());
     const applicable = new Set();
     for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
     return applicable;
@@ -706,7 +710,8 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
         for (const s of (u.pps || [])) serialsByGuideline[u.guidelineId].add(s);
     }
     const applicableByGuideline = {};
-    for (const gid of Object.keys(serialsByGuideline)) {
+    // Evaluate guidelines concurrently (each internally batches concurrently too).
+    await Promise.all(Object.keys(serialsByGuideline).map(async gid => {
         try {
             const doc = await db.collection('guidelines').doc(gid).get();
             const allPps = doc.exists ? (doc.data().practicePoints || []) : [];
@@ -717,7 +722,7 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
         } catch (e) {
             applicableByGuideline[gid] = null; // error → treat this guideline's PPs as applicable (fail open)
         }
-    }
+    }));
     const results = values.map(v => {
         const using = v.usingGuidelines || [];
         if (!using.length) return { id: v.id, relevant: true, reason: '' }; // no linkage → keep
