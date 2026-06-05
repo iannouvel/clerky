@@ -10074,7 +10074,9 @@ async function identifyAndStructurePracticePoints(content, userId = null, guidel
         let bodies = null; // parallel per-section body text when chunking by structure
 
         if (sectionAnchors && sectionAnchors.length > 0) {
-            const chunks = packAnchorsIntoChunks(content, sectionAnchors, 8000);
+            // Smaller chunks → the extractor enumerates a dense/tabular section far
+            // more completely (a single pass over a large chunk under-enumerates).
+            const chunks = packAnchorsIntoChunks(content, sectionAnchors, 4000);
             sections = chunks.map(c => c.label);
             bodies = chunks.map(c => c.text);
             log('sections_done', `Using document structure: ${sectionAnchors.length} sections → ${chunks.length} content chunks`, { sections, count: sections.length, source: 'structure' });
@@ -10215,6 +10217,28 @@ ${body}`;
                         dataFieldsRequired: Array.isArray(p.dataFieldsRequired) ? p.dataFieldsRequired : [],
                         section: section
                     }));
+
+                // ── Completeness sweep ──
+                // A single extraction pass under-enumerates dense/tabular content
+                // (schedules, criteria tables, protocols). Re-ask for anything
+                // missed, given what was already extracted. Best-effort.
+                try {
+                    const have = validPoints.map(p => '- ' + (p.summary || p.action || '')).slice(0, 120).join('\n');
+                    const sweepResult = await routeToAI({
+                        messages: [
+                            { role: 'system', content: 'You find MISSED practice rules. Return ONLY a JSON array of objects (same schema as a practice rule). Given guideline text and the rules already extracted, return any ADDITIONAL note-testable actionable rules that are present in the text but NOT already captured — look especially at tables, schedules, gestation-specific scheduled actions, numeric thresholds, and protocol steps. Apply the same testability standard. If nothing is missing, return [].' },
+                            { role: 'user', content: `ALREADY EXTRACTED RULES:\n${have}\n\nReturn any MISSED rules from the section below as a JSON array, each object: { "condition", "action", "ruleType", "summary", "evidenceGrade", "exceptions", "dataFieldsRequired" }. If none missing, return [].\n\nGUIDELINE CONTENT:\n${body}` }
+                        ]
+                    }, userId, null, 16384, 'simple');
+                    const swept = parseJsonArrayFromResponse(sweepResult);
+                    if (Array.isArray(swept) && swept.length) {
+                        const extra = swept
+                            .filter(p => p && typeof p === 'object' && (p.condition || p.action || p.summary))
+                            .map(p => ({ condition: p.condition || '', action: p.action || '', ruleType: RULE_TYPES.includes(p.ruleType) ? p.ruleType : 'soft_recommendation', summary: p.summary || '', evidenceGrade: p.evidenceGrade || 'not stated', exceptions: p.exceptions || 'none', dataFieldsRequired: Array.isArray(p.dataFieldsRequired) ? p.dataFieldsRequired : [], section }));
+                        validPoints.push(...extra);
+                    }
+                } catch (e) { /* sweep is best-effort; never fail the section on it */ }
+
                 allPoints.push(...validPoints);
                 log('extract_section_done', `Section ${i + 1}/${sections.length} "${section}": ${validPoints.length} rules extracted`, { section, count: validPoints.length, runningTotal: allPoints.length + validPoints.length });
             } else {
@@ -10230,6 +10254,23 @@ ${body}`;
         if (allPoints.length === 0) {
             console.error('[PRACTICE-POINTS-OPT] Step 1 failed: No practice points extracted from any section');
             return null;
+        }
+
+        // ── Dedup ── smaller chunks + the completeness sweep can re-emit the same
+        // rule (within a section and across overlapping section boundaries).
+        {
+            const before = allPoints.length;
+            const seenKeys = new Set();
+            const deduped = [];
+            for (const p of allPoints) {
+                const key = ((p.condition || '') + '|' + (p.action || '')).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+                if (key && seenKeys.has(key)) continue;
+                if (key) seenKeys.add(key);
+                deduped.push(p);
+            }
+            allPoints.length = 0;
+            allPoints.push(...deduped);
+            console.log(`[PRACTICE-POINTS-OPT] Dedup: ${before} → ${allPoints.length} practice points`);
         }
 
         // ── Step 1c: Assign sequential rule IDs and map to downstream format ──
