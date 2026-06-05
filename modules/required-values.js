@@ -648,6 +648,90 @@ async function filterValuesByRelevance(note, valuesList) {
     return { results: out };
 }
 
+// ----- PP-level applicability gate -----------------------------------------
+// Instead of judging each value's relevance in isolation, judge each PRACTICE
+// POINT's applicability to the patient (from its condition/action and curated
+// `applicabilityContext`), then keep only the values that an APPLICABLE PP
+// requires. More accurate and deterministic than value-level relevance, because
+// the PP carries the actual triggering condition.
+
+const PP_APPLICABILITY_SYSTEM = `You determine whether each clinical practice point applies to a specific patient, at this point in their care, given the clinical note.
+
+Each practice point has a CONDITION (the situation it addresses), an ACTION, and sometimes APPLICABILITY CONTEXT — curated guidance clarifying when it does and does not apply, and where in the care pathway it is relevant. When APPLICABILITY CONTEXT is present, treat it as the authoritative test.
+
+For each practice point decide:
+- "applies": it concerns this patient's current conditions, presentation, or the care they are receiving or about to receive — INCLUDING the ongoing management of a condition the patient already has (its status should be documented even if the action is part of routine management).
+- "not_applicable": it concerns a DIFFERENT patient population, OR a stage of care the patient has clearly already PASSED (e.g. preconception or screening/diagnosis advice for someone already diagnosed and at term), OR a specific LATER STEP of a procedure that has not yet begun and is not due at this encounter (e.g. removing a pessary not yet inserted, or oxytocin before ripening has started).
+
+Draw the line carefully between the ongoing management of an existing condition (which APPLIES) and a discrete later step that has not yet been reached (which does not apply yet). When genuinely unsure, choose "applies".
+
+Return strict JSON only: { "verdicts": [ { "i": <id>, "verdict": "applies" | "not_applicable" } ] }`;
+
+// Returns the Set of applicable PP serials. Inclusive default: a PP is applicable
+// unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
+// drop values).
+async function evaluatePPApplicability(note, pps) {
+    const notApplicable = new Set();
+    const BATCH = 25;
+    for (let s = 0; s < pps.length; s += BATCH) {
+        const batch = pps.slice(s, s + BATCH);
+        const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
+        try {
+            const parsed = parseJSON(await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`));
+            for (const v of (parsed?.verdicts || [])) if (typeof v.i === 'number' && v.verdict === 'not_applicable') notApplicable.add(v.i);
+        } catch (e) { /* fail open: whole batch stays applicable */ }
+    }
+    const applicable = new Set();
+    for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
+    return applicable;
+}
+
+/**
+ * Keep only values that at least one APPLICABLE practice point requires. Evaluates
+ * just the PPs that actually contribute a candidate value (bounded), using each
+ * value's usingGuidelines:[{guidelineId, pps}] linkage. Fails open: a value with no
+ * PP linkage, or a guideline whose evaluation errors, is kept.
+ *
+ * @returns {Promise<{results: Array<{id, relevant:boolean, reason:string}>}>}
+ */
+async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
+    if (!note || !note.trim() || !Array.isArray(values) || values.length === 0) {
+        return { results: (values || []).map(v => ({ id: v.id, relevant: true, reason: '' })) };
+    }
+    // Which PP serials, per guideline, are referenced by a candidate value?
+    const serialsByGuideline = {};
+    for (const v of values) for (const u of (v.usingGuidelines || [])) {
+        if (!u.guidelineId) continue;
+        (serialsByGuideline[u.guidelineId] || (serialsByGuideline[u.guidelineId] = new Set()));
+        for (const s of (u.pps || [])) serialsByGuideline[u.guidelineId].add(s);
+    }
+    const applicableByGuideline = {};
+    for (const gid of Object.keys(serialsByGuideline)) {
+        try {
+            const doc = await db.collection('guidelines').doc(gid).get();
+            const allPps = doc.exists ? (doc.data().practicePoints || []) : [];
+            const wanted = [...serialsByGuideline[gid]].sort((a, b) => a - b)
+                .map(serial => ({ serial, ...(allPps[serial - 1] || {}) }))
+                .filter(p => p.name || p.condition || p.action);
+            applicableByGuideline[gid] = await evaluatePPApplicability(note, wanted);
+        } catch (e) {
+            applicableByGuideline[gid] = null; // error → treat this guideline's PPs as applicable (fail open)
+        }
+    }
+    const results = values.map(v => {
+        const using = v.usingGuidelines || [];
+        if (!using.length) return { id: v.id, relevant: true, reason: '' }; // no linkage → keep
+        let applicable = false;
+        for (const u of using) {
+            const set = applicableByGuideline[u.guidelineId];
+            if (set === null) { applicable = true; break; }       // failed open
+            if (set && (u.pps || []).some(s => set.has(s))) { applicable = true; break; }
+        }
+        return { id: v.id, relevant: applicable, reason: applicable ? '' : 'No applicable practice point requires this value for this patient' };
+    });
+    return { results };
+}
+
 // ----- Best-effort inference of values the note didn't document ------------
 
 const INFER_SYSTEM = `You complete a structured set of clinical data values for a clinical note, on behalf of a clinician who will review every answer you give.
@@ -816,6 +900,7 @@ module.exports = {
     aggregateAcrossGuidelines,
     extractValuesFromNote,
     filterValuesByRelevance,
+    filterValuesByApplicablePPs,
     inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,

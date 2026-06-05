@@ -8021,19 +8021,18 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const extracted = exData.extracted || [];
     const extractedById = new Map(extracted.map(e => [e.id, e]));
 
-    // Step 2b: relevance filter — drop candidate values that don't pertain to
-    // THIS patient's scenario (e.g. antenatal fetal-surveillance values pooled
-    // from a triage guideline onto a postnatal note). Separate LLM pass from
-    // extraction, which only judges whether a value is documented. Fails open:
-    // on any error, no filtering is applied. A value the note actually documents
-    // is never filtered out.
+    // Step 2b: PP-applicability gate — keep a candidate value only if at least one
+    // APPLICABLE practice point requires it. Applicability is judged per practice
+    // point (from its condition/action + curated applicabilityContext), which is
+    // more accurate and deterministic than judging each value in isolation. Fails
+    // open: on any error, no filtering. A value the note documents is never dropped.
     let relevantValues = userFacingValues;
     const filteredOut = []; // { label, reason } for values dropped as not applicable
     try {
-        const filtResp = await fetch(`${window.SERVER_URL}/filterRelevantValues`, {
+        const filtResp = await fetch(`${window.SERVER_URL}/filterValuesByApplicablePPs`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-            body: JSON.stringify({ note, values: userFacingValues }),
+            body: JSON.stringify({ note, guidelineIds: ids, values: userFacingValues }),
         });
         if (filtResp.ok) {
             const filtData = await filtResp.json();
@@ -8041,19 +8040,19 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
                 const verdict = new Map(filtData.results.map(r => [r.id, r]));
                 relevantValues = userFacingValues.filter(v => {
                     const r = verdict.get(v.id);
-                    if (!r || r.relevant !== false) return true; // keep unless explicitly irrelevant
+                    if (!r || r.relevant !== false) return true; // keep unless explicitly not-applicable
                     const ex = extractedById.get(v.id);
                     if (ex && ex.found) return true; // never drop a value the note documents
                     filteredOut.push({ label: v.label || v.id, reason: r.reason || '' });
                     return false;
                 });
-                console.log(`[REQUIRED-VALUES] Relevance filter dropped ${filteredOut.length}/${userFacingValues.length} value(s) as not applicable to this scenario`);
+                console.log(`[REQUIRED-VALUES] PP-applicability gate dropped ${filteredOut.length}/${userFacingValues.length} value(s) (no applicable practice point)`);
             }
         } else {
-            console.warn(`[REQUIRED-VALUES] filterRelevantValues HTTP ${filtResp.status}; showing all values`);
+            console.warn(`[REQUIRED-VALUES] filterValuesByApplicablePPs HTTP ${filtResp.status}; showing all values`);
         }
     } catch (e) {
-        console.warn('[REQUIRED-VALUES] Relevance filter failed; showing all values:', e.message);
+        console.warn('[REQUIRED-VALUES] PP-applicability gate failed; showing all values:', e.message);
     }
 
     // Step 2c: best-effort LLM fill of values the conservative extraction left

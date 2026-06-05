@@ -18551,6 +18551,23 @@ app.post('/filterRelevantValues', authenticateUser, async (req, res) => {
     }
 });
 
+app.post('/filterValuesByApplicablePPs', authenticateUser, async (req, res) => {
+    try {
+        const { note, guidelineIds, values } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(guidelineIds) || guidelineIds.length === 0) return res.status(400).json({ success: false, error: 'guidelineIds is required' });
+        if (!Array.isArray(values) || values.length === 0) return res.status(400).json({ success: false, error: 'values is required' });
+        console.log(`[PP-APPLICABILITY] note ${note.length} chars; ${values.length} values across ${guidelineIds.length} guideline(s)`);
+        const result = await requiredValuesMod.filterValuesByApplicablePPs(db, note, guidelineIds, values);
+        const dropped = (result.results || []).filter(r => r.relevant === false).length;
+        console.log(`[PP-APPLICABILITY] ${dropped}/${values.length} dropped (no applicable practice point)`);
+        return res.json({ success: true, ...result });
+    } catch (e) {
+        console.error('[PP-APPLICABILITY] error:', e.message);
+        return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/inferMissingValues', authenticateUser, async (req, res) => {
     try {
         const { note, values } = req.body || {};
