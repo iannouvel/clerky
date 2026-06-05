@@ -9987,29 +9987,36 @@ Return a single JSON object:
  * @param {number} targetSize
  * @returns {Array<{label:string, text:string}>}
  */
-function packAnchorsIntoChunks(fullContent, anchors, targetSize = 8000) {
+function packAnchorsIntoChunks(fullContent, anchors, targetSize = 4000) {
+    // Chunk the FULL content uniformly by size (accumulating whole paragraphs),
+    // using the section anchors ONLY to label each chunk. This guarantees every
+    // region of the guideline — including un-anchored appendices, schedule tables,
+    // and tail sections — is covered. (The previous anchor-RANGE packing silently
+    // dropped any content not spanned by an anchor, e.g. intrapartum/colostrum
+    // sections, which is why extraction under-covered them.)
     const sorted = [...anchors]
-        .filter(a => a && typeof a.start === 'number' && typeof a.end === 'number')
+        .filter(a => a && typeof a.start === 'number')
         .sort((a, b) => a.start - b.start);
+    const labelAt = (offset) => {
+        let title = '';
+        for (const a of sorted) { if (a.start <= offset) title = a.title || title; else break; }
+        return title || 'Section';
+    };
 
+    const paras = fullContent.split(/\n{2,}/);
     const chunks = [];
-    let cur = null;
-    for (const a of sorted) {
-        if (!cur) { cur = { start: 0, end: a.end, titles: [a.title] }; continue; }
-        if (a.end - cur.start <= targetSize) {
-            cur.end = a.end;
-            cur.titles.push(a.title);
-        } else {
-            chunks.push(cur);
-            cur = { start: a.start, end: a.end, titles: [a.title] };
+    let cur = '', curStart = 0, pos = 0;
+    for (const p of paras) {
+        if (cur && (cur.length + 2 + p.length) > targetSize) {
+            chunks.push({ label: labelAt(curStart), text: cur });
+            cur = '';
         }
+        if (!cur) curStart = pos;
+        cur += (cur ? '\n\n' : '') + p;
+        pos += p.length + 2; // approximate running offset (label lookup only)
     }
-    if (cur) chunks.push(cur);
-
-    return chunks.map(c => ({
-        label: summariseSectionTitles(c.titles),
-        text: fullContent.slice(c.start, c.end)
-    }));
+    if (cur.trim()) chunks.push({ label: labelAt(curStart), text: cur });
+    return chunks;
 }
 
 /** Builds a short human-readable label for a group of section titles. */
