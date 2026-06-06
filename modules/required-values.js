@@ -47,7 +47,7 @@ const SCHEMA_VERSION = '1.0';
 
 // ----- Gemini call wrapper (json-mode, temp 0, thinkingBudget 0) ----------
 
-async function callGemini(systemPrompt, userPrompt, userId = null, meta = null, taskComplexity = 'simple') {
+async function callGemini(systemPrompt, userPrompt, userId = null, meta = null, taskComplexity = 'simple', preferredProvider = null) {
     // Prefer the app's central AI router: honours the user's simple-task model
     // preference and falls back across providers. This avoids depending on a
     // single pinned Gemini snapshot, whose behaviour drifts by region/key — the
@@ -61,7 +61,7 @@ async function callGemini(systemPrompt, userPrompt, userId = null, meta = null, 
             // DeepSeek/others actually honour "judge each point independently" and
             // "when unsure choose applies". The flat-string form was the live root
             // cause of intrapartum points (VRIII) being wrongly excluded.
-            const r = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }], temperature: 0 }, userId, null, 4000, taskComplexity);
+            const r = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }], temperature: 0 }, userId, preferredProvider, 4000, taskComplexity);
             const content = (r && r.content) || '';
             if (meta) { meta.path = 'router'; meta.provider = r?.ai_provider || null; meta.model = r?.ai_model || null; meta.contentLen = content.length; }
             if (content) return content;
@@ -715,7 +715,12 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
             const set = new Set();
             const meta = (diag && pi === 0) ? {} : null;
             try {
-                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex');
+                // Force Gemini for this judgment: the user's configured model
+                // (DeepSeek) misjudges applicability on the live provider account
+                // (marks clearly-applicable points like VRIII-in-labour not_applicable),
+                // whereas Gemini judges it correctly. Critical correctness gate, so
+                // we pin the capable provider here rather than the user's chat model.
+                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex', 'Gemini');
                 const verdicts = parseJSON(raw)?.verdicts || [];
                 for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
                 if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), provider: meta?.provider, model: meta?.model, nVerdicts: verdicts.length, naSerials: [...set] });
