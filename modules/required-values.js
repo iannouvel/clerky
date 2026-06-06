@@ -675,36 +675,53 @@ const PP_APPLICABILITY_SYSTEM = `You determine whether each clinical practice po
 
 Each practice point has a CONDITION (the situation it addresses), an ACTION, and sometimes APPLICABILITY CONTEXT — curated guidance clarifying when it does and does not apply, and where in the care pathway it is relevant. When APPLICABILITY CONTEXT is present, treat it as the authoritative test.
 
+Judge EACH practice point INDEPENDENTLY on its own condition and context. Do NOT assume a whole group is irrelevant because most points around it are — the list deliberately mixes points for different patient populations and care stages, and a single point that matches THIS patient's actual condition still applies even when its neighbours do not.
+
 For each practice point decide:
 - "applies": it concerns this patient's current conditions, presentation, or the care they are receiving or about to receive — INCLUDING the ongoing management of a condition the patient already has (its status should be documented even if the action is part of routine management).
-- "not_applicable": it concerns a DIFFERENT patient population, OR a stage of care the patient has clearly already PASSED (e.g. preconception or screening/diagnosis advice for someone already diagnosed and at term), OR a specific LATER STEP of a procedure that has not yet begun and is not due at this encounter (e.g. removing a pessary not yet inserted, or oxytocin before ripening has started).
+- "not_applicable": it concerns a DIFFERENT patient population (e.g. pre-existing/Type 1/Type 2 diabetes advice for a patient who has gestational diabetes, or vice versa), OR a stage of care the patient has clearly already PASSED (e.g. preconception or screening/diagnosis advice for someone already diagnosed and at term), OR a specific LATER STEP of a procedure that has not yet begun and is not due at this encounter (e.g. removing a pessary not yet inserted, or oxytocin before ripening has started).
 
 Draw the line carefully between the ongoing management of an existing condition (which APPLIES) and a discrete later step that has not yet been reached (which does not apply yet). When genuinely unsure, choose "applies".
 
-Return strict JSON only: { "verdicts": [ { "i": <id>, "verdict": "applies" | "not_applicable" } ] }`;
+Return strict JSON only, with a verdict for EVERY id you were given: { "verdicts": [ { "i": <id>, "verdict": "applies" | "not_applicable" } ] }`;
 
 // Returns the Set of applicable PP serials. Inclusive default: a PP is applicable
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
 async function evaluatePPApplicability(note, pps, diag, userId = null) {
-    const BATCH = 25;
+    // Smaller batches keep each judgment focused: a large mixed batch lets the
+    // model anchor on the majority population and lazily blanket-label the whole
+    // batch (it would mark "GDM in labour" not_applicable for a labouring GDM
+    // patient just because most neighbouring points were pre-existing-diabetes
+    // advice). TWO passes are unioned toward "applies": a point is only ruled out
+    // when BOTH passes independently rule it out, so a single lazy/variable run
+    // can never silently drop a clinically-relevant point. Over-inclusion (an
+    // extra value to confirm) is harmless; under-inclusion (dropping VRIII) is not.
+    const BATCH = 8;
+    const PASSES = 2;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
-    // Batches run concurrently — each returns the serials it explicitly ruled out.
-    const ruledOut = await Promise.all(batches.map(async (batch, bi) => {
+    const ruledOut = await runConcurrent(batches, async (batch, bi) => {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
+        const userPrompt = `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`;
+        // Run PASSES independent judgments of this batch.
+        const passSets = await Promise.all(Array.from({ length: PASSES }, async (_, pi) => {
+            const set = new Set();
+            const meta = (diag && bi === 0 && pi === 0) ? {} : null;
+            try {
+                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta);
+                const verdicts = parseJSON(raw)?.verdicts || [];
+                for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
+                if (diag && bi === 0 && pi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: set.size, promptBody: body.slice(0, 1400), noteLen: (note || '').length, meta });
+            } catch (e) { if (diag && bi === 0 && pi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200), meta }); }
+            return set;
+        }));
+        // Rule out a serial only if EVERY pass agreed it is not_applicable.
         const out = [];
-        const meta = (diag && bi === 0) ? {} : null;
-        try {
-            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`, userId, meta);
-            const parsed = parseJSON(raw);
-            const verdicts = parsed?.verdicts || [];
-            for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
-            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 200), promptBody: body.slice(0, 1400), noteLen: (note || '').length, meta });
-        } catch (e) { if (diag && bi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200), meta }); }
+        for (const serial of passSets[0]) if (passSets.every(s => s.has(serial))) out.push(serial);
         return out;
-    }));
-    const notApplicable = new Set(ruledOut.flat());
+    }, 8);
+    const notApplicable = new Set(ruledOut.filter(Boolean).flat());
     const applicable = new Set();
     for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
     return applicable;
