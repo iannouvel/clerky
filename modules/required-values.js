@@ -47,7 +47,21 @@ const SCHEMA_VERSION = '1.0';
 
 // ----- Gemini call wrapper (json-mode, temp 0, thinkingBudget 0) ----------
 
-async function callGemini(systemPrompt, userPrompt) {
+async function callGemini(systemPrompt, userPrompt, userId = null) {
+    // Prefer the app's central AI router: honours the user's simple-task model
+    // preference and falls back across providers. This avoids depending on a
+    // single pinned Gemini snapshot, whose behaviour drifts by region/key — the
+    // live `gemini-2.5-flash` alias was over-excluding (every PP not_applicable)
+    // while the same alias judged correctly elsewhere. See feedback_no_hardcoded_models.
+    try {
+        const { routeToAI } = require('../server/services/ai');
+        if (typeof routeToAI === 'function') {
+            const r = await routeToAI(`${systemPrompt}\n\n${userPrompt}`, userId, null, 4000, 'simple');
+            const content = (r && r.content) || '';
+            if (content) return content;
+        }
+    } catch (_) { /* router unavailable (e.g. standalone script) — fall back to direct Gemini */ }
+
     const apiKey = process.env.GOOGLE_AI_API_KEY;
     if (!apiKey) throw new Error('GOOGLE_AI_API_KEY not set');
     const url = `${GEMINI_URL_BASE}/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
@@ -670,7 +684,7 @@ Return strict JSON only: { "verdicts": [ { "i": <id>, "verdict": "applies" | "no
 // Returns the Set of applicable PP serials. Inclusive default: a PP is applicable
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
-async function evaluatePPApplicability(note, pps, diag) {
+async function evaluatePPApplicability(note, pps, diag, userId = null) {
     const BATCH = 25;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
@@ -679,7 +693,7 @@ async function evaluatePPApplicability(note, pps, diag) {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
         const out = [];
         try {
-            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`);
+            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`, userId);
             const parsed = parseJSON(raw);
             const verdicts = parsed?.verdicts || [];
             for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
@@ -701,7 +715,7 @@ async function evaluatePPApplicability(note, pps, diag) {
  *
  * @returns {Promise<{results: Array<{id, relevant:boolean, reason:string}>}>}
  */
-async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
+async function filterValuesByApplicablePPs(db, note, guidelineIds, values, userId = null) {
     if (!note || !note.trim() || !Array.isArray(values) || values.length === 0) {
         return { results: (values || []).map(v => ({ id: v.id, relevant: true, reason: '' })) };
     }
@@ -721,7 +735,7 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
             const wanted = [...serialsByGuideline[gid]].sort((a, b) => a - b)
                 .map(serial => ({ serial, ...(allPps[serial - 1] || {}) }))
                 .filter(p => p.name || p.condition || p.action);
-            applicableByGuideline[gid] = await evaluatePPApplicability(note, wanted);
+            applicableByGuideline[gid] = await evaluatePPApplicability(note, wanted, null, userId);
         } catch (e) {
             applicableByGuideline[gid] = null; // error → treat this guideline's PPs as applicable (fail open)
         }
@@ -752,7 +766,7 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
  *   filteredOut: non-applicable CANONICAL values [{label, reason}] for the modal notice
  *   missing: guidelineIds with no fresh requiredValues cache (warm them)
  */
-async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
+async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = null) {
     const catalogue = await loadCatalogue(db);
     const gathered = new Map(); // id → { id, value, using, conds:Set, proposed }
     const filteredOut = [];
@@ -777,7 +791,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
             .map(s => ({ serial: s, ...(pps[s - 1] || {}) }))
             .filter(p => p.name || p.condition || p.action);
         const _d = [];
-        const applicable = await evaluatePPApplicability(note, ppList, _d);
+        const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
         _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, batch0: _d[0] || null });
 
         const add = (id, base, used, isProposed) => {

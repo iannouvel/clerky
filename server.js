@@ -18608,7 +18608,7 @@ app.post('/filterValuesByApplicablePPs', authenticateUser, async (req, res) => {
         if (!Array.isArray(guidelineIds) || guidelineIds.length === 0) return res.status(400).json({ success: false, error: 'guidelineIds is required' });
         if (!Array.isArray(values) || values.length === 0) return res.status(400).json({ success: false, error: 'values is required' });
         console.log(`[PP-APPLICABILITY] note ${note.length} chars; ${values.length} values across ${guidelineIds.length} guideline(s)`);
-        const result = await requiredValuesMod.filterValuesByApplicablePPs(db, note, guidelineIds, values);
+        const result = await requiredValuesMod.filterValuesByApplicablePPs(db, note, guidelineIds, values, req.user?.uid || null);
         const dropped = (result.results || []).filter(r => r.relevant === false).length;
         console.log(`[PP-APPLICABILITY] ${dropped}/${values.length} dropped (no applicable practice point)`);
         return res.json({ success: true, ...result });
@@ -18624,7 +18624,7 @@ app.post('/gatherValuesForApplicablePPs', authenticateUser, async (req, res) => 
         if (!note) return res.status(400).json({ success: false, error: 'note is required' });
         if (!Array.isArray(guidelineIds) || guidelineIds.length === 0) return res.status(400).json({ success: false, error: 'guidelineIds is required' });
         console.log(`[GATHER-APPLICABLE] note ${note.length} chars; ${guidelineIds.length} guideline(s)`);
-        const result = await requiredValuesMod.gatherValuesForApplicablePPs(db, note, guidelineIds);
+        const result = await requiredValuesMod.gatherValuesForApplicablePPs(db, note, guidelineIds, req.user?.uid || null);
         console.log(`[GATHER-APPLICABLE] ${result.values.length} values from applicable PPs; ${result.filteredOut.length} canonical excluded; ${result.missing.length} uncached`);
         res.json({ success: true, ...result });
         if (result.missing && result.missing.length) warmRequiredValuesInBackground(result.missing);
