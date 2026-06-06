@@ -719,13 +719,13 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
         // Run PASSES independent judgments of this batch.
         const passSets = await Promise.all(Array.from({ length: PASSES }, async (_, pi) => {
             const set = new Set();
-            const meta = (diag && bi === 0 && pi === 0) ? {} : null;
+            const meta = (diag && pi === 0) ? {} : null;
             try {
                 const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex');
                 const verdicts = parseJSON(raw)?.verdicts || [];
                 for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
-                if (diag && bi === 0 && pi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: set.size, promptBody: body.slice(0, 1400), noteLen: (note || '').length, meta });
-            } catch (e) { if (diag && bi === 0 && pi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200), meta }); }
+                if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), provider: meta?.provider, model: meta?.model, nVerdicts: verdicts.length, naSerials: [...set] });
+            } catch (e) { if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), error: (e.message || String(e)).slice(0, 120) }); }
             return set;
         }));
         // Rule out a serial only if EVERY pass agreed it is not_applicable.
