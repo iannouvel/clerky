@@ -694,22 +694,16 @@ Return strict JSON only, with a verdict for EVERY id you were given: { "verdicts
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
 async function evaluatePPApplicability(note, pps, diag, userId = null) {
-    // Smaller batches keep each judgment focused: a large mixed batch lets the
-    // model anchor on the majority population and lazily blanket-label the whole
-    // batch (it would mark "GDM in labour" not_applicable for a labouring GDM
-    // patient just because most neighbouring points were pre-existing-diabetes
-    // advice). TWO passes are unioned toward "applies": a point is only ruled out
-    // when BOTH passes independently rule it out, so a single lazy/variable run
-    // can never silently drop a clinically-relevant point. Over-inclusion (an
-    // extra value to confirm) is harmless; under-inclusion (dropping VRIII) is not.
-    const BATCH = 12;
-    // Single pass: with the system-role delivery fix, one pass is already stable
-    // and reliably keeps clinically-relevant points (verified offline on DeepSeek
-    // and Gemini). A second pass doubled the concurrent call volume, which
-    // rate-limited the primary provider and made routeToAI fail individual
-    // batches over to weak tier-1 providers that misjudged (dropping VRIII,
-    // keeping postnatal points). Fewer, focused calls keep every batch on the
-    // capable model.
+    // ONE practice point per call. Live diagnostics proved the failure mode:
+    // when several points are judged together, the live model (Render's provider
+    // accounts judge more "lazily" than local — same model name, different
+    // behaviour) blanket-labels the ENTIRE batch not_applicable, silently dropping
+    // the one clinically-relevant point among neighbours of a different stage/
+    // population (e.g. VRIII-in-labour buried among pre-existing-diabetes advice).
+    // Judging each point in isolation removes the batch there is to blanket-reject,
+    // so the model must actually weigh that point against the note. Costs more
+    // calls, but each is tiny and they run concurrently; correctness wins here.
+    const BATCH = 1;
     const PASSES = 1;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
@@ -732,7 +726,7 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
         const out = [];
         for (const serial of passSets[0]) if (passSets.every(s => s.has(serial))) out.push(serial);
         return out;
-    }, 5);
+    }, 10);
     const notApplicable = new Set(ruledOut.filter(Boolean).flat());
     const applicable = new Set();
     for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
