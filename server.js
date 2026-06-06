@@ -18618,6 +18618,22 @@ app.post('/filterValuesByApplicablePPs', authenticateUser, async (req, res) => {
     }
 });
 
+app.post('/gatherValuesForApplicablePPs', authenticateUser, async (req, res) => {
+    try {
+        const { note, guidelineIds } = req.body || {};
+        if (!note) return res.status(400).json({ success: false, error: 'note is required' });
+        if (!Array.isArray(guidelineIds) || guidelineIds.length === 0) return res.status(400).json({ success: false, error: 'guidelineIds is required' });
+        console.log(`[GATHER-APPLICABLE] note ${note.length} chars; ${guidelineIds.length} guideline(s)`);
+        const result = await requiredValuesMod.gatherValuesForApplicablePPs(db, note, guidelineIds);
+        console.log(`[GATHER-APPLICABLE] ${result.values.length} values from applicable PPs; ${result.filteredOut.length} canonical excluded; ${result.missing.length} uncached`);
+        res.json({ success: true, ...result });
+        if (result.missing && result.missing.length) warmRequiredValuesInBackground(result.missing);
+    } catch (e) {
+        console.error('[GATHER-APPLICABLE] error:', e.message);
+        if (!res.headersSent) return res.status(500).json({ success: false, error: e.message });
+    }
+});
+
 app.post('/inferMissingValues', authenticateUser, async (req, res) => {
     try {
         const { note, values } = req.body || {};

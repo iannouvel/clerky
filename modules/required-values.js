@@ -737,6 +737,71 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values) {
     return { results };
 }
 
+/**
+ * APPLICABILITY-FIRST value gather. For each guideline: determine which practice
+ * points apply to the note, then surface EVERY value an applicable PP requires —
+ * canonical AND proposed-new, with NO frequency gate. The applicable-PP set bounds
+ * the volume, so low-frequency-but-relevant values (e.g. intrapartum VRIII, used
+ * by only one PP) surface — which the aggregate(freq-gated) + filter path dropped.
+ *
+ * @returns {Promise<{values, filteredOut, missing, catalogueSize}>}
+ *   values: applicable values (joined with the catalogue; proposed carry their own label)
+ *   filteredOut: non-applicable CANONICAL values [{label, reason}] for the modal notice
+ *   missing: guidelineIds with no fresh requiredValues cache (warm them)
+ */
+async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
+    const catalogue = await loadCatalogue(db);
+    const gathered = new Map(); // id → { id, value, using, conds:Set, proposed }
+    const filteredOut = [];
+    const missing = [];
+
+    // Evaluate guidelines concurrently.
+    await Promise.all(guidelineIds.map(async gid => {
+        const doc = await db.collection('guidelines').doc(gid).get();
+        if (!doc.exists) { missing.push(gid); return; }
+        const g = doc.data();
+        if (!isRequiredValuesFresh(g)) { missing.push(gid); return; }
+        const rv = g.requiredValues || {};
+        const pps = g.practicePoints || [];
+        const condOf = (s) => (pps[s - 1]?.condition || '').trim();
+
+        // PPs that contribute any value → evaluate their applicability.
+        const contributing = new Set();
+        for (const v of (rv.values || [])) for (const s of (v.usedByPPs || [])) contributing.add(s);
+        for (const p of (rv.proposedNewValues || [])) for (const s of (p.usedByPPs || [])) contributing.add(s);
+        const ppList = [...contributing].sort((a, b) => a - b)
+            .map(s => ({ serial: s, ...(pps[s - 1] || {}) }))
+            .filter(p => p.name || p.condition || p.action);
+        const applicable = await evaluatePPApplicability(note, ppList);
+
+        const add = (id, base, used, isProposed) => {
+            if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
+            const e = gathered.get(id);
+            e.using.push({ guidelineId: gid, pps: used });
+            for (const s of used) if (applicable.has(s) && e.conds.size < 3) { const c = condOf(s); if (c) e.conds.add(c); }
+        };
+
+        for (const v of (rv.values || [])) {
+            const used = v.usedByPPs || [];
+            if (used.some(s => applicable.has(s))) add(v.id, catalogue[v.id], used, false);
+            else if (catalogue[v.id]?.label) filteredOut.push({ label: catalogue[v.id].label, reason: 'No applicable practice point requires this value for this patient' });
+        }
+        for (const p of (rv.proposedNewValues || [])) {
+            const id = p.proposedId || p.id; if (!id) continue;
+            const used = p.usedByPPs || [];
+            if (used.some(s => applicable.has(s))) add(id, { id, label: p.label || id, type: p.type || 'string', _proposed: true }, used, true);
+            // non-applicable proposed singletons: skip silently (avoid noise in the notice)
+        }
+    }));
+
+    const values = [...gathered.values()]
+        .map(e => ({ id: e.id, ...(e.value || {}), proposed: e.proposed, usingGuidelines: e.using, conditions: [...e.conds].slice(0, 3) }))
+        .filter(v => v.label)
+        .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
+
+    return { values, filteredOut, missing, catalogueSize: Object.keys(catalogue).length };
+}
+
 // ----- Best-effort inference of values the note didn't document ------------
 
 const INFER_SYSTEM = `You complete a structured set of clinical data values for a clinical note, on behalf of a clinician who will review every answer you give.
@@ -906,6 +971,7 @@ module.exports = {
     extractValuesFromNote,
     filterValuesByRelevance,
     filterValuesByApplicablePPs,
+    gatherValuesForApplicablePPs,
     inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,

@@ -7988,28 +7988,32 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     if (!user) throw new Error('Not authenticated');
     const idToken = await user.getIdToken();
 
-    updateUser('Loading required values for selected guidelines…', true);
-
-    // Step 1: get the union of required values across selected guidelines
-    const rvResp = await fetch(`${window.SERVER_URL}/getOrGenerateRequiredValues`, {
+    // APPLICABILITY-FIRST gather: in ONE call, determine which practice points
+    // apply to THIS note, then surface every value an applicable PP requires —
+    // canonical AND proposed-new, with NO frequency gate. The applicable-PP set
+    // bounds the volume, so low-frequency-but-relevant values (e.g. intrapartum
+    // VRIII / hourly glucose) surface — which the old aggregate(freq-gated)+filter
+    // approach dropped because such values are used by only 1–2 PPs.
+    const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
+    updateUser('Determining which guidance applies and what to gather…', true);
+    const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ guidelineIds: ids }),
+        body: JSON.stringify({ note, guidelineIds: ids }),
     });
-    if (!rvResp.ok) throw new Error(`getOrGenerateRequiredValues HTTP ${rvResp.status}`);
-    const rvData = await rvResp.json();
-    if (!rvData.success || !Array.isArray(rvData.values)) throw new Error('Bad response from getOrGenerateRequiredValues');
+    if (!gResp.ok) throw new Error(`gatherValuesForApplicablePPs HTTP ${gResp.status}`);
+    const gData = await gResp.json();
+    if (!gData.success || !Array.isArray(gData.values)) throw new Error('Bad response from gatherValuesForApplicablePPs');
 
-    const requiredValues = rvData.values;
+    const requiredValues = gData.values;
+    // { label, reason } for values whose practice points don't apply to this patient.
+    const filteredOut = Array.isArray(gData.filteredOut) ? gData.filteredOut : [];
     if (requiredValues.length === 0) return { values: [], extractedValues: {} };
 
-    // Filter to user-facing values for the modal. Derived/process-flag values
-    // (userFacing: false) are computed server-side from atomic values, not asked.
+    // Derived/process-flag values (userFacing: false) are computed, not asked.
     const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
 
-    // Step 2: extract from the clinical note (still on the full set — including
-    // derived ones — so the audit pipeline has them available downstream)
-    const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
+    // Extract documented values from the note.
     updateUser(`Extracting documented values from note…`, true);
     const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
         method: 'POST',
@@ -8021,39 +8025,9 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const extracted = exData.extracted || [];
     const extractedById = new Map(extracted.map(e => [e.id, e]));
 
-    // Step 2b: PP-applicability gate — keep a candidate value only if at least one
-    // APPLICABLE practice point requires it. Applicability is judged per practice
-    // point (from its condition/action + curated applicabilityContext), which is
-    // more accurate and deterministic than judging each value in isolation. Fails
-    // open: on any error, no filtering. A value the note documents is never dropped.
-    let relevantValues = userFacingValues;
-    const filteredOut = []; // { label, reason } for values dropped as not applicable
-    try {
-        const filtResp = await fetch(`${window.SERVER_URL}/filterValuesByApplicablePPs`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-            body: JSON.stringify({ note, guidelineIds: ids, values: userFacingValues }),
-        });
-        if (filtResp.ok) {
-            const filtData = await filtResp.json();
-            if (filtData.success && Array.isArray(filtData.results)) {
-                const verdict = new Map(filtData.results.map(r => [r.id, r]));
-                relevantValues = userFacingValues.filter(v => {
-                    const r = verdict.get(v.id);
-                    if (!r || r.relevant !== false) return true; // keep unless explicitly not-applicable
-                    const ex = extractedById.get(v.id);
-                    if (ex && ex.found) return true; // never drop a value the note documents
-                    filteredOut.push({ label: v.label || v.id, reason: r.reason || '' });
-                    return false;
-                });
-                console.log(`[REQUIRED-VALUES] PP-applicability gate dropped ${filteredOut.length}/${userFacingValues.length} value(s) (no applicable practice point)`);
-            }
-        } else {
-            console.warn(`[REQUIRED-VALUES] filterValuesByApplicablePPs HTTP ${filtResp.status}; showing all values`);
-        }
-    } catch (e) {
-        console.warn('[REQUIRED-VALUES] PP-applicability gate failed; showing all values:', e.message);
-    }
+    // Values are already scoped to applicable practice points server-side, so no
+    // separate value-level filtering step is needed.
+    const relevantValues = userFacingValues;
 
     // Step 2c: best-effort LLM fill of values the conservative extraction left
     // blank. Documentation/process flags are answerable from the note (absence ⇒
