@@ -700,7 +700,7 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
             const parsed = parseJSON(raw);
             const verdicts = parsed?.verdicts || [];
             for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
-            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 300), meta });
+            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 200), promptBody: body.slice(0, 1400), noteLen: (note || '').length, meta });
         } catch (e) { if (diag && bi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200), meta }); }
         return out;
     }));
