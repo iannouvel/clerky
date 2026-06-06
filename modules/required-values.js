@@ -703,7 +703,14 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
     // can never silently drop a clinically-relevant point. Over-inclusion (an
     // extra value to confirm) is harmless; under-inclusion (dropping VRIII) is not.
     const BATCH = 12;
-    const PASSES = 2;
+    // Single pass: with the system-role delivery fix, one pass is already stable
+    // and reliably keeps clinically-relevant points (verified offline on DeepSeek
+    // and Gemini). A second pass doubled the concurrent call volume, which
+    // rate-limited the primary provider and made routeToAI fail individual
+    // batches over to weak tier-1 providers that misjudged (dropping VRIII,
+    // keeping postnatal points). Fewer, focused calls keep every batch on the
+    // capable model.
+    const PASSES = 1;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
     const ruledOut = await runConcurrent(batches, async (batch, bi) => {
@@ -725,7 +732,7 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
         const out = [];
         for (const serial of passSets[0]) if (passSets.every(s => s.has(serial))) out.push(serial);
         return out;
-    }, 8);
+    }, 5);
     const notApplicable = new Set(ruledOut.filter(Boolean).flat());
     const applicable = new Set();
     for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
