@@ -754,6 +754,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
     const gathered = new Map(); // id → { id, value, using, conds:Set, proposed }
     const filteredOut = [];
     const missing = [];
+    const _debug = []; // per-guideline applicable counts (diagnostic)
 
     // Evaluate guidelines concurrently.
     await Promise.all(guidelineIds.map(async gid => {
@@ -773,6 +774,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
             .map(s => ({ serial: s, ...(pps[s - 1] || {}) }))
             .filter(p => p.name || p.condition || p.action);
         const applicable = await evaluatePPApplicability(note, ppList);
+        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size });
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
@@ -799,7 +801,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
         .filter(v => v.label)
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
-    return { values, filteredOut, missing, catalogueSize: Object.keys(catalogue).length };
+    return { values, filteredOut, missing, catalogueSize: Object.keys(catalogue).length, _debug: { model: GEMINI_MODEL, perGuideline: _debug } };
 }
 
 // ----- Best-effort inference of values the note didn't document ------------
@@ -972,6 +974,7 @@ module.exports = {
     filterValuesByRelevance,
     filterValuesByApplicablePPs,
     gatherValuesForApplicablePPs,
+    evaluatePPApplicability,
     inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,
