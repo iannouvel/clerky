@@ -47,7 +47,7 @@ const SCHEMA_VERSION = '1.0';
 
 // ----- Gemini call wrapper (json-mode, temp 0, thinkingBudget 0) ----------
 
-async function callGemini(systemPrompt, userPrompt, userId = null, meta = null) {
+async function callGemini(systemPrompt, userPrompt, userId = null, meta = null, taskComplexity = 'simple') {
     // Prefer the app's central AI router: honours the user's simple-task model
     // preference and falls back across providers. This avoids depending on a
     // single pinned Gemini snapshot, whose behaviour drifts by region/key — the
@@ -56,7 +56,7 @@ async function callGemini(systemPrompt, userPrompt, userId = null, meta = null) 
     try {
         const { routeToAI } = require('../server/services/ai');
         if (typeof routeToAI === 'function') {
-            const r = await routeToAI(`${systemPrompt}\n\n${userPrompt}`, userId, null, 4000, 'simple');
+            const r = await routeToAI(`${systemPrompt}\n\n${userPrompt}`, userId, null, 4000, taskComplexity);
             const content = (r && r.content) || '';
             if (meta) { meta.path = 'router'; meta.provider = r?.ai_provider || null; meta.model = r?.ai_model || null; meta.contentLen = content.length; }
             if (content) return content;
@@ -697,7 +697,7 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
     // when BOTH passes independently rule it out, so a single lazy/variable run
     // can never silently drop a clinically-relevant point. Over-inclusion (an
     // extra value to confirm) is harmless; under-inclusion (dropping VRIII) is not.
-    const BATCH = 8;
+    const BATCH = 12;
     const PASSES = 2;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
@@ -709,7 +709,7 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
             const set = new Set();
             const meta = (diag && bi === 0 && pi === 0) ? {} : null;
             try {
-                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta);
+                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex');
                 const verdicts = parseJSON(raw)?.verdicts || [];
                 for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
                 if (diag && bi === 0 && pi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: set.size, promptBody: body.slice(0, 1400), noteLen: (note || '').length, meta });
