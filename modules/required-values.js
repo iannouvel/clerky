@@ -56,7 +56,12 @@ async function callGemini(systemPrompt, userPrompt, userId = null, meta = null, 
     try {
         const { routeToAI } = require('../server/services/ai');
         if (typeof routeToAI === 'function') {
-            const r = await routeToAI(`${systemPrompt}\n\n${userPrompt}`, userId, null, 4000, taskComplexity);
+            // Pass system + user as proper roles (NOT a flat concatenated string):
+            // delivering the instructions in a real system message is what makes
+            // DeepSeek/others actually honour "judge each point independently" and
+            // "when unsure choose applies". The flat-string form was the live root
+            // cause of intrapartum points (VRIII) being wrongly excluded.
+            const r = await routeToAI({ messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }], temperature: 0 }, userId, null, 4000, taskComplexity);
             const content = (r && r.content) || '';
             if (meta) { meta.path = 'router'; meta.provider = r?.ai_provider || null; meta.model = r?.ai_model || null; meta.contentLen = content.length; }
             if (content) return content;
@@ -1016,4 +1021,5 @@ module.exports = {
     inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,
+    PP_APPLICABILITY_SYSTEM,
 };
