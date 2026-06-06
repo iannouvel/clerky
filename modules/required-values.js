@@ -47,7 +47,7 @@ const SCHEMA_VERSION = '1.0';
 
 // ----- Gemini call wrapper (json-mode, temp 0, thinkingBudget 0) ----------
 
-async function callGemini(systemPrompt, userPrompt, userId = null) {
+async function callGemini(systemPrompt, userPrompt, userId = null, meta = null) {
     // Prefer the app's central AI router: honours the user's simple-task model
     // preference and falls back across providers. This avoids depending on a
     // single pinned Gemini snapshot, whose behaviour drifts by region/key — the
@@ -58,9 +58,11 @@ async function callGemini(systemPrompt, userPrompt, userId = null) {
         if (typeof routeToAI === 'function') {
             const r = await routeToAI(`${systemPrompt}\n\n${userPrompt}`, userId, null, 4000, 'simple');
             const content = (r && r.content) || '';
+            if (meta) { meta.path = 'router'; meta.provider = r?.ai_provider || null; meta.model = r?.ai_model || null; meta.contentLen = content.length; }
             if (content) return content;
         }
-    } catch (_) { /* router unavailable (e.g. standalone script) — fall back to direct Gemini */ }
+    } catch (e) { if (meta) { meta.routerError = (e.message || String(e)).slice(0, 200); } /* fall back to direct Gemini */ }
+    if (meta && meta.path !== 'router') meta.path = 'direct';
 
     const apiKey = process.env.GOOGLE_AI_API_KEY;
     if (!apiKey) throw new Error('GOOGLE_AI_API_KEY not set');
@@ -692,13 +694,14 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
     const ruledOut = await Promise.all(batches.map(async (batch, bi) => {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
         const out = [];
+        const meta = (diag && bi === 0) ? {} : null;
         try {
-            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`, userId);
+            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`, userId, meta);
             const parsed = parseJSON(raw);
             const verdicts = parsed?.verdicts || [];
             for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
-            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 400) });
-        } catch (e) { if (diag && bi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200) }); }
+            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 300), meta });
+        } catch (e) { if (diag && bi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200), meta }); }
         return out;
     }));
     const notApplicable = new Set(ruledOut.flat());
