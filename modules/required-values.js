@@ -670,18 +670,21 @@ Return strict JSON only: { "verdicts": [ { "i": <id>, "verdict": "applies" | "no
 // Returns the Set of applicable PP serials. Inclusive default: a PP is applicable
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
-async function evaluatePPApplicability(note, pps) {
+async function evaluatePPApplicability(note, pps, diag) {
     const BATCH = 25;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
     // Batches run concurrently — each returns the serials it explicitly ruled out.
-    const ruledOut = await Promise.all(batches.map(async batch => {
+    const ruledOut = await Promise.all(batches.map(async (batch, bi) => {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
         const out = [];
         try {
-            const parsed = parseJSON(await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`));
-            for (const v of (parsed?.verdicts || [])) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
-        } catch (e) { /* fail open: whole batch stays applicable */ }
+            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`);
+            const parsed = parseJSON(raw);
+            const verdicts = parsed?.verdicts || [];
+            for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
+            if (diag && bi === 0) diag.push({ ok: true, rawLen: (raw || '').length, nVerdicts: verdicts.length, notApplicableInBatch: out.length, sampleRaw: (raw || '').slice(0, 400) });
+        } catch (e) { if (diag && bi === 0) diag.push({ ok: false, error: (e.message || String(e)).slice(0, 200) }); }
         return out;
     }));
     const notApplicable = new Set(ruledOut.flat());
@@ -773,8 +776,9 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds) {
         const ppList = [...contributing].sort((a, b) => a - b)
             .map(s => ({ serial: s, ...(pps[s - 1] || {}) }))
             .filter(p => p.name || p.condition || p.action);
-        const applicable = await evaluatePPApplicability(note, ppList);
-        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size });
+        const _d = [];
+        const applicable = await evaluatePPApplicability(note, ppList, _d);
+        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, batch0: _d[0] || null });
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
