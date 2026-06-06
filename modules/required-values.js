@@ -824,7 +824,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
             .filter(p => p.name || p.condition || p.action);
         const _d = [];
         const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
-        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, batch0: _d[0] || null });
+        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, batches: _d });
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
