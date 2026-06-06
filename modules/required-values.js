@@ -729,8 +729,12 @@ async function evaluatePPApplicability(note, pps, diag, userId = null) {
                 const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex', null, true);
                 const verdicts = parseJSON(raw)?.verdicts || [];
                 for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
-                if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), provider: meta?.provider, model: meta?.model, nVerdicts: verdicts.length, naSerials: [...set] });
-            } catch (e) { if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), error: (e.message || String(e)).slice(0, 120) }); }
+                if (diag && pi === 0) {
+                    const entry = { bi, serials: batch.map(p => p.serial), provider: meta?.provider, model: meta?.model, nVerdicts: verdicts.length, naSerials: [...set] };
+                    if (bi === 0) { entry.noteLen = (note || '').length; entry.fullPromptHead = userPrompt.slice(0, 1800); entry.rawResponse = (raw || '').slice(0, 600); }
+                    diag.push(entry);
+                }
+            } catch (e) { if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), error: (e.message || String(e)).slice(0, 160) }); }
             return set;
         }));
         // Rule out a serial only if EVERY pass agreed it is not_applicable.
