@@ -699,49 +699,26 @@ Return strict JSON only, with a verdict for EVERY id you were given: { "verdicts
 // unless the model EXPLICITLY ruled it not_applicable (so parse gaps never silently
 // drop values).
 async function evaluatePPApplicability(note, pps, diag, userId = null) {
-    // ONE practice point per call. Live diagnostics proved the failure mode:
-    // when several points are judged together, the live model (Render's provider
-    // accounts judge more "lazily" than local — same model name, different
-    // behaviour) blanket-labels the ENTIRE batch not_applicable, silently dropping
-    // the one clinically-relevant point among neighbours of a different stage/
-    // population (e.g. VRIII-in-labour buried among pre-existing-diabetes advice).
-    // Judging each point in isolation removes the batch there is to blanket-reject,
-    // so the model must actually weigh that point against the note. Costs more
-    // calls, but each is tiny and they run concurrently; correctness wins here.
-    const BATCH = 1;
-    const PASSES = 1;
+    // Judge applicability in small batches, concurrently. A batch returns the
+    // serials it explicitly ruled not_applicable; everything else stays applicable
+    // (inclusive default, so parse gaps never silently drop a value). Batches are
+    // kept modest so one mixed batch can't drown a single relevant point.
+    const BATCH = 12;
     const batches = [];
     for (let s = 0; s < pps.length; s += BATCH) batches.push(pps.slice(s, s + BATCH));
     const ruledOut = await runConcurrent(batches, async (batch, bi) => {
         const body = batch.map(p => `  [${p.serial}] ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 220)}\n      ACTION: ${(p.action || '(none)').slice(0, 160)}${p.applicabilityContext ? `\n      APPLICABILITY CONTEXT: ${p.applicabilityContext}` : ''}`).join('\n');
         const userPrompt = `CLINICAL NOTE:\n${note}\n\nPRACTICE POINTS (the [number] is the id — echo it back as "i"):\n${body}`;
-        // Run PASSES independent judgments of this batch.
-        const passSets = await Promise.all(Array.from({ length: PASSES }, async (_, pi) => {
-            const set = new Set();
-            const meta = (diag && pi === 0) ? {} : null;
-            try {
-                // Use the DIRECT gemini-2.5-flash path (reasoning OFF) for this
-                // judgment. The routed providers misjudge on live: DeepSeek marks
-                // clearly-applicable points (VRIII-in-labour) not_applicable, and
-                // the routed "Gemini" is gemini-3-flash-preview which REASONS and
-                // over-excludes. Plain gemini-2.5-flash + thinkingBudget:0 judges
-                // correctly (verified offline). forceDirect=true bypasses routeToAI.
-                const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'complex', null, true);
-                const verdicts = parseJSON(raw)?.verdicts || [];
-                for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') set.add(v.i);
-                if (diag && pi === 0) {
-                    const entry = { bi, serials: batch.map(p => p.serial), provider: meta?.provider, model: meta?.model, nVerdicts: verdicts.length, naSerials: [...set] };
-                    if (bi === 0) { entry.noteLen = (note || '').length; entry.fullPromptHead = userPrompt.slice(0, 1800); entry.rawResponse = (raw || '').slice(0, 600); }
-                    diag.push(entry);
-                }
-            } catch (e) { if (diag && pi === 0) diag.push({ bi, serials: batch.map(p => p.serial), error: (e.message || String(e)).slice(0, 160) }); }
-            return set;
-        }));
-        // Rule out a serial only if EVERY pass agreed it is not_applicable.
         const out = [];
-        for (const serial of passSets[0]) if (passSets.every(s => s.has(serial))) out.push(serial);
+        const meta = (diag && bi === 0) ? {} : null;
+        try {
+            const raw = await callGemini(PP_APPLICABILITY_SYSTEM, userPrompt, userId, meta, 'simple');
+            const verdicts = parseJSON(raw)?.verdicts || [];
+            for (const v of verdicts) if (typeof v.i === 'number' && v.verdict === 'not_applicable') out.push(v.i);
+            if (diag && bi === 0) diag.push({ model: meta?.model, provider: meta?.provider, noteLen: (note || '').length });
+        } catch (e) { if (diag && bi === 0) diag.push({ error: (e.message || String(e)).slice(0, 160) }); }
         return out;
-    }, 10);
+    }, 8);
     const notApplicable = new Set(ruledOut.filter(Boolean).flat());
     const applicable = new Set();
     for (const p of pps) if (!notApplicable.has(p.serial)) applicable.add(p.serial);
@@ -833,7 +810,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
             .filter(p => p.name || p.condition || p.action);
         const _d = [];
         const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
-        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, batches: _d });
+        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
