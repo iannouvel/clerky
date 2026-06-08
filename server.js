@@ -7979,6 +7979,13 @@ app.listen(PORT, () => {
             console.error('[API-HEALTH] Error during API health check:', apiError.message);
         }
 
+        // Refresh provider health periodically so global.PROVIDER_HEALTH doesn't
+        // go stale — providers recover or degrade long after startup, and routeToAI
+        // relies on this map to avoid routing into a dead provider. Every 10 min.
+        setInterval(() => {
+            checkAPIHealth().catch(e => console.error('[API-HEALTH] periodic refresh failed:', e.message));
+        }, 10 * 60 * 1000);
+
         // Start background scanner for incomplete guidelines
         startBackgroundScanner();
 

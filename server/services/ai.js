@@ -554,6 +554,15 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
                 })
                 .map(p => p.name);
             tryProviders = [provider, ...otherProviders];
+
+            // If the resolved primary is itself known-DOWN, don't waste a
+            // guaranteed-failed call on it first — lead with the healthiest
+            // providers and keep the primary at the end (health can be stale).
+            const primaryHealth = global.PROVIDER_HEALTH[provider]?.status || 'UNKNOWN';
+            if ((primaryHealth === 'ERROR' || primaryHealth === 'HTTP_ERROR') && otherProviders.length) {
+                tryProviders = [...otherProviders, provider];
+                console.log(`[ROUTE-AI] Primary ${provider} is ${primaryHealth} — leading with healthier providers (${otherProviders[0]})`);
+            }
         }
 
         for (const tryProvider of tryProviders) {
