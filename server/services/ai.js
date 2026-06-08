@@ -788,7 +788,13 @@ async function analyzeGuidelineForPatientPerPoint(clinicalNote, guidelineContent
             messages: [
                 {
                     role: 'system',
-                    content: `You are a clinical advisor. Determine whether this patient is in the target population for this guideline, and extract brief patient context. Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": "...", "reason": "one sentence", "patientContext": {} }`
+                    content: `You are a clinical advisor deciding whether a clinical guideline is RELEVANT to a patient's current care — NOT whether any particular treatment is advisable for them.
+
+A guideline is relevant ("patientQualifies": true) if its subject matter concerns this patient's condition, presentation, or the care being considered for them. Crucially, a guideline about an intervention (for example induction of labour) STILL applies to a patient for whom that intervention is being considered, requested, declined, or even contraindicated — because the guideline is precisely what tells the clinician how to act in those situations, including when NOT to proceed and what to do instead. Do NOT mark a patient as outside the population just because the intervention may be inadvisable, contraindicated, premature, or not yet indicated for them.
+
+Set "patientQualifies": false ONLY when the guideline's subject is genuinely unrelated to this patient's presentation and care (for example, a thyroid-disorders guideline for a patient with no thyroid problem). When in any doubt, set it to true.
+
+Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": "...", "reason": "one sentence", "patientContext": {} }`
                 },
                 {
                     role: 'user',
