@@ -123,6 +123,8 @@ Rules:
 - A value should be needed for either (a) determining applicability (the condition) or (b) assessing compliance (the action).
 - A value must be PATIENT-SPECIFIC — something that varies from patient to patient (their state, history, measurements, or the care they received). Do NOT propose fixed guideline reference values (target ranges, diagnostic thresholds, dosing constants — these are identical for every patient), nor documentation-system / administrative / process-tracking fields (e.g. whether an entry was made in a particular IT system, or the name of a protocol step).
 - Represent a clinical test, investigation, or intervention as a SINGLE value capturing its result, or its status if there is no result yet. Do NOT split one test or event into separate values for "offered", "arranged", "performed", the "result", and each numeric component — capture the single most informative value.
+- For a practice point whose action is to counsel, discuss, explain, inform, or obtain consent, capture ONE value for whether that counselling/discussion was provided — do NOT create a separate value for each individual sub-topic mentioned within a single discussion (e.g. one "induction counselling provided" value, not one per point covered). One conversation, one value.
+- Name the value for the underlying clinical concept, not the exact wording of this practice point, so the same concept yields the same value across practice points (e.g. "bishop_score", not both "bishop_score" and "cervical_bishop_score"; "induction_method", not separate values for the method, the drug, and the device).
 - Use snake_case ids.
 - Output JSON only.`;
 
@@ -351,6 +353,56 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
 
     await docRef.update({ requiredValues: payload });
     return { ...payload, _source: 'generated' };
+}
+
+// ----- Applicability-context drafting -------------------------------------
+// Curated guidance on WHEN each practice point applies (population + care stage)
+// and when it clearly does NOT, so the applicability-judging model is accurate.
+// The fresh PP extraction does not produce this, so it must be (re)drafted after
+// any PP rebuild — otherwise the gather has only condition/action to judge from
+// and wrong-stage points (e.g. postnatal advice for a patient still pregnant) leak.
+
+const APPLICABILITY_DRAFT_SYSTEM = `You write a concise APPLICABILITY CONTEXT for a single clinical practice point, to help another model decide — for a given patient and encounter — whether the practice point applies.
+
+Make explicit what the practice point's own wording leaves implicit:
+- WHICH patients or clinical situation it concerns — be precise about the population, condition, or presentation, because a practice point written for one population or situation does not apply to a different one (distinguish closely-related-but-different situations, e.g. a condition already diagnosed vs being screened for vs previously present).
+- AT WHAT POINT IN CARE it is relevant — preconception, booking, routine antenatal review, an acute presentation, during labour/birth, or postnatal. State the care stage explicitly, and state clearly when the point does NOT apply because that stage has already passed or has not yet arrived (e.g. a postnatal action does NOT apply to a patient who has not yet given birth, including one in labour or being induced; an antenatal-counselling action does NOT apply once the patient is postnatal).
+- Any other situation in which it clearly does NOT apply.
+
+Write 1-3 short sentences in plain clinical language, framed so a reader can quickly test it against a note. Do NOT restate the action — focus only on WHEN it applies and when it does not.
+
+Return strict JSON only.`;
+
+/**
+ * Draft an applicabilityContext for every practice point of a guideline and write
+ * it back (additive — does NOT bump practicePointsRegeneratedAt, so it won't
+ * invalidate a freshly-generated requiredValues cache). Returns the count drafted.
+ * Non-throwing batches: a failed batch leaves those PPs without context (fail open).
+ */
+async function generateApplicabilityContexts(db, guidelineId, userId = null) {
+    const ref = db.collection('guidelines').doc(guidelineId);
+    const g = (await ref.get()).data();
+    if (!g) return 0;
+    const pps = (g.practicePoints || []).map(p => ({ ...p }));
+    if (!pps.length) return 0;
+
+    const BATCH = 10;
+    const batches = [];
+    for (let s = 0; s < pps.length; s += BATCH) batches.push({ start: s, items: pps.slice(s, s + BATCH) });
+
+    await runConcurrent(batches, async ({ start, items }) => {
+        const body = items.map((p, i) => `  [${i}] NAME: ${(p.name || '').slice(0, 140)}\n      CONDITION: ${(p.condition || '(none)').slice(0, 240)}\n      ACTION: ${(p.action || '(none)').slice(0, 180)}`).join('\n');
+        const userPrompt = `Guideline: ${g.title || guidelineId}\n\nDraft an applicabilityContext for each practice point. Return JSON: { "contexts": [ { "i": 0, "applicabilityContext": "..." } ] }\n\nPRACTICE POINTS:\n${body}`;
+        try {
+            const out = parseJSON(await callGemini(APPLICABILITY_DRAFT_SYSTEM, userPrompt, userId, null, 'simple'));
+            for (const c of (out?.contexts || [])) {
+                if (typeof c.i === 'number' && pps[start + c.i] && c.applicabilityContext) pps[start + c.i].applicabilityContext = String(c.applicabilityContext);
+            }
+        } catch (_) { /* leave this batch's PPs without context */ }
+    }, 6);
+
+    await ref.update({ practicePoints: pps });
+    return pps.filter(p => p.applicabilityContext).length;
 }
 
 /**
@@ -1014,5 +1066,6 @@ module.exports = {
     inferMissingValues,
     augmentNoteWithValues,
     loadCatalogue,
+    generateApplicabilityContexts,
     PP_APPLICABILITY_SYSTEM,
 };

@@ -1482,8 +1482,18 @@ async function jobGenerateDisplayName(job, guidelineData) {
 // mapping, cached on guideline.requiredValues. Non-fatal — logs and swallows
 // errors so it can never fail the surrounding regeneration job/request.
 async function regenRequiredValuesForGuideline(guidelineId, logPrefix = '[REQUIRED-VALUES]') {
+    const requiredValuesMod = require('./modules/required-values');
+    // 1) Draft applicabilityContext onto the new PPs first — the gather's
+    //    applicability gate relies on it to exclude wrong-stage points. Fresh
+    //    extraction does not produce it, so without this step it stays empty.
     try {
-        const requiredValuesMod = require('./modules/required-values');
+        const n = await requiredValuesMod.generateApplicabilityContexts(db, guidelineId);
+        console.log(`${logPrefix} applicabilityContext drafted for ${n} practice points of ${guidelineId}`);
+    } catch (ctxErr) {
+        console.error(`${logPrefix} applicabilityContext draft failed for ${guidelineId}: ${ctxErr.message}`);
+    }
+    // 2) Then regenerate required-values from the (now context-annotated) PPs.
+    try {
         const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true });
         console.log(`${logPrefix} requiredValues regenerated for ${guidelineId}: ${rv.values?.length || 0} canonical, ${rv.proposedNewValues?.length || 0} proposed-new`);
         return rv;
@@ -10178,7 +10188,8 @@ EXTRACTION RULES — be granular, but STRICTLY FAITHFUL to the source:
 - Different pathogens or conditions = separate rules (e.g., HIV counselling ≠ Hepatitis B counselling ≠ Hepatitis C counselling — each gets its OWN rule)
 - Different viral load thresholds or treatment statuses = separate rules (e.g., 'HIV on treatment with undetectable viral load' ≠ 'HIV not on treatment')
 - Hard threshold vs soft preference = separate rules (e.g., 'do not before 15 weeks' vs 'prefer from 16 weeks')
-- Each counselling topic = separate rule (e.g., miscarriage risk, mosaicism risk, culture failure risk, preterm labour risk = 4 separate rules)
+- Each DISTINCT clinical counselling topic = separate rule (e.g., miscarriage risk, mosaicism risk, culture failure risk, preterm labour risk = 4 separate rules)
+- BUT a single CONSENT or information-giving conversation is ONE rule, even when the guideline lists the several things to cover within it. Capture it as one rule whose action names the key points to cover (e.g. "discuss the reasons for, process of, risks and benefits of, and alternatives to induction"); do NOT split that one conversation into a separate rule for each procedural sub-point it should mention (when/where/how it happens, that timing may change, that questions are welcome, that time is given to decide, pain-relief options, length of stay, etc.). The distinction: separate, standalone clinical risks/topics each warrant their own rule; the sub-components of one consent/information-giving discussion do not.
 - Each procedural step = separate rule
 - Each distinct indication for a test or procedure = separate rule (e.g., 'high-risk screening result', 'structural anomaly', 'inherited genetic risk' = 3 separate rules)
 - Each post-procedure advice item = separate rule (e.g., 'seek care if pain', 'seek care if bleeding', 'seek care if fluid loss' may be one rule if listed together, but distinct aftercare actions = separate rules)
