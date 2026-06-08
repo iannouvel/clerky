@@ -622,7 +622,16 @@ document.addEventListener('DOMContentLoaded', async function () {
             tableBody.innerHTML = '<tr><td colspan="7" class="logs-empty">Loading logs...</td></tr>';
 
             try {
-                const user = auth.currentUser;
+                // Auth may not have finished restoring the session yet on a fresh
+                // page load — wait briefly for it to resolve rather than wrongly
+                // showing "Please log in" to an already-signed-in user.
+                let user = auth.currentUser;
+                if (!user) {
+                    user = await new Promise(resolve => {
+                        const unsub = onAuthStateChanged(auth, u => { if (u) { unsub(); resolve(u); } });
+                        setTimeout(() => { unsub(); resolve(auth.currentUser); }, 4000);
+                    });
+                }
                 if (!user) {
                     tableBody.innerHTML = '<tr><td colspan="7" class="logs-empty">Please log in to view logs</td></tr>';
                     return;
