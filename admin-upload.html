@@ -338,7 +338,7 @@
                 if (response.ok && result.success) {
                     // Upload successful, now poll for processing status
                     statusMessage.className = 'status-message info';
-                    statusMessage.textContent = `✅ PDF uploaded successfully!\n\nGuideline ID: ${result.guidelineId}\nFilename: ${result.filename}\n\nProcessing in background...\n⏳ Extracting content...\n⏳ Generating condensed version...\n⏳ Creating summary...\n⏳ Extracting terms...\n⏳ Extracting auditable elements...`;
+                    statusMessage.textContent = `✅ PDF uploaded successfully!\n\nGuideline ID: ${result.guidelineId}\nFilename: ${result.filename}\n\nProcessing in background...\n⏳ Extracting content...\n⏳ Generating condensed version...\n⏳ Creating summary...\n⏳ Extracting terms...\n⏳ Extracting practice points...`;
 
                     // Poll for status
                     pollProcessingStatus(result.guidelineId, idToken, statusMessage, progressFill, uploadBtn);
@@ -398,7 +398,7 @@
                         statusText += ps.condensedGenerated ? '✅ Condensed version generated\n' : '⏳ Generating condensed version...\n';
                         statusText += ps.summaryGenerated ? '✅ Summary created\n' : '⏳ Creating summary...\n';
                         statusText += ps.termsExtracted ? '✅ Terms extracted\n' : '⏳ Extracting terms...\n';
-                        statusText += ps.auditableExtracted ? '✅ Auditable elements extracted\n' : '⏳ Extracting auditable elements...\n';
+                        statusText += ps.auditableExtracted ? '✅ Practice points extracted\n' : '⏳ Extracting practice points...\n';
                         
                         // Show errors if any
                         if (status.processingErrors && Object.keys(status.processingErrors).length > 0) {

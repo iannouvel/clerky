@@ -141,7 +141,7 @@ export class AuditPage {
             toggleMetadataBtn.addEventListener('click', () => this.toggleMetadataView());
         }
         
-        // Auditable elements click handler
+        // Practice points click handler
         const practicePointsSpan = document.getElementById('practicePoints');
         if (practicePointsSpan) {
             practicePointsSpan.addEventListener('click', () => this.displayPracticePoints());
@@ -309,10 +309,10 @@ export class AuditPage {
                     const practicePointsSpan = document.getElementById('practicePoints');
                     practicePointsSpan.textContent = 'Loading...';
                     practicePointsSpan.className = 'auditable-elements-loading';
-                    practicePointsSpan.title = 'Extracting auditable elements...';
-                    
+                    practicePointsSpan.title = 'Extracting practice points...';
+
                     try {
-                        console.log('No auditable elements found, extracting via AI...');
+                        console.log('No practice points found, extracting via AI...');
                         const serverUrl = window.SERVER_URL || 'https://clerky-uzni.onrender.com';
                         const response = await fetch(`${serverUrl}/updateGuidelinesWithAuditableElements`, {
                             method: 'POST',
@@ -332,7 +332,7 @@ export class AuditPage {
                             const updatedGuideline = result.results.find(r => r.guidelineId === fullGuideline.id);
                             if (updatedGuideline && updatedGuideline.count > 0) {
                                 auditableCount = updatedGuideline.count;
-                                console.log(`Successfully extracted ${auditableCount} auditable elements`);
+                                console.log(`Successfully extracted ${auditableCount} practice points`);
                                 
                                 // Update display with clickable styling
                                 practicePointsSpan.textContent = auditableCount;
@@ -346,7 +346,7 @@ export class AuditPage {
                                     this.selectedGuidelineFullData.practicePoints = updatedGuideline.practicePoints;
                                 }
                                 
-                                // Show auditable elements selection
+                                // Show practice points selection
                                 const practicePointsSelection = document.getElementById('practicePointsSelection');
                                 if (practicePointsSelection && auditableCount > 0) {
                                     practicePointsSelection.style.display = 'block';
@@ -357,7 +357,7 @@ export class AuditPage {
                                 }
                             } else {
                                 auditableCount = 0;
-                                console.log('No auditable elements extracted');
+                                console.log('No practice points extracted');
                                 
                                 // Update display for no elements
                                 practicePointsSpan.textContent = auditableCount;
@@ -366,7 +366,7 @@ export class AuditPage {
                             }
                         } else {
                             auditableCount = 0;
-                            console.error('Failed to extract auditable elements:', result.error);
+                            console.error('Failed to extract practice points:', result.error);
                             
                             // Update display for error
                             practicePointsSpan.textContent = 'Error';
@@ -375,7 +375,7 @@ export class AuditPage {
                         }
                         
                     } catch (error) {
-                        console.error('Error extracting auditable elements:', error);
+                        console.error('Error extracting practice points:', error);
                         practicePointsSpan.textContent = 'Error';
                         practicePointsSpan.className = 'auditable-elements-error';
                         practicePointsSpan.title = 'Click to view practice points (extraction failed)';
@@ -474,7 +474,7 @@ export class AuditPage {
         // Check if practice points are available
         if (!this.selectedGuidelineFullData || !this.selectedGuidelineFullData.practicePoints || 
             this.selectedGuidelineFullData.practicePoints.length === 0) {
-            this.showAuditError('No auditable elements found for this guideline. Please ensure auditable elements have been extracted first.');
+            this.showAuditError('No practice points found for this guideline. Please ensure practice points have been extracted first.');
             return;
         }
 
@@ -643,7 +643,7 @@ export class AuditPage {
                     await new Promise(resolve => setTimeout(resolve, 500));
                     
                     this.hideAuditProgress();
-                    this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} auditable elements and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
+                    this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} practice points and ${retryResult.incorrectScripts?.length || 0} incorrect scripts.`);
                     
                     // Ensure the Retrieve Previous Audits button is visible
                     const retrieveBtn = document.getElementById('retrieveAuditsBtn');
@@ -686,7 +686,7 @@ export class AuditPage {
             await new Promise(resolve => setTimeout(resolve, 500));
             
             this.hideAuditProgress();
-            this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} auditable elements and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
+            this.showAuditSuccess(`Audit completed successfully! Generated ${transcriptResult.practicePoints.length} practice points and ${incorrectResult.incorrectScripts.length} incorrect scripts.`);
             
             // Ensure the Retrieve Previous Audits button is visible after a successful audit
             const retrieveBtn = document.getElementById('retrieveAuditsBtn');
@@ -1022,7 +1022,7 @@ export class AuditPage {
         const testingHtml = `
             <div class="summary-card" style="border: 1px solid #ffc107; background: #fffbf0;">
                 <h4 style="color: #856404; margin: 0 0 10px 0;">🧪 Automated Testing</h4>
-                <p style="margin: 0 0 15px 0; color: #856404;">Test the generated transcripts against the auditable elements using AI validation.</p>
+                <p style="margin: 0 0 15px 0; color: #856404;">Test the generated transcripts against the practice points using AI validation.</p>
                 <button id="runAutomatedTestsBtn" class="audit-btn" style="background: #ffc107; color: #212529;">
                     <span id="automatedTestSpinner" class="spinner" style="display: none;"></span>
                     Run Automated Tests
@@ -1652,9 +1652,9 @@ export class AuditPage {
         if (practicePoints.length === 0) {
             resultsDiv.innerHTML = `
                 <div class="audit-error">
-                    <h3>No Auditable Elements Found</h3>
-                    <p>This guideline does not have any auditable elements extracted yet. 
-                    You can run an audit to extract auditable elements from the guideline content.</p>
+                    <h3>No Practice Points Found</h3>
+                    <p>This guideline does not have any practice points extracted yet.
+                    You can run an audit to extract practice points from the guideline content.</p>
                 </div>
             `;
             return;
@@ -1662,8 +1662,8 @@ export class AuditPage {
         
         let elementsHtml = `
             <div class="audit-success">
-                <h3>📋 Auditable Elements for "${this.selectedGuidelineFullData.title || 'Unknown Guideline'}"</h3>
-                <p><strong>Total Elements:</strong> ${practicePoints.length}</p>
+                <h3>📋 Practice Points for "${this.selectedGuidelineFullData.title || 'Unknown Guideline'}"</h3>
+                <p><strong>Total Practice Points:</strong> ${practicePoints.length}</p>
                 <p>These are the clinically relevant advice elements that can be audited for accuracy:</p>
             </div>
         `;
