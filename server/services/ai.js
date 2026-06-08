@@ -1384,6 +1384,14 @@ async function analyzePointForPatient(transcript, guidelineContent, guidelineTit
         ? `\n=== APPLICATION GUIDANCE (calibrated from training) ===\n${point.advice}\n`
         : '';
 
+    // Curated applicability context (population + care stage) — the authoritative test of
+    // WHETHER this point applies. Without it the model infers applicability from a long PP
+    // name and leaks across populations/stages (e.g. firing a pre-existing-diabetes point for
+    // a gestational-diabetes patient). These fields are populated on every synced PP.
+    const applicabilitySection = (point.condition || point.applicabilityContext)
+        ? `\n=== WHEN THIS PRACTICE POINT APPLIES (authoritative) ===\n${point.condition ? `Condition: ${point.condition}\n` : ''}${point.applicabilityContext ? `${point.applicabilityContext}\n` : ''}`
+        : '';
+
     const systemPrompt = `You are a clinical decision support assistant. Given a clinical note, a single practice point from a clinical guideline, and any calibrated guidance on applying it, you decide whether that practice point applies to this patient right now — and if it does, you write one precise, actionable suggestion. You reason only from what the note actually documents, and you never invent patient facts to make a practice point fit.
 
 Write in British English throughout — spellings, clinical terminology, and units of measurement. The deployment context is UK practice.`;
@@ -1397,10 +1405,10 @@ ${guidelineContent.substring(0, 200000)}${guidelineContent.length > 200000 ? '\n
 === PRACTICE POINT ===
 Name: ${point.name}
 Description: ${point.description || point.name}
-${adviceSection}
+${applicabilitySection}${adviceSection}
 Decide whether this practice point applies to this patient right now, then return JSON.
 
-Two things both have to be true for it to apply. First, the patient genuinely meets the conditions the practice point is written for — check its preconditions against what the note documents, and don't reshape the patient to fit. A point written for an uncomplicated case does not apply to a complicated one; a postnatal point does not apply to an antenatal note; a point for one patient subtype does not apply to a different one; a point for one stage or acuity of care does not apply at another. Second, the action is still genuinely outstanding — not already done, arranged, or in progress, with the action or arrangement EXPLICITLY documented in the note. Do not infer that an action was performed because it is standard for the setting (e.g. do not assume blood pressure was measured because the patient attended triage, or that urinalysis was done because the patient was admitted). Documentation PPs (measurements, examinations, counselling, risk assessment) require explicit textual evidence of the specific element being documented. For action PPs (arranging an investigation, escalating, prescribing), the action or its arrangement must be named in the note. If the note is silent on a required element, the action is outstanding and the practice point applies.
+Two things both have to be true for it to apply. First, the patient genuinely meets the conditions the practice point is written for — check its preconditions against what the note documents, and don't reshape the patient to fit. When a "WHEN THIS PRACTICE POINT APPLIES" section is provided above, treat it as the authoritative statement of which population and which stage of care this point is for: if the patient belongs to a different population (for example a different condition or a different subtype of the same condition) or is at a different stage of care than that section specifies, the point does NOT apply — even if the action itself looks relevant. A point written for an uncomplicated case does not apply to a complicated one; a postnatal point does not apply to an antenatal note; a point for one patient subtype does not apply to a different one; a point for one stage or acuity of care does not apply at another. Second, the action is still genuinely outstanding — not already done, arranged, or in progress, with the action or arrangement EXPLICITLY documented in the note. Do not infer that an action was performed because it is standard for the setting (e.g. do not assume blood pressure was measured because the patient attended triage, or that urinalysis was done because the patient was admitted). Documentation PPs (measurements, examinations, counselling, risk assessment) require explicit textual evidence of the specific element being documented. For action PPs (arranging an investigation, escalating, prescribing), the action or its arrangement must be named in the note. If the note is silent on a required element, the action is outstanding and the practice point applies.
 
 "Outstanding" means missing, not unmade. If the note documents that the clinician has considered the action and explicitly recorded a reason for not doing it — a contraindication, a competing patient priority, a clinical decision against it — the practice point does not apply. A documented why-not is different from the action simply not appearing in the note: surfacing it again would override the clinician's reasoning rather than fill a gap. Read the note for these explicit rule-outs as carefully as you read it for performed actions.
 
