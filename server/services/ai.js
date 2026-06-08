@@ -1498,10 +1498,12 @@ If it does not apply:
     let verbatimQuote = applies ? (storedQuote || parsed.verbatimQuote || null) : null;
     let evidence = applies ? (parsed.evidence || null) : null;
     if (applies) {
-        const guidelineSource = (guidelineContent || '').substring(0, 16000);
+        // Verify against the FULL guideline content. The model is shown up to 200k chars
+        // when it picks a quote, so capping verification at a small window wrongly rejects
+        // every quote drawn from later in the document and silently drops the suggestion.
+        // quoteAppearsInSource is a normalised substring search — no token cost to widen.
+        const guidelineSource = guidelineContent || '';
         // storedQuote was already validated against the FULL guidelineContent above.
-        // Re-validating it against a 16000-char window would incorrectly reject quotes
-        // that sit past that window, then re-extract a wrong-context quote from the early part.
         const vqOk = !!verbatimQuote && (
             (!!storedQuote && verbatimQuote === storedQuote)
             || quoteAppearsInSource(verbatimQuote, guidelineSource)
