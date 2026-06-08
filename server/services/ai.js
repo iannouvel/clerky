@@ -823,11 +823,24 @@ Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": ".
     }
 
     // Step 2: One call per practice point, all in parallel.
-    const pointResults = await Promise.all(
+    // Use allSettled, NOT all: a single failed point evaluation (e.g. a transient provider
+    // 403/timeout after fallback is exhausted) must not reject the whole batch and zero out
+    // every suggestion for the guideline. Failed points are treated as not-applicable.
+    const settled = await Promise.allSettled(
         allPoints.map(point => analyzePointForPatient(
             clinicalNote, guidelineContent, guidelineTitle, point, guidelineId, userId, model
         ))
     );
+    const pointResults = settled.map((s, i) => s.status === 'fulfilled' ? s.value : {
+        pointId: allPoints[i]?.id,
+        pointName: allPoints[i]?.name,
+        applies: false,
+        reason: 'evaluation error: ' + ((s.reason && s.reason.message) || String(s.reason)).slice(0, 140)
+    });
+    const failedCount = settled.filter(s => s.status === 'rejected').length;
+    if (failedCount) {
+        console.warn(`[PER-POINT] ${guidelineId}: ${failedCount}/${allPoints.length} point evaluations failed (provider error) — continuing with the ${allPoints.length - failedCount} that succeeded`);
+    }
 
     // Diagnostic: log every point's verdict and reason
     for (const r of pointResults) {
