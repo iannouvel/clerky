@@ -935,6 +935,12 @@ document.addEventListener('DOMContentLoaded', async function () {
                 copyAllBtn.addEventListener('click', copyAllLogs);
             }
 
+            // Copy Summary button (compact, metadata-only — safe to paste)
+            const copySummaryBtn = document.getElementById('copySummaryLogsBtn');
+            if (copySummaryBtn) {
+                copySummaryBtn.addEventListener('click', copySummaryLogs);
+            }
+
             // Copy Selected button
             const copySelectedBtn = document.getElementById('copySelectedLogsBtn');
             if (copySelectedBtn) {
@@ -1094,6 +1100,45 @@ ${responseText}
                     const originalText = copyBtn.textContent;
                     copyBtn.textContent = '✅ Copied!';
                     setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
+                }
+            } catch (err) {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard. Please try again.');
+            }
+        }
+
+        // Compact one-line-per-call summary: metadata + a short response preview, with
+        // the full prompt/response bodies stripped. This is what keeps "Copy All" from
+        // ballooning to megabytes — the prompt bodies (guideline + note) are 99% of the size.
+        function formatLogsSummary(logs) {
+            const header = `FLOW SUMMARY — ${logs.length} calls (oldest first)\n` +
+                `# | time | endpoint | provider/model | tokens in/out | latency | status | response preview\n` +
+                '-'.repeat(100);
+            const lines = logs.map((log, idx) => {
+                const time = log.timestamp ? new Date(log.timestamp).toLocaleTimeString() : '??:??:??';
+                const tokens = `${log.promptTokens || 0}/${log.completionTokens || 0}`;
+                const latency = log.latencyMs ? `${log.latencyMs}ms` : 'N/A';
+                const status = log.success ? 'OK' : 'ERR';
+                const preview = String(log.fullResponse || log.errorMessage || '')
+                    .replace(/```json\n?|\n?```/g, '').replace(/\s+/g, ' ').trim().slice(0, 140);
+                return `${idx + 1} | ${time} | ${log.endpoint || '?'} | ${log.provider || '?'}/${log.model || '?'} | ${tokens} | ${latency} | ${status} | ${preview}`;
+            });
+            return [header, ...lines].join('\n');
+        }
+
+        // Copy a compact metadata-only summary of all loaded logs
+        async function copySummaryLogs() {
+            if (!recentLogs || recentLogs.length === 0) {
+                alert('No logs to copy. Click Refresh to load logs first.');
+                return;
+            }
+            try {
+                await navigator.clipboard.writeText(formatLogsSummary(recentLogs));
+                const btn = document.getElementById('copySummaryLogsBtn');
+                if (btn) {
+                    const original = btn.textContent;
+                    btn.textContent = '✅ Copied!';
+                    setTimeout(() => { btn.textContent = original; }, 2000);
                 }
             } catch (err) {
                 console.error('Failed to copy:', err);
