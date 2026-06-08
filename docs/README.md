@@ -12,6 +12,7 @@ Contains high-level product documentation and requirements
 ### 🏗️ Technical Architecture  
 Contains system architecture and technical design documents
 - **System Architecture.md** - Detailed technical architecture specification
+- **Practice Points and Note Checking.md** - Plain-language explanation of how guidelines become practice points + values, and how clinical notes are checked against them (with a developer code map)
 
 ### 💻 Development Notes
 Contains development-related documentation and notes
