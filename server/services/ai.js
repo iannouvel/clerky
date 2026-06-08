@@ -848,10 +848,17 @@ Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": ".
         console.log(`[PER-POINT] ${guidelineId} | ${verdict} | "${(r.pointName || '').substring(0, 80)}" | reason: ${(r.reason || 'none').substring(0, 150)}`);
     }
 
+    // Deterministic safety net: the model sometimes returns applies:true with a suggestion
+    // that actually says the action is already done / no action is needed (instead of the
+    // intended applies:false). Such "non-suggestions" must never reach the user. This catches
+    // the message regardless of which model is judging.
+    const NO_ACTION_RE = /\b(no (further )?action (is )?(required|needed|necessary)|already (been )?(documented|done|performed|measured|taken|completed|arranged)|no change (is )?(required|needed)|this (has been|is already) (done|documented|completed))\b/i;
+    const isNonSuggestion = (text) => NO_ACTION_RE.test(String(text || ''));
+
     // Step 3: Collect applicable points as suggestions in the standard shape.
     // originalText comes directly from the per-point LLM call (no separate batch call needed).
     const suggestions = pointResults
-        .filter(r => r.applies && r.suggestion)
+        .filter(r => r.applies && r.suggestion && !isNonSuggestion(r.suggestion))
         .map(r => {
             const s = {
                 suggestion: r.suggestion,
