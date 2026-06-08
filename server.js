@@ -122,6 +122,11 @@ console.error = function(...args) { captureLog('error', args); originalError.app
 // or breaks request handling. Read with scripts/fetch-flow-logs.js.
 const FLOW_TAG_RE = /^\[[A-Z][A-Z0-9_-]*\]/;
 const FLOW_INSTANCE = `${process.pid}`;
+// Retention for serverLogs. A Firestore TTL policy on the `expireAt` field deletes
+// each doc ~24h after this time passes (see scripts/setup-serverlogs-ttl.js, which
+// registers the policy). TTL deletes when the field is in the PAST, so the field must
+// be the expiry instant (created + retention), not the creation time.
+const FLOW_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 let flowQueue = [];
 let flowFlushing = false;
 function queueFlowLog(level, msg) {
@@ -136,7 +141,11 @@ async function flushFlowLogs() {
   try {
     const wb = db.batch();
     const col = db.collection('serverLogs');
-    for (const e of batch) wb.set(col.doc(), { ...e, createdAt: admin.firestore.FieldValue.serverTimestamp() });
+    for (const e of batch) wb.set(col.doc(), {
+      ...e,
+      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      expireAt: admin.firestore.Timestamp.fromMillis(Date.parse(e.ts) + FLOW_TTL_MS)
+    });
     await wb.commit();
   } catch (e) {
     // Never let logging break the server — drop this batch on error.
