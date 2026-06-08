@@ -179,6 +179,10 @@ export const ClinicalConditionsService = {
                     condition.hasTranscript = true;
                     condition.lastModified = new Date().toISOString();
                 }
+                // Persist to IndexedDB as well. The load path reads the IndexedDB
+                // cache BEFORE the server, so without this the saved edit reverts
+                // to the stale cached transcript on the next page reload.
+                this._saveToCache(clinicalConditionsCache);
             }
 
             return data;
