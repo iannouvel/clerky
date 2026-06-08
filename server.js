@@ -380,7 +380,12 @@ const originalConsoleLog = console.log;
 const originalConsoleError = console.error;
 
 // Override console.log
+// NOTE: console.log is reassigned several times above (winston, then this file-stream
+// wrapper). This is the FINAL assignment and the one that runs at request time, so the
+// in-memory logBuffer + Firestore flow-marker capture MUST be invoked here — the earlier
+// captureLog wrapper (~line 111) is overwritten by these later assignments and never runs.
 console.log = (...args) => {
+    captureLog('info', args);
     const message = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg).join(' ');
     const timestamp = new Date().toISOString();
     serverLogStream.write(`[${timestamp}] [LOG] ${message}\n`);
@@ -443,6 +448,7 @@ app.get('/getAgentKnowledge', authenticateUser, async (req, res) => {
 
 // Override console.error
 console.error = (...args) => {
+    captureLog('error', args);
     // Enhanced error logging that preserves error objects
     const timestamp = new Date().toISOString();
 
@@ -459,6 +465,14 @@ console.error = (...args) => {
     // Pass original arguments to preserve error objects in Winston
     logger.error(...args);
     originalConsoleError.apply(console, args); // Also log to the original console
+};
+
+// Override console.warn so warnings also reach the in-memory buffer + Firestore flow
+// capture (line 307 had reassigned it to winston-only, bypassing captureLog).
+const winstonConsoleWarn = console.warn;
+console.warn = (...args) => {
+    captureLog('warn', args);
+    winstonConsoleWarn.apply(console, args);
 };
 
 const PORT = process.env.PORT || 3000;
