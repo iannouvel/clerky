@@ -743,7 +743,9 @@ For each practice point decide:
 - "applies": it concerns this patient's current conditions, presentation, or the care they are receiving or about to receive — INCLUDING the ongoing management of a condition the patient already has (its status should be documented even if the action is part of routine management).
 - "not_applicable": it concerns a DIFFERENT patient population (e.g. pre-existing/Type 1/Type 2 diabetes advice for a patient who has gestational diabetes, or vice versa), OR a stage of care the patient has clearly already PASSED (e.g. preconception or screening/diagnosis advice for someone already diagnosed and at term), OR a specific LATER STEP of a procedure that has not yet begun and is not due at this encounter (e.g. removing a pessary not yet inserted, or oxytocin before ripening has started).
 
-Draw the line carefully between the ongoing management of an existing condition (which APPLIES) and a discrete later step that has not yet been reached (which does not apply yet). When genuinely unsure, choose "applies".
+A patient's CURRENT TREATMENT does not reclassify their underlying condition: starting or being on a medication (insulin, metformin, etc.) does not move a patient from one population to another. A point scoped to a population applies ONLY to that population even when the two share a treatment — e.g. a point for "pre-existing diabetes using insulin" does NOT apply to a patient with gestational diabetes who has just been started on insulin, because she still has gestational, not pre-existing, diabetes. Match the population the point names against the patient's actual diagnosis, not against treatments they happen to share.
+
+Draw the line carefully between the ongoing management of an existing condition (which APPLIES) and a discrete later step that has not yet been reached (which does not apply yet). When genuinely unsure whether a step is yet due, choose "applies" — but do NOT choose "applies" for a point written for a different population than the patient's.
 
 Return strict JSON only, with a verdict for EVERY id you were given: { "verdicts": [ { "i": <id>, "verdict": "applies" | "not_applicable" } ] }`;
 
