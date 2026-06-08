@@ -19081,16 +19081,35 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
         const filledSuggestions = await fillMissingPracticePointNumbers(formattedSuggestions);
         console.log(`[SEMANTIC-SUGGESTIONS] After LLM fill: ${filledSuggestions.map((s, i) => `${i + 1}: ppNum=${s.practicePointNumber}`).join('; ')}`);
 
+        // Dedupe near-identical suggestions. A single guideline can carry several near-duplicate
+        // practice points (e.g. the diabetes guideline has the same "HbA1c at 28 weeks" or
+        // "colostrum expression at 36 weeks" recommendation as 3-5 separate PPs for different
+        // populations/phrasings); evaluated independently they each emit a suggestion, so the user
+        // sees the same recommendation repeated. dedupeSuggestions is conservative (keeps both when
+        // the underlying clinical act differs, and fails open) so it won't drop genuine gaps.
+        let dedupedSuggestions = filledSuggestions;
+        if (filledSuggestions.length > 1) {
+            try {
+                const dd = await dedupeSuggestions(filledSuggestions, transcript, userId);
+                dedupedSuggestions = dd.dedupedSuggestions;
+                if (dd.duplicatesRemoved.length) {
+                    console.log(`[SEMANTIC-SUGGESTIONS] Dedupe removed ${dd.duplicatesRemoved.length} near-duplicate suggestion(s) (${filledSuggestions.length} -> ${dedupedSuggestions.length})`);
+                }
+            } catch (e) {
+                console.warn('[SEMANTIC-SUGGESTIONS] Dedupe failed, keeping all:', e?.message);
+            }
+        }
+
         // Sense-check: skip when the caller is running parallel analysis and will batch
         // sense-check all guidelines together in one call via /batchSenseCheck.
         let suggestions, filteredOutSuggestions;
         if (skipSenseCheck) {
-            suggestions = filledSuggestions;
+            suggestions = dedupedSuggestions;
             filteredOutSuggestions = [];
             console.log(`[SEMANTIC-SUGGESTIONS] Sense-check skipped (batch mode) — ${suggestions.length} suggestions returned raw`);
         } else {
             const senseCheckResult = await senseCheckSuggestions(
-                filledSuggestions,
+                dedupedSuggestions,
                 transcript,
                 analysisResult.patientContext || {},
                 userId
