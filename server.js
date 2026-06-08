@@ -1477,6 +1477,22 @@ async function jobGenerateDisplayName(job, guidelineData) {
     return { displayName: displayName };
 }
 
+// Regenerate a guideline's required-values from its CURRENT practice points so
+// the two stay in sync after any PP rebuild. Per-PP LLM extraction + canonical
+// mapping, cached on guideline.requiredValues. Non-fatal — logs and swallows
+// errors so it can never fail the surrounding regeneration job/request.
+async function regenRequiredValuesForGuideline(guidelineId, logPrefix = '[REQUIRED-VALUES]') {
+    try {
+        const requiredValuesMod = require('./modules/required-values');
+        const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true });
+        console.log(`${logPrefix} requiredValues regenerated for ${guidelineId}: ${rv.values?.length || 0} canonical, ${rv.proposedNewValues?.length || 0} proposed-new`);
+        return rv;
+    } catch (rvErr) {
+        console.error(`${logPrefix} requiredValues regen failed for ${guidelineId}: ${rvErr.message}`);
+        return null;
+    }
+}
+
 // Regenerate practice points for a guideline (used in batch regeneration)
 async function jobRegenerateAuditable(job, guidelineData) {
     // Use full content for practice point extraction — condensed loses clinical detail
@@ -1526,6 +1542,13 @@ async function jobRegenerateAuditable(job, guidelineData) {
             processing: false,
             lastUpdated: admin.firestore.FieldValue.serverTimestamp()
         });
+
+        // Keep required-values in sync with the freshly regenerated practice
+        // points. requiredValues are derived from the PPs, so a PP rebuild makes
+        // the old ones stale and the "confirm values" gather would treat the
+        // guideline as a cache miss. Regenerate them as part of this job so the
+        // two never drift. Non-fatal on failure.
+        await regenRequiredValuesForGuideline(job.guidelineId, `[JOB_REGEN_AUDITABLE]${batchInfo}`);
 
         console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Completed ${job.guidelineId}: ${elements.length} elements`);
 
@@ -13457,6 +13480,8 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                         practicePointsRegeneratedBy: userId,
                         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                     });
+                    // Keep required-values in sync with the new practice points.
+                    await regenRequiredValuesForGuideline(guidelineId, `[REGEN-PRACTICE-POINTS] job ${jobId}`);
                     extractionJobs[jobId] = {
                         status: 'complete',
                         guidelineId,
@@ -13486,6 +13511,9 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                     practicePointsRegeneratedBy: userId,
                     lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                 });
+
+                // Keep required-values in sync with the new practice points.
+                await regenRequiredValuesForGuideline(guidelineId, '[REGEN-PRACTICE-POINTS]');
 
                 console.log(`[REGEN-PRACTICE-POINTS] Updated ${guidelineId} with ${auditableElements.length} practice points`);
 
