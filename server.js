@@ -105,11 +105,47 @@ function captureLog(level, args) {
   const msg = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
   logBuffer.push({ timestamp: new Date().toISOString(), level, message: msg });
   if (logBuffer.length > MAX_LOG_ENTRIES) logBuffer.shift();
+  queueFlowLog(level, msg);
 }
 
 console.log = function(...args) { captureLog('info', args); originalLog.apply(console, args); };
 console.warn = function(...args) { captureLog('warn', args); originalWarn.apply(console, args); };
 console.error = function(...args) { captureLog('error', args); originalError.apply(console, args); };
+
+// ---- Durable flow-marker persistence -------------------------------------
+// The in-memory logBuffer above is per-process and volatile — lost on every
+// Render restart/spin-down, and not shared across instances (so /logs can come
+// back empty even seconds after a request). To trace execution flow reliably we
+// also persist console lines that begin with a [TAG] marker (e.g. [PER-POINT],
+// [SEMANTIC-SUGGESTIONS], [VERBATIM-VERIFY], [ROUTE-AI]) to a Firestore
+// `serverLogs` collection, batched and fire-and-forget so logging never blocks
+// or breaks request handling. Read with scripts/fetch-flow-logs.js.
+const FLOW_TAG_RE = /^\[[A-Z][A-Z0-9_-]*\]/;
+const FLOW_INSTANCE = `${process.pid}`;
+let flowQueue = [];
+let flowFlushing = false;
+function queueFlowLog(level, msg) {
+  if (!db || !FLOW_TAG_RE.test(msg)) return;
+  flowQueue.push({ ts: new Date().toISOString(), level, instance: FLOW_INSTANCE, message: msg.slice(0, 2000) });
+  if (flowQueue.length > 5000) flowQueue.shift(); // hard cap so a Firestore outage can't grow memory unbounded
+}
+async function flushFlowLogs() {
+  if (flowFlushing || !db || flowQueue.length === 0) return;
+  flowFlushing = true;
+  const batch = flowQueue.splice(0, 400); // Firestore commit limit is 500
+  try {
+    const wb = db.batch();
+    const col = db.collection('serverLogs');
+    for (const e of batch) wb.set(col.doc(), { ...e, createdAt: admin.firestore.FieldValue.serverTimestamp() });
+    await wb.commit();
+  } catch (e) {
+    // Never let logging break the server — drop this batch on error.
+  } finally {
+    flowFlushing = false;
+  }
+}
+const flowFlushTimer = setInterval(flushFlowLogs, 4000);
+if (flowFlushTimer.unref) flowFlushTimer.unref();
 
 // Endpoint timing buffer for performance monitoring (accessible via /api/endpoint-timings)
 const endpointTimings = [];
@@ -18945,7 +18981,7 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
 
                 const llmResult = await routeToAI({
                     messages: [{ role: 'user', content: prompt }]
-                }, userId, null, 500, 'simple');
+                }, userId, null, 500, 'simple:ppMatch');
 
                 const serialNum = parseInt(llmResult.trim());
                 if (!isNaN(serialNum) && serialNum >= 1 && serialNum <= auditableElements.length) {
@@ -19060,7 +19096,7 @@ Return ONLY the serial number (e.g., "3"). If none match well, return the most l
                     .replace('{{suggestions}}', JSON.stringify(suggestionsForPlacement));
 
                 console.log('[SEMANTIC-SUGGESTIONS] Calling placement AI for', suggestions.length, 'guideline suggestions');
-                const placementResponse = await routeToAI({ messages: [{ role: 'user', content: placementPrompt }] }, userId, null, 1000, 'simple');
+                const placementResponse = await routeToAI({ messages: [{ role: 'user', content: placementPrompt }] }, userId, null, 1000, 'simple:placement');
 
                 if (placementResponse?.content) {
                     console.log('[SEMANTIC-SUGGESTIONS] Placement response received, length:', placementResponse.content.length);

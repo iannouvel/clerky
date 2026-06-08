@@ -473,13 +473,17 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
         let provider = preferredProvider || defaultProvider;
 
         // Task-specific model override (only if no explicit preferredProvider)
-        if (!preferredProvider && userId && taskComplexity) {
+        // taskComplexity may carry an operation label after a colon (e.g. 'evaluation:perPoint')
+        // purely for granular log tracing. The ROUTING tier is only the part before the colon;
+        // the full string is preserved as-is for the log endpoint label (see sendToAI:411).
+        const taskTier = taskComplexity ? String(taskComplexity).split(':')[0] : null;
+        if (!preferredProvider && userId && taskTier) {
             try {
                 const taskModels = await getUserTaskModels(userId);
                 console.log(`[ROUTE-AI] Loaded task models for userId ${userId}: ${JSON.stringify(taskModels)}`);
-                const taskModel = taskComplexity === 'complex' ? taskModels.complexTaskModel
-                    : taskComplexity === 'simple' ? taskModels.simpleTaskModel
-                    : taskComplexity === 'evaluation' ? taskModels.evaluationTaskModel
+                const taskModel = taskTier === 'complex' ? taskModels.complexTaskModel
+                    : taskTier === 'simple' ? taskModels.simpleTaskModel
+                    : taskTier === 'evaluation' ? taskModels.evaluationTaskModel
                     : null;
                 console.log(`[ROUTE-AI] Task complexity '${taskComplexity}' → selected model: ${taskModel || '(none - using default)'}`);
                 if (taskModel) provider = taskModel;
@@ -1288,7 +1292,7 @@ Return JSON only:
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
             ]
-        }, userId, model, 800, 'evaluation');
+        }, userId, model, 800, 'evaluation:backfillQuote');
         if (!result?.content) return '';
         const raw = result.content.trim().replace(/```json\n?|\n?```/g, '');
         let parsed;
@@ -1338,7 +1342,7 @@ Return JSON only:
                 { role: 'system', content: systemPrompt },
                 { role: 'user', content: userPrompt }
             ]
-        }, userId, model, 800, 'evaluation');
+        }, userId, model, 800, 'evaluation:reExtractQuote');
         if (!result?.content) return { verbatimQuote: '', evidence: '' };
         const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
         return {
@@ -1425,7 +1429,7 @@ If it does not apply:
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt }
         ]
-    }, userId, model, 2000, 'evaluation');
+    }, userId, model, 2000, 'evaluation:perPoint');
 
     if (!result?.content) return { pointId: point.id, pointName: point.name, applies: false, reason: 'No response' };
 
