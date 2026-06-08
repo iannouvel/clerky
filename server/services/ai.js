@@ -1272,7 +1272,11 @@ function quoteAppearsInSource(quote, sourceText) {
  */
 async function extractPracticePointQuote(point, guidelineContent, userId, model = null) {
     if (!guidelineContent || !point?.name) return '';
-    const source = String(guidelineContent).slice(0, 16000);
+    // Use (almost) the whole guideline, not the first 16k — recommendations often live
+    // deep in the document (e.g. GDM serial-scan schedule "Book serial scans from 28/40."
+    // sits ~char 24k). Capping at 16k made later-page quotes unrecoverable. 200k matches
+    // the window the per-point analyzer is shown.
+    const source = String(guidelineContent).slice(0, 200000);
 
     const systemPrompt = `You extract exact quotes. Given a practice point and the source guideline text, return the wording from the guideline that states this practice point's recommendation, copied character-for-character. Never paraphrase, summarise, shorten, or compose. If the exact words are not present in the guideline text, return an empty string.`;
 
@@ -1325,7 +1329,7 @@ async function reExtractQuotes(suggestionText, guidelineContent, transcript, use
 ${suggestionText}
 
 === GUIDELINE TEXT ===
-${(guidelineContent || '').substring(0, 16000)}
+${(guidelineContent || '').substring(0, 200000)}
 
 === CLINICAL NOTE ===
 ${transcript || ''}
