@@ -880,7 +880,56 @@ Return valid JSON only: { "patientQualifies": true|false, "targetPopulation": ".
 
     console.log(`[PER-POINT] ${guidelineId}: ${allPoints.length} points evaluated, ${suggestions.length} applicable`);
 
-    return { guidelineApplicability, patientContext, suggestions, alreadyCompliant: [] };
+    // Cross-PP reconciliation: each point was judged in isolation, so the set can be internally
+    // inconsistent — e.g. one point says an intervention should be deferred/contraindicated while
+    // others describe how to carry it out. A single pass over the whole set can see that conflict
+    // (the independent per-point calls cannot) and drop the premature "conduct" suggestions.
+    const reconciled = await reconcileSuggestionStages(suggestions, userId, model);
+
+    return { guidelineApplicability, patientContext, suggestions: reconciled, alreadyCompliant: [] };
+}
+
+/**
+ * Whole-set reconciliation. Given the suggestions a guideline's per-point pass produced
+ * (each judged in isolation), drop any that are PREMATURE — i.e. another suggestion in the
+ * set establishes that the intervention they belong to is not going ahead at this stage
+ * (it should not proceed, be deferred, or is contraindicated), yet they describe preparing
+ * for / carrying out / dosing / monitoring / a later step of that same intervention.
+ * Conservative + fails open (returns the input unchanged on any uncertainty or error).
+ */
+async function reconcileSuggestionStages(suggestions, userId, model = null) {
+    if (!Array.isArray(suggestions) || suggestions.length <= 2) return suggestions || [];
+    const list = suggestions.map((s, i) => `[${i}] ${s.suggestion}`).join('\n');
+    const systemPrompt = `You are reviewing the full set of clinical recommendations generated INDEPENDENTLY for one patient from one guideline. Because each was judged in isolation, the set can be internally inconsistent about the stage of care the patient is at.
+
+Find recommendations that are PREMATURE and should be suppressed. A recommendation is premature when ANOTHER recommendation in the same set establishes that the intervention it belongs to is not going ahead at this stage — that is, one recommendation says an intervention should not proceed, should be deferred, or is contraindicated, while other recommendations describe preparing for, carrying out, dosing, monitoring, or a later step of that SAME intervention. Those downstream "how to carry it out" recommendations are premature and should be dropped.
+
+Rules:
+- Only suppress a recommendation when another in the set CLEARLY negates, defers, or contraindicates its intervention. When in any doubt, keep it.
+- NEVER suppress the negating/deferring recommendation itself, nor general decision-stage or counselling recommendations.
+- If nothing is clearly premature, return an empty list.
+
+Return strict JSON only: { "suppress": [ { "id": <id to drop>, "becauseOf": <id of the negating recommendation>, "reason": "<short>" } ] }`;
+    try {
+        const result = await routeToAI({
+            messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: `RECOMMENDATIONS:\n${list}\n\nReturn the JSON.` }]
+        }, userId, model, 1000, 'simple:crossPPsuppress');
+        if (!result?.content) return suggestions;
+        const parsed = JSON.parse(result.content.trim().replace(/```json\n?|\n?```/g, ''));
+        const dropIds = new Set((parsed.suppress || []).map(d => d.id).filter(id => Number.isInteger(id) && id >= 0 && id < suggestions.length));
+        if (dropIds.size === 0) return suggestions;
+        // Guard: a pass that wants to drop more than half has misfired — keep everything.
+        if (dropIds.size > Math.floor(suggestions.length / 2)) {
+            console.warn(`[CROSS-PP-SUPPRESS] would drop ${dropIds.size}/${suggestions.length} — treating as failure, keeping all`);
+            return suggestions;
+        }
+        const dropped = (parsed.suppress || []).filter(d => dropIds.has(d.id));
+        console.log(`[CROSS-PP-SUPPRESS] dropped ${dropped.length} premature suggestion(s): ${dropped.map(d => `#${d.id}(via #${d.becauseOf})`).join(', ')}`);
+        return suggestions.filter((_, i) => !dropIds.has(i));
+    } catch (e) {
+        console.warn('[CROSS-PP-SUPPRESS] failed, keeping all:', e.message);
+        return suggestions;
+    }
 }
 
 // Helper: analyze note structure to identify existing sections and their order
