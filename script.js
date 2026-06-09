@@ -8126,6 +8126,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             document.body.appendChild(modal);
         }
         modal.style.cssText = 'position:fixed;top:60px;right:16px;bottom:16px;width:min(480px, 38vw);min-width:380px;background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);z-index:10001;display:flex;flex-direction:column;border:1px solid var(--border-color,#ddd);';
+        // Reflow the note clear of this fixed panel only while it's open (see styles.css body.rv-panel-open)
+        document.body.classList.add('rv-panel-open');
         modal.innerHTML = '';
 
         const header = document.createElement('div');
@@ -8317,10 +8319,12 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         document.getElementById('rv-continue').addEventListener('click', () => {
             const collected = collect();
             modal.remove();
+            document.body.classList.remove('rv-panel-open');
             resolve(collected);
         });
         document.getElementById('rv-skip').addEventListener('click', () => {
             modal.remove();
+            document.body.classList.remove('rv-panel-open');
             resolve(null);
         });
     });
