@@ -4391,7 +4391,9 @@ body.rv-panel-open .server-status-message {
 }
 
 /* Reset button in the analyse bar (pushes to right edge) */
-/* Reset clears the note — destructive, so it's a quiet danger-outline, NOT a green twin of Feedback. */
+/* Reset clears the note — destructive, so it's a quiet danger-outline, NOT a green twin of
+   Feedback. Scoped under .fixed-button-row to beat `.fixed-button-row button { background:green }`. */
+.fixed-button-row .summary-reset-btn,
 .summary-reset-btn {
     background: transparent;
     color: #c0392b;
@@ -4399,6 +4401,7 @@ body.rv-panel-open .server-status-message {
     box-shadow: none;
 }
 
+.fixed-button-row .summary-reset-btn:hover:not(:disabled),
 .summary-reset-btn:hover:not(:disabled) {
     background: rgba(231, 76, 60, 0.10);
     border-color: #e74c3c;
