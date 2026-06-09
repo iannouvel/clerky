@@ -4253,21 +4253,39 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 50;
-    font-size: 14px;
-    color: var(--text-primary);
-    background: var(--bg-secondary, #f5f5f5);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 14px 22px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-size: 1.2rem;
+    color: #fff;
+    background: #019874; /* matches the left nav buttons */
+    border: none;
+    border-radius: 8px;
+    padding: 16px 26px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     gap: 6px;
     max-width: 80%;
     min-width: 220px;
-    line-height: 1.5;
+    line-height: 1.4;
     text-align: center;
     pointer-events: none;
+}
+
+/* White spinner inside the green status popup */
+.server-status-message .spinner-small {
+    border-color: rgba(255, 255, 255, 0.45);
+    border-top-color: #fff;
+}
+
+/* When the Confirm-required-values side panel is open (body.rv-panel-open, toggled by
+   showRequiredValuesModal), reflow the note clear of the fixed panel so it isn't hidden
+   underneath, and shift the status popup into the visible area to the left of the panel.
+   Applies ONLY while the panel is open — the note returns to full width afterwards. */
+body.rv-panel-open .chatbot-input-section {
+    padding-right: calc(min(480px, 38vw) + 32px);
+    box-sizing: border-box;
+}
+body.rv-panel-open .server-status-message {
+    left: calc(50% - (min(480px, 38vw) + 32px) / 2);
 }
 
 /* Individual status channel row */
