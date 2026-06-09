@@ -5376,6 +5376,13 @@ textarea,
     min-height: 1.5em; /* Preserve blank-line height for empty paragraphs */
 }
 
+/* Main note editor: single-spaced lines (no inter-paragraph margin, line-height 1) so the
+   whole clinical note is visible at a glance. Id-scoped so other tiptap editors are unaffected. */
+#userInput .ProseMirror p {
+    margin: 0;
+    line-height: 1;
+}
+
 /* Lists disabled - users type numbered lists manually as plain text */
 /* Ensure no list styling is ever applied */
 .tiptap-editor .ProseMirror ol,
