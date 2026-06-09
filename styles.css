@@ -1469,7 +1469,7 @@ body {
     width: 100%;
     padding: 6px 10px;
     background-color: var(--bg-secondary, #ffffff);
-    color: var(--accent-color, #019874);
+    color: var(--text-primary, #2D3436); /* readable label; icon carries the green accent */
     border: 1px solid var(--border-color, #ddd);
     border-radius: 6px;
     cursor: pointer;
@@ -1499,6 +1499,7 @@ body {
 
 .preferences-panel-btn svg {
     flex-shrink: 0;
+    stroke: var(--accent-color, #019874); /* green accent icon alongside the neutral label */
 }
 
 .preferences-panel-btn .spinner {
@@ -3773,11 +3774,11 @@ body {
 }
 
 .floating-input-buttons .record-btn {
-    width: 32px;
+    width: auto; /* size to fit the red dot + "Rec" label instead of clamping to 32px (was overlapping undo) */
     height: 32px;
-    padding: 0;
+    padding: 0 10px;
     font-size: 0.85em;
-    min-width: auto;
+    min-width: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
