@@ -1689,12 +1689,12 @@ button.loading {
     animation: pulse 1s infinite;
 }
 
-/* Floating record button affordance: show a mic icon when idle, and the pulsing red dot
-   ONLY while recording (the always-on dot read as "recording/stop"). Scoped to #recordBtn. */
-#recordBtn .record-mic { display: inline-block; vertical-align: middle; }
-#recordBtn .record-symbol { display: none; animation: none; margin-right: 0; }
-#recordBtn.recording .record-mic { display: none; }
-#recordBtn.recording .record-symbol { display: inline-block; }
+/* Floating record button affordance: a red circle + "Rec" label (the universal record
+   convention). The dot only pulses while recording, so idle doesn't read as "recording".
+   Scoped to #recordBtn so other record-symbol uses are unchanged. */
+#recordBtn .record-symbol { display: inline-block; animation: none; margin-right: 6px; }
+#recordBtn.recording .record-symbol { animation: pulse 1s infinite; }
+#recordBtn .record-label { font-size: 0.82rem; font-weight: 600; line-height: 1; }
 
 @keyframes pulse {
     0% {
