@@ -1463,12 +1463,14 @@ body {
 }
 
 /* Preferences Panel Button */
+/* Left-nav buttons are NEUTRAL (white + green text/border) so the solid brand green is
+   reserved for primary actions (Analyse Note, Insert, Continue). They tint green on hover. */
 .preferences-panel-btn {
     width: 100%;
     padding: 6px 10px;
-    background-color: #019874;
-    color: white;
-    border: none;
+    background-color: var(--bg-secondary, #ffffff);
+    color: var(--accent-color, #019874);
+    border: 1px solid var(--border-color, #ddd);
     border-radius: 6px;
     cursor: pointer;
     font-weight: 500;
@@ -1483,14 +1485,16 @@ body {
 }
 
 .preferences-panel-btn:hover {
-    background-color: #017a5e;
+    background-color: rgba(0, 184, 148, 0.12);
+    border-color: var(--accent-color, #019874);
+    color: var(--accent-color, #019874);
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 184, 148, 0.18);
 }
 
 .preferences-panel-btn:active {
     transform: translateY(0);
-    background-color: #016a52;
+    background-color: rgba(0, 184, 148, 0.2);
 }
 
 .preferences-panel-btn svg {
