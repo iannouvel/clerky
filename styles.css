@@ -1689,6 +1689,13 @@ button.loading {
     animation: pulse 1s infinite;
 }
 
+/* Floating record button affordance: show a mic icon when idle, and the pulsing red dot
+   ONLY while recording (the always-on dot read as "recording/stop"). Scoped to #recordBtn. */
+#recordBtn .record-mic { display: inline-block; vertical-align: middle; }
+#recordBtn .record-symbol { display: none; animation: none; margin-right: 0; }
+#recordBtn.recording .record-mic { display: none; }
+#recordBtn.recording .record-symbol { display: inline-block; }
+
 @keyframes pulse {
     0% {
         box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
@@ -4384,12 +4391,20 @@ body.rv-panel-open .server-status-message {
 }
 
 /* Reset button in the analyse bar (pushes to right edge) */
+/* Reset clears the note — destructive, so it's a quiet danger-outline, NOT a green twin of Feedback. */
 .summary-reset-btn {
-    background: var(--accent-color);
+    background: transparent;
+    color: #c0392b;
+    border: 1px solid var(--border-color, #ddd);
+    box-shadow: none;
 }
 
 .summary-reset-btn:hover:not(:disabled) {
-    background: #00a085;
+    background: rgba(231, 76, 60, 0.10);
+    border-color: #e74c3c;
+    color: #e74c3c;
+    box-shadow: none;
+    transform: none;
 }
 
 /* Feedback button — sits just left of reset, both pushed to the right together */
