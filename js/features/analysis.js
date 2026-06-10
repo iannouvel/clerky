@@ -634,7 +634,7 @@ export async function runParallelAnalysis(guidelines) {
     const guidelineWord = successfulResults.length === 1 ? 'guideline' : 'guidelines';
     if (statusText) statusText.textContent = `Analysis complete — ${allSuggestions.length} ${findingWord} identified. Please review below.`;
     const completionMsg = `Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}. Please review below.`;
-    updateUser(completionMsg, false);
+    updateUser(completionMsg, false, false, 'main', true); // persist: this is the payoff moment
 
     // Remove the selection interface now that we have results
     const selectionInterface = document.querySelector('.guideline-selection-interface');

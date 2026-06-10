@@ -3109,9 +3109,9 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
         // (parallel analysis has its own progress UI)
         if (!window.parallelAnalysisActive) {
             if (suggestionCount > 0) {
-                updateUser(`Found ${suggestionCount} relevant practice points`, false);
+                updateUser(`Found ${suggestionCount} relevant practice points`, false, false, 'main', true);
             } else {
-                updateUser(`No additional suggestions - care is compliant`, false);
+                updateUser(`No additional suggestions - care is compliant`, false, false, 'main', true);
             }
         }
 
