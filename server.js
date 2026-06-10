@@ -3966,6 +3966,7 @@ TWO CATEGORIES of valid exclusion:
    - Patient has had a normal vaginal delivery → antenatal guidelines about mode of delivery do not apply.
    - Patient is postpartum → intrapartum guidelines do not apply unless documenting a complication of delivery.
    - Patient has no history of caesarean → "birth after caesarean" guidelines do not apply.
+   - The condition a screening or diagnostic-pathway guideline exists to detect is already diagnosed → that screening/diagnostic guideline does not apply (e.g. a gestational-diabetes screening flowchart once GDM is already diagnosed and being managed; the diabetes management guideline applies instead).
    Read the summary carefully: if the summary states the guideline is specifically for a population this patient does not belong to, exclude it.
 
 KEEP guidelines that:
