@@ -34,8 +34,10 @@ function syncContainerVisibility(containerEl) {
  * @param {boolean} isLoading - Whether to show a loading spinner
  * @param {boolean} forceClear - Clear even during ongoing workflows (default: false)
  * @param {string} channel - 'main' (default) or 'background' — selects which status row to update
+ * @param {boolean} persist - Keep the message until the user dismisses it or the next
+ *   status update replaces it (no 5s auto-fade). Use for completion/summary messages.
  */
-export function updateUser(message, isLoading = false, forceClear = false, channel = 'main') {
+export function updateUser(message, isLoading = false, forceClear = false, channel = 'main', persist = false) {
     const containerEl = document.getElementById('serverStatusMessage');
     if (!containerEl) {
         console.warn('[STATUS] serverStatusMessage element not found');
@@ -49,6 +51,19 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
         if (isLoading) {
             logStatusChange('SHOWING (loading)', message, isLoading, channel);
             channelEl.innerHTML = `<span class="spinner-small"></span><span style="margin-left: 6px;">${message}</span>`;
+        } else if (persist) {
+            logStatusChange('SHOWING (persistent)', message, isLoading, channel);
+            const safe = String(message).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+            channelEl.innerHTML = `<span style="margin-right:8px;">${safe}</span>` +
+                `<button type="button" class="status-dismiss" aria-label="Dismiss" title="Dismiss" ` +
+                `style="background:none;border:none;color:inherit;cursor:pointer;font-size:1.15em;line-height:1;padding:0 4px;opacity:0.65;">×</button>`;
+            const dismissBtn = channelEl.querySelector('.status-dismiss');
+            if (dismissBtn) dismissBtn.addEventListener('click', () => {
+                logStatusChange('DISMISSED (persistent)', message, false, channel);
+                channelEl.style.display = 'none';
+                channelEl.innerHTML = '';
+                syncContainerVisibility(containerEl);
+            });
         } else {
             logStatusChange('SHOWING (static)', message, isLoading, channel);
             channelEl.textContent = message;
@@ -56,8 +71,8 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
         channelEl.style.display = 'flex';
         syncContainerVisibility(containerEl);
 
-        // Auto-hide non-loading messages with a progressive fade over 5 s
-        if (!isLoading) {
+        // Auto-hide non-loading, non-persistent messages with a progressive fade over 5 s
+        if (!isLoading && !persist) {
             // Reset any in-progress fade, then start fresh
             containerEl.classList.remove('status-fading');
             void containerEl.offsetWidth; // force reflow so animation restarts
@@ -73,7 +88,7 @@ export function updateUser(message, isLoading = false, forceClear = false, chann
                 syncContainerVisibility(containerEl);
             }, 5000);
         } else {
-            // Loading state — cancel any active fade
+            // Loading or persistent message — cancel any active fade
             containerEl.classList.remove('status-fading');
         }
     } else {
