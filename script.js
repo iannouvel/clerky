@@ -8193,6 +8193,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         const inferredCount = sorted.filter(v => extractedById.get(v.id)?.inferred).length;
         let renderedAutoHeader = false;
         let renderedNeedsHeader = false;
+        let autoContainer = null; // collapsible wrapper for the auto-filled group
 
         const inputs = new Map();
         for (const rv of sorted) {
@@ -8208,12 +8209,33 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 renderedNeedsHeader = true;
             }
             if (isAutoFilled && !renderedAutoHeader && autoCount > 0) {
-                const h = document.createElement('div');
-                h.style.cssText = 'font-size:0.78em;font-weight:700;text-transform:uppercase;color:#15803d;margin:16px 0 8px;letter-spacing:0.04em;';
-                h.textContent = inferredCount > 0
+                // Collapsed by default: these are already filled, so they're
+                // review-only — keep the panel focused on what needs action.
+                const h = document.createElement('button');
+                h.type = 'button';
+                h.style.cssText = 'display:flex;align-items:center;gap:6px;width:100%;text-align:left;background:none;border:none;padding:0;cursor:pointer;font-size:0.78em;font-weight:700;text-transform:uppercase;color:#15803d;margin:16px 0 8px;letter-spacing:0.04em;';
+                const caret = document.createElement('span');
+                caret.style.cssText = 'display:inline-block;font-size:0.9em;';
+                const lbl = document.createElement('span');
+                lbl.textContent = inferredCount > 0
                     ? `Filled in for you — review (${autoCount})`
                     : `Auto-filled — review (${autoCount})`;
+                h.appendChild(caret);
+                h.appendChild(lbl);
+                autoContainer = document.createElement('div');
+                // If nothing needs action, expand so the panel isn't visually empty.
+                const startOpen = needsCount === 0;
+                autoContainer.style.display = startOpen ? 'block' : 'none';
+                caret.textContent = startOpen ? '▾' : '▸';
+                h.setAttribute('aria-expanded', String(startOpen));
+                h.addEventListener('click', () => {
+                    const open = autoContainer.style.display !== 'none';
+                    autoContainer.style.display = open ? 'none' : 'block';
+                    caret.textContent = open ? '▸' : '▾';
+                    h.setAttribute('aria-expanded', String(!open));
+                });
                 list.appendChild(h);
+                list.appendChild(autoContainer);
                 renderedAutoHeader = true;
             }
 
@@ -8295,7 +8317,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             }
 
             inputs.set(rv.id, { input: inputEl, unknown: unknownCb });
-            list.appendChild(row);
+            // Auto-filled rows live inside the collapsible container; needs-value rows render inline.
+            (isAutoFilled && autoContainer ? autoContainer : list).appendChild(row);
         }
 
         const footer = document.createElement('div');
