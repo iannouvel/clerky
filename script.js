@@ -515,8 +515,11 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
             // Pre-check only Most Relevant and Potentially Relevant guidelines (score >= 0.6)
             // Less Relevant (score < 0.6) are unchecked by default
+            // Pre-check by the LLM's category directly: the numeric round-trip defaults a
+            // missing relevance to 0.5, which wrongly left clearly-relevant guidelines
+            // unchecked (e.g. IOL for a post-dates note categorised MOST_RELEVANT).
             const numericScore = extractRelevanceScore(g.relevance);
-            const shouldBeChecked = numericScore >= 0.6;
+            const shouldBeChecked = g.category === 'mostRelevant' || g.category === 'potentiallyRelevant' || numericScore >= 0.6;
             const isChecked = shouldBeChecked ? 'checked="checked"' : '';
 
             // Conditional checkbox rendering
