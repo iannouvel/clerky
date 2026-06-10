@@ -5422,6 +5422,7 @@ textarea,
 #userInput .ProseMirror p {
     margin: 0;
     line-height: 1;
+    min-height: 1em;   /* was inheriting 1.5em from the base rule → uneven spacing (single-line paras padded, wrapped lines tight) */
 }
 
 /* Lists disabled - users type numbered lists manually as plain text */
