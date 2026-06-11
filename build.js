@@ -17,6 +17,8 @@ subdirs.forEach(dir => {
 // Copy all HTML, CSS, JS files and assets
 const filesToCopy = [
     'index.html',
+    'test.html',
+    'demo.html',
     'styles.css',
     'script.js',
     'dev.html',
