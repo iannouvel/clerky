@@ -403,12 +403,27 @@
     function initCookieConsent() {
         // Check if consent has already been given
         const consent = getSavedConsent();
-        
+
         if (!consent) {
+            // Test/demo sessions: don't interrupt the scripted flow with the
+            // banner. Silently apply essential-only consent (identical to
+            // clicking "Reject Non-Essential" — no analytics/preference cookies).
+            let scriptedSession = false;
+            try {
+                const params = new URLSearchParams(window.location.search);
+                scriptedSession = params.has('test') || params.has('demo')
+                    || sessionStorage.getItem('clerkyTestMode') === '1'
+                    || sessionStorage.getItem('clerkyDemoMode') === '1';
+            } catch (e) { /* default to showing the banner */ }
+            if (scriptedSession) {
+                acceptConsent({ essential: true, analytics: false, preferences: false });
+                return;
+            }
+
             // Show the banner if no consent has been given
             const banner = createBanner();
             document.body.appendChild(banner);
-            
+
             // Create preferences modal
             const modal = createPreferencesModal();
             document.body.appendChild(modal);

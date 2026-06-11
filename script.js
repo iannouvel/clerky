@@ -7265,6 +7265,18 @@ async function loadAndDisplayUserPreferences() {
         return;
     }
 
+    // Test/demo session: scope and model are fixed (UHSussex local, DeepSeek) and
+    // the anonymous user has no saved preferences, so the lookups below would show
+    // 'Not set' and the default model-order head (Groq). Show the values the
+    // workflow actually uses instead.
+    if (TEST_MODE) {
+        trustDisplay.textContent = 'UHSussex';
+        scopeDisplay.textContent = 'UHSussex';
+        modelDisplay.textContent = 'DeepSeek';
+        setupMainPreferencesEditing();
+        return;
+    }
+
     // Load hospital trust
     try {
         const user = auth.currentUser;
