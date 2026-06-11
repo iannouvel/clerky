@@ -123,14 +123,30 @@ async function checkDisclaimerAcceptance() {
 // test.html sets sessionStorage.clerkyTestMode='1' then redirects to index.html,
 // so the flag survives the disclaimer round-trip (which drops query params).
 // ===========================================================================
+// DEMO MODE — entered via demo.html. A stricter superset of test mode for
+// perfecting the GDM + IOL workflows before expanding to the full library:
+// everything test mode does, PLUS the guideline checkpoint is locked so ONLY
+// the two target guidelines can be selected.
+const DEMO_MODE = (() => {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const on = params.has('demo') || sessionStorage.getItem('clerkyDemoMode') === '1';
+        if (on) sessionStorage.setItem('clerkyDemoMode', '1');
+        return on;
+    } catch (e) {
+        return false;
+    }
+})();
+window.DEMO_MODE = DEMO_MODE;
+
 const TEST_MODE = (() => {
     try {
         const params = new URLSearchParams(window.location.search);
         const on = params.has('test') || sessionStorage.getItem('clerkyTestMode') === '1';
         if (on) sessionStorage.setItem('clerkyTestMode', '1');
-        return on;
+        return on || DEMO_MODE; // demo implies all test-mode behaviour
     } catch (e) {
-        return false;
+        return DEMO_MODE;
     }
 })();
 window.TEST_MODE = TEST_MODE;
@@ -8161,17 +8177,26 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             ? guidelines.filter(g => isTestTargetGuideline(g))
             : guidelines.filter(g => (g.relevance || 0) >= 0.6);
 
+        // Demo build: the checkpoint is locked to the two target guidelines, so
+        // swap the "uncheck/check" copy for an explanation and drop Select all.
+        const introCopy = DEMO_MODE
+            ? `This demo is limited to the <strong>Diabetes in pregnancy</strong> and
+               <strong>Induction of labour</strong> guidelines. Other relevant guidelines
+               found for this note are shown below but locked.`
+            : `Found ${guidelines.length} relevant guidelines.
+               Uncheck any you want to skip, or check additional ones.`;
+
         let html = `
             <div style="flex-shrink: 0; margin-bottom: 12px;">
                 <h3 style="margin: 0 0 6px 0; color: var(--text-primary); font-size: 1.2em;">Select Guidelines to Analyse</h3>
                 <p style="margin: 0 0 10px 0; color: var(--text-secondary); font-size: 0.9em;">
-                    Found ${guidelines.length} relevant guidelines.
-                    Uncheck any you want to skip, or check additional ones.
+                    ${introCopy}
                 </p>
+                ${DEMO_MODE ? '' : `
                 <label style="display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 0.9em; color: var(--text-secondary); user-select: none;">
                     <input type="checkbox" id="checkpoint-select-all" style="width: 16px; height: 16px; cursor: pointer;">
                     Select all
-                </label>
+                </label>`}
             </div>
             <div class="checkpoint-guidelines-list" style="flex: 1; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-secondary);">
         `;
@@ -8188,12 +8213,18 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             const orgDisplay = org ? ` <span style="color: var(--text-tertiary); font-size: 0.85em;">(${typeof abbreviateOrganization === 'function' ? abbreviateOrganization(org) : org})</span>` : '';
             const scoreColor = score >= 0.8 ? '#4caf50' : score >= 0.6 ? '#ff9800' : '#999';
 
+            // Demo build: only the two target guidelines are selectable.
+            const isLockedOut = DEMO_MODE && !isTestTargetGuideline(g);
+            const lockedTag = isLockedOut
+                ? ` <span style="font-size: 0.75em; color: var(--text-muted); border: 1px solid var(--border-color); border-radius: 10px; padding: 1px 8px; margin-left: 6px;">not in demo</span>`
+                : '';
+
             html += `
-                <div data-guideline-id="${g.id}" style="border-bottom: 1px solid var(--border-color); padding: 10px 15px; display: flex; align-items: center; gap: 10px;">
-                    <input type="checkbox" class="checkpoint-cb" data-idx="${i}" data-guideline-id="${g.id}" ${isChecked}
-                        style="width: 18px; height: 18px; cursor: pointer; flex-shrink: 0;">
+                <div data-guideline-id="${g.id}" style="border-bottom: 1px solid var(--border-color); padding: 10px 15px; display: flex; align-items: center; gap: 10px;${isLockedOut ? ' opacity: 0.5;' : ''}">
+                    <input type="checkbox" class="checkpoint-cb" data-idx="${i}" data-guideline-id="${g.id}" ${isChecked} ${isLockedOut ? 'disabled' : ''}
+                        style="width: 18px; height: 18px; cursor: ${isLockedOut ? 'not-allowed' : 'pointer'}; flex-shrink: 0;">
                     <div style="flex: 1; min-width: 0;">
-                        <span style="font-weight: 500; color: var(--text-primary);">${displayTitle}</span>${orgDisplay}
+                        <span style="font-weight: 500; color: var(--text-primary);">${displayTitle}</span>${orgDisplay}${lockedTag}
                     </div>
                 </div>
             `;
@@ -8235,9 +8266,9 @@ function showGuidelineSelectionCheckpoint(guidelines) {
             if (e.target.classList.contains('checkpoint-cb')) updateCount();
         });
 
-        // Select All toggle
-        container.querySelector('#checkpoint-select-all').addEventListener('change', (e) => {
-            container.querySelectorAll('.checkpoint-cb').forEach(cb => { cb.checked = e.target.checked; });
+        // Select All toggle (not rendered in demo mode; skips locked checkboxes)
+        container.querySelector('#checkpoint-select-all')?.addEventListener('change', (e) => {
+            container.querySelectorAll('.checkpoint-cb:not(:disabled)').forEach(cb => { cb.checked = e.target.checked; });
             updateCount();
         });
 
