@@ -255,9 +255,10 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
         clearInsertionPreview();
 
-        // Auto-skip suggestions whose information is already present in the note
-        while (state.currentIndex < state.total && isSuggestionStale(state.queue[state.currentIndex])) {
-            console.log('[WIZARD] Auto-skipping stale suggestion:', state.queue[state.currentIndex].missing_info);
+        // Auto-skip suggestions already present in the note, or dismissed from the list view
+        while (state.currentIndex < state.total &&
+               (isSuggestionStale(state.queue[state.currentIndex]) || state.queue[state.currentIndex]?._dismissed)) {
+            console.log('[WIZARD] Auto-skipping suggestion:', state.queue[state.currentIndex].missing_info);
             state.currentIndex++;
         }
 
@@ -374,6 +375,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-header">
                 <span class="sw-title">Suggestions</span>
                 <span class="sw-count">${currentNumber} / ${total}</span>
+                ${total > 1 ? '<button class="sw-list-link" onclick="window.wizardShowList()" title="See all suggestions">&#9776; All</button>' : ''}
                 <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
               </div>
               <div class="sw-body">
@@ -784,8 +786,137 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (typeof updateUser === 'function') updateUser('Still preparing — please wait a moment…', true);
     };
 
-    // Initial render
-    renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
+    // ----- List / overview view ------------------------------------------
+    // A scannable list of every suggestion: see source + priority at a glance,
+    // skip in bulk, and jump straight to any item. Insertion still happens via
+    // the existing one-by-one step-through accept flow (with smart placement).
+    function swListText(s) {
+        const t = s.suggestion || s.recommendation || s.name || s.issue || s.text
+            || s.title || s.description || s.content || s.advice || 'No text available';
+        return String(t);
+    }
+    function swPriorityColor(s) {
+        const p = (s.type || s.priority || 'info').toLowerCase();
+        if (p === 'critical' || p === 'high') return '#e53935';
+        if (p === 'medium' || p === 'important') return '#fb8c00';
+        return '#43a047';
+    }
+    function swSourceBadge(s) {
+        const map = {
+            both: { bg: '#e8f5e9', border: '#4caf50', text: '#2e7d32', label: 'Confirmed' },
+            reasoning_only: { bg: '#fff3e0', border: '#ff9800', text: '#e65100', label: 'Reasoning' },
+            guideline_only: { bg: '#e3f2fd', border: '#2196f3', text: '#1565c0', label: 'Guideline' }
+        };
+        const b = map[s._source];
+        if (!b) return '';
+        return `<span class="sw-list-badge" style="background:${b.bg};border-color:${b.border};color:${b.text};">${b.label}</span>`;
+    }
+
+    function renderListView() {
+        const state = window.suggestionWizardState;
+        state.viewMode = 'list';
+        // Leaving step-through: tear down any pending diff preview in the editor.
+        if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
+        clearInsertionPreview();
+        if (window._diffState && window._diffState.active) { try { discardDiffMarkup(); } catch (e) {} }
+        window._diffState = { active: false, suggestionId: null, fallbackText: null };
+
+        const items = state.queue
+            .map((s, i) => ({ s, i }))
+            .filter(({ s }) => !s._dismissed && !isSuggestionStale(s));
+
+        // Nothing left to review → reuse the step-through completion screen.
+        if (items.length === 0) {
+            state.currentIndex = state.total;
+            renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering completion:', err));
+            return;
+        }
+
+        const rows = items.map(({ s, i }) => {
+            const needsValue = !!s.data_type_and_options;
+            const text = swEscapeHtml(swListText(s));
+            const chip = needsValue ? '<span class="sw-list-chip">needs value</span>' : '';
+            return `
+                <div class="sw-list-row" data-index="${i}">
+                    <input type="checkbox" class="sw-list-cb" data-index="${i}" title="Select for bulk skip">
+                    <span class="sw-list-dot" style="background:${swPriorityColor(s)};"></span>
+                    <div class="sw-list-main">
+                        <div class="sw-list-text">${text}</div>
+                        <div class="sw-list-meta">${swSourceBadge(s)}${chip}</div>
+                    </div>
+                    <div class="sw-list-actions">
+                        <button class="sw-btn sw-btn-insert" onclick="window.wizardReviewItem(${i})">Review &#x2192;</button>
+                        <button class="sw-btn" onclick="window.wizardSkipItem(${i})">Skip</button>
+                    </div>
+                </div>`;
+        }).join('');
+
+        container.innerHTML = `
+            <div class="sw-wrap sw-list-wrap">
+              <div class="sw-header">
+                <span class="sw-title">Suggestions</span>
+                <span class="sw-count">${items.length} to review</span>
+                <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
+              </div>
+              <div class="sw-list-toolbar">
+                <div class="sw-viewtoggle">
+                  <button class="sw-vt-btn active">&#9776; List</button>
+                  <button class="sw-vt-btn" onclick="window.wizardShowStep()">&#9654; Step-through</button>
+                </div>
+                <button class="sw-btn sw-list-skipsel" onclick="window.wizardSkipSelected()">Skip selected</button>
+              </div>
+              <div class="sw-list-body">${rows}</div>
+              <div class="sw-list-footer">
+                <button class="sw-btn sw-btn-insert" onclick="window.wizardShowStep()">Review in order &#x2192;</button>
+              </div>
+            </div>`;
+    }
+
+    // First index still needing review (not dismissed, not already in the note).
+    function swFirstPendingIndex() {
+        const state = window.suggestionWizardState;
+        let i = 0;
+        while (i < state.total && (state.queue[i]._dismissed || isSuggestionStale(state.queue[i]))) i++;
+        return i;
+    }
+
+    window.wizardShowList = function () {
+        renderListView();
+    };
+    window.wizardShowStep = function () {
+        const state = window.suggestionWizardState;
+        state.viewMode = 'step';
+        state.currentIndex = swFirstPendingIndex();
+        renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering step view:', err));
+    };
+    window.wizardReviewItem = function (index) {
+        const state = window.suggestionWizardState;
+        state.viewMode = 'step';
+        state.currentIndex = index;
+        renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering item:', err));
+    };
+    window.wizardSkipItem = function (index) {
+        const s = window.suggestionWizardState.queue[index];
+        if (s) s._dismissed = true;
+        renderListView();
+    };
+    window.wizardSkipSelected = function () {
+        const checked = container.querySelectorAll('.sw-list-cb:checked');
+        checked.forEach(cb => {
+            const idx = parseInt(cb.dataset.index, 10);
+            const s = window.suggestionWizardState.queue[idx];
+            if (s) s._dismissed = true;
+        });
+        renderListView();
+    };
+
+    // Initial render — show the overview list when there's more than one
+    // suggestion (see all / triage / jump), else go straight to step-through.
+    if ((window.suggestionWizardState.total || 0) > 1) {
+        renderListView();
+    } else {
+        renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
+    }
 }
 
 // Open a popup that walks the user through the full reasoning chain:
