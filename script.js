@@ -1,6 +1,6 @@
 // Import Firebase instances from firebase-init.js
 import { app, db, auth } from './firebase-init.js';
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut, signInWithRedirect, getRedirectResult, signInAnonymously } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js';
 import { doc, getDoc, setDoc, collection, onSnapshot, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
@@ -112,6 +112,145 @@ initializeConnectivityMonitoring(updateUser);
 // Local wrapper for backwards compatibility
 async function checkDisclaimerAcceptance() {
     return checkDisclaimer(auth, db);
+}
+
+// ===========================================================================
+// TEST / DEMO MODE  —  entered via clerkyai.health/test.html
+// A pared-back mode for external testers: anonymous auth (no Google sign-in),
+// a pre-loaded clinical scenario, AI provider fixed to DeepSeek, UHSussex
+// scope, and the two target guidelines pre-selected at the checkpoint modal.
+// Feedback is attributed to the tester's initials instead of a Google email.
+// test.html sets sessionStorage.clerkyTestMode='1' then redirects to index.html,
+// so the flag survives the disclaimer round-trip (which drops query params).
+// ===========================================================================
+const TEST_MODE = (() => {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const on = params.has('test') || sessionStorage.getItem('clerkyTestMode') === '1';
+        if (on) sessionStorage.setItem('clerkyTestMode', '1');
+        return on;
+    } catch (e) {
+        return false;
+    }
+})();
+window.TEST_MODE = TEST_MODE;
+
+// The exact Firestore IDs of the two UHSussex guidelines to pre-select.
+const TEST_TARGET_GUIDELINE_IDS = [
+    'diabetes-in-pregnancy-guideline-pdf',
+    'induction-of-labour-iol-guideline-pdf'
+];
+// Full hospital-trust string as stored on the guidelines (NOT the "UHSussex" abbreviation).
+const TEST_HOSPITAL_TRUST = 'University Hospitals Sussex NHS Foundation Trust';
+
+const TEST_SCENARIO = `28yo, G3P2, 36+0, BMI 30, Rh+ve
+Issues: GDM on insulin with suspected macrosomia.
+Concerns: Suboptimal glycaemic control with increased fetal growth and possible delivery complications.
+Background: Previous GDM and family history of type 2 diabetes.
+GDM diagnosis: OGTT at 26 weeks: fasting 5.6 mmol/L, 2-hour 9.2 mmol/L, HbA1c 42 mmol/mol.
+Treatment: Initially diet-controlled, now on insulin aspart 4 units with breakfast and evening meal.
+Growth: USS at 36 weeks shows EFW >90th centile, AFI normal, cephalic, placenta grade 2.
+G&S: Sent 20th June, pending.
+Exam: BP 120/80, HR 80, Temp 36.5, SpO₂ 98% RA.
+Abdo: Soft, non-tender, uterus large for dates.
+Fetus: FM felt, FHR 140 bpm.
+Glucose review: Most readings within target, occasional raised post-meal readings.
+Assessment: Insulin-treated GDM with suspected macrosomia at 36 weeks.
+Counselling: Explained that macrosomia means baby will definitely need caesarean section.
+Advised that induction at 38 weeks removes the risk of shoulder dystocia.
+Reassured that neonatal hypoglycaemia is unlikely if maternal sugars are controlled in labour.
+Discussed risks of GDM including shoulder dystocia, PPH, neonatal hypoglycaemia, operative birth and SCBU admission.
+Plan: Continue insulin aspart 4 units breakfast and evening meal.
+Diabetes midwife to review glucose readings in 1 week.
+Book IOL at 38 weeks for insulin-treated GDM with suspected macrosomia.
+No further growth scans required if current scan reassuring.
+Advise to attend if reduced fetal movements, ROM, contractions or persistently high glucose readings.
+In labour: FBC and G&S on admission, continuous CTG due to insulin-treated GDM, monitor CBG, ensure IV access and awareness of increased shoulder dystocia and PPH risk.
+Postnatal: Baby will need blood glucose monitoring after birth.`;
+
+function isTestTargetGuideline(g) {
+    return !!g && TEST_TARGET_GUIDELINE_IDS.includes(g.id);
+}
+
+function getTesterInitials() {
+    try { return localStorage.getItem('clerkyTesterInitials') || ''; } catch (e) { return ''; }
+}
+
+// Small overlay asking the tester for their initials (no Google sign-in).
+function promptTesterInitials() {
+    return new Promise((resolve) => {
+        const existing = getTesterInitials();
+        if (existing) { resolve(existing); return; }
+        const overlay = document.createElement('div');
+        overlay.id = 'testInitialsOverlay';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);';
+        overlay.innerHTML = `
+            <div style="background:var(--bg-primary,#fff);color:var(--text-primary,#111);max-width:380px;width:90%;padding:28px 24px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.35);text-align:center;">
+                <h2 style="margin:0 0 8px;font-size:1.3em;">clerky — test version</h2>
+                <p style="margin:0 0 18px;font-size:0.92em;opacity:0.8;">Enter your initials so we know whose feedback is whose. No sign-in needed.</p>
+                <input id="testInitialsInput" maxlength="5" placeholder="e.g. IN" autocomplete="off"
+                    style="width:130px;text-align:center;text-transform:uppercase;font-size:1.4em;letter-spacing:3px;padding:10px;border:1px solid var(--border-color,#ccc);border-radius:8px;margin-bottom:16px;background:var(--bg-secondary,#fff);color:inherit;">
+                <br>
+                <button id="testInitialsBtn" class="summary-analyse-btn" style="display:inline-flex;">
+                    <span class="btn-text">Start testing</span>
+                </button>
+            </div>`;
+        document.body.appendChild(overlay);
+        const input = overlay.querySelector('#testInitialsInput');
+        const btn = overlay.querySelector('#testInitialsBtn');
+        input.focus();
+        const submit = () => {
+            const val = (input.value || '').trim().toUpperCase().slice(0, 5);
+            if (!val) { input.focus(); return; }
+            try { localStorage.setItem('clerkyTesterInitials', val); } catch (e) {}
+            overlay.remove();
+            resolve(val);
+        };
+        btn.addEventListener('click', submit);
+        input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+    });
+}
+
+// No user signed in + test mode: collect initials, then sign in anonymously.
+// onAuthStateChanged then re-fires with the anonymous user.
+async function startTestSession() {
+    const loading = document.getElementById('loading');
+    const landingPage = document.getElementById('landingPage');
+    if (landingPage) landingPage.classList.add('hidden');
+    if (loading) loading.classList.add('hidden');
+    await promptTesterInitials();
+    if (loading) loading.classList.remove('hidden');
+    try {
+        await signInAnonymously(auth);
+    } catch (e) {
+        console.error('[TEST] Anonymous sign-in failed:', e);
+        alert('Test sign-in failed: ' + (e?.code || e?.message || 'unknown error') +
+              '\n\nThe Anonymous sign-in provider may be disabled in Firebase Authentication.');
+    }
+}
+
+// Signed in (anon) + test mode: fix provider to DeepSeek and pre-load the
+// scenario once (don't clobber the tester's edits on a reload).
+async function applyTestModeSetup() {
+    try {
+        const user = auth.currentUser;
+        if (user) {
+            await setDoc(doc(db, 'userPreferences', user.uid), {
+                aiProvider: 'DeepSeek',
+                updatedAt: serverTimestamp()
+            }, { merge: true });
+        }
+    } catch (e) {
+        console.warn('[TEST] Could not set DeepSeek preference (server default is DeepSeek anyway):', e);
+    }
+    try {
+        if (sessionStorage.getItem('clerkyTestPrefilled') !== '1') {
+            setUserInputContent(TEST_SCENARIO, true, 'Test scenario');
+            sessionStorage.setItem('clerkyTestPrefilled', '1');
+        }
+    } catch (e) {
+        console.warn('[TEST] Scenario prefill failed:', e);
+    }
 }
 
 // PII Review Logic moved to js/features/pii.js
@@ -513,11 +652,10 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
             // Include PDF link if available
             const pdfLinkHtml = pdfLink || '';
 
-            // Pre-check only Most Relevant and Potentially Relevant guidelines (score >= 0.6)
-            // Less Relevant (score < 0.6) are unchecked by default
-            // Pre-check by the LLM's category directly: the numeric round-trip defaults a
-            // missing relevance to 0.5, which wrongly left clearly-relevant guidelines
-            // unchecked (e.g. IOL for a post-dates note categorised MOST_RELEVANT).
+            // Pre-check Most Relevant and Potentially Relevant guidelines. Use the LLM's
+            // category directly: the numeric round-trip defaults a missing relevance to 0.5,
+            // which wrongly left clearly-relevant guidelines unchecked (e.g. the IOL guideline
+            // for a post-dates note categorised MOST_RELEVANT). Fall back to score otherwise.
             const numericScore = extractRelevanceScore(g.relevance);
             const shouldBeChecked = g.category === 'mostRelevant' || g.category === 'potentiallyRelevant' || numericScore >= 0.6;
             const isChecked = shouldBeChecked ? 'checked="checked"' : '';
@@ -746,6 +884,10 @@ function showSelectionButtons() {
 // Global reset handler - clears input, summary, and action UIs when idle
 function handleGlobalReset() {
     console.log('[DEBUG] Reset button clicked');
+
+    // Clear the workflow stepper progress pill
+    window.workflowStepper?.reset();
+    window.workflowStepper?.hide();
 
     // Stop any active analysis/workflow
     if (window.analysisAbortController) {
@@ -4834,6 +4976,99 @@ function checkAndSubmitGuidelineFeedback() {
     });
 }
 
+// ===========================================================================
+// Workflow stepper — compact progress pill in the fixed button row that tracks
+// the analysis flow: Note › Guidelines › Values › Analysis › Review.
+// Informational only (nodes are not clickable in v1). Driven by a handful of
+// calls from the orchestrator (processGuidelinesWorkflow), runParallelAnalysis
+// and the suggestion wizard. The active step's underline doubles as a progress
+// bar (CSS width = --wf-progress, default 100%), so the analysis % and the
+// review counter ride along without taking extra vertical space.
+// ===========================================================================
+window.workflowStepper = (function () {
+    const STEPS = [
+        { id: 'note',       label: 'Note' },
+        { id: 'guidelines', label: 'Guidelines' },
+        { id: 'values',     label: 'Values' },
+        { id: 'analysis',   label: 'Analysis' },
+        { id: 'review',     label: 'Review' },
+    ];
+
+    function mount() {
+        const existing = document.getElementById('workflowStepper');
+        if (existing) return existing;
+        const row = document.getElementById('fixedButtonRow');
+        if (!row) return null;
+        const el = document.createElement('div');
+        el.id = 'workflowStepper';
+        el.className = 'wf-stepper';
+        el.setAttribute('role', 'group');
+        el.setAttribute('aria-label', 'Analysis progress');
+        el.hidden = true;
+        let html = '<span class="wf-divider" aria-hidden="true">·</span><ol class="wf-steps">';
+        STEPS.forEach((s, i) => {
+            if (i > 0) html += '<li class="wf-sep" aria-hidden="true">›</li>';
+            html += `<li class="wf-step" data-step="${s.id}" data-status="upcoming">`
+                 +  `<span class="wf-label">${s.label}</span><span class="wf-meta"></span></li>`;
+        });
+        html += '</ol>';
+        el.innerHTML = html;
+        row.appendChild(el);
+        return el;
+    }
+
+    function stepEl(id) {
+        const root = document.getElementById('workflowStepper');
+        return root ? root.querySelector(`.wf-step[data-step="${id}"]`) : null;
+    }
+
+    function set(id, status) {
+        const li = stepEl(id);
+        if (!li) return;
+        li.dataset.status = status;
+        if (status === 'active') {
+            li.setAttribute('aria-current', 'step');
+        } else {
+            li.removeAttribute('aria-current');
+            li.style.removeProperty('--wf-progress');
+            const meta = li.querySelector('.wf-meta');
+            if (meta && status !== 'error') meta.textContent = '';
+        }
+    }
+
+    function activate(id) {
+        // Mark every step before `id` complete (preserving any already skipped),
+        // `id` active, and everything after it upcoming.
+        let reached = false;
+        STEPS.forEach(s => {
+            const li = stepEl(s.id);
+            if (!li) return;
+            if (s.id === id) { reached = true; set(s.id, 'active'); return; }
+            if (li.dataset.status === 'skipped') return; // don't override a skip
+            set(s.id, reached ? 'upcoming' : 'complete');
+        });
+    }
+
+    function setProgress(id, frac, metaText) {
+        const li = stepEl(id);
+        if (!li) return;
+        if (li.dataset.status !== 'active') set(id, 'active');
+        const pct = Math.max(0, Math.min(1, frac || 0)) * 100;
+        li.style.setProperty('--wf-progress', pct.toFixed(1) + '%');
+        const meta = li.querySelector('.wf-meta');
+        if (meta) meta.textContent = metaText || '';
+    }
+
+    function reset() {
+        STEPS.forEach(s => set(s.id, 'upcoming'));
+    }
+
+    function show() { const el = mount(); if (el) el.hidden = false; }
+    function hide() { const el = document.getElementById('workflowStepper'); if (el) el.hidden = true; }
+
+    return { steps: STEPS.map(s => s.id), mount, show, hide, reset, set, activate, setProgress };
+})();
+
 // Wire up global reset button once DOM is ready (top-level, not gated by feedback flows)
 document.addEventListener('DOMContentLoaded', () => {
     const resetBtn = document.getElementById('resetBtn');
@@ -7778,9 +8013,18 @@ async function processGuidelinesWorkflow() {
             return;
         }
 
+        // Workflow stepper: the note exists, we're now choosing guidelines
+        window.workflowStepper?.reset();
+        window.workflowStepper?.show();
+        window.workflowStepper?.activate('guidelines'); // marks 'note' complete
+
         // Step 1: Scope selection (reuse persisted or show modal)
         updateUser('Step 2 of 2 — Checking guideline scope...', true);
         let scopeSelection;
+        if (TEST_MODE) {
+            // Test/demo mode: fixed to UHSussex local scope; skip the scope modal.
+            scopeSelection = { scope: 'local', hospitalTrust: TEST_HOSPITAL_TRUST };
+        } else {
         const savedScopeSelection = await loadGuidelineScopeSelection();
 
         if (savedScopeSelection) {
@@ -7806,6 +8050,7 @@ async function processGuidelinesWorkflow() {
             updateUser('Step 2 of 2 — Select which guidelines to apply...', true);
             scopeSelection = await showGuidelineScopeModal();
         }
+        }
         window.selectedGuidelineScope = scopeSelection;
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
@@ -7815,6 +8060,30 @@ async function processGuidelinesWorkflow() {
         await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
+
+        // Test/demo mode: guarantee the two target guidelines are present in the
+        // checkpoint list even if relevance ranking would have dropped one.
+        if (TEST_MODE) {
+            window.relevantGuidelines = window.relevantGuidelines || [];
+            TEST_TARGET_GUIDELINE_IDS.forEach(id => {
+                if (window.relevantGuidelines.some(g => g.id === id)) return;
+                const gd = window.globalGuidelines?.[id];
+                if (!gd) {
+                    console.warn('[TEST] Target guideline not found in globalGuidelines:', id);
+                    return;
+                }
+                window.relevantGuidelines.unshift({
+                    id,
+                    title: gd.title || gd.displayName || id,
+                    filename: gd.filename || gd.originalFilename || gd.title || id,
+                    originalFilename: gd.originalFilename || null,
+                    downloadUrl: gd.downloadUrl || null,
+                    relevance: 0.99,
+                    category: 'mostRelevant',
+                    originalRelevance: 'Highly relevant'
+                });
+            });
+        }
 
         if (!window.relevantGuidelines || window.relevantGuidelines.length === 0) {
             throw new Error('No relevant guidelines were found.');
@@ -7827,6 +8096,7 @@ async function processGuidelinesWorkflow() {
 
         if (!selectedGuidelines || selectedGuidelines.length === 0) {
             updateUser('No guidelines selected. Analysis cancelled.', false);
+            window.workflowStepper?.hide();
             return;
         }
 
@@ -7834,13 +8104,18 @@ async function processGuidelinesWorkflow() {
         // fetch its required-values schema (generate if absent), extract what
         // the note already documents, and ask the user for the rest.
         // Augments the existing flow; does NOT block on errors (degrades gracefully).
+        window.workflowStepper?.activate('values'); // marks 'guidelines' complete
         try {
             const valuesResult = await gatherRequiredValuesForGuidelines(selectedGuidelines);
             window.gatheredRequiredValues = valuesResult;
             console.log('[REQUIRED-VALUES] Gathered:', valuesResult);
+            // 'userValues' is only present when the confirm-values modal actually
+            // appeared; otherwise nothing needed confirming, so mark the step skipped.
+            window.workflowStepper?.set('values', (valuesResult && 'userValues' in valuesResult) ? 'complete' : 'skipped');
         } catch (e) {
             console.warn('[REQUIRED-VALUES] Skipping (error):', e.message);
             window.gatheredRequiredValues = null;
+            window.workflowStepper?.set('values', 'skipped');
         }
 
         // Step 4: Run parallel analysis (will show summary dashboard internally)
@@ -7851,10 +8126,12 @@ async function processGuidelinesWorkflow() {
     } catch (error) {
         if (error.name === 'AbortError' || error.message === 'Analysis cancelled' || window.analysisAbortController?.signal.aborted) {
             console.log('[DEBUG] processGuidelinesWorkflow: cancelled');
+            window.workflowStepper?.hide();
             return;
         }
         console.error('[DEBUG] processGuidelinesWorkflow failed:', error);
         updateUser('Guideline analysis failed: ' + error.message, false);
+        window.workflowStepper?.set('analysis', 'error');
     }
 }
 
@@ -7876,7 +8153,9 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         container.style.cssText = 'display: flex; flex-direction: column; gap: 16px; flex: 1 1 auto; min-height: 0; overflow: hidden;';
 
         // Count pre-selected (score >= 0.6)
-        const preSelected = guidelines.filter(g => (g.relevance || 0) >= 0.6);
+        const preSelected = TEST_MODE
+            ? guidelines.filter(g => isTestTargetGuideline(g))
+            : guidelines.filter(g => (g.relevance || 0) >= 0.6);
 
         let html = `
             <div style="flex-shrink: 0; margin-bottom: 12px;">
@@ -7896,7 +8175,7 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         guidelines.forEach((g, i) => {
             const score = g.relevance || 0;
             const pct = Math.round(score * 100);
-            const isChecked = score >= 0.6 ? 'checked' : '';
+            const isChecked = (TEST_MODE ? isTestTargetGuideline(g) : score >= 0.6) ? 'checked' : '';
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = typeof getCleanDisplayTitle === 'function'
                 ? getCleanDisplayTitle(g, guidelineData)
@@ -9300,6 +9579,11 @@ window.auth.onAuthStateChanged(async (user) => {
         // Load and display user preferences in the preferences panel
         await loadAndDisplayUserPreferences();
 
+        // Test/demo mode: fix DeepSeek + pre-load the scenario
+        if (TEST_MODE) {
+            await applyTestModeSetup();
+        }
+
         // Double-check mode selection page is hidden (defensive)
         if (modeSelectionPage && !modeSelectionPage.classList.contains('hidden')) {
             console.warn('[DEBUG] Mode selection page was visible, hiding it now');
@@ -9307,6 +9591,13 @@ window.auth.onAuthStateChanged(async (user) => {
         }
 
     } else {
+        // Test/demo mode: skip Google sign-in, use anonymous auth + initials
+        if (TEST_MODE) {
+            console.log('[TEST] No user — starting anonymous test session');
+            await startTestSession();
+            return;
+        }
+
         console.log('[DEBUG] User not authenticated, showing landing page');
 
         // Show landing page immediately
@@ -11618,7 +11909,11 @@ async function submitFeedback() {
         lastInteraction: _lastInteraction || null,
         wizardState,
         lastAiContext: window._lastAiContext || null,
-        userEmail: (auth && auth.currentUser) ? auth.currentUser.email : 'anonymous',
+        userEmail: (auth && auth.currentUser && auth.currentUser.email)
+            ? auth.currentUser.email
+            : (TEST_MODE ? `tester:${getTesterInitials() || '??'}` : 'anonymous'),
+        testMode: TEST_MODE || false,
+        testerInitials: TEST_MODE ? (getTesterInitials() || null) : null,
         userAgent: navigator.userAgent.slice(0, 200),
         pageUrl: window.location.href
     };

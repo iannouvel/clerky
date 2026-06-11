@@ -7157,3 +7157,83 @@ textarea,
     cursor: not-allowed;
     opacity: 0.7;
 }
+
+/* ===========================================================================
+   Workflow stepper — compact progress pill in the fixed button row.
+   Note › Guidelines › Values › Analysis › Review. The active step's underline
+   doubles as a progress bar (width = --wf-progress, default 100%) so the
+   analysis % / review counter ride along without taking extra vertical space.
+   =========================================================================== */
+.wf-stepper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-left: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    user-select: none;
+}
+.wf-stepper[hidden] { display: none; }
+.wf-stepper .wf-divider { color: var(--text-muted); opacity: 0.6; }
+.wf-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.wf-step {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    padding-bottom: 3px;
+    white-space: nowrap;
+}
+.wf-step .wf-label {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+.wf-sep { color: var(--text-muted); opacity: 0.5; }
+.wf-meta {
+    font-size: 0.85em;
+    color: var(--accent-color);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Per-status styling */
+.wf-step[data-status="active"] .wf-label { color: var(--accent-color); font-weight: 600; }
+.wf-step[data-status="complete"] .wf-label { color: var(--text-secondary); }
+.wf-step[data-status="complete"] .wf-label::before {
+    content: "\2713 ";
+    color: var(--color-success);
+    font-weight: 700;
+}
+.wf-step[data-status="skipped"] .wf-label { text-decoration: line-through; opacity: 0.7; }
+.wf-step[data-status="error"] .wf-label { color: var(--color-error); font-weight: 600; }
+.wf-step[data-status="error"] .wf-label::before { content: "\26A0 "; color: var(--color-error); }
+
+/* The active step's underline doubles as a progress bar */
+.wf-step[data-status="active"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: var(--wf-progress, 100%);
+    background: var(--accent-color);
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 640px) {
+    .wf-stepper {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+}
