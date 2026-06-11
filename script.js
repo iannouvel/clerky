@@ -563,9 +563,9 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
 
     // Combine ALL relevant guidelines (exclude notRelevant)
     const allGuidelinesFlat = [
-        ...(categories.mostRelevant || []),
-        ...(categories.potentiallyRelevant || []),
-        ...(categories.lessRelevant || [])
+        ...(categories.mostRelevant || []).map(g => ({ ...g, category: 'mostRelevant' })),
+        ...(categories.potentiallyRelevant || []).map(g => ({ ...g, category: 'potentiallyRelevant' })),
+        ...(categories.lessRelevant || []).map(g => ({ ...g, category: 'lessRelevant' }))
         // Exclude notRelevant from the selection interface entirely
     ];
 
@@ -585,7 +585,8 @@ function createGuidelineSelectionInterface(categories, allRelevantGuidelines) {
         downloadUrl: g.downloadUrl, // Preserve downloadUrl if available
         relevance: extractRelevanceScore(g.relevance), // Convert to numeric score
         originalRelevance: g.relevance, // Keep original for display purposes
-        organisation: g.organisation // Preserve organisation for display
+        organisation: g.organisation, // Preserve organisation for display
+        category: g.category // LLM relevance bucket — drives checkpoint pre-selection
     }));
 
     console.log('[DEBUG] Set window.relevantGuidelines (flat list):', {
