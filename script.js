@@ -5005,7 +5005,7 @@ window.workflowStepper = (function () {
         el.setAttribute('role', 'group');
         el.setAttribute('aria-label', 'Analysis progress');
         el.hidden = true;
-        let html = '<span class="wf-divider" aria-hidden="true">·</span><ol class="wf-steps">';
+        let html = '<ol class="wf-steps">';
         STEPS.forEach((s, i) => {
             if (i > 0) html += '<li class="wf-sep" aria-hidden="true">›</li>';
             html += `<li class="wf-step" data-step="${s.id}" data-status="upcoming">`
@@ -5013,7 +5013,11 @@ window.workflowStepper = (function () {
         });
         html += '</ol>';
         el.innerHTML = html;
-        row.appendChild(el);
+        // Insert before the Feedback button: its margin-left:auto plus the pill's
+        // own margin-left:auto split the row's free space, centring the pill.
+        const feedback = document.getElementById('feedbackBtn');
+        if (feedback) row.insertBefore(el, feedback);
+        else row.appendChild(el);
         return el;
     }
 
