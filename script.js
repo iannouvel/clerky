@@ -260,9 +260,15 @@ async function applyTestModeSetup() {
         console.warn('[TEST] Could not set DeepSeek preference (server default is DeepSeek anyway):', e);
     }
     try {
-        if (sessionStorage.getItem('clerkyTestPrefilled') !== '1') {
+        // Pre-load the scenario whenever the note is empty. Editor content does
+        // not survive a reload, so the old once-per-session sessionStorage flag
+        // left the note permanently blank after any refresh (including the
+        // disclaimer round-trip). The empty check still protects a tester's
+        // in-progress edits; setUserInputContent self-queues until tiptapReady
+        // if the editor isn't up yet.
+        const editor = window.editors?.userInput;
+        if (!editor || !editor.getText().trim()) {
             setUserInputContent(TEST_SCENARIO, true, 'Test scenario');
-            sessionStorage.setItem('clerkyTestPrefilled', '1');
         }
     } catch (e) {
         console.warn('[TEST] Scenario prefill failed:', e);
