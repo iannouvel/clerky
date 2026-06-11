@@ -8190,10 +8190,15 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         container.className = 'guideline-selection-checkpoint';
         container.style.cssText = 'display: flex; flex-direction: column; gap: 16px; flex: 1 1 auto; min-height: 0; overflow: hidden;';
 
-        // Count pre-selected (score >= 0.6)
+        // Pre-select by the LLM relevance CATEGORY (mostRelevant/potentiallyRelevant),
+        // falling back to score. The numeric relevance is often absent here
+        // (g.relevance undefined → 0), which previously left clearly-relevant guidelines
+        // unchecked — e.g. the IOL guideline for a post-dates note (categorised
+        // MOST_RELEVANT) → 0 selected → no analysis.
+        const isPreselected = (g) => g.category === 'mostRelevant' || g.category === 'potentiallyRelevant' || (g.relevance || 0) >= 0.6;
         const preSelected = TEST_MODE
             ? guidelines.filter(g => isTestTargetGuideline(g))
-            : guidelines.filter(g => (g.relevance || 0) >= 0.6);
+            : guidelines.filter(isPreselected);
 
         // Demo build: the checkpoint is locked to the two target guidelines, so
         // swap the "uncheck/check" copy for an explanation and drop Select all.
@@ -8222,7 +8227,7 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         guidelines.forEach((g, i) => {
             const score = g.relevance || 0;
             const pct = Math.round(score * 100);
-            const isChecked = (TEST_MODE ? isTestTargetGuideline(g) : score >= 0.6) ? 'checked' : '';
+            const isChecked = (TEST_MODE ? isTestTargetGuideline(g) : isPreselected(g)) ? 'checked' : '';
             const guidelineData = window.globalGuidelines?.[g.id];
             const displayTitle = typeof getCleanDisplayTitle === 'function'
                 ? getCleanDisplayTitle(g, guidelineData)
