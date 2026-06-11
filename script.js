@@ -245,19 +245,34 @@ async function startTestSession() {
     }
 }
 
-// Signed in (anon) + test mode: fix provider to DeepSeek and pre-load the
-// scenario once (don't clobber the tester's edits on a reload).
+// Signed in (anon) + test mode: seed AI preferences and pre-load the scenario.
+// Preferences are seeded ONCE (only when absent): DeepSeek provider and a
+// DeepSeek-first model order. If the tester changes them via Preferences the
+// fields exist and are left alone on later loads — set on load, respect
+// changes. Seeding modelPreferences (not just aiProvider) matters because
+// sendToAI routes by the head of the model-order list; without a saved list
+// the server falls back to the global default whose head is groq/compound —
+// which is how the demo's input-type detection ended up on an agentic model.
 async function applyTestModeSetup() {
     try {
         const user = auth.currentUser;
         if (user) {
-            await setDoc(doc(db, 'userPreferences', user.uid), {
-                aiProvider: 'DeepSeek',
-                updatedAt: serverTimestamp()
-            }, { merge: true });
+            const prefsRef = doc(db, 'userPreferences', user.uid);
+            const snap = await getDoc(prefsRef);
+            const existing = snap.exists() ? snap.data() : {};
+            const updates = {};
+            if (!existing.aiProvider) updates.aiProvider = 'DeepSeek';
+            if (!Array.isArray(existing.modelPreferences) || existing.modelPreferences.length === 0) {
+                updates.modelPreferences = ['deepseek-chat',
+                    ...AVAILABLE_MODELS.map(m => m.model).filter(id => id !== 'deepseek-chat')];
+            }
+            if (Object.keys(updates).length > 0) {
+                updates.updatedAt = serverTimestamp();
+                await setDoc(prefsRef, updates, { merge: true });
+            }
         }
     } catch (e) {
-        console.warn('[TEST] Could not set DeepSeek preference (server default is DeepSeek anyway):', e);
+        console.warn('[TEST] Could not seed AI preferences (server default is DeepSeek anyway):', e);
     }
     try {
         // Pre-load the scenario whenever the note is empty. Editor content does
@@ -7272,14 +7287,21 @@ async function loadAndDisplayUserPreferences() {
         return;
     }
 
-    // Test/demo session: scope and model are fixed (UHSussex local, DeepSeek) and
-    // the anonymous user has no saved preferences, so the lookups below would show
-    // 'Not set' and the default model-order head (Groq). Show the values the
-    // workflow actually uses instead.
+    // Test/demo session: trust and scope are fixed by the workflow (UHSussex
+    // local), so show those without the network lookups (the anonymous user has
+    // nothing saved server-side and they'd render 'Not set'). The AI model uses
+    // the normal preference lookup — preferences are seeded on load and any
+    // change the tester makes is respected.
     if (TEST_MODE) {
         trustDisplay.textContent = 'UHSussex';
         scopeDisplay.textContent = 'UHSussex';
-        modelDisplay.textContent = 'DeepSeek';
+        try {
+            const modelOrder = await fetchUserModelPreferences();
+            const model = AVAILABLE_MODELS.find(m => m.model === modelOrder?.[0]);
+            modelDisplay.textContent = model ? model.displayName : (modelOrder?.[0] || 'DeepSeek');
+        } catch (e) {
+            modelDisplay.textContent = 'DeepSeek';
+        }
         setupMainPreferencesEditing();
         return;
     }
@@ -9635,13 +9657,15 @@ window.auth.onAuthStateChanged(async (user) => {
             mainContentAfterInit.classList.remove('hidden');
         }
 
-        // Load and display user preferences in the preferences panel
-        await loadAndDisplayUserPreferences();
-
-        // Test/demo mode: fix DeepSeek + pre-load the scenario
+        // Test/demo mode: seed AI preferences (first load only) + pre-load the
+        // scenario — BEFORE the preferences display reads them, so the sidebar
+        // reflects the seeded values on the very first load.
         if (TEST_MODE) {
             await applyTestModeSetup();
         }
+
+        // Load and display user preferences in the preferences panel
+        await loadAndDisplayUserPreferences();
 
         // Double-check mode selection page is hidden (defensive)
         if (modeSelectionPage && !modeSelectionPage.classList.contains('hidden')) {
