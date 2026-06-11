@@ -64,6 +64,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
     if (!suggestions || suggestions.length === 0) {
         container.innerHTML = '<div class="alert alert-info">Analysis complete, but no specific suggestions were found.</div>';
+        window.workflowStepper?.set('review', 'complete');
         return;
     }
 
@@ -73,6 +74,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         currentIndex: 0,
         total: suggestions.length
     };
+
+    // Workflow stepper: review stage is now active
+    window.workflowStepper?.activate('review');
 
     // Render an appropriate input control for a structured missing-info item
     function renderStructuredInput(id, missingInfo, dto) {
@@ -259,6 +263,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Check for completion
         if (state.currentIndex >= state.total) {
+            window.workflowStepper?.set('review', 'complete');
             container.innerHTML = `
                 <div class="sw-wrap">
                   <div class="sw-header">
@@ -279,6 +284,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const suggestion = state.queue[state.currentIndex];
         const currentNumber = state.currentIndex + 1;
         const total = state.total;
+        window.workflowStepper?.setProgress('review', total ? currentNumber / total : 0, `${currentNumber}/${total}`);
 
         // Calculate placement for this suggestion on-demand based on current note content
         console.log('[WIZARD] Calculating placement for suggestion', currentNumber);

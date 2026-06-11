@@ -472,6 +472,10 @@ export async function runParallelAnalysis(guidelines) {
     // Set flag to indicate parallel analysis is active
     window.parallelAnalysisActive = true;
 
+    // Workflow stepper: analysis stage is now running
+    window.workflowStepper?.activate('analysis');
+    window.workflowStepper?.setProgress('analysis', 0, '0/' + guidelines.length);
+
     // Hide selection buttons if they exist
     if (typeof window.hideSelectionButtons === 'function') {
         window.hideSelectionButtons();
@@ -540,6 +544,7 @@ export async function runParallelAnalysis(guidelines) {
             completedCount++;
             if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
             if (statusText) statusText.textContent = `Analyzed ${completedCount} of ${total}: ${displayName}`;
+            window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
 
             return {
                 status: 'fulfilled',
@@ -553,6 +558,7 @@ export async function runParallelAnalysis(guidelines) {
             console.error(`[DEBUG] Error analyzing guideline ${guideline.id}:`, error);
             completedCount++;
             if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
+            window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
             return {
                 status: 'rejected',
                 guidelineId: guideline.id,
@@ -564,6 +570,7 @@ export async function runParallelAnalysis(guidelines) {
 
     // Wait for all to complete
     const results = await Promise.all(analysisPromises);
+    window.workflowStepper?.set('analysis', 'complete');
 
     // Filter and Sort Results
     // Note: `r.suggestions` is the full result object from getPracticePointSuggestions
