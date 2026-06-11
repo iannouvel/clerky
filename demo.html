@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>clerky — demo</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            display: flex; align-items: center; justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0b1220; color: #e6edf3;
+        }
+        .msg { text-align: center; opacity: 0.85; }
+        .msg h1 { font-weight: 600; margin: 0 0 6px; }
+    </style>
+    <script>
+        // Demo entry point: a narrower build for perfecting the GDM + IOL guideline
+        // workflows before expanding to the full guideline library. No Google
+        // sign-in (anonymous auth), UHSussex scope, scenario pre-loaded, and the
+        // guideline checkpoint locked to the two target guidelines.
+        // sessionStorage survives the disclaimer round-trip (which drops query
+        // params); the ?demo=1 param is a belt-and-braces fallback for first load.
+        try { sessionStorage.setItem('clerkyDemoMode', '1'); } catch (e) {}
+        window.location.replace('index.html?demo=1');
+    </script>
+</head>
+<body>
+    <div class="msg">
+        <h1>clerky</h1>
+        <p>Loading the demo…</p>
+    </div>
+</body>
+</html>
