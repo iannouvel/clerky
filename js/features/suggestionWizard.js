@@ -1,4 +1,5 @@
 import { flashBoldInEditor, showInsertionPreview, clearInsertionPreview, INSERTION_PLACEHOLDER, getReplacementPreview, getContentBeforePreview, clearReplacementState, getInsertionLineIndex, getEditedInsertionText, renderDiffMarkup, applyDiffMarkup, discardDiffMarkup, isDiffPreviewActive } from '../utils/editor.js';
+import { updateUser } from '../ui/status.js';
 
 // Clear replacement preview state after accepting suggestion so red strikethrough doesn't persist
 window.clearReplacementPreviewState = clearReplacementState;
@@ -58,6 +59,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         console.error('[WIZARD] Container not found');
         return;
     }
+
+    // The persistent "Analysis complete — N findings…" status box would overlap
+    // the wizard panel. The wizard header now carries that count ("N to review"),
+    // so clear the box (forceClear: still mid-workflow) once the wizard takes over.
+    updateUser(null, false, true, 'main');
 
     // Ensure guideline selection interface is hidden when wizard takes over
     document.querySelector('.guideline-selection-interface')?.remove();
