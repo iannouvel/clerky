@@ -8376,12 +8376,16 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // Derived/process-flag values (userFacing: false) are computed, not asked.
     const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
 
+    // Subjective gradings (neverInfer) are clinician judgements — never auto-filled
+    // by extraction or inference, so they always present as a deliberate choice.
+    const extractableValues = requiredValues.filter(v => !v.neverInfer);
+
     // Extract documented values from the note.
     updateUser(`Extracting documented values from note…`, true);
     const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ note, values: requiredValues }),
+        body: JSON.stringify({ note, values: extractableValues }),
     });
     if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
     const exData = await exResp.json();
@@ -8400,7 +8404,7 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // Fails open: on error, blanks are left for the user as before.
     const inferredIds = new Set();
     try {
-        const missing = relevantValues.filter(v => !(extractedById.get(v.id)?.found));
+        const missing = relevantValues.filter(v => !v.neverInfer && !(extractedById.get(v.id)?.found));
         if (missing.length > 0) {
             updateUser('Filling in values from your note…', true);
             const infResp = await fetch(`${window.SERVER_URL}/inferMissingValues`, {
@@ -8641,19 +8645,38 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             const inputRow = document.createElement('div');
             inputRow.style.cssText = 'display:flex;gap:6px;align-items:center;';
 
-            // Free-text for every value: the LLM fills a faithful natural-language
-            // answer (carrying scope/qualifiers), which the clinician reviews and
-            // edits. No forced enum/Yes-No widgets — a rigid category is what caused
-            // prior-history to be mis-recorded as current status. The catalogue
-            // `prompt`/`options` (if any) become an editable placeholder hint.
-            const inputEl = document.createElement('input');
-            inputEl.type = 'text';
-            if (Array.isArray(rv.options) && rv.options.length) {
-                inputEl.placeholder = `e.g. ${rv.options.map(o => o.replace(/_/g, ' ')).join(' / ')}`;
-            } else if (rv.type === 'number') {
-                inputEl.placeholder = rv.unit ? `value in ${rv.unit}` : 'value';
+            // Free-text for every value EXCEPT subjective gradings: the LLM fills a
+            // faithful natural-language answer (carrying scope/qualifiers), which the
+            // clinician reviews and edits. No forced enum/Yes-No widgets for extracted
+            // values — a rigid category is what caused prior-history to be mis-recorded
+            // as current status. The catalogue `prompt`/`options` become a placeholder hint.
+            //
+            // Subjective gradings (neverInfer) are the exception: they are a deliberate
+            // clinician judgement, never extracted, so a dropdown of the defined grades
+            // is correct — it makes the choice explicit and deterministic downstream.
+            let inputEl;
+            const hasOptions = Array.isArray(rv.options) && rv.options.length;
+            if (rv.neverInfer && hasOptions) {
+                inputEl = document.createElement('select');
+                const blank = document.createElement('option');
+                blank.value = ''; blank.textContent = '— select —';
+                inputEl.appendChild(blank);
+                for (const o of rv.options) {
+                    const opt = document.createElement('option');
+                    opt.value = o; opt.textContent = o;
+                    inputEl.appendChild(opt);
+                }
+                inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;background:var(--bg-input,#fff);color:var(--text-primary,#111);cursor:pointer;';
+            } else {
+                inputEl = document.createElement('input');
+                inputEl.type = 'text';
+                if (hasOptions) {
+                    inputEl.placeholder = `e.g. ${rv.options.map(o => o.replace(/_/g, ' ')).join(' / ')}`;
+                } else if (rv.type === 'number') {
+                    inputEl.placeholder = rv.unit ? `value in ${rv.unit}` : 'value';
+                }
+                inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;';
             }
-            inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;';
             if (ex?.found && ex.value !== null && ex.value !== undefined) inputEl.value = String(ex.value);
 
             const unknownBtn = document.createElement('label');
