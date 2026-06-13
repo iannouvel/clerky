@@ -126,6 +126,8 @@ Rules:
 - For a practice point whose action is to counsel, discuss, explain, inform, or obtain consent, capture ONE value for whether that counselling/discussion was provided — do NOT create a separate value for each individual sub-topic mentioned within a single discussion (e.g. one "induction counselling provided" value, not one per point covered). One conversation, one value.
 - Name the value for the underlying clinical concept, not the exact wording of this practice point, so the same concept yields the same value across practice points (e.g. "bishop_score", not both "bishop_score" and "cervical_bishop_score"; "induction_method", not separate values for the method, the drug, and the device).
 - Use snake_case ids.
+- Most values are objective: a measured number, a date, or a yes/no record of whether something was done or documented at this encounter. A few are instead a subjective clinical grading — a judgement the clinician reaches by weighing several findings together, where two reasonable clinicians reading the same note could grade it differently. A subjective grading is not something an automated reader should settle on its own. When a value is a graded judgement of this kind, mark it subjective: true and list, in the options field, the ordered grades the clinician would choose between, from best to worst. Objective values — numbers, dates, and documentation yes/nos — are never subjective.
+- For any value of type enum, populate the options field with the allowed choices.
 - Output JSON only.`;
 
 function buildPerPPPrompt(pp, serial) {
@@ -146,10 +148,13 @@ What atomic clinical data values does THIS practice point depend on? Return JSON
       "name": "snake_case id",
       "label": "human-readable label",
       "type": "number | boolean | enum | string | date",
+      "options": ["ordered choices — required for enum, omit otherwise"],
+      "subjective": true,
       "purpose": "applicability | compliance | both"
     }
   ]
-}`;
+}
+Omit "subjective" (or set false) for objective values; include "options" only for enum types.`;
 }
 
 async function extractValuesForPP(pp, serial) {
@@ -251,7 +256,19 @@ function aggregate(perPPResults, catalogue) {
             } else {
                 const id = (v.name || '').toLowerCase().replace(/[^a-z0-9_]+/g, '_').replace(/^_|_$/g, '');
                 if (!proposed.has(id)) {
-                    proposed.set(id, { proposedId: id, label: v.label || v.name, type: v.type || 'unknown', usedByPPs: new Set() });
+                    proposed.set(id, {
+                        proposedId: id,
+                        label: v.label || v.name,
+                        type: v.type || 'unknown',
+                        options: Array.isArray(v.options) && v.options.length ? v.options : null,
+                        subjective: v.subjective === true,
+                        usedByPPs: new Set(),
+                    });
+                } else {
+                    // Merge definition hints across PPs: keep any options/subjective seen.
+                    const e = proposed.get(id);
+                    if (!e.options && Array.isArray(v.options) && v.options.length) e.options = v.options;
+                    if (v.subjective === true) e.subjective = true;
                 }
                 proposed.get(id).usedByPPs.add(serial);
             }
@@ -881,7 +898,15 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         for (const p of (rv.proposedNewValues || [])) {
             const id = p.proposedId || p.id; if (!id) continue;
             const used = p.usedByPPs || [];
-            if (used.some(s => applicable.has(s))) add(id, { id, label: p.label || id, type: p.type || 'string', _proposed: true }, used, true);
+            if (used.some(s => applicable.has(s))) add(id, {
+                id,
+                label: p.label || id,
+                type: p.type || 'string',
+                options: Array.isArray(p.options) && p.options.length ? p.options : undefined,
+                // A subjective grading must be confirmed by the clinician, never inferred.
+                neverInfer: p.subjective === true || undefined,
+                _proposed: true,
+            }, used, true);
             // non-applicable proposed singletons: skip silently (avoid noise in the notice)
         }
     }));
