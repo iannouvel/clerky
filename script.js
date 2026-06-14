@@ -8645,6 +8645,20 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 labelLine.appendChild(unitEl);
             }
 
+            // A yes/no value the note is silent on gets a likely-negative default
+            // to confirm (safe kinds only — never a guessed measurement). Measurements
+            // (numeric) and open history stay blank.
+            const hasOptions = Array.isArray(rv.options) && rv.options.length;
+            const isBinaryType = !rv.neverInfer && (
+                rv.type === 'boolean' || rv.type === 'binary' ||
+                (hasOptions && rv.options.length === 2 && rv.options.some(o => /^(yes|no|present|absent|true|false)$/i.test(o)))
+            );
+            // Boolean values often have no options array — synthesise Yes/No.
+            const binaryOptions = hasOptions ? rv.options : ['Yes', 'No'];
+            const negativeOption = (opts) => opts.find(o => /^(no\b|absent|none|false|not\b)/i.test(o)) || opts[opts.length - 1] || 'No';
+            // Only BLANK binaries get a likely-negative default (don't disturb infer-filled ones).
+            const willLikelyDefault = isBinaryType && !(ex?.found);
+
             const badge = document.createElement('span');
             badge.style.cssText = 'margin-left:auto;font-size:0.78em;padding:2px 8px;border-radius:10px;';
             if (ex?.inferred) {
@@ -8653,6 +8667,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             } else if (ex?.found) {
                 badge.textContent = 'auto-filled';
                 badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
+            } else if (willLikelyDefault) {
+                badge.textContent = 'likely — confirm';
+                badge.style.background = '#fef9c3'; badge.style.color = '#854d0e';
             } else {
                 badge.textContent = 'needs value';
                 badge.style.background = '#fef3c7'; badge.style.color = '#92400e';
@@ -8683,9 +8700,11 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             // Subjective gradings (neverInfer) are the exception: they are a deliberate
             // clinician judgement, never extracted, so a dropdown of the defined grades
             // is correct — it makes the choice explicit and deterministic downstream.
+            const selectStyle = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;background:var(--bg-input,#fff);color:var(--text-primary,#111);cursor:pointer;';
             let inputEl;
-            const hasOptions = Array.isArray(rv.options) && rv.options.length;
+            let otherInput = null; // free-text reveal for the "Other…" option
             if (rv.neverInfer && hasOptions) {
+                // Subjective grading: dropdown of defined grades + an "Other…" free-text alternative.
                 inputEl = document.createElement('select');
                 const blank = document.createElement('option');
                 blank.value = ''; blank.textContent = '— select —';
@@ -8695,7 +8714,29 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                     opt.value = o; opt.textContent = o;
                     inputEl.appendChild(opt);
                 }
-                inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;background:var(--bg-input,#fff);color:var(--text-primary,#111);cursor:pointer;';
+                const otherOpt = document.createElement('option');
+                otherOpt.value = '__OTHER__'; otherOpt.textContent = 'Other…';
+                inputEl.appendChild(otherOpt);
+                inputEl.style.cssText = selectStyle;
+                otherInput = document.createElement('input');
+                otherInput.type = 'text';
+                otherInput.placeholder = 'type an alternative…';
+                otherInput.style.cssText = 'flex:1;margin-top:6px;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;display:none;';
+                inputEl.addEventListener('change', () => {
+                    const isOther = inputEl.value === '__OTHER__';
+                    otherInput.style.display = isOther ? 'block' : 'none';
+                    if (isOther) otherInput.focus();
+                });
+            } else if (willLikelyDefault) {
+                // Blank yes/no value: dropdown pre-selected to the likely-negative default to confirm.
+                inputEl = document.createElement('select');
+                for (const o of binaryOptions) {
+                    const opt = document.createElement('option');
+                    opt.value = o; opt.textContent = o;
+                    inputEl.appendChild(opt);
+                }
+                inputEl.style.cssText = selectStyle;
+                inputEl.value = negativeOption(binaryOptions);
             } else {
                 inputEl = document.createElement('input');
                 inputEl.type = 'text';
@@ -8730,11 +8771,12 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             const unknownText = document.createElement('span');
             unknownText.textContent = 'unknown / pending';
             unknownBtn.appendChild(unknownText);
-            unknownCb.addEventListener('change', () => { inputEl.disabled = unknownCb.checked; });
+            unknownCb.addEventListener('change', () => { inputEl.disabled = unknownCb.checked; if (otherInput) otherInput.disabled = unknownCb.checked; });
 
             inputRow.appendChild(inputEl);
             inputRow.appendChild(unknownBtn);
             row.appendChild(inputRow);
+            if (otherInput) row.appendChild(otherInput); // free-text reveal sits below the dropdown
 
             if (ex?.evidence) {
                 const evi = document.createElement('div');
@@ -8745,7 +8787,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 row.appendChild(evi);
             }
 
-            inputs.set(rv.id, { input: inputEl, unknown: unknownCb });
+            inputs.set(rv.id, { input: inputEl, unknown: unknownCb, otherInput });
             // Auto-filled rows live inside the collapsible container; needs-value rows render inline.
             (isAutoFilled && autoContainer ? autoContainer : list).appendChild(row);
         }
@@ -8762,9 +8804,10 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
 
         const collect = () => {
             const out = {};
-            for (const [id, { input, unknown }] of inputs) {
+            for (const [id, { input, unknown, otherInput }] of inputs) {
                 if (unknown.checked) { out[id] = { value: null, status: 'unknown' }; continue; }
-                const raw = input.value;
+                let raw = input.value;
+                if (raw === '__OTHER__') raw = otherInput ? otherInput.value : ''; // free-text alternative
                 if (raw === '' || raw === null) { out[id] = { value: null, status: 'missing' }; continue; }
                 out[id] = { value: raw, status: 'provided' };
             }
