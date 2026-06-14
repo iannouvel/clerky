@@ -17616,6 +17616,9 @@ const GUIDELINE_LIST_FIELDS = [
     'summary', 'keywords', 'organisation', 'downloadUrl', 'originalFilename',
     'hospitalTrust', 'shortHospitalTrust', 'scope', 'canonicalId',
     'contentStorageUrl', 'contentInStorage', 'condensedStorageUrl', 'summaryStorageUrl',
+    // Nested scalar only (NOT the full requiredValues/practicePoints arrays) — lets the
+    // client show "checking N practice points" progress without the heavy payload.
+    'requiredValues.ppCount',
 ];
 
 // Update getAllGuidelines to use sequential fetches with individual timeouts
