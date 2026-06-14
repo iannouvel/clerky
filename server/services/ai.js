@@ -18,6 +18,13 @@
  */
 
 const axios = require('axios');
+const https = require('https');
+// Keep-alive connection pool for LLM provider calls. Without this, axios opens a
+// fresh TLS connection per request — for the ~100-call per-point fan-out that's
+// ~100 TLS handshakes, which throttled effective concurrency well below what the
+// provider API allows (measured: DeepSeek scales to 16-24x, prod only hit ~10-12x).
+// Pooling reuses connections across the fan-out. maxSockets generous to not cap it.
+const KEEPALIVE_AGENT = new https.Agent({ keepAlive: true, maxSockets: 64, maxFreeSockets: 16, timeout: 60000 });
 const stringSimilarity = require('string-similarity');
 const { db, admin } = require('../config/firebase');
 const { debugLog } = require('../config/logger');
@@ -367,19 +374,19 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
         let responseData, content, tokenUsage = {};
 
         if (preferredProvider === 'DeepSeek') {
-            const response = await axios.post('https://api.deepseek.com/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.deepseek.com/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.choices[0].message.content;
         } else if (preferredProvider === 'OpenAI') {
-            const response = await axios.post('https://api.openai.com/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.openai.com/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.choices[0].message.content;
         } else if (preferredProvider === 'Anthropic') {
-            const response = await axios.post('https://api.anthropic.com/v1/messages', { model, messages: formattedMessages, max_tokens: maxTokens, temperature }, { headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.anthropic.com/v1/messages', { model, messages: formattedMessages, max_tokens: maxTokens, temperature }, { headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY, 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.content[0].text;
         } else if (preferredProvider === 'Mistral') {
-            const response = await axios.post('https://api.mistral.ai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.mistral.ai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.MISTRAL_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.choices[0].message.content;
         } else if (preferredProvider === 'Gemini') {
@@ -394,15 +401,15 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
             if (/gemini-(2\.5|3)/.test(model)) {
                 generationConfig.thinkingConfig = { thinkingBudget: 0 };
             }
-            const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { contents: geminiMessages, generationConfig }, { headers: { 'Content-Type': 'application/json' }, params: { key: process.env.GOOGLE_AI_API_KEY }, timeout: timeoutMs });
+            const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, { contents: geminiMessages, generationConfig }, { headers: { 'Content-Type': 'application/json' }, params: { key: process.env.GOOGLE_AI_API_KEY }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.candidates?.[0]?.content?.parts?.[0]?.text || '';
         } else if (preferredProvider === 'Groq') {
-            const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.choices[0].message.content;
         } else if (preferredProvider === 'Grok') {
-            const response = await axios.post('https://api.x.ai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.GROK_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs });
+            const response = await axios.post('https://api.x.ai/v1/chat/completions', { model, messages: formattedMessages, temperature, max_tokens: maxTokens }, { headers: { 'Authorization': `Bearer ${process.env.GROK_API_KEY}`, 'Content-Type': 'application/json' }, timeout: timeoutMs, httpsAgent: KEEPALIVE_AGENT });
             responseData = response.data;
             content = responseData.choices[0].message.content;
         }
