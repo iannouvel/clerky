@@ -8660,6 +8660,16 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             labelLine.appendChild(badge);
             row.appendChild(labelLine);
 
+            // "Why it's needed" — the practice point(s) that require this value, so
+            // the clinician understands the clinical reason for being asked.
+            if (Array.isArray(rv.reasons) && rv.reasons.length) {
+                const why = document.createElement('div');
+                why.style.cssText = 'margin-top:3px;font-size:0.78em;line-height:1.4;color:var(--text-secondary,#555);';
+                const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+                why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> ${rv.reasons.map(esc).join(' · ')}`;
+                row.appendChild(why);
+            }
+
             // Input row
             const inputRow = document.createElement('div');
             inputRow.style.cssText = 'display:flex;gap:6px;align-items:center;';
