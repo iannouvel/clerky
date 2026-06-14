@@ -723,25 +723,25 @@ async function filterValuesByRelevance(note, valuesList) {
     }
 
     const BATCH = 25;
-    const out = [];
-    for (let i = 0; i < valuesList.length; i += BATCH) {
-        const batch = valuesList.slice(i, i + BATCH);
+    const batches = [];
+    for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
+    const perBatch = await runConcurrent(batches, async (batch) => {
         try {
             const text = await callGemini(RELEVANCE_SYSTEM, buildRelevancePrompt(note, batch));
             const parsed = parseJSON(text);
             const byId = new Map((parsed?.results || []).map(r => [r.id, r]));
-            for (const v of batch) {
+            return batch.map(v => {
                 const r = byId.get(v.id);
                 // Fail open: if the model didn't return a verdict for this value, keep it.
-                out.push(r && typeof r.relevant === 'boolean'
+                return r && typeof r.relevant === 'boolean'
                     ? { id: v.id, relevant: r.relevant, reason: r.reason || '' }
-                    : { id: v.id, relevant: true, reason: '' });
-            }
+                    : { id: v.id, relevant: true, reason: '' };
+            });
         } catch (e) {
-            for (const v of batch) out.push({ id: v.id, relevant: true, reason: '' });
+            return batch.map(v => ({ id: v.id, relevant: true, reason: '' }));
         }
-    }
-    return { results: out };
+    }, 6);
+    return { results: perBatch.flat().filter(Boolean) };
 }
 
 // ----- PP-level applicability gate -----------------------------------------
@@ -922,7 +922,31 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         .filter(v => v.label)
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
-    return { values, filteredOut, missing, catalogueSize: Object.keys(catalogue).length, _debug: { model: GEMINI_MODEL, perGuideline: _debug } };
+    // Second gate: value-level relevance. PP-applicability gates at the PRACTICE
+    // POINT level, so a multi-stage point that applies (e.g. "for a pregnant OR
+    // postnatal patient") surfaces ALL its values — including ones scoped to a
+    // stage this patient hasn't reached ("weeks post-birth") or a different
+    // population (autonomic neuropathy for gestational, not pre-existing, diabetes).
+    // Judge each surviving value against the note (using its conditions) and move
+    // the mismatched ones into filteredOut. Fails open: keep all on error.
+    let finalValues = values;
+    try {
+        const rel = await filterValuesByRelevance(note, values);
+        const verdict = new Map((rel.results || []).map(r => [r.id, r]));
+        finalValues = [];
+        for (const v of values) {
+            const r = verdict.get(v.id);
+            if (r && r.relevant === false) {
+                filteredOut.push({ label: v.label, reason: r.reason || 'Not relevant to this patient at this stage of care' });
+            } else {
+                finalValues.push(v);
+            }
+        }
+    } catch (e) {
+        finalValues = values;
+    }
+
+    return { values: finalValues, filteredOut, missing, catalogueSize: Object.keys(catalogue).length, _debug: { model: GEMINI_MODEL, perGuideline: _debug } };
 }
 
 // ----- Best-effort inference of values the note didn't document ------------
