@@ -8376,16 +8376,17 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // Derived/process-flag values (userFacing: false) are computed, not asked.
     const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
 
-    // Subjective gradings (neverInfer) are clinician judgements — never auto-filled
-    // by extraction or inference, so they always present as a deliberate choice.
-    const extractableValues = requiredValues.filter(v => !v.neverInfer);
-
+    // Subjective gradings (neverInfer) are NOT inferred from indirect evidence
+    // (that's what made the RAG rating flip), but they ARE still extracted when the
+    // note explicitly documents the grade (e.g. "Suboptimal glycaemic control") —
+    // so an explicitly-stated grade pre-fills the dropdown for the clinician to
+    // confirm, rather than forcing redundant re-entry. Inference stays suppressed below.
     // Extract documented values from the note.
     updateUser(`Extracting documented values from note…`, true);
     const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ note, values: extractableValues }),
+        body: JSON.stringify({ note, values: userFacingValues }),
     });
     if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
     const exData = await exResp.json();
@@ -8495,6 +8496,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         modal.style.cssText = 'position:fixed;top:60px;right:16px;bottom:16px;width:min(480px, 38vw);min-width:380px;background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);z-index:10001;display:flex;flex-direction:column;border:1px solid var(--border-color,#ddd);';
         // Reflow the note clear of this fixed panel only while it's open (see styles.css body.rv-panel-open)
         document.body.classList.add('rv-panel-open');
+        // Clear the lingering "Filling in values from your note…" loading status so
+        // the note is readable while the clinician works through this panel.
+        if (typeof updateUser === 'function') updateUser(null, false, true, 'main');
         modal.innerHTML = '';
 
         const header = document.createElement('div');
@@ -8507,11 +8511,14 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         modal.appendChild(header);
 
         // Relevance-filter notice — explain which candidate values were hidden
-        // because they don't apply to THIS patient's scenario, and why.
-        if (Array.isArray(filteredOut) && filteredOut.length > 0) {
+        // because they don't apply to THIS patient's scenario. Rendered BELOW the
+        // value list (called after the loop) so it doesn't push the needs-value
+        // items down the panel.
+        const renderFilteredNotice = (container) => {
+            if (!(Array.isArray(filteredOut) && filteredOut.length > 0)) return;
             const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
             const notice = document.createElement('div');
-            notice.style.cssText = 'margin:12px 18px 0;padding:10px 12px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:6px;color:#1e3a5f;';
+            notice.style.cssText = 'margin:14px 0 4px;padding:10px 12px;border:1px solid #bfdbfe;background:#eff6ff;border-radius:6px;color:#1e3a5f;';
             const n = filteredOut.length;
             const items = filteredOut.map(f => {
                 const reason = f.reason ? ` <span style="color:#3b5573;">— ${esc(f.reason)}</span>` : '';
@@ -8531,7 +8538,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                         <ul id="rvFilteredList" style="display:none;margin:6px 0 0;padding-left:18px;font-size:0.8em;line-height:1.45;">${items}</ul>
                     </div>
                 </div>`;
-            modal.appendChild(notice);
+            container.appendChild(notice);
             const toggle = notice.querySelector('#rvFilteredToggle');
             const ul = notice.querySelector('#rvFilteredList');
             toggle.addEventListener('click', () => {
@@ -8539,7 +8546,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 ul.style.display = open ? 'none' : 'block';
                 toggle.textContent = open ? 'Show what was hidden' : 'Hide';
             });
-        }
+        };
 
         const list = document.createElement('div');
         list.style.cssText = 'overflow-y:auto;padding:12px 18px;flex:1 1 auto;';
@@ -8677,7 +8684,21 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 }
                 inputEl.style.cssText = 'flex:1;padding:5px 8px;border:1px solid var(--border-color,#ccc);border-radius:4px;font-size:0.9em;';
             }
-            if (ex?.found && ex.value !== null && ex.value !== undefined) inputEl.value = String(ex.value);
+            if (ex?.found && ex.value !== null && ex.value !== undefined) {
+                const exVal = String(ex.value);
+                if (inputEl.tagName === 'SELECT') {
+                    // Map the extracted phrase to a defined grade option
+                    // (e.g. "Suboptimal glycaemic control" → "Suboptimal").
+                    const lc = exVal.toLowerCase();
+                    const match = (rv.options || []).find(o => {
+                        const ol = o.toLowerCase();
+                        return lc === ol || lc.includes(ol) || ol.includes(lc);
+                    });
+                    if (match) inputEl.value = match;
+                } else {
+                    inputEl.value = exVal;
+                }
+            }
 
             const unknownBtn = document.createElement('label');
             unknownBtn.style.cssText = 'display:flex;align-items:center;gap:4px;font-size:0.85em;color:var(--text-secondary,#666);cursor:pointer;';
@@ -8706,6 +8727,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             // Auto-filled rows live inside the collapsible container; needs-value rows render inline.
             (isAutoFilled && autoContainer ? autoContainer : list).appendChild(row);
         }
+
+        // Hidden-values notice goes BELOW the value rows (inside the scroll area).
+        renderFilteredNotice(list);
 
         const footer = document.createElement('div');
         footer.style.cssText = 'padding:12px 18px;border-top:1px solid var(--border-color,#ddd);display:flex;gap:8px;justify-content:flex-end;background:var(--bg-secondary,#fafafa);border-radius:0 0 10px 10px;';
