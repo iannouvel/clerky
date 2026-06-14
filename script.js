@@ -1733,7 +1733,8 @@ async function loadGuidelinesFromFirestore() {
                         downloadUrl: g.downloadUrl,
                         originalFilename: g.originalFilename,
                         hospitalTrust: g.hospitalTrust || null,  // CRITICAL for filtering
-                        scope: g.scope || null  // CRITICAL for filtering
+                        scope: g.scope || null,  // CRITICAL for filtering
+                        practicePointCount: g.requiredValues?.ppCount ?? null  // for "checking N practice points" progress
                     };
                     return acc;
                 }, {});
@@ -1819,7 +1820,8 @@ async function loadGuidelinesFromFirestore() {
                 downloadUrl: g.downloadUrl,
                 originalFilename: g.originalFilename,
                 hospitalTrust: g.hospitalTrust || null,  // CRITICAL for filtering
-                scope: g.scope || null  // CRITICAL for filtering
+                scope: g.scope || null,  // CRITICAL for filtering
+                practicePointCount: g.requiredValues?.ppCount ?? null  // for "checking N practice points" progress
             };
             return acc;
         }, {});
@@ -8358,7 +8360,17 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // VRIII / hourly glucose) surface — which the old aggregate(freq-gated)+filter
     // approach dropped because such values are used by only 1–2 PPs.
     const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
-    updateUser('Determining which guidance applies and what to gather…', true);
+    // Name what's being checked, with practice-point counts where known.
+    const gatherBreakdown = (selectedGuidelines || []).map(g => {
+        const data = window.globalGuidelines?.[g.id];
+        const name = (typeof getCleanDisplayTitle === 'function' ? getCleanDisplayTitle(g, data) : (data?.displayName || g.title || g.id));
+        const n = data?.practicePointCount;
+        return n ? `${name} (${n})` : name;
+    }).join(', ');
+    const gatherTotalPP = (selectedGuidelines || []).reduce((s, g) => s + (window.globalGuidelines?.[g.id]?.practicePointCount || 0), 0);
+    updateUser(gatherTotalPP
+        ? `Checking which of ${gatherTotalPP} practice points apply to this patient (${gatherBreakdown}) and what values they need…`
+        : `Checking which practice points apply (${gatherBreakdown}) and what values they need…`, true);
     const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },

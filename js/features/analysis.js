@@ -526,6 +526,24 @@ export async function runParallelAnalysis(guidelines) {
         return id;
     }
 
+    // Up-front breakdown so the clinician sees WHAT is being checked, not just a
+    // spinner — e.g. "Checking 105 practice points across 2 guidelines:
+    // Diabetes in pregnancy (55), Induction of labour (50)". Counts come from the
+    // lightweight practicePointCount loaded with each guideline; falls back to
+    // names-only if a count is unavailable.
+    const ppCountFor = (gl) => window.globalGuidelines?.[gl.id]?.practicePointCount || null;
+    const totalPP = guidelines.reduce((s, gl) => s + (ppCountFor(gl) || 0), 0);
+    const breakdown = guidelines.map(gl => {
+        const name = getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id]);
+        const n = ppCountFor(gl);
+        return n ? `${name} (${n})` : name;
+    }).join(', ');
+    if (statusText) {
+        statusText.textContent = totalPP
+            ? `Checking ${totalPP} practice points across ${total} guideline${total === 1 ? '' : 's'}: ${breakdown}`
+            : `Checking practice points across ${total} guideline${total === 1 ? '' : 's'}: ${breakdown}`;
+    }
+
     // Map guidelines to promises
     const analysisPromises = guidelines.map(async (guideline, index) => {
         try {
