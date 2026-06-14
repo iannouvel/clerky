@@ -189,6 +189,43 @@ async function getUserModelPreferences(userId) {
     }
 }
 
+// Returns the user's SAVED model order, or null when they have none. Unlike
+// getUserModelPreferences (which returns the global default when unset, for
+// display/fallback), this lets a caller distinguish a real user preference from
+// the default — so the default cannot silently override an explicitly-requested
+// model in sendToAI. Cached; fails open to null (no override).
+const userSavedModelOrderCache = new Map();
+async function getSavedUserModelOrder(userId) {
+    if (!userId) return null;
+    if (userSavedModelOrderCache.has(userId)) {
+        const c = userSavedModelOrderCache.get(userId);
+        if (Date.now() - c.timestamp < USER_PREFERENCE_CACHE_TTL) return c.order;
+        userSavedModelOrderCache.delete(userId);
+    }
+    let order = null;
+    try {
+        if (db) {
+            const doc = await db.collection('userPreferences').doc(userId).get();
+            if (doc.exists) {
+                const data = doc.data();
+                if (data && Array.isArray(data.modelPreferences) && data.modelPreferences.length) order = data.modelPreferences;
+            }
+        }
+        if (!order) {
+            const f = path.join(userPrefsDir, `${userId}.json`);
+            if (fs.existsSync(f)) {
+                const u = JSON.parse(fs.readFileSync(f, 'utf8'));
+                if (u && Array.isArray(u.modelPreferences) && u.modelPreferences.length) order = u.modelPreferences;
+            }
+        }
+    } catch (e) {
+        console.error('Error in getSavedUserModelOrder:', e.message);
+        return null;
+    }
+    userSavedModelOrderCache.set(userId, { order, timestamp: Date.now() });
+    return order;
+}
+
 // Update user's model preferences
 async function updateUserModelPreferences(userId, modelOrder) {
     console.log(`Updating model preferences for user ${userId} to:`, modelOrder);
@@ -629,6 +666,7 @@ module.exports = {
     getUserAIPreference,
     updateUserAIPreference,
     getUserModelPreferences,
+    getSavedUserModelOrder,
     updateUserModelPreferences,
     getProviderFromModel,
     getSecondPreferenceLLM,

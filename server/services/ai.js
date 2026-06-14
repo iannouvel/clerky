@@ -27,6 +27,7 @@ const {
     getUserAIPreference,
     getProviderFromModel,
     getUserModelPreferences,
+    getSavedUserModelOrder,
     getNextAvailableProvider,
     getUserChunkDistributionProviders,
     getUserTaskModels
@@ -287,7 +288,13 @@ async function sendToAI(prompt, model = 'deepseek-chat', systemPrompt = null, us
 
         if (userId && !skipUserPreference) {
             try {
-                const userModelOrder = await getUserModelPreferences(userId);
+                // Only a user's SAVED preference may override the explicitly-requested
+                // model. getUserModelPreferences returns the GLOBAL DEFAULT when the
+                // user has none — using that here silently replaced an explicit
+                // 'deepseek-chat' with the default head (groq/compound) for every
+                // anonymous/no-prefs user. getSavedUserModelOrder returns null when
+                // unset, so the explicit model is respected.
+                const userModelOrder = await getSavedUserModelOrder(userId);
                 if (userModelOrder && userModelOrder.length > 0) {
                     const firstPreferredModelId = userModelOrder[0];
                     const providerConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === firstPreferredModelId);

@@ -15935,13 +15935,23 @@ ${trimmedText}`;
             });
         }
 
-        // Parse the response - should be "question" or "note"
+        // Parse the response. The prompt asks for a single word, but some models
+        // ramble; the verdict comes LAST. A plain includes('question') was wrong —
+        // a correct "...this is a clinical note, not a question" reply contains the
+        // word "question" and was misread as a question. Take the final note/question
+        // mention, flipping any that is negated ("not a note" ⇒ question).
         const responseText = aiResult.content.trim().toLowerCase();
-        const isQuestion = responseText.includes('question');
-        const isNote = responseText.includes('note');
-
-        // Default to note if unclear
-        const detectedType = isQuestion ? 'question' : 'note';
+        let detectedType;
+        if (responseText === 'note' || responseText === 'question') {
+            detectedType = responseText;
+        } else {
+            const re = /(not\s+(?:a|an)\s+)?(note|question)/g;
+            let m, last = null;
+            while ((m = re.exec(responseText)) !== null) last = m;
+            if (!last) detectedType = 'note'; // default to note if unclear
+            else detectedType = last[1] ? (last[2] === 'note' ? 'question' : 'note') : last[2];
+        }
+        const isQuestion = detectedType === 'question';
 
         debugLog('[DEBUG] detectInputType: Result', {
             userId,
