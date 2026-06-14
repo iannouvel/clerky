@@ -872,6 +872,8 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         const rv = g.requiredValues || {};
         const pps = g.practicePoints || [];
         const condOf = (s) => (pps[s - 1]?.condition || '').trim();
+        // Concise "why this value is needed" — the name of the practice point that requires it.
+        const nameOf = (s) => (pps[s - 1]?.name || '').trim();
 
         // PPs that contribute any value → evaluate their applicability.
         const contributing = new Set();
@@ -885,10 +887,13 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
 
         const add = (id, base, used, isProposed) => {
-            if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), proposed: isProposed });
+            if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), reasons: new Set(), proposed: isProposed });
             const e = gathered.get(id);
             e.using.push({ guidelineId: gid, pps: used });
-            for (const s of used) if (applicable.has(s) && e.conds.size < 3) { const c = condOf(s); if (c) e.conds.add(c); }
+            for (const s of used) if (applicable.has(s)) {
+                if (e.conds.size < 3) { const c = condOf(s); if (c) e.conds.add(c); }
+                if (e.reasons.size < 3) { const nm = nameOf(s); if (nm) e.reasons.add(nm); }
+            }
         };
 
         for (const v of (rv.values || [])) {
@@ -913,7 +918,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
     }));
 
     const values = [...gathered.values()]
-        .map(e => ({ id: e.id, ...(e.value || {}), proposed: e.proposed, usingGuidelines: e.using, conditions: [...e.conds].slice(0, 3) }))
+        .map(e => ({ id: e.id, ...(e.value || {}), proposed: e.proposed, usingGuidelines: e.using, conditions: [...e.conds].slice(0, 3), reasons: [...e.reasons].slice(0, 3) }))
         .filter(v => v.label)
         .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
 
