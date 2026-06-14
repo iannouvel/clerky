@@ -644,21 +644,22 @@ async function extractValuesFromNote(note, valuesList) {
         return { extracted: [] };
     }
 
-    // Batch into chunks of 15 to keep token usage and response size bounded
+    // Batch into chunks of 15 to keep token usage and response size bounded.
+    // Batches run CONCURRENTLY (was a serial await-loop) — independent LLM calls,
+    // so wall-clock is one batch not the sum.
     const BATCH = 15;
-    const out = [];
-    for (let i = 0; i < valuesList.length; i += BATCH) {
-        const batch = valuesList.slice(i, i + BATCH);
+    const batches = [];
+    for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
+    const results = await runConcurrent(batches, async (batch) => {
         try {
             const text = await callGemini(EXTRACT_SYSTEM, buildExtractPrompt(note, batch));
             const parsed = parseJSON(text);
-            for (const e of (parsed?.extracted || [])) out.push(e);
+            return (parsed?.extracted || []);
         } catch (e) {
-            // On error, mark all in batch as missing
-            for (const v of batch) out.push({ id: v.id, found: false, value: null, evidence: '', confidence: 0, _error: 'extract-failed' });
+            return batch.map(v => ({ id: v.id, found: false, value: null, evidence: '', confidence: 0, _error: 'extract-failed' }));
         }
-    }
-    return { extracted: out };
+    }, 8);
+    return { extracted: results.flat().filter(Boolean) };
 }
 
 // ----- Relevance filter ----------------------------------------------------
@@ -989,25 +990,26 @@ async function inferMissingValues(note, valuesList) {
     if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
         return { filled: [] };
     }
+    // Batches run CONCURRENTLY (was a serial await-loop) — independent LLM calls.
     const BATCH = 15;
-    const out = [];
-    for (let i = 0; i < valuesList.length; i += BATCH) {
-        const batch = valuesList.slice(i, i + BATCH);
+    const batches = [];
+    for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
+    const results = await runConcurrent(batches, async (batch) => {
         try {
             const text = await callGemini(INFER_SYSTEM, buildInferPrompt(note, batch));
             const parsed = parseJSON(text);
             const byId = new Map((parsed?.filled || []).map(r => [r.id, r]));
-            for (const v of batch) {
+            return batch.map(v => {
                 const r = byId.get(v.id);
-                out.push(r && r.determinable === true
+                return r && r.determinable === true
                     ? { id: v.id, determinable: true, value: r.value, confidence: r.confidence ?? null, reason: r.reason || '' }
-                    : { id: v.id, determinable: false, value: null, confidence: null, reason: r?.reason || '' });
-            }
+                    : { id: v.id, determinable: false, value: null, confidence: null, reason: r?.reason || '' };
+            });
         } catch (e) {
-            for (const v of batch) out.push({ id: v.id, determinable: false, value: null, confidence: null, reason: '' });
+            return batch.map(v => ({ id: v.id, determinable: false, value: null, confidence: null, reason: '' }));
         }
-    }
-    return { filled: out };
+    }, 8);
+    return { filled: results.flat().filter(Boolean) };
 }
 
 // ----- Note augmentation with user-supplied values ------------------------
