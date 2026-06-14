@@ -8582,6 +8582,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         let autoContainer = null; // collapsible wrapper for the auto-filled group
 
         const inputs = new Map();
+        const needsCards = []; // one-at-a-time accordion for needs-value items
         for (const rv of sorted) {
             const ex = extractedById.get(rv.id);
             const isAutoFilled = !!ex?.found;
@@ -8675,16 +8676,54 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 badge.style.background = '#fef3c7'; badge.style.color = '#92400e';
             }
             labelLine.appendChild(badge);
-            row.appendChild(labelLine);
 
-            // "Why it's needed" — the practice point(s) that require this value, so
-            // the clinician understands the clinical reason for being asked.
-            if (Array.isArray(rv.reasons) && rv.reasons.length) {
+            const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+            // Needs-value items become a one-at-a-time accordion: the active card is
+            // expanded; the rest collapse to a clickable header below. Auto-filled
+            // items keep their flat inline layout (inside the collapsed review group).
+            let contentTarget = row;
+            if (!isAutoFilled) {
+                const chevron = document.createElement('span');
+                chevron.style.cssText = 'margin-left:6px;font-size:0.85em;color:var(--text-secondary,#888);';
+                labelLine.appendChild(chevron);
+                labelLine.style.cursor = 'pointer';
+                row.appendChild(labelLine);
+                const cardBody = document.createElement('div');
+                row.appendChild(cardBody);
+                contentTarget = cardBody;
+                const setOpen = (open) => { cardBody.style.display = open ? 'block' : 'none'; chevron.textContent = open ? '▾' : '▸'; };
+                labelLine.addEventListener('click', () => {
+                    const isOpen = cardBody.style.display !== 'none';
+                    needsCards.forEach(c => c.setOpen(false));
+                    setOpen(!isOpen);
+                });
+                needsCards.push({ setOpen });
+            } else {
+                row.appendChild(labelLine);
+            }
+
+            // "Why it's needed" — guideline practice point + its recommendation + when
+            // it applies. Rich for the active needs-value card; compact for review items.
+            const whyDetails = Array.isArray(rv.whyDetails) ? rv.whyDetails.filter(w => w && w.name) : [];
+            if (whyDetails.length) {
                 const why = document.createElement('div');
-                why.style.cssText = 'margin-top:3px;font-size:0.78em;line-height:1.4;color:var(--text-secondary,#555);';
-                const esc = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+                why.style.cssText = 'margin:2px 0 8px;font-size:0.78em;line-height:1.45;color:var(--text-secondary,#555);';
+                if (isAutoFilled) {
+                    why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> ${whyDetails.map(w => esc(w.name)).join(' · ')}`;
+                } else {
+                    why.innerHTML = whyDetails.map(w => {
+                        const action = w.action ? `<div style="margin-top:2px;">“${esc(w.action)}”</div>` : '';
+                        const cond = w.condition ? `<div style="margin-top:2px;opacity:0.7;">Applies when: ${esc(w.condition)}</div>` : '';
+                        return `<div style="margin-bottom:6px;"><span style="opacity:0.7;">Needed for:</span> <strong>${esc(w.name)}</strong>${action}${cond}</div>`;
+                    }).join('');
+                }
+                contentTarget.appendChild(why);
+            } else if (Array.isArray(rv.reasons) && rv.reasons.length) {
+                const why = document.createElement('div'); // fallback: names only (older cached gather)
+                why.style.cssText = 'margin:2px 0 8px;font-size:0.78em;line-height:1.4;color:var(--text-secondary,#555);';
                 why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> ${rv.reasons.map(esc).join(' · ')}`;
-                row.appendChild(why);
+                contentTarget.appendChild(why);
             }
 
             // Input row
@@ -8775,8 +8814,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
 
             inputRow.appendChild(inputEl);
             inputRow.appendChild(unknownBtn);
-            row.appendChild(inputRow);
-            if (otherInput) row.appendChild(otherInput); // free-text reveal sits below the dropdown
+            contentTarget.appendChild(inputRow);
+            if (otherInput) contentTarget.appendChild(otherInput); // free-text reveal sits below the dropdown
 
             if (ex?.evidence) {
                 const evi = document.createElement('div');
@@ -8784,13 +8823,15 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 const txt = ex.evidence.slice(0, 150) + (ex.evidence.length > 150 ? '…' : '');
                 // Inferred reason is the model's reasoning, not a verbatim note quote.
                 evi.textContent = ex.inferred ? `AI reasoning: ${txt}` : `evidence: "${txt}"`;
-                row.appendChild(evi);
+                contentTarget.appendChild(evi);
             }
 
             inputs.set(rv.id, { input: inputEl, unknown: unknownCb, otherInput });
             // Auto-filled rows live inside the collapsible container; needs-value rows render inline.
             (isAutoFilled && autoContainer ? autoContainer : list).appendChild(row);
         }
+        // One-at-a-time: open only the first needs-value card; collapse the rest.
+        needsCards.forEach((c, i) => c.setOpen(i === 0));
 
         // Hidden-values notice goes BELOW the value rows (inside the scroll area).
         renderFilteredNotice(list);
