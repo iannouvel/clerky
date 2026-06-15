@@ -679,6 +679,8 @@ Also weigh WHERE the patient is in their clinical pathway right now. Some values
 
 Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies or whether a step is yet due, keep the value. Only drop values whose triggering situation is clearly absent, or whose step clearly lies in the future relative to this encounter.
 
+Also, for each value, write a "question": a clear, plain-language question that asks the clinician for exactly that value, phrased the way you would ask a colleague at the bedside (e.g. for "Metformin contraindicated or unacceptable" → "Is metformin either contraindicated or unacceptable?"; for "One hour post-meal blood glucose" → "What is the one-hour post-meal blood glucose?"). Keep it to a single sentence ending in a question mark.
+
 Return strict JSON only.`;
 
 function buildRelevancePrompt(note, valuesList) {
@@ -696,10 +698,10 @@ ${note}
 CANDIDATE VALUES:
 ${valuesStr}
 
-For each candidate value, decide whether it is clinically relevant to gather for THIS patient. Return JSON only:
+For each candidate value, decide whether it is clinically relevant to gather for THIS patient, and write a plain-language question for it. Return JSON only:
 {
   "results": [
-    { "id": "<value id>", "relevant": true | false, "reason": "<short clinical reason>" }
+    { "id": "<value id>", "relevant": true | false, "reason": "<short clinical reason>", "question": "<plain-language question for this value>" }
   ]
 }`;
 }
@@ -734,8 +736,8 @@ async function filterValuesByRelevance(note, valuesList) {
                 const r = byId.get(v.id);
                 // Fail open: if the model didn't return a verdict for this value, keep it.
                 return r && typeof r.relevant === 'boolean'
-                    ? { id: v.id, relevant: r.relevant, reason: r.reason || '' }
-                    : { id: v.id, relevant: true, reason: '' };
+                    ? { id: v.id, relevant: r.relevant, reason: r.reason || '', question: r.question || '' }
+                    : { id: v.id, relevant: true, reason: '', question: '' };
             });
         } catch (e) {
             return batch.map(v => ({ id: v.id, relevant: true, reason: '' }));
@@ -898,7 +900,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
                 // Structured rationale: practice-point name + the guideline's recommendation + when it applies.
                 if (e.whyDetails.length < 3) {
                     const nm = nameOf(s);
-                    if (nm && !e.whyDetails.some(w => w.name === nm)) e.whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s) });
+                    if (nm && !e.whyDetails.some(w => w.name === nm)) e.whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s), guidelineId: gid });
                 }
             }
         };
@@ -946,6 +948,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
             if (r && r.relevant === false) {
                 filteredOut.push({ label: v.label, reason: r.reason || 'Not relevant to this patient at this stage of care' });
             } else {
+                if (r && r.question) v.question = r.question; // plain-language question for the modal
                 finalValues.push(v);
             }
         }
