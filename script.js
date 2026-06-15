@@ -8360,17 +8360,28 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // VRIII / hourly glucose) surface — which the old aggregate(freq-gated)+filter
     // approach dropped because such values are used by only 1–2 PPs.
     const note = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
-    // Name what's being checked, with practice-point counts where known.
-    const gatherBreakdown = (selectedGuidelines || []).map(g => {
+    // Name what's being checked, with practice-point counts where known. Shorten
+    // the display names (drop the redundant "guideline" / "- UHSussex" suffixes)
+    // and render as a clean title + a tidy guideline list, not a run-on sentence.
+    const shortName = (s) => String(s || '')
+        .replace(/\s*\bguideline\b/gi, '')
+        .replace(/\s*\bUHSx\b/gi, '')
+        .replace(/\s*[-–]\s*UHS\w*.*$/i, '')
+        .replace(/\s{2,}/g, ' ').trim();
+    const escMsg = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const gatherList = (selectedGuidelines || []).map(g => {
         const data = window.globalGuidelines?.[g.id];
-        const name = (typeof getCleanDisplayTitle === 'function' ? getCleanDisplayTitle(g, data) : (data?.displayName || g.title || g.id));
+        const raw = (typeof getCleanDisplayTitle === 'function' ? getCleanDisplayTitle(g, data) : (data?.displayName || g.title || g.id));
+        const name = shortName(raw) || raw;
         const n = data?.practicePointCount;
         return n ? `${name} (${n})` : name;
-    }).join(', ');
+    });
     const gatherTotalPP = (selectedGuidelines || []).reduce((s, g) => s + (window.globalGuidelines?.[g.id]?.practicePointCount || 0), 0);
-    updateUser(gatherTotalPP
-        ? `Checking which of ${gatherTotalPP} practice points apply to this patient (${gatherBreakdown}) and what values they need…`
-        : `Checking which practice points apply (${gatherBreakdown}) and what values they need…`, true);
+    const gCount = (selectedGuidelines || []).length;
+    const gatherTitle = gatherTotalPP
+        ? `Checking <strong>${gatherTotalPP}</strong> practice points across ${gCount} guideline${gCount === 1 ? '' : 's'}, and the values they need…`
+        : `Checking practice points across ${gCount} guideline${gCount === 1 ? '' : 's'}, and the values they need…`;
+    updateUser(`${gatherTitle}<br><span style="display:inline-block;margin-top:6px;font-size:0.85em;opacity:0.9;line-height:1.5;">${gatherList.map(escMsg).join(' · ')}</span>`, true);
     const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
