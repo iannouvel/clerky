@@ -7775,6 +7775,17 @@ app.post('/auditElementCheck', authenticateUser, async (req, res) => {
  * Reports status on startup.
  */
 async function checkAPIHealth() {
+    // Probe model per provider = the cheapest live model in the registry — the
+    // single source of truth. Update AI_MODEL_REGISTRY and the health check follows,
+    // so a decommissioned model can't rot a separately-hardcoded probe (this is what
+    // left Groq probing the long-dead mixtral-8x7b-32768). Skips free/agentic 0-cost
+    // entries (e.g. Groq compound) which make poor liveness pings.
+    const probeModel = (provider) => {
+        const ms = (AI_MODEL_REGISTRY[provider]?.models || []).filter(m => m.model);
+        const priced = ms.filter(m => (m.costPer1kOutput || 0) > 0);
+        const pool = priced.length ? priced : ms;
+        return pool.reduce((a, b) => ((b.costPer1kOutput || 0) < (a.costPer1kOutput || 0) ? b : a), pool[0])?.model;
+    };
     const apis = [
         {
             name: 'DeepSeek',
@@ -7788,7 +7799,7 @@ async function checkAPIHealth() {
                     'Content-Type': 'application/json'
                 },
                 data: {
-                    model: 'deepseek-chat',
+                    model: probeModel('DeepSeek'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -7798,10 +7809,10 @@ async function checkAPIHealth() {
         {
             name: 'Gemini',
             env: 'GOOGLE_AI_API_KEY',
-            endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+            endpoint: `https://generativelanguage.googleapis.com/v1beta/models/${probeModel('Gemini')}:generateContent`,
             testPayload: (key) => ({
                 method: 'POST',
-                url: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+                url: `https://generativelanguage.googleapis.com/v1beta/models/${probeModel('Gemini')}:generateContent`,
                 headers: { 'Content-Type': 'application/json' },
                 params: { key },
                 data: {
@@ -7822,7 +7833,7 @@ async function checkAPIHealth() {
                     'Content-Type': 'application/json'
                 },
                 data: {
-                    model: 'gpt-3.5-turbo',
+                    model: probeModel('OpenAI'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -7841,7 +7852,7 @@ async function checkAPIHealth() {
                     'anthropic-version': '2023-06-01'
                 },
                 data: {
-                    model: 'claude-3-haiku-20240307',
+                    model: probeModel('Anthropic'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -7859,7 +7870,7 @@ async function checkAPIHealth() {
                     'Content-Type': 'application/json'
                 },
                 data: {
-                    model: 'mistral-small-latest',
+                    model: probeModel('Mistral'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -7877,7 +7888,7 @@ async function checkAPIHealth() {
                     'Content-Type': 'application/json'
                 },
                 data: {
-                    model: 'mixtral-8x7b-32768',
+                    model: probeModel('Groq'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -7895,7 +7906,7 @@ async function checkAPIHealth() {
                     'Content-Type': 'application/json'
                 },
                 data: {
-                    model: 'grok-4-1-fast-non-reasoning',
+                    model: probeModel('Grok'),
                     messages: [{ role: 'user', content: 'test' }],
                     max_tokens: 10
                 },
@@ -8164,14 +8175,22 @@ app.get('/logs-debug', (req, res) => {
 // Test all 5 AI models with minimal tokens (health check)
 // Cost: < $0.0001 total (fraction of a cent)
 app.get('/testModelHealth', authenticateUser, async (req, res) => {
-    const MODELS = [
-        { name: 'DeepSeek', model: 'deepseek-chat', endpoint: 'https://api.deepseek.com/v1/chat/completions', keyEnv: 'DEEPSEEK_API_KEY' },
-        { name: 'Mistral', model: 'mistral-large-latest', endpoint: 'https://api.mistral.ai/v1/chat/completions', keyEnv: 'MISTRAL_API_KEY' },
-        { name: 'Anthropic', model: 'claude-3-haiku-20240307', endpoint: 'https://api.anthropic.com/v1/messages', keyEnv: 'ANTHROPIC_API_KEY' },
-        { name: 'OpenAI', model: 'gpt-3.5-turbo', endpoint: 'https://api.openai.com/v1/chat/completions', keyEnv: 'OPENAI_API_KEY' },
-        { name: 'Gemini', model: 'gemini-2.5-flash', endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent', keyEnv: 'GOOGLE_AI_API_KEY' },
-        { name: 'Groq', model: 'llama-3.3-70b-versatile', endpoint: 'https://api.groq.com/openai/v1/chat/completions', keyEnv: 'GROQ_API_KEY' }
-    ];
+    // Derived from AI_MODEL_REGISTRY (single source of truth) — cheapest live model
+    // per provider, registry endpoint + keyEnv. No hardcoded model IDs to rot.
+    const probeModel = (provider) => {
+        const ms = (AI_MODEL_REGISTRY[provider]?.models || []).filter(m => m.model);
+        const priced = ms.filter(m => (m.costPer1kOutput || 0) > 0);
+        const pool = priced.length ? priced : ms;
+        return pool.reduce((a, b) => ((b.costPer1kOutput || 0) < (a.costPer1kOutput || 0) ? b : a), pool[0])?.model;
+    };
+    const MODELS = ['DeepSeek', 'Mistral', 'Anthropic', 'OpenAI', 'Gemini', 'Groq'].map(name => {
+        const reg = AI_MODEL_REGISTRY[name] || {};
+        const model = probeModel(name);
+        const endpoint = name === 'Gemini'
+            ? `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`
+            : reg.endpoint;
+        return { name, model, endpoint, keyEnv: reg.keyEnv };
+    });
 
     const MINIMAL_PROMPT = 'Say OK';
 

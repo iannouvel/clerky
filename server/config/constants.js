@@ -41,8 +41,7 @@ const AI_MODEL_REGISTRY = {
             { model: 'claude-opus-4-5', displayName: 'Claude Opus 4.5', costPer1kInput: 0.005, costPer1kOutput: 0.025, description: 'Most intelligent model (previous gen)' },
             { model: 'claude-sonnet-4-5', displayName: 'Claude Sonnet 4.5', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Balanced performance for coding and agents' },
             { model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5', costPer1kInput: 0.001, costPer1kOutput: 0.005, description: 'Fastest with near-frontier intelligence' },
-            { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Previous generation Sonnet' },
-            { model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku', costPer1kInput: 0.00025, costPer1kOutput: 0.00125, description: 'Fast and cost-effective' }
+            { model: 'claude-sonnet-4-20250514', displayName: 'Claude Sonnet 4', costPer1kInput: 0.003, costPer1kOutput: 0.015, description: 'Previous generation Sonnet' }
         ]
     },
     DeepSeek: {
@@ -251,14 +250,6 @@ const AI_PROVIDER_PREFERENCE = [
         contextWindow: 128000,
         priority: 16,
         description: 'Ultra-fast inference on Groq LPU - Llama 3.3 70B'
-    },
-    {
-        name: 'Anthropic',
-        model: 'claude-3-haiku-20240307',
-        costPer1kTokens: 0.00075, // Average of input/output
-        contextWindow: 200000,
-        priority: 17,
-        description: 'Fast and cost-effective Claude'
     },
     {
         name: 'Groq',

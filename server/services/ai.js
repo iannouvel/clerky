@@ -512,9 +512,16 @@ async function routeToAI(prompt, userId = null, preferredProvider = null, maxTok
             model = provider;
             provider = modelConfig.name;
         } else {
-            const map = { 'OpenAI': 'gpt-3.5-turbo', 'DeepSeek': 'deepseek-chat', 'Anthropic': 'claude-3-haiku-20240307', 'Mistral': 'mistral-large-latest', 'Gemini': 'gemini-2.5-flash', 'Groq': 'llama-3.3-70b-versatile' };
-            model = map[provider] || 'deepseek-chat';
-            modelConfig = AI_PROVIDER_PREFERENCE.find(p => p.model === model);
+            // Provider given by NAME (not a specific model id): use that provider's
+            // highest-priority (cheapest) model from the preference list — the single
+            // source of truth — rather than a hardcoded map that rots (it still pointed
+            // Anthropic at the long-dead claude-3-haiku-20240307). Falls back to the
+            // default provider if the name isn't found.
+            modelConfig = AI_PROVIDER_PREFERENCE.filter(p => p.name === provider).sort((a, b) => a.priority - b.priority)[0]
+                || AI_PROVIDER_PREFERENCE.find(p => p.name === defaultProvider)
+                || AI_PROVIDER_PREFERENCE[0];
+            model = modelConfig?.model;
+            provider = modelConfig?.name || provider;
         }
 
         // Estimate token count and check against context window

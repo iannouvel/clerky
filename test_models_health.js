@@ -17,7 +17,7 @@ const SERVER_URL = isLocal ? 'http://localhost:3000' : 'https://clerky-uzni.onre
 const MODELS = [
     { name: 'DeepSeek', model: 'deepseek-chat', endpoint: 'https://api.deepseek.com/v1/chat/completions', keyEnv: 'DEEPSEEK_API_KEY' },
     { name: 'Mistral', model: 'mistral-large-latest', endpoint: 'https://api.mistral.ai/v1/chat/completions', keyEnv: 'MISTRAL_API_KEY' },
-    { name: 'Anthropic', model: 'claude-3-haiku-20240307', endpoint: 'https://api.anthropic.com/v1/messages', keyEnv: 'ANTHROPIC_API_KEY' },
+    { name: 'Anthropic', model: 'claude-haiku-4-5', endpoint: 'https://api.anthropic.com/v1/messages', keyEnv: 'ANTHROPIC_API_KEY' },
     { name: 'OpenAI', model: 'gpt-3.5-turbo', endpoint: 'https://api.openai.com/v1/chat/completions', keyEnv: 'OPENAI_API_KEY' },
     { name: 'Gemini', model: 'gemini-2.5-flash', endpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent', keyEnv: 'GOOGLE_AI_API_KEY' }
 ];

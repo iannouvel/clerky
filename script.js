@@ -6433,7 +6433,6 @@ const AVAILABLE_MODELS = [
     { name: 'Groq', model: 'qwen/qwen3-32b', displayName: 'Groq (Qwen3 32B)' },
     // Mid-range models
     { name: 'Groq', model: 'llama-3.3-70b-versatile', displayName: 'Groq (Llama 3.3 70B)' },
-    { name: 'Anthropic', model: 'claude-3-haiku-20240307', displayName: 'Claude 3 Haiku' },
     { name: 'Groq', model: 'moonshotai/kimi-k2-instruct-0905', displayName: 'Groq (Kimi K2 262K)' },
     { name: 'Anthropic', model: 'claude-haiku-4-5', displayName: 'Claude Haiku 4.5' },
     // High-quality models
