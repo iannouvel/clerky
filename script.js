@@ -8731,7 +8731,10 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 contentTarget.appendChild(why);
                 // Deep link into the relevant part of the source guideline (active cards only).
                 if (!isAutoFilled) {
-                    const primary = whyDetails.find(w => w.guidelineId) || whyDetails[0];
+                    // Prefer a verbatim sourceQuote for the phrase search (the action is
+                    // paraphrased and almost never matches the PDF). Pick the whyDetail that
+                    // actually has a quote, else fall back to one with a guideline id.
+                    const primary = whyDetails.find(w => w.guidelineId && w.sourceQuote) || whyDetails.find(w => w.guidelineId) || whyDetails[0];
                     if (primary && primary.guidelineId && typeof window.openGuidelinePdf === 'function') {
                         const link = document.createElement('a');
                         link.href = '#';
@@ -8739,7 +8742,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                         link.style.cssText = 'display:inline-block;margin:0 0 4px;font-size:0.8em;color:var(--accent-color,#0a7);text-decoration:underline;cursor:pointer;';
                         link.addEventListener('click', (ev) => {
                             ev.preventDefault();
-                            window.openGuidelinePdf(primary.guidelineId, (primary.action || primary.name || '').slice(0, 120));
+                            const search = (primary.sourceQuote || primary.action || primary.name || '').slice(0, 120);
+                            window.openGuidelinePdf(primary.guidelineId, search);
                         });
                         contentTarget.appendChild(link);
                     }
