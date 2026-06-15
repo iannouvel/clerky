@@ -18780,7 +18780,7 @@ app.post('/augmentNoteWithValues', authenticateUser, async (req, res) => {
         }
         if (values.length === 0) return res.json({ success: true, augmentedNote: note });
         console.log(`[AUGMENT-NOTE] note ${note.length} chars; ${values.length} values to weave in`);
-        const augmentedNote = await requiredValuesMod.augmentNoteWithValues(note, values);
+        const augmentedNote = await requiredValuesMod.augmentNoteWithValues(note, values, req.user?.uid || null);
         return res.json({ success: true, augmentedNote });
     } catch (e) {
         console.error('[AUGMENT-NOTE] error:', e.message);

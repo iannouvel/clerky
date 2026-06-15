@@ -1079,8 +1079,24 @@ ${valuesStr}
 Return the revised note text only.`;
 }
 
-// callGemini-text — same wrapper, but plain-text response (no JSON mode)
-async function callGeminiText(systemPrompt, userPrompt) {
+// callGemini-text — same routing as callGemini, but plain-text response (no JSON
+// mode). Routes through the central AI router first (honours the user's model
+// preference + provider fallback); the direct pinned-Gemini call is only a
+// fallback for when the router is unavailable. Do NOT pin a model in the primary
+// path — see feedback_no_hardcoded_models.
+async function callGeminiText(systemPrompt, userPrompt, userId = null) {
+    try {
+        const { routeToAI } = require('../server/services/ai');
+        if (typeof routeToAI === 'function') {
+            const r = await routeToAI(
+                { messages: [{ role: 'system', content: systemPrompt }, { role: 'user', content: userPrompt }], temperature: 0 },
+                userId, null, 4000, 'simple'
+            );
+            const content = (r && r.content) || '';
+            if (content) return content;
+        }
+    } catch (_) { /* fall back to direct Gemini below */ }
+
     const apiKey = process.env.GOOGLE_AI_API_KEY;
     if (!apiKey) throw new Error('GOOGLE_AI_API_KEY not set');
     const url = `${GEMINI_URL_BASE}/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
@@ -1113,10 +1129,13 @@ async function callGeminiText(systemPrompt, userPrompt) {
  * @param {Array<{id:string,label:string,type:string,value:any}>} values - confirmed values to add
  * @returns {Promise<string>} augmented note
  */
-async function augmentNoteWithValues(note, values) {
+async function augmentNoteWithValues(note, values, userId = null) {
     if (!note || !Array.isArray(values) || values.length === 0) return note;
-    const augmented = await callGeminiText(AUGMENT_SYSTEM, buildAugmentPrompt(note, values));
-    return (augmented || note).trim();
+    const augmented = await callGeminiText(AUGMENT_SYSTEM, buildAugmentPrompt(note, values), userId);
+    // Strip any markdown fences a routed provider may wrap the note in, despite
+    // the prompt forbidding them (direct Gemini never did; DeepSeek/others can).
+    const out = (augmented || '').trim().replace(/^```(?:\w+)?\s*\n?/, '').replace(/\n?```\s*$/, '').trim();
+    return out || note.trim();
 }
 
 module.exports = {
