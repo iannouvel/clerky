@@ -8477,6 +8477,13 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
                 // user actually entered or corrected.
                 const ex = extractedById.get(rv.id);
                 if (ex?.inferred && String(ex.value) === String(u.value)) continue;
+                // Don't weave non-clinical yes/no/status flags into the visible note —
+                // they drive the compliance check, not the clinical narrative, and read
+                // as noise (e.g. "Obesity status: true", "Birth plan discussed: true").
+                const hasOpts = Array.isArray(rv.options) && rv.options.length;
+                const isFlag = rv.type === 'boolean' || rv.type === 'binary' ||
+                    (hasOpts && rv.options.length === 2 && rv.options.some(o => /^(yes|no|present|absent|true|false)$/i.test(o)));
+                if (isFlag) continue;
                 toAdd.push({ id: rv.id, label: rv.label, type: rv.type, value: u.value });
             }
         }
