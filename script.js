@@ -8471,18 +8471,21 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
         for (const rv of requiredValues) {
             const u = userValues[rv.id];
             if (u && u.status === 'provided' && u.value !== null && u.value !== '') {
-                // Don't weave an LLM-inferred value the user left unchanged into the
-                // visible note — those are for review/audit only (e.g. a "not
-                // documented" flag would read as noise). Only weave in values the
-                // user actually entered or corrected.
+                // Don't weave a value that was auto-derived from the note and left
+                // unchanged — whether read straight out of the note (already there) or
+                // LLM-inferred (review/audit only, e.g. a "not documented" flag).
+                // Re-injecting an already-present value is at best a no-op and at worst
+                // lets the augment LLM overwrite the clinician's own wording. `found` is
+                // true for both extracted-from-note and inferred values; only weave in
+                // what the clinician actually typed or corrected (value still differs).
                 const ex = extractedById.get(rv.id);
-                if (ex?.inferred && String(ex.value) === String(u.value)) continue;
+                if (ex?.found && String(ex.value) === String(u.value)) continue;
                 // Don't weave non-clinical yes/no/status flags into the visible note —
                 // they drive the compliance check, not the clinical narrative, and read
                 // as noise (e.g. "Obesity status: true", "Birth plan discussed: true").
                 const hasOpts = Array.isArray(rv.options) && rv.options.length;
                 const isFlag = rv.type === 'boolean' || rv.type === 'binary' ||
-                    (hasOpts && rv.options.length === 2 && rv.options.some(o => /^(yes|no|present|absent|true|false)$/i.test(o)));
+                    (hasOpts && rv.options.length === 2 && rv.options.some(o => /^(yes|no|present|absent|true|false|discussed|provided|documented|offered|done|completed|performed)$/i.test(o)));
                 if (isFlag) continue;
                 toAdd.push({ id: rv.id, label: rv.label, type: rv.type, value: u.value });
             }
