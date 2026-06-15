@@ -878,6 +878,8 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         const nameOf = (s) => (pps[s - 1]?.name || '').trim();
         // The guideline's actual recommendation — richer rationale for the expanded card.
         const actionOf = (s) => (pps[s - 1]?.action || '').trim();
+        // Verbatim source quote (for the deep-link phrase search — the action is paraphrased and won't match the PDF).
+        const quoteOf = (s) => (pps[s - 1]?.sourceQuote || '').trim();
 
         // PPs that contribute any value → evaluate their applicability.
         const contributing = new Set();
@@ -900,7 +902,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
                 // Structured rationale: practice-point name + the guideline's recommendation + when it applies.
                 if (e.whyDetails.length < 3) {
                     const nm = nameOf(s);
-                    if (nm && !e.whyDetails.some(w => w.name === nm)) e.whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s), guidelineId: gid });
+                    if (nm && !e.whyDetails.some(w => w.name === nm)) e.whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s), guidelineId: gid, sourceQuote: quoteOf(s) });
                 }
             }
         };
