@@ -220,11 +220,6 @@ function buildCuratePrompt(registry, batch) {
 }
 
 const PROMOTE_MIN_FRAGMENTS = 2; // a new concept must collapse >=2 fragments to become a global
-// A guideline-local (non-canonical) value is only surfaced in the gather when this
-// many APPLICABLE practice points need it — holds back the hyper-granular one-off
-// tail while canonical values surface on a single applicable PP. Env-tunable (set
-// to 1 to disable the gate). See gatherValuesForApplicablePPs.
-const MIN_APPLICABLE_PPS_FOR_LOCAL = Math.max(1, parseInt(process.env.RV_MIN_APPLICABLE_PPS_FOR_LOCAL || '2', 10));
 
 /**
  * Reconcile a list of proposed (non-canonical) value concepts against the global
@@ -791,16 +786,16 @@ const RELEVANCE_SYSTEM = `You decide which candidate clinical data values are ac
 
 The candidate values are pooled from several guidelines that were matched to this note. Because a matched guideline only partly applies, many candidates are required only in situations this patient is not in.
 
-Each candidate may list the CONDITION(S) under which a guideline practice point requires it — the clinical situation that makes the value necessary. Use these as your primary test of applicability:
-- If the value's triggering conditions are clearly NOT met for this patient (the situation that would require it does not apply), the value is not needed — drop it.
-- If at least one triggering condition is met, or you cannot tell from the note whether it is met, keep the value.
-- A candidate with no listed condition: fall back to judging whether it is pertinent to the patient's current presentation and stage of care.
+FIRST, read the note and fix two things about the patient as they are RIGHT NOW, before judging any value:
+- Their CARE STAGE — where they are in the clinical journey at this encounter (for example: before pregnancy, earlier or later in an ongoing pregnancy, in labour or being induced, the immediate period just after birth, or later postnatal follow-up). The note's reason for the encounter and what has or hasn't happened yet tell you this.
+- Their CLINICAL SITUATION and population — why they are being seen, the active problems, the treatments actually under way, and which populations they do and do not belong to.
 
-Reason from the note: why the patient is being seen, where they are in their clinical journey (pregnancy ongoing vs concluded; the specific problem), and which guideline situations they actually fall into. A value required only for a treatment the patient is not having, a complication they do not have, or a stage of care they are not in, should be dropped even though a matched guideline lists it.
+THEN judge each candidate against that fixed picture:
+- Each candidate may list the CONDITION(S) under which a guideline practice point requires it. If those triggering conditions are clearly NOT met for this patient, drop the value. If at least one is met, or you cannot tell from the note, keep it. A candidate with no listed condition: judge it on whether it is pertinent to the patient's current situation and stage.
+- Every value belongs to a particular care stage and population. A value is relevant only when the patient is in that stage and population NOW — not merely because they carry an underlying diagnosis that spans several phases of care. A persisting condition does NOT make every phase's monitoring, targets, decisions, or process steps relevant: a measurement, target, or step that belongs to an earlier or a later phase than the patient's current one is not a documentation gap at this encounter, and should be dropped even though the diagnosis still holds and a matched guideline lists it.
+- Likewise drop a value required only for a treatment the patient is not having, a complication they do not have, or a step that has not yet happened and is not due at this encounter (it cannot be answered yet). Keep values for steps that have already occurred, are happening now, or are genuinely due now.
 
-Also weigh WHERE the patient is in their clinical pathway right now. Some values record a step, event, measurement, or decision that only arises once care has advanced to a later point — a subsequent phase of a procedure, a later visit, or an event that follows the present one. If the note shows the patient has not yet reached the point at which such a value would be recorded (the step has not happened and is not due at this encounter), drop it: it cannot be answered yet and is not a documentation gap now. Keep values for steps that have already occurred, are happening now, or are genuinely due at this encounter.
-
-Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies or whether a step is yet due, keep the value. Only drop values whose triggering situation is clearly absent, or whose step clearly lies in the future relative to this encounter.
+Be inclusive at genuine uncertainty: when you cannot tell whether a condition applies, whether the patient is in the relevant stage or population, or whether a step is yet due, keep the value. Only drop values whose triggering situation, care stage, or population is clearly not this patient's, or whose step clearly lies in the future relative to this encounter.
 
 Also, for each value, write a "question": a clear, plain-language question that asks the clinician for exactly that value, phrased the way you would ask a colleague at the bedside (e.g. for "Metformin contraindicated or unacceptable" → "Is metformin either contraindicated or unacceptable?"; for "One hour post-meal blood glucose" → "What is the one-hour post-meal blood glucose?"). Keep it to a single sentence ending in a question mark.
 
@@ -1013,8 +1008,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
             .filter(p => p.name || p.condition || p.action);
         const _d = [];
         const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
-        const dbg = { gid, contributing: ppList.length, applicable: applicable.size, localSingletonsHeld: 0, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen };
-        _debug.push(dbg);
+        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), reasons: new Set(), whyDetails: [], proposed: isProposed });
@@ -1039,15 +1033,11 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         for (const p of (rv.proposedNewValues || [])) {
             const id = p.proposedId || p.id; if (!id) continue;
             const used = p.usedByPPs || [];
-            // Frequency gate: a guideline-local (non-canonical, un-curated) value is
-            // surfaced only when >=2 APPLICABLE practice points need it. This holds back
-            // the long tail of hyper-granular one-off proposals (one concept minted per
-            // PP) that bloat the ask, while canonical values (curated, real) still
-            // surface on a single applicable PP above. A held-back point is still
-            // evaluated in the per-point suggestion stage (which reads the note
-            // directly) — we just don't pre-ask the clinician for its one-off value.
-            const applicableUses = used.filter(s => applicable.has(s)).length;
-            if (applicableUses >= MIN_APPLICABLE_PPS_FOR_LOCAL) add(id, {
+            // Admit any value whose applicable practice point needs it — including
+            // single-PP, non-canonical values. Relevance is decided downstream by the
+            // value-level relevance filter (stage/population aware), NOT by how many
+            // points happen to mention it: a one-off can be genuinely relevant.
+            if (used.some(s => applicable.has(s))) add(id, {
                 id,
                 label: p.label || id,
                 type: p.type || 'string',
@@ -1056,7 +1046,6 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
                 neverInfer: p.subjective === true || undefined,
                 _proposed: true,
             }, used, true);
-            else if (applicableUses >= 1) dbg.localSingletonsHeld++;
             // non-applicable proposed: skip silently (avoid noise in the notice)
         }
     }));
