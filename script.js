@@ -8729,22 +8729,24 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             if (whyDetails.length) {
                 const why = document.createElement('div');
                 why.style.cssText = 'margin:2px 0 8px;font-size:0.78em;line-height:1.45;color:var(--text-secondary,#555);';
+                // Prefer the whyDetail with a verbatim quote — used both as the primary
+                // rationale shown and for the deep-link phrase search below.
+                const primary = whyDetails.find(w => w.guidelineId && w.sourceQuote) || whyDetails.find(w => w.guidelineId) || whyDetails[0];
                 if (isAutoFilled) {
                     why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> ${whyDetails.map(w => esc(w.name)).join(' · ')}`;
                 } else {
-                    why.innerHTML = whyDetails.map(w => {
-                        const action = w.action ? `<div style="margin-top:2px;">“${esc(w.action)}”</div>` : '';
-                        const cond = w.condition ? `<div style="margin-top:2px;opacity:0.7;">This applies when: ${esc(w.condition)}</div>` : '';
-                        return `<div style="margin-bottom:6px;"><span style="opacity:0.7;">Needed for:</span> <strong>${esc(w.name)}</strong>${action}${cond}</div>`;
-                    }).join('');
+                    // Show ONE primary rationale (practice-point name + when it applies) — not
+                    // the full quoted recommendation for every point, which turned values needed
+                    // by many points (e.g. shock status across PPH) into a wall of text. The
+                    // quoted action restated the name and was the bulk of the verbosity.
+                    const others = whyDetails.length - 1;
+                    const cond = primary.condition ? `<div style="margin-top:2px;opacity:0.7;">This applies when: ${esc(primary.condition)}</div>` : '';
+                    const more = others > 0 ? `<div style="margin-top:2px;opacity:0.6;">· and ${others} other practice point${others === 1 ? '' : 's'}</div>` : '';
+                    why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> <strong>${esc(primary.name)}</strong>${cond}${more}`;
                 }
                 contentTarget.appendChild(why);
                 // Deep link into the relevant part of the source guideline (active cards only).
                 if (!isAutoFilled) {
-                    // Prefer a verbatim sourceQuote for the phrase search (the action is
-                    // paraphrased and almost never matches the PDF). Pick the whyDetail that
-                    // actually has a quote, else fall back to one with a guideline id.
-                    const primary = whyDetails.find(w => w.guidelineId && w.sourceQuote) || whyDetails.find(w => w.guidelineId) || whyDetails[0];
                     if (primary && primary.guidelineId && typeof window.openGuidelinePdf === 'function') {
                         const link = document.createElement('a');
                         link.href = '#';
