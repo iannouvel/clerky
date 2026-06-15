@@ -1055,17 +1055,13 @@ async function inferMissingValues(note, valuesList) {
 
 // ----- Note augmentation with user-supplied values ------------------------
 
-const AUGMENT_SYSTEM = `You incorporate user-supplied clinical values into an existing clinical note.
+const AUGMENT_SYSTEM = `You slot user-confirmed clinical values into an existing clinical note. The result must still read as the SAME note the clinician wrote.
 
-You receive: (a) the original note, and (b) a list of confirmed clinical values the user provided.
+Place each value where a clinician would naturally record it — the demographics line, history/background, examination/assessment, or plan — integrating it into an existing line or sentence. Only if a value has no natural home, add one short line to the closest existing section. NEVER create a new block at the top of the note, NEVER add a "Confirmed background"/key-value list, and NEVER relabel or reorder the clinician's sections.
 
-Your job: produce a revised note that incorporates the user-supplied values into clinically appropriate places. Rules:
-- Preserve the original note's structure, voice, abbreviations, and existing content. Do not paraphrase or restructure parts of the note that are already there.
-- Insert each supplied value either inline (when it naturally fits in an existing sentence/section), or in a clearly-labelled "Confirmed background:" block if the note has no natural place for it.
-- Keep additions concise and use standard UK obstetric phrasing.
-- Do not invent details beyond what the supplied values give you. Do not contradict the existing note.
-- Do not duplicate values already documented in the note — if a value is already there, leave it alone.
-- Output the full revised note text only. No JSON, no commentary, no markdown fences.`;
+Write every value as natural clinical prose in the note's own terse style and abbreviations — never as "Field name: raw value". State yes/no and status flags the way a clinician would state the underlying fact, and silently drop any value that merely restates something already in the note (in any wording or abbreviation) or that carries no clinical signal.
+
+Preserve all existing content, ordering, voice and abbreviations exactly — only ADD; never paraphrase or restructure what is already there. Do not invent details beyond the supplied values and do not contradict the note. Output the full revised note text only — no JSON, no commentary, no markdown fences.`;
 
 function buildAugmentPrompt(note, values) {
     const valuesStr = values.map(v => {
