@@ -220,6 +220,11 @@ function buildCuratePrompt(registry, batch) {
 }
 
 const PROMOTE_MIN_FRAGMENTS = 2; // a new concept must collapse >=2 fragments to become a global
+// A guideline-local (non-canonical) value is only surfaced in the gather when this
+// many APPLICABLE practice points need it — holds back the hyper-granular one-off
+// tail while canonical values surface on a single applicable PP. Env-tunable (set
+// to 1 to disable the gate). See gatherValuesForApplicablePPs.
+const MIN_APPLICABLE_PPS_FOR_LOCAL = Math.max(1, parseInt(process.env.RV_MIN_APPLICABLE_PPS_FOR_LOCAL || '2', 10));
 
 /**
  * Reconcile a list of proposed (non-canonical) value concepts against the global
@@ -1008,7 +1013,8 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
             .filter(p => p.name || p.condition || p.action);
         const _d = [];
         const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
-        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
+        const dbg = { gid, contributing: ppList.length, applicable: applicable.size, localSingletonsHeld: 0, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen };
+        _debug.push(dbg);
 
         const add = (id, base, used, isProposed) => {
             if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), reasons: new Set(), whyDetails: [], proposed: isProposed });
@@ -1033,7 +1039,15 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
         for (const p of (rv.proposedNewValues || [])) {
             const id = p.proposedId || p.id; if (!id) continue;
             const used = p.usedByPPs || [];
-            if (used.some(s => applicable.has(s))) add(id, {
+            // Frequency gate: a guideline-local (non-canonical, un-curated) value is
+            // surfaced only when >=2 APPLICABLE practice points need it. This holds back
+            // the long tail of hyper-granular one-off proposals (one concept minted per
+            // PP) that bloat the ask, while canonical values (curated, real) still
+            // surface on a single applicable PP above. A held-back point is still
+            // evaluated in the per-point suggestion stage (which reads the note
+            // directly) — we just don't pre-ask the clinician for its one-off value.
+            const applicableUses = used.filter(s => applicable.has(s)).length;
+            if (applicableUses >= MIN_APPLICABLE_PPS_FOR_LOCAL) add(id, {
                 id,
                 label: p.label || id,
                 type: p.type || 'string',
@@ -1042,7 +1056,8 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
                 neverInfer: p.subjective === true || undefined,
                 _proposed: true,
             }, used, true);
-            // non-applicable proposed singletons: skip silently (avoid noise in the notice)
+            else if (applicableUses >= 1) dbg.localSingletonsHeld++;
+            // non-applicable proposed: skip silently (avoid noise in the notice)
         }
     }));
 
