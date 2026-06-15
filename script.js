@@ -8633,10 +8633,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             labelLine.style.cssText = 'display:flex;align-items:center;gap:8px;margin-bottom:6px;';
             const labelEl = document.createElement('strong');
             labelEl.style.cssText = 'font-size:0.9em;';
-            // Show the catalogue's natural-language question as the caption so each
-            // free-text answer reads against a real question rather than an
-            // ambiguous noun phrase. Falls back to the label.
-            labelEl.textContent = rv.prompt || rv.label || rv.id;
+            // Plain-language question (generated in the gather) so the clinician reads
+            // a real question, not an ambiguous noun phrase. Falls back to prompt/label.
+            labelEl.textContent = rv.question || rv.prompt || rv.label || rv.id;
             labelLine.appendChild(labelEl);
 
             if (rv.unit) {
@@ -8714,11 +8713,26 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 } else {
                     why.innerHTML = whyDetails.map(w => {
                         const action = w.action ? `<div style="margin-top:2px;">“${esc(w.action)}”</div>` : '';
-                        const cond = w.condition ? `<div style="margin-top:2px;opacity:0.7;">Applies when: ${esc(w.condition)}</div>` : '';
+                        const cond = w.condition ? `<div style="margin-top:2px;opacity:0.7;">This applies when: ${esc(w.condition)}</div>` : '';
                         return `<div style="margin-bottom:6px;"><span style="opacity:0.7;">Needed for:</span> <strong>${esc(w.name)}</strong>${action}${cond}</div>`;
                     }).join('');
                 }
                 contentTarget.appendChild(why);
+                // Deep link into the relevant part of the source guideline (active cards only).
+                if (!isAutoFilled) {
+                    const primary = whyDetails.find(w => w.guidelineId) || whyDetails[0];
+                    if (primary && primary.guidelineId && typeof window.openGuidelinePdf === 'function') {
+                        const link = document.createElement('a');
+                        link.href = '#';
+                        link.textContent = 'Link to guideline ↗';
+                        link.style.cssText = 'display:inline-block;margin:0 0 4px;font-size:0.8em;color:var(--accent-color,#0a7);text-decoration:underline;cursor:pointer;';
+                        link.addEventListener('click', (ev) => {
+                            ev.preventDefault();
+                            window.openGuidelinePdf(primary.guidelineId, (primary.action || primary.name || '').slice(0, 120));
+                        });
+                        contentTarget.appendChild(link);
+                    }
+                }
             } else if (Array.isArray(rv.reasons) && rv.reasons.length) {
                 const why = document.createElement('div'); // fallback: names only (older cached gather)
                 why.style.cssText = 'margin:2px 0 8px;font-size:0.78em;line-height:1.4;color:var(--text-secondary,#555);';
