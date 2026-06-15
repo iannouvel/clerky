@@ -531,17 +531,25 @@ export async function runParallelAnalysis(guidelines) {
     // Diabetes in pregnancy (55), Induction of labour (50)". Counts come from the
     // lightweight practicePointCount loaded with each guideline; falls back to
     // names-only if a count is unavailable.
+    const shortName = (s) => String(s || '')
+        .replace(/\s*\bguideline\b/gi, '')
+        .replace(/\s*\bUHSx\b/gi, '')
+        .replace(/\s*[-–]\s*UHS\w*.*$/i, '')
+        .replace(/\s{2,}/g, ' ').trim();
+    const escMsg = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
     const ppCountFor = (gl) => window.globalGuidelines?.[gl.id]?.practicePointCount || null;
     const totalPP = guidelines.reduce((s, gl) => s + (ppCountFor(gl) || 0), 0);
-    const breakdown = guidelines.map(gl => {
-        const name = getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id]);
+    const breakdownList = guidelines.map(gl => {
+        const raw = getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id]);
+        const name = shortName(raw) || raw;
         const n = ppCountFor(gl);
         return n ? `${name} (${n})` : name;
-    }).join(', ');
+    });
     if (statusText) {
-        statusText.textContent = totalPP
-            ? `Checking ${totalPP} practice points across ${total} guideline${total === 1 ? '' : 's'}: ${breakdown}`
-            : `Checking practice points across ${total} guideline${total === 1 ? '' : 's'}: ${breakdown}`;
+        const title = totalPP
+            ? `Checking ${totalPP} practice points across ${total} guideline${total === 1 ? '' : 's'}:`
+            : `Checking practice points across ${total} guideline${total === 1 ? '' : 's'}:`;
+        statusText.innerHTML = `${title}<br><span style="font-size:0.92em;opacity:0.85;line-height:1.5;">${breakdownList.map(escMsg).join(' · ')}</span>`;
     }
 
     // Map guidelines to promises
