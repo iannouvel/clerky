@@ -188,57 +188,176 @@ function matchToCanonical(extractedName, catalogue) {
     return null;
 }
 
-const MAP_SYSTEM = `You map clinical-data concepts to a canonical catalogue.
+// ----- Proposed-value curation against the global registry -----------------
+// One reusable engine, called by BOTH generation (getOrGenerateRequiredValues)
+// and the standalone reconcile-proposed-values.js script, so the two can never
+// drift. For each proposed concept the model picks map / new / drop; equivalents
+// collapse to a single concept; concepts corroborated by >=2 distinct fragments
+// are PROMOTED to the shared registry (additive, alias-only writes — never
+// re-types or re-labels an existing entry); singletons stay guideline-local.
+// A re-run seeds from the CURRENT registry, so previously-promoted concepts are
+// mapped (not re-minted) — i.e. generation converges instead of churning.
+const CURATE_SYSTEM = `You curate a registry of canonical clinical data values. Each registry entry is a single atomic clinical fact with an id, a label, a type, and alias phrasings.
 
-For each PROPOSED concept, decide whether it is semantically equivalent to an existing CATALOGUE entry, or genuinely new.
+You receive the current REGISTRY and a batch of PROPOSED values an extractor derived from clinical-guideline practice points. The extractor is verbose and inconsistent: it coins several different names for the same underlying fact, and sometimes proposes things the registry already holds under different wording.
 
-Equivalence rules:
-- Different wording for the same fact = equivalent.
-- Sub-elements of a multi-valued catalogue entry = equivalent.
-- Conditions/comparisons ("BMI > 30") are NOT new values — they are derived from existing values ("bmi").
-- "Is pregnant" — trivial in O&G; drop.
+Reconcile each proposed value with as little duplication as possible. For each, choose exactly one action:
+- "map": it means the same atomic fact as an existing registry entry → give that entry's id. If the proposed wording is a useful phrasing the entry does not already list, also give it as an alias to add.
+- "new": it is genuinely not in the registry. Assign it to a new canonical concept. Proposed values in this batch that mean the SAME fact must share one concept key, so equivalents collapse into a single entry. Give the concept a clean snake_case "conceptKey", a clear "label", a "type" (number | boolean | enum | string | date), and collect the variant phrasings as "aliases".
+- "drop": not a useful atomic value — a derived condition/comparison, something trivially true in this clinical context, or noise.
 
-Output JSON only.`;
+Principles:
+- Prefer reusing or extending an existing entry over creating a new one. Create new only when nothing existing captures the fact.
+- One atomic fact per concept. Do not merge genuinely different facts because they are topically related.
+- Never change the meaning of an existing entry; you may only contribute alias phrasings.
 
-function buildMapPrompt(catalogue, proposedList) {
-    const catalogueStr = Object.entries(catalogue).map(([id, v]) => {
-        const aliases = (v.aliases || []).slice(0, 3).join(', ');
-        return `  - ${id} | ${v.label} | ${(v.description || '').slice(0, 100)}${aliases ? ` | aliases: ${aliases}` : ''}`;
-    }).join('\n');
+Return strict JSON only.`;
 
-    const proposedStr = proposedList.map((p, i) => `  [${i}] id=${p.proposedId} type=${p.type} label="${p.label}"`).join('\n');
-
-    return `CATALOGUE:
-${catalogueStr}
-
-PROPOSED:
-${proposedStr}
-
-Return JSON only:
-{
-  "mappings": [
-    { "index": 0, "decision": "map_to_canonical", "canonicalId": "...", "reason": "..." },
-    { "index": 1, "decision": "confirm_new", "reason": "..." },
-    { "index": 2, "decision": "drop", "reason": "..." }
-  ]
-}`;
+function buildCuratePrompt(registry, batch) {
+    const reg = Object.entries(registry).map(([id, v]) => `  - ${id} | ${v.label} | type:${v.type}${(v.aliases || []).length ? ' | aliases: ' + (v.aliases || []).slice(0, 4).join(', ') : ''}`).join('\n');
+    const prop = batch.map((p, i) => `  [${i}] ${p.label} (type:${p.type || 'unknown'})`).join('\n');
+    return `REGISTRY:\n${reg}\n\nPROPOSED (batch):\n${prop}\n\nReturn JSON only:\n{\n  "decisions": [\n    { "i": 0, "action": "map", "canonicalId": "...", "alias": "optional phrasing to add" },\n    { "i": 1, "action": "new", "conceptKey": "snake_case_key", "label": "Clear label", "type": "enum", "aliases": ["variant a","variant b"] },\n    { "i": 2, "action": "drop", "reason": "derived condition" }\n  ]\n}`;
 }
 
-async function mapProposedToCanonical(catalogue, proposedList) {
-    if (proposedList.length === 0) return [];
-    const BATCH = 25;
-    const all = [];
-    for (let start = 0; start < proposedList.length; start += BATCH) {
-        const batch = proposedList.slice(start, start + BATCH);
-        try {
-            const text = await callGemini(MAP_SYSTEM, buildMapPrompt(catalogue, batch));
-            const parsed = parseJSON(text);
-            for (const m of (parsed?.mappings || [])) {
-                if (typeof m.index === 'number') all.push({ ...m, index: m.index + start });
+const PROMOTE_MIN_FRAGMENTS = 2; // a new concept must collapse >=2 fragments to become a global
+
+/**
+ * Reconcile a list of proposed (non-canonical) value concepts against the global
+ * canonicalValues registry. Pure curation engine — see header comment above.
+ *
+ * @param {Object} db
+ * @param {Array<{proposedId,label,type,options?,subjective?,usedByPPs:number[]}>} proposedList
+ * @param {Object} [opts]
+ * @param {boolean} [opts.commit=true]   - write registry changes (false = dry run)
+ * @param {string}  [opts.fromGuideline] - provenance stamp on minted globals
+ * @returns {Promise<{canonicalUsedBy:Map<string,Set<number>>, localProposed:Array, promoted:Array, mapped:number, dropped:number, aliasExtendedEntries:number, registryBefore:number, registryAfter:number}>}
+ */
+async function curateProposedAgainstRegistry(db, proposedList, opts = {}) {
+    const commit = opts.commit !== false;
+    const result = { canonicalUsedBy: new Map(), localProposed: [], promoted: [], mapped: 0, dropped: 0, aliasExtendedEntries: 0, registryBefore: 0, registryAfter: 0 };
+    if (!Array.isArray(proposedList) || proposedList.length === 0) return result;
+
+    const snap = await db.collection('canonicalValues').get();
+    const registry = {};
+    snap.forEach(d => { registry[d.id] = d.data(); });
+    const originalIds = new Set(Object.keys(registry));
+    result.registryBefore = originalIds.size;
+
+    // Live, GROWING registry view for prompting — each minted concept is added at
+    // once so later batches map their fragments to it instead of re-minting.
+    const liveRegistry = {};
+    for (const [id, v] of Object.entries(registry)) liveRegistry[id] = { label: v.label, type: v.type, aliases: [...(v.aliases || [])] };
+
+    const ppsById = new Map(proposedList.map(p => [p.proposedId, p.usedByPPs || []]));
+    const proposed = [...proposedList].sort((a, b) => normaliseStr(a.label).localeCompare(normaliseStr(b.label)));
+
+    const aliasAdds = new Map();       // existing canonicalId → Set(alias)
+    const enrichExisting = new Map();  // existing canonicalId → { options?, neverInfer? }
+    const newConcepts = new Map();     // conceptKey → { conceptKey, label, type, options, subjective, aliases:Set, fromProposed:[proposedId] }
+
+    const addUsedCanonical = (id, ppArr) => {
+        if (!result.canonicalUsedBy.has(id)) result.canonicalUsedBy.set(id, new Set());
+        for (const s of ppArr) result.canonicalUsedBy.get(id).add(s);
+    };
+    const enrich = (id, p) => {
+        if (!originalIds.has(id)) return;
+        const cur = registry[id] || {};
+        const e = enrichExisting.get(id) || {};
+        if (p.options && !(Array.isArray(cur.options) && cur.options.length) && !e.options) e.options = p.options;
+        if (p.subjective && cur.neverInfer !== true) e.neverInfer = true;
+        if (Object.keys(e).length) enrichExisting.set(id, e);
+    };
+    const addAliasTo = (id, ...phrasings) => {
+        const reg = liveRegistry[id]; if (!reg) return;
+        for (const ph of phrasings) if (ph && !reg.aliases.includes(ph)) reg.aliases.push(ph);
+        if (originalIds.has(id)) {
+            if (!aliasAdds.has(id)) aliasAdds.set(id, new Set());
+            for (const ph of phrasings) if (ph) aliasAdds.get(id).add(ph);
+        } else {
+            const c = newConcepts.get(id);
+            if (c) for (const ph of phrasings) if (ph) c.aliases.add(ph);
+        }
+    };
+
+    const BATCH = 30;
+    for (let start = 0; start < proposed.length; start += BATCH) {
+        const batch = proposed.slice(start, start + BATCH);
+        let parsed = null;
+        try { parsed = parseJSON(await callGemini(CURATE_SYSTEM, buildCuratePrompt(liveRegistry, batch))); } catch (_) { /* failed batch → items fall through to singletons */ }
+        for (const d of (parsed?.decisions || [])) {
+            const p = batch[d.i];
+            if (!p) continue;
+            const carryToNew = (key) => {
+                const c = newConcepts.get(key); if (!c) return;
+                if (!c.options && p.options) c.options = p.options;
+                if (p.subjective) c.subjective = true;
+            };
+            if (d.action === 'map' && d.canonicalId && liveRegistry[d.canonicalId]) {
+                if (!originalIds.has(d.canonicalId)) { newConcepts.get(d.canonicalId)?.fromProposed.push(p.proposedId); carryToNew(d.canonicalId); }
+                else { result.mapped++; enrich(d.canonicalId, p); addUsedCanonical(d.canonicalId, ppsById.get(p.proposedId) || []); }
+                addAliasTo(d.canonicalId, d.alias, p.label);
+            } else if (d.action === 'drop') {
+                result.dropped++;
+            } else if (d.action === 'new' && d.conceptKey) {
+                const key = d.conceptKey;
+                if (liveRegistry[key] && originalIds.has(key)) { result.mapped++; enrich(key, p); addUsedCanonical(key, ppsById.get(p.proposedId) || []); addAliasTo(key, ...(d.aliases || []), p.label); }
+                else {
+                    if (!newConcepts.has(key)) {
+                        newConcepts.set(key, { conceptKey: key, label: d.label || p.label, type: d.type || p.type || 'string', options: null, subjective: false, aliases: new Set(), fromProposed: [] });
+                        liveRegistry[key] = { label: d.label || p.label, type: d.type || p.type || 'string', aliases: [] };
+                    }
+                    newConcepts.get(key).fromProposed.push(p.proposedId);
+                    carryToNew(key);
+                    addAliasTo(key, ...(d.aliases || []), p.label);
+                }
+            } else {
+                // No usable decision → keep as its own concept (becomes a singleton local).
+                if (!newConcepts.has(p.proposedId)) {
+                    newConcepts.set(p.proposedId, { conceptKey: p.proposedId, label: p.label, type: p.type || 'string', options: p.options || null, subjective: p.subjective === true, aliases: new Set([p.label]), fromProposed: [p.proposedId] });
+                    liveRegistry[p.proposedId] = { label: p.label, type: p.type || 'string', aliases: [p.label] };
+                }
             }
-        } catch (e) { /* swallow; treat as confirm_new by default */ }
+        }
     }
-    return all;
+
+    // PROMOTION GATE: corroborated concepts (>=2 fragments) become globals; the
+    // rest stay guideline-local. usedByPPs is rebuilt from the fragments either way.
+    for (const [key, c] of newConcepts) {
+        const used = new Set();
+        for (const pid of c.fromProposed) for (const s of (ppsById.get(pid) || [])) used.add(s);
+        if (c.fromProposed.length >= PROMOTE_MIN_FRAGMENTS) {
+            result.promoted.push({ id: key, label: c.label, type: c.type, options: c.options, subjective: c.subjective, aliases: [...c.aliases], fragments: c.fromProposed.length });
+            addUsedCanonical(key, [...used]);
+        } else {
+            result.localProposed.push({ proposedId: key, label: c.label, type: c.type, ...(c.options ? { options: c.options } : {}), ...(c.subjective ? { subjective: true } : {}), usedByPPs: [...used].sort((a, b) => a - b) });
+        }
+    }
+    result.aliasExtendedEntries = aliasAdds.size;
+    result.registryAfter = originalIds.size + result.promoted.length;
+
+    if (commit) {
+        const ids = new Set([...aliasAdds.keys(), ...enrichExisting.keys()]);
+        for (const id of ids) {
+            const existing = registry[id]; if (!existing) continue;
+            const patch = {};
+            const s = aliasAdds.get(id);
+            if (s) patch.aliases = Array.from(new Set([...(existing.aliases || []), ...s])).filter(Boolean);
+            const e = enrichExisting.get(id);
+            if (e?.options) patch.options = e.options;
+            if (e?.neverInfer) patch.neverInfer = true;
+            if (Object.keys(patch).length) await db.collection('canonicalValues').doc(id).set(patch, { merge: true });
+        }
+        for (const c of result.promoted) {
+            await db.collection('canonicalValues').doc(c.id).set({
+                label: c.label, type: c.type, aliases: c.aliases.filter(Boolean),
+                ...(c.options ? { options: c.options } : {}),
+                ...(c.subjective ? { neverInfer: true } : {}),
+                description: '', extractionHint: '', prompt: (c.label || '').endsWith('?') ? c.label : `${c.label}?`,
+                _origin: 'reconciled', ...(opts.fromGuideline ? { _fromGuideline: opts.fromGuideline } : {}),
+            }, { merge: true });
+        }
+    }
+    return result;
 }
 
 // ----- Aggregation --------------------------------------------------------
@@ -339,21 +458,14 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
 
     const { usedByMap, proposedList } = aggregate(perPPResults.filter(r => r), catalogue);
 
-    const mappings = await mapProposedToCanonical(catalogue, proposedList);
-    const mIdx = new Map(mappings.map(m => [m.index, m]));
-
-    const stillNew = [];
-    for (let i = 0; i < proposedList.length; i++) {
-        const proposed = proposedList[i];
-        const m = mIdx.get(i);
-        if (m?.decision === 'map_to_canonical' && m.canonicalId && catalogue[m.canonicalId]) {
-            if (!usedByMap.has(m.canonicalId)) usedByMap.set(m.canonicalId, new Set());
-            for (const pp of proposed.usedByPPs) usedByMap.get(m.canonicalId).add(pp);
-        } else if (m?.decision === 'drop') {
-            // skip
-        } else {
-            stillNew.push({ ...proposed, llmRationale: m?.reason || '' });
-        }
+    // Curate the unmapped concepts against the shared registry: map to existing,
+    // promote corroborated new concepts (>=2 fragments) to the registry, keep
+    // singletons guideline-local, drop noise. Same engine as reconcile-proposed-
+    // values.js. commit:true — generation is the standard registry-write path.
+    const curation = await curateProposedAgainstRegistry(db, proposedList, { commit: true, fromGuideline: guidelineId });
+    for (const [id, ppSet] of curation.canonicalUsedBy) {
+        if (!usedByMap.has(id)) usedByMap.set(id, new Set());
+        for (const s of ppSet) usedByMap.get(id).add(s);
     }
 
     const values = [...usedByMap.entries()]
@@ -365,7 +477,13 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
         generatedAt: new Date().toISOString(),
         ppCount: pps.length,
         values,
-        proposedNewValues: stillNew,
+        proposedNewValues: curation.localProposed,
+        // Provenance for each run — what the curation step did (auditable, per your standardisation).
+        _curation: {
+            promoted: curation.promoted.map(p => p.id), promotedCount: curation.promoted.length,
+            mapped: curation.mapped, dropped: curation.dropped, aliasExtendedEntries: curation.aliasExtendedEntries,
+            registryBefore: curation.registryBefore, registryAfter: curation.registryAfter,
+        },
     };
 
     await docRef.update({ requiredValues: payload });
@@ -1150,6 +1268,7 @@ module.exports = {
     evaluatePPApplicability,
     inferMissingValues,
     augmentNoteWithValues,
+    curateProposedAgainstRegistry,
     loadCatalogue,
     generateApplicabilityContexts,
     PP_APPLICABILITY_SYSTEM,
