@@ -10770,6 +10770,44 @@ Return a JSON array with one entry per rule (same order):
 
 // Main extraction function - optimised 2-step process
 // Uses condensed content and batch processing for ~95% reduction in API calls
+// Source-grounding verification: drop practice points the SOURCE text does not
+// actually support — the backstop against extraction hallucinating rules (e.g. the
+// fabricated 'ensure a maternal urologist is available' enumerations). Strictly
+// conservative: only drops points CLEARLY unsupported, keeps anything uncertain so a
+// real rule is never lost. Fails open (keeps all) on any error. Routes via the
+// user's model preference.
+const GROUNDING_SYSTEM = `You check whether each candidate clinical practice point is genuinely supported by the SOURCE guideline text it was extracted from.
+
+A practice point is GROUNDED if the source text explicitly states the recommendation or action it describes — in any wording, anywhere in the text.
+
+A practice point is UNGROUNDED only when the source does not state it at all — most often a specific person, role, specialty, device, resource, measurement, threshold, timepoint, or sub-type that the source never names, which an over-eager extraction invented by expanding a general instruction into specifics. A general source instruction (e.g. "ensure appropriate staff and equipment are available") does NOT ground an invented list of particular staff or equipment.
+
+Be strict about fabrication but conservative about dropping: if the source plausibly supports the point, or you are unsure, treat it as GROUNDED. Only list points that are CLEARLY not supported by the source.
+
+Return strict JSON only: { "drop": [ { "i": <index in this batch>, "reason": "<why the source does not support it>" } ] }`;
+
+async function verifyPracticePointsGrounded(points, content, userId = null) {
+    if (!Array.isArray(points) || points.length === 0) return points;
+    const src = (content || '').slice(0, 120000); // cover most guidelines; fail-open handles any tail truncation
+    const BATCH = 25;
+    const batches = [];
+    for (let i = 0; i < points.length; i += BATCH) batches.push({ start: i, items: points.slice(i, i + BATCH) });
+    const dropIdx = new Set();
+    await Promise.all(batches.map(async ({ start, items }) => {
+        const list = items.map((p, j) => `[${j}] ${(p.name || p.summary || '').slice(0, 160)}${p.action ? ' | action: ' + String(p.action).slice(0, 140) : ''}`).join('\n');
+        const userPrompt = `SOURCE GUIDELINE TEXT:\n${src}\n\nCANDIDATE PRACTICE POINTS:\n${list}\n\nWhich of these are NOT supported by the source text? Return JSON only.`;
+        try {
+            const r = await routeToAI({ messages: [{ role: 'system', content: GROUNDING_SYSTEM }, { role: 'user', content: userPrompt }], temperature: 0 }, userId, null, 4000, 'evaluation');
+            const cleaned = (r?.content || '{}').trim().replace(/^```json\s*/i, '').replace(/```\s*$/, '');
+            const parsed = JSON.parse(cleaned.slice(cleaned.indexOf('{'), cleaned.lastIndexOf('}') + 1) || '{}');
+            for (const d of (parsed?.drop || [])) {
+                if (typeof d.i === 'number' && d.i >= 0 && d.i < items.length) dropIdx.add(start + d.i);
+            }
+        } catch (_) { /* fail open: keep this batch */ }
+    }));
+    return points.filter((_, i) => !dropIdx.has(i));
+}
+
 async function extractPracticePoints(content, userId = null, guidelineSummary = null, onProgress = null, options = {}) {
     if (!content || typeof content !== 'string') {
         return [];
@@ -10813,9 +10851,16 @@ async function extractPracticePoints(content, userId = null, guidelineSummary = 
         const dedupedPoints = await deduplicatePracticePoints(validatedPoints, userId, prefix);
         log('dedup_done', `Deduplication complete: ${dedupedPoints.length} unique points`, { count: dedupedPoints.length });
 
+        // Step 1.7: Source-grounding verification — drop points the source text does
+        // not actually support (the backstop against extraction hallucination).
+        log('ground', `Verifying ${dedupedPoints.length} points are grounded in the source…`);
+        const groundedPoints = await verifyPracticePointsGrounded(dedupedPoints, content, userId);
+        const droppedG = dedupedPoints.length - groundedPoints.length;
+        log('ground_done', `Grounding complete: kept ${groundedPoints.length}, dropped ${droppedG} unsupported`, { count: groundedPoints.length });
+
         // Step 2: Batch expand if needed (optional - only if descriptions need improvement)
-        log('expand', `Expanding ${dedupedPoints.length} points with descriptions…`);
-        const auditableElements = await batchExpandPracticePoints(dedupedPoints, content, userId);
+        log('expand', `Expanding ${groundedPoints.length} points with descriptions…`);
+        const auditableElements = await batchExpandPracticePoints(groundedPoints, content, userId);
 
         log('complete', `Extraction complete: ${auditableElements.length} practice points`, { count: auditableElements.length });
         return auditableElements;
