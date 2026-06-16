@@ -157,9 +157,9 @@ What atomic clinical data values does THIS practice point depend on? Return JSON
 Omit "subjective" (or set false) for objective values; include "options" only for enum types.`;
 }
 
-async function extractValuesForPP(pp, serial) {
+async function extractValuesForPP(pp, serial, userId = null) {
     try {
-        const text = await callGemini(PER_PP_SYSTEM, buildPerPPPrompt(pp, serial));
+        const text = await callGemini(PER_PP_SYSTEM, buildPerPPPrompt(pp, serial), userId);
         const parsed = parseJSON(text);
         return Array.isArray(parsed?.values) ? parsed.values : [];
     } catch (e) {
@@ -234,6 +234,7 @@ const PROMOTE_MIN_FRAGMENTS = 2; // a new concept must collapse >=2 fragments to
  */
 async function curateProposedAgainstRegistry(db, proposedList, opts = {}) {
     const commit = opts.commit !== false;
+    const userId = opts.userId || null; // route LLM curation via the user's model preference
     const result = { canonicalUsedBy: new Map(), localProposed: [], promoted: [], mapped: 0, dropped: 0, aliasExtendedEntries: 0, registryBefore: 0, registryAfter: 0 };
     if (!Array.isArray(proposedList) || proposedList.length === 0) return result;
 
@@ -283,7 +284,7 @@ async function curateProposedAgainstRegistry(db, proposedList, opts = {}) {
     for (let start = 0; start < proposed.length; start += BATCH) {
         const batch = proposed.slice(start, start + BATCH);
         let parsed = null;
-        try { parsed = parseJSON(await callGemini(CURATE_SYSTEM, buildCuratePrompt(liveRegistry, batch))); } catch (_) { /* failed batch → items fall through to singletons */ }
+        try { parsed = parseJSON(await callGemini(CURATE_SYSTEM, buildCuratePrompt(liveRegistry, batch), userId)); } catch (_) { /* failed batch → items fall through to singletons */ }
         for (const d of (parsed?.decisions || [])) {
             const p = batch[d.i];
             if (!p) continue;
@@ -448,11 +449,16 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
         return { ...empty, _source: 'generated_empty' };
     }
 
+    // Route every LLM call in generation via the uploader's model preference
+    // (opts.userId), so ingestion respects user prefs instead of falling to the
+    // system default (the agentic groq/compound). Null only for context-free
+    // background warmups, which legitimately have no user.
+    const userId = opts.userId || null;
     const catalogue = await loadCatalogue(db);
 
     const perPPResults = await runConcurrent(
         pps.map((pp, i) => ({ serial: i + 1, pp })),
-        async ({ serial, pp }) => ({ serial, values: await extractValuesForPP(pp, serial) }),
+        async ({ serial, pp }) => ({ serial, values: await extractValuesForPP(pp, serial, userId) }),
         4
     );
 
@@ -462,7 +468,7 @@ async function getOrGenerateRequiredValues(db, guidelineId, opts = {}) {
     // promote corroborated new concepts (>=2 fragments) to the registry, keep
     // singletons guideline-local, drop noise. Same engine as reconcile-proposed-
     // values.js. commit:true — generation is the standard registry-write path.
-    const curation = await curateProposedAgainstRegistry(db, proposedList, { commit: true, fromGuideline: guidelineId });
+    const curation = await curateProposedAgainstRegistry(db, proposedList, { commit: true, fromGuideline: guidelineId, userId });
     for (const [id, ppSet] of curation.canonicalUsedBy) {
         if (!usedByMap.has(id)) usedByMap.set(id, new Set());
         for (const s of ppSet) usedByMap.get(id).add(s);
@@ -757,7 +763,7 @@ Rules:
 - Be conservative — if uncertain, set found=false and explain in evidence.`;
 }
 
-async function extractValuesFromNote(note, valuesList) {
+async function extractValuesFromNote(note, valuesList, userId = null) {
     if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
         return { extracted: [] };
     }
@@ -770,7 +776,7 @@ async function extractValuesFromNote(note, valuesList) {
     for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
     const results = await runConcurrent(batches, async (batch) => {
         try {
-            const text = await callGemini(EXTRACT_SYSTEM, buildExtractPrompt(note, batch));
+            const text = await callGemini(EXTRACT_SYSTEM, buildExtractPrompt(note, batch), userId);
             const parsed = parseJSON(text);
             return (parsed?.extracted || []);
         } catch (e) {
@@ -837,7 +843,7 @@ For each candidate value, decide whether it is clinically relevant to gather for
  * @param {Array<{id:string,label:string,prompt?:string,description?:string}>} valuesList
  * @returns {Promise<{results: Array<{id:string,relevant:boolean,reason:string}>}>}
  */
-async function filterValuesByRelevance(note, valuesList) {
+async function filterValuesByRelevance(note, valuesList, userId = null) {
     if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
         return { results: (valuesList || []).map(v => ({ id: v.id, relevant: true, reason: '' })) };
     }
@@ -847,7 +853,7 @@ async function filterValuesByRelevance(note, valuesList) {
     for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
     const perBatch = await runConcurrent(batches, async (batch) => {
         try {
-            const text = await callGemini(RELEVANCE_SYSTEM, buildRelevancePrompt(note, batch));
+            const text = await callGemini(RELEVANCE_SYSTEM, buildRelevancePrompt(note, batch), userId);
             const parsed = parseJSON(text);
             const byId = new Map((parsed?.results || []).map(r => [r.id, r]));
             return batch.map(v => {
@@ -1064,7 +1070,7 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
     // the mismatched ones into filteredOut. Fails open: keep all on error.
     let finalValues = values;
     try {
-        const rel = await filterValuesByRelevance(note, values);
+        const rel = await filterValuesByRelevance(note, values, userId);
         const verdict = new Map((rel.results || []).map(r => [r.id, r]));
         finalValues = [];
         for (const v of values) {
@@ -1149,7 +1155,7 @@ Rules:
  * @param {Array<{id,label,type,prompt?,options?,unit?}>} valuesList
  * @returns {Promise<{filled: Array<{id,determinable,value,confidence,reason}>}>}
  */
-async function inferMissingValues(note, valuesList) {
+async function inferMissingValues(note, valuesList, userId = null) {
     if (!note || !note.trim() || !Array.isArray(valuesList) || valuesList.length === 0) {
         return { filled: [] };
     }
@@ -1159,7 +1165,7 @@ async function inferMissingValues(note, valuesList) {
     for (let i = 0; i < valuesList.length; i += BATCH) batches.push(valuesList.slice(i, i + BATCH));
     const results = await runConcurrent(batches, async (batch) => {
         try {
-            const text = await callGemini(INFER_SYSTEM, buildInferPrompt(note, batch));
+            const text = await callGemini(INFER_SYSTEM, buildInferPrompt(note, batch), userId);
             const parsed = parseJSON(text);
             const byId = new Map((parsed?.filled || []).map(r => [r.id, r]));
             return batch.map(v => {

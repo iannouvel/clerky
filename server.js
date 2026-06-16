@@ -1540,20 +1540,20 @@ async function jobGenerateDisplayName(job, guidelineData) {
 // the two stay in sync after any PP rebuild. Per-PP LLM extraction + canonical
 // mapping, cached on guideline.requiredValues. Non-fatal — logs and swallows
 // errors so it can never fail the surrounding regeneration job/request.
-async function regenRequiredValuesForGuideline(guidelineId, logPrefix = '[REQUIRED-VALUES]') {
+async function regenRequiredValuesForGuideline(guidelineId, logPrefix = '[REQUIRED-VALUES]', userId = null) {
     const requiredValuesMod = require('./modules/required-values');
     // 1) Draft applicabilityContext onto the new PPs first — the gather's
     //    applicability gate relies on it to exclude wrong-stage points. Fresh
     //    extraction does not produce it, so without this step it stays empty.
     try {
-        const n = await requiredValuesMod.generateApplicabilityContexts(db, guidelineId);
+        const n = await requiredValuesMod.generateApplicabilityContexts(db, guidelineId, userId);
         console.log(`${logPrefix} applicabilityContext drafted for ${n} practice points of ${guidelineId}`);
     } catch (ctxErr) {
         console.error(`${logPrefix} applicabilityContext draft failed for ${guidelineId}: ${ctxErr.message}`);
     }
     // 2) Then regenerate required-values from the (now context-annotated) PPs.
     try {
-        const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true });
+        const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true, userId });
         console.log(`${logPrefix} requiredValues regenerated for ${guidelineId}: ${rv.values?.length || 0} canonical, ${rv.proposedNewValues?.length || 0} proposed-new`);
         return rv;
     } catch (rvErr) {
@@ -1617,7 +1617,7 @@ async function jobRegenerateAuditable(job, guidelineData) {
         // the old ones stale and the "confirm values" gather would treat the
         // guideline as a cache miss. Regenerate them as part of this job so the
         // two never drift. Non-fatal on failure.
-        await regenRequiredValuesForGuideline(job.guidelineId, `[JOB_REGEN_AUDITABLE]${batchInfo}`);
+        await regenRequiredValuesForGuideline(job.guidelineId, `[JOB_REGEN_AUDITABLE]${batchInfo}`, userId);
 
         console.log(`[JOB_REGEN_AUDITABLE]${batchInfo} Completed ${job.guidelineId}: ${elements.length} elements`);
 
@@ -1701,7 +1701,9 @@ async function checkAndMarkProcessingComplete(guidelineId) {
                 try {
                     console.log(`[PROCESSING_COMPLETE] Generating requiredValues for: ${guidelineId} (${data.practicePoints.length} PPs)`);
                     const requiredValuesMod = require('./modules/required-values');
-                    const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true });
+                    // Route generation via the uploader's model preference (respect user
+                    // prefs) instead of the system default (the slow agentic groq/compound).
+                    const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true, userId: data.uploadedBy || null });
                     console.log(`[PROCESSING_COMPLETE] requiredValues generated: ${rv.values?.length || 0} canonical values, ${rv.proposedNewValues?.length || 0} proposed-new`);
                 } catch (rvError) {
                     console.error(`[PROCESSING_COMPLETE] requiredValues generation error:`, rvError.message);
@@ -13577,7 +13579,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                         lastUpdated: admin.firestore.FieldValue.serverTimestamp()
                     });
                     // Keep required-values in sync with the new practice points.
-                    await regenRequiredValuesForGuideline(guidelineId, `[REGEN-PRACTICE-POINTS] job ${jobId}`);
+                    await regenRequiredValuesForGuideline(guidelineId, `[REGEN-PRACTICE-POINTS] job ${jobId}`, userId);
                     extractionJobs[jobId] = {
                         status: 'complete',
                         guidelineId,
@@ -13609,7 +13611,7 @@ app.post('/regeneratePracticePoints', authenticateUser, async (req, res) => {
                 });
 
                 // Keep required-values in sync with the new practice points.
-                await regenRequiredValuesForGuideline(guidelineId, '[REGEN-PRACTICE-POINTS]');
+                await regenRequiredValuesForGuideline(guidelineId, '[REGEN-PRACTICE-POINTS]', userId);
 
                 console.log(`[REGEN-PRACTICE-POINTS] Updated ${guidelineId} with ${auditableElements.length} practice points`);
 
@@ -18681,7 +18683,7 @@ app.post('/getOrGenerateRequiredValues', authenticateUser, async (req, res) => {
         if (forceRegenerate) {
             // Explicit pre-warm/regenerate (admin/batch path) — generate inline.
             for (const id of guidelineIds) {
-                await requiredValuesMod.getOrGenerateRequiredValues(db, id, { forceRegenerate: true });
+                await requiredValuesMod.getOrGenerateRequiredValues(db, id, { forceRegenerate: true, userId: req.user?.uid || null });
             }
             const aggregated = await requiredValuesMod.aggregateAcrossGuidelines(db, guidelineIds);
             return res.json({ success: true, guidelinesProcessed: guidelineIds.length, ...aggregated });
@@ -18713,7 +18715,7 @@ app.post('/extractValuesFromNote', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'values (array of canonical-value entries) is required' });
         }
         console.log(`[EXTRACT-VALUES] note ${note.length} chars; ${values.length} values to extract`);
-        const result = await requiredValuesMod.extractValuesFromNote(note, values);
+        const result = await requiredValuesMod.extractValuesFromNote(note, values, req.user?.uid || null);
         return res.json({ success: true, ...result });
     } catch (e) {
         console.error('[EXTRACT-VALUES] error:', e.message);
@@ -18729,7 +18731,7 @@ app.post('/filterRelevantValues', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'values (array) is required' });
         }
         console.log(`[FILTER-VALUES] note ${note.length} chars; ${values.length} candidate values`);
-        const result = await requiredValuesMod.filterValuesByRelevance(note, values);
+        const result = await requiredValuesMod.filterValuesByRelevance(note, values, req.user?.uid || null);
         const dropped = (result.results || []).filter(r => r.relevant === false).length;
         console.log(`[FILTER-VALUES] ${dropped}/${values.length} filtered out as not relevant`);
         return res.json({ success: true, ...result });
@@ -18780,7 +18782,7 @@ app.post('/inferMissingValues', authenticateUser, async (req, res) => {
             return res.status(400).json({ success: false, error: 'values (array) is required' });
         }
         console.log(`[INFER-VALUES] note ${note.length} chars; ${values.length} blank values to attempt`);
-        const result = await requiredValuesMod.inferMissingValues(note, values);
+        const result = await requiredValuesMod.inferMissingValues(note, values, req.user?.uid || null);
         const filled = (result.filled || []).filter(r => r.determinable).length;
         console.log(`[INFER-VALUES] ${filled}/${values.length} determined from note (rest left for clinician)`);
         return res.json({ success: true, ...result });
