@@ -1552,14 +1552,40 @@ async function regenRequiredValuesForGuideline(guidelineId, logPrefix = '[REQUIR
         console.error(`${logPrefix} applicabilityContext draft failed for ${guidelineId}: ${ctxErr.message}`);
     }
     // 2) Then regenerate required-values from the (now context-annotated) PPs.
+    let rv = null;
     try {
-        const rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true, userId });
+        rv = await requiredValuesMod.getOrGenerateRequiredValues(db, guidelineId, { forceRegenerate: true, userId });
         console.log(`${logPrefix} requiredValues regenerated for ${guidelineId}: ${rv.values?.length || 0} canonical, ${rv.proposedNewValues?.length || 0} proposed-new`);
-        return rv;
     } catch (rvErr) {
         console.error(`${logPrefix} requiredValues regen failed for ${guidelineId}: ${rvErr.message}`);
-        return null;
     }
+    // 3) Ensure the guideline is in the vector DB + marked processed, so RAG can
+    //    actually surface it. Old guidelines (and any re-extraction) can sit at
+    //    vectorDbIngested=false — invisible to retrieval, so they never appear at the
+    //    guideline checkpoint. Content is unchanged by a PP rebuild, so we only ingest
+    //    when it's genuinely missing. Non-fatal.
+    try {
+        const g = (await db.collection('guidelines').doc(guidelineId).get()).data() || {};
+        if (g.content && g.content.trim()) {
+            if (!g.vectorDbIngested) {
+                const ing = await ragIngestion.reingestGuideline(guidelineId, g.content, {
+                    title: g.humanFriendlyName || g.displayName || g.title || guidelineId,
+                    organisation: g.organisation || 'Unknown',
+                });
+                if (ing?.success) {
+                    await db.collection('guidelines').doc(guidelineId).update({ vectorDbIngested: true, vectorDbIngestedAt: admin.firestore.FieldValue.serverTimestamp(), processed: true });
+                    console.log(`${logPrefix} vector-ingested ${guidelineId}: ${ing.chunksUpserted} chunks (now RAG-searchable)`);
+                } else {
+                    console.warn(`${logPrefix} vector ingest failed for ${guidelineId}: ${ing?.error || 'unknown'}`);
+                }
+            } else if (!g.processed) {
+                await db.collection('guidelines').doc(guidelineId).update({ processed: true });
+            }
+        }
+    } catch (vErr) {
+        console.error(`${logPrefix} vector-ingest refresh failed for ${guidelineId}: ${vErr.message}`);
+    }
+    return rv;
 }
 
 // Regenerate practice points for a guideline (used in batch regeneration)
