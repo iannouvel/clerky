@@ -1807,6 +1807,10 @@ async function scanAndProcessIncompleteGuidelines() {
         // Also scan for processed guidelines that need vector DB ingestion
         await scanForMissingVectorDbIngestion();
 
+        // And recover any recently-ingested guideline whose required-values tail
+        // was interrupted (e.g. a dyno restart mid-generation).
+        await scanForMissingRequiredValues();
+
     } catch (error) {
         console.error('[BACKGROUND_SCAN] Error during scan:', error);
     }
@@ -1870,6 +1874,47 @@ async function scanForMissingVectorDbIngestion() {
 
     } catch (error) {
         console.error('[VECTOR_SCAN] Error during scan:', error);
+    }
+}
+
+// Recover guidelines whose required-values generation was interrupted (e.g. a dyno
+// restart mid-generation): they have practice points but empty/absent requiredValues.
+// Regenerate them (idempotent — re-detected each scan until they succeed), so the
+// tail is self-healing rather than fire-and-forget. Scoped to RECENTLY-ingested
+// guidelines (between ~8 min and 48 h since last write) so it recovers an interrupted
+// ingestion without touching the legacy catalogue or racing an in-flight generation.
+// Routes via the uploader's model preference. Batch-limited to bound LLM work.
+async function scanForMissingRequiredValues() {
+    try {
+        const RECENT_MS = 48 * 60 * 60 * 1000; // only recover recent ingestions
+        const SETTLE_MS = 8 * 60 * 1000;        // not the in-flight inline generation
+        const snapshot = await db.collection('guidelines').get();
+        let count = 0;
+        for (const doc of snapshot.docs) {
+            const data = doc.data();
+            const guidelineId = doc.id;
+            if (data.processing) continue;
+            if (!Array.isArray(data.practicePoints) || data.practicePoints.length === 0) continue;
+            const rv = data.requiredValues;
+            const hasValues = rv && (((rv.values || []).length > 0) || ((rv.proposedNewValues || []).length > 0));
+            if (hasValues) continue; // already generated
+            const lastMs = data.lastUpdated?.toDate ? data.lastUpdated.toDate().getTime()
+                : (data.lastUpdated ? new Date(data.lastUpdated).getTime() : 0);
+            const age = lastMs ? (Date.now() - lastMs) : Infinity;
+            if (age < SETTLE_MS || age > RECENT_MS) continue; // in-flight, or not a recent ingestion
+            console.log(`[RV_SCAN] ${guidelineId} has ${data.practicePoints.length} PPs but no requiredValues — recovering interrupted tail`);
+            try {
+                await regenRequiredValuesForGuideline(guidelineId, '[RV_SCAN]', data.uploadedBy || null);
+                count++;
+            } catch (e) {
+                console.error(`[RV_SCAN] ${guidelineId} regen failed: ${e.message}`);
+            }
+            if (count >= 3) { debugLog('[RV_SCAN] batch limit (3) reached, continuing next scan'); break; }
+        }
+        if (count > 0) console.log(`[RV_SCAN] recovered requiredValues for ${count} guideline(s)`);
+        else debugLog('[RV_SCAN] no guidelines needing requiredValues recovery');
+    } catch (error) {
+        console.error('[RV_SCAN] Error during scan:', error);
     }
 }
 
