@@ -6933,11 +6933,17 @@ async function showPreferencesModal() {
         populateTaskModelDropdown('complexTaskModelSelect', taskPrefs.complexTaskModel, false);
         populateTaskModelDropdown('simpleTaskModelSelect', taskPrefs.simpleTaskModel, true);
         populateTaskModelDropdown('evaluationTaskModelSelect', taskPrefs.evaluationTaskModel, true);
+        // Primary picker (the one simple control) mirrors the complex-task model;
+        // the fast-bulk toggle reflects whether simple/eval use a different (faster) model.
+        populateTaskModelDropdown('primaryModelSelect', taskPrefs.complexTaskModel, false);
+        const fastToggle = document.getElementById('useFastBulkToggle');
+        if (fastToggle) fastToggle.checked = !!(taskPrefs.simpleTaskModel && taskPrefs.simpleTaskModel !== taskPrefs.complexTaskModel);
     } catch (error) {
         console.error('[ERROR] Failed to load task model preferences:', error);
         populateTaskModelDropdown('complexTaskModelSelect', 'claude-opus-4-6', false);
         populateTaskModelDropdown('simpleTaskModelSelect', null, true);
         populateTaskModelDropdown('evaluationTaskModelSelect', null, true);
+        populateTaskModelDropdown('primaryModelSelect', 'claude-opus-4-6', false);
     }
 
     // Load and display chunk distribution provider preferences
@@ -7081,15 +7087,30 @@ async function showPreferencesModal() {
                 }
             }
 
-            // Save task-specific model preferences
-            const complexTaskModelSelect = document.getElementById('complexTaskModelSelect');
-            const simpleTaskModelSelect = document.getElementById('simpleTaskModelSelect');
-            const evaluationTaskModelSelect = document.getElementById('evaluationTaskModelSelect');
-            if (complexTaskModelSelect || simpleTaskModelSelect || evaluationTaskModelSelect) {
-                const complexModel = complexTaskModelSelect?.value || null;
-                const simpleModel = simpleTaskModelSelect?.value || null;
-                const evaluationModel = evaluationTaskModelSelect?.value || null;
-                await saveTaskModelPreferences(complexModel, simpleModel, evaluationModel);
+            // Save task-specific model preferences. The primary "AI Model" picker is
+            // the single source of truth: it sets the complex (main) model, and — when
+            // the fast-bulk toggle is on — a fast cheap model for the high-volume simple
+            // + evaluation tasks. Everything (analysis, suggestions, ingestion) routes
+            // through these. The Advanced per-task dropdowns just mirror it.
+            const primaryModelSelect = document.getElementById('primaryModelSelect');
+            const useFastBulkToggle = document.getElementById('useFastBulkToggle');
+            if (primaryModelSelect && primaryModelSelect.value) {
+                const FAST_BULK_MODEL = 'gemini-2.5-flash';
+                const primaryModel = primaryModelSelect.value;
+                const bulkModel = (useFastBulkToggle && useFastBulkToggle.checked) ? FAST_BULK_MODEL : primaryModel;
+                await saveTaskModelPreferences(primaryModel, bulkModel, bulkModel);
+                // Keep the Advanced dropdowns in sync so reopening the modal is consistent.
+                const cx = document.getElementById('complexTaskModelSelect'); if (cx) cx.value = primaryModel;
+                const sx = document.getElementById('simpleTaskModelSelect'); if (sx) sx.value = bulkModel;
+                const ex = document.getElementById('evaluationTaskModelSelect'); if (ex) ex.value = bulkModel;
+            } else {
+                // Fallback: no primary picker (older markup) — read the per-task dropdowns.
+                const complexTaskModelSelect = document.getElementById('complexTaskModelSelect');
+                const simpleTaskModelSelect = document.getElementById('simpleTaskModelSelect');
+                const evaluationTaskModelSelect = document.getElementById('evaluationTaskModelSelect');
+                if (complexTaskModelSelect || simpleTaskModelSelect || evaluationTaskModelSelect) {
+                    await saveTaskModelPreferences(complexTaskModelSelect?.value || null, simpleTaskModelSelect?.value || null, evaluationTaskModelSelect?.value || null);
+                }
             }
 
             // Save chunk distribution provider preferences
@@ -7297,9 +7318,11 @@ async function loadAndDisplayUserPreferences() {
         trustDisplay.textContent = 'UHSussex';
         scopeDisplay.textContent = 'UHSussex';
         try {
-            const modelOrder = await fetchUserModelPreferences();
-            const model = AVAILABLE_MODELS.find(m => m.model === modelOrder?.[0]);
-            modelDisplay.textContent = model ? model.displayName : (modelOrder?.[0] || 'DeepSeek');
+            const taskPrefs = await fetchTaskModelPreferences();
+            let modelId = taskPrefs?.complexTaskModel;
+            if (!modelId) { const order = await fetchUserModelPreferences(); modelId = order?.[0]; }
+            const model = AVAILABLE_MODELS.find(m => m.model === modelId);
+            modelDisplay.textContent = model ? model.displayName : (modelId || 'DeepSeek');
         } catch (e) {
             modelDisplay.textContent = 'DeepSeek';
         }
@@ -7357,21 +7380,15 @@ async function loadAndDisplayUserPreferences() {
         scopeDisplay.textContent = 'Error loading';
     }
 
-    // Load and display current preferred AI model
+    // Load and display the current AI model. This now reflects the OPERATIVE model
+    // (the complex-task model the primary picker controls), not the fallback-order
+    // head — so the header always matches what the Preferences modal shows.
     try {
-        const modelOrder = await fetchUserModelPreferences();
-        if (modelOrder && modelOrder.length > 0) {
-            const firstModelId = modelOrder[0];
-            const model = AVAILABLE_MODELS.find(m => m.model === firstModelId);
-            if (model) {
-                modelDisplay.textContent = model.displayName;
-            } else {
-                modelDisplay.textContent = firstModelId;
-            }
-        } else {
-            // Default to first model in AVAILABLE_MODELS
-            modelDisplay.textContent = AVAILABLE_MODELS[0].displayName;
-        }
+        const taskPrefs = await fetchTaskModelPreferences();
+        let modelId = taskPrefs?.complexTaskModel;
+        if (!modelId) { const order = await fetchUserModelPreferences(); modelId = order?.[0]; }
+        const model = AVAILABLE_MODELS.find(m => m.model === modelId);
+        modelDisplay.textContent = model ? model.displayName : (modelId || AVAILABLE_MODELS[0].displayName);
     } catch (error) {
         console.error('[ERROR] Failed to load model preferences:', error);
         modelDisplay.textContent = 'Error loading';

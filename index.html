@@ -1038,11 +1038,31 @@
                     </div>
                 </div>
 
+                <!-- Primary AI model (the one simple control) -->
+                <div class="preferences-section">
+                    <h3>AI Model</h3>
+                    <p class="preferences-section-desc">The AI model Clerky uses — for note analysis, guideline
+                        suggestions, and guideline ingestion. If its provider is temporarily unavailable, Clerky
+                        automatically falls back to the next best available model.</p>
+                    <select id="primaryModelSelect" style="width:100%; padding:7px 10px; border-radius:4px; border:1px solid var(--border-color); background:var(--bg-input); color:var(--text-primary); font-size:0.93em; cursor:pointer;">
+                        <!-- populated by JS -->
+                    </select>
+                    <label style="display:flex; align-items:flex-start; gap:8px; margin-top:12px; font-size:0.88em; color:var(--text-primary); cursor:pointer;">
+                        <input type="checkbox" id="useFastBulkToggle" style="margin-top:3px;">
+                        <span>Use a faster, cheaper model for the many parallel per-practice-point checks
+                            <span style="color:var(--text-secondary);">(recommended — these run dozens of times per analysis)</span></span>
+                    </label>
+                </div>
+
+                <!-- Advanced model settings (hidden by default) -->
+                <details class="preferences-section" style="border:1px solid var(--border-color); border-radius:6px; padding:10px 14px;">
+                    <summary style="cursor:pointer; font-weight:600; font-size:0.95em; color:var(--text-primary);">Advanced model settings</summary>
+
                 <!-- AI Model Preferences Section -->
                 <div class="preferences-section">
-                    <h3>AI Model Preferences</h3>
-                    <p class="preferences-section-desc">Order your preferred AI models. Models are tried in order (1 =
-                        first choice) when generating responses.</p>
+                    <h3>Fallback order</h3>
+                    <p class="preferences-section-desc">Order in which models are tried if your chosen model's provider
+                        is unavailable (1 = first fallback).</p>
                     <div id="modelPreferencesList" class="model-preferences-list">
                         <!-- Model items will be dynamically inserted here -->
                     </div>
@@ -1087,6 +1107,7 @@
                         <!-- Provider checkboxes will be dynamically inserted here -->
                     </div>
                 </div>
+                </details>
 
 
             </div>
