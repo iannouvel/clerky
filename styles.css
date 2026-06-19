@@ -5417,10 +5417,12 @@ textarea,
     min-height: 1.5em; /* Preserve blank-line height for empty paragraphs */
 }
 
-/* Main note editor: single-spaced lines (no inter-paragraph margin, line-height 1) so the
-   whole clinical note is visible at a glance. Id-scoped so other tiptap editors are unaffected. */
+/* Main note editor: lines within a section stay single-spaced (line-height 1; lines
+   are <br> within one paragraph), but blank-line-separated sections (each its own
+   paragraph) get a bottom margin so the note's section structure is visible — matching
+   how a clinician spaces it. Id-scoped so other tiptap editors are unaffected. */
 #userInput .ProseMirror p {
-    margin: 0;
+    margin: 0 0 1em 0;
     line-height: 1;
     min-height: 1em;   /* was inheriting 1.5em from the base rule → uneven spacing (single-line paras padded, wrapped lines tight) */
 }

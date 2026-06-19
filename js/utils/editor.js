@@ -246,13 +246,20 @@ export function setUserInputContent(content, isProgrammatic = false, changeType 
             updateClearFormattingButton();
         } else {
             // Set content without coloring for other programmatic changes.
-            // Render each source line as its own paragraph, and preserve BLANK lines
-            // as empty paragraphs, so intentional spacing between sections survives
-            // (the old logic split on blank lines and then filtered the empties out,
-            // collapsing all the spacing). Cap runs of 3+ newlines at one blank line.
+            // Model the note as blank-line-separated PARAGRAPHS (<p>) with single
+            // newlines as <br> within a paragraph. This round-trips cleanly through
+            // editor.getText() (blocks → \n\n, <br> → \n), unlike a line-per-paragraph
+            // scheme which made getText emit \n\n between every line and corrupted the
+            // spacing on the next read/re-set. Section spacing is shown via paragraph
+            // margin in CSS, not empty paragraphs.
             const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-            const htmlContent = normalizedContent.split('\n')
-                .map(line => line.trim().length ? `<p>${escapeHtml(line)}</p>` : '<p></p>')
+            const paragraphs = normalizedContent.split('\n\n');
+            const htmlContent = paragraphs
+                .filter(para => para.trim().length > 0)
+                .map(para => {
+                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
+                    return `<p>${lines}</p>`;
+                })
                 .join('');
             editor.commands.setContent(htmlContent);
         }
