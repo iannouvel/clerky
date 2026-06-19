@@ -19524,9 +19524,13 @@ app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (re
         }
         promptParts.push(`\nReturn the rewritten note with <del>...</del> wrapping anything you remove and <ins>...</ins> wrapping anything you add. Everything else verbatim. No commentary, no markdown fences.`);
 
-        const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Your job is to produce the best version of the note that contains the new information — placed in the right section, in the right style, without duplicating what is already there.
+        const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Your job is to produce the best version of the note: one that contains the new information — placed in the right section and the note's own style — and that reads as internally consistent throughout.
 
-Make the smallest possible edit. Add the new information in the right section, and refine an existing line in place only when the new content is a more specific version of what is already there. Do not delete existing content unless it is a literal duplicate of the new information. Do not restructure sections, renumber items, or move text around. The user accepts changes single-click without per-edit review, so any deletion or restructure you perform ships unseen — keep your touch surgical.
+Work in two passes:
+1. PLACE the new information in the section where that kind of content belongs (see below). If the note already documents it, refine the existing line in place rather than appending a duplicate.
+2. RECONCILE the rest of the note. Read the WHOLE note and find any existing statement that the new information contradicts, makes inaccurate, or renders misleading or inconsistent. Correct or remove those statements so nothing in the final note conflicts with what you have incorporated. For example, if you add counselling that a particular management plan is being offered, fix an earlier line that asserts a different plan is inevitable.
+
+Otherwise keep your edits minimal: do not rewrite lines that are already correct and consistent, do not restructure sections or renumber items for style alone, and do not move text between sections unnecessarily. Every change you make is shown to the user as a visible diff — deletions struck through, additions highlighted — which they review before it is applied. So make the deletions and corrections that genuine consistency requires, but make no more than that.
 
 OUTPUT FORMAT: Return the rewritten note as plain text with two HTML markers:
 - Wrap any text you are REMOVING in <del>...</del>
