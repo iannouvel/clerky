@@ -19482,11 +19482,69 @@ app.post('/determineInsertionPoint', authenticateUser, async (req, res) => {
     }
 });
 
+// Build the <del>/<ins> diff markup the suggestion-insert preview consumes,
+// by comparing the original note to the model's clean rewrite. Line-level diff
+// first; when a removed block is immediately followed by an added block (a
+// reworded line/paragraph), refine to word level so only the changed words are
+// marked rather than striking and re-adding the whole line. Trailing newlines
+// are kept OUTSIDE the tags so paragraph structure stays clean, and pure
+// whitespace/blank-line changes are left unmarked.
+function buildInsDelMarkup(original, revised) {
+    const Diff = require('diff');
+
+    const wrap = (tag, value) => {
+        if (!value) return '';
+        const trail = (value.match(/\n+$/) || [''])[0];
+        const core = trail ? value.slice(0, value.length - trail.length) : value;
+        if (!core.trim()) return value; // pure whitespace/newlines — don't mark
+        return `<${tag}>${core}</${tag}>${trail}`;
+    };
+
+    const wordLevel = (removed, added) => {
+        const tokens = Diff.diffWordsWithSpace(removed, added);
+        let changed = 0, kept = 0;
+        for (const t of tokens) {
+            if (t.added || t.removed) changed += t.value.length; else kept += t.value.length;
+        }
+        // If most of the line changed, a per-word diff is just noise — strike the
+        // old line whole and show the new line whole. Drop the removed block's
+        // trailing newline (the added block supplies its own) so applying the
+        // diff reproduces the rewrite exactly, with no stray blank line.
+        if (changed > kept) {
+            const rTrail = (removed.match(/\n+$/) || [''])[0];
+            const rCore = rTrail ? removed.slice(0, removed.length - rTrail.length) : removed;
+            const delPart = rCore.trim() ? `<del>${rCore}</del>` : '';
+            return delPart + wrap('ins', added);
+        }
+        let s = '';
+        for (const t of tokens) {
+            if (t.added) s += wrap('ins', t.value);
+            else if (t.removed) s += wrap('del', t.value);
+            else s += t.value;
+        }
+        return s;
+    };
+
+    const parts = Diff.diffLines(original, revised);
+    let out = '';
+    for (let i = 0; i < parts.length; i++) {
+        const p = parts[i];
+        if (!p.added && !p.removed) { out += p.value; continue; }
+        // removed-then-added = a modification: refine to word level.
+        if (p.removed && parts[i + 1] && parts[i + 1].added) {
+            out += wordLevel(p.value, parts[i + 1].value);
+            i++; // consume the paired added block
+            continue;
+        }
+        out += p.removed ? wrap('del', p.value) : wrap('ins', p.value);
+    }
+    return out;
+}
+
 // LLM-driven placement of a single suggestion into a clinical note.
-// Returns the full updated note, with a server-side safety guard that rejects
-// any response that has lost more than 30% of the original character count —
-// catches the failure mode where the LLM paraphrases, truncates, or returns
-// only the suggestion text.
+// The model returns the full clean rewritten note; the server diffs it against
+// the original (buildInsDelMarkup) to produce the <del>/<ins> preview markup,
+// so the diff the user reviews is guaranteed to match what gets applied.
 app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (req, res) => {
     const timer = new StepTimer('/determineSingleSuggestionInsertionPoint');
     req.stepTimer = timer;
@@ -19522,22 +19580,15 @@ app.post('/determineSingleSuggestionInsertionPoint', authenticateUser, async (re
         if (suggestion.verbatimQuote) {
             promptParts.push(`\nGUIDELINE BASIS (for your understanding, do not copy verbatim): ${suggestion.verbatimQuote}`);
         }
-        promptParts.push(`\nReturn the rewritten note with <del>...</del> wrapping anything you remove and <ins>...</ins> wrapping anything you add. Everything else verbatim. No commentary, no markdown fences.`);
+        promptParts.push(`\nReturn the COMPLETE rewritten note as plain text — the whole note from top to bottom, with your edits already applied. No markup, no commentary, no markdown fences.`);
 
-        const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Your job is to produce the best version of the note: one that contains the new information — placed in the right section and the note's own style — and that reads as internally consistent throughout.
+        const systemPrompt = `You are a careful medical sub-editor revising a UK clinical note. You will receive the current note and one new piece of information to incorporate. Produce the best version of the note: it should contain the new information — placed in the right section and the note's own style — and read as internally consistent throughout.
 
 Work in two passes:
 1. PLACE the new information in the section where that kind of content belongs (see below). If the note already documents it, refine the existing line in place rather than appending a duplicate.
-2. RECONCILE the rest of the note. Read the WHOLE note and find any existing statement that the new information contradicts, makes inaccurate, or renders misleading or inconsistent. Correct or remove those statements so nothing in the final note conflicts with what you have incorporated. For example, if you add counselling that a particular management plan is being offered, fix an earlier line that asserts a different plan is inevitable.
+2. RECONCILE the rest of the note. Read the whole note and find any existing statement that the new information contradicts, makes inaccurate, or renders misleading. Fix or remove ONLY those specific statements. Edit them line by line: never delete or replace a whole section because one line within it is wrong, and never touch a line that is already correct and consistent. For example, if you add counselling that induction of labour is being offered, correct the single earlier line that wrongly states caesarean section is inevitable — and leave the other counselling lines exactly as they are.
 
-Otherwise keep your edits minimal: do not rewrite lines that are already correct and consistent, do not restructure sections or renumber items for style alone, and do not move text between sections unnecessarily. Every change you make is shown to the user as a visible diff — deletions struck through, additions highlighted — which they review before it is applied. So make the deletions and corrections that genuine consistency requires, but make no more than that.
-
-OUTPUT FORMAT: Return the rewritten note as plain text with two HTML markers:
-- Wrap any text you are REMOVING in <del>...</del>
-- Wrap any text you are ADDING in <ins>...</ins>
-- Leave everything else verbatim, in place.
-
-The marked-up output must read as a complete diff: deleting all <del> spans and unwrapping all <ins> spans should yield the final clean note. Do not include any text that isn't either kept verbatim, marked as deleted, or marked as added.
+Be surgical. Change as few words as you can to make each correction. Do not restructure sections, renumber items, move text between sections, or rewrite lines for style. Keep every correct line verbatim, in its original place. Your output is diffed against the original and the changes are shown to the user for review before anything is applied, so unnecessary edits create review noise — make only the changes that placing the new information and genuine consistency require.
 
 If the new information is already substantially documented in the note, prefer minimal edits — refine for completeness rather than appending a duplicate. If it adds genuinely new content, place it based on what KIND of content it is, not what topic it sits near. Use the note's existing section headings exactly as written (e.g. if the note says "Management Plan", use that, not "Plan"):
 
@@ -19551,7 +19602,7 @@ If the suggestion starts with a verb like "inform", "prescribe", "complete", "ar
 
 Maintain British English spellings, clinical terminology, and units throughout. Match the note's existing format and style (prose vs bullets, headings, abbreviations).
 
-Return ONLY the marked-up note. No commentary, no markdown code fences, no surrounding quotes.`;
+Return ONLY the complete rewritten note as plain text — the whole note, top to bottom, with your edits applied in place. No markup, no commentary, no markdown code fences, no surrounding quotes.`;
 
         const userPrompt = promptParts.join('\n');
         timer.step('Build prompts');
@@ -19569,12 +19620,22 @@ Return ONLY the marked-up note. No commentary, no markdown code fences, no surro
             return res.status(500).json({ success: false, error: 'No AI response' });
         }
 
-        // Strip code fences if the LLM ignored the no-markdown rule
-        let markupHtml = aiResponse.content.trim()
+        // The model returns the COMPLETE rewritten note as plain text (not
+        // markup). Hand-authoring <del>/<ins> markup over a whole note proved
+        // unreliable — the model reproduced blocks instead of editing in place,
+        // so the displayed diff diverged from what actually applied (e.g. it
+        // struck a section but kept it). Instead we diff the original note
+        // against the model's clean rewrite HERE, deterministically, and build
+        // the <del>/<ins> markup the frontend already consumes. The diff the
+        // user sees is then guaranteed to equal the change that gets applied.
+        const rewritten = aiResponse.content.trim()
             .replace(/^```[a-z]*\s*\n?/i, '')
             .replace(/\n?```\s*$/, '')
             .trim();
         timer.step('Post-process');
+
+        const markupHtml = buildInsDelMarkup(clinicalNote.trim(), rewritten);
+        timer.step('Compute diff');
 
         // The 70% retention safety guard no longer applies: under the new
         // flow the user reviews the diff visually before it's committed to
