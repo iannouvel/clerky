@@ -245,20 +245,14 @@ export function setUserInputContent(content, isProgrammatic = false, changeType 
             window.hasColoredChanges = true;
             updateClearFormattingButton();
         } else {
-            // Set content without coloring for other programmatic changes
-            // Convert newlines to HTML - use <br> for single line breaks, <p> for paragraphs
-            // First, normalize multiple consecutive blank lines into single blank lines
+            // Set content without coloring for other programmatic changes.
+            // Render each source line as its own paragraph, and preserve BLANK lines
+            // as empty paragraphs, so intentional spacing between sections survives
+            // (the old logic split on blank lines and then filtered the empties out,
+            // collapsing all the spacing). Cap runs of 3+ newlines at one blank line.
             const normalizedContent = safeContent.replace(/\n{3,}/g, '\n\n');
-
-            // Split by double newlines (paragraph breaks) and single newlines (line breaks)
-            const paragraphs = normalizedContent.split('\n\n');
-            const htmlContent = paragraphs
-                .filter(para => para.trim().length > 0)
-                .map(para => {
-                    // Within each paragraph, convert single newlines to <br>
-                    const lines = para.split('\n').map(line => escapeHtml(line)).join('<br>');
-                    return `<p>${lines}</p>`;
-                })
+            const htmlContent = normalizedContent.split('\n')
+                .map(line => line.trim().length ? `<p>${escapeHtml(line)}</p>` : '<p></p>')
                 .join('');
             editor.commands.setContent(htmlContent);
         }
