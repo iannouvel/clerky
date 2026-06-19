@@ -160,23 +160,36 @@ const TEST_TARGET_GUIDELINE_IDS = [
 const TEST_HOSPITAL_TRUST = 'University Hospitals Sussex NHS Foundation Trust';
 
 const TEST_SCENARIO = `28yo, G3P2, 36+0, BMI 30, Rh+ve
-Issues: GDM on insulin with suspected macrosomia.
-Concerns: Suboptimal glycaemic control with increased fetal growth and possible delivery complications.
-Background: Previous GDM and family history of type 2 diabetes.
-GDM diagnosis: OGTT at 26 weeks: fasting 5.6 mmol/L, 2-hour 9.2 mmol/L, HbA1c 42 mmol/mol.
-Treatment: Initially diet-controlled, now on insulin aspart 4 units with breakfast and evening meal.
-Growth: USS at 36 weeks shows EFW >90th centile, AFI normal, cephalic, placenta grade 2.
-G&S: Sent 20th June, pending.
-Exam: BP 120/80, HR 80, Temp 36.5, SpO₂ 98% RA.
+
+Issues:
+GDM on insulin with suspected macrosomia.
+
+Concerns:
+Suboptimal glycaemic control with increased fetal growth and possible delivery complications.
+
+Background:
+Previous GDM and family history of type 2 diabetes.
+OGTT at 26 weeks: fasting 5.6 mmol/L, 2-hour 9.2 mmol/L, HbA1c 42 mmol/mol.
+Initially diet-controlled, now on insulin aspart 4 units with breakfast and evening meal.
+USS at 36 weeks shows EFW >90th centile, AFI normal, cephalic, placenta grade 2.
+
+Assessment
+Obs: BP 120/80, HR 80, Temp 36.5, SpO₂ 98% RA.
 Abdo: Soft, non-tender, uterus large for dates.
-Fetus: FM felt, FHR 140 bpm.
+Sonicaid: FHR 140 bpm.
 Glucose review: Most readings within target, occasional raised post-meal readings.
-Assessment: Insulin-treated GDM with suspected macrosomia at 36 weeks.
-Counselling: Explained that macrosomia means baby will definitely need caesarean section.
+
+Diagnosis:
+Insulin-treated GDM with suspected macrosomia at 36 weeks.
+
+Counselling:
+Explained that macrosomia means baby will definitely need caesarean section.
 Advised that induction at 38 weeks removes the risk of shoulder dystocia.
 Reassured that neonatal hypoglycaemia is unlikely if maternal sugars are controlled in labour.
 Discussed risks of GDM including shoulder dystocia, PPH, neonatal hypoglycaemia, operative birth and SCBU admission.
-Plan: Continue insulin aspart 4 units breakfast and evening meal.
+
+Plan:
+Continue insulin aspart 4 units breakfast and evening meal.
 Diabetes midwife to review glucose readings in 1 week.
 Book IOL at 38 weeks for insulin-treated GDM with suspected macrosomia.
 No further growth scans required if current scan reassuring.
