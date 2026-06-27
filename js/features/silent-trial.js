@@ -115,16 +115,27 @@
     function el(tag, css, html) { const e = document.createElement(tag); if (css) e.style.cssText = css; if (html != null) e.innerHTML = html; return e; }
     function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
-    // ---- floating button + panel ----
+    // ---- header button + panel ----
     let panel;
-    // Top-centre, floating in the header band. Reuse the .logo class so it matches
-    // the "clerky" header button exactly (font, colour, translucent pill, hover);
-    // inline styles only handle positioning.
-    const btn = el('button', 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99998;', 'Silent Trial');
+    // Reuse the .logo class so it matches the "clerky" header button exactly (font,
+    // colour, translucent pill, hover). Mount it into the header's centre container
+    // so the header's own flex layout vertically/horizontally centres it — no manual
+    // positioning. Falls back to a fixed top-centre button if the header isn't present.
+    const btn = el('button', null, 'Silent Trial');
     btn.className = 'logo';
     btn.onclick = () => { if (!panel) buildPanel(); panel.style.display = panel.style.display === 'none' ? 'flex' : 'none'; if (panel.style.display !== 'none') refresh(); };
-    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(btn));
-    if (document.readyState !== 'loading') document.body.appendChild(btn);
+    function mountBtn() {
+        if (btn.isConnected) return;
+        const center = document.querySelector('.top-bar-center');
+        if (center) {
+            center.appendChild(btn);
+        } else {
+            btn.style.cssText = 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99998;';
+            document.body.appendChild(btn);
+        }
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountBtn); else mountBtn();
+    setTimeout(mountBtn, 1500);
 
     function buildPanel() {
         panel = el('div', 'position:fixed;top:0;right:0;width:min(560px,96vw);height:100vh;z-index:99999;display:flex;flex-direction:column;background:var(--bg-primary,#0f1620);color:var(--text-primary,#e6edf3);box-shadow:-6px 0 24px rgba(0,0,0,.4);font:14px/1.4 system-ui;');
