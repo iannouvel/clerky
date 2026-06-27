@@ -13,7 +13,13 @@ firebase-debug.*.log*
 # Firebase config
 firebase-init.js
 modules/firebase-core.js
-dist/
+# Ignore dist contents but allow re-including specific built assets below.
+# (Must be dist/* not dist/ — a file can't be un-ignored if its parent dir is ignored.)
+dist/*
+# Exception: the anonymiser loads /dist/libretto-bundle.js at runtime, and GitHub
+# Pages serves from the main-branch root — so this built bundle must be committed.
+# Rebuild with `npm run bundle-libretto` and re-commit if the library is updated.
+!dist/libretto-bundle.js
 dist-bsots/
 
 # Environment variables
