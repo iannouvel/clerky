@@ -546,6 +546,12 @@ export async function runParallelAnalysis(guidelines) {
         statusText.innerHTML = `${title}<br><span style="font-size:0.92em;opacity:0.85;line-height:1.5;">${breakdownList.map(escMsg).join(' · ')}</span>`;
     }
 
+    // This box is the single progress indicator while analysis runs — clear the main
+    // status bar so the user isn't told the same thing twice (it set "Analysing note
+    // against N guidelines…" just before this). The box's completion message later
+    // repopulates the bar as the final payoff.
+    updateUser(null, false, true, 'main');
+
     // Streaming analysis: pick up any per-guideline analyses pre-started during the
     // confirm-values stage (see startReadyGuidelineAnalyses in script.js). Capture
     // and clear the handoff so it can't leak into a later run.
@@ -658,7 +664,6 @@ export async function runParallelAnalysis(guidelines) {
     if (allSuggestions.length > 0) {
         const patientContext = successfulResults[0]?.suggestions?.patientContext || {};
         if (statusText) statusText.textContent = 'Checking suggestions for clinical plausibility...';
-        updateUser('Checking suggestions for clinical plausibility...', true);
         try {
             const batchResult = await postAuthenticated('/batchSenseCheck', {
                 suggestions: allSuggestions,
