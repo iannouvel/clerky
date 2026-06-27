@@ -5412,9 +5412,12 @@ textarea,
    paragraph) get a bottom margin so the note's section structure is visible — matching
    how a clinician spaces it. Id-scoped so other tiptap editors are unaffected. */
 #userInput .ProseMirror p {
-    margin: 0 0 1em 0;
-    line-height: 1;
-    min-height: 1em;   /* was inheriting 1.5em from the base rule → uneven spacing (single-line paras padded, wrapped lines tight) */
+    /* Uniform spacing for the note: every break (Enter→paragraph, Shift+Enter→<br>)
+       reads the same. No inter-paragraph margin; line-height alone governs spacing,
+       and min-height matches it so blank lines are exactly one line tall. */
+    margin: 0;
+    line-height: 1.4;
+    min-height: 1.4em;
 }
 
 /* Lists disabled - users type numbered lists manually as plain text */
