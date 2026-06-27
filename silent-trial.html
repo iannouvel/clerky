@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>clerky — silent trial</title>
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            display: flex; align-items: center; justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #0b1220; color: #e6edf3;
+        }
+        .msg { text-align: center; opacity: 0.85; }
+        .msg h1 { font-weight: 600; margin: 0 0 6px; }
+    </style>
+    <script>
+        // Silent-trial entry point: a superset of the demo build for running the
+        // regulatory silent trial (CLERKY-CE-001 Part B). Anonymous auth, UHSussex
+        // scope, the GDM + IOL guideline checkpoint locked, the synthetic case
+        // (ST-CASE-001) pre-loaded, and the in-app ST-003 scoring panel enabled.
+        // sessionStorage survives the disclaimer round-trip (which drops query
+        // params); the ?trial=1 param is a belt-and-braces fallback for first load.
+        try { sessionStorage.setItem('clerkySilentTrialMode', '1'); } catch (e) {}
+        window.location.replace('index.html?trial=1');
+    </script>
+</head>
+<body>
+    <div class="msg">
+        <h1>clerky</h1>
+        <p>Loading the silent trial…</p>
+    </div>
+</body>
+</html>

@@ -127,14 +127,31 @@ async function checkDisclaimerAcceptance() {
 // perfecting the GDM + IOL workflows before expanding to the full library:
 // everything test mode does, PLUS the guideline checkpoint is locked so ONLY
 // the two target guidelines can be selected.
+// SILENT-TRIAL MODE — entered via silent-trial.html. A superset of demo mode for
+// running the regulatory silent trial (CLERKY-CE-001 Part B): everything demo mode
+// does (anon auth, UHSussex scope, GDM+IOL guideline lock), PLUS a trial-specific
+// pre-loaded synthetic case (CLERKY-ST-CASE-001) and an in-app scoring panel
+// (js/features/silent-trial.js) for rating each suggestion against the ST-003 scale.
+const SILENT_TRIAL_MODE = (() => {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const on = params.has('trial') || sessionStorage.getItem('clerkySilentTrialMode') === '1';
+        if (on) sessionStorage.setItem('clerkySilentTrialMode', '1');
+        return on;
+    } catch (e) {
+        return false;
+    }
+})();
+window.SILENT_TRIAL_MODE = SILENT_TRIAL_MODE;
+
 const DEMO_MODE = (() => {
     try {
         const params = new URLSearchParams(window.location.search);
         const on = params.has('demo') || sessionStorage.getItem('clerkyDemoMode') === '1';
         if (on) sessionStorage.setItem('clerkyDemoMode', '1');
-        return on;
+        return on || SILENT_TRIAL_MODE; // silent-trial implies all demo behaviour
     } catch (e) {
-        return false;
+        return SILENT_TRIAL_MODE;
     }
 })();
 window.DEMO_MODE = DEMO_MODE;
@@ -196,6 +213,37 @@ No further growth scans required if current scan reassuring.
 Advise to attend if reduced fetal movements, ROM, contractions or persistently high glucose readings.
 In labour: FBC and G&S on admission, continuous CTG due to insulin-treated GDM, monitor CBG, ensure IV access and awareness of increased shoulder dystocia and PPH risk.
 Postnatal: Baby will need blood glucose monitoring after birth.`;
+
+// Silent-trial synthetic case (CLERKY-ST-CASE-001) — a deliberately
+// "poor-but-not-terrible" admission clerking for IOL in medication-controlled GDM.
+// Gaps map to real UHSussex Diabetes-in-Pregnancy / NICE NG207 practice points;
+// kept in sync with the regulatory source of truth in "Clerky Regulatory".
+const TRIAL_SCENARIO = `ADMISSION CLERKING — Labour Ward
+
+38+2.  G2P1 (prev NVD 2021, 3.6kg).  Admitted for IOL today.
+
+GDM: dx 27/40 on OGTT (fasting 5.8, 2hr 8.9).  Started metformin 500mg BD,
+up-titrated to 1g BD.  Levemir 10u nocte added ~34/40 for persistent fasting
+BMs 6-7.  Home BMs since mostly 5-6 pre-meals, occasional post-prandial 8s.
+Followed in joint diabetes antenatal clinic, last seen 37/40.
+
+IOL booked for GDM on medication.  Consented for IOL.
+
+Growth scan 36+5: EFW 50th centile, normal liquor, normal dopplers.
+
+O/E:  BP 118/74, HR 82, afebrile.  Urine NAD.
+Abdo: SFH 37cm, longitudinal, cephalic, 3/5 palpable.  FM present.
+CTG on admission: baseline 140, normal variability, accels present, no decels —
+reassuring.
+
+On aspirin 75mg OD (continues).
+
+PLAN:
+- Propess for induction
+- Continue metformin and Levemir as normal
+- Routine BM monitoring
+- Repeat CTG post-Propess
+- VTE: TEDs`;
 
 function isTestTargetGuideline(g) {
     return !!g && TEST_TARGET_GUIDELINE_IDS.includes(g.id);
@@ -295,8 +343,10 @@ async function applyTestModeSetup() {
         // in-progress edits; setUserInputContent self-queues until tiptapReady
         // if the editor isn't up yet.
         const editor = window.editors?.userInput;
+        const scenarioToLoad = SILENT_TRIAL_MODE ? TRIAL_SCENARIO : TEST_SCENARIO;
+        const scenarioLabel = SILENT_TRIAL_MODE ? 'Silent-trial scenario (ST-CASE-001)' : 'Test scenario';
         if (!editor || !editor.getText().trim()) {
-            setUserInputContent(TEST_SCENARIO, true, 'Test scenario');
+            setUserInputContent(scenarioToLoad, true, scenarioLabel);
         }
     } catch (e) {
         console.warn('[TEST] Scenario prefill failed:', e);
@@ -8257,7 +8307,7 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         // Demo build: the checkpoint is locked to the two target guidelines, so
         // swap the "uncheck/check" copy for an explanation and drop Select all.
         const introCopy = DEMO_MODE
-            ? `This demo is limited to the <strong>Diabetes in pregnancy</strong> and
+            ? `This ${SILENT_TRIAL_MODE ? 'silent trial' : 'demo'} is limited to the <strong>Diabetes in pregnancy</strong> and
                <strong>Induction of labour</strong> guidelines. Other relevant guidelines
                found for this note are shown below but locked.`
             : `Found ${guidelines.length} relevant guidelines.
