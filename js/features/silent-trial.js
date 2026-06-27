@@ -340,5 +340,48 @@
         setTimeout(() => dl(`silent-trial_${caseId}_tab2-reference-standard.csv`, lines2.join('\n'), 'text/csv'), 300);
     }
 
+    // ---- prompt to score at the end of a run ----------------------------------
+    // The suggestion wizard marks the workflow's "review" step complete once every
+    // suggestion has been reviewed (or there were none). Hook that to auto-open the
+    // scoring panel and nudge the clinician to score + export — what they expect
+    // after finishing a run. Implemented by wrapping workflowStepper.set so no core
+    // code needs editing; retries until the stepper exists.
+    function showRunCompleteToast() {
+        const old = document.getElementById('st-toast'); if (old) old.remove();
+        const t = el('div', 'position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:99999;max-width:440px;background:#1f4e5f;color:#fff;padding:12px 16px;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.35);font:13px/1.4 system-ui;display:flex;gap:12px;align-items:center;');
+        t.id = 'st-toast';
+        t.appendChild(el('span', null, 'Trial run complete — score each suggestion in the panel, then Export.'));
+        const ok = el('button', 'background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:6px;padding:4px 10px;cursor:pointer;font-weight:600;', 'OK');
+        ok.onclick = () => t.remove();
+        t.appendChild(ok);
+        document.body.appendChild(t);
+        setTimeout(() => { if (t.isConnected) t.remove(); }, 12000);
+    }
+    function onRunComplete() {
+        if (!panel) buildPanel();
+        panel.style.display = 'flex';
+        refresh();
+        showRunCompleteToast();
+    }
+    (function hookRunCompletion() {
+        const tryHook = () => {
+            const ws = window.workflowStepper;
+            if (ws && typeof ws.set === 'function' && !ws.__trialHooked) {
+                const orig = ws.set.bind(ws);
+                ws.set = function (stage, status) {
+                    const r = orig(stage, status);
+                    try { if (stage === 'review' && status === 'complete') setTimeout(onRunComplete, 200); } catch (e) {}
+                    return r;
+                };
+                ws.__trialHooked = true;
+            }
+            return !!(window.workflowStepper && window.workflowStepper.__trialHooked);
+        };
+        if (!tryHook()) {
+            const iv = setInterval(() => { if (tryHook()) clearInterval(iv); }, 1000);
+            setTimeout(() => clearInterval(iv), 120000);
+        }
+    })();
+
     console.log('[SILENT-TRIAL] scoring panel active for case', caseId);
 })();
