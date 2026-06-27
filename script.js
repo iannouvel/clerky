@@ -8476,14 +8476,10 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
         const data = window.globalGuidelines?.[g.id];
         const raw = (typeof getCleanDisplayTitle === 'function' ? getCleanDisplayTitle(g, data) : (data?.displayName || g.title || g.id));
         const name = shortName(raw) || raw;
-        const n = data?.practicePointCount;
-        return n ? `${name} (${n})` : name;
+        return name;
     });
-    const gatherTotalPP = (selectedGuidelines || []).reduce((s, g) => s + (window.globalGuidelines?.[g.id]?.practicePointCount || 0), 0);
     const gCount = (selectedGuidelines || []).length;
-    const gatherTitle = gatherTotalPP
-        ? `Checking <strong>${gatherTotalPP}</strong> practice points across ${gCount} guideline${gCount === 1 ? '' : 's'}, and the values they need…`
-        : `Checking practice points across ${gCount} guideline${gCount === 1 ? '' : 's'}, and the values they need…`;
+    const gatherTitle = `Checking your note against the following guideline${gCount === 1 ? '' : 's'}:`;
     updateUser(`${gatherTitle}<br><span style="display:inline-block;margin-top:6px;font-size:0.85em;opacity:0.9;line-height:1.5;">${gatherList.map(escMsg).join(' · ')}</span>`, true);
     const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
         method: 'POST',
