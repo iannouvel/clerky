@@ -220,7 +220,7 @@ Postnatal: Baby will need blood glucose monitoring after birth.`;
 // kept in sync with the regulatory source of truth in "Clerky Regulatory".
 const TRIAL_SCENARIO = `ADMISSION CLERKING — Labour Ward
 
-38+2.  G2P1 (prev NVD 2021, 3.6kg).  Admitted for IOL today.
+38+2.  G2P1 (prev SVD 2021, 3.6kg).  Admitted for IOL today.
 
 GDM: dx 27/40 on OGTT (fasting 5.8, 2hr 8.9).  Started metformin 500mg BD,
 up-titrated to 1g BD.  Levemir 10u nocte added ~34/40 for persistent fasting
