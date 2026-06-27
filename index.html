@@ -533,12 +533,12 @@
                         </div>
 
                     </div>
+                </div>
 
-                    <!-- Server Status Message: centred overlay on the clinical note area -->
-                    <div id="serverStatusMessage" class="server-status-message" style="display: none;">
-                        <div id="statusChannel-main" class="status-channel" style="display:none;"></div>
-                        <div id="statusChannel-background" class="status-channel status-channel-background" style="display:none;"></div>
-                    </div>
+                <!-- Status 'thinking' indicator: inline row shown just above the fixed button row -->
+                <div id="serverStatusMessage" class="server-status-message" style="display: none;">
+                    <div id="statusChannel-main" class="status-channel" style="display:none;"></div>
+                    <div id="statusChannel-background" class="status-channel status-channel-background" style="display:none;"></div>
                 </div>
 
                 <!-- Fixed Button Row (always visible at bottom of mainContentArea) -->
@@ -1400,6 +1400,9 @@
 
     <!-- Main application script -->
     <script type="module" src="script.js"></script>
+
+    <!-- Silent-trial scoring panel (self-guards; active only in ?trial / silent-trial.html) -->
+    <script defer src="js/features/silent-trial.js"></script>
 
     <!-- Column layout functionality -->
     <script>

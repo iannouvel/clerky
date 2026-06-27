@@ -4258,53 +4258,36 @@ body {
     animation: statusFadeOut 5s ease-in forwards;
 }
 
-/* Server status message — centred overlay on the clinical note area */
+/* Status 'thinking' indicator — subtle inline row just above the fixed button row.
+   Mirrors how chatbots show progress text beneath the input, rather than a popup. */
 .server-status-message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 50;
-    font-size: 1.2rem;
-    color: #fff;
-    background: #019874; /* matches the left nav buttons */
-    border: none;
-    border-radius: 8px;
-    padding: 16px 26px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+    margin: 0 5px 6px; /* match the horizontal margins of .fixed-button-row */
+    padding: 4px 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    max-width: 80%;
-    min-width: 220px;
+    gap: 4px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: transparent;
     line-height: 1.4;
-    text-align: center;
-    pointer-events: none;
-}
-
-/* White spinner inside the green status popup */
-.server-status-message .spinner-small {
-    border-color: rgba(255, 255, 255, 0.45);
-    border-top-color: #fff;
+    text-align: left;
 }
 
 /* When the Confirm-required-values side panel is open (body.rv-panel-open, toggled by
    showRequiredValuesModal), reflow the note clear of the fixed panel so it isn't hidden
-   underneath, and shift the status popup into the visible area to the left of the panel.
-   Applies ONLY while the panel is open — the note returns to full width afterwards. */
+   underneath. Applies ONLY while the panel is open — the note returns to full width
+   afterwards. The status row now sits below the note in normal flow, so it no longer
+   needs to be shifted clear of the panel. */
 body.rv-panel-open .chatbot-input-section {
     padding-right: calc(min(480px, 38vw) + 32px);
     box-sizing: border-box;
-}
-body.rv-panel-open .server-status-message {
-    left: calc(50% - (min(480px, 38vw) + 32px) / 2);
 }
 
 /* Individual status channel row */
 .status-channel {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     white-space: normal;
     flex-wrap: wrap;
