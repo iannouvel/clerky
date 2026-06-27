@@ -8802,6 +8802,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             // expanded; the rest collapse to a clickable header below. Auto-filled
             // items keep their flat inline layout (inside the collapsed review group).
             let contentTarget = row;
+            let cardIndex = -1;
             if (!isAutoFilled) {
                 const chevron = document.createElement('span');
                 chevron.style.cssText = 'margin-left:6px;font-size:0.85em;color:var(--text-secondary,#888);';
@@ -8817,7 +8818,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                     needsCards.forEach(c => c.setOpen(false));
                     setOpen(!isOpen);
                 });
-                needsCards.push({ setOpen });
+                cardIndex = needsCards.length;
+                needsCards.push({ setOpen, labelLine, badge });
             } else {
                 row.appendChild(labelLine);
             }
@@ -8964,6 +8966,48 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 // Inferred reason is the model's reasoning, not a verbatim note quote.
                 evi.textContent = ex.inferred ? `AI reasoning: ${txt}` : `evidence: "${txt}"`;
                 contentTarget.appendChild(evi);
+            }
+
+            // One-at-a-time flow: a "Save & next" button collapses this needs-value
+            // card and opens the next one (Enter does the same in a text field).
+            if (!isAutoFilled && cardIndex >= 0) {
+                const entry = needsCards[cardIndex];
+                entry.input = inputEl;
+                const isLast = cardIndex === needsCount - 1;
+                const navRow = document.createElement('div');
+                navRow.style.cssText = 'display:flex;justify-content:flex-end;margin-top:8px;';
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.textContent = isLast ? 'Save ✓' : 'Save & next →';
+                nextBtn.style.cssText = 'padding:5px 12px;border-radius:5px;border:none;background:var(--accent-color,#16a34a);color:#fff;cursor:pointer;font-size:0.85em;font-weight:600;';
+                const advance = () => {
+                    const val = unknownCb.checked ? 'unknown / pending'
+                        : (inputEl.value === '__OTHER__' ? (otherInput ? otherInput.value : '') : inputEl.value);
+                    // Reflect the answer in the collapsed header + flip the badge to "set".
+                    if (entry.answerSpan) entry.answerSpan.remove();
+                    if (val) {
+                        const ans = document.createElement('span');
+                        ans.style.cssText = 'font-size:0.82em;color:var(--text-secondary,#555);font-style:italic;';
+                        ans.textContent = '— ' + (val.length > 40 ? val.slice(0, 40) + '…' : val);
+                        labelLine.insertBefore(ans, badge);
+                        entry.answerSpan = ans;
+                    }
+                    badge.textContent = val ? 'set ✓' : 'skipped';
+                    badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
+                    entry.setOpen(false);
+                    const next = needsCards[cardIndex + 1];
+                    if (next) {
+                        next.setOpen(true);
+                        setTimeout(() => { try { next.input && next.input.focus(); } catch (e) {} }, 30);
+                    } else {
+                        const cont = document.getElementById('rv-continue');
+                        if (cont) { cont.focus(); cont.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.45)'; }
+                    }
+                };
+                nextBtn.addEventListener('click', advance);
+                if (inputEl.tagName === 'INPUT') inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); advance(); } });
+                navRow.appendChild(nextBtn);
+                contentTarget.appendChild(navRow);
             }
 
             inputs.set(rv.id, { input: inputEl, unknown: unknownCb, otherInput });
