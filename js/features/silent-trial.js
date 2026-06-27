@@ -117,8 +117,11 @@
 
     // ---- floating button + panel ----
     let panel;
-    // Top-centre, floating in the header band, clear of the bottom action bar.
-    const btn = el('button', 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99998;padding:10px 16px;border-radius:24px;border:none;cursor:pointer;background:#1f4e5f;color:#fff;font:600 14px/1 system-ui;box-shadow:0 4px 14px rgba(0,0,0,.35);', '🧪 Silent Trial');
+    // Top-centre, floating in the header band. Reuse the .logo class so it matches
+    // the "clerky" header button exactly (font, colour, translucent pill, hover);
+    // inline styles only handle positioning.
+    const btn = el('button', 'position:fixed;top:10px;left:50%;transform:translateX(-50%);z-index:99998;', 'Silent Trial');
+    btn.className = 'logo';
     btn.onclick = () => { if (!panel) buildPanel(); panel.style.display = panel.style.display === 'none' ? 'flex' : 'none'; if (panel.style.display !== 'none') refresh(); };
     document.addEventListener('DOMContentLoaded', () => document.body.appendChild(btn));
     if (document.readyState !== 'loading') document.body.appendChild(btn);
