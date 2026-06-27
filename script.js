@@ -8625,7 +8625,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             modal.id = 'requiredValuesModal';
             document.body.appendChild(modal);
         }
-        modal.style.cssText = 'position:fixed;top:60px;right:16px;bottom:16px;width:min(480px, 38vw);min-width:380px;background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);z-index:10001;display:flex;flex-direction:column;border:1px solid var(--border-color,#ddd);';
+        // bottom:84px keeps the panel clear of the app's bottom action bar (Feedback / step nav).
+        modal.style.cssText = 'position:fixed;top:60px;right:16px;bottom:84px;width:min(480px, 38vw);min-width:380px;background:var(--bg-primary,#fff);color:var(--text-primary,#111);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);z-index:10001;display:flex;flex-direction:column;border:1px solid var(--border-color,#ddd);';
         // Reflow the note clear of this fixed panel only while it's open (see styles.css body.rv-panel-open)
         document.body.classList.add('rv-panel-open');
         // Clear the lingering "Filling in values from your note…" loading status so
