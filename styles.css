@@ -4266,8 +4266,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #019874; /* brand green — flags this as an active, important step */
     background: transparent;
     line-height: 1.4;
     text-align: left;
@@ -4291,6 +4292,12 @@ body.rv-panel-open .chatbot-input-section {
     gap: 8px;
     white-space: normal;
     flex-wrap: wrap;
+}
+
+/* Spinner inside the status row — match the brand-green text */
+.server-status-message .spinner-small {
+    border-color: rgba(1, 152, 116, 0.25);
+    border-top-color: #019874;
 }
 
 /* Background channel — slightly dimmer to distinguish from primary status */
