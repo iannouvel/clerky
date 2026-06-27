@@ -3326,7 +3326,10 @@ async function getPracticePointSuggestions(transcript, guidelineId, opts = {}) {
         }
         const idToken = await user.getIdToken();
 
-        if (!silent) updateUser(`Analysing practice points...`, true);
+        // During parallel analysis the dedicated progress box ("Analysis Underway —
+        // Checking your note against …") already shows what's happening, so don't also
+        // push a per-guideline "Analysing practice points…" to the main status bar.
+        if (!silent && !window.parallelAnalysisActive) updateUser(`Analysing practice points...`, true);
 
         const fetchSuggestions = async (allowFallback = false) => {
             const resp = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
