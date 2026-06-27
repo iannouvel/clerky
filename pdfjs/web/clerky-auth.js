@@ -127,7 +127,12 @@
         };
 
         // Try each phrase variant in order; stop at the first that lands.
+        // Guarded so the multiple ready-signals (pagesloaded / documentloaded / poll)
+        // can't kick off competing searches — only the first to arrive runs.
+        let searchStarted = false;
         const triggerSearch = async function() {
+            if (searchStarted) return;
+            searchStarted = true;
             console.log('[Clerky Auth] PDF ready, running phrase search…');
             if (!window.PDFViewerApplication || !window.PDFViewerApplication.eventBus) {
                 console.warn('[Clerky Auth] PDFViewerApplication/eventBus not available for search');
@@ -172,15 +177,24 @@
             waitForFindController(triggerSearch);
         }, { once: true });
 
+        // Backstop: fire as soon as PDF.js reports the document loaded, however late.
+        // On a slow/cold first fetch the document can arrive after the polling cap below
+        // would once have given up; this event has no time limit. waitForFindController →
+        // triggerSearch is safe to reach from whichever path wins first.
+        document.addEventListener('documentloaded', function() {
+            console.log('[Clerky Auth] documentloaded event fired');
+            waitForFindController(triggerSearch);
+        }, { once: true });
+
         let pollCount = 0;
-        const maxPolls = 20; // up to 10s
+        const maxPolls = 120; // up to 60s — tolerate cold/slow first loads (e.g. Render cold start + cross-region fetch)
         const pollInterval = setInterval(() => {
             pollCount++;
             if (window.PDFViewerApplication && window.PDFViewerApplication.pdfDocument) {
                 clearInterval(pollInterval);
                 waitForFindController(triggerSearch);
             } else if (pollCount >= maxPolls) {
-                console.error('[Clerky Auth] Gave up waiting for PDF to load');
+                console.error('[Clerky Auth] Gave up waiting for PDF to load (60s)');
                 clearInterval(pollInterval);
             }
         }, 500);

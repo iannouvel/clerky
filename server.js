@@ -19768,21 +19768,27 @@ app.get('/api/pdf/:guidelineId', async (req, res) => {
             });
         }
 
-        debugLog('[DEBUG] api/pdf: Downloading PDF from Firebase Storage');
-        const [buffer] = await file.download();
-        debugLog('[DEBUG] api/pdf: PDF downloaded, size:', buffer.length, 'bytes');
+        // Serve the PDF by handing the browser a short-lived signed URL straight to
+        // Firebase Storage (Google's global CDN) instead of downloading the whole file
+        // into this server and re-streaming it. The old `file.download()` buffered the
+        // entire PDF into memory here first, so bytes travelled Firebase→server→browser
+        // — a wasteful double hop that dominated first-load latency for distant users.
+        // Now bytes go Firebase→browser directly. Access is still fully enforced above:
+        // the Firebase ID token is verified and the file's existence checked before we
+        // ever mint a URL, and the signed URL self-expires in 1 hour (matching the token).
+        // NOTE: requires CORS on the bucket allowing the viewer's origin — see cors.json.
+        debugLog('[DEBUG] api/pdf: Generating signed URL for direct Firebase delivery');
+        const [signedUrl] = await file.getSignedUrl({
+            version: 'v4',
+            action: 'read',
+            expires: Date.now() + 60 * 60 * 1000, // 1 hour
+            responseDisposition: 'inline',
+            responseType: 'application/pdf'
+        });
 
-        // Set appropriate headers for PDF.js viewer
-        res.setHeader('Content-Type', 'application/pdf');
-        res.setHeader('Content-Disposition', 'inline'); // Display in browser, not download
-        res.setHeader('Cache-Control', 'public, max-age=3600');
-        res.setHeader('Access-Control-Allow-Origin', req.headers.origin || '*');
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
-        res.setHeader('Access-Control-Expose-Headers', 'Content-Length, Content-Type');
-        res.setHeader('Content-Length', buffer.length);
-
-        // Send PDF buffer
-        res.send(buffer);
+        // 302 so PDF.js transparently follows the redirect and fetches bytes from Firebase.
+        res.setHeader('Cache-Control', 'private, max-age=0, no-store');
+        return res.redirect(302, signedUrl);
 
     } catch (error) {
         console.error('[DEBUG] api/pdf: Error in endpoint:', {
