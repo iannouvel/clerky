@@ -137,6 +137,16 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountBtn); else mountBtn();
     setTimeout(mountBtn, 1500);
 
+    // Clerky's suggestions live in the wizard queue once analysis runs;
+    // window.currentSuggestions is only set on state-restore (so it's empty in a
+    // normal run). Prefer the queue, fall back to currentSuggestions.
+    function getSuggestions() {
+        const q = window.suggestionWizardState && Array.isArray(window.suggestionWizardState.queue)
+            ? window.suggestionWizardState.queue : [];
+        if (q.length) return q;
+        return Array.isArray(window.currentSuggestions) ? window.currentSuggestions : [];
+    }
+
     function buildPanel() {
         panel = el('div', 'position:fixed;top:0;right:0;width:min(560px,96vw);height:100vh;z-index:99999;display:flex;flex-direction:column;background:var(--bg-primary,#0f1620);color:var(--text-primary,#e6edf3);box-shadow:-6px 0 24px rgba(0,0,0,.4);font:14px/1.4 system-ui;');
         // header
@@ -190,7 +200,7 @@
         sugHead.appendChild(loadBtn);
         body.appendChild(sugHead);
 
-        const suggestions = Array.isArray(window.currentSuggestions) ? window.currentSuggestions : [];
+        const suggestions = getSuggestions();
         if (!suggestions.length) {
             body.appendChild(el('p', 'opacity:.7;font-size:13px;', 'No suggestions in memory yet. Run the analysis (Analyse → accept the guideline checkpoint → let suggestions generate), then click <em>Load suggestions</em>.'));
         }
@@ -304,7 +314,7 @@
 
     // ---- exports ----
     function collectRows() {
-        const suggestions = Array.isArray(window.currentSuggestions) ? window.currentSuggestions : [];
+        const suggestions = getSuggestions();
         return suggestions.map((s, i) => {
             const id = s.id || ('idx-' + i);
             const sc = state[id] || {};
