@@ -19,6 +19,7 @@ const filesToCopy = [
     'index.html',
     'test.html',
     'demo.html',
+    'silent-trial.html',
     'styles.css',
     'script.js',
     'dev.html',
