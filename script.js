@@ -218,32 +218,33 @@ Postnatal: Baby will need blood glucose monitoring after birth.`;
 // "poor-but-not-terrible" admission clerking for IOL in medication-controlled GDM.
 // Gaps map to real UHSussex Diabetes-in-Pregnancy / NICE NG207 practice points;
 // kept in sync with the regulatory source of truth in "Clerky Regulatory".
-const TRIAL_SCENARIO = `ADMISSION CLERKING — Labour Ward
+const TRIAL_SCENARIO = `38+2. G2P1 (prev SVD 2021, 3.6kg).
 
-38+2.  G2P1 (prev SVD 2021, 3.6kg).  Admitted for IOL today.
+Admitted for IOL today.
 
-GDM: dx 27/40 on OGTT (fasting 5.8, 2hr 8.9).  Started metformin 500mg BD,
-up-titrated to 1g BD.  Levemir 10u nocte added ~34/40 for persistent fasting
-BMs 6-7.  Home BMs since mostly 5-6 pre-meals, occasional post-prandial 8s.
+GDM: dx 27/40 on OGTT (fasting 5.8, 2hr 8.9).
+Started metformin 500mg BD, up-titrated to 1g BD.
+Levemir 10u nocte added ~34/40 for persistent fasting
+BMs 6-7.
+Home BMs since mostly 5-6 pre-meals, occasional post-prandial 8s.
 Followed in joint diabetes antenatal clinic, last seen 37/40.
 
-IOL booked for GDM on medication.  Consented for IOL.
+IOL booked for GDM on medication. Consented for IOL.
 
 Growth scan 36+5: EFW 50th centile, normal liquor, normal dopplers.
 
-O/E:  BP 118/74, HR 82, afebrile.  Urine NAD.
-Abdo: SFH 37cm, longitudinal, cephalic, 3/5 palpable.  FM present.
-CTG on admission: baseline 140, normal variability, accels present, no decels —
-reassuring.
+O/E: BP 118/74, HR 82, afebrile. Urine NAD.
+Abdo: SFH 37cm, longitudinal, cephalic, 3/5 palpable. FM present.
+CTG on admission: baseline 140, normal variability, accels present, no decels — reassuring.
 
-On aspirin 75mg OD (continues).
+On aspirin 75mg OD
 
 PLAN:
-- Propess for induction
-- Continue metformin and Levemir as normal
-- Routine BM monitoring
-- Repeat CTG post-Propess
-- VTE: TEDs`;
+Propess for induction
+Continue metformin and Levemir as normal
+Routine BM monitoring
+Repeat CTG post-Propess
+VTE: TEDs`;
 
 function isTestTargetGuideline(g) {
     return !!g && TEST_TARGET_GUIDELINE_IDS.includes(g.id);
