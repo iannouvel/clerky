@@ -8035,7 +8035,7 @@ window.selectedGuidelineScope = null;
 async function runPhase1CompletenessCheck() {
     try {
         console.log('[PHASE1] Starting completeness check...');
-        updateUser('Step 1 of 2 — Reviewing note for missing clinical details...', true);
+        updateUser('Reviewing note for missing clinical details...', true);
         const transcript = getUserInputContent();
         if (!transcript?.trim()) {
             console.log('[PHASE1] No transcript, skipping');
@@ -8120,11 +8120,11 @@ async function runPhase1CompletenessCheck() {
         }));
 
         if (suggestions.length === 0) {
-            updateUser('Step 1 of 2 — No missing information identified. Moving to guideline analysis...', false);
+            updateUser('No missing information identified. Moving to guideline analysis...', false);
             return;
         }
 
-        updateUser(`Step 1 of 2 — ${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified. Review below, then guideline analysis will follow.`, false);
+        updateUser(`${suggestions.length} missing information item${suggestions.length === 1 ? '' : 's'} identified. Review below, then guideline analysis will follow.`, false);
 
         // Show wizard using the floating panel (same as guideline suggestions)
         return new Promise((resolve) => {
@@ -8166,7 +8166,7 @@ async function runPhase1CompletenessCheck() {
                 setUserInputContent,
                 determineInsertionPoint: window.determineInsertionPoint,
                 insertTextAtPoint: window.insertTextAtPoint,
-                phaseLabel: 'Step 1 of 2: Identify Missing Information',
+                phaseLabel: 'Identify Missing Information',
                 onComplete: closeWizard
             });
         });
@@ -8195,7 +8195,7 @@ async function processGuidelinesWorkflow() {
         window.workflowStepper?.activate('guidelines'); // marks 'note' complete
 
         // Step 1: Scope selection (reuse persisted or show modal)
-        updateUser('Step 2 of 2 — Checking guideline scope...', true);
+        updateUser('Checking guideline scope...', true);
         let scopeSelection;
         if (TEST_MODE) {
             // Test/demo mode: fixed to UHSussex local scope; skip the scope modal.
@@ -8223,7 +8223,7 @@ async function processGuidelinesWorkflow() {
                 scopeSelection = savedScopeSelection;
             }
         } else {
-            updateUser('Step 2 of 2 — Select which guidelines to apply...', true);
+            updateUser('Select which guidelines to apply...', true);
             scopeSelection = await showGuidelineScopeModal();
         }
         }
@@ -8232,7 +8232,7 @@ async function processGuidelinesWorkflow() {
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
 
         // Step 2: Find relevant guidelines
-        updateUser('Step 2 of 2 — Searching for relevant guidelines...', true);
+        updateUser('Searching for relevant guidelines...', true);
         await findRelevantGuidelines(true, scopeSelection.scope, scopeSelection.hospitalTrust);
 
         if (window.analysisAbortController?.signal.aborted) throw new Error('Analysis cancelled');
