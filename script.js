@@ -8399,6 +8399,26 @@ function showGuidelineSelectionCheckpoint(guidelines) {
         modalBody.appendChild(container);
         modal.classList.remove('hidden');
 
+        // Speculatively start required-values extraction for the pre-selected set while
+        // the clinician reviews this checkpoint. If they accept the defaults (the common
+        // case), the gather/extract/infer work is already done by the time they click
+        // Analyse, so the "Extracting…/Filling…" wait collapses. Fire-and-forget and
+        // silent (no status messages while this modal is open); keyed by guideline-id
+        // set + note, so a changed selection just misses the cache and runs fresh, and
+        // any error here is retried by the real gather. Never blocks the checkpoint.
+        try {
+            if (preSelected && preSelected.length > 0 && typeof getPreparedRequiredValues === 'function') {
+                (async () => {
+                    const u = auth.currentUser;
+                    if (!u) return;
+                    const tok = await u.getIdToken();
+                    const noteNow = (typeof getUserInputContent === 'function' ? getUserInputContent() : '') || '';
+                    if (!noteNow.trim()) return;
+                    getPreparedRequiredValues(preSelected, noteNow, tok).promise.catch(() => {});
+                })().catch(() => {});
+            }
+        } catch (_) { /* never block the checkpoint on prefetch setup */ }
+
         const updateCount = () => {
             const checked = container.querySelectorAll('.checkpoint-cb:checked');
             const btn = container.querySelector('#checkpoint-analyse-btn .btn-text');
@@ -8448,6 +8468,108 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 // the user can confirm extracted values and supply any that are missing.
 // ===========================================================================
 
+// Network-heavy, side-effect-free prefix of the gather: determine applicable
+// practice points + their required values, extract what the note documents, and
+// best-effort infer the blanks. Emits NO user-facing status of its own (the
+// caller decides what to show) so it can run speculatively behind the guideline
+// checkpoint without flashing messages while that modal is open. Returns the data
+// the confirm-values modal needs, or { empty: true } when nothing needs asking.
+async function prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus = () => {}) {
+    const ids = selectedGuidelines.map(g => g.id).filter(Boolean);
+
+    const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+        body: JSON.stringify({ note, guidelineIds: ids }),
+    });
+    if (!gResp.ok) throw new Error(`gatherValuesForApplicablePPs HTTP ${gResp.status}`);
+    const gData = await gResp.json();
+    if (!gData.success || !Array.isArray(gData.values)) throw new Error('Bad response from gatherValuesForApplicablePPs');
+
+    const requiredValues = gData.values;
+    // { label, reason } for values whose practice points don't apply to this patient.
+    const filteredOut = Array.isArray(gData.filteredOut) ? gData.filteredOut : [];
+    if (requiredValues.length === 0) return { empty: true };
+
+    // Derived/process-flag values (userFacing: false) are computed, not asked.
+    const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
+
+    // Subjective gradings (neverInfer) are NOT inferred from indirect evidence
+    // (that's what made the RAG rating flip), but they ARE still extracted when the
+    // note explicitly documents the grade (e.g. "Suboptimal glycaemic control") —
+    // so an explicitly-stated grade pre-fills the dropdown for the clinician to
+    // confirm, rather than forcing redundant re-entry. Inference stays suppressed below.
+    // Extract documented values from the note.
+    onStatus('Extracting documented values from note…');
+    const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+        body: JSON.stringify({ note, values: userFacingValues }),
+    });
+    if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
+    const exData = await exResp.json();
+    const extracted = exData.extracted || [];
+    const extractedById = new Map(extracted.map(e => [e.id, e]));
+
+    // Values are already scoped to applicable practice points server-side, so no
+    // separate value-level filtering step is needed.
+    const relevantValues = userFacingValues;
+
+    // Best-effort LLM fill of values the conservative extraction left blank.
+    // Documentation/process flags are answerable from the note (absence ⇒ the
+    // negative answer); genuine measurements/history are only filled when the note
+    // supports them, never fabricated. Determined values pre-fill the modal (badged
+    // "AI-filled · review") so the clinician confirms rather than types.
+    // Fails open: on error, blanks are left for the user as before.
+    try {
+        const missing = relevantValues.filter(v => !v.neverInfer && !(extractedById.get(v.id)?.found));
+        if (missing.length > 0) {
+            onStatus('Filling in values from your note…');
+            const infResp = await fetch(`${window.SERVER_URL}/inferMissingValues`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
+                body: JSON.stringify({ note, values: missing }),
+            });
+            if (infResp.ok) {
+                const infData = await infResp.json();
+                let filledCount = 0;
+                for (const f of (infData.filled || [])) {
+                    if (f.determinable && f.value !== null && f.value !== undefined && f.value !== '') {
+                        extractedById.set(f.id, {
+                            id: f.id, found: true, inferred: true,
+                            value: f.value, evidence: f.reason || '', confidence: f.confidence,
+                        });
+                        filledCount++;
+                    }
+                }
+                console.log(`[REQUIRED-VALUES] LLM filled ${filledCount}/${missing.length} previously-blank value(s); ${missing.length - filledCount} left for clinician`);
+            } else {
+                console.warn(`[REQUIRED-VALUES] inferMissingValues HTTP ${infResp.status}; leaving blanks for user`);
+            }
+        }
+    } catch (e) {
+        console.warn('[REQUIRED-VALUES] Infer pass failed; leaving blanks for user:', e.message);
+    }
+
+    return { requiredValues, relevantValues, extractedById, extracted, filteredOut };
+}
+
+// Cache wrapper around prepareRequiredValuesData so the speculative run started
+// behind the guideline checkpoint can be reused by the real gather. Keyed by the
+// selected guideline-id set + exact note text: a changed selection or an edited
+// note simply misses the cache and runs fresh, so a stale result can never be
+// reused. Returns { promise, prefetched } — prefetched is true on a cache hit.
+function getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus) {
+    const idsKey = selectedGuidelines.map(g => g.id).filter(Boolean).sort().join('|');
+    const cached = window.__rvPrefetch;
+    if (cached && cached.idsKey === idsKey && cached.note === note) {
+        return { promise: cached.promise, prefetched: true };
+    }
+    const promise = prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus);
+    window.__rvPrefetch = { idsKey, note, promise };
+    return { promise, prefetched: false };
+}
+
 async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const ids = selectedGuidelines.map(g => g.id).filter(Boolean);
     if (ids.length === 0) return null;
@@ -8481,81 +8603,28 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     const gCount = (selectedGuidelines || []).length;
     const gatherTitle = `Checking your note against the following guideline${gCount === 1 ? '' : 's'}:`;
     updateUser(`${gatherTitle}<br><span style="display:inline-block;margin-top:6px;font-size:0.85em;opacity:0.9;line-height:1.5;">${gatherList.map(escMsg).join(' · ')}</span>`, true);
-    const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ note, guidelineIds: ids }),
-    });
-    if (!gResp.ok) throw new Error(`gatherValuesForApplicablePPs HTTP ${gResp.status}`);
-    const gData = await gResp.json();
-    if (!gData.success || !Array.isArray(gData.values)) throw new Error('Bad response from gatherValuesForApplicablePPs');
+    // Reuse the speculative prefetch started while the guideline checkpoint was open
+    // (see showGuidelineSelectionCheckpoint). On a cache hit the gather/extract/infer
+    // work is already done or in flight, so the "Extracting…/Filling…" wait collapses;
+    // on a miss (e.g. the selection was changed) it runs fresh with the granular status.
+    const onStatus = (msg) => updateUser(msg, true);
+    const { promise, prefetched } = getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus);
+    if (prefetched) updateUser('Preparing values from your note…', true);
 
-    const requiredValues = gData.values;
-    // { label, reason } for values whose practice points don't apply to this patient.
-    const filteredOut = Array.isArray(gData.filteredOut) ? gData.filteredOut : [];
-    if (requiredValues.length === 0) return { values: [], extractedValues: {} };
-
-    // Derived/process-flag values (userFacing: false) are computed, not asked.
-    const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
-
-    // Subjective gradings (neverInfer) are NOT inferred from indirect evidence
-    // (that's what made the RAG rating flip), but they ARE still extracted when the
-    // note explicitly documents the grade (e.g. "Suboptimal glycaemic control") —
-    // so an explicitly-stated grade pre-fills the dropdown for the clinician to
-    // confirm, rather than forcing redundant re-entry. Inference stays suppressed below.
-    // Extract documented values from the note.
-    updateUser(`Extracting documented values from note…`, true);
-    const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ note, values: userFacingValues }),
-    });
-    if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
-    const exData = await exResp.json();
-    const extracted = exData.extracted || [];
-    const extractedById = new Map(extracted.map(e => [e.id, e]));
-
-    // Values are already scoped to applicable practice points server-side, so no
-    // separate value-level filtering step is needed.
-    const relevantValues = userFacingValues;
-
-    // Step 2c: best-effort LLM fill of values the conservative extraction left
-    // blank. Documentation/process flags are answerable from the note (absence ⇒
-    // the negative answer); genuine measurements/history are only filled when the
-    // note supports them, never fabricated. Determined values pre-fill the modal
-    // (badged "AI-filled · review") so the clinician confirms rather than types.
-    // Fails open: on error, blanks are left for the user as before.
-    const inferredIds = new Set();
+    let prepared;
     try {
-        const missing = relevantValues.filter(v => !v.neverInfer && !(extractedById.get(v.id)?.found));
-        if (missing.length > 0) {
-            updateUser('Filling in values from your note…', true);
-            const infResp = await fetch(`${window.SERVER_URL}/inferMissingValues`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                body: JSON.stringify({ note, values: missing }),
-            });
-            if (infResp.ok) {
-                const infData = await infResp.json();
-                let filledCount = 0;
-                for (const f of (infData.filled || [])) {
-                    if (f.determinable && f.value !== null && f.value !== undefined && f.value !== '') {
-                        extractedById.set(f.id, {
-                            id: f.id, found: true, inferred: true,
-                            value: f.value, evidence: f.reason || '', confidence: f.confidence,
-                        });
-                        inferredIds.add(f.id);
-                        filledCount++;
-                    }
-                }
-                console.log(`[REQUIRED-VALUES] LLM filled ${filledCount}/${missing.length} previously-blank value(s); ${missing.length - filledCount} left for clinician`);
-            } else {
-                console.warn(`[REQUIRED-VALUES] inferMissingValues HTTP ${infResp.status}; leaving blanks for user`);
-            }
-        }
+        prepared = await promise;
     } catch (e) {
-        console.warn('[REQUIRED-VALUES] Infer pass failed; leaving blanks for user:', e.message);
+        if (!prefetched) throw e;
+        // A speculative prefetch failed — retry fresh so a transient error behind the
+        // checkpoint doesn't block the real run.
+        console.warn('[REQUIRED-VALUES] Prefetch failed, retrying fresh:', e.message);
+        window.__rvPrefetch = null;
+        prepared = await prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus);
     }
+
+    if (prepared.empty) return { values: [], extractedValues: {} };
+    const { requiredValues, relevantValues, extractedById, extracted, filteredOut } = prepared;
 
     // Step 3: present the side panel — needs-value items first, auto-filled below
     // (only user-facing values still relevant to this scenario; derived ones are
