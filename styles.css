@@ -4268,7 +4268,7 @@ body {
     gap: 4px;
     font-size: 1rem;
     font-weight: 600;
-    color: #019874; /* brand green — flags this as an active, important step */
+    color: #015c46; /* deep brand green — readable on white, flags an active step */
     background: transparent;
     line-height: 1.4;
     text-align: left;

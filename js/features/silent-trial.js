@@ -23,6 +23,30 @@
     }
     if (!trialModeOn()) return;
 
+    // --- Disable tooling nav in trial mode (tooltip "Disabled in trial") ---------
+    // These open editing/admin surfaces that have no place in a clinician's trial
+    // run. We tag + visually disable them and block clicks in the capture phase,
+    // so it works regardless of when script.js attaches their handlers.
+    const DISABLED_NAV_IDS = ['preferencesPanelBtn', 'testBtn', 'promptsPanelBtn',
+        'guidelinesPanelBtn', 'workflowsPanelBtn', 'devPanelBtn', 'linksPanelBtn'];
+    function applyTrialNavLock() {
+        DISABLED_NAV_IDS.forEach(id => {
+            const b = document.getElementById(id);
+            if (!b || b.dataset.trialDisabled) return;
+            b.dataset.trialDisabled = '1';
+            b.setAttribute('title', 'Disabled in trial');
+            b.setAttribute('aria-disabled', 'true');
+            b.style.opacity = '0.45';
+            b.style.cursor = 'not-allowed';
+        });
+    }
+    document.addEventListener('click', function (e) {
+        const t = e.target.closest && e.target.closest('[data-trial-disabled="1"]');
+        if (t) { e.preventDefault(); e.stopImmediatePropagation(); }
+    }, true);
+    function scheduleNavLock() { applyTrialNavLock(); setTimeout(applyTrialNavLock, 1500); setTimeout(applyTrialNavLock, 4000); }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleNavLock); else scheduleNavLock();
+
     const CITATION_OPTS = [
         'Correct & verifiable',
         'Right source, wrong section',

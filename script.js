@@ -253,6 +253,15 @@ function getTesterInitials() {
     try { return localStorage.getItem('clerkyTesterInitials') || ''; } catch (e) { return ''; }
 }
 
+// Sentinel stored when the user skips identification (so we don't re-prompt and
+// can render "Anonymous" in the top-right user label).
+const ANON_TESTER = '__anon__';
+function getTrialDisplayName() {
+    const ti = getTesterInitials();
+    return (ti && ti !== ANON_TESTER) ? ti : 'Anonymous';
+}
+window.getTrialDisplayName = getTrialDisplayName;
+
 // Small overlay asking the tester for their initials (no Google sign-in).
 function promptTesterInitials() {
     return new Promise((resolve) => {
@@ -261,20 +270,29 @@ function promptTesterInitials() {
         const overlay = document.createElement('div');
         overlay.id = 'testInitialsOverlay';
         overlay.style.cssText = 'position:fixed;inset:0;z-index:100000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);';
+        const heading = SILENT_TRIAL_MODE ? 'clerky — silent trial' : 'clerky — test version';
+        const copy = SILENT_TRIAL_MODE
+            ? 'Identify yourself so your scores are attributed — or continue anonymously.'
+            : 'Enter your initials so we know whose feedback is whose. No sign-in needed.';
+        const goLabel = SILENT_TRIAL_MODE ? 'Start' : 'Start testing';
         overlay.innerHTML = `
             <div style="background:var(--bg-primary,#fff);color:var(--text-primary,#111);max-width:380px;width:90%;padding:28px 24px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.35);text-align:center;">
-                <h2 style="margin:0 0 8px;font-size:1.3em;">clerky — test version</h2>
-                <p style="margin:0 0 18px;font-size:0.92em;opacity:0.8;">Enter your initials so we know whose feedback is whose. No sign-in needed.</p>
+                <h2 style="margin:0 0 8px;font-size:1.3em;">${heading}</h2>
+                <p style="margin:0 0 18px;font-size:0.92em;opacity:0.8;">${copy}</p>
                 <input id="testInitialsInput" maxlength="5" placeholder="e.g. IN" autocomplete="off"
                     style="width:130px;text-align:center;text-transform:uppercase;font-size:1.4em;letter-spacing:3px;padding:10px;border:1px solid var(--border-color,#ccc);border-radius:8px;margin-bottom:16px;background:var(--bg-secondary,#fff);color:inherit;">
                 <br>
                 <button id="testInitialsBtn" class="summary-analyse-btn" style="display:inline-flex;">
-                    <span class="btn-text">Start testing</span>
+                    <span class="btn-text">${goLabel}</span>
+                </button>
+                <button id="testInitialsSkipBtn" style="display:inline-flex;margin-left:8px;background:none;border:none;color:var(--text-secondary,#666);text-decoration:underline;cursor:pointer;font-size:0.9em;">
+                    Skip / continue anonymously
                 </button>
             </div>`;
         document.body.appendChild(overlay);
         const input = overlay.querySelector('#testInitialsInput');
         const btn = overlay.querySelector('#testInitialsBtn');
+        const skipBtn = overlay.querySelector('#testInitialsSkipBtn');
         input.focus();
         const submit = () => {
             const val = (input.value || '').trim().toUpperCase().slice(0, 5);
@@ -283,7 +301,13 @@ function promptTesterInitials() {
             overlay.remove();
             resolve(val);
         };
+        const skip = () => {
+            try { localStorage.setItem('clerkyTesterInitials', ANON_TESTER); } catch (e) {}
+            overlay.remove();
+            resolve(ANON_TESTER);
+        };
         btn.addEventListener('click', submit);
+        skipBtn.addEventListener('click', skip);
         input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
     });
 }
@@ -9900,7 +9924,11 @@ window.auth.onAuthStateChanged(async (user) => {
         const userLabel = document.getElementById('userLabel');
         const userName = document.getElementById('userName');
         if (userLabel && userName) {
-            userName.textContent = user.displayName || user.email || 'User';
+            // Test/demo/silent-trial users are anonymous: show their self-entered
+            // initials, or "Anonymous" if they skipped identification.
+            userName.textContent = TEST_MODE
+                ? getTrialDisplayName()
+                : (user.displayName || user.email || 'User');
             userName.classList.remove('hidden');
             console.log('[DEBUG] Updated user info display');
         }
