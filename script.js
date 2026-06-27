@@ -3311,9 +3311,13 @@ async function dynamicAdvice(transcript, analysis, guidelineId, guidelineTitle) 
 
 // ===== Practice Point-Based Suggestions (Fast Path) =====
 
-// Function to get practice point suggestions using pre-extracted practice points
-async function getPracticePointSuggestions(transcript, guidelineId) {
-    console.log('[PRACTICE-POINTS] Getting suggestions for guideline:', guidelineId);
+// Function to get practice point suggestions using pre-extracted practice points.
+// opts.silent: background/pre-start mode — skip the per-guideline sense-check (a
+// batch sense-check runs later across all guidelines) and emit no status messages,
+// so this can run while another UI (e.g. the confirm-values modal) is in front.
+async function getPracticePointSuggestions(transcript, guidelineId, opts = {}) {
+    const silent = opts.silent === true;
+    console.log('[PRACTICE-POINTS] Getting suggestions for guideline:', guidelineId, silent ? '(silent)' : '');
 
     try {
         const user = auth.currentUser;
@@ -3322,7 +3326,7 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
         }
         const idToken = await user.getIdToken();
 
-        updateUser(`Analysing practice points...`, true);
+        if (!silent) updateUser(`Analysing practice points...`, true);
 
         const fetchSuggestions = async (allowFallback = false) => {
             const resp = await fetch(`${window.SERVER_URL}/getPracticePointSuggestions`, {
@@ -3334,9 +3338,10 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
                 body: JSON.stringify({
                     transcript,
                     guidelineId,
-                    // Skip per-guideline sense-check during parallel analysis; the frontend
-                    // will run one batched sense-check across all guidelines after they complete.
-                    skipSenseCheck: window.parallelAnalysisActive === true,
+                    // Skip per-guideline sense-check during parallel analysis (or a silent
+                    // pre-start); the frontend runs one batched sense-check across all
+                    // guidelines after they complete.
+                    skipSenseCheck: silent || window.parallelAnalysisActive === true,
                     allowFallback
                 })
             });
@@ -3353,6 +3358,10 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
         if (result.ragFailed) {
             const guidelineLabel = result.guidelineTitle || guidelineId;
             console.warn(`[PRACTICE-POINTS] RAG failed for guideline: ${guidelineLabel}`);
+            // In silent pre-start mode never pop a confirm() over the confirm-values
+            // modal — bail so the caller falls back to a fresh (non-silent) fetch later,
+            // where the user can decide on the Firestore fallback.
+            if (silent) throw new Error('ragFailed during silent pre-start');
             const useFallback = confirm(
                 `⚠️ Vector search (RAG) returned no content for:\n"${guidelineLabel}"\n\n` +
                 `This may indicate a problem with the vector index for this guideline.\n\n` +
@@ -3378,9 +3387,9 @@ async function getPracticePointSuggestions(transcript, guidelineId) {
 
         const suggestionCount = result.suggestionsCount || result.suggestions?.length || 0;
 
-        // Don't show individual completion messages during parallel analysis
-        // (parallel analysis has its own progress UI)
-        if (!window.parallelAnalysisActive) {
+        // Don't show individual completion messages during parallel analysis or a
+        // silent pre-start (parallel analysis has its own progress UI)
+        if (!silent && !window.parallelAnalysisActive) {
             if (suggestionCount > 0) {
                 updateUser(`Found ${suggestionCount} relevant practice points`, false, false, 'main', true);
             } else {
@@ -8571,7 +8580,70 @@ function getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus) 
     return { promise, prefetched: false };
 }
 
+// Pre-start the per-guideline analysis for guidelines that are already fully
+// satisfied at the moment the confirm-values modal opens — i.e. none of their
+// required values are still "needs value". These analyses run in the background
+// (silent, sense-check skipped) while the clinician confirms the remaining values,
+// and runParallelAnalysis reuses them. Returns:
+//   { byId: Map<guidelineId, Promise<{ok,result}|{ok:false,error}>>,
+//     note: <pre-augment note the analyses ran on>,
+//     valueToGuidelines: Map<valueId, Set<guidelineId>> }   (for invalidation)
+// or null if nothing could be pre-started. Never throws — purely an optimisation.
+function startReadyGuidelineAnalyses(selectedGuidelines, relevantValues, extractedById, note) {
+    try {
+        if (typeof window.getPracticePointSuggestions !== 'function') return null;
+        const selIds = new Set((selectedGuidelines || []).map(g => g.id).filter(Boolean));
+
+        // Invert the value→guideline links into both directions, scoped to the
+        // selected guidelines. Only user-facing (confirmable) values gate readiness;
+        // derived values are auto-computed and never block.
+        const valueToGuidelines = new Map(); // valueId → Set<guidelineId>
+        const guidelineToValues = new Map(); // guidelineId → Set<valueId>
+        for (const v of (relevantValues || [])) {
+            for (const ug of (v.usingGuidelines || [])) {
+                const gid = ug.guidelineId;
+                if (!selIds.has(gid)) continue;
+                if (!valueToGuidelines.has(v.id)) valueToGuidelines.set(v.id, new Set());
+                valueToGuidelines.get(v.id).add(gid);
+                if (!guidelineToValues.has(gid)) guidelineToValues.set(gid, new Set());
+                guidelineToValues.get(gid).add(v.id);
+            }
+        }
+
+        const isFound = (vid) => !!extractedById.get(vid)?.found;
+        const byId = new Map();
+        for (const g of (selectedGuidelines || [])) {
+            const gid = g.id;
+            if (!gid) continue;
+            const vids = guidelineToValues.get(gid);
+            // Ready iff the guideline needs no values, or every value it needs is
+            // already auto-filled (extracted or inferred) — nothing pending for the user.
+            const ready = !vids || [...vids].every(isFound);
+            if (!ready) continue;
+            // Wrap so a pre-start failure (incl. silent RAG-fail) never rejects here;
+            // runParallelAnalysis falls back to a fresh fetch when ok === false.
+            const p = window.getPracticePointSuggestions(note, gid, { silent: true })
+                .then(result => ({ ok: true, result }))
+                .catch(error => ({ ok: false, error }));
+            byId.set(gid, p);
+        }
+
+        if (byId.size > 0) {
+            console.log(`[STREAM-ANALYSIS] Pre-started ${byId.size}/${selIds.size} ready guideline(s) during value confirmation`);
+        }
+        return { byId, note, valueToGuidelines };
+    } catch (e) {
+        console.warn('[STREAM-ANALYSIS] Pre-start failed (non-blocking):', e.message);
+        return null;
+    }
+}
+
 async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
+    // Clear any stale streaming-analysis handoff from a previous run up-front, so a
+    // gather that errors before re-stashing can't leave runParallelAnalysis reusing
+    // analyses computed for a different note/guideline set.
+    window.__ppPrestart = null;
+
     const ids = selectedGuidelines.map(g => g.id).filter(Boolean);
     if (ids.length === 0) return null;
 
@@ -8627,11 +8699,22 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     if (prepared.empty) return { values: [], extractedValues: {} };
     const { requiredValues, relevantValues, extractedById, extracted, filteredOut } = prepared;
 
+    // Step 3a (streaming analysis): pre-start the per-guideline analysis for every
+    // guideline that is already fully satisfied (no "needs value" items pending),
+    // so it runs while the clinician confirms values for the OTHER guidelines.
+    // runParallelAnalysis reuses these results; any guideline whose value we later
+    // weave into the note is invalidated and re-analysed on the augmented note.
+    const prestart = startReadyGuidelineAnalyses(selectedGuidelines, relevantValues, extractedById, note);
+
     // Step 3: present the side panel — needs-value items first, auto-filled below
     // (only user-facing values still relevant to this scenario; derived ones are
     // silently auto-computed). filteredOut is surfaced in the modal so the user
     // can see what was hidden and why.
     const userValues = await showRequiredValuesModal(relevantValues, extractedById, filteredOut);
+
+    // Value ids the clinician actually changed/added → these get woven into the note,
+    // so any pre-started analysis depending on them must be invalidated.
+    const wovenValueIds = new Set();
 
     let augmentedNote = null;
     if (userValues) {
@@ -8657,6 +8740,7 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
                     (hasOpts && rv.options.length === 2 && rv.options.some(o => /^(yes|no|present|absent|true|false|discussed|provided|documented|offered|done|completed|performed)$/i.test(o)));
                 if (isFlag) continue;
                 toAdd.push({ id: rv.id, label: rv.label, type: rv.type, value: u.value });
+                wovenValueIds.add(rv.id);
             }
         }
         if (toAdd.length > 0) {
@@ -8681,6 +8765,21 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
                 console.warn('[REQUIRED-VALUES] Augment failed; continuing with original note:', e.message);
             }
         }
+    }
+
+    // Hand the pre-started analyses to runParallelAnalysis. Invalidate any guideline
+    // that depends on a value we wove into the note (its analysis must see the new
+    // text); all others reuse the result computed during confirmation. Cleared by
+    // runParallelAnalysis once consumed.
+    if (prestart && prestart.byId.size > 0) {
+        const invalidated = new Set();
+        for (const vid of wovenValueIds) {
+            for (const gid of (prestart.valueToGuidelines.get(vid) || [])) invalidated.add(gid);
+        }
+        window.__ppPrestart = { byId: prestart.byId, invalidated, note: prestart.note };
+        console.log(`[STREAM-ANALYSIS] ${prestart.byId.size} guideline(s) pre-started; ${invalidated.size} invalidated by woven value(s)`);
+    } else {
+        window.__ppPrestart = null;
     }
 
     return { values: requiredValues, extractedValues: extracted, userValues, augmentedNote };
@@ -9126,6 +9225,11 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
 
 async function processWorkflow() {
     console.log('[DEBUG] processWorkflow started');
+
+    // This legacy path doesn't run the required-values gather, so clear any
+    // streaming-analysis handoff a prior (possibly aborted) run may have left,
+    // guaranteeing this run analyses fresh rather than reusing stale results.
+    window.__ppPrestart = null;
 
     // Prevent multiple simultaneous workflow executions
     if (window.workflowInProgress) {

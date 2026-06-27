@@ -546,6 +546,12 @@ export async function runParallelAnalysis(guidelines) {
         statusText.innerHTML = `${title}<br><span style="font-size:0.92em;opacity:0.85;line-height:1.5;">${breakdownList.map(escMsg).join(' · ')}</span>`;
     }
 
+    // Streaming analysis: pick up any per-guideline analyses pre-started during the
+    // confirm-values stage (see startReadyGuidelineAnalyses in script.js). Capture
+    // and clear the handoff so it can't leak into a later run.
+    const prestart = window.__ppPrestart;
+    window.__ppPrestart = null;
+
     // Map guidelines to promises
     const analysisPromises = guidelines.map(async (guideline, index) => {
         try {
@@ -553,13 +559,28 @@ export async function runParallelAnalysis(guidelines) {
             const guidelineData = window.globalGuidelines[guideline.id];
             const displayName = getGuidelineDisplayName(guideline.id, guideline, guidelineData);
 
-            // Analyze
+            // Reuse a pre-started analysis when one exists for this guideline and it
+            // wasn't invalidated by a value we wove into the note; otherwise analyse
+            // fresh against the (possibly augmented) current note.
             // Note: getPracticePointSuggestions is currently in script.js (or will be moved).
             // We need to ensure access. Using window fallback until modularized.
-            const suggestions = await window.getPracticePointSuggestions(
-                getUserInputContent(),
-                guideline.id
-            );
+            let suggestions;
+            const pre = (prestart && !prestart.invalidated.has(guideline.id))
+                ? prestart.byId.get(guideline.id)
+                : null;
+            if (pre) {
+                const r = await pre;
+                if (r && r.ok) {
+                    suggestions = r.result;
+                    console.log(`[STREAM-ANALYSIS] Reused pre-started analysis for ${guideline.id}`);
+                }
+            }
+            if (suggestions === undefined) {
+                suggestions = await window.getPracticePointSuggestions(
+                    getUserInputContent(),
+                    guideline.id
+                );
+            }
 
             completedCount++;
             if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
