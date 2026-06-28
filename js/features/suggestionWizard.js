@@ -38,6 +38,9 @@ function swEscapeHtml(text) {
 
 // Tracks the pending showInsertionPreview timeout so stale timeouts can be cancelled
 let _previewTimeout = null;
+// In-flight diff-preview fetch, so advancing the wizard can abort a request whose
+// result would be discarded anyway (avoids wasted server/LLM work on skipped cards).
+let _diffAbort = null;
 
 /**
  * Initialize the suggestion wizard in the given container
@@ -259,6 +262,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
 
         // Cancel any pending preview timeout and clear any existing preview
         if (_previewTimeout) { clearTimeout(_previewTimeout); _previewTimeout = null; }
+        // Abort an in-flight diff fetch from the previous card — its result would be
+        // discarded on arrival, so stop the server doing the work.
+        if (_diffAbort) { _diffAbort.abort(); _diffAbort = null; }
         clearInsertionPreview();
 
         // Auto-skip suggestions already present in the note, or dismissed from the list view
@@ -477,15 +483,17 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             }, 200);
         } else {
             // Guideline suggestion: skip the legacy "(TEXT TO BE INSERTED
-            // HERE)" placeholder and immediately fetch the LLM diff. The
-            // diff renders into the editor when ready; the user can edit
-            // inline and then Accept (commits) or Reject (discards).
+            // HERE)" placeholder and fetch the LLM diff once the clinician
+            // settles on this card. The diff renders into the editor when
+            // ready; the user can edit inline and then Accept / Reject.
+            // Debounced ~700ms so clicking straight through cards doesn't fire
+            // (and pay for) a diff per card that's then discarded.
             _previewTimeout = setTimeout(() => {
                 _previewTimeout = null;
                 _triggerDiffPreviewForSuggestion(suggestion, uniqueId).catch(err => {
                     console.error('[WIZARD] Diff trigger failed:', err);
                 });
-            }, 100);
+            }, 700);
         }
     };
 
@@ -514,6 +522,9 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         const originalNote = getUserInputContent();
 
         let markupHtml = null;
+        // Tie this fetch to an AbortController so advancing the wizard cancels it.
+        const abort = new AbortController();
+        _diffAbort = abort;
         try {
             const user = window.auth?.currentUser;
             if (!user) {
@@ -531,7 +542,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                         verbatimQuote: suggestion.verbatimQuote,
                         why: suggestion.why,
                     }
-                })
+                }),
+                signal: abort.signal,
             });
             if (response.ok) {
                 const result = await response.json();
@@ -542,7 +554,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                 console.warn('[WIZARD] Markup endpoint HTTP', response.status);
             }
         } catch (err) {
+            // Aborts are expected when the clinician advances before the diff returns.
+            if (err.name === 'AbortError') { console.log('[WIZARD] Diff fetch aborted (card advanced)'); return; }
             console.warn('[WIZARD] Markup endpoint exception:', err.message);
+        } finally {
+            if (_diffAbort === abort) _diffAbort = null;
         }
 
         // If the wizard moved on while we were waiting, drop this result.

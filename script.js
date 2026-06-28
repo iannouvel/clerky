@@ -79,6 +79,14 @@ import {
     setButtonLoading
 } from './js/ui/status.js';
 
+// Surface otherwise-silent promise rejections with their reason + stack. The bare
+// "Uncaught (in promise)" the browser logs has no message/stack, which makes them
+// impossible to trace; this prints the actual cause so we can find and fix the spot.
+window.addEventListener('unhandledrejection', (e) => {
+    const r = e.reason;
+    console.error('[UNHANDLED-REJECTION]', (r && (r.message || r)) || '(no reason)', r && r.stack ? '\n' + r.stack : '');
+});
+
 // Make auth available globally
 window.auth = auth;
 
