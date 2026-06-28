@@ -60,10 +60,7 @@ const filesToCopy = [
     'list_of_guidelines.txt',
     'links.txt',
     'all_pdfs.txt',
-    'package.json',
-    'BSOTs.html',
-    'BSOTs-admin.html',
-    'BSOTs.css'
+    'package.json'
 ];
 
 filesToCopy.forEach(file => {

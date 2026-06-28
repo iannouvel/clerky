@@ -20,7 +20,6 @@ dist/*
 # Pages serves from the main-branch root — so this built bundle must be committed.
 # Rebuild with `npm run bundle-libretto` and re-commit if the library is updated.
 !dist/libretto-bundle.js
-dist-bsots/
 
 # Environment variables
 .env
