@@ -2793,7 +2793,17 @@ async function findRelevantGuidelines(suppressHeader = false, scope = null, hosp
             throw new Error('Analysis cancelled');
         }
 
-        statusUpdate('Querying server for guideline matches...');
+        // Describe what's happening in clinician terms: what we're matching (note vs
+        // question) against which scope of guidelines.
+        const inputKind = window.selectedMode === 'ask-guidelines' ? 'question' : 'clinical note';
+        const scopeLabel = scope === 'national'
+            ? 'the national guidelines'
+            : scope === 'local'
+                ? `the ${hospitalTrust} local guidelines`
+                : scope
+                    ? `the National + ${hospitalTrust} guidelines`
+                    : 'the available guidelines';
+        statusUpdate(`Cross-referencing your ${inputKind} against ${scopeLabel} to find relevant matches…`);
 
         const response = await fetch(`${window.SERVER_URL}/findRelevantGuidelines`, {
             method: 'POST',
