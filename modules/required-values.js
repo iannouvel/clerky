@@ -985,66 +985,56 @@ async function filterValuesByApplicablePPs(db, note, guidelineIds, values, userI
  */
 async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = null) {
     const catalogue = await loadCatalogue(db);
-    const gathered = new Map(); // id → { id, value, using, conds:Set, proposed }
-    const filteredOut = [];
     const missing = [];
     const _debug = []; // per-guideline applicable counts (diagnostic)
 
-    // Evaluate guidelines concurrently.
-    await Promise.all(guidelineIds.map(async gid => {
+    // ---- Phase 0 (no LLM): load guideline docs and build the FULL candidate value
+    // set, ungated by applicability. PP-applicability, value relevance and value
+    // extraction are independent judgements, so we run them concurrently in Phase 1
+    // over this full set and intersect in Phase 2 — collapsing what used to be four
+    // sequential LLM round-trips (applicability → relevance → extract → infer) into
+    // one parallel phase plus a small infer tail. The individual passes are unchanged.
+    const docs = await Promise.all(guidelineIds.map(async gid => {
         const doc = await db.collection('guidelines').doc(gid).get();
-        if (!doc.exists) { missing.push(gid); return; }
+        if (!doc.exists) { missing.push(gid); return null; }
         const g = doc.data();
-        if (!isRequiredValuesFresh(g)) { missing.push(gid); return; }
-        const rv = g.requiredValues || {};
-        const pps = g.practicePoints || [];
-        const condOf = (s) => (pps[s - 1]?.condition || '').trim();
-        // Concise "why this value is needed" — the name of the practice point that requires it.
-        const nameOf = (s) => (pps[s - 1]?.name || '').trim();
-        // The guideline's actual recommendation — richer rationale for the expanded card.
-        const actionOf = (s) => (pps[s - 1]?.action || '').trim();
-        // Verbatim source quote (for the deep-link phrase search — the action is paraphrased and won't match the PDF).
-        const quoteOf = (s) => (pps[s - 1]?.sourceQuote || '').trim();
+        if (!isRequiredValuesFresh(g)) { missing.push(gid); return null; }
+        return { gid, rv: g.requiredValues || {}, pps: g.practicePoints || [] };
+    }));
 
-        // PPs that contribute any value → evaluate their applicability.
+    const candidates = new Map();   // id → { id, value(base), proposed, using:[{guidelineId,pps}], allConds:Set }
+    const ppListByGuideline = {};   // gid → contributing PP list (for the applicability pass)
+    const ppsByGuideline = {};      // gid → raw practicePoints array (for Phase-2 rationale)
+
+    for (const d of docs) {
+        if (!d) continue;
+        const { gid, rv, pps } = d;
+        ppsByGuideline[gid] = pps;
+        const condOf = (s) => (pps[s - 1]?.condition || '').trim();
+
         const contributing = new Set();
         for (const v of (rv.values || [])) for (const s of (v.usedByPPs || [])) contributing.add(s);
         for (const p of (rv.proposedNewValues || [])) for (const s of (p.usedByPPs || [])) contributing.add(s);
-        const ppList = [...contributing].sort((a, b) => a - b)
+        ppListByGuideline[gid] = [...contributing].sort((a, b) => a - b)
             .map(s => ({ serial: s, ...(pps[s - 1] || {}) }))
             .filter(p => p.name || p.condition || p.action);
-        const _d = [];
-        const applicable = await evaluatePPApplicability(note, ppList, _d, userId);
-        _debug.push({ gid, contributing: ppList.length, applicable: applicable.size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
 
-        const add = (id, base, used, isProposed) => {
-            if (!gathered.has(id)) gathered.set(id, { id, value: base, using: [], conds: new Set(), reasons: new Set(), whyDetails: [], proposed: isProposed });
-            const e = gathered.get(id);
+        const register = (id, base, used) => {
+            if (!base) return; // canonical absent from catalogue, or proposed with no base
+            if (!candidates.has(id)) candidates.set(id, { id, value: base, using: [], allConds: new Set(), proposed: !!base._proposed });
+            const e = candidates.get(id);
             e.using.push({ guidelineId: gid, pps: used });
-            for (const s of used) if (applicable.has(s)) {
-                if (e.conds.size < 3) { const c = condOf(s); if (c) e.conds.add(c); }
-                if (e.reasons.size < 3) { const nm = nameOf(s); if (nm) e.reasons.add(nm); }
-                // Structured rationale: practice-point name + the guideline's recommendation + when it applies.
-                if (e.whyDetails.length < 3) {
-                    const nm = nameOf(s);
-                    if (nm && !e.whyDetails.some(w => w.name === nm)) e.whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s), guidelineId: gid, sourceQuote: quoteOf(s) });
-                }
-            }
+            // Conditions from ALL contributing PPs (not just applicable ones), so the
+            // relevance pass — which now runs concurrently with applicability — still
+            // has them. The modal's conds/reasons/whyDetails are rebuilt from the
+            // APPLICABLE PPs in Phase 2.
+            for (const s of used) if (e.allConds.size < 3) { const c = condOf(s); if (c) e.allConds.add(c); }
         };
 
-        for (const v of (rv.values || [])) {
-            const used = v.usedByPPs || [];
-            if (used.some(s => applicable.has(s))) add(v.id, catalogue[v.id], used, false);
-            else if (catalogue[v.id]?.label) filteredOut.push({ label: catalogue[v.id].label, reason: 'No applicable practice point requires this value for this patient' });
-        }
+        for (const v of (rv.values || [])) register(v.id, catalogue[v.id], v.usedByPPs || []);
         for (const p of (rv.proposedNewValues || [])) {
             const id = p.proposedId || p.id; if (!id) continue;
-            const used = p.usedByPPs || [];
-            // Admit any value whose applicable practice point needs it — including
-            // single-PP, non-canonical values. Relevance is decided downstream by the
-            // value-level relevance filter (stage/population aware), NOT by how many
-            // points happen to mention it: a one-off can be genuinely relevant.
-            if (used.some(s => applicable.has(s))) add(id, {
+            register(id, {
                 id,
                 label: p.label || id,
                 type: p.type || 'string',
@@ -1052,42 +1042,112 @@ async function gatherValuesForApplicablePPs(db, note, guidelineIds, userId = nul
                 // A subjective grading must be confirmed by the clinician, never inferred.
                 neverInfer: p.subjective === true || undefined,
                 _proposed: true,
-            }, used, true);
-            // non-applicable proposed: skip silently (avoid noise in the notice)
+            }, p.usedByPPs || []);
         }
-    }));
-
-    const values = [...gathered.values()]
-        .map(e => ({ id: e.id, ...(e.value || {}), proposed: e.proposed, usingGuidelines: e.using, conditions: [...e.conds].slice(0, 3), reasons: [...e.reasons].slice(0, 3), whyDetails: (e.whyDetails || []).slice(0, 3) }))
-        .filter(v => v.label)
-        .sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
-
-    // Second gate: value-level relevance. PP-applicability gates at the PRACTICE
-    // POINT level, so a multi-stage point that applies (e.g. "for a pregnant OR
-    // postnatal patient") surfaces ALL its values — including ones scoped to a
-    // stage this patient hasn't reached ("weeks post-birth") or a different
-    // population (autonomic neuropathy for gestational, not pre-existing, diabetes).
-    // Judge each surviving value against the note (using its conditions) and move
-    // the mismatched ones into filteredOut. Fails open: keep all on error.
-    let finalValues = values;
-    try {
-        const rel = await filterValuesByRelevance(note, values, userId);
-        const verdict = new Map((rel.results || []).map(r => [r.id, r]));
-        finalValues = [];
-        for (const v of values) {
-            const r = verdict.get(v.id);
-            if (r && r.relevant === false) {
-                filteredOut.push({ label: v.label, reason: r.reason || 'Not relevant to this patient at this stage of care' });
-            } else {
-                if (r && r.question) v.question = r.question; // plain-language question for the modal
-                finalValues.push(v);
-            }
-        }
-    } catch (e) {
-        finalValues = values;
     }
 
-    return { values: finalValues, filteredOut, missing, catalogueSize: Object.keys(catalogue).length, _debug: { model: GEMINI_MODEL, perGuideline: _debug } };
+    // Full candidate list (for the applicability gate). Relevance + extract run on
+    // the SMALL applicable subset, not this — see note below.
+    const candidateValues = [...candidates.values()]
+        .map(e => ({ id: e.id, ...(e.value || {}), proposed: e.proposed }))
+        .filter(v => v.label);
+
+    // ---- Phase 1: PP applicability (the cheap gate). Run per guideline, concurrently.
+    // Applicability FIRST, then relevance ∥ extract on the reduced set: gating before
+    // those two passes keeps their volume small. (Running relevance/extract over the
+    // full candidate set instead measured ~40% SLOWER — ~3× the LLM work for no net
+    // gain once providers are even mildly rate-limited.)
+    const applicableByGuideline = {};
+    await Promise.all(Object.keys(ppListByGuideline).map(async gid => {
+        const _d = [];
+        applicableByGuideline[gid] = await evaluatePPApplicability(note, ppListByGuideline[gid], _d, userId);
+        _debug.push({ gid, contributing: ppListByGuideline[gid].length, applicable: applicableByGuideline[gid].size, model: _d[0]?.model || null, noteLen: _d[0]?.noteLen });
+    }));
+
+    // Applicability combine: keep values an applicable PP requires, with the modal
+    // rationale (conds / reasons / whyDetails) and usingGuidelines built from the
+    // APPLICABLE PPs only — matching the original output shape.
+    const filteredOut = [];
+    const applicableValues = [];
+    for (const cv of candidateValues) {
+        const e = candidates.get(cv.id);
+        let appliesHere = false;
+        const using = [];
+        const conds = new Set(), reasons = new Set(), whyDetails = [];
+        for (const u of e.using) {
+            const appSet = applicableByGuideline[u.guidelineId];
+            if (!appSet || !(u.pps || []).some(s => appSet.has(s))) continue;
+            appliesHere = true;
+            using.push({ guidelineId: u.guidelineId, pps: u.pps });
+            const pps = ppsByGuideline[u.guidelineId] || [];
+            const condOf = (s) => (pps[s - 1]?.condition || '').trim();
+            const nameOf = (s) => (pps[s - 1]?.name || '').trim();
+            const actionOf = (s) => (pps[s - 1]?.action || '').trim();
+            const quoteOf = (s) => (pps[s - 1]?.sourceQuote || '').trim();
+            for (const s of (u.pps || [])) if (appSet.has(s)) {
+                if (conds.size < 3) { const c = condOf(s); if (c) conds.add(c); }
+                if (reasons.size < 3) { const nm = nameOf(s); if (nm) reasons.add(nm); }
+                if (whyDetails.length < 3) {
+                    const nm = nameOf(s);
+                    if (nm && !whyDetails.some(w => w.name === nm)) whyDetails.push({ name: nm, action: actionOf(s), condition: condOf(s), guidelineId: u.guidelineId, sourceQuote: quoteOf(s) });
+                }
+            }
+        }
+        if (!appliesHere) {
+            if (!cv.proposed && cv.label) filteredOut.push({ label: cv.label, reason: 'No applicable practice point requires this value for this patient' });
+            continue;
+        }
+        applicableValues.push({ ...cv, usingGuidelines: using, conditions: [...conds].slice(0, 3), reasons: [...reasons].slice(0, 3), whyDetails: whyDetails.slice(0, 3) });
+    }
+    const applicableUserFacing = applicableValues.filter(v => v.userFacing !== false);
+
+    // ---- Phase 2 (concurrent): relevance ∥ extract — both on the applicable subset.
+    const [relResult, exResult] = await Promise.all([
+        filterValuesByRelevance(note, applicableUserFacing, userId).catch(() => ({ results: [] })),
+        extractValuesFromNote(note, applicableUserFacing, userId).catch(() => ({ extracted: [] })),
+    ]);
+    const relVerdict = new Map((relResult.results || []).map(r => [r.id, r]));
+    const extractedById = new Map((exResult.extracted || []).map(e => [e.id, e]));
+
+    // Relevance combine: drop values the relevance pass ruled out for this patient.
+    const kept = [];
+    for (const v of applicableValues) {
+        const r = relVerdict.get(v.id);
+        if (v.userFacing !== false && r && r.relevant === false) {
+            filteredOut.push({ label: v.label, reason: r.reason || 'Not relevant to this patient at this stage of care' });
+            continue;
+        }
+        if (r && r.question) v.question = r.question; // plain-language question for the modal
+        kept.push(v);
+    }
+    kept.sort((a, b) => (b.usingGuidelines.length) - (a.usingGuidelines.length));
+
+    // ---- Phase 3: infer only the SURVIVING blanks (small set) — mirrors the old
+    // client-side infer pass. Documentation/process flags are answered from the note
+    // (absence ⇒ negative); measurements/history only when supported. Fails open.
+    const toInfer = kept.filter(v => v.userFacing !== false && !v.neverInfer && !(extractedById.get(v.id)?.found));
+    if (toInfer.length > 0) {
+        try {
+            const inf = await inferMissingValues(note, toInfer, userId);
+            let filledCount = 0;
+            for (const f of (inf.filled || [])) {
+                if (f.determinable && f.value !== null && f.value !== undefined && f.value !== '') {
+                    extractedById.set(f.id, { id: f.id, found: true, inferred: true, value: f.value, evidence: f.reason || '', confidence: f.confidence });
+                    filledCount++;
+                }
+            }
+            console.log(`[REQUIRED-VALUES] LLM filled ${filledCount}/${toInfer.length} previously-blank value(s); ${toInfer.length - filledCount} left for clinician`);
+        } catch (e) { /* fail open: leave blanks for the clinician */ }
+    }
+
+    // Extraction state for the kept user-facing values, in the same shape the client's
+    // /extractValuesFromNote call used to return — so the client can drop its separate
+    // extract + infer round-trips and read everything from this one response.
+    const extracted = kept
+        .filter(v => v.userFacing !== false)
+        .map(v => extractedById.get(v.id) || { id: v.id, found: false, value: null, evidence: '', confidence: 0 });
+
+    return { values: kept, extracted, filteredOut, missing, catalogueSize: Object.keys(catalogue).length, _debug: { model: GEMINI_MODEL, perGuideline: _debug } };
 }
 
 // ----- Best-effort inference of values the note didn't document ------------

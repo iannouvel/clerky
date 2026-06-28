@@ -8507,6 +8507,11 @@ function showGuidelineSelectionCheckpoint(guidelines) {
 async function prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus = () => {}) {
     const ids = selectedGuidelines.map(g => g.id).filter(Boolean);
 
+    // ONE round-trip: the server now runs applicability ∥ relevance ∥ extraction
+    // concurrently and infers the surviving blanks, returning the applicable values
+    // already joined with their extraction state. (Previously this was three serial
+    // calls — gather → extract → infer — the dominant pre-modal wait.)
+    onStatus('Analysing your note for required values…');
     const gResp = await fetch(`${window.SERVER_URL}/gatherValuesForApplicablePPs`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
@@ -8522,64 +8527,12 @@ async function prepareRequiredValuesData(selectedGuidelines, note, idToken, onSt
     if (requiredValues.length === 0) return { empty: true };
 
     // Derived/process-flag values (userFacing: false) are computed, not asked.
-    const userFacingValues = requiredValues.filter(v => v.userFacing !== false);
+    const relevantValues = requiredValues.filter(v => v.userFacing !== false);
 
-    // Subjective gradings (neverInfer) are NOT inferred from indirect evidence
-    // (that's what made the RAG rating flip), but they ARE still extracted when the
-    // note explicitly documents the grade (e.g. "Suboptimal glycaemic control") —
-    // so an explicitly-stated grade pre-fills the dropdown for the clinician to
-    // confirm, rather than forcing redundant re-entry. Inference stays suppressed below.
-    // Extract documented values from the note.
-    onStatus('Extracting documented values from note…');
-    const exResp = await fetch(`${window.SERVER_URL}/extractValuesFromNote`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-        body: JSON.stringify({ note, values: userFacingValues }),
-    });
-    if (!exResp.ok) throw new Error(`extractValuesFromNote HTTP ${exResp.status}`);
-    const exData = await exResp.json();
-    const extracted = exData.extracted || [];
+    // Extraction + inference were performed server-side as part of the gather; read
+    // them straight from the response (same shape /extractValuesFromNote returned).
+    const extracted = Array.isArray(gData.extracted) ? gData.extracted : [];
     const extractedById = new Map(extracted.map(e => [e.id, e]));
-
-    // Values are already scoped to applicable practice points server-side, so no
-    // separate value-level filtering step is needed.
-    const relevantValues = userFacingValues;
-
-    // Best-effort LLM fill of values the conservative extraction left blank.
-    // Documentation/process flags are answerable from the note (absence ⇒ the
-    // negative answer); genuine measurements/history are only filled when the note
-    // supports them, never fabricated. Determined values pre-fill the modal (badged
-    // "AI-filled · review") so the clinician confirms rather than types.
-    // Fails open: on error, blanks are left for the user as before.
-    try {
-        const missing = relevantValues.filter(v => !v.neverInfer && !(extractedById.get(v.id)?.found));
-        if (missing.length > 0) {
-            onStatus('Filling in values from your note…');
-            const infResp = await fetch(`${window.SERVER_URL}/inferMissingValues`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${idToken}` },
-                body: JSON.stringify({ note, values: missing }),
-            });
-            if (infResp.ok) {
-                const infData = await infResp.json();
-                let filledCount = 0;
-                for (const f of (infData.filled || [])) {
-                    if (f.determinable && f.value !== null && f.value !== undefined && f.value !== '') {
-                        extractedById.set(f.id, {
-                            id: f.id, found: true, inferred: true,
-                            value: f.value, evidence: f.reason || '', confidence: f.confidence,
-                        });
-                        filledCount++;
-                    }
-                }
-                console.log(`[REQUIRED-VALUES] LLM filled ${filledCount}/${missing.length} previously-blank value(s); ${missing.length - filledCount} left for clinician`);
-            } else {
-                console.warn(`[REQUIRED-VALUES] inferMissingValues HTTP ${infResp.status}; leaving blanks for user`);
-            }
-        }
-    } catch (e) {
-        console.warn('[REQUIRED-VALUES] Infer pass failed; leaving blanks for user:', e.message);
-    }
 
     return { requiredValues, relevantValues, extractedById, extracted, filteredOut };
 }
