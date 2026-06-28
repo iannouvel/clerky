@@ -3326,9 +3326,9 @@ async function getPracticePointSuggestions(transcript, guidelineId, opts = {}) {
         }
         const idToken = await user.getIdToken();
 
-        // During parallel analysis the dedicated progress box ("Analysis Underway —
-        // Checking your note against …") already shows what's happening, so don't also
-        // push a per-guideline "Analysing practice points…" to the main status bar.
+        // During parallel analysis the loop reports overall progress in the status row
+        // ("Analysed X of N…"), so don't also push a per-guideline "Analysing practice
+        // points…" that would overwrite it.
         if (!silent && !window.parallelAnalysisActive) updateUser(`Analysing practice points...`, true);
 
         const fetchSuggestions = async (allowFallback = false) => {
@@ -8685,7 +8685,7 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // on a miss (e.g. the selection was changed) it runs fresh with the granular status.
     const onStatus = (msg) => updateUser(msg, true);
     const { promise, prefetched } = getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus);
-    if (prefetched) updateUser('Preparing values from your note…', true);
+    if (prefetched) updateUser('Reading your note to pre-fill the values these guidelines need…', true);
 
     let prepared;
     try {

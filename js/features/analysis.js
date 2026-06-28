@@ -483,15 +483,10 @@ export async function runParallelAnalysis(guidelines) {
 
     // Create a container for the aggregated results
     const containerId = 'parallel-analysis-results-' + Date.now();
+    // Progress is reported through the normal status row (updateUser), so this
+    // container holds only the results output — no separate "Analysis Underway" box.
     const resultsContainerHtml = `
         <div id="${containerId}" class="parallel-analysis-container" style="max-height: calc(100vh - 250px); overflow-y: auto; padding-right: 10px;">
-            <div class="parallel-status" style="margin-bottom: 20px; padding: 15px; background: var(--bg-tertiary); border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary);">
-                <strong><i class="fas fa-layer-group"></i> Analysis Underway</strong>
-                <span id="${containerId}-status-text" style="display: block; margin-top: 5px; font-size: 0.9em; color: var(--text-secondary);"></span>
-                <div class="progress-bar-container" style="margin-top: 10px; background: var(--bg-input); height: 8px; border-radius: 4px; overflow: hidden;">
-                    <div id="${containerId}-progress" style="width: 0%; height: 100%; background: #4caf50; transition: width 0.3s ease;"></div>
-                </div>
-            </div>
             <div id="${containerId}-output"></div>
         </div>
     `;
@@ -511,8 +506,6 @@ export async function runParallelAnalysis(guidelines) {
     // Wait a tick for DOM to update, then get references
     await new Promise(resolve => setTimeout(resolve, 50));
 
-    const statusText = document.getElementById(`${containerId}-status-text`);
-    const progressBar = document.getElementById(`${containerId}-progress`);
     const outputContainer = document.getElementById(`${containerId}-output`);
 
     let completedCount = 0;
@@ -541,16 +534,10 @@ export async function runParallelAnalysis(guidelines) {
         const raw = getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id]);
         return shortName(raw) || raw;
     });
-    if (statusText) {
-        const title = `Checking your note against the following guideline${total === 1 ? '' : 's'}:`;
-        statusText.innerHTML = `${title}<br><span style="font-size:0.92em;opacity:0.85;line-height:1.5;">${breakdownList.map(escMsg).join(' · ')}</span>`;
-    }
-
-    // This box is the single progress indicator while analysis runs — clear the main
-    // status bar so the user isn't told the same thing twice (it set "Analysing note
-    // against N guidelines…" just before this). The box's completion message later
-    // repopulates the bar as the final payoff.
-    updateUser(null, false, true, 'main');
+    // Show what's being checked in the normal status row (with spinner), then update
+    // it to "Analysed X of N…" as each guideline completes.
+    const breakdownTitle = `Checking your note against the following guideline${total === 1 ? '' : 's'}:`;
+    updateUser(`${breakdownTitle}<br><span style="font-size:0.92em;opacity:0.85;line-height:1.5;">${breakdownList.map(escMsg).join(' · ')}</span>`, true);
 
     // Streaming analysis: pick up any per-guideline analyses pre-started during the
     // confirm-values stage (see startReadyGuidelineAnalyses in script.js). Capture
@@ -589,8 +576,7 @@ export async function runParallelAnalysis(guidelines) {
             }
 
             completedCount++;
-            if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
-            if (statusText) statusText.textContent = `Analyzed ${completedCount} of ${total}: ${displayName}`;
+            updateUser(`Analysed ${completedCount} of ${total}: ${displayName}`, true);
             window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
 
             return {
@@ -604,7 +590,6 @@ export async function runParallelAnalysis(guidelines) {
         } catch (error) {
             console.error(`[DEBUG] Error analyzing guideline ${guideline.id}:`, error);
             completedCount++;
-            if (progressBar) progressBar.style.width = `${(completedCount / total) * 100}%`;
             window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
             return {
                 status: 'rejected',
@@ -663,7 +648,7 @@ export async function runParallelAnalysis(guidelines) {
     // ===== Batch sense-check: one AI call across all guidelines instead of N =====
     if (allSuggestions.length > 0) {
         const patientContext = successfulResults[0]?.suggestions?.patientContext || {};
-        if (statusText) statusText.textContent = 'Checking suggestions for clinical plausibility...';
+        updateUser('Checking suggestions for clinical plausibility…', true);
         try {
             const batchResult = await postAuthenticated('/batchSenseCheck', {
                 suggestions: allSuggestions,
@@ -682,20 +667,11 @@ export async function runParallelAnalysis(guidelines) {
         }
     }
 
-    // Update status to show completion
+    // Update status to show completion — shown in the normal status row, persisted
+    // (this is the payoff moment), with a priority breakdown when issues were found.
     const findingWord = allSuggestions.length === 1 ? 'finding' : 'findings';
     const guidelineWord = successfulResults.length === 1 ? 'guideline' : 'guidelines';
-    if (statusText) statusText.textContent = `Analysis complete — ${allSuggestions.length} ${findingWord} identified. Please review below.`;
-    const completionMsg = `Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}. Please review below.`;
-    updateUser(completionMsg, false, false, 'main', true); // persist: this is the payoff moment
 
-    // Remove the selection interface now that we have results
-    const selectionInterface = document.querySelector('.guideline-selection-interface');
-    if (selectionInterface) {
-        selectionInterface.remove();
-    }
-
-    // Calculate priority counts for status message
     const priorityCounts = { 'High': 0, 'Medium': 0, 'Low': 0 };
     allSuggestions.forEach(s => {
         const type = (s.type || s.priority || 'info').toLowerCase();
@@ -703,39 +679,19 @@ export async function runParallelAnalysis(guidelines) {
         else if (type === 'important' || type === 'medium') priorityCounts['Medium']++;
         else priorityCounts['Low']++;
     });
+    const priorityParts = [];
+    if (priorityCounts['High'] > 0) priorityParts.push(`${priorityCounts['High']} High`);
+    if (priorityCounts['Medium'] > 0) priorityParts.push(`${priorityCounts['Medium']} Medium`);
+    if (priorityCounts['Low'] > 0) priorityParts.push(`${priorityCounts['Low']} Low`);
+    const priorityTail = priorityParts.length > 0 ? ` (${priorityParts.join(', ')})` : '';
 
-    // Generate simplified status message
-    let statusParts = [];
-    if (priorityCounts['High'] > 0) statusParts.push(`${priorityCounts['High']} High`);
-    if (priorityCounts['Medium'] > 0) statusParts.push(`${priorityCounts['Medium']} Medium`);
+    const completionMsg = `Analysis complete — ${allSuggestions.length} ${findingWord} identified across ${successfulResults.length} ${guidelineWord}${priorityTail}. Please review below.`;
+    updateUser(completionMsg, false, false, 'main', true); // persist: this is the payoff moment
 
-    if (priorityCounts['Low'] > 0) statusParts.push(`${priorityCounts['Low']} Low`);
-
-    let statusSummary = statusParts.length > 0
-        ? statusParts.join(', ') + ' priority issues found'
-        : 'No specific issues found';
-
-    if (statusText) {
-        statusText.innerHTML = `<strong>Analysis Complete</strong><br>${statusSummary}`;
-        statusText.parentElement.style.background = 'var(--bg-tertiary)';
-        statusText.parentElement.style.border = '1px solid var(--accent-color)';
-
-        // Ephemeral message: Remove after 3 seconds to save vertical space
-        setTimeout(() => {
-            if (statusText.parentElement) {
-                statusText.parentElement.style.transition = 'opacity 0.5s ease-out, height 0.5s ease-out, padding 0.5s ease-out, margin 0.5s ease-out';
-                statusText.parentElement.style.opacity = '0';
-                statusText.parentElement.style.height = '0';
-                statusText.parentElement.style.padding = '0';
-                statusText.parentElement.style.margin = '0';
-                statusText.parentElement.style.overflow = 'hidden';
-
-                // Remove from DOM after transition
-                setTimeout(() => {
-                    if (statusText.parentElement) statusText.parentElement.remove();
-                }, 500);
-            }
-        }, 3000);
+    // Remove the selection interface now that we have results
+    const selectionInterface = document.querySelector('.guideline-selection-interface');
+    if (selectionInterface) {
+        selectionInterface.remove();
     }
 
     // Display Aggregated Results (Sequential Wizard)
