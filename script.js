@@ -8545,19 +8545,27 @@ async function prepareRequiredValuesData(selectedGuidelines, note, idToken, onSt
     return { requiredValues, relevantValues, extractedById, extracted, filteredOut };
 }
 
+// How long a speculative prefetch may be reused. The checkpoint can sit open for a
+// long time (the user may step away), and the prefetch could have resolved through a
+// transient blip (network drop, mid-deploy, Firestore churn). Reusing a stale result
+// risks skipping the values step on a result that no longer reflects reality — so cap
+// reuse to a few minutes; older than that re-runs fresh.
+const RV_PREFETCH_TTL_MS = 3 * 60 * 1000;
+
 // Cache wrapper around prepareRequiredValuesData so the speculative run started
 // behind the guideline checkpoint can be reused by the real gather. Keyed by the
-// selected guideline-id set + exact note text: a changed selection or an edited
-// note simply misses the cache and runs fresh, so a stale result can never be
+// selected guideline-id set + exact note text (a changed selection or edited note
+// misses the cache) and bounded by RV_PREFETCH_TTL_MS so a long-stale prefetch is not
 // reused. Returns { promise, prefetched } — prefetched is true on a cache hit.
 function getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus) {
     const idsKey = selectedGuidelines.map(g => g.id).filter(Boolean).sort().join('|');
     const cached = window.__rvPrefetch;
-    if (cached && cached.idsKey === idsKey && cached.note === note) {
+    const fresh = cached && (Date.now() - (cached.at || 0) < RV_PREFETCH_TTL_MS);
+    if (cached && fresh && cached.idsKey === idsKey && cached.note === note) {
         return { promise: cached.promise, prefetched: true };
     }
     const promise = prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus);
-    window.__rvPrefetch = { idsKey, note, promise };
+    window.__rvPrefetch = { idsKey, note, promise, at: Date.now() };
     return { promise, prefetched: false };
 }
 
@@ -8673,6 +8681,16 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
         // A speculative prefetch failed — retry fresh so a transient error behind the
         // checkpoint doesn't block the real run.
         console.warn('[REQUIRED-VALUES] Prefetch failed, retrying fresh:', e.message);
+        window.__rvPrefetch = null;
+        prepared = await prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus);
+    }
+
+    // Don't trust an EMPTY prefetch result: a real gather almost never yields zero
+    // values for matched guidelines, so an empty prefetch usually means it resolved
+    // through a transient blip (and skipping the values step on it would silently
+    // drop required-value confirmation). Re-run fresh to confirm the emptiness is real.
+    if (prefetched && prepared.empty) {
+        console.warn('[REQUIRED-VALUES] Prefetch returned empty — re-running fresh to confirm (avoids wrongly skipping Values)');
         window.__rvPrefetch = null;
         prepared = await prepareRequiredValuesData(selectedGuidelines, note, idToken, onStatus);
     }
