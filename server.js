@@ -15987,7 +15987,10 @@ app.post('/reingestGuideline', authenticateUser, async (req, res) => {
                     title: data.humanFriendlyName || data.displayName || data.title || guidelineId,
                     organisation: data.organisation || 'Unknown',
                     scope: data.scope || 'national',
-                    hospitalTrust: data.shortHospitalTrust || data.hospitalTrust || null
+                    // Full trust name, not the short form — the RAG scope filter matches the
+                    // full name the client sends, so the short form would make a re-ingested
+                    // local guideline invisible to local searches.
+                    hospitalTrust: data.hospitalTrust || data.shortHospitalTrust || null
                 };
             }
 

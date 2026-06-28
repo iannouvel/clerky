@@ -351,7 +351,10 @@ function processFirestoreGuideline(guideline) {
                 title,
                 organisation,
                 scope: guideline.scope || 'national',
-                hospitalTrust: guideline.shortHospitalTrust || guideline.hospitalTrust || null,
+                // Use the FULL trust name — the RAG scope filter (buildScopeFilter) matches
+                // the full name the client sends, so writing the short form ("UHSussex")
+                // here makes a local guideline invisible to local searches.
+                hospitalTrust: guideline.hospitalTrust || guideline.shortHospitalTrust || null,
                 chunkIndex: index,
                 totalChunks: chunks.length
             }
