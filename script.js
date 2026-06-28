@@ -5783,7 +5783,14 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] Sign out button clicked...');
             try {
                 await auth.signOut();
-                window.location.reload();
+                // Exit demo / silent-trial mode on sign-out. These modes latch on via
+                // sessionStorage (set once entered through ?trial / ?demo or silent-trial.html)
+                // and otherwise persist for the whole browser session — so without this a
+                // plain index.html load or hard refresh keeps re-entering the trial. Clear the
+                // flags and reload to a clean path (no ?trial/?demo) so the standard app loads.
+                sessionStorage.removeItem('clerkySilentTrialMode');
+                sessionStorage.removeItem('clerkyDemoMode');
+                window.location.replace(window.location.pathname);
             } catch (error) {
                 console.error('Sign out failed:', error);
                 alert('Failed to sign out: ' + error.message);
