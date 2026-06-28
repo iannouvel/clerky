@@ -572,7 +572,7 @@ export async function runParallelAnalysis(guidelines) {
             }
 
             completedCount++;
-            updateUser(`Analysed ${completedCount} of ${total}: ${displayName}`, true);
+            updateUser(`Developing guideline-appropriate suggestions for the selected guidelines (${Math.round((completedCount / total) * 100)}% complete)…`, true);
             window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
 
             return {
@@ -586,6 +586,7 @@ export async function runParallelAnalysis(guidelines) {
         } catch (error) {
             console.error(`[DEBUG] Error analyzing guideline ${guideline.id}:`, error);
             completedCount++;
+            updateUser(`Developing guideline-appropriate suggestions for the selected guidelines (${Math.round((completedCount / total) * 100)}% complete)…`, true);
             window.workflowStepper?.setProgress('analysis', completedCount / total, `${completedCount}/${total}`);
             return {
                 status: 'rejected',
