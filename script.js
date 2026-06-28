@@ -8695,7 +8695,7 @@ async function gatherRequiredValuesForGuidelines(selectedGuidelines) {
     // on a miss (e.g. the selection was changed) it runs fresh with the granular status.
     const onStatus = (msg) => updateUser(msg, true);
     const { promise, prefetched } = getPreparedRequiredValues(selectedGuidelines, note, idToken, onStatus);
-    if (prefetched) updateUser('Reading your note to pre-fill the values these guidelines need…', true);
+    if (prefetched) updateUser('Reading your note to find the values these guidelines need…', true);
 
     let prepared;
     try {
