@@ -340,11 +340,8 @@ export async function generateFakeClinicalInteraction(selectedIssue, forceRegene
         }, 200);
 
         // Status Bar Update
-        const performanceText = forceRegenerate
-            ? 'regenerated with updated formatting'
-            : (isGenerated ? 'generated using AI' : 'loaded instantly from cache');
         const actionText = forceRegenerate ? 'Regenerated' : 'Loaded';
-        const successMessage = `${actionText} clinical interaction for ${selectedIssue}, ${performanceText}.`;
+        const successMessage = `${actionText} clinical interaction for ${selectedIssue}.`;
 
         updateUser(successMessage, false);
 
