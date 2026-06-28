@@ -514,6 +514,11 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             || suggestion.text || suggestion.title || suggestion.description || suggestion.content || '';
         if (!suggestionText) return;
 
+        // Grey out Insert while we work out where/how the text will go — there's
+        // nothing to commit until the placement diff is ready.
+        const _insertBtn = document.getElementById(`${uniqueId}-actions`)?.querySelector('.sw-btn-insert');
+        if (_insertBtn) _insertBtn.disabled = true;
+
         if (typeof updateUser === 'function') updateUser('Preparing suggested edit…', true);
 
         // Source of truth for the original note is the live editor — for the
@@ -559,6 +564,8 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             console.warn('[WIZARD] Markup endpoint exception:', err.message);
         } finally {
             if (_diffAbort === abort) _diffAbort = null;
+            // Placement resolved (or failed/aborted) — re-enable Insert.
+            if (_insertBtn) _insertBtn.disabled = false;
         }
 
         // If the wizard moved on while we were waiting, drop this result.
