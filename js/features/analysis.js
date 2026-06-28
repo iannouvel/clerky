@@ -511,8 +511,12 @@ export async function runParallelAnalysis(guidelines) {
     let completedCount = 0;
     const total = guidelines.length;
 
-    // Helper for getting title
+    // Helper for getting title. Prefer displayName — it already carries the source/
+    // origin (e.g. "Diabetes in pregnancy (UHSussex)"), the same field the guideline
+    // selection modal shows, so the clinician sees it comes from their chosen scope.
     function getGuidelineDisplayName(id, g, data) {
+        if (g && g.displayName) return g.displayName;
+        if (data && data.displayName) return data.displayName;
         if (data && data.humanFriendlyTitle) return data.humanFriendlyTitle;
         if (data && data.title) return data.title;
         if (g && g.title) return g.title;
@@ -520,20 +524,12 @@ export async function runParallelAnalysis(guidelines) {
     }
 
     // Up-front breakdown so the clinician sees WHAT is being checked, not just a
-    // spinner — e.g. "Checking 105 practice points across 2 guidelines:
-    // Diabetes in pregnancy (55), Induction of labour (50)". Counts come from the
-    // lightweight practicePointCount loaded with each guideline; falls back to
-    // names-only if a count is unavailable.
-    const shortName = (s) => String(s || '')
-        .replace(/\s*\bguideline\b/gi, '')
-        .replace(/\s*\bUHSx\b/gi, '')
-        .replace(/\s*[-–]\s*UHS\w*.*$/i, '')
-        .replace(/\s{2,}/g, ' ').trim();
+    // spinner. Uses the guideline's displayName as-is so the source/origin
+    // (e.g. "(UHSussex)") is preserved, consistent with the per-guideline line.
     const escMsg = (s) => String(s == null ? '' : s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-    const breakdownList = guidelines.map(gl => {
-        const raw = getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id]);
-        return shortName(raw) || raw;
-    });
+    const breakdownList = guidelines.map(gl =>
+        getGuidelineDisplayName(gl.id, gl, window.globalGuidelines?.[gl.id])
+    );
     // Show what's being checked in the normal status row (with spinner), then update
     // it to "Analysed X of N…" as each guideline completes.
     const breakdownTitle = `Checking your note against the following guideline${total === 1 ? '' : 's'}:`;
