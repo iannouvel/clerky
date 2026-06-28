@@ -3770,6 +3770,15 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
             console.warn('[RAG] Validation failed, using unvalidated results:', validationError.message);
         }
 
+        // Defensive: drop any vector hit that no longer has a live Firestore doc — a
+        // "ghost" left behind when a guideline was removed/retired without de-indexing
+        // the vector store. Without this, a retired-but-still-indexed guideline can rank
+        // top, then get dropped client-side for missing metadata, silently zeroing the
+        // result set (exactly what happened to a breech note after the 2026-06-16
+        // consolidation). Fails open so a Firestore hiccup never breaks search.
+        categories = await dropGhostGuidelines(categories);
+        timer.step('Drop ghost guidelines');
+
         console.log(`[RAG] Search complete: ${categories.mostRelevant.length} most relevant, ${categories.potentiallyRelevant.length} potentially relevant`);
 
         return {
@@ -3784,6 +3793,37 @@ async function findRelevantGuidelinesRAG(transcript, userId, options = {}) {
         console.error('[RAG] Search failed:', error.message || error.toString(), error.stack ? error.stack.split('\n').slice(0, 3).join(' | ') : '');
         throw error;
     }
+}
+
+/**
+ * Drop guidelines returned by the vector search that have no live Firestore doc
+ * (under the exact id the client will look up). These are "ghosts" — vectors left
+ * behind by a removal/retirement that didn't de-index. The client keys its metadata
+ * cache by Firestore doc id, so a ghost can't be displayed or scope-filtered anyway;
+ * leaving it in only lets it crowd out / zero real results. Fails open.
+ */
+async function dropGhostGuidelines(categories) {
+    const keys = ['mostRelevant', 'potentiallyRelevant', 'lessRelevant', 'notRelevant'];
+    const ids = [...new Set(keys.flatMap(k => (categories[k] || []).map(g => g && g.id)).filter(Boolean))];
+    if (ids.length === 0) return categories;
+
+    const live = new Set();
+    try {
+        const refs = ids.map(id => admin.firestore().collection('guidelines').doc(id));
+        const snaps = await admin.firestore().getAll(...refs);
+        snaps.forEach(s => { if (s.exists) live.add(s.id); });
+    } catch (e) {
+        console.warn('[RAG] Ghost-guard existence check failed; returning results unfiltered:', e.message);
+        return categories; // fail open — never break search over a Firestore hiccup
+    }
+
+    const dropped = ids.filter(id => !live.has(id));
+    if (dropped.length > 0) {
+        console.warn(`[RAG] Dropped ${dropped.length} ghost guideline(s) with no live Firestore doc (stale vector index): ${dropped.join(', ')}`);
+    }
+    const out = {};
+    for (const k of keys) out[k] = (categories[k] || []).filter(g => g && live.has(g.id));
+    return out;
 }
 
 /**
@@ -16630,6 +16670,81 @@ app.post('/cleanupDeletedGuidelines', authenticateUser, async (req, res) => {
 });
 
 // Endpoint to delete a single guideline
+// Robustly RETIRE a guideline that has been superseded: remove it from the active
+// set (Firestore doc + vector index) but KEEP the PDF and a full backup in the
+// `retiredGuidelines` collection. This is the path that should always be used when a
+// newer guideline replaces an older one — the missing vector de-index is exactly
+// what left cg1114/mp046 as ghosts after the 2026-06-16 breech consolidation.
+app.post('/retireGuideline', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) return res.status(403).json({ success: false, error: 'Unauthorized. Admin access required.' });
+
+        const { guidelineId, reason, supersededBy } = req.body;
+        if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId is required' });
+
+        const ref = db.collection('guidelines').doc(guidelineId);
+        const snap = await ref.get();
+
+        let backedUp = false;
+        if (snap.exists) {
+            // Back up the full doc so the guideline can be restored if retired in error.
+            await db.collection('retiredGuidelines').doc(guidelineId).set({
+                ...snap.data(),
+                retiredAt: admin.firestore.FieldValue.serverTimestamp(),
+                retiredBy: req.user.email || req.user.uid,
+                retireReason: reason || null,
+                supersededBy: supersededBy || null,
+            });
+            backedUp = true;
+            await ref.delete();
+        }
+
+        // Always purge vector chunks — even if the Firestore doc was already gone, this
+        // clears any ghost left by a previous incomplete retirement.
+        let vectorPurged = false;
+        try {
+            if (vectorDB.isVectorDBAvailable()) {
+                await vectorDB.deleteGuidelineChunks(guidelineId);
+                vectorPurged = true;
+            }
+        } catch (e) {
+            console.error('[RETIRE_GUIDELINE] Vector de-index failed:', e.message);
+        }
+
+        console.log(`[RETIRE_GUIDELINE] ${req.user.email} retired ${guidelineId} (firestoreDocExisted=${snap.exists}, vectorPurged=${vectorPurged})`);
+        return res.json({ success: true, guidelineId, backedUp, firestoreRemoved: snap.exists, vectorPurged, pdfKept: true });
+    } catch (error) {
+        console.error('[RETIRE_GUIDELINE] Failed:', error.message);
+        return res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+// Restore a guideline retired via /retireGuideline (re-create the Firestore doc from
+// its backup). The caller should then /reingestGuideline to rebuild its vectors.
+app.post('/restoreGuideline', authenticateUser, async (req, res) => {
+    try {
+        const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+        if (!isAdmin) return res.status(403).json({ success: false, error: 'Unauthorized. Admin access required.' });
+
+        const { guidelineId } = req.body;
+        if (!guidelineId) return res.status(400).json({ success: false, error: 'guidelineId is required' });
+
+        const backup = await db.collection('retiredGuidelines').doc(guidelineId).get();
+        if (!backup.exists) return res.status(404).json({ success: false, error: `No retired backup for ${guidelineId}` });
+
+        const data = { ...backup.data() };
+        delete data.retiredAt; delete data.retiredBy; delete data.retireReason; delete data.supersededBy;
+        await db.collection('guidelines').doc(guidelineId).set(data);
+
+        console.log(`[RESTORE_GUIDELINE] ${req.user.email} restored ${guidelineId} (remember to /reingestGuideline to rebuild vectors)`);
+        return res.json({ success: true, guidelineId, restored: true, note: 'Run /reingestGuideline to rebuild the vector index for this guideline.' });
+    } catch (error) {
+        console.error('[RESTORE_GUIDELINE] Failed:', error.message);
+        return res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 app.post('/deleteGuideline', authenticateUser, async (req, res) => {
     try {
         // Check if user is admin
@@ -16657,6 +16772,7 @@ app.post('/deleteGuideline', authenticateUser, async (req, res) => {
             condensedDeleted: false,
             summaryDeleted: false,
             firestoreDeleted: false,
+            vectorChunksDeleted: false,
             listUpdated: false,
             errors: []
         };
@@ -16754,6 +16870,23 @@ app.post('/deleteGuideline', authenticateUser, async (req, res) => {
         } catch (error) {
             console.error(`[DELETE_GUIDELINE] Error deleting from Firestore:`, error.message);
             deletionResults.errors.push(`Failed to delete from Firestore: ${error.message}`);
+        }
+
+        // 4b. Remove the guideline's chunks from the vector index. Omitting this is
+        // what left retired guidelines as "ghosts" — still returned by RAG search but
+        // with no Firestore doc, silently zeroing result sets.
+        try {
+            const cleanId = generateCleanDocId(filename);
+            if (vectorDB.isVectorDBAvailable()) {
+                await vectorDB.deleteGuidelineChunks(cleanId);
+                deletionResults.vectorChunksDeleted = true;
+                console.log(`[DELETE_GUIDELINE] Removed vector chunks for: ${cleanId}`);
+            } else {
+                console.log('[DELETE_GUIDELINE] Vector DB unavailable — skipped chunk removal');
+            }
+        } catch (error) {
+            console.error(`[DELETE_GUIDELINE] Error removing vector chunks:`, error.message);
+            deletionResults.errors.push(`Failed to remove vector chunks: ${error.message}`);
         }
 
         // 5. Update list_of_guidelines.txt
