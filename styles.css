@@ -3753,8 +3753,9 @@ body {
 }
 
 .floating-input-buttons-top {
-    top: 8px;
-    right: 8px;
+    /* 16px well padding + 8px inset so they sit inside the white card's corner */
+    top: 24px;
+    right: 24px;
 }
 
 .floating-input-buttons-bottom {
@@ -5211,8 +5212,8 @@ body.rv-panel-open .chatbot-input-section {
     }
 
     .floating-input-buttons {
-        top: 4px;
-        right: 4px;
+        top: 20px;
+        right: 20px;
         padding: 3px 6px;
     }
 
