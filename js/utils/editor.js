@@ -756,6 +756,22 @@ export function renderDiffMarkup(markupText) {
         .join('');
 
     editor.commands.setContent(html || '<p></p>');
+
+    // Bring the change into view: the inserted/changed text is usually appended
+    // near the end of the note, often below the fold, so the clinician can't see
+    // what the suggestion did. Scroll the first changed span (insertion, else
+    // deletion) to the centre of the editor's scroll area.
+    try {
+        const dom = editor.view?.dom || document.querySelector('#userInput .ProseMirror');
+        if (dom) {
+            requestAnimationFrame(() => {
+                const change = dom.querySelector('span[style*="#16a34a"]')
+                    || dom.querySelector('span[style*="line-through"]');
+                change?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            });
+        }
+    } catch (e) { /* scrolling is best-effort */ }
+
     console.log('[DIFF] Markup rendered (' + segments.length + ' segments, ' + paragraphs.length + ' paragraphs)');
     return true;
 }
