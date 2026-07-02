@@ -8805,10 +8805,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         const header = document.createElement('div');
         header.style.cssText = 'padding:16px 20px;border-bottom:1px solid var(--border-color,#ddd);background:var(--bg-secondary,#fafafa);border-radius:10px 10px 0 0;';
         header.innerHTML = `
-            <h3 style="margin:0 0 4px;font-size:1.05em;">Confirm required values</h3>
-            <p style="margin:0;color:var(--text-secondary,#666);font-size:0.82em;line-height:1.4;">
-                Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.
-            </p>`;
+            <h3 style="margin:0;font-size:1.05em;cursor:help;" title='Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.'>Confirm required values <span style="opacity:0.55;font-size:0.8em;font-weight:normal;vertical-align:middle;">ⓘ</span></h3>`;
         modal.appendChild(header);
 
         // Relevance-filter notice — explain which candidate values were hidden
