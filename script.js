@@ -8805,10 +8805,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
         const header = document.createElement('div');
         header.style.cssText = 'padding:16px 20px;border-bottom:1px solid var(--border-color,#ddd);background:var(--bg-secondary,#fafafa);border-radius:10px 10px 0 0;';
         header.innerHTML = `
-            <h3 style="margin:0 0 4px;font-size:1.05em;">Confirm required values</h3>
-            <p style="margin:0;color:var(--text-secondary,#666);font-size:0.82em;line-height:1.4;">
-                Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.
-            </p>`;
+            <h3 style="margin:0;font-size:1.05em;cursor:help;" title='Your note (on the left) — fill any "needs value" items below or mark as "unknown / pending". Values will be woven into the note before suggestions are generated.'>Confirm required values <span style="opacity:0.55;font-size:0.8em;font-weight:normal;vertical-align:middle;">ⓘ</span></h3>`;
         modal.appendChild(header);
 
         // Relevance-filter notice — explain which candidate values were hidden
@@ -8876,44 +8873,8 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             const ex = extractedById.get(rv.id);
             const isAutoFilled = !!ex?.found;
 
-            // Inject section dividers
-            if (!isAutoFilled && !renderedNeedsHeader && needsCount > 0) {
-                const h = document.createElement('div');
-                h.style.cssText = 'font-size:0.78em;font-weight:700;text-transform:uppercase;color:#92400e;margin:6px 0 8px;letter-spacing:0.04em;';
-                h.textContent = `Needs value (${needsCount})`;
-                list.appendChild(h);
-                renderedNeedsHeader = true;
-            }
-            if (isAutoFilled && !renderedAutoHeader && autoCount > 0) {
-                // Collapsed by default: these are already filled, so they're
-                // review-only — keep the panel focused on what needs action.
-                const h = document.createElement('button');
-                h.type = 'button';
-                h.style.cssText = 'display:flex;align-items:center;gap:6px;width:100%;text-align:left;background:none;border:none;padding:0;cursor:pointer;font-size:0.78em;font-weight:700;text-transform:uppercase;color:#15803d;margin:16px 0 8px;letter-spacing:0.04em;';
-                const caret = document.createElement('span');
-                caret.style.cssText = 'display:inline-block;font-size:0.9em;';
-                const lbl = document.createElement('span');
-                lbl.textContent = inferredCount > 0
-                    ? `Filled in for you — review (${autoCount})`
-                    : `Auto-filled — review (${autoCount})`;
-                h.appendChild(caret);
-                h.appendChild(lbl);
-                autoContainer = document.createElement('div');
-                // If nothing needs action, expand so the panel isn't visually empty.
-                const startOpen = needsCount === 0;
-                autoContainer.style.display = startOpen ? 'block' : 'none';
-                caret.textContent = startOpen ? '▾' : '▸';
-                h.setAttribute('aria-expanded', String(startOpen));
-                h.addEventListener('click', () => {
-                    const open = autoContainer.style.display !== 'none';
-                    autoContainer.style.display = open ? 'none' : 'block';
-                    caret.textContent = open ? '▸' : '▾';
-                    h.setAttribute('aria-expanded', String(!open));
-                });
-                list.appendChild(h);
-                list.appendChild(autoContainer);
-                renderedAutoHeader = true;
-            }
+            // Section dividers removed for simplicity — needs-value cards render
+            // first (from the sort), auto-filled review items inline below.
 
             const row = document.createElement('div');
             row.style.cssText = 'margin-bottom:10px;padding:9px 10px;border:1px solid var(--border-color,#e5e5e5);border-radius:5px;background:' + (isAutoFilled ? 'var(--bg-secondary,#fafafa)' : 'rgba(254,243,199,0.3)') + ';';
@@ -8956,12 +8917,10 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
             } else if (ex?.found) {
                 badge.textContent = 'auto-filled';
                 badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
-            } else if (willLikelyDefault) {
-                badge.textContent = 'likely — confirm';
-                badge.style.background = '#fef9c3'; badge.style.color = '#854d0e';
             } else {
-                badge.textContent = 'needs value';
-                badge.style.background = '#fef3c7'; badge.style.color = '#92400e';
+                // Needs-value: no classification pill — showing the card is enough.
+                // (Reused for the "set ✓" state once the clinician answers.)
+                badge.style.display = 'none';
             }
             labelLine.appendChild(badge);
 
@@ -8981,7 +8940,9 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 const cardBody = document.createElement('div');
                 row.appendChild(cardBody);
                 contentTarget = cardBody;
-                const setOpen = (open) => { cardBody.style.display = open ? 'block' : 'none'; chevron.textContent = open ? '▾' : '▸'; };
+                // When open, hide the header row so the card leads with the explanation
+                // then the question; when collapsed, the header shows the question.
+                const setOpen = (open) => { cardBody.style.display = open ? 'block' : 'none'; labelLine.style.display = open ? 'none' : 'flex'; chevron.textContent = open ? '▾' : '▸'; };
                 labelLine.addEventListener('click', () => {
                     const isOpen = cardBody.style.display !== 'none';
                     needsCards.forEach(c => c.setOpen(false));
@@ -9005,14 +8966,15 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 if (isAutoFilled) {
                     why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> ${whyDetails.map(w => esc(w.name)).join(' · ')}`;
                 } else {
-                    // Show ONE primary rationale (practice-point name + when it applies) — not
-                    // the full quoted recommendation for every point, which turned values needed
-                    // by many points (e.g. shock status across PPH) into a wall of text. The
-                    // quoted action restated the name and was the bulk of the verbosity.
+                    // Lead with the guideline's recommendation (the explanation). The
+                    // "applies when" condition rides along as a hover tooltip rather than
+                    // its own line; the question follows below, just above the input.
                     const others = whyDetails.length - 1;
-                    const cond = primary.condition ? `<div style="margin-top:2px;opacity:0.7;">This applies when: ${esc(primary.condition)}</div>` : '';
                     const more = others > 0 ? `<div style="margin-top:2px;opacity:0.6;">· and ${others} other practice point${others === 1 ? '' : 's'}</div>` : '';
-                    why.innerHTML = `<span style="opacity:0.7;">Needed for:</span> <strong>${esc(primary.name)}</strong>${cond}${more}`;
+                    const condAttr = primary.condition
+                        ? ` title="Applies when: ${esc(primary.condition).replace(/"/g, '&quot;')}" style="cursor:help;border-bottom:1px dotted var(--border-color,#bbb);"`
+                        : '';
+                    why.innerHTML = `<span${condAttr}>${esc(primary.name)}</span>${more}`;
                 }
                 contentTarget.appendChild(why);
                 // Deep link into the relevant part of the source guideline (active cards only).
@@ -9113,18 +9075,32 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 }
             }
 
-            const unknownBtn = document.createElement('label');
-            unknownBtn.style.cssText = 'display:flex;align-items:center;gap:4px;font-size:0.85em;color:var(--text-secondary,#666);cursor:pointer;';
-            const unknownCb = document.createElement('input');
-            unknownCb.type = 'checkbox';
-            unknownBtn.appendChild(unknownCb);
-            const unknownText = document.createElement('span');
-            unknownText.textContent = 'unknown / pending';
-            unknownBtn.appendChild(unknownText);
-            unknownCb.addEventListener('change', () => { inputEl.disabled = unknownCb.checked; if (otherInput) otherInput.disabled = unknownCb.checked; });
-
-            inputRow.appendChild(inputEl);
-            inputRow.appendChild(unknownBtn);
+            // Unknown/pending state. collect() reads `unknown.checked`. Auto-filled
+            // review items keep an inline checkbox; needs-value cards ask the question
+            // above the input and handle unknown via a button in the nav row (below).
+            let unknown;
+            if (isAutoFilled) {
+                const unknownBtn = document.createElement('label');
+                unknownBtn.style.cssText = 'display:flex;align-items:center;gap:4px;font-size:0.85em;color:var(--text-secondary,#666);cursor:pointer;';
+                const unknownCb = document.createElement('input');
+                unknownCb.type = 'checkbox';
+                unknownBtn.appendChild(unknownCb);
+                const unknownText = document.createElement('span');
+                unknownText.textContent = 'unknown / pending';
+                unknownBtn.appendChild(unknownText);
+                unknownCb.addEventListener('change', () => { inputEl.disabled = unknownCb.checked; if (otherInput) otherInput.disabled = unknownCb.checked; });
+                inputRow.appendChild(inputEl);
+                inputRow.appendChild(unknownBtn);
+                unknown = unknownCb;
+            } else {
+                // The question, asked after the explanation, just above the input.
+                const qLine = document.createElement('div');
+                qLine.style.cssText = 'font-weight:600;font-size:0.9em;margin:10px 0 6px;';
+                qLine.textContent = rv.question || rv.prompt || rv.label || rv.id;
+                contentTarget.appendChild(qLine);
+                inputRow.appendChild(inputEl);
+                unknown = { checked: false };
+            }
             contentTarget.appendChild(inputRow);
             if (otherInput) contentTarget.appendChild(otherInput); // free-text reveal sits below the dropdown
 
@@ -9137,20 +9113,19 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                 contentTarget.appendChild(evi);
             }
 
-            // One-at-a-time flow: a "Save & next" button collapses this needs-value
-            // card and opens the next one (Enter does the same in a text field).
+            // One-at-a-time flow: both "Unknown / pending" and "Submit" record the
+            // answer, collapse this card and open the next (Enter = Submit).
             if (!isAutoFilled && cardIndex >= 0) {
                 const entry = needsCards[cardIndex];
                 entry.input = inputEl;
-                const isLast = cardIndex === needsCount - 1;
                 const navRow = document.createElement('div');
-                navRow.style.cssText = 'display:flex;justify-content:flex-end;margin-top:8px;';
-                const nextBtn = document.createElement('button');
-                nextBtn.type = 'button';
-                nextBtn.textContent = isLast ? 'Save ✓' : 'Save & next →';
-                nextBtn.style.cssText = 'padding:5px 12px;border-radius:5px;border:none;background:var(--accent-color,#16a34a);color:#fff;cursor:pointer;font-size:0.85em;font-weight:600;';
-                const advance = () => {
-                    const val = unknownCb.checked ? 'unknown / pending'
+                navRow.style.cssText = 'display:flex;gap:8px;justify-content:flex-end;align-items:center;margin-top:10px;';
+
+                const advance = (isUnknown) => {
+                    unknown.checked = !!isUnknown;
+                    inputEl.disabled = !!isUnknown;
+                    if (otherInput) otherInput.disabled = !!isUnknown;
+                    const val = isUnknown ? 'unknown / pending'
                         : (inputEl.value === '__OTHER__' ? (otherInput ? otherInput.value : '') : inputEl.value);
                     // Reflect the answer in the collapsed header + flip the badge to "set".
                     if (entry.answerSpan) entry.answerSpan.remove();
@@ -9162,6 +9137,7 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                         entry.answerSpan = ans;
                     }
                     badge.textContent = val ? 'set ✓' : 'skipped';
+                    badge.style.display = '';
                     badge.style.background = '#dcfce7'; badge.style.color = '#15803d';
                     entry.setOpen(false);
                     const next = needsCards[cardIndex + 1];
@@ -9173,13 +9149,26 @@ function showRequiredValuesModal(requiredValues, extractedById, filteredOut = []
                         if (cont) { cont.focus(); cont.style.boxShadow = '0 0 0 3px rgba(22,163,74,0.45)'; }
                     }
                 };
-                nextBtn.addEventListener('click', advance);
-                if (inputEl.tagName === 'INPUT') inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); advance(); } });
+
+                const unknownAdvanceBtn = document.createElement('button');
+                unknownAdvanceBtn.type = 'button';
+                unknownAdvanceBtn.textContent = 'Unknown / pending';
+                unknownAdvanceBtn.style.cssText = 'padding:5px 12px;border-radius:5px;border:1px solid var(--border-color,#ccc);background:transparent;color:var(--text-secondary,#555);cursor:pointer;font-size:0.85em;';
+                unknownAdvanceBtn.addEventListener('click', () => advance(true));
+
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.textContent = 'Submit';
+                nextBtn.style.cssText = 'padding:5px 14px;border-radius:5px;border:none;background:var(--accent-color,#16a34a);color:#fff;cursor:pointer;font-size:0.85em;font-weight:600;';
+                nextBtn.addEventListener('click', () => advance(false));
+                if (inputEl.tagName === 'INPUT') inputEl.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); advance(false); } });
+
+                navRow.appendChild(unknownAdvanceBtn);
                 navRow.appendChild(nextBtn);
                 contentTarget.appendChild(navRow);
             }
 
-            inputs.set(rv.id, { input: inputEl, unknown: unknownCb, otherInput });
+            inputs.set(rv.id, { input: inputEl, unknown, otherInput });
             // Auto-filled rows live inside the collapsible container; needs-value rows render inline.
             (isAutoFilled && autoContainer ? autoContainer : list).appendChild(row);
         }
