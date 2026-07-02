@@ -387,7 +387,7 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
               <div class="sw-header">
                 <span class="sw-title">Suggestions</span>
                 <span class="sw-count">${currentNumber} / ${total}</span>
-                ${total > 1 ? '<button class="sw-list-link" onclick="window.wizardShowList()" title="See all suggestions">&#9776; All</button>' : ''}
+                ${total > 1 ? '<button class="sw-list-link" onclick="window.wizardShowList()" title="See all suggestions">&#9776; Show list</button>' : ''}
                 <button class="sw-close-btn" onclick="window._wizardClose()">&#x2715;</button>
               </div>
               <div class="sw-body">
@@ -867,7 +867,6 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
             const chip = needsValue ? '<span class="sw-list-chip">needs value</span>' : '';
             return `
                 <div class="sw-list-row" data-index="${i}">
-                    <input type="checkbox" class="sw-list-cb" data-index="${i}" title="Select for bulk skip">
                     <span class="sw-list-dot" style="background:${swPriorityColor(s)};"></span>
                     <div class="sw-list-main">
                         <div class="sw-list-text">${text}</div>
@@ -892,7 +891,6 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
                   <button class="sw-vt-btn active">&#9776; List</button>
                   <button class="sw-vt-btn" onclick="window.wizardShowStep()">&#9654; Step-through</button>
                 </div>
-                <button class="sw-btn sw-list-skipsel" onclick="window.wizardSkipSelected()">Skip selected</button>
               </div>
               <div class="sw-list-body">${rows}</div>
               <div class="sw-list-footer">
@@ -929,23 +927,10 @@ export function initializeSuggestionWizard(container, suggestions, callbacks) {
         if (s) s._dismissed = true;
         renderListView();
     };
-    window.wizardSkipSelected = function () {
-        const checked = container.querySelectorAll('.sw-list-cb:checked');
-        checked.forEach(cb => {
-            const idx = parseInt(cb.dataset.index, 10);
-            const s = window.suggestionWizardState.queue[idx];
-            if (s) s._dismissed = true;
-        });
-        renderListView();
-    };
 
-    // Initial render — show the overview list when there's more than one
-    // suggestion (see all / triage / jump), else go straight to step-through.
-    if ((window.suggestionWizardState.total || 0) > 1) {
-        renderListView();
-    } else {
-        renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
-    }
+    // Initial render — step-through by default; a "Show list" button switches to
+    // the overview list.
+    renderCurrentSuggestion().catch(err => console.error('[WIZARD] Error rendering initial suggestion:', err));
 }
 
 // Open a popup that walks the user through the full reasoning chain:
