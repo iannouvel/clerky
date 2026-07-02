@@ -4724,7 +4724,7 @@ function showFeedbackModal(suggestionId, suggestion, onSubmitCallback) {
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 10000;
+            z-index: 10002;
         ">
             <div class="feedback-modal-content" style="
                 background: white;

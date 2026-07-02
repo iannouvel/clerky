@@ -4429,7 +4429,9 @@ body.rv-panel-open .chatbot-input-section {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    /* Above the required-values panel (z-index 10001) so the feedback dialog
+       isn't hidden behind it when opened from the values stage */
+    z-index: 10002;
 }
 
 .feedback-modal.hidden {
