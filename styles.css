@@ -3337,10 +3337,14 @@ body {
     gap: 0;
     order: 1;
     transition: gap 0.3s ease;
+    /* Keep the row (and the wizard panel) within the viewport */
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .editor-wizard-row.wizard-active {
-    gap: 0;
+    gap: 10px;
+    padding-right: 10px;
 }
 
 .editor-wizard-row .chatbot-input-section {
@@ -3348,14 +3352,16 @@ body {
 }
 
 .editor-wizard-row.wizard-active .chatbot-input-section {
-    flex: 0 0 60% !important;
-    max-width: 60%;
+    /* Take the remaining space rather than a fixed 60% so the fixed-width panel
+       (below) never pushes the row past the screen edge */
+    flex: 1 1 auto !important;
+    max-width: none;
 }
 
 /* Floating Wizard Panel */
 .wizard-panel {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 38%;
+    max-width: 38%;
     display: flex;
     flex-direction: column;
     background: var(--bg-secondary);
@@ -7310,6 +7316,7 @@ textarea,
 .sw-list-row {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 10px 14px;
     border-bottom: 1px solid var(--border-color);
@@ -7342,7 +7349,7 @@ textarea,
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
 }
-.sw-list-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.sw-list-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; margin-left: auto; }
 .sw-list-actions .sw-btn-insert { margin-left: 0; }
 .sw-list-footer {
     flex-shrink: 0;
